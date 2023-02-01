@@ -1,6 +1,6 @@
 ---
 title: "[Github Blog] Github 블로그 만들기"
-excerpt: "gitgub pages를 이용해서 블로그 만들기. "
+excerpt: "github pages를 이용해서 블로그 만들기. "
 
 categories:
   - Blog
