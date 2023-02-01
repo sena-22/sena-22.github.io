@@ -14,7 +14,7 @@
   animation: $intro-transition;
   -webkit-animation-delay: 0.45s;
   animation-delay: 0.45s;
-  background-color: $footer-background-color;
+  background-color: lightsteelblue;
 
   footer {
     @include clearfix;
@@ -47,7 +47,7 @@
 }
 
 .page__footer-copyright {
-  font-family: $global-font-family;
+  font-family: $Donoun-Medium;
   font-size: $type-size-7;
 }
 
@@ -62,7 +62,7 @@
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: $sans-serif-narrow;
+    font-family: $Donoun-Medium;
     font-size: $type-size-6;
     text-transform: uppercase;
   }

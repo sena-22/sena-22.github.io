@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   color: $text-color;
-  font-family: $poor-story;
+  font-family: $Iropke-Batang;
   line-height: 1.5;
 
   &.overflow--hidden {
@@ -29,7 +29,7 @@ h5,
 h6 {
   margin: 2em 0 0.5em;
   line-height: 1.2;
-  font-family: $poor-story;
+  font-family: $Iropke-Batang;
   font-weight: bold;
 }
 
@@ -110,7 +110,7 @@ blockquote {
   margin: 2em 1em 2em 0;
   padding-left: 1em;
   padding-right: 1em;
-  font-style: italic;
+  // font-style: italic;
   border-left: 0.25em solid $primary-color;
 
   cite {
@@ -126,8 +126,11 @@ blockquote {
 /* links */
 
 a {
+  text-decoration: none;
+
   &:focus {
     @extend %tab-focus;
+     
   }
 
   &:visited {
@@ -137,6 +140,7 @@ a {
   &:hover {
     color: $link-color-hover;
     outline: 0;
+    text-decoration: none;
   }
 }
 
@@ -153,7 +157,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: $monospace;
+  font-family: $nanum-gothic-coding,$Donoun-Medium,$monospace;
 }
 
 pre {
