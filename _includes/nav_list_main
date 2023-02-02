@@ -1,0 +1,112 @@
+{% assign sum = site.posts | size %}
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui - text[site.locale].menu_label }}</label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">({{sum}})</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+        {% for category in site.categories %} {% if category[0] == "javascript"
+        %}
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "typescript"
+        %}
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "til" %}
+        <li>
+          <a href="/categories/til" class="">TIL ({{ category[1].size }})</a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <span class="nav__sub-title">Coding Test</span>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "algorithm"
+        %}
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "programmers"
+        %}
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "react" %}
+        <li>
+          <a href="/categories/react" class=""
+            >React ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "library" %}
+        <li>
+          <a href="/categories/library" class=""
+            >library ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "blog" %}
+        <li>
+          <a href="/categories/blog" class="">Blog ({{ category[1].size }})</a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "Github" %}
+        <li>
+          <a href="/categories/github" class=""
+            >Git & Github ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "Notes" %}
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</nav>

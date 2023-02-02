@@ -5,6 +5,7 @@
 .archive {
   margin-top: 1em;
   margin-bottom: 2em;
+  
 
   @include breakpoint($large) {
     float: right;
@@ -28,6 +29,7 @@
 
   a[rel="permalink"] {
     position: static;
+
   }
 }
 
@@ -46,7 +48,7 @@
 
 .archive__item-title {
   margin-bottom: 0.25em;
-  font-family: $Iropke-Batang,$sans-serif-narrow;
+  font-family:$nanum-gothic-coding,$sans-serif-narrow;
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -59,6 +61,7 @@
     top: 0;
     right: 0;
     bottom: 0;
+
 
   }
 
@@ -73,6 +76,14 @@
     margin-top: 1em;
     border-bottom: none;
   }
+}
+
+.page__taxonomy-item-tag {
+  color:$lighter-gray;
+  background-color:$base03;
+  border-radius:3px;
+  font-size:13px;
+  padding:3px;
 }
 
 .archive__item-excerpt {

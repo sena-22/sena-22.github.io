@@ -8,3 +8,11 @@ main:
     url: /year-archive/
   - title: "Timeline"
     url: /collection-archive/
+
+sidebar-category:
+  - title: "Category"
+    children:
+      - title: "blog"
+        url: "/blog"
+      - title: "typescript"
+        url: "/ts"

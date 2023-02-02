@@ -13,9 +13,9 @@
 <meta name="description" content="An amazing website.">
 
 
-  <meta name="author" content="Your Name">
+  <meta name="author" content="Reyna">
   
-  <meta property="article:author" content="Your Name">
+  <meta property="article:author" content="Reyna">
   
 
 
@@ -57,7 +57,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Your Name",
+      "name": "Reyna",
       "url": "http://localhost:4000/"
     
   }
@@ -155,7 +155,7 @@
 
 <div id="main" role="main">
   
-  <div class="sidebar sticky">
+<div class="sidebar sticky">
   
 
 
@@ -165,11 +165,11 @@
 
   <div class="author__content">
     <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Your Name</a>
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p>I am an <strong>amazing</strong> person.</p>
+        
 
       </div>
     
@@ -180,7 +180,7 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Somewhere</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
         </li>
       
 
@@ -258,9 +258,64 @@
     </ul>
   </div>
 </div>
+   
 
-  
-  </div>
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(2)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+          
+      </ul>
+      <ul>
+          
+      </ul>
+      <ul>
+          
+      </ul>
+      <span class="nav__sub-title">Coding Test</span>
+      <ul>
+          
+      </ul>
+      <ul>
+          
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+          
+      </ul>
+      <ul>
+          
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+      <ul>
+         
+        <li>
+          <a href="/categories/blog" class="">Blog (2)</a>
+        </li>
+         
+      </ul>
+      <ul>
+          
+      </ul>
+      <ul>
+          
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
 
 
 
@@ -325,7 +380,7 @@
 
       <footer class="page__meta">
         
-        
+        <!-- 
   
 
 
@@ -356,11 +411,12 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">Blog</a>
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
     
     </span>
   </p>
 
+ -->
 
         
 
@@ -491,7 +547,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2023 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
