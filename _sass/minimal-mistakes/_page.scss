@@ -113,7 +113,7 @@ body {
   p,
   li,
   dl {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   /* paragraph indents */
@@ -143,8 +143,8 @@ body {
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     font-size: 0.7em;
-    background:$light-gray;
-    color:rgb(82, 81, 81);
+    background:$base08;
+    color:$base05;
     border-radius: $border-radius;
 
     &::before,
@@ -344,11 +344,14 @@ body {
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 8px;
-  padding: 3px 7px;
+  padding: 1px 5px;
   text-decoration: none;
-  // border: 1px solid mix(#000, $border-color, 25%);
   border-radius: $border-radius;
-  background-color: #BACBDB;
+  background-color: $base08;
+  font-family: $poor-story;
+  font-size: $type-size-6;
+  color:$base05 !important;
+   
 
   &:hover {
     text-decoration: none;

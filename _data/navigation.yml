@@ -3,11 +3,11 @@ main:
   - title: "Home"
     url: https://sena-22.github.io/
   - title: "About"
-    url: https://sena-22.github.io/blog
+    url: https://sena-22.github.io/about
   - title: "Category"
-    url: /year-archive/
-  - title: "Timeline"
-    url: /collection-archive/
+    url: /categories
+  # - title: "Timeline"
+  #   url: /collection-archive/
 
 sidebar-category:
   - title: "Category"
