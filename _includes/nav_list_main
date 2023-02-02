@@ -41,6 +41,40 @@
         </li>
         {% endif %} {% endfor %}
       </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "react" %}
+        <li>
+          <a href="/categories/react" class=""
+            >React ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "library" %}
+        <li>
+          <a href="/categories/library" class="nav__sub-title"
+            >library ({{ category[1].size }})</a
+          >
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <span class="nav__sub-title">Project</span>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "main project" %}
+        <li>
+          <a href="/categories/main-project" class="">Main Project ({{ category[1].size }})</a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %} {% if category[0] == "mini project" %}
+        <li>
+          <a href="/categories/mini_project" class="">Mini Project ({{ category[1].size }})</a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
       <span class="nav__sub-title">Coding Test</span>
       <ul>
         {% for category in site.categories %} {% if category[0] == "algorithm"
@@ -62,25 +96,6 @@
         </li>
         {% endif %} {% endfor %}
       </ul>
-      <span class="nav__sub-title">React</span>
-      <ul>
-        {% for category in site.categories %} {% if category[0] == "react" %}
-        <li>
-          <a href="/categories/react" class=""
-            >React ({{ category[1].size }})</a
-          >
-        </li>
-        {% endif %} {% endfor %}
-      </ul>
-      <ul>
-        {% for category in site.categories %} {% if category[0] == "library" %}
-        <li>
-          <a href="/categories/library" class=""
-            >library ({{ category[1].size }})</a
-          >
-        </li>
-        {% endif %} {% endfor %}
-      </ul>
       <span class="nav__sub-title">ETC</span>
       <ul>
         {% for category in site.categories %} {% if category[0] == "blog" %}
@@ -90,7 +105,7 @@
         {% endif %} {% endfor %}
       </ul>
       <ul>
-        {% for category in site.categories %} {% if category[0] == "Github" %}
+        {% for category in site.categories %} {% if category[0] == "github" %}
         <li>
           <a href="/categories/github" class=""
             >Git & Github ({{ category[1].size }})</a
@@ -99,7 +114,7 @@
         {% endif %} {% endfor %}
       </ul>
       <ul>
-        {% for category in site.categories %} {% if category[0] == "Notes" %}
+        {% for category in site.categories %} {% if category[0] == "notes" %}
         <li>
           <a href="/categories/notes" class=""
             >Notes ({{ category[1].size }})</a

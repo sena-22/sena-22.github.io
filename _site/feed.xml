@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-02T20:58:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Github Blog] Github 블로그 폰트 변경하기</title><link href="http://localhost:4000/blog/font/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 폰트 변경하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/font</id><content type="html" xml:base="http://localhost:4000/blog/font/"><![CDATA[<h3 id="font-선택하기">font 선택하기</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-02T23:31:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Github Blog] Github 블로그 폰트 변경하기</title><link href="http://localhost:4000/blog/font/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 폰트 변경하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/font</id><content type="html" xml:base="http://localhost:4000/blog/font/"><![CDATA[<h3 id="font-선택하기">font 선택하기</h3>
 
 <hr />
 
@@ -13,7 +13,115 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$serif</span><span class="p">:</span> <span class="nx">Georgia</span><span class="p">,</span> <span class="nx">Times</span><span class="p">,</span> <span class="nx">serif</span> <span class="o">!</span><span class="k">default</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>사용하고 싶은 곳에서 변수처럼 사용하면 된다.</p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="Font" /></entry><entry><title type="html">[Github Blog] Github 블로그 만들기</title><link href="http://localhost:4000/blog/hello-blog/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 만들기" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/hello-blog</id><content type="html" xml:base="http://localhost:4000/blog/hello-blog/"><![CDATA[<h2 id="1-repository-생성">1. Repository 생성</h2>
+<p>사용하고 싶은 곳에서 변수처럼 사용하면 된다.</p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="Font" /></entry><entry><title type="html">[Main Project] react-date-range 사용하기</title><link href="http://localhost:4000/main%20project/calendar-library/" rel="alternate" type="text/html" title="[Main Project] react-date-range 사용하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/calendar-library</id><content type="html" xml:base="http://localhost:4000/main%20project/calendar-library/"><![CDATA[<h2 id="1-달력-라이브러리-선택">1. 달력 라이브러리 선택</h2>
+
+<p>여행 일정 선택을 위한 달력 라이브러리를 골라야했는데, 달력 라이브러리 종류가 많아서 필요한 기능이 있는지, 사용량이 많고 정보가 잘 정리되어 있는지를 기준으로 선택했다.</p>
+
+<p>🧐 <strong>필요한 기능</strong> <br /></p>
+
+<ol>
+  <li>시작 날짝와 종류 날짜 <br /></li>
+  <li>선택 시 기간 표시(다중 범위)<br /></li>
+  <li>달력 두 개가 붙어 있는 모양</li>
+</ol>
+
+<h3 id="react-date-range">react-date-range</h3>
+
+<hr />
+
+<p class="notice--primary"><a href="https://hypeserver.github.io/react-date-range/#daterange">react-date-range 공식문서</a> <br />
+<a href="https://www.npmjs.com/package/react-date-range">react-date-range npm</a></p>
+
+<h3 id="react-calendar">react-calendar</h3>
+
+<hr />
+
+<p class="notice--primary"><a href="https://www.npmjs.com/package/react-calendar">react-calendar npm</a></p>
+
+<h3 id="react-day-picker">react-day-picker</h3>
+
+<hr />
+
+<p class="notice--primary"><a href="https://www.npmjs.com/package/react-day-picker">react-day-picker npm</a></p>
+
+<ul>
+  <li>최근까지 업데이트 됨</li>
+</ul>
+
+<h3 id="react-date-picker">react-date-picker</h3>
+
+<hr />
+
+<p class="notice--primary"><a href="https://www.npmjs.com/package/react-datepicker">react-date-picker</a></p>
+
+<ul>
+  <li>사용량 가장 많음</li>
+</ul>
+
+<p>여러 라이브러리를 비교해보고 두 개의 달력을 표시하기 쉽고 디자인을 크게 건드리지 않아도 될 것 같아 <code class="language-plaintext highlighter-rouge">react-date-range</code>를 사용했다.</p>
+
+<h2 id="2-달력-적용하기">2. 달력 적용하기</h2>
+
+<p class="notice--primary">사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>
+
+<h3 id="설치">설치</h3>
+
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">react</span><span class="o">-</span><span class="nx">date</span><span class="o">-</span><span class="nx">range</span>
+</code></pre></div></div>
+
+<h3 id="적용">적용</h3>
+
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calendar.js</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/styles.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 메인 css 파일</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/theme/default.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 테마 CSS 파일</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">DateRange</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-date-range</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">formatTomorrow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/dayUtil</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span> <span class="c1">//날짜 형식을 내일로 변경</span>
+
+<span class="kd">const</span> <span class="p">[</span><span class="nx">date</span><span class="p">,</span> <span class="nx">setDate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span>
+  <span class="p">{</span>
+    <span class="na">startDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
+    <span class="na">endDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
+    <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">selection</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">]);</span>
+
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">handleDate</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">startDate</span><span class="p">,</span> <span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">endDate</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>시작 날짜와 종료 날짜를 모두 내일로 지정해주었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">(</span>
+  <span class="p">...</span>
+  <span class="o">&lt;</span><span class="nx">DateRange</span>
+    <span class="nx">editableDateInputs</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+    <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setDate</span><span class="p">([</span><span class="nx">item</span><span class="p">.</span><span class="nx">selection</span><span class="p">])}</span>
+    <span class="nx">moveRangeOnFirstSelection</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span>
+    <span class="nx">ranges</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
+    <span class="nx">months</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="c1">//달력 두 달 표시</span>
+    <span class="nx">direction</span><span class="o">=</span><span class="dl">"</span><span class="s2">horizontal</span><span class="dl">"</span> <span class="c1">//달력을 가로로 배치</span>
+    <span class="nx">dateDisplayFormat</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">LLLL yyyy</span><span class="dl">"</span><span class="p">}</span> <span class="c1">// 날짜 포맷값</span>
+  <span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">...</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="결과">결과</h3>
+
+<hr />
+
+<p><img width="561" alt="스크린샷 2023-02-02 오후 11 14 15" src="https://user-images.githubusercontent.com/110877564/216350582-67febd33-0ba2-4d8a-8d8c-e66710a527fb.png" class="align-center" /></p>
+
+<p>위와 같이 시작 날짜, 종료 날짜를 선택하면 범위가 표시된다! (css는 좀 수정된 상태)</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="calendar" /><summary type="html"><![CDATA[달력 라이브러리]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 만들기</title><link href="http://localhost:4000/blog/hello-blog/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 만들기" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/hello-blog</id><content type="html" xml:base="http://localhost:4000/blog/hello-blog/"><![CDATA[<h2 id="1-repository-생성">1. Repository 생성</h2>
 
 <p><code class="language-plaintext highlighter-rouge">깃허브 계정.github.io</code> 라는 이름으로 레포지토리를 생성해서 로컬로 클론한다.</p>
 

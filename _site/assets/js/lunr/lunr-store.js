@@ -10,4 +10,10 @@ var store = [{
         "tags": ["Blog","Github","Font"],
         "url": "/blog/font/",
         "teaser": null
+      },{
+        "title": "[Main Project] react-date-range 사용하기",
+        "excerpt":"1. 달력 라이브러리 선택 여행 일정 선택을 위한 달력 라이브러리를 골라야했는데, 달력 라이브러리 종류가 많아서 필요한 기능이 있는지, 사용량이 많고 정보가 잘 정리되어 있는지를 기준으로 선택했다. 🧐 필요한 기능 시작 날짝와 종류 날짜 선택 시 기간 표시(다중 범위) 달력 두 개가 붙어 있는 모양 react-date-range react-date-range 공식문서 react-date-range npm react-calendar...","categories": ["main project"],
+        "tags": ["project","codestates","calendar"],
+        "url": "/main%20project/calendar-library/",
+        "teaser": null
       }]
