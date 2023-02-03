@@ -1,5 +1,5 @@
 ---
-title: "[Main Project] react-date-range 사용하기"
+title: "[Main Project] 01. react-date-range 사용하기"
 excerpt: "달력 라이브러리"
 
 categories:
@@ -20,7 +20,7 @@ last_modified_at: 2023-02-02
 
 🧐 **필요한 기능** <br />
 
-1.  시작 날짝와 종류 날짜 <br />
+1.  시작 날짝와 종료 날짜 <br />
 2.  선택 시 기간 표시(다중 범위)<br />
 3.  달력 두 개가 붙어 있는 모양
 
@@ -61,9 +61,6 @@ last_modified_at: 2023-02-02
 
 ## 2. 달력 적용하기
 
-사용 전에 [CodeSandbox](https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js)에서 간단하게 적용해본 것
-{: .notice--primary}
-
 ### 설치
 
 ---
@@ -100,7 +97,7 @@ useEffect(() => {
 }, [date[0].startDate, date[0].endDate]);
 ```
 
-시작 날짜와 종료 날짜를 모두 내일로 지정해주었다.
+시작 날짜와 종료 날짜를 모두 다음 날로 지정해주었다.
 
 ```javascript
 return (
@@ -125,3 +122,6 @@ return (
 <img width="561" alt="스크린샷 2023-02-02 오후 11 14 15" src="https://user-images.githubusercontent.com/110877564/216350582-67febd33-0ba2-4d8a-8d8c-e66710a527fb.png">{: .align-center}
 
 위와 같이 시작 날짜, 종료 날짜를 선택하면 범위가 표시된다! (css는 좀 수정된 상태)
+
+💡 사용 전에 [CodeSandbox](https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js)에서 간단하게 적용해본 것
+{: .notice--primary}
