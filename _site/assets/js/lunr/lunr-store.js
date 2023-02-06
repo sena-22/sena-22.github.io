@@ -35,6 +35,12 @@ var store = [{
         "url": "/main%20project/3-board/",
         "teaser": null
       },{
+        "title": "[Github Blog] 라벨 변경",
+        "excerpt":"블로그의 날짜가 모두 Updated로 나와서 수정했다.      처음에는 레이아웃 문제인가 싶어서 \\_\\_layouts 폴더의 single.html 파일을 살펴봤다.   &lt;strong&gt;   &lt;i class=\"fas fa-fw fa-calendar-alt\" aria-hidden=\"true\"&gt;&lt;/i&gt; Date:&lt;/strong &gt;   site.data.ui-text[site.locale].date_label에서 설정한 대로 나오는 것 같아서 __data 폴더의 ui-text.yml 파일을 봤더니 “Update: “ 로 되어 있었다. “Date: “ 로 수정했더니 잘 적용되었다.     ","categories": ["blog"],
+        "tags": ["Blog","Github","label"],
+        "url": "/blog/label/",
+        "teaser": null
+      },{
         "title": "[Main Project] 05. Error Log",
         "excerpt":"프로젝트 진행 중 발생한 에러와 실제 웹사이트를 사용하며 불편함을 느꼈던 부분들을 정리해보았다. 1. 게시글 생성 페이지 에러 🤔 특정 장소 선택 시 게시글 생성이 되지 않는 문제 구글 api에서 장소 정보를 불러올 때 rating 부분이 존재하지 않을 경우 null 값으로 들어와서 발생하는 에러로 확인되어 백엔드 쪽에서 초기값을 0.0으로 설정 후...","categories": ["main project"],
         "tags": ["project","codestates","error","react"],

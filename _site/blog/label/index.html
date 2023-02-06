@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Main Project] 07. Cookies - Reyna</title>
-<meta name="description" content="react-cookie">
+<!-- begin _includes/seo.html --><title>[Github Blog] 라벨 변경 - Reyna</title>
+<meta name="description" content="라벨 변경하기">
 
 
   <meta name="author" content="Reyna">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Main Project] 07. Cookies">
-<meta property="og:url" content="http://localhost:4000/main%20project/3-cookies/">
+<meta property="og:title" content="[Github Blog] 라벨 변경">
+<meta property="og:url" content="http://localhost:4000/blog/label/">
 
 
-  <meta property="og:description" content="react-cookie">
+  <meta property="og:description" content="라벨 변경하기">
 
 
 
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/main%20project/3-cookies/">
+<link rel="canonical" href="http://localhost:4000/blog/label/">
 
 
 
@@ -327,10 +327,10 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Main Project] 07. Cookies"
+      content="[Github Blog] 라벨 변경"
     /> <meta
       itemprop="description"
-      content="react-cookie"
+      content="라벨 변경하기"
     /> <meta
       itemprop="datePublished"
       content="2023-02-06T00:00:00+09:00"
@@ -344,7 +344,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Main Project] 07. Cookies</p>
+          <p>[Github Blog] 라벨 변경</p>
 
         </h1>
          
@@ -370,7 +370,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#main-project" class="page__taxonomy-item p-category" rel="tag">main project</a>
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
     
     </span>
   </p>
@@ -383,13 +383,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#codestates" class="page__taxonomy-item p-category" rel="tag">codestates</a><span class="sep">, </span>
+      <a href="/tags/#blog" class="page__taxonomy-item p-category" rel="tag">Blog</a><span class="sep">, </span>
     
-      <a href="/tags/#cookie" class="page__taxonomy-item p-category" rel="tag">cookie</a><span class="sep">, </span>
+      <a href="/tags/#github" class="page__taxonomy-item p-category" rel="tag">Github</a><span class="sep">, </span>
     
-      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a><span class="sep">, </span>
-    
-      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
+      <a href="/tags/#label" class="page__taxonomy-item p-category" rel="tag">label</a>
     
     </span>
   </p>
@@ -407,67 +405,24 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#1-설치">1. 설치</a></li><li><a href="#2-cookie-파일-설정">2. cookie 파일 설정</a></li><li><a href="#3-cookie-사용">3. cookie 사용</a></li></ul>
+            
 
           </nav>
         </aside>
-         <p>메인 프로젝트에서는 <code class="language-plaintext highlighter-rouge">token</code>, <code class="language-plaintext highlighter-rouge">memberId</code> 등의 정보를 저장하기 위해 <code class="language-plaintext highlighter-rouge">react-cookie</code>라는 라이브러리를 사용하기로 했다.</p>
+         <p>블로그의 날짜가 모두 Updated로 나와서 수정했다.</p>
 
-<h3 id="1-설치">1. 설치</h3>
+<p><img width="366" alt="스크린샷 2023-02-06 오후 6 26 05" src="https://user-images.githubusercontent.com/110877564/216954807-409da92a-0856-4413-a615-fde1d2fde846.png" /></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">react</span><span class="o">-</span><span class="nx">cookie</span>
+<p>처음에는 레이아웃 문제인가 싶어서 <code class="language-plaintext highlighter-rouge">\_\_layouts</code> 폴더의 <code class="language-plaintext highlighter-rouge">single.html</code> 파일을 살펴봤다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;strong&gt;</span>
+  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> Date:<span class="nt">&lt;/strong</span>
+<span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<h3 id="2-cookie-파일-설정">2. cookie 파일 설정</h3>
+<p><code class="language-plaintext highlighter-rouge">site.data.ui-text[site.locale].date_label</code>에서 설정한 대로 나오는 것 같아서 __data 폴더의 ui-text.yml 파일을 봤더니 “Update: “ 로 되어 있었다. “Date: “ 로 수정했더니 잘 적용되었다.</p>
 
-<p>쿠키를 사용하기 위한 파일을 만들어 필요한 컴포넌트에서 import 해서 적용하는 방법을 사용했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Cookies</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-cookie</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cookies</span><span class="p">();</span>
-
-<span class="c1">//쿠키 저장</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">setCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">cookies</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="p">});</span>
-<span class="p">};</span>
-
-<span class="c1">//쿠키 불러오기</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">getCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">cookies</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="c1">//쿠키 삭제</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">removeCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">cookies</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="p">});</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>처음에는 <code class="language-plaintext highlighter-rouge">name</code>만 이용해서 쿠키를 저장했는데, 프로젝트를 진행하면서 다른 페이지에서 쿠키가 저장되면서 <code class="language-plaintext highlighter-rouge">path</code>가 여러가지인 토큰이 발급되는 문제가 발생했다. 그래서 경로를 하나로 지정하여 문제를 해결했다.</p>
-
-<h3 id="3-cookie-사용">3. cookie 사용</h3>
-
-<p>쿠키를 설정할 때는 <b>쿠키 이름, 쿠키에 넣을 데이터</b> 순으로 저장한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/Cookies</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="nx">setCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">authorization</span><span class="p">);</span>
-<span class="nx">setCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">memberId</span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">memberId</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>쿠키를 사용할 때는 저장했던 이름을 사용해서 불러온다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">getCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/Cookies</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">getCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//name이 accessToken인 쿠키를 불러온다.</span>
-</code></pre></div></div>
-
-<p>쿠키를 삭제할 때도 이름을 이용하면 된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">removeCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/Cookies</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">memberId</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div></div>
+<p><img width="366" alt="스크린샷 2023-02-06 오후 8 02 50" src="https://user-images.githubusercontent.com/110877564/216955628-a33bf344-a812-4c38-8a16-cdad63dbe821.png" /></p>
  
       </section>
 
@@ -492,11 +447,12 @@
  
   <nav class="pagination">
     
-      <a href="/main%20project/2-dayjs/" class="pagination--pager" title="[Main Project] 06. Day.js 적용
+      <a href="/main%20project/3-board/" class="pagination--pager" title="[Main Project] 04. 게시글 작성, 수정 페이지
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/main%20project/1-error-log/" class="pagination--pager" title="[Main Project] 05. Error Log
+">Next</a>
     
   </nav>
 
@@ -512,6 +468,44 @@
     </h2>
     <div class="grid__wrapper">
        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/3-cookies/" rel="permalink">[Main Project] 07. Cookies
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">react-cookie
+</p>
+  </article>
+</div>
+  
 
 
 
@@ -584,44 +578,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">프로젝트 진행 중 발생한 에러들
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/blog/label/" rel="permalink">[Github Blog] 라벨 변경
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">라벨 변경하기
 </p>
   </article>
 </div>
