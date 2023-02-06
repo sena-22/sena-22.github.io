@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-06T10:01:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-06T10:13:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
 <p>같은 url로 로그인 전과 로그인 후의 메인 페이지를 다르게 나타내는 방법을 사용했다. <br />
 프로젝트에서 리액트를 사용했기 때문에 <code class="language-plaintext highlighter-rouge">react-router-dom</code>을 사용해서 라우팅 작업을 해주었다.</p>
@@ -471,7 +471,7 @@
 <span class="p">]);</span>
 </code></pre></div></div>
 
-<p>반면 동일한 id가 있다면 배열을 통째로 복사해서 복사한 배열에서 해당 인덱스의 description의 값만 바꾼다.</p>
+<p>반면 동일한 id가 있다면 배열을 통째로 복사해서 복사한 배열에서 해당 인덱스의 <code class="language-plaintext highlighter-rouge">description</code>의 값만 바꾼다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">changeNotes</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">placeNotes</span><span class="p">];</span>
 <span class="nx">changeNotes</span><span class="p">[</span><span class="nx">findIndex</span><span class="p">].</span><span class="nx">description</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
@@ -481,7 +481,7 @@
 <h2 id="4-게시글-수정-페이지">4. 게시글 수정 페이지</h2>
 
 <p>수정 페이지는 작성 페이지와 거의 동일한 구조를 가지고 있다.
-원래 작성했던 내용을 불러와서 띄워줘야 하는 부분만 달랐는데, 데이터 구조가 복잡한 만큼 map을 써서 초기값을 설정하다보니 코드가 지저분해졌다는 생각이 든다.</p>
+원래 작성했던 내용을 불러와서 띄워줘야 하는 부분만 달랐는데, 데이터 구조가 복잡한 만큼 <code class="language-plaintext highlighter-rouge">map</code>을 써서 초기값을 설정하다보니 코드가 지저분해졌다는 생각이 든다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">days</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">day</span> <span class="o">=&gt;</span>
           <span class="nx">day</span><span class="p">.</span><span class="nx">placeDetails</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">place</span> <span class="o">=&gt;</span>
