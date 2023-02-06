@@ -77,11 +77,11 @@
       </ul>
       <span class="nav__sub-title">Algorithm</span>
       <ul>
-        {% for category in site.categories %} {% if category[0] == "recursive"
+        {% for category in site.categories %} {% if category[0] == "algorithm"
         %}
         <li>
-          <a href="/categories/recursive" class=""
-            >Recursive ({{ category[1].size }})</a
+          <a href="/categories/algorithm" class=""
+            >Algorithm ({{ category[1].size }})</a
           >
         </li>
         {% endif %} {% endfor %}

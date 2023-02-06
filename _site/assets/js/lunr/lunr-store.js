@@ -35,10 +35,10 @@ var store = [{
         "url": "/main%20project/3-board/",
         "teaser": null
       },{
-        "title": "1 Time Complexity",
-        "excerpt":" ","categories": [],
-        "tags": [],
-        "url": "/1-time-complexity/",
+        "title": "[Recursive] 01. 시간 복잡도(Time Complexity)",
+        "excerpt":"1. 시간 복잡도  ","categories": ["algorithm"],
+        "tags": ["study","recursive","time complexity"],
+        "url": "/algorithm/1-time-complexity/",
         "teaser": null
       },{
         "title": "[Github Blog] 라벨 변경",
