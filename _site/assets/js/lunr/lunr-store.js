@@ -1,4 +1,10 @@
 var store = [{
+        "title": "[Recursive] 01. 시간 복잡도(Time Complexity)",
+        "excerpt":"1. 시간 복잡도란? 알고리즘의 실행 시간을 표현하는 것을 말한다. 여기서 실행 시간이란 통상적으로 쓰이는 시분초 개념이 아니라, 함수나 알고리즘 수행에 필요한 스텝 수를 의미한다. (실행 환경마다 성능이 다르기 때문에 시간을 초(seconds)나 밀리초(milliseconds)로 표현하면 편차가 커질 수 있기 때문이라고 한다.) 시간 복잡도는 보통 점근 표기법으로 표현한다. 점근적 분석(asymptotic analysis) 임의의 함수가...","categories": ["algorithm"],
+        "tags": ["study","recursive","time complexity"],
+        "url": "/algorithm/1-time-complexity/",
+        "teaser": null
+      },{
         "title": "[Github Blog] Github 블로그 만들기",
         "excerpt":"1. Repository 생성 깃허브 계정.github.io 라는 이름으로 레포지토리를 생성해서 로컬로 클론한다. 2. ruby, Jekyll, Bundler 설치 블로그를 참고해서 지킬을 설치했다! 이 부분은 정확히 이해 하고 있지 못해서 다시 알아볼 예정이다. https://ansohxxn.github.io/blog/i-made-my-blog/ https://jojoldu.tistory.com/288 https://codecamper.me/blog/122/ 3. 지킬 테마 선택 minimal-mistakes 테마를 선택했다. https://github.com/mmistakes/minimal-mistakes 선택한 테마의 github repository 압축 파일을 받아서 만들어둔 폴더에...","categories": ["blog"],
         "tags": ["Blog","Github","First Post"],
@@ -33,12 +39,6 @@ var store = [{
         "excerpt":"1. 라우팅 프로젝트의 게시글은 만들었던 일정을 바탕으로 메모와 감상을 추가하는 형식으로 이루어져 있다. 따라서 게시글을 작성할 때에는 먼저 어떤 일정을 게시글로 만들 것인지 선택하는 페이지가 필요했다. 또한 작성된 게시글도 렌더링하여 이미 작성된 게시글을 수정하는 기능도 이 페이지에 넣었다. 따라서 게시글/일정 선택 페이지, 게시글 추가 페이지, 게시글 수정 페이지로 나눴다. //app.js...","categories": ["main project"],
         "tags": ["project","codestates","page","react"],
         "url": "/main%20project/3-board/",
-        "teaser": null
-      },{
-        "title": "[Recursive] 01. 시간 복잡도(Time Complexity)",
-        "excerpt":"1. 시간 복잡도  ","categories": ["algorithm"],
-        "tags": ["study","recursive","time complexity"],
-        "url": "/algorithm/1-time-complexity/",
         "teaser": null
       },{
         "title": "[Github Blog] 라벨 변경",

@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2023-02-06T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-11-22T00:00:00+09:00">
 
 
 
@@ -286,35 +286,35 @@
       </ul>
       <span class="nav__sub-title">Project</span>
       <ul>
-           
+             
         <li>
           <a href="/categories/main-project" class="">Main Project (7)</a>
         </li>
-           
+         
       </ul>
       <ul>
               
       </ul>
       <span class="nav__sub-title">Algorithm</span>
       <ul>
-             
+         
         <li>
           <a href="/categories/algorithm" class=""
             >Algorithm (1)</a
           >
         </li>
-         
+             
       </ul>
       <ul>
               
       </ul>
       <span class="nav__sub-title">ETC</span>
       <ul>
-         
+           
         <li>
           <a href="/categories/blog" class="">Blog (3)</a>
         </li>
-             
+           
       </ul>
       <ul>
               
@@ -339,7 +339,7 @@
       content="시간 복잡도"
     /> <meta
       itemprop="datePublished"
-      content="2023-02-06T00:00:00+09:00"
+      content="2022-11-22T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
       content="2023-02-06T00:00:00+09:00"
@@ -358,8 +358,8 @@
           <strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
           >
-          <time datetime="2023-02-06T00:00:00+09:00"
-            >2023.02.06</time
+          <time datetime="2022-11-22T00:00:00+09:00"
+            >2022.11.22</time
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
@@ -411,11 +411,127 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#1-시간-복잡도">1. 시간 복잡도</a></li></ul>
+            <ul class="toc__menu"><li><a href="#1-시간-복잡도란">1. 시간 복잡도란?</a></li><li><a href="#2-점근-표기법의-유형">2. 점근 표기법의 유형</a><ul><li><a href="#big-ω-표기법">Big-Ω 표기법</a></li><li><a href="#big-θ-표기법">Big Θ-표기법</a></li><li><a href="#big-o-표기법">Big-O 표기법</a></li></ul></li><li><a href="#3-big-o-표기법의-특징">3. Big-O 표기법의 특징</a></li><li><a href="#4-big-o-표기법의-종류">4. Big-O 표기법의 종류</a><ul><li><a href="#1-o1-best">1. O(1) (Best)</a></li><li><a href="#2-olog-n-good">2. O(log n) (Good)</a></li><li><a href="#3-on-fair">3. O(n) (Fair)</a></li><li><a href="#4-on-log-n-bad">4. O(n log n) (Bad)</a></li><li><a href="#5-on2--o2n-worst">5. O(n^2) &amp; O(2^n) (Worst)</a></li></ul></li><li><a href="#데이터-크기에-따라-예상되는-시간-복잡도">데이터 크기에 따라 예상되는 시간 복잡도</a></li></ul>
 
           </nav>
         </aside>
-         <h2 id="1-시간-복잡도">1. 시간 복잡도</h2>
+         <h2 id="1-시간-복잡도란">1. 시간 복잡도란?</h2>
+
+<p><b>알고리즘의 실행 시간</b>을 표현하는 것을 말한다.</p>
+
+<p>여기서 실행 시간이란 통상적으로 쓰이는 시분초 개념이 아니라, 함수나 알고리즘 수행에 필요한 스텝 수를 의미한다. (실행 환경마다 성능이 다르기 때문에 시간을 초(seconds)나 밀리초(milliseconds)로 표현하면 편차가 커질 수 있기 때문이라고 한다.)
+시간 복잡도는 보통 <strong>점근 표기법</strong>으로 표현한다.</p>
+
+<p class="notice--primary"><strong>점근적 분석(asymptotic analysis)</strong> <br />
+임의의 함수가 N → ♾️ 일 때 어떤 단순한 형태에 근접해지는지 분석하는 것을 의미한다(점근이란 점점 가까워진다는 의미이다)
+쉽게 생각하면 입력의 크기가 충분히 큰 경우에 대한 분석을 의미한다. 크기가 작은 문제에서는 비효율적인 알고리즘을 사용해도 무방하기 때문이다.</p>
+
+<p class="notice--primary"><strong>점근 표기법</strong> <br />
+점근적 분석을 통해 실행시간을 단순하게 표현한 표기법</p>
+
+<h2 id="2-점근-표기법의-유형">2. 점근 표기법의 유형</h2>
+
+<p>시간 복잡도를 표현하는 점근 표기법은 크게 세 종류로 나눌 수 있다.</p>
+
+<h3 id="big-ω-표기법">Big-Ω 표기법</h3>
+
+<p>최선일 때의 연산 횟수를 나타내며, <mark style="background-color: #ffdce0">점근적 하한선(Asymptotic lower bound)</mark>을 의미한다.</p>
+
+<h3 id="big-θ-표기법">Big Θ-표기법</h3>
+
+<p>보통일 때의 연산 횟수를 나타낸다. <mark style="background-color: #ffdce0">점근적 상한과 하한의 교집합(Asymptotic tighter bound)</mark>이라고 한다.</p>
+
+<h3 id="big-o-표기법">Big-O 표기법</h3>
+
+<p>최악일 때의 연산 횟수를 나타낸 것으로, <mark style="background-color: #ffdce0">점근적 상한선(Asymptotic upper bound)</mark>을 의미한다. 최소한 보장되는 성능을 표기하기 때문에 일반적으로 많이 사용하며, 다양한 케이스가 존재하는 코딩 테스트에서도 Big-O 표기법을 기준으로 실행 시간을 계산하는 것이 좋다.</p>
+
+<h2 id="3-big-o-표기법의-특징">3. Big-O 표기법의 특징</h2>
+
+<ul>
+  <li>
+    <p>상수, 계수는 제외한다.</p>
+
+    <ul>
+      <li>for문이 1개일 때와 3개일 때 연산 횟수는 N과 3N으로 3배 차이가 나지만 코딩 테스트에서 상수를 무시하기 때문에 시간 복잡도는 <code class="language-plaintext highlighter-rouge">O(n)</code>이다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>가장 많이 중첩된 반복문의 수행 횟수가 시간 복잡도의 기준이 된다.</p>
+
+    <ul>
+      <li>이중 for문이 있을 경우 일반 for문이 10개가 있어도 이중 for문이 시간 복잡도의 기준이 되기 때문에 O(n^2)이 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="4-big-o-표기법의-종류">4. Big-O 표기법의 종류</h2>
+
+<p class="notice--primary"><strong>🔖 실행 속도</strong> <br />
+O(1) &lt; O(log N) &lt; O(N) &lt; O(N log N) &lt; O(n^2) &lt; O(2^N)</p>
+
+<p><img src="https://velog.velcdn.com/images/sena-22/post/c7e2c3ae-2046-475a-a694-e3358ec335a7/image.png" alt="" /><a href="https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/">출처</a></p>
+
+<h3 id="1-o1-best">1. O(1) (Best)</h3>
+
+<ul>
+  <li>일정한 복잡도를 가지며 입력값이 증가해도 시간이 늘어나지 않는다</li>
+  <li>Stack의 push,pop, 배열의 인덱스를 찾을 때</li>
+</ul>
+
+<h3 id="2-olog-n-good">2. O(log n) (Good)</h3>
+
+<ul>
+  <li>로그 복잡도. O(1) 다음으로 빠른 시간 복잡도를 가진다(시간이 덜 걸린다는 의미..). 매번 입력값이 절반으로 줄어들 때 로그 복잡도를 가진다고 한다.</li>
+  <li>이진탐색트리</li>
+</ul>
+
+<h3 id="3-on-fair">3. O(n) (Fair)</h3>
+
+<ul>
+  <li>선형 복잡도. 입력값이 증가하면 시간도 같은 비율로 증가한다.</li>
+  <li>for 문</li>
+</ul>
+
+<h3 id="4-on-log-n-bad">4. O(n log n) (Bad)</h3>
+
+<ul>
+  <li>O(N)의 알고리즘과 O(log N)의 알고리즘이 중첩된 형태</li>
+  <li>퀵 / 병합 / 힙</li>
+</ul>
+
+<h3 id="5-on2--o2n-worst">5. O(n^2) &amp; O(2^n) (Worst)</h3>
+
+<ul>
+  <li>O(n^2) : 2차 복잡도. 입력값이 증가하면서 시간이 n^2의 비율로 증가한다. (이중 for문)</li>
+  <li>O(2^n) : 기하급수적 복잡도. (피보나치 수를 구하는 알고리즘)</li>
+</ul>
+
+<h2 id="데이터-크기에-따라-예상되는-시간-복잡도">데이터 크기에 따라 예상되는 시간 복잡도</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">데이터 크기 제한</th>
+      <th style="text-align: center">예상되는시간 복잡도</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">n ≤ 1,000,000</td>
+      <td style="text-align: center">O(n) or O (logn)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">n ≤ 10,000</td>
+      <td style="text-align: center">O(n^2)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">n ≤ 500</td>
+      <td style="text-align: center">O(n^3)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive를 진행하며 공부한 내용 정리</p>
  
       </section>
 
@@ -440,11 +556,10 @@
  
   <nav class="pagination">
     
-      <a href="/main%20project/3-board/" class="pagination--pager" title="[Main Project] 04. 게시글 작성, 수정 페이지
-">Previous</a>
+      <a href="#" class="pagination--pager disabled">Previous</a>
     
     
-      <a href="/blog/label/" class="pagination--pager" title="[Github Blog] 라벨 변경
+      <a href="/blog/hello-blog/" class="pagination--pager" title="[Github Blog] Github 블로그 만들기
 ">Next</a>
     
   </nav>
