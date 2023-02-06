@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-03T16:25:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-04T09:14:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
 <p>같은 url로 로그인 전과 로그인 후의 메인 페이지를 다르게 나타내는 방법을 사용했다. <br />
 프로젝트에서 리액트를 사용했기 때문에 <code class="language-plaintext highlighter-rouge">react-router-dom</code>을 사용해서 라우팅 작업을 해주었다.</p>
@@ -185,7 +185,7 @@
 
 <h2 id="3-main-page">3. Main Page</h2>
 
-<p>위에서 만든 <code class="language-plaintext highlighter-rouge">Home</code> 페이지의 일정 선택 기능과 로그인 사용자가 작성한 여행, 게시글, 전체 게시판에서 5개의 글을 볼 수 있는 페이지. 5개의 글은 기본적으로 최신순으로 5개를 렌더링하며, 좋아요 순, 조회수 순으로도 변경이 가능하다. 여행, 게시글, 게시판은 모두 각각 별개의 컴포넌트로 만들어 <code class="language-plaintext highlighter-rouge">Main</code> 페이지에서는 불러오기만 했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[main page]]></summary></entry><entry><title type="html">[Main Project] 03. user page 구성</title><link href="http://localhost:4000/main%20project/user-page/" rel="alternate" type="text/html" title="[Main Project] 03. user page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/user-page</id><content type="html" xml:base="http://localhost:4000/main%20project/user-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+<p>위에서 만든 <code class="language-plaintext highlighter-rouge">Home</code> 페이지의 일정 선택 기능과 로그인 사용자가 작성한 여행, 게시글, 전체 게시판에서 5개의 글을 볼 수 있는 페이지. 5개의 글은 기본적으로 최신순으로 5개를 렌더링하며, 좋아요 순, 조회수 순으로도 변경이 가능하다. 여행, 게시글, 게시판은 모두 각각 별개의 컴포넌트로 만들어 <code class="language-plaintext highlighter-rouge">Main</code> 페이지에서는 불러오기만 했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[main page]]></summary></entry><entry><title type="html">[Main Project] 03. user page 구성</title><link href="http://localhost:4000/main%20project/2-user-page/" rel="alternate" type="text/html" title="[Main Project] 03. user page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-user-page</id><content type="html" xml:base="http://localhost:4000/main%20project/2-user-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
 <p>유저 프로필 페이지와 프로필 수정 페이지로 나누었다.</p>
 
@@ -313,7 +313,153 @@
 <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
 </span></code></pre></div></div>
 
-<p>모달상태를 내려받아 <code class="language-plaintext highlighter-rouge">modal</code>이 <code class="language-plaintext highlighter-rouge">true</code>일 때만 열린다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[user page]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 폰트 변경하기</title><link href="http://localhost:4000/blog/font/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 폰트 변경하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/font</id><content type="html" xml:base="http://localhost:4000/blog/font/"><![CDATA[<h3 id="font-선택하기">font 선택하기</h3>
+<p>모달상태를 내려받아 <code class="language-plaintext highlighter-rouge">modal</code>이 <code class="language-plaintext highlighter-rouge">true</code>일 때만 열린다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[user page]]></summary></entry><entry><title type="html">[Main Project] 04. 게시글 작성, 수정 페이지</title><link href="http://localhost:4000/main%20project/3-board/" rel="alternate" type="text/html" title="[Main Project] 04. 게시글 작성, 수정 페이지" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/3-board</id><content type="html" xml:base="http://localhost:4000/main%20project/3-board/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+
+<p>프로젝트의 게시글은 만들었던 <u>일정을 바탕으로 메모와 감상을 추가</u>하는 형식으로 이루어져 있다. 따라서 게시글을 작성할 때에는 먼저 <mark style="background-color: #ffdce0">어떤 일정을 게시글로 만들 것인지 선택하는 페이지</mark>가 필요했다. 또한 작성된 게시글도 렌더링하여 이미 작성된 게시글을 수정하는 기능도 이 페이지에 넣었다.</p>
+
+<p>따라서 게시글/일정 선택 페이지, 게시글 추가 페이지, 게시글 수정 페이지로 나눴다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">//app.js</span>
+
+    <span class="p">...</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Routes</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="cm">/*  /!*게시글 작성 시작을 위한 여행선택 페이지*!/*/</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/board/plan</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">WriteBoard</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="p">{</span><span class="cm">/*  /!*게시글 수정 페이지*!/*/</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/board/edit/:boardId</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">EditSingleBoard</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="p">{</span><span class="cm">/*  /!*게시글 작성 페이지*!/*/</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/board/plan/:planId</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">WriteSingleBoard</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>       <span class="p">...</span>
+      <span class="o">&lt;</span><span class="sr">/Routes</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+
+  <span class="p">...</span>
+</code></pre></div></div>
+
+<h3 id="2-여행게시글-선택-페이지">2. 여행/게시글 선택 페이지</h3>
+
+<p>여행, 게시글을 선택하기 위해 앞서 <code class="language-plaintext highlighter-rouge">main</code> 페이지와 <code class="language-plaintext highlighter-rouge">user</code> 페이지에서 이용했던 작성한 여행, 게시글 컴포넌트를 재사용했다.</p>
+
+<p>기본 틀은 같지만 어디서 클릭하느냐에 따라 조회/작성/수정 페이지가 각각 다르게 나타나야 하는 문제가 생겼다. 처음에는 컴포넌트마다 모드를 props로 바로 넘겨줬는데, 멘토님의 조언으로 모드를 유틸파일로 빼서 어떤 모드가 있는지 알기 쉽게 만드는 방식으로 변경했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Util.constants.js</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Mode</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">Write</span><span class="p">:</span> <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">Plan</span><span class="p">:</span> <span class="dl">"</span><span class="s2">plan</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">Edit</span><span class="p">:</span> <span class="dl">"</span><span class="s2">edit</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>이렇게 유틸 파일로 만들면 모드에 어떤 종류가 있는지 알기 쉽다!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//WriteBoard.js</span>
+<span class="o">&lt;</span><span class="nx">MyTrips</span> <span class="nx">mode</span><span class="o">=</span><span class="dl">"</span><span class="s2">write</span><span class="dl">"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>모드를 설정해서 같은 컴포넌트를 여러 곳에서 다르게 렌더링할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Components/user</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Mode</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../Util/constants</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MyTrips</span> <span class="o">=</span> <span class="p">({</span><span class="nx">mode</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="p">{</span><span class="nx">tripList</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">trip</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">div</span>
+            <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">my-trips__card</span><span class="dl">"</span>
+            <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">trip</span><span class="p">.</span><span class="nx">planId</span><span class="p">}</span>
+            <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleNavigate</span><span class="p">(</span><span class="nx">trip</span><span class="p">)}</span>
+          <span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">place_image</span><span class="dl">"</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">trip</span><span class="p">.</span><span class="nx">city</span><span class="p">.</span><span class="nx">cityImage</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">meta_title</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">trip</span><span class="p">.</span><span class="nx">planTitle</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">meta_content</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="p">{</span><span class="nx">formatDateKo</span><span class="p">(</span><span class="nx">trip</span><span class="p">.</span><span class="nx">startDate</span><span class="p">)}</span> <span class="o">-</span> <span class="p">{</span><span class="nx">formatDateKo</span><span class="p">(</span><span class="nx">trip</span><span class="p">.</span><span class="nx">endDate</span><span class="p">)}</span>
+              <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">...</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">MyTrips</code>는 여행 목록을 보여주는 컴포넌트이다. 게시글 작성 페이지에서는 아직 게시글을 작성하지 않은 여행만 보여줘야 했기 때문에 모든 여행 요청을 불러와 <code class="language-plaintext highlighter-rouge">boardCheck</code>가 <code class="language-plaintext highlighter-rouge">false</code>인 여행만 보여주었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleNavigate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">trip</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">navigate</span><span class="p">(</span>
+    <span class="nx">mode</span> <span class="o">===</span> <span class="nx">Mode</span><span class="p">.</span><span class="nx">Plan</span>
+      <span class="p">?</span> <span class="s2">`/itinerary/</span><span class="p">${</span><span class="nx">trip</span><span class="p">.</span><span class="nx">planId</span><span class="p">}</span><span class="s2">`</span>
+      <span class="p">:</span> <span class="s2">`/board/plan/</span><span class="p">${</span><span class="nx">trip</span><span class="p">.</span><span class="nx">planId</span><span class="p">}</span><span class="s2">`</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>목록 중 하나를 클릭 했을 때 내려받은 모드에 따라 다른 곳으로 이동한다.</p>
+
+<h3 id="3-게시글-작성-페이지">3. 게시글 작성 페이지</h3>
+
+<p>게시글은 만들었던 일정을 기반으로 작성하기 때문에 선택 페이지에서 여행을 선택할 때 해당 <code class="language-plaintext highlighter-rouge">planId</code>를 파라미터로 가진 주소로 이동하게 만든 후, 작성 페이지에서 <code class="language-plaintext highlighter-rouge">useParams</code>를 이용하여 해당 여행 일정을 불러와서 페이지를 구성했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useParams</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">planId</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useParams</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>이런 식으로 파라미터를 가져오는 것이 가능하다.</p>
+
+<p>작성 페이지에서 가장 힘들었던 부분은 장소별 메모를 api 형식에 맞춰서 만드는 부분이었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">placeDesc</span><span class="dl">"</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">placeId</span><span class="dl">"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">desc</span><span class="dl">"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">placeId</span><span class="dl">"</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">desc</span><span class="dl">"</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>객체 안에 키 값이 문자열이고, 값에 <code class="language-plaintext highlighter-rouge">index</code>를 넣어야 했는데, 지금까지는 <code class="language-plaintext highlighter-rouge">{index : "내용"}</code>과 같이 해당 <code class="language-plaintext highlighter-rouge">index</code>를 키로, 내용을 값으로 넣는 식으로만 만들었어서 생소했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">placeNotes</span><span class="p">,</span> <span class="nx">setPlaceNotes</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+
+ <span class="k">return</span> <span class="p">(</span>
+  <span class="p">...</span>
+    <span class="o">&lt;</span><span class="nx">textarea</span>
+      <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
+      <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="nx">place</span><span class="p">.</span><span class="nx">placeId</span><span class="p">}</span>
+      <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">handleChangeNote</span><span class="p">(</span><span class="nx">e</span><span class="p">)}</span>
+     <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">...</span>
+ <span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">body</code>에 넣을 배열을 상태로 만들고, 노트를 입력하는 <code class="language-plaintext highlighter-rouge">textarea</code>의 값이 변경되면 <code class="language-plaintext highlighter-rouge">handleChangeNote</code> 함수가 실행된다. <code class="language-plaintext highlighter-rouge">name</code>으로 장소의 id를 넣어두었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//장소별 note 변경</span>
+<span class="kd">const</span> <span class="nx">handleChangeNote</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">findIndex</span> <span class="o">=</span> <span class="nx">placeNotes</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">comment</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">comment</span><span class="p">.</span><span class="nx">placeId</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+  <span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">findIndex</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setPlaceNotes</span><span class="p">([</span>
+      <span class="p">...</span><span class="nx">placeNotes</span><span class="p">,</span>
+      <span class="p">{</span> <span class="na">placeId</span><span class="p">:</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">),</span> <span class="na">description</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">},</span>
+    <span class="p">]);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">changeNotes</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">placeNotes</span><span class="p">];</span>
+    <span class="nx">changeNotes</span><span class="p">[</span><span class="nx">findIndex</span><span class="p">].</span><span class="nx">description</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="nx">setPlaceNotes</span><span class="p">(</span><span class="nx">changeNotes</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[board]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 폰트 변경하기</title><link href="http://localhost:4000/blog/font/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 폰트 변경하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/font</id><content type="html" xml:base="http://localhost:4000/blog/font/"><![CDATA[<h3 id="font-선택하기">font 선택하기</h3>
 
 <hr />
 

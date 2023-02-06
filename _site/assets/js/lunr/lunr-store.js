@@ -20,12 +20,18 @@ var store = [{
         "title": "[Main Project] 02. main page 구성",
         "excerpt":"1. 라우팅 같은 url로 로그인 전과 로그인 후의 메인 페이지를 다르게 나타내는 방법을 사용했다. 프로젝트에서 리액트를 사용했기 때문에 react-router-dom을 사용해서 라우팅 작업을 해주었다. //app.js import { useEffect, useState } from 'react'; import { Route, Routes } from 'react-router-dom'; import Home from './Pages/Home'; //만들어둔 페이지를 불러왔다 import Main from './Pages/Main'; function...","categories": ["main project"],
         "tags": ["project","codestates","page","react"],
-        "url": "/main%20project/main-page/",
+        "url": "/main%20project/1-main-page/",
         "teaser": null
       },{
         "title": "[Main Project] 03. user page 구성",
         "excerpt":"1. 라우팅 유저 프로필 페이지와 프로필 수정 페이지로 나누었다. memberId를 파라미터로 넣어 유저를 식별할 수 있도록 만들었다. //app.js import { useEffect, useState } from 'react'; import { Route, Routes } from 'react-router-dom'; import UserProfile from './Pages/UserProfile'; import UserProfileEdit from './Pages/UserProfileEdit'; function App() { ... return ( &lt;&gt; &lt;Routes&gt; ... &lt;Route...","categories": ["main project"],
         "tags": ["project","codestates","page","react"],
-        "url": "/main%20project/user-page/",
+        "url": "/main%20project/2-user-page/",
+        "teaser": null
+      },{
+        "title": "[Main Project] 04. 게시글 작성, 수정 페이지",
+        "excerpt":"1. 라우팅 프로젝트의 게시글은 만들었던 일정을 바탕으로 메모와 감상을 추가하는 형식으로 이루어져 있다. 따라서 게시글을 작성할 때에는 먼저 어떤 일정을 게시글로 만들 것인지 선택하는 페이지가 필요했다. 또한 작성된 게시글도 렌더링하여 이미 작성된 게시글을 수정하는 기능도 이 페이지에 넣었다. 따라서 게시글/일정 선택 페이지, 게시글 추가 페이지, 게시글 수정 페이지로 나눴다. //app.js...","categories": ["main project"],
+        "tags": ["project","codestates","page","react"],
+        "url": "/main%20project/3-board/",
         "teaser": null
       }]

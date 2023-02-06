@@ -1,0 +1,821 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Main Project] 04. 게시글 작성, 수정 페이지 - Reyna</title>
+<meta name="description" content="board">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[Main Project] 04. 게시글 작성, 수정 페이지">
+<meta property="og:url" content="http://localhost:4000/main%20project/3-board/">
+
+
+  <meta property="og:description" content="board">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-03T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-02-03T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/main%20project/3-board/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/about">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(6)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+            
+      </ul>
+      <ul>
+            
+      </ul>
+      <ul>
+            
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+            
+      </ul>
+      <ul>
+            
+      </ul>
+      <span class="nav__sub-title">Project</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/main-project" class="">Main Project (4)</a>
+        </li>
+         
+      </ul>
+      <ul>
+            
+      </ul>
+      <span class="nav__sub-title">Coding Test</span>
+      <ul>
+            
+      </ul>
+      <ul>
+            
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+      <ul>
+         
+        <li>
+          <a href="/categories/blog" class="">Blog (2)</a>
+        </li>
+           
+      </ul>
+      <ul>
+            
+      </ul>
+      <ul>
+            
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="[Main Project] 04. 게시글 작성, 수정 페이지"
+    /> <meta
+      itemprop="description"
+      content="board"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-02-03T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-02-03T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[Main Project] 04. 게시글 작성, 수정 페이지</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-02-03T00:00:00+09:00"
+            >2023.02.03</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-02-03"
+            >2023.02.03</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#main-project" class="page__taxonomy-item p-category" rel="tag">main project</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#codestates" class="page__taxonomy-item p-category" rel="tag">codestates</a><span class="sep">, </span>
+    
+      <a href="/tags/#page" class="page__taxonomy-item p-category" rel="tag">page</a><span class="sep">, </span>
+    
+      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a><span class="sep">, </span>
+    
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#1-라우팅">1. 라우팅</a><ul><li><a href="#2-여행게시글-선택-페이지">2. 여행/게시글 선택 페이지</a></li><li><a href="#3-게시글-작성-페이지">3. 게시글 작성 페이지</a></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <h2 id="1-라우팅">1. 라우팅</h2>
+
+<p>프로젝트의 게시글은 만들었던 <u>일정을 바탕으로 메모와 감상을 추가</u>하는 형식으로 이루어져 있다. 따라서 게시글을 작성할 때에는 먼저 <mark style="background-color: #ffdce0">어떤 일정을 게시글로 만들 것인지 선택하는 페이지</mark>가 필요했다. 또한 작성된 게시글도 렌더링하여 이미 작성된 게시글을 수정하는 기능도 이 페이지에 넣었다.</p>
+
+<p>따라서 게시글/일정 선택 페이지, 게시글 추가 페이지, 게시글 수정 페이지로 나눴다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">//app.js</span>
+
+    <span class="p">...</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Routes</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="cm">/*  /!*게시글 작성 시작을 위한 여행선택 페이지*!/*/</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/board/plan</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">WriteBoard</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="p">{</span><span class="cm">/*  /!*게시글 수정 페이지*!/*/</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/board/edit/:boardId</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">EditSingleBoard</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="p">{</span><span class="cm">/*  /!*게시글 작성 페이지*!/*/</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/board/plan/:planId</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">WriteSingleBoard</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>       <span class="p">...</span>
+      <span class="o">&lt;</span><span class="sr">/Routes</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+
+  <span class="p">...</span>
+</code></pre></div></div>
+
+<h3 id="2-여행게시글-선택-페이지">2. 여행/게시글 선택 페이지</h3>
+
+<p>여행, 게시글을 선택하기 위해 앞서 <code class="language-plaintext highlighter-rouge">main</code> 페이지와 <code class="language-plaintext highlighter-rouge">user</code> 페이지에서 이용했던 작성한 여행, 게시글 컴포넌트를 재사용했다.</p>
+
+<p>기본 틀은 같지만 어디서 클릭하느냐에 따라 조회/작성/수정 페이지가 각각 다르게 나타나야 하는 문제가 생겼다. 처음에는 컴포넌트마다 모드를 props로 바로 넘겨줬는데, 멘토님의 조언으로 모드를 유틸파일로 빼서 어떤 모드가 있는지 알기 쉽게 만드는 방식으로 변경했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Util.constants.js</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Mode</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">Write</span><span class="p">:</span> <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">Plan</span><span class="p">:</span> <span class="dl">"</span><span class="s2">plan</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">Edit</span><span class="p">:</span> <span class="dl">"</span><span class="s2">edit</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>이렇게 유틸 파일로 만들면 모드에 어떤 종류가 있는지 알기 쉽다!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//WriteBoard.js</span>
+<span class="o">&lt;</span><span class="nx">MyTrips</span> <span class="nx">mode</span><span class="o">=</span><span class="dl">"</span><span class="s2">write</span><span class="dl">"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>모드를 설정해서 같은 컴포넌트를 여러 곳에서 다르게 렌더링할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Components/user</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Mode</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../Util/constants</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">MyTrips</span> <span class="o">=</span> <span class="p">({</span><span class="nx">mode</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="p">{</span><span class="nx">tripList</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">trip</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">div</span>
+            <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">my-trips__card</span><span class="dl">"</span>
+            <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">trip</span><span class="p">.</span><span class="nx">planId</span><span class="p">}</span>
+            <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleNavigate</span><span class="p">(</span><span class="nx">trip</span><span class="p">)}</span>
+          <span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">place_image</span><span class="dl">"</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">trip</span><span class="p">.</span><span class="nx">city</span><span class="p">.</span><span class="nx">cityImage</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">meta_title</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">trip</span><span class="p">.</span><span class="nx">planTitle</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">meta_content</span><span class="dl">"</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="p">{</span><span class="nx">formatDateKo</span><span class="p">(</span><span class="nx">trip</span><span class="p">.</span><span class="nx">startDate</span><span class="p">)}</span> <span class="o">-</span> <span class="p">{</span><span class="nx">formatDateKo</span><span class="p">(</span><span class="nx">trip</span><span class="p">.</span><span class="nx">endDate</span><span class="p">)}</span>
+              <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">...</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">MyTrips</code>는 여행 목록을 보여주는 컴포넌트이다. 게시글 작성 페이지에서는 아직 게시글을 작성하지 않은 여행만 보여줘야 했기 때문에 모든 여행 요청을 불러와 <code class="language-plaintext highlighter-rouge">boardCheck</code>가 <code class="language-plaintext highlighter-rouge">false</code>인 여행만 보여주었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleNavigate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">trip</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">navigate</span><span class="p">(</span>
+    <span class="nx">mode</span> <span class="o">===</span> <span class="nx">Mode</span><span class="p">.</span><span class="nx">Plan</span>
+      <span class="p">?</span> <span class="s2">`/itinerary/</span><span class="p">${</span><span class="nx">trip</span><span class="p">.</span><span class="nx">planId</span><span class="p">}</span><span class="s2">`</span>
+      <span class="p">:</span> <span class="s2">`/board/plan/</span><span class="p">${</span><span class="nx">trip</span><span class="p">.</span><span class="nx">planId</span><span class="p">}</span><span class="s2">`</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>목록 중 하나를 클릭 했을 때 내려받은 모드에 따라 다른 곳으로 이동한다.</p>
+
+<h3 id="3-게시글-작성-페이지">3. 게시글 작성 페이지</h3>
+
+<p>게시글은 만들었던 일정을 기반으로 작성하기 때문에 선택 페이지에서 여행을 선택할 때 해당 <code class="language-plaintext highlighter-rouge">planId</code>를 파라미터로 가진 주소로 이동하게 만든 후, 작성 페이지에서 <code class="language-plaintext highlighter-rouge">useParams</code>를 이용하여 해당 여행 일정을 불러와서 페이지를 구성했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useParams</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">planId</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useParams</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>이런 식으로 파라미터를 가져오는 것이 가능하다.</p>
+
+<p>작성 페이지에서 가장 힘들었던 부분은 장소별 메모를 api 형식에 맞춰서 만드는 부분이었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">placeDesc</span><span class="dl">"</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">placeId</span><span class="dl">"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">desc</span><span class="dl">"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">placeId</span><span class="dl">"</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">desc</span><span class="dl">"</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>객체 안에 키 값이 문자열이고, 값에 <code class="language-plaintext highlighter-rouge">index</code>를 넣어야 했는데, 지금까지는 <code class="language-plaintext highlighter-rouge">{index : "내용"}</code>과 같이 해당 <code class="language-plaintext highlighter-rouge">index</code>를 키로, 내용을 값으로 넣는 식으로만 만들었어서 생소했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">placeNotes</span><span class="p">,</span> <span class="nx">setPlaceNotes</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+
+ <span class="k">return</span> <span class="p">(</span>
+  <span class="p">...</span>
+    <span class="o">&lt;</span><span class="nx">textarea</span>
+      <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
+      <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="nx">place</span><span class="p">.</span><span class="nx">placeId</span><span class="p">}</span>
+      <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">handleChangeNote</span><span class="p">(</span><span class="nx">e</span><span class="p">)}</span>
+     <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">...</span>
+ <span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">body</code>에 넣을 배열을 상태로 만들고, 노트를 입력하는 <code class="language-plaintext highlighter-rouge">textarea</code>의 값이 변경되면 <code class="language-plaintext highlighter-rouge">handleChangeNote</code> 함수가 실행된다. <code class="language-plaintext highlighter-rouge">name</code>으로 장소의 id를 넣어두었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//장소별 note 변경</span>
+<span class="kd">const</span> <span class="nx">handleChangeNote</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">findIndex</span> <span class="o">=</span> <span class="nx">placeNotes</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">comment</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">comment</span><span class="p">.</span><span class="nx">placeId</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+  <span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">findIndex</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setPlaceNotes</span><span class="p">([</span>
+      <span class="p">...</span><span class="nx">placeNotes</span><span class="p">,</span>
+      <span class="p">{</span> <span class="na">placeId</span><span class="p">:</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">),</span> <span class="na">description</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">},</span>
+    <span class="p">]);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">changeNotes</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">placeNotes</span><span class="p">];</span>
+    <span class="nx">changeNotes</span><span class="p">[</span><span class="nx">findIndex</span><span class="p">].</span><span class="nx">description</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="nx">setPlaceNotes</span><span class="p">(</span><span class="nx">changeNotes</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/main%20project/2-user-page/" class="pagination--pager" title="[Main Project] 03. user page 구성
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/2-user-page/" rel="permalink">[Main Project] 03. user page 구성
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">user page
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/1-main-page/" rel="permalink">[Main Project] 02. main page 구성
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">main page
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/calendar-library/" rel="permalink">[Main Project] 01. react-date-range 사용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">달력 라이브러리
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/font/" rel="permalink">[Github Blog] Github 블로그 폰트 변경하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
