@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-04T09:14:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-06T10:01:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
 <p>같은 url로 로그인 전과 로그인 후의 메인 페이지를 다르게 나타내는 방법을 사용했다. <br />
 프로젝트에서 리액트를 사용했기 때문에 <code class="language-plaintext highlighter-rouge">react-router-dom</code>을 사용해서 라우팅 작업을 해주었다.</p>
@@ -313,7 +313,7 @@
 <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
 </span></code></pre></div></div>
 
-<p>모달상태를 내려받아 <code class="language-plaintext highlighter-rouge">modal</code>이 <code class="language-plaintext highlighter-rouge">true</code>일 때만 열린다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[user page]]></summary></entry><entry><title type="html">[Main Project] 04. 게시글 작성, 수정 페이지</title><link href="http://localhost:4000/main%20project/3-board/" rel="alternate" type="text/html" title="[Main Project] 04. 게시글 작성, 수정 페이지" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/3-board</id><content type="html" xml:base="http://localhost:4000/main%20project/3-board/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+<p>모달상태를 내려받아 <code class="language-plaintext highlighter-rouge">modal</code>이 <code class="language-plaintext highlighter-rouge">true</code>일 때만 열린다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[user page]]></summary></entry><entry><title type="html">[Main Project] 04. 게시글 작성, 수정 페이지</title><link href="http://localhost:4000/main%20project/3-board/" rel="alternate" type="text/html" title="[Main Project] 04. 게시글 작성, 수정 페이지" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/3-board</id><content type="html" xml:base="http://localhost:4000/main%20project/3-board/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
 <p>프로젝트의 게시글은 만들었던 <u>일정을 바탕으로 메모와 감상을 추가</u>하는 형식으로 이루어져 있다. 따라서 게시글을 작성할 때에는 먼저 <mark style="background-color: #ffdce0">어떤 일정을 게시글로 만들 것인지 선택하는 페이지</mark>가 필요했다. 또한 작성된 게시글도 렌더링하여 이미 작성된 게시글을 수정하는 기능도 이 페이지에 넣었다.</p>
 
@@ -340,7 +340,7 @@
   <span class="p">...</span>
 </code></pre></div></div>
 
-<h3 id="2-여행게시글-선택-페이지">2. 여행/게시글 선택 페이지</h3>
+<h2 id="2-여행게시글-선택-페이지">2. 여행/게시글 선택 페이지</h2>
 
 <p>여행, 게시글을 선택하기 위해 앞서 <code class="language-plaintext highlighter-rouge">main</code> 페이지와 <code class="language-plaintext highlighter-rouge">user</code> 페이지에서 이용했던 작성한 여행, 게시글 컴포넌트를 재사용했다.</p>
 
@@ -354,7 +354,7 @@
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>이렇게 유틸 파일로 만들면 모드에 어떤 종류가 있는지 알기 쉽다!</p>
+<p>이렇게 유틸 파일로 만들면 모드에 어떤 종류가 있는지 알기 쉽다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//WriteBoard.js</span>
 <span class="o">&lt;</span><span class="nx">MyTrips</span> <span class="nx">mode</span><span class="o">=</span><span class="dl">"</span><span class="s2">write</span><span class="dl">"</span> <span class="o">/&gt;</span>
@@ -398,7 +398,7 @@
 
 <p>목록 중 하나를 클릭 했을 때 내려받은 모드에 따라 다른 곳으로 이동한다.</p>
 
-<h3 id="3-게시글-작성-페이지">3. 게시글 작성 페이지</h3>
+<h2 id="3-게시글-작성-페이지">3. 게시글 작성 페이지</h2>
 
 <p>게시글은 만들었던 일정을 기반으로 작성하기 때문에 선택 페이지에서 여행을 선택할 때 해당 <code class="language-plaintext highlighter-rouge">planId</code>를 파라미터로 가진 주소로 이동하게 만든 후, 작성 페이지에서 <code class="language-plaintext highlighter-rouge">useParams</code>를 이용하여 해당 여행 일정을 불러와서 페이지를 구성했다.</p>
 
@@ -409,7 +409,7 @@
 
 <p>이런 식으로 파라미터를 가져오는 것이 가능하다.</p>
 
-<p>작성 페이지에서 가장 힘들었던 부분은 장소별 메모를 api 형식에 맞춰서 만드는 부분이었다.</p>
+<p>작성 페이지에서 어려웠던 부분은 장소별 메모를 api 형식에 맞춰서 만드는 부분이었다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
     <span class="dl">"</span><span class="s2">placeDesc</span><span class="dl">"</span> <span class="p">:</span> <span class="p">[</span>
@@ -459,6 +459,62 @@
     <span class="nx">setPlaceNotes</span><span class="p">(</span><span class="nx">changeNotes</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">findIndex</code>라는 변수를 선언해서 placeNotes에 메모를 작성한 장소의 id와 동일한 <code class="language-plaintext highlighter-rouge">placeId</code>를 가진 인덱스가 있는지 판별한다.</p>
+
+<p>만약 없다면 -1이 나올 것이고, 그 경우에는 새로운 객체를 추가해서 장소의 id가 <code class="language-plaintext highlighter-rouge">placeId</code>, 설명이 <code class="language-plaintext highlighter-rouge">description</code>라는 키의 값으로 들어간다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setPlaceNotes</span><span class="p">([</span>
+  <span class="p">...</span><span class="nx">placeNotes</span><span class="p">,</span>
+  <span class="p">{</span> <span class="na">placeId</span><span class="p">:</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">),</span> <span class="na">description</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">},</span>
+<span class="p">]);</span>
+</code></pre></div></div>
+
+<p>반면 동일한 id가 있다면 배열을 통째로 복사해서 복사한 배열에서 해당 인덱스의 description의 값만 바꾼다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">changeNotes</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">placeNotes</span><span class="p">];</span>
+<span class="nx">changeNotes</span><span class="p">[</span><span class="nx">findIndex</span><span class="p">].</span><span class="nx">description</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="nx">setPlaceNotes</span><span class="p">(</span><span class="nx">changeNotes</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="4-게시글-수정-페이지">4. 게시글 수정 페이지</h2>
+
+<p>수정 페이지는 작성 페이지와 거의 동일한 구조를 가지고 있다.
+원래 작성했던 내용을 불러와서 띄워줘야 하는 부분만 달랐는데, 데이터 구조가 복잡한 만큼 map을 써서 초기값을 설정하다보니 코드가 지저분해졌다는 생각이 든다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">days</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">day</span> <span class="o">=&gt;</span>
+          <span class="nx">day</span><span class="p">.</span><span class="nx">placeDetails</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">place</span> <span class="o">=&gt;</span>
+            <span class="nx">setPlaceNotes</span><span class="p">([</span>
+              <span class="p">...</span><span class="nx">placeNotes</span><span class="p">,</span>
+              <span class="p">{</span>
+                <span class="na">placeId</span><span class="p">:</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">place</span><span class="p">.</span><span class="nx">placeId</span><span class="p">),</span>
+                <span class="na">description</span><span class="p">:</span> <span class="nx">place</span><span class="p">.</span><span class="nx">description</span><span class="p">,</span>
+              <span class="p">},</span>
+            <span class="p">]),</span>
+          <span class="p">),</span>
+</code></pre></div></div>
+
+<p>수정 페이지에서는 게시글 삭제도 가능하다. 삭제 후에는 다시 계획할 수 있는 페이지로 이동하도록 만들었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleDeleteLog</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="dl">"</span><span class="s2">게시글을 삭제하시겠습니까?</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nx">axios</span><span class="p">({</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">DELETE</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">url</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REACT_APP_API_URL</span><span class="p">}</span><span class="s2">/board/</span><span class="p">${</span><span class="nx">boardId</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+      <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">Authorization</span><span class="p">:</span> <span class="nx">token</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">navigate</span><span class="p">(</span><span class="s2">`/board/plan`</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>삭제나 회원 탈퇴 같은 중요한 선택의 경우 확인 과정을 통해 실수를 방지할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="dl">"</span><span class="s2">확인 문구</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">yes를</span> <span class="nx">선택할</span> <span class="nx">경우</span><span class="p">(</span><span class="nx">true인</span> <span class="nx">경우</span><span class="p">)</span> <span class="nx">실행할</span> <span class="nx">코드</span>
+  <span class="p">}</span>
 </code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[board]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 폰트 변경하기</title><link href="http://localhost:4000/blog/font/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 폰트 변경하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/font</id><content type="html" xml:base="http://localhost:4000/blog/font/"><![CDATA[<h3 id="font-선택하기">font 선택하기</h3>
 
 <hr />
