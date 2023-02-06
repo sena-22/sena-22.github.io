@@ -38,12 +38,12 @@ var store = [{
         "title": "[Main Project] 06. Day.js 적용",
         "excerpt":"프로젝트를 처음 시작할 때 moment를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 Day.js가 용량이 적고 moment와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다. 1. 설치 npm i dayjs 2. 사용 사용법은 moment와 거의 비슷하다. dayjs 공식문서 import dayjs from...","categories": ["main project"],
         "tags": ["project","codestates","dayjs","react","moment"],
-        "url": "/main%20project/dayjs/",
+        "url": "/main%20project/1-dayjs/",
         "teaser": null
       },{
         "title": "[Main Project] 05. Error Log",
         "excerpt":"프로젝트 진행 중 발생한 에러와 실제 웹사이트를 사용하며 불편함을 느꼈던 부분들을 정리해보았다. 1. 게시글 생성 페이지 에러 🤔 특정 장소 선택 시 게시글 생성이 되지 않는 문제 구글 api에서 장소 정보를 불러올 때 rating 부분이 존재하지 않을 경우 null 값으로 들어와서 발생하는 에러로 확인되어 백엔드 쪽에서 초기값을 0.0으로 설정 후...","categories": ["main project"],
         "tags": ["project","codestates","error","react"],
-        "url": "/main%20project/error-log/",
+        "url": "/main%20project/2-error-log/",
         "teaser": null
       }]
