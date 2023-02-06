@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-06T20:07:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 07. Cookies</title><link href="http://localhost:4000/main%20project/3-cookies/" rel="alternate" type="text/html" title="[Main Project] 07. Cookies" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/3-cookies</id><content type="html" xml:base="http://localhost:4000/main%20project/3-cookies/"><![CDATA[<p>메인 프로젝트에서는 <code class="language-plaintext highlighter-rouge">token</code>, <code class="language-plaintext highlighter-rouge">memberId</code> 등의 정보를 저장하기 위해 <code class="language-plaintext highlighter-rouge">react-cookie</code>라는 라이브러리를 사용하기로 했다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-06T20:12:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 07. Cookies</title><link href="http://localhost:4000/main%20project/3-cookies/" rel="alternate" type="text/html" title="[Main Project] 07. Cookies" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/3-cookies</id><content type="html" xml:base="http://localhost:4000/main%20project/3-cookies/"><![CDATA[<p>메인 프로젝트에서는 <code class="language-plaintext highlighter-rouge">token</code>, <code class="language-plaintext highlighter-rouge">memberId</code> 등의 정보를 저장하기 위해 <code class="language-plaintext highlighter-rouge">react-cookie</code>라는 라이브러리를 사용하기로 했다.</p>
 
 <h3 id="1-설치">1. 설치</h3>
 
@@ -54,7 +54,59 @@
 
 <span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">memberId</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="cookie" /><category term="react" /><summary type="html"><![CDATA[react-cookie]]></summary></entry><entry><title type="html">[Main Project] 05. Error Log</title><link href="http://localhost:4000/main%20project/1-error-log/" rel="alternate" type="text/html" title="[Main Project] 05. Error Log" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-error-log</id><content type="html" xml:base="http://localhost:4000/main%20project/1-error-log/"><![CDATA[<p>프로젝트 진행 중 발생한 에러와 실제 웹사이트를 사용하며 불편함을 느꼈던 부분들을 정리해보았다.</p>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="cookie" /><category term="react" /><summary type="html"><![CDATA[react-cookie]]></summary></entry><entry><title type="html">1 Time Complexity</title><link href="http://localhost:4000/1-time-complexity/" rel="alternate" type="text/html" title="1 Time Complexity" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/1-time-complexity</id><content type="html" xml:base="http://localhost:4000/1-time-complexity/"><![CDATA[]]></content><author><name>Reyna</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[Github Blog] 라벨 변경</title><link href="http://localhost:4000/blog/label/" rel="alternate" type="text/html" title="[Github Blog] 라벨 변경" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/blog/label</id><content type="html" xml:base="http://localhost:4000/blog/label/"><![CDATA[<p>블로그의 날짜가 모두 Updated로 나와서 수정했다.</p>
+
+<p><img width="366" alt="스크린샷 2023-02-06 오후 6 26 05" src="https://user-images.githubusercontent.com/110877564/216954807-409da92a-0856-4413-a615-fde1d2fde846.png" /></p>
+
+<p>처음에는 레이아웃 문제인가 싶어서 __layouts 폴더의 <code class="language-plaintext highlighter-rouge">single.html</code> 파일을 살펴봤다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;strong&gt;</span>
+  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> Date:<span class="nt">&lt;/strong</span>
+<span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">site.data.ui-text[site.locale].date_label</code>에서 설정한 대로 나오는 것 같아서 __data 폴더의 <code class="language-plaintext highlighter-rouge">ui-text.yml</code> 파일을 봤더니 “Update: “ 로 되어 있었다. “Date: “ 로 수정했더니 잘 적용되었다.</p>
+
+<p><img width="366" alt="스크린샷 2023-02-06 오후 8 02 50" src="https://user-images.githubusercontent.com/110877564/216955628-a33bf344-a812-4c38-8a16-cdad63dbe821.png" /></p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="label" /><summary type="html"><![CDATA[라벨 변경하기]]></summary></entry><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/2-dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/2-dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
+
+<h3 id="1-설치">1. 설치</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">dayjs</span>
+</code></pre></div></div>
+
+<h3 id="2-사용">2. 사용</h3>
+
+<p>사용법은 moment와 거의 비슷하다.</p>
+
+<p class="notice--primary"><a href="https://day.js.org/docs/en/parse/string-format">dayjs 공식문서</a></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//한국어 설정</span>
+
+<span class="kd">const</span> <span class="nx">formatDate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">YYYY-MM-DD</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="3-유틸-파일로-만들기">3. 유틸 파일로 만들기</h3>
+
+<p>moment를 필요한 컴포넌트에서 각각 사용했더니 dayjs로 변환할 때 일일이 고치느라 시간이 오래 걸렸다. 그래서 유틸파일로 만들어 꺼내쓸 수 있도록 유틸파일로 바꾸었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">dayUtil.js</code> 파일을 만들어 포맷을 저장해둔다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//dayUtil.js</span>
+
+<span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">formatTomorrow</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">).</span><span class="nx">toDate</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>다음과 같이 사용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calendar.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">formatTomorrow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/dayUtil</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="dayjs" /><category term="react" /><category term="moment" /><summary type="html"><![CDATA[dayjs]]></summary></entry><entry><title type="html">[Main Project] 05. Error Log</title><link href="http://localhost:4000/main%20project/1-error-log/" rel="alternate" type="text/html" title="[Main Project] 05. Error Log" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-error-log</id><content type="html" xml:base="http://localhost:4000/main%20project/1-error-log/"><![CDATA[<p>프로젝트 진행 중 발생한 에러와 실제 웹사이트를 사용하며 불편함을 느꼈던 부분들을 정리해보았다.</p>
 
 <h3 id="1-게시글-생성-페이지-에러">1. 게시글 생성 페이지 에러</h3>
 
@@ -162,59 +214,7 @@
 <span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
 </span></code></pre></div></div>
 
-<p>현재 모드의 상태와 버튼의 모드가 일치할 경우 <code class="language-plaintext highlighter-rouge">mode--selected</code>라는 <code class="language-plaintext highlighter-rouge">className</code>을 추가해서 css를 변경했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="error" /><category term="react" /><summary type="html"><![CDATA[프로젝트 진행 중 발생한 에러들]]></summary></entry><entry><title type="html">[Github Blog] 라벨 변경</title><link href="http://localhost:4000/blog/label/" rel="alternate" type="text/html" title="[Github Blog] 라벨 변경" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/blog/label</id><content type="html" xml:base="http://localhost:4000/blog/label/"><![CDATA[<p>블로그의 날짜가 모두 Updated로 나와서 수정했다.</p>
-
-<p><img width="366" alt="스크린샷 2023-02-06 오후 6 26 05" src="https://user-images.githubusercontent.com/110877564/216954807-409da92a-0856-4413-a615-fde1d2fde846.png" /></p>
-
-<p>처음에는 레이아웃 문제인가 싶어서 __layouts 폴더의 <code class="language-plaintext highlighter-rouge">single.html</code> 파일을 살펴봤다.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;strong&gt;</span>
-  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> Date:<span class="nt">&lt;/strong</span>
-<span class="nt">&gt;</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">site.data.ui-text[site.locale].date_label</code>에서 설정한 대로 나오는 것 같아서 __data 폴더의 <code class="language-plaintext highlighter-rouge">ui-text.yml</code> 파일을 봤더니 “Update: “ 로 되어 있었다. “Date: “ 로 수정했더니 잘 적용되었다.</p>
-
-<p><img width="366" alt="스크린샷 2023-02-06 오후 8 02 50" src="https://user-images.githubusercontent.com/110877564/216955628-a33bf344-a812-4c38-8a16-cdad63dbe821.png" /></p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="label" /><summary type="html"><![CDATA[라벨 변경하기]]></summary></entry><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/2-dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/2-dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
-
-<h3 id="1-설치">1. 설치</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">dayjs</span>
-</code></pre></div></div>
-
-<h3 id="2-사용">2. 사용</h3>
-
-<p>사용법은 moment와 거의 비슷하다.</p>
-
-<p class="notice--primary"><a href="https://day.js.org/docs/en/parse/string-format">dayjs 공식문서</a></p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//한국어 설정</span>
-
-<span class="kd">const</span> <span class="nx">formatDate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">YYYY-MM-DD</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h3 id="3-유틸-파일로-만들기">3. 유틸 파일로 만들기</h3>
-
-<p>moment를 필요한 컴포넌트에서 각각 사용했더니 dayjs로 변환할 때 일일이 고치느라 시간이 오래 걸렸다. 그래서 유틸파일로 만들어 꺼내쓸 수 있도록 유틸파일로 바꾸었다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">dayUtil.js</code> 파일을 만들어 포맷을 저장해둔다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//dayUtil.js</span>
-
-<span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">formatTomorrow</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">).</span><span class="nx">toDate</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>다음과 같이 사용하면 된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calendar.js</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">formatTomorrow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/dayUtil</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="dayjs" /><category term="react" /><category term="moment" /><summary type="html"><![CDATA[dayjs]]></summary></entry><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+<p>현재 모드의 상태와 버튼의 모드가 일치할 경우 <code class="language-plaintext highlighter-rouge">mode--selected</code>라는 <code class="language-plaintext highlighter-rouge">className</code>을 추가해서 css를 변경했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="error" /><category term="react" /><summary type="html"><![CDATA[프로젝트 진행 중 발생한 에러들]]></summary></entry><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
 <p>같은 url로 로그인 전과 로그인 후의 메인 페이지를 다르게 나타내는 방법을 사용했다. <br />
 프로젝트에서 리액트를 사용했기 때문에 <code class="language-plaintext highlighter-rouge">react-router-dom</code>을 사용해서 라우팅 작업을 해주었다.</p>
@@ -401,7 +401,135 @@
 
 <h2 id="3-main-page">3. Main Page</h2>
 
-<p>위에서 만든 <code class="language-plaintext highlighter-rouge">Home</code> 페이지의 일정 선택 기능과 로그인 사용자가 작성한 여행, 게시글, 전체 게시판에서 5개의 글을 볼 수 있는 페이지. 5개의 글은 기본적으로 최신순으로 5개를 렌더링하며, 좋아요 순, 조회수 순으로도 변경이 가능하다. 여행, 게시글, 게시판은 모두 각각 별개의 컴포넌트로 만들어 <code class="language-plaintext highlighter-rouge">Main</code> 페이지에서는 불러오기만 했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[main page]]></summary></entry><entry><title type="html">[Main Project] 04. 게시글 작성, 수정 페이지</title><link href="http://localhost:4000/main%20project/3-board/" rel="alternate" type="text/html" title="[Main Project] 04. 게시글 작성, 수정 페이지" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/3-board</id><content type="html" xml:base="http://localhost:4000/main%20project/3-board/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+<p>위에서 만든 <code class="language-plaintext highlighter-rouge">Home</code> 페이지의 일정 선택 기능과 로그인 사용자가 작성한 여행, 게시글, 전체 게시판에서 5개의 글을 볼 수 있는 페이지. 5개의 글은 기본적으로 최신순으로 5개를 렌더링하며, 좋아요 순, 조회수 순으로도 변경이 가능하다. 여행, 게시글, 게시판은 모두 각각 별개의 컴포넌트로 만들어 <code class="language-plaintext highlighter-rouge">Main</code> 페이지에서는 불러오기만 했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[main page]]></summary></entry><entry><title type="html">[Main Project] 03. user page 구성</title><link href="http://localhost:4000/main%20project/2-user-page/" rel="alternate" type="text/html" title="[Main Project] 03. user page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-user-page</id><content type="html" xml:base="http://localhost:4000/main%20project/2-user-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+
+<p>유저 프로필 페이지와 프로필 수정 페이지로 나누었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">memberId</code>를 파라미터로 넣어 유저를 식별할 수 있도록 만들었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//app.js</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">Routes</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="nx">UserProfile</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Pages/UserProfile</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">UserProfileEdit</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Pages/UserProfileEdit</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">...</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Routes</span><span class="o">&gt;</span>
+       <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/user/:memberId</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">UserProfile</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/user/:memberId/edit</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">UserProfileEdit</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>       <span class="p">...</span>
+      <span class="o">&lt;</span><span class="sr">/Routes</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-유저-프로필-페이지">2. 유저 프로필 페이지</h2>
+
+<p>유저의 기본적인 프로필 조회, 작성한 여행과 게시글을 볼 수 있는 페이지. 여행과 게시글은 <code class="language-plaintext highlighter-rouge">main</code> 페이지와 마찬가지로 컴포넌트를 재사용했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//UserProfile.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useNavigate</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">navigate</span> <span class="o">=</span> <span class="nx">useNavigate</span><span class="p">();</span>
+
+<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">navigate</span><span class="p">(</span><span class="s2">`/user/</span><span class="p">${</span><span class="nx">memberId</span><span class="p">}</span><span class="s2">/edit`</span><span class="p">)}</span><span class="o">&gt;</span>
+  <span class="nx">Edit</span> <span class="nx">profile</span>
+<span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
+</span></code></pre></div></div>
+
+<p>페이지 이동은 <code class="language-plaintext highlighter-rouge">useNavigate</code>를 사용했다.</p>
+
+<h2 id="3-유저-프로필-수정-페이지">3. 유저 프로필 수정 페이지</h2>
+
+<h3 id="이미지-이름-비밀번호-수정">이미지, 이름, 비밀번호 수정</h3>
+
+<p>수정 페이지에서는 유저 프로필 이미지와 이름 수정, 비밀번호 변경, 회원 탈퇴가 가능하다. 각 기능은 탭으로 구분하고, 탈퇴의 경우 모달 창을 띄우는 방식으로 구현했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//UserProfileEdit.js</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">currentTab</span><span class="p">,</span> <span class="nx">clickTab</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">menuArr</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">General</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">content</span><span class="p">:</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">General</span>
+          <span class="nx">handleChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span>
+          <span class="nx">handleSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}</span>
+          <span class="nx">nameRef</span><span class="o">=</span><span class="p">{</span><span class="nx">nameRef</span><span class="p">}</span>
+        <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="p">),</span>
+    <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Password</span><span class="dl">'</span><span class="p">,</span> <span class="na">content</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Password</span> <span class="o">/&gt;</span> <span class="p">},</span>
+  <span class="p">];</span>
+
+    <span class="kd">const</span> <span class="nx">selectMenuHandler</span> <span class="o">=</span> <span class="nx">index</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">clickTab</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="p">...</span>
+
+  <span class="k">return</span><span class="p">(</span>
+    <span class="p">...</span>
+        <span class="p">{</span><span class="nx">menuArr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span> <span class="c1">//sidebar list</span>
+          <span class="o">&lt;</span><span class="nx">li</span>
+            <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">el</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+            <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span> <span class="o">===</span> <span class="nx">currentTab</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">submenu focused</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">submenu</span><span class="dl">'</span><span class="p">}</span>
+            <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+              <span class="nx">selectMenuHandler</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span>
+            <span class="p">}}</span>
+          <span class="o">&gt;</span>
+            <span class="p">{</span><span class="nx">el</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+          <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>        <span class="p">))}</span>
+    <span class="p">...</span>
+       <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">main__content</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">menuArr</span><span class="p">[</span><span class="nx">currentTab</span><span class="p">].</span><span class="nx">content</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+</code></pre></div></div>
+
+<p>왼쪽 사이드바에 목록이 있고, 선택한 목록의 <code class="language-plaintext highlighter-rouge">index</code>를 <code class="language-plaintext highlighter-rouge">currentTab</code>에 저장하여 선택된 탭의 <code class="language-plaintext highlighter-rouge">content</code>가 우측에 나타난다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//UserProfileEdit.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">DeleteAccount</span><span class="p">,</span> <span class="nx">General</span><span class="p">,</span> <span class="nx">Password</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Components/user/Tab</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">content</code>는 <code class="language-plaintext highlighter-rouge">Tab</code> 컴포넌트로 따로 만들어서 불러왔다.</p>
+
+<h3 id="회원-탈퇴">회원 탈퇴</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//UserProfileEdit.js</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">modal</span><span class="p">,</span> <span class="nx">setModal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+ <span class="p">...</span>
+  <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setModal</span><span class="p">(</span><span class="kc">true</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Delete</span> <span class="nx">account</span><span class="o">&lt;</span><span class="sr">/li&gt; /</span><span class="o">/</span><span class="nx">sidebar</span> <span class="nx">list</span>
+
+  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">DeleteAccount</span> <span class="nx">modal</span><span class="o">=</span><span class="p">{</span><span class="nx">modal</span><span class="p">}</span> <span class="nx">setModal</span><span class="o">=</span><span class="p">{</span><span class="nx">setModal</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>모달 상태를 <code class="language-plaintext highlighter-rouge">UserProfileEdit.js</code>에서 관리한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//users.Tab.js, DeleteAccount</span>
+<span class="o">&lt;&gt;</span>
+  <span class="p">{</span><span class="nx">modal</span> <span class="p">?</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Modal</span>
+      <span class="nx">setModal</span><span class="o">=</span><span class="p">{</span><span class="nx">setModal</span><span class="p">}</span>
+      <span class="nx">buttonName</span><span class="o">=</span><span class="dl">"</span><span class="s2">Delete account</span><span class="dl">"</span>
+      <span class="nx">handleClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleDeleteAccount</span><span class="p">}</span>
+    <span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span> <span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>모달상태를 내려받아 <code class="language-plaintext highlighter-rouge">modal</code>이 <code class="language-plaintext highlighter-rouge">true</code>일 때만 열린다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[user page]]></summary></entry><entry><title type="html">[Main Project] 04. 게시글 작성, 수정 페이지</title><link href="http://localhost:4000/main%20project/3-board/" rel="alternate" type="text/html" title="[Main Project] 04. 게시글 작성, 수정 페이지" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/3-board</id><content type="html" xml:base="http://localhost:4000/main%20project/3-board/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
 <p>프로젝트의 게시글은 만들었던 <u>일정을 바탕으로 메모와 감상을 추가</u>하는 형식으로 이루어져 있다. 따라서 게시글을 작성할 때에는 먼저 <mark style="background-color: #ffdce0">어떤 일정을 게시글로 만들 것인지 선택하는 페이지</mark>가 필요했다. 또한 작성된 게시글도 렌더링하여 이미 작성된 게시글을 수정하는 기능도 이 페이지에 넣었다.</p>
 
@@ -603,135 +731,7 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="dl">"</span><span class="s2">확인 문구</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
       <span class="nx">yes를</span> <span class="nx">선택할</span> <span class="nx">경우</span><span class="p">(</span><span class="nx">true인</span> <span class="nx">경우</span><span class="p">)</span> <span class="nx">실행할</span> <span class="nx">코드</span>
   <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[board]]></summary></entry><entry><title type="html">[Main Project] 03. user page 구성</title><link href="http://localhost:4000/main%20project/2-user-page/" rel="alternate" type="text/html" title="[Main Project] 03. user page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-user-page</id><content type="html" xml:base="http://localhost:4000/main%20project/2-user-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
-
-<p>유저 프로필 페이지와 프로필 수정 페이지로 나누었다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">memberId</code>를 파라미터로 넣어 유저를 식별할 수 있도록 만들었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//app.js</span>
-
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">Routes</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="k">import</span> <span class="nx">UserProfile</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Pages/UserProfile</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">UserProfileEdit</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Pages/UserProfileEdit</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="p">...</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Routes</span><span class="o">&gt;</span>
-       <span class="p">...</span>
-        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/user/:memberId</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">UserProfile</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/user/:memberId/edit</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">UserProfileEdit</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>       <span class="p">...</span>
-      <span class="o">&lt;</span><span class="sr">/Routes</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="2-유저-프로필-페이지">2. 유저 프로필 페이지</h2>
-
-<p>유저의 기본적인 프로필 조회, 작성한 여행과 게시글을 볼 수 있는 페이지. 여행과 게시글은 <code class="language-plaintext highlighter-rouge">main</code> 페이지와 마찬가지로 컴포넌트를 재사용했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//UserProfile.js</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useNavigate</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">navigate</span> <span class="o">=</span> <span class="nx">useNavigate</span><span class="p">();</span>
-
-<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">navigate</span><span class="p">(</span><span class="s2">`/user/</span><span class="p">${</span><span class="nx">memberId</span><span class="p">}</span><span class="s2">/edit`</span><span class="p">)}</span><span class="o">&gt;</span>
-  <span class="nx">Edit</span> <span class="nx">profile</span>
-<span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
-</span></code></pre></div></div>
-
-<p>페이지 이동은 <code class="language-plaintext highlighter-rouge">useNavigate</code>를 사용했다.</p>
-
-<h2 id="3-유저-프로필-수정-페이지">3. 유저 프로필 수정 페이지</h2>
-
-<h3 id="이미지-이름-비밀번호-수정">이미지, 이름, 비밀번호 수정</h3>
-
-<p>수정 페이지에서는 유저 프로필 이미지와 이름 수정, 비밀번호 변경, 회원 탈퇴가 가능하다. 각 기능은 탭으로 구분하고, 탈퇴의 경우 모달 창을 띄우는 방식으로 구현했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//UserProfileEdit.js</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">currentTab</span><span class="p">,</span> <span class="nx">clickTab</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-
-    <span class="kd">const</span> <span class="nx">menuArr</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">General</span><span class="dl">'</span><span class="p">,</span>
-      <span class="na">content</span><span class="p">:</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">General</span>
-          <span class="nx">handleChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span>
-          <span class="nx">handleSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}</span>
-          <span class="nx">nameRef</span><span class="o">=</span><span class="p">{</span><span class="nx">nameRef</span><span class="p">}</span>
-        <span class="sr">/</span><span class="err">&gt;
-</span>      <span class="p">),</span>
-    <span class="p">},</span>
-    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Password</span><span class="dl">'</span><span class="p">,</span> <span class="na">content</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Password</span> <span class="o">/&gt;</span> <span class="p">},</span>
-  <span class="p">];</span>
-
-    <span class="kd">const</span> <span class="nx">selectMenuHandler</span> <span class="o">=</span> <span class="nx">index</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">clickTab</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="p">...</span>
-
-  <span class="k">return</span><span class="p">(</span>
-    <span class="p">...</span>
-        <span class="p">{</span><span class="nx">menuArr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span> <span class="c1">//sidebar list</span>
-          <span class="o">&lt;</span><span class="nx">li</span>
-            <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">el</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
-            <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span> <span class="o">===</span> <span class="nx">currentTab</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">submenu focused</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">submenu</span><span class="dl">'</span><span class="p">}</span>
-            <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-              <span class="nx">selectMenuHandler</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span>
-            <span class="p">}}</span>
-          <span class="o">&gt;</span>
-            <span class="p">{</span><span class="nx">el</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
-          <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>        <span class="p">))}</span>
-    <span class="p">...</span>
-       <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">main__content</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">menuArr</span><span class="p">[</span><span class="nx">currentTab</span><span class="p">].</span><span class="nx">content</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-</code></pre></div></div>
-
-<p>왼쪽 사이드바에 목록이 있고, 선택한 목록의 <code class="language-plaintext highlighter-rouge">index</code>를 <code class="language-plaintext highlighter-rouge">currentTab</code>에 저장하여 선택된 탭의 <code class="language-plaintext highlighter-rouge">content</code>가 우측에 나타난다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//UserProfileEdit.js</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">DeleteAccount</span><span class="p">,</span> <span class="nx">General</span><span class="p">,</span> <span class="nx">Password</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Components/user/Tab</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">content</code>는 <code class="language-plaintext highlighter-rouge">Tab</code> 컴포넌트로 따로 만들어서 불러왔다.</p>
-
-<h3 id="회원-탈퇴">회원 탈퇴</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//UserProfileEdit.js</span>
-<span class="kd">const</span> <span class="p">[</span><span class="nx">modal</span><span class="p">,</span> <span class="nx">setModal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
- <span class="p">...</span>
-  <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setModal</span><span class="p">(</span><span class="kc">true</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Delete</span> <span class="nx">account</span><span class="o">&lt;</span><span class="sr">/li&gt; /</span><span class="o">/</span><span class="nx">sidebar</span> <span class="nx">list</span>
-
-  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">DeleteAccount</span> <span class="nx">modal</span><span class="o">=</span><span class="p">{</span><span class="nx">modal</span><span class="p">}</span> <span class="nx">setModal</span><span class="o">=</span><span class="p">{</span><span class="nx">setModal</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<p>모달 상태를 <code class="language-plaintext highlighter-rouge">UserProfileEdit.js</code>에서 관리한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//users.Tab.js, DeleteAccount</span>
-<span class="o">&lt;&gt;</span>
-  <span class="p">{</span><span class="nx">modal</span> <span class="p">?</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">Modal</span>
-      <span class="nx">setModal</span><span class="o">=</span><span class="p">{</span><span class="nx">setModal</span><span class="p">}</span>
-      <span class="nx">buttonName</span><span class="o">=</span><span class="dl">"</span><span class="s2">Delete account</span><span class="dl">"</span>
-      <span class="nx">handleClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleDeleteAccount</span><span class="p">}</span>
-    <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">)</span> <span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
-<span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<p>모달상태를 내려받아 <code class="language-plaintext highlighter-rouge">modal</code>이 <code class="language-plaintext highlighter-rouge">true</code>일 때만 열린다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[user page]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 폰트 변경하기</title><link href="http://localhost:4000/blog/font/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 폰트 변경하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/font</id><content type="html" xml:base="http://localhost:4000/blog/font/"><![CDATA[<h3 id="font-선택하기">font 선택하기</h3>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[board]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 폰트 변경하기</title><link href="http://localhost:4000/blog/font/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 폰트 변경하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/font</id><content type="html" xml:base="http://localhost:4000/blog/font/"><![CDATA[<h3 id="font-선택하기">font 선택하기</h3>
 
 <hr />
 
@@ -854,28 +854,4 @@
 
 <p>위와 같이 시작 날짜, 종료 날짜를 선택하면 범위가 표시된다! (css는 좀 수정된 상태)</p>
 
-<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="calendar" /><summary type="html"><![CDATA[달력 라이브러리]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 만들기</title><link href="http://localhost:4000/blog/hello-blog/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 만들기" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/hello-blog</id><content type="html" xml:base="http://localhost:4000/blog/hello-blog/"><![CDATA[<h2 id="1-repository-생성">1. Repository 생성</h2>
-
-<p><code class="language-plaintext highlighter-rouge">깃허브 계정.github.io</code> 라는 이름으로 레포지토리를 생성해서 로컬로 클론한다.</p>
-
-<h2 id="2-ruby-jekyll-bundler-설치">2. ruby, Jekyll, Bundler 설치</h2>
-
-<p>블로그를 참고해서 지킬을 설치했다! 이 부분은 정확히 이해 하고 있지 못해서 다시 알아볼 예정이다.</p>
-
-<p class="notice--primary"><a href="https://ansohxxn.github.io/blog/i-made-my-blog/">https://ansohxxn.github.io/blog/i-made-my-blog/</a>
-<br />
-<a href="https://jojoldu.tistory.com/288">https://jojoldu.tistory.com/288</a>
-<br />
-<a href="https://codecamper.me/blog/122/">https://codecamper.me/blog/122/</a></p>
-
-<h2 id="3-지킬-테마-선택">3. 지킬 테마 선택</h2>
-
-<p><strong>minimal-mistakes</strong> 테마를 선택했다.</p>
-
-<p class="notice--primary"><a href="https://github.com/mmistakes/minimal-mistakes">https://github.com/mmistakes/minimal-mistakes</a></p>
-
-<p>선택한 테마의 <code class="language-plaintext highlighter-rouge">github repository</code> 압축 파일을 받아서 만들어둔 폴더에 붙여넣고 원격 레포지토리로 <code class="language-plaintext highlighter-rouge">push</code> 한다.</p>
-
-<p class="notice--primary"><a href="https://github.com/sharadcodes/jekyll-theme-serial-programmer">https://github.com/sharadcodes/jekyll-theme-serial-programmer</a></p>
-
-<p><code class="language-plaintext highlighter-rouge">serial-programmer</code> 테마도 고민했는데 카테고리가 없고, 라이트 모드로 사용하려면 따로 설정을 해줘야 할 것 같아 익숙해지면 바꿔보고 싶다.</p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="First Post" /><summary type="html"><![CDATA[github pages를 이용해서 블로그 만들기.]]></summary></entry></feed>
+<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="calendar" /><summary type="html"><![CDATA[달력 라이브러리]]></summary></entry></feed>
