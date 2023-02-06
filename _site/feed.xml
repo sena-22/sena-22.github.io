@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-06T13:48:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 05. Error Log</title><link href="http://localhost:4000/main%20project/error-log/" rel="alternate" type="text/html" title="[Main Project] 05. Error Log" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/error-log</id><content type="html" xml:base="http://localhost:4000/main%20project/error-log/"><![CDATA[<p>프로젝트 진행 중 발생한 에러와 실제 웹사이트를 사용하며 불편함을 느꼈던 부분들을 정리해보았다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-06T17:51:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
+
+<h3 id="1-설치">1. 설치</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">dayjs</span>
+</code></pre></div></div>
+
+<h3 id="2-사용">2. 사용</h3>
+
+<p>사용법은 moment와 거의 비슷하다.</p>
+
+<p class="notice--primary"><a href="https://day.js.org/docs/en/parse/string-format">dayjs 공식문서</a></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//한국어 설정</span>
+
+<span class="kd">const</span> <span class="nx">formatDate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">YYYY-MM-DD</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="3-유틸-파일로-만들기">3. 유틸 파일로 만들기</h3>
+
+<p>moment를 필요한 컴포넌트에서 각각 사용했더니 dayjs로 변환할 때 일일이 고치느라 시간이 오래 걸렸다. 그래서 유틸파일로 만들어 꺼내쓸 수 있도록 유틸파일로 바꾸었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">dayUtil.js</code> 파일을 만들어 포맷을 저장해둔다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//dayUtil.js</span>
+
+<span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">formatTomorrow</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">).</span><span class="nx">toDate</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>다음과 같이 사용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calendar.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">formatTomorrow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/dayUtil</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="dayjs" /><category term="react" /><category term="moment" /><summary type="html"><![CDATA[dayjs]]></summary></entry><entry><title type="html">[Main Project] 05. Error Log</title><link href="http://localhost:4000/main%20project/error-log/" rel="alternate" type="text/html" title="[Main Project] 05. Error Log" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/error-log</id><content type="html" xml:base="http://localhost:4000/main%20project/error-log/"><![CDATA[<p>프로젝트 진행 중 발생한 에러와 실제 웹사이트를 사용하며 불편함을 느꼈던 부분들을 정리해보았다.</p>
 
 <h3 id="1-게시글-생성-페이지-에러">1. 게시글 생성 페이지 에러</h3>
 
@@ -106,194 +145,7 @@
 <span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
 </span></code></pre></div></div>
 
-<p>현재 모드의 상태와 버튼의 모드가 일치할 경우 <code class="language-plaintext highlighter-rouge">mode--selected</code>라는 <code class="language-plaintext highlighter-rouge">className</code>을 추가해서 css를 변경했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="error" /><category term="react" /><summary type="html"><![CDATA[프로젝트 진행 중 발생한 에러들]]></summary></entry><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
-
-<p>같은 url로 로그인 전과 로그인 후의 메인 페이지를 다르게 나타내는 방법을 사용했다. <br />
-프로젝트에서 리액트를 사용했기 때문에 <code class="language-plaintext highlighter-rouge">react-router-dom</code>을 사용해서 라우팅 작업을 해주었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//app.js</span>
-
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">Routes</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="k">import</span> <span class="nx">Home</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Pages/Home</span><span class="dl">'</span><span class="p">;</span> <span class="c1">//만들어둔 페이지를 불러왔다</span>
-<span class="k">import</span> <span class="nx">Main</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Pages/Main</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">isLoggedIn</span><span class="p">,</span> <span class="nx">setIsLoggedIn</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-
-    <span class="p">...</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Routes</span><span class="o">&gt;</span>
-       <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="nx">isLoggedIn</span> <span class="p">?</span> <span class="o">&lt;</span><span class="nx">Main</span> <span class="o">/&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="nx">Home</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>       <span class="p">...</span>
-      <span class="o">&lt;</span><span class="sr">/Routes</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>로그인 여부를 상태로 만들어 로그인 되었을 경우에는 <code class="language-plaintext highlighter-rouge">Main</code> 페이지가, 로그인이 되지 않은 경우에는 <code class="language-plaintext highlighter-rouge">Home</code> 페이지가 나타난다. 로그인 상태는 <code class="language-plaintext highlighter-rouge">token</code>과 <code class="language-plaintext highlighter-rouge">memberId</code> 등으로 판별했다.</p>
-
-<h2 id="2-home-page">2. Home Page</h2>
-
-<h3 id="-구조">📃 구조</h3>
-
-<p><code class="language-plaintext highlighter-rouge">Home</code> 페이지와 <code class="language-plaintext highlighter-rouge">Main</code> 페이지가 동일하게 일정 추가 기능을 가지고 있기 때문에 <code class="language-plaintext highlighter-rouge">Home</code> 페이지를 컴포넌트화 시켜 <code class="language-plaintext highlighter-rouge">Main</code> 페이지에서 사용하였다.</p>
-
-<p>로그인 여부에 따라 <code class="language-plaintext highlighter-rouge">className</code>을 다르게 만들고, <mark style="background-color: #ffdce0">날짜</mark>, <mark style="background-color: #ffdce0">도시</mark>를 선택한 후 비로그인 상태에서는 로그인 화면으로, 로그인 상태에서는 바로 일정 등록 페이지로 갈 수 있도록 만들었다.</p>
-
-<h3 id="-autocomplete">📃 AutoComplete</h3>
-
-<p>도시 선택의 경우 DB에 저장된 도시 목록을 불러와 자동 완성 기능을 사용할 수 있도록 구현했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">city</span><span class="p">,</span> <span class="nx">setCity</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>도시 목록을 불러와 <code class="language-plaintext highlighter-rouge">city</code>에 담아준다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">inputValue</span> <span class="o">===</span> <span class="dl">""</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">setHasText</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-    <span class="nx">setOptions</span><span class="p">([]);</span>
-    <span class="nx">setSearch</span> <span class="o">&amp;&amp;</span> <span class="nx">setSearch</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">setOptions</span><span class="p">(</span><span class="nx">matchStock</span><span class="p">(</span><span class="nx">city</span><span class="p">,</span> <span class="nx">inputValue</span><span class="p">));</span>
-    <span class="nx">handleDestination</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">},</span> <span class="p">[</span><span class="nx">inputValue</span><span class="p">]);</span>
-</code></pre></div></div>
-
-<p>검색창에 값을 입력할 때마다 <code class="language-plaintext highlighter-rouge">options</code> 배열이 업데이트 된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">matchStock</span> <span class="o">=</span> <span class="p">(</span><span class="nx">city</span><span class="p">,</span> <span class="nx">inputValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">inputValue</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">[];</span>
-  <span class="p">}</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isNaN</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="nx">inputValue</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">[];</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">city</span>
-    <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">option</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">isInitialMatch</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">,</span> <span class="nx">option</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">option</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">option</span><span class="p">;</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">options</code>에 보여줄 값을 제어하는 부분. 도시 목록 중에서 <code class="language-plaintext highlighter-rouge">isInitialMatch</code> 함수에서 <code class="language-plaintext highlighter-rouge">true</code> 값이 나온 도시만 필터링한다. 도시 수가 많아 상위 일부분만 보여주도록 만들었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">isInitialMatch</span> <span class="o">=</span> <span class="p">(</span><span class="nx">inputValue</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">reg</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">pattern</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="dl">"</span><span class="s2">.*?</span><span class="dl">"</span><span class="p">),</span> <span class="dl">"</span><span class="s2">i</span><span class="dl">"</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">matches</span> <span class="o">=</span> <span class="nx">reg</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">matches</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>초성 검색이 일치하면 참이 나오는 함수. 로직을 잘 이해한 건 아니라 추후 포스팅할 예정이다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">&lt;</span><span class="nx">input</span>
-          <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">input--large-icon</span><span class="dl">"</span>
-          <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleInputChange</span><span class="p">}</span>
-          <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">inputValue</span><span class="p">}</span>
-          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Search Destination ex. 서울, 부산...</span><span class="dl">"</span>
-          <span class="nx">onKeyDown</span><span class="o">=</span><span class="p">{</span><span class="nx">handleKeyDown</span><span class="p">}</span> <span class="c1">//enter를 누르면 선택됨</span>
-          <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">inputRef</span><span class="p">}</span>
-        <span class="o">&gt;&lt;</span><span class="sr">/input</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">clearbtn</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClear</span><span class="p">}</span><span class="o">&gt;</span>
-          <span class="nx">Clear</span>
-        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>      <span class="p">{</span><span class="nx">hasText</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">DropDown</span>
-          <span class="nx">options</span><span class="o">=</span><span class="p">{</span><span class="nx">options</span><span class="p">}</span>
-          <span class="nx">handleDropDownClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleDropDownClick</span><span class="p">}</span>
-          <span class="nx">activeSuggestion</span><span class="o">=</span><span class="p">{</span><span class="nx">activeSuggestion</span><span class="p">}</span>
-        <span class="sr">/</span><span class="err">&gt;
-</span>      <span class="p">)}</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">input</code> 창에 텍스트가 있을 때만 DropDown 컴포넌트가 활성화된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleKeyDown</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">//enter 키를 누르면 input 값이 활성화된 옵션으로 변경</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">13</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">inputValue</span> <span class="o">===</span> <span class="dl">""</span><span class="p">)</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
-    <span class="nx">setInputValue</span><span class="p">(</span><span class="nx">options</span><span class="p">[</span><span class="nx">activeSuggestion</span><span class="p">]);</span>
-    <span class="nx">setActiveSuggestion</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-    <span class="nx">setHasText</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-    <span class="nx">handleSearch</span> <span class="o">&amp;&amp;</span> <span class="nx">handleSearch</span><span class="p">();</span>
-  <span class="p">}</span>
-
-  <span class="c1">// arrow 키를 누르면 활성화된 옵션 -1</span>
-  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">38</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">activeSuggestion</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">setActiveSuggestion</span><span class="p">(</span><span class="nx">activeSuggestion</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="c1">// arrow 키를 누르면 활성화된 옵션 +1</span>
-  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">40</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">activeSuggestion</span> <span class="o">===</span> <span class="nx">options</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">setActiveSuggestion</span><span class="p">(</span><span class="nx">activeSuggestion</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>드롭다운에서 키보드로 선택 값을 변경할 수 있는 함수.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 자동완성 배열(options)에 들어간 값들이 드롭다운으로 보여지는 부분 */</span>
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">DropDown</span> <span class="o">=</span> <span class="p">({</span>
-  <span class="nx">options</span><span class="p">,</span>
-  <span class="nx">handleDropDownClick</span><span class="p">,</span>
-  <span class="nx">activeSuggestion</span><span class="p">,</span>
-<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">DropDownContainer</span><span class="o">&gt;</span>
-      <span class="p">{</span><span class="nx">options</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">option</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">className</span><span class="p">;</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="nx">activeSuggestion</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">className</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">active</span><span class="dl">"</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="p">(</span>
-          <span class="o">&lt;</span><span class="nx">li</span>
-            <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">option</span><span class="p">}</span>
-            <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleDropDownClick</span><span class="p">(</span><span class="nx">option</span><span class="p">)}</span> <span class="c1">//클릭한 값이 inputValue에 들어감</span>
-            <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">className</span><span class="p">}</span>
-          <span class="o">&gt;</span>
-            <span class="p">{</span><span class="nx">option</span><span class="p">}</span>
-          <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>        <span class="p">);</span>
-      <span class="p">})}</span>
-    <span class="o">&lt;</span><span class="sr">/DropDownContainer</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>초성 단위로 검색 결과가 드롭다운으로 보이고, 현재 활성화된 값의 인덱스가 <code class="language-plaintext highlighter-rouge">activeSuggestion</code>이 된다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">inputValue</code>에 <code class="language-plaintext highlighter-rouge">options[activeSuggestion]</code>의 값이 담기고, 결과적으로 <code class="language-plaintext highlighter-rouge">Home</code> 페이지에서 선언된 <code class="language-plaintext highlighter-rouge">destination</code>에 <code class="language-plaintext highlighter-rouge">inputValue</code> 값이 들어가게 된다.</p>
-
-<p class="notice--primary">🤔 경주를 검색할 경우 정확한 지역검색이 되지 않는데 아직 해결방법을 찾지 못했다.</p>
-
-<p><img width="362" alt="스크린샷 2023-02-03 오전 10 20 33" src="https://user-images.githubusercontent.com/110877564/216488478-5a70a53d-ab70-4217-9ae8-5d160f00d59c.png" /></p>
-
-<p><br /></p>
-
-<h2 id="3-main-page">3. Main Page</h2>
-
-<p>위에서 만든 <code class="language-plaintext highlighter-rouge">Home</code> 페이지의 일정 선택 기능과 로그인 사용자가 작성한 여행, 게시글, 전체 게시판에서 5개의 글을 볼 수 있는 페이지. 5개의 글은 기본적으로 최신순으로 5개를 렌더링하며, 좋아요 순, 조회수 순으로도 변경이 가능하다. 여행, 게시글, 게시판은 모두 각각 별개의 컴포넌트로 만들어 <code class="language-plaintext highlighter-rouge">Main</code> 페이지에서는 불러오기만 했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[main page]]></summary></entry><entry><title type="html">[Main Project] 03. user page 구성</title><link href="http://localhost:4000/main%20project/2-user-page/" rel="alternate" type="text/html" title="[Main Project] 03. user page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-user-page</id><content type="html" xml:base="http://localhost:4000/main%20project/2-user-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+<p>현재 모드의 상태와 버튼의 모드가 일치할 경우 <code class="language-plaintext highlighter-rouge">mode--selected</code>라는 <code class="language-plaintext highlighter-rouge">className</code>을 추가해서 css를 변경했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="error" /><category term="react" /><summary type="html"><![CDATA[프로젝트 진행 중 발생한 에러들]]></summary></entry><entry><title type="html">[Main Project] 03. user page 구성</title><link href="http://localhost:4000/main%20project/2-user-page/" rel="alternate" type="text/html" title="[Main Project] 03. user page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-user-page</id><content type="html" xml:base="http://localhost:4000/main%20project/2-user-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
 <p>유저 프로필 페이지와 프로필 수정 페이지로 나누었다.</p>
 
@@ -623,22 +475,194 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="dl">"</span><span class="s2">확인 문구</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
       <span class="nx">yes를</span> <span class="nx">선택할</span> <span class="nx">경우</span><span class="p">(</span><span class="nx">true인</span> <span class="nx">경우</span><span class="p">)</span> <span class="nx">실행할</span> <span class="nx">코드</span>
   <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[board]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 폰트 변경하기</title><link href="http://localhost:4000/blog/font/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 폰트 변경하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/font</id><content type="html" xml:base="http://localhost:4000/blog/font/"><![CDATA[<h3 id="font-선택하기">font 선택하기</h3>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[board]]></summary></entry><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
-<hr />
+<p>같은 url로 로그인 전과 로그인 후의 메인 페이지를 다르게 나타내는 방법을 사용했다. <br />
+프로젝트에서 리액트를 사용했기 때문에 <code class="language-plaintext highlighter-rouge">react-router-dom</code>을 사용해서 라우팅 작업을 해주었다.</p>
 
-<p><a href="https://noonnu.cc/">눈누</a>나 <a href="https://fonts.google.com/">Google Fonts</a>에서 마음에 드는 폰트를 선택한다.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//app.js</span>
 
-<h3 id="사용하기">사용하기</h3>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">Routes</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span><span class="p">;</span>
 
-<hr />
+<span class="k">import</span> <span class="nx">Home</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Pages/Home</span><span class="dl">'</span><span class="p">;</span> <span class="c1">//만들어둔 페이지를 불러왔다</span>
+<span class="k">import</span> <span class="nx">Main</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Pages/Main</span><span class="dl">'</span><span class="p">;</span>
 
-<p><code class="language-plaintext highlighter-rouge">main.scss</code> 에 붙여 넣고 <code class="language-plaintext highlighter-rouge">_variables.scss</code>에서 선언한다.</p>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">isLoggedIn</span><span class="p">,</span> <span class="nx">setIsLoggedIn</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$serif</span><span class="p">:</span> <span class="nx">Georgia</span><span class="p">,</span> <span class="nx">Times</span><span class="p">,</span> <span class="nx">serif</span> <span class="o">!</span><span class="k">default</span><span class="p">;</span>
+    <span class="p">...</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Routes</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="nx">isLoggedIn</span> <span class="p">?</span> <span class="o">&lt;</span><span class="nx">Main</span> <span class="o">/&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="nx">Home</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>       <span class="p">...</span>
+      <span class="o">&lt;</span><span class="sr">/Routes</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>사용하고 싶은 곳에서 변수처럼 사용하면 된다.</p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="Font" /></entry><entry><title type="html">[Main Project] 01. react-date-range 사용하기</title><link href="http://localhost:4000/main%20project/calendar-library/" rel="alternate" type="text/html" title="[Main Project] 01. react-date-range 사용하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/calendar-library</id><content type="html" xml:base="http://localhost:4000/main%20project/calendar-library/"><![CDATA[<h2 id="1-달력-라이브러리-선택">1. 달력 라이브러리 선택</h2>
+<p>로그인 여부를 상태로 만들어 로그인 되었을 경우에는 <code class="language-plaintext highlighter-rouge">Main</code> 페이지가, 로그인이 되지 않은 경우에는 <code class="language-plaintext highlighter-rouge">Home</code> 페이지가 나타난다. 로그인 상태는 <code class="language-plaintext highlighter-rouge">token</code>과 <code class="language-plaintext highlighter-rouge">memberId</code> 등으로 판별했다.</p>
+
+<h2 id="2-home-page">2. Home Page</h2>
+
+<h3 id="-구조">📃 구조</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Home</code> 페이지와 <code class="language-plaintext highlighter-rouge">Main</code> 페이지가 동일하게 일정 추가 기능을 가지고 있기 때문에 <code class="language-plaintext highlighter-rouge">Home</code> 페이지를 컴포넌트화 시켜 <code class="language-plaintext highlighter-rouge">Main</code> 페이지에서 사용하였다.</p>
+
+<p>로그인 여부에 따라 <code class="language-plaintext highlighter-rouge">className</code>을 다르게 만들고, <mark style="background-color: #ffdce0">날짜</mark>, <mark style="background-color: #ffdce0">도시</mark>를 선택한 후 비로그인 상태에서는 로그인 화면으로, 로그인 상태에서는 바로 일정 등록 페이지로 갈 수 있도록 만들었다.</p>
+
+<h3 id="-autocomplete">📃 AutoComplete</h3>
+
+<p>도시 선택의 경우 DB에 저장된 도시 목록을 불러와 자동 완성 기능을 사용할 수 있도록 구현했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">city</span><span class="p">,</span> <span class="nx">setCity</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>도시 목록을 불러와 <code class="language-plaintext highlighter-rouge">city</code>에 담아준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">inputValue</span> <span class="o">===</span> <span class="dl">""</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setHasText</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+    <span class="nx">setOptions</span><span class="p">([]);</span>
+    <span class="nx">setSearch</span> <span class="o">&amp;&amp;</span> <span class="nx">setSearch</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">setOptions</span><span class="p">(</span><span class="nx">matchStock</span><span class="p">(</span><span class="nx">city</span><span class="p">,</span> <span class="nx">inputValue</span><span class="p">));</span>
+    <span class="nx">handleDestination</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">inputValue</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>검색창에 값을 입력할 때마다 <code class="language-plaintext highlighter-rouge">options</code> 배열이 업데이트 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">matchStock</span> <span class="o">=</span> <span class="p">(</span><span class="nx">city</span><span class="p">,</span> <span class="nx">inputValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">inputValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[];</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isNaN</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="nx">inputValue</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[];</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">city</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">option</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">isInitialMatch</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">,</span> <span class="nx">option</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">option</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">option</span><span class="p">;</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">options</code>에 보여줄 값을 제어하는 부분. 도시 목록 중에서 <code class="language-plaintext highlighter-rouge">isInitialMatch</code> 함수에서 <code class="language-plaintext highlighter-rouge">true</code> 값이 나온 도시만 필터링한다. 도시 수가 많아 상위 일부분만 보여주도록 만들었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">isInitialMatch</span> <span class="o">=</span> <span class="p">(</span><span class="nx">inputValue</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">reg</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">pattern</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="dl">"</span><span class="s2">.*?</span><span class="dl">"</span><span class="p">),</span> <span class="dl">"</span><span class="s2">i</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">matches</span> <span class="o">=</span> <span class="nx">reg</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">matches</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>초성 검색이 일치하면 참이 나오는 함수. 로직을 잘 이해한 건 아니라 추후 포스팅할 예정이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">input--large-icon</span><span class="dl">"</span>
+          <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleInputChange</span><span class="p">}</span>
+          <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">inputValue</span><span class="p">}</span>
+          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Search Destination ex. 서울, 부산...</span><span class="dl">"</span>
+          <span class="nx">onKeyDown</span><span class="o">=</span><span class="p">{</span><span class="nx">handleKeyDown</span><span class="p">}</span> <span class="c1">//enter를 누르면 선택됨</span>
+          <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">inputRef</span><span class="p">}</span>
+        <span class="o">&gt;&lt;</span><span class="sr">/input</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">clearbtn</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClear</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="nx">Clear</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="p">{</span><span class="nx">hasText</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">DropDown</span>
+          <span class="nx">options</span><span class="o">=</span><span class="p">{</span><span class="nx">options</span><span class="p">}</span>
+          <span class="nx">handleDropDownClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleDropDownClick</span><span class="p">}</span>
+          <span class="nx">activeSuggestion</span><span class="o">=</span><span class="p">{</span><span class="nx">activeSuggestion</span><span class="p">}</span>
+        <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="p">)}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">input</code> 창에 텍스트가 있을 때만 DropDown 컴포넌트가 활성화된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleKeyDown</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">//enter 키를 누르면 input 값이 활성화된 옵션으로 변경</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">13</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">inputValue</span> <span class="o">===</span> <span class="dl">""</span><span class="p">)</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+    <span class="nx">setInputValue</span><span class="p">(</span><span class="nx">options</span><span class="p">[</span><span class="nx">activeSuggestion</span><span class="p">]);</span>
+    <span class="nx">setActiveSuggestion</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="nx">setHasText</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+    <span class="nx">handleSearch</span> <span class="o">&amp;&amp;</span> <span class="nx">handleSearch</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="c1">// arrow 키를 누르면 활성화된 옵션 -1</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">38</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">activeSuggestion</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">setActiveSuggestion</span><span class="p">(</span><span class="nx">activeSuggestion</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// arrow 키를 누르면 활성화된 옵션 +1</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">40</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">activeSuggestion</span> <span class="o">===</span> <span class="nx">options</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">setActiveSuggestion</span><span class="p">(</span><span class="nx">activeSuggestion</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>드롭다운에서 키보드로 선택 값을 변경할 수 있는 함수.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 자동완성 배열(options)에 들어간 값들이 드롭다운으로 보여지는 부분 */</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">DropDown</span> <span class="o">=</span> <span class="p">({</span>
+  <span class="nx">options</span><span class="p">,</span>
+  <span class="nx">handleDropDownClick</span><span class="p">,</span>
+  <span class="nx">activeSuggestion</span><span class="p">,</span>
+<span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">DropDownContainer</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">options</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">option</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">className</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="nx">activeSuggestion</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">className</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">active</span><span class="dl">"</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">li</span>
+            <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">option</span><span class="p">}</span>
+            <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleDropDownClick</span><span class="p">(</span><span class="nx">option</span><span class="p">)}</span> <span class="c1">//클릭한 값이 inputValue에 들어감</span>
+            <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">className</span><span class="p">}</span>
+          <span class="o">&gt;</span>
+            <span class="p">{</span><span class="nx">option</span><span class="p">}</span>
+          <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>        <span class="p">);</span>
+      <span class="p">})}</span>
+    <span class="o">&lt;</span><span class="sr">/DropDownContainer</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>초성 단위로 검색 결과가 드롭다운으로 보이고, 현재 활성화된 값의 인덱스가 <code class="language-plaintext highlighter-rouge">activeSuggestion</code>이 된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">inputValue</code>에 <code class="language-plaintext highlighter-rouge">options[activeSuggestion]</code>의 값이 담기고, 결과적으로 <code class="language-plaintext highlighter-rouge">Home</code> 페이지에서 선언된 <code class="language-plaintext highlighter-rouge">destination</code>에 <code class="language-plaintext highlighter-rouge">inputValue</code> 값이 들어가게 된다.</p>
+
+<p class="notice--primary">🤔 경주를 검색할 경우 정확한 지역검색이 되지 않는데 아직 해결방법을 찾지 못했다.</p>
+
+<p><img width="362" alt="스크린샷 2023-02-03 오전 10 20 33" src="https://user-images.githubusercontent.com/110877564/216488478-5a70a53d-ab70-4217-9ae8-5d160f00d59c.png" /></p>
+
+<p><br /></p>
+
+<h2 id="3-main-page">3. Main Page</h2>
+
+<p>위에서 만든 <code class="language-plaintext highlighter-rouge">Home</code> 페이지의 일정 선택 기능과 로그인 사용자가 작성한 여행, 게시글, 전체 게시판에서 5개의 글을 볼 수 있는 페이지. 5개의 글은 기본적으로 최신순으로 5개를 렌더링하며, 좋아요 순, 조회수 순으로도 변경이 가능하다. 여행, 게시글, 게시판은 모두 각각 별개의 컴포넌트로 만들어 <code class="language-plaintext highlighter-rouge">Main</code> 페이지에서는 불러오기만 했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="page" /><category term="react" /><summary type="html"><![CDATA[main page]]></summary></entry><entry><title type="html">[Main Project] 01. react-date-range 사용하기</title><link href="http://localhost:4000/main%20project/calendar-library/" rel="alternate" type="text/html" title="[Main Project] 01. react-date-range 사용하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/calendar-library</id><content type="html" xml:base="http://localhost:4000/main%20project/calendar-library/"><![CDATA[<h2 id="1-달력-라이브러리-선택">1. 달력 라이브러리 선택</h2>
 
 <p>여행 일정 선택을 위한 달력 라이브러리를 골라야했는데, 달력 라이브러리 종류가 많아서 필요한 기능이 있는지, 사용량이 많고 정보가 잘 정리되어 있는지를 기준으로 선택했다.</p>
 
@@ -746,7 +770,22 @@
 
 <p>위와 같이 시작 날짜, 종료 날짜를 선택하면 범위가 표시된다! (css는 좀 수정된 상태)</p>
 
-<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="calendar" /><summary type="html"><![CDATA[달력 라이브러리]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 만들기</title><link href="http://localhost:4000/blog/hello-blog/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 만들기" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/hello-blog</id><content type="html" xml:base="http://localhost:4000/blog/hello-blog/"><![CDATA[<h2 id="1-repository-생성">1. Repository 생성</h2>
+<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="calendar" /><summary type="html"><![CDATA[달력 라이브러리]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 폰트 변경하기</title><link href="http://localhost:4000/blog/font/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 폰트 변경하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/font</id><content type="html" xml:base="http://localhost:4000/blog/font/"><![CDATA[<h3 id="font-선택하기">font 선택하기</h3>
+
+<hr />
+
+<p><a href="https://noonnu.cc/">눈누</a>나 <a href="https://fonts.google.com/">Google Fonts</a>에서 마음에 드는 폰트를 선택한다.</p>
+
+<h3 id="사용하기">사용하기</h3>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">main.scss</code> 에 붙여 넣고 <code class="language-plaintext highlighter-rouge">_variables.scss</code>에서 선언한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$serif</span><span class="p">:</span> <span class="nx">Georgia</span><span class="p">,</span> <span class="nx">Times</span><span class="p">,</span> <span class="nx">serif</span> <span class="o">!</span><span class="k">default</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>사용하고 싶은 곳에서 변수처럼 사용하면 된다.</p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="Font" /></entry><entry><title type="html">[Github Blog] Github 블로그 만들기</title><link href="http://localhost:4000/blog/hello-blog/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 만들기" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/hello-blog</id><content type="html" xml:base="http://localhost:4000/blog/hello-blog/"><![CDATA[<h2 id="1-repository-생성">1. Repository 생성</h2>
 
 <p><code class="language-plaintext highlighter-rouge">깃허브 계정.github.io</code> 라는 이름으로 레포지토리를 생성해서 로컬로 클론한다.</p>
 
