@@ -1,0 +1,783 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Main Project] 05. Error Log - Reyna</title>
+<meta name="description" content="프로젝트 진행 중 발생한 에러들">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[Main Project] 05. Error Log">
+<meta property="og:url" content="http://localhost:4000/main%20project/error-log/">
+
+
+  <meta property="og:description" content="프로젝트 진행 중 발생한 에러들">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-06T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-02-06T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/main%20project/error-log/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/about">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(7)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+            
+      </ul>
+      <ul>
+            
+      </ul>
+      <ul>
+            
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+            
+      </ul>
+      <ul>
+            
+      </ul>
+      <span class="nav__sub-title">Project</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/main-project" class="">Main Project (5)</a>
+        </li>
+         
+      </ul>
+      <ul>
+            
+      </ul>
+      <span class="nav__sub-title">Coding Test</span>
+      <ul>
+            
+      </ul>
+      <ul>
+            
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+      <ul>
+         
+        <li>
+          <a href="/categories/blog" class="">Blog (2)</a>
+        </li>
+           
+      </ul>
+      <ul>
+            
+      </ul>
+      <ul>
+            
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article
+    class="page h-entry"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <meta
+      itemprop="headline"
+      content="[Main Project] 05. Error Log"
+    /> <meta
+      itemprop="description"
+      content="프로젝트 진행 중 발생한 에러들"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-02-06T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-02-06T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[Main Project] 05. Error Log</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-02-06T00:00:00+09:00"
+            >2023.02.06</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-02-06"
+            >2023.02.06</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#main-project" class="page__taxonomy-item p-category" rel="tag">main project</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#codestates" class="page__taxonomy-item p-category" rel="tag">codestates</a><span class="sep">, </span>
+    
+      <a href="/tags/#error" class="page__taxonomy-item p-category" rel="tag">error</a><span class="sep">, </span>
+    
+      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a><span class="sep">, </span>
+    
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#1-게시글-생성-페이지-에러">1. 게시글 생성 페이지 에러</a></li><li><a href="#2-유저-이름-수정-에러">2. 유저 이름 수정 에러</a></li><li><a href="#3-게시글-수정-페이지-reset-버튼이-안-되는-에러">3. 게시글 수정 페이지 reset 버튼이 안 되는 에러</a></li><li><a href="#4-장소가-없는-경우-에러-발생">4. 장소가 없는 경우 에러 발생</a></li><li><a href="#5-게시판-textarea-고정">5. 게시판 textarea 고정</a></li><li><a href="#6-회원가입-페이지에서-비밀번호-입력-시-볼-수-있는-버튼-만들기">6. 회원가입 페이지에서 비밀번호 입력 시 볼 수 있는 버튼 만들기</a></li><li><a href="#6-활성화된-버튼-색상-바꾸기">6. 활성화된 버튼 색상 바꾸기</a></li></ul>
+
+          </nav>
+        </aside>
+         <p>프로젝트 진행 중 발생한 에러와 실제 웹사이트를 사용하며 불편함을 느꼈던 부분들을 정리해보았다.</p>
+
+<h3 id="1-게시글-생성-페이지-에러">1. 게시글 생성 페이지 에러</h3>
+
+<p class="notice--primary">🤔 특정 장소 선택 시 게시글 생성이 되지 않는 문제</p>
+
+<p>구글 api에서 장소 정보를 불러올 때 rating 부분이 존재하지 않을 경우 <code class="language-plaintext highlighter-rouge">null</code> 값으로 들어와서 발생하는 에러로 확인되어 백엔드 쪽에서 초기값을 0.0으로 설정 후 해결되었다.</p>
+
+<h3 id="2-유저-이름-수정-에러">2. 유저 이름 수정 에러</h3>
+
+<p class="notice--primary">🤔 유저 이름에 특수문자, 이모티콘 입력 시 제출은 되고 반영은 되지 않는 문제</p>
+
+<p>유저 이름 제출 시 유효성 검사를 추가했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">nameRegex</span> <span class="o">=</span> <span class="sr">/^</span><span class="se">[</span><span class="sr">a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣</span><span class="se">]{1,20}</span><span class="sr">$/</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">nameRegex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">submitInfo</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">영문과 한글 또는 숫자를 1~20자리로 입력하세요.</span><span class="dl">"</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+</code></pre></div></div>
+
+<h3 id="3-게시글-수정-페이지-reset-버튼이-안-되는-에러">3. 게시글 수정 페이지 reset 버튼이 안 되는 에러</h3>
+
+<p class="notice--primary">🤔 reset 버튼을 눌렀을 때 화면 상으로는 리셋되는데 실제로는 저장이 되지 않는 문제</p>
+
+<p>입력값 초기화 시 <code class="language-plaintext highlighter-rouge">useRef</code>를 사용해서 해당 메모를 초기화하는 방식을 사용했는데, <code class="language-plaintext highlighter-rouge">state</code>에는 반영이 안되어서 생긴 문제로 확인되었다. 초기화 시에 해당 <code class="language-plaintext highlighter-rouge">ref</code>와 <code class="language-plaintext highlighter-rouge">state</code>를 함께 초기화하는 방식으로 해결했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//입력값 초기화</span>
+<span class="kd">const</span> <span class="nx">handelClear</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">findIndex</span> <span class="o">=</span> <span class="nx">placeNotes</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">placeNote</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">placeNote</span><span class="p">.</span><span class="nx">placeId</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+  <span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">placeId</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">memoRef</span><span class="p">.</span><span class="nx">current</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">===</span> <span class="nx">id</span>
+  <span class="p">);</span>
+  <span class="nx">memoRef</span><span class="p">.</span><span class="nx">current</span><span class="p">[</span><span class="nx">placeId</span><span class="p">].</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">changeNotes</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">placeNotes</span><span class="p">];</span> <span class="c1">//ref, state 같이 변경</span>
+  <span class="nx">changeNotes</span><span class="p">[</span><span class="nx">findIndex</span><span class="p">].</span><span class="nx">description</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="nx">setPlaceNotes</span><span class="p">(</span><span class="nx">changeNotes</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="4-장소가-없는-경우-에러-발생">4. 장소가 없는 경우 에러 발생</h3>
+
+<p class="notice--primary">🤔 일정 등록 시 장소를 선택하지 않은 경우 다른 페이지에서 에러 발생</p>
+
+<p>장소가 있을 경우에만 <code class="language-plaintext highlighter-rouge">state</code>를 설정하도록 변경했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//장소가 있을 때만 setState로 위도와 경도 설정</span>
+<span class="nx">startCode</span> <span class="o">&amp;&amp;</span>
+  <span class="nx">setGeocode</span><span class="p">({</span>
+    <span class="na">lat</span><span class="p">:</span> <span class="nx">startCode</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span>
+    <span class="na">lng</span><span class="p">:</span> <span class="nx">startCode</span><span class="p">.</span><span class="nx">longitude</span><span class="p">,</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="5-게시판-textarea-고정">5. 게시판 textarea 고정</h3>
+
+<p><code class="language-plaintext highlighter-rouge">textarea</code> 태그는 원래 사이즈를 조절할 수 있다. 사이즈를 고정하고 싶을 땐 <code class="language-plaintext highlighter-rouge">resize:none</code>을 사용하면 된다.</p>
+
+<h3 id="6-회원가입-페이지에서-비밀번호-입력-시-볼-수-있는-버튼-만들기">6. 회원가입 페이지에서 비밀번호 입력 시 볼 수 있는 버튼 만들기</h3>
+
+<p>password를 볼 수 있는 상태와 상태를 변경할 수 있는 함수를 만들었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">showPswd</span><span class="p">,</span> <span class="nx">setShowPswd</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">toggleShowPswd</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setShowPswd</span><span class="p">(</span><span class="o">!</span><span class="nx">showPswd</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>상태에 따라 다른 이미지를 보여준다. 이미지를 클릭 시 상태가 바뀐다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleShowPswd</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">eye</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="nx">showPswd</span> <span class="p">?</span> <span class="err">😀</span> <span class="p">:</span> <span class="err">😔</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>상태가 바뀔 때마다 <code class="language-plaintext highlighter-rouge">input</code>의 <code class="language-plaintext highlighter-rouge">type</code>을 바꿔준다. <code class="language-plaintext highlighter-rouge">type</code>이 <code class="language-plaintext highlighter-rouge">password</code>인 경우 값이 보이지 않고, <code class="language-plaintext highlighter-rouge">text</code>인 경우 입력한 값을 볼 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">input</span>
+  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span>
+  <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="nx">showPswd</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">}</span>
+  <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Enter your password</span><span class="dl">"</span>
+<span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="6-활성화된-버튼-색상-바꾸기">6. 활성화된 버튼 색상 바꾸기</h3>
+
+<p>게시판에 조회수순, 최신순 등 여러 방식으로 정렬을 할 수 있는 버튼이 있는데, 어느 버튼을 눌렀는지 보여줄 필요가 있어서 모드에 따른 css를 변경했다.</p>
+
+<p>모드는 <code class="language-plaintext highlighter-rouge">state</code>로 관리했고, 버튼을 눌렀을 때 해당 모드로 바꿔서 api 요청을 하는 방식이었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">mode</span><span class="p">,</span> <span class="nx">setMode</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">"</span><span class="s2">boardId</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="o">&lt;</span><span class="nx">button</span>
+  <span class="nx">className</span><span class="o">=</span><span class="p">{</span>
+    <span class="nx">mode</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">boardId</span><span class="dl">"</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">mode--selected mode--button</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">mode--button</span><span class="dl">"</span>
+  <span class="p">}</span>
+  <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setMode</span><span class="p">(</span><span class="dl">"</span><span class="s2">boardId</span><span class="dl">"</span><span class="p">)}</span>
+<span class="o">&gt;</span>
+  <span class="nx">최신순</span>
+<span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
+</span></code></pre></div></div>
+
+<p>현재 모드의 상태와 버튼의 모드가 일치할 경우 <code class="language-plaintext highlighter-rouge">mode--selected</code>라는 <code class="language-plaintext highlighter-rouge">className</code>을 추가해서 css를 변경했다.</p>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/main%20project/3-board/" class="pagination--pager" title="[Main Project] 04. 게시글 작성, 수정 페이지
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/3-board/" rel="permalink">[Main Project] 04. 게시글 작성, 수정 페이지
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">board
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/2-user-page/" rel="permalink">[Main Project] 03. user page 구성
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">user page
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/1-main-page/" rel="permalink">[Main Project] 02. main page 구성
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">main page
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/calendar-library/" rel="permalink">[Main Project] 01. react-date-range 사용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">달력 라이브러리
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
