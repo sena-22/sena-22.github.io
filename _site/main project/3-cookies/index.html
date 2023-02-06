@@ -411,11 +411,67 @@
                 Index
               </h4>
             </header>
-            
+            <ul class="toc__menu"><li><a href="#1-설치">1. 설치</a></li><li><a href="#2-cookie-파일-설정">2. cookie 파일 설정</a></li><li><a href="#3-cookie-사용">3. cookie 사용</a></li></ul>
 
           </nav>
         </aside>
-         
+         <p>메인 프로젝트에서는 <code class="language-plaintext highlighter-rouge">token</code>, <code class="language-plaintext highlighter-rouge">memberId</code> 등의 정보를 저장하기 위해 <code class="language-plaintext highlighter-rouge">react-cookie</code>라는 라이브러리를 사용하기로 했다.</p>
+
+<h3 id="1-설치">1. 설치</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">react</span><span class="o">-</span><span class="nx">cookie</span>
+</code></pre></div></div>
+
+<h3 id="2-cookie-파일-설정">2. cookie 파일 설정</h3>
+
+<p>쿠키를 사용하기 위한 파일을 만들어 필요한 컴포넌트에서 import 해서 적용하는 방법을 사용했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Cookies</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-cookie</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cookies</span><span class="p">();</span>
+
+<span class="c1">//쿠키 저장</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">setCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">cookies</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="c1">//쿠키 불러오기</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">cookies</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">//쿠키 삭제</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">removeCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">cookies</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>처음에는 <code class="language-plaintext highlighter-rouge">name</code>만 이용해서 쿠키를 저장했는데, 프로젝트를 진행하면서 다른 페이지에서 쿠키가 저장되면서 <code class="language-plaintext highlighter-rouge">path</code>가 여러가지인 토큰이 발급되는 문제가 발생했다. 그래서 경로를 하나로 지정하여 문제를 해결했다.</p>
+
+<h3 id="3-cookie-사용">3. cookie 사용</h3>
+
+<p>쿠키를 설정할 때는 <b>쿠키 이름, 쿠키에 넣을 데이터</b> 순으로 저장한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/Cookies</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">setCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">authorization</span><span class="p">);</span>
+<span class="nx">setCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">memberId</span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">memberId</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>쿠키를 사용할 때는 저장했던 이름을 사용해서 불러온다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">getCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/Cookies</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">getCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//name이 accessToken인 쿠키를 불러온다.</span>
+</code></pre></div></div>
+
+<p>쿠키를 삭제할 때도 이름을 이용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">removeCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/Cookies</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">memberId</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
  
       </section>
 

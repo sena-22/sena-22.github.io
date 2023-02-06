@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[Main Project] 07. Cookies",
-        "excerpt":" ","categories": ["main project"],
+        "excerpt":"메인 프로젝트에서는 token, memberId 등의 정보를 저장하기 위해 react-cookie라는 라이브러리를 사용하기로 했다. 1. 설치 npm i react-cookie 2. cookie 파일 설정 쿠키를 사용하기 위한 파일을 만들어 필요한 컴포넌트에서 import 해서 적용하는 방법을 사용했다. import { Cookies } from \"react-cookie\"; const cookies = new Cookies(); //쿠키 저장 export const setCookie =...","categories": ["main project"],
         "tags": ["project","codestates","cookie","react"],
         "url": "/main%20project/3-cookies/",
         "teaser": null

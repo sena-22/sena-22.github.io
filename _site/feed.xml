@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-06T17:58:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/2-dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/2-dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-06T18:10:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/2-dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/2-dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
 
 <h3 id="1-설치">1. 설치</h3>
 
@@ -145,7 +145,63 @@
 <span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
 </span></code></pre></div></div>
 
-<p>현재 모드의 상태와 버튼의 모드가 일치할 경우 <code class="language-plaintext highlighter-rouge">mode--selected</code>라는 <code class="language-plaintext highlighter-rouge">className</code>을 추가해서 css를 변경했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="error" /><category term="react" /><summary type="html"><![CDATA[프로젝트 진행 중 발생한 에러들]]></summary></entry><entry><title type="html">[Main Project] 07. Cookies</title><link href="http://localhost:4000/main%20project/3-cookies/" rel="alternate" type="text/html" title="[Main Project] 07. Cookies" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/3-cookies</id><content type="html" xml:base="http://localhost:4000/main%20project/3-cookies/"><![CDATA[]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="cookie" /><category term="react" /><summary type="html"><![CDATA[react-cookie]]></summary></entry><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
+<p>현재 모드의 상태와 버튼의 모드가 일치할 경우 <code class="language-plaintext highlighter-rouge">mode--selected</code>라는 <code class="language-plaintext highlighter-rouge">className</code>을 추가해서 css를 변경했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="error" /><category term="react" /><summary type="html"><![CDATA[프로젝트 진행 중 발생한 에러들]]></summary></entry><entry><title type="html">[Main Project] 07. Cookies</title><link href="http://localhost:4000/main%20project/3-cookies/" rel="alternate" type="text/html" title="[Main Project] 07. Cookies" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/3-cookies</id><content type="html" xml:base="http://localhost:4000/main%20project/3-cookies/"><![CDATA[<p>메인 프로젝트에서는 <code class="language-plaintext highlighter-rouge">token</code>, <code class="language-plaintext highlighter-rouge">memberId</code> 등의 정보를 저장하기 위해 <code class="language-plaintext highlighter-rouge">react-cookie</code>라는 라이브러리를 사용하기로 했다.</p>
+
+<h3 id="1-설치">1. 설치</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">react</span><span class="o">-</span><span class="nx">cookie</span>
+</code></pre></div></div>
+
+<h3 id="2-cookie-파일-설정">2. cookie 파일 설정</h3>
+
+<p>쿠키를 사용하기 위한 파일을 만들어 필요한 컴포넌트에서 import 해서 적용하는 방법을 사용했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Cookies</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-cookie</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cookies</span><span class="p">();</span>
+
+<span class="c1">//쿠키 저장</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">setCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">cookies</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="c1">//쿠키 불러오기</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">cookies</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">//쿠키 삭제</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">removeCookie</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">cookies</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>처음에는 <code class="language-plaintext highlighter-rouge">name</code>만 이용해서 쿠키를 저장했는데, 프로젝트를 진행하면서 다른 페이지에서 쿠키가 저장되면서 <code class="language-plaintext highlighter-rouge">path</code>가 여러가지인 토큰이 발급되는 문제가 발생했다. 그래서 경로를 하나로 지정하여 문제를 해결했다.</p>
+
+<h3 id="3-cookie-사용">3. cookie 사용</h3>
+
+<p>쿠키를 설정할 때는 <b>쿠키 이름, 쿠키에 넣을 데이터</b> 순으로 저장한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">setCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/Cookies</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">setCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">authorization</span><span class="p">);</span>
+<span class="nx">setCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">memberId</span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">memberId</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>쿠키를 사용할 때는 저장했던 이름을 사용해서 불러온다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">getCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/Cookies</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">getCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//name이 accessToken인 쿠키를 불러온다.</span>
+</code></pre></div></div>
+
+<p>쿠키를 삭제할 때도 이름을 이용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">removeCookie</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/Cookies</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">memberId</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="cookie" /><category term="react" /><summary type="html"><![CDATA[react-cookie]]></summary></entry><entry><title type="html">[Main Project] 02. main page 구성</title><link href="http://localhost:4000/main%20project/1-main-page/" rel="alternate" type="text/html" title="[Main Project] 02. main page 구성" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-main-page</id><content type="html" xml:base="http://localhost:4000/main%20project/1-main-page/"><![CDATA[<h2 id="1-라우팅">1. 라우팅</h2>
 
 <p>같은 url로 로그인 전과 로그인 후의 메인 페이지를 다르게 나타내는 방법을 사용했다. <br />
 프로젝트에서 리액트를 사용했기 때문에 <code class="language-plaintext highlighter-rouge">react-router-dom</code>을 사용해서 라우팅 작업을 해주었다.</p>
