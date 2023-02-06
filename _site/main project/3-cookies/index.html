@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Main Project] 06. Day.js 적용 - Reyna</title>
-<meta name="description" content="dayjs">
+<!-- begin _includes/seo.html --><title>[Main Project] 07. Cookies - Reyna</title>
+<meta name="description" content="react-cookie">
 
 
   <meta name="author" content="Reyna">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Main Project] 06. Day.js 적용">
-<meta property="og:url" content="http://localhost:4000/main%20project/1-dayjs/">
+<meta property="og:title" content="[Main Project] 07. Cookies">
+<meta property="og:url" content="http://localhost:4000/main%20project/3-cookies/">
 
 
-  <meta property="og:description" content="dayjs">
+  <meta property="og:description" content="react-cookie">
 
 
 
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/main%20project/1-dayjs/">
+<link rel="canonical" href="http://localhost:4000/main%20project/3-cookies/">
 
 
 
@@ -260,7 +260,7 @@
   <ul class="nav__items" id="category_tag_menu">
     <!--전체 글 수-->
     <li>
-      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(8)</style> 
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(9)</style> 
     </li>
     <li>
       <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
@@ -288,7 +288,7 @@
       <ul>
            
         <li>
-          <a href="/categories/main-project" class="">Main Project (6)</a>
+          <a href="/categories/main-project" class="">Main Project (7)</a>
         </li>
          
       </ul>
@@ -331,10 +331,10 @@
   >
     <meta
       itemprop="headline"
-      content="[Main Project] 06. Day.js 적용"
+      content="[Main Project] 07. Cookies"
     /> <meta
       itemprop="description"
-      content="dayjs"
+      content="react-cookie"
     /> <meta
       itemprop="datePublished"
       content="2023-02-06T00:00:00+09:00"
@@ -348,7 +348,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Main Project] 06. Day.js 적용</p>
+          <p>[Main Project] 07. Cookies</p>
 
         </h1>
          
@@ -389,9 +389,7 @@
     
       <a href="/tags/#codestates" class="page__taxonomy-item p-category" rel="tag">codestates</a><span class="sep">, </span>
     
-      <a href="/tags/#dayjs" class="page__taxonomy-item p-category" rel="tag">dayjs</a><span class="sep">, </span>
-    
-      <a href="/tags/#moment" class="page__taxonomy-item p-category" rel="tag">moment</a><span class="sep">, </span>
+      <a href="/tags/#cookie" class="page__taxonomy-item p-category" rel="tag">cookie</a><span class="sep">, </span>
     
       <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a><span class="sep">, </span>
     
@@ -413,50 +411,11 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#1-설치">1. 설치</a></li><li><a href="#2-사용">2. 사용</a></li><li><a href="#3-유틸-파일로-만들기">3. 유틸 파일로 만들기</a></li></ul>
+            
 
           </nav>
         </aside>
-         <p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
-
-<h3 id="1-설치">1. 설치</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">dayjs</span>
-</code></pre></div></div>
-
-<h3 id="2-사용">2. 사용</h3>
-
-<p>사용법은 moment와 거의 비슷하다.</p>
-
-<p class="notice--primary"><a href="https://day.js.org/docs/en/parse/string-format">dayjs 공식문서</a></p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//한국어 설정</span>
-
-<span class="kd">const</span> <span class="nx">formatDate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">YYYY-MM-DD</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h3 id="3-유틸-파일로-만들기">3. 유틸 파일로 만들기</h3>
-
-<p>moment를 필요한 컴포넌트에서 각각 사용했더니 dayjs로 변환할 때 일일이 고치느라 시간이 오래 걸렸다. 그래서 유틸파일로 만들어 꺼내쓸 수 있도록 유틸파일로 바꾸었다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">dayUtil.js</code> 파일을 만들어 포맷을 저장해둔다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//dayUtil.js</span>
-
-<span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">formatTomorrow</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">).</span><span class="nx">toDate</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>다음과 같이 사용하면 된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calendar.js</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">formatTomorrow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/dayUtil</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
-</code></pre></div></div>
+         
  
       </section>
 
@@ -481,12 +440,11 @@
  
   <nav class="pagination">
     
-      <a href="/main%20project/3-board/" class="pagination--pager" title="[Main Project] 04. 게시글 작성, 수정 페이지
+      <a href="/main%20project/2-dayjs/" class="pagination--pager" title="[Main Project] 06. Day.js 적용
 ">Previous</a>
     
     
-      <a href="/main%20project/2-error-log/" class="pagination--pager" title="[Main Project] 05. Error Log
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -510,7 +468,45 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/main%20project/2-error-log/" rel="permalink">[Main Project] 05. Error Log
+        <a href="/main%20project/2-dayjs/" rel="permalink">[Main Project] 06. Day.js 적용
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">dayjs
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/1-error-log/" rel="permalink">[Main Project] 05. Error Log
 </a>
       
     </h2>
@@ -612,44 +608,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">user page
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/main%20project/1-main-page/" rel="permalink">[Main Project] 02. main page 구성
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">main page
 </p>
   </article>
 </div>

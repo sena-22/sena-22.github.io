@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Main Project] 01. react-date-range 사용하기 - Reyna</title>
-<meta name="description" content="달력 라이브러리">
+<!-- begin _includes/seo.html --><title>[Main Project] 06. Day.js 적용 - Reyna</title>
+<meta name="description" content="dayjs">
 
 
   <meta name="author" content="Reyna">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Main Project] 01. react-date-range 사용하기">
-<meta property="og:url" content="http://localhost:4000/main%20project/calendar-library/">
+<meta property="og:title" content="[Main Project] 06. Day.js 적용">
+<meta property="og:url" content="http://localhost:4000/main%20project/2-dayjs/">
 
 
-  <meta property="og:description" content="달력 라이브러리">
-
-
-
+  <meta property="og:description" content="dayjs">
 
 
 
 
-  <meta property="article:published_time" content="2023-02-02T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-02-02T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-02-06T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-02-06T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/main%20project/calendar-library/">
+
+<link rel="canonical" href="http://localhost:4000/main%20project/2-dayjs/">
 
 
 
@@ -331,16 +331,16 @@
   >
     <meta
       itemprop="headline"
-      content="[Main Project] 01. react-date-range 사용하기"
+      content="[Main Project] 06. Day.js 적용"
     /> <meta
       itemprop="description"
-      content="달력 라이브러리"
+      content="dayjs"
     /> <meta
       itemprop="datePublished"
-      content="2023-02-02T00:00:00+09:00"
+      content="2023-02-06T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-02-02T00:00:00+09:00"
+      content="2023-02-06T00:00:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -348,7 +348,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Main Project] 01. react-date-range 사용하기</p>
+          <p>[Main Project] 06. Day.js 적용</p>
 
         </h1>
          
@@ -356,13 +356,13 @@
           <strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-02-02T00:00:00+09:00"
-            >2023.02.02</time
+          <time datetime="2023-02-06T00:00:00+09:00"
+            >2023.02.06</time
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-02-02"
-            >2023.02.02</time
+          <time datetime="2023-02-06"
+            >2023.02.06</time
           >
         </p>
           
@@ -387,11 +387,15 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#calendar" class="page__taxonomy-item p-category" rel="tag">calendar</a><span class="sep">, </span>
-    
       <a href="/tags/#codestates" class="page__taxonomy-item p-category" rel="tag">codestates</a><span class="sep">, </span>
     
-      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a>
+      <a href="/tags/#dayjs" class="page__taxonomy-item p-category" rel="tag">dayjs</a><span class="sep">, </span>
+    
+      <a href="/tags/#moment" class="page__taxonomy-item p-category" rel="tag">moment</a><span class="sep">, </span>
+    
+      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a><span class="sep">, </span>
+    
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
     
     </span>
   </p>
@@ -409,119 +413,50 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#1-달력-라이브러리-선택">1. 달력 라이브러리 선택</a><ul><li><a href="#react-date-range">react-date-range</a></li><li><a href="#react-calendar">react-calendar</a></li><li><a href="#react-day-picker">react-day-picker</a></li><li><a href="#react-date-picker">react-date-picker</a></li></ul></li><li><a href="#2-달력-적용하기">2. 달력 적용하기</a><ul><li><a href="#설치">설치</a></li><li><a href="#적용">적용</a></li><li><a href="#결과">결과</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#1-설치">1. 설치</a></li><li><a href="#2-사용">2. 사용</a></li><li><a href="#3-유틸-파일로-만들기">3. 유틸 파일로 만들기</a></li></ul>
 
           </nav>
         </aside>
-         <h2 id="1-달력-라이브러리-선택">1. 달력 라이브러리 선택</h2>
+         <p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
 
-<p>여행 일정 선택을 위한 달력 라이브러리를 골라야했는데, 달력 라이브러리 종류가 많아서 필요한 기능이 있는지, 사용량이 많고 정보가 잘 정리되어 있는지를 기준으로 선택했다.</p>
+<h3 id="1-설치">1. 설치</h3>
 
-<p>🧐 <strong>필요한 기능</strong> <br /></p>
-
-<ol>
-  <li>시작 날짝와 종료 날짜 <br /></li>
-  <li>선택 시 기간 표시(다중 범위)<br /></li>
-  <li>달력 두 개가 붙어 있는 모양</li>
-</ol>
-
-<h3 id="react-date-range">react-date-range</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://hypeserver.github.io/react-date-range/#daterange">react-date-range 공식문서</a> <br />
-<a href="https://www.npmjs.com/package/react-date-range">react-date-range npm</a></p>
-
-<h3 id="react-calendar">react-calendar</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-calendar">react-calendar npm</a></p>
-
-<h3 id="react-day-picker">react-day-picker</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-day-picker">react-day-picker npm</a></p>
-
-<ul>
-  <li>최근까지 업데이트 됨</li>
-</ul>
-
-<h3 id="react-date-picker">react-date-picker</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-datepicker">react-date-picker</a></p>
-
-<ul>
-  <li>사용량 가장 많음</li>
-</ul>
-
-<p>여러 라이브러리를 비교해보고 두 개의 달력을 표시하기 쉽고 디자인을 크게 건드리지 않아도 될 것 같아 <code class="language-plaintext highlighter-rouge">react-date-range</code>를 사용했다.</p>
-
-<h2 id="2-달력-적용하기">2. 달력 적용하기</h2>
-
-<h3 id="설치">설치</h3>
-
-<hr />
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">react</span><span class="o">-</span><span class="nx">date</span><span class="o">-</span><span class="nx">range</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">dayjs</span>
 </code></pre></div></div>
 
-<h3 id="적용">적용</h3>
+<h3 id="2-사용">2. 사용</h3>
 
-<hr />
+<p>사용법은 moment와 거의 비슷하다.</p>
+
+<p class="notice--primary"><a href="https://day.js.org/docs/en/parse/string-format">dayjs 공식문서</a></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//한국어 설정</span>
+
+<span class="kd">const</span> <span class="nx">formatDate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">YYYY-MM-DD</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="3-유틸-파일로-만들기">3. 유틸 파일로 만들기</h3>
+
+<p>moment를 필요한 컴포넌트에서 각각 사용했더니 dayjs로 변환할 때 일일이 고치느라 시간이 오래 걸렸다. 그래서 유틸파일로 만들어 꺼내쓸 수 있도록 유틸파일로 바꾸었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">dayUtil.js</code> 파일을 만들어 포맷을 저장해둔다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//dayUtil.js</span>
+
+<span class="k">import</span> <span class="nx">dayjs</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">dayjs</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">dayjs/locale/ko</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">formatTomorrow</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">d</span><span class="dl">"</span><span class="p">).</span><span class="nx">toDate</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>다음과 같이 사용하면 된다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calendar.js</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/styles.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 메인 css 파일</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/theme/default.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 테마 CSS 파일</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">DateRange</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-date-range</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">formatTomorrow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/dayUtil</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span> <span class="c1">//날짜 형식을 내일로 변경</span>
-
-<span class="kd">const</span> <span class="p">[</span><span class="nx">date</span><span class="p">,</span> <span class="nx">setDate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span>
-  <span class="p">{</span>
-    <span class="na">startDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
-    <span class="na">endDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
-    <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">selection</span><span class="dl">"</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">]);</span>
-
-<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">handleDate</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
-<span class="p">},</span> <span class="p">[</span><span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">startDate</span><span class="p">,</span> <span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">endDate</span><span class="p">]);</span>
+<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
 </code></pre></div></div>
-
-<p>시작 날짜와 종료 날짜를 모두 다음 날로 지정해주었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">(</span>
-  <span class="p">...</span>
-  <span class="o">&lt;</span><span class="nx">DateRange</span>
-    <span class="nx">editableDateInputs</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-    <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setDate</span><span class="p">([</span><span class="nx">item</span><span class="p">.</span><span class="nx">selection</span><span class="p">])}</span>
-    <span class="nx">moveRangeOnFirstSelection</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span>
-    <span class="nx">ranges</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
-    <span class="nx">months</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="c1">//달력 두 달 표시</span>
-    <span class="nx">direction</span><span class="o">=</span><span class="dl">"</span><span class="s2">horizontal</span><span class="dl">"</span> <span class="c1">//달력을 가로로 배치</span>
-    <span class="nx">dateDisplayFormat</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">LLLL yyyy</span><span class="dl">"</span><span class="p">}</span> <span class="c1">// 날짜 포맷값</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">...</span>
-<span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="결과">결과</h3>
-
-<hr />
-
-<p><img width="561" alt="스크린샷 2023-02-02 오후 11 14 15" src="https://user-images.githubusercontent.com/110877564/216350582-67febd33-0ba2-4d8a-8d8c-e66710a527fb.png" class="align-center" /></p>
-
-<p>위와 같이 시작 날짜, 종료 날짜를 선택하면 범위가 표시된다! (css는 좀 수정된 상태)</p>
-
-<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>
  
       </section>
 
@@ -546,11 +481,11 @@
  
   <nav class="pagination">
     
-      <a href="/blog/font/" class="pagination--pager" title="[Github Blog] Github 블로그 폰트 변경하기
+      <a href="/main%20project/1-error-log/" class="pagination--pager" title="[Main Project] 05. Error Log
 ">Previous</a>
     
     
-      <a href="/main%20project/1-main-page/" class="pagination--pager" title="[Main Project] 02. main page 구성
+      <a href="/main%20project/3-cookies/" class="pagination--pager" title="[Main Project] 07. Cookies
 ">Next</a>
     
   </nav>
@@ -601,44 +536,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">react-cookie
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/main%20project/2-dayjs/" rel="permalink">[Main Project] 06. Day.js 적용
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">dayjs
 </p>
   </article>
 </div>
@@ -715,6 +612,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">board
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/main%20project/2-user-page/" rel="permalink">[Main Project] 03. user page 구성
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">user page
 </p>
   </article>
 </div>
