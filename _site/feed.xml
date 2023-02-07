@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-08T01:20:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 메인 프로젝트 회고록</title><link href="http://localhost:4000/main%20project/project-review/" rel="alternate" type="text/html" title="[Main Project] 메인 프로젝트 회고록" /><published>2023-02-07T00:00:00+09:00</published><updated>2023-02-07T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/project-review</id><content type="html" xml:base="http://localhost:4000/main%20project/project-review/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/95217370/215842925-37524a74-c2f4-454c-914f-3d19344bed16.png" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-08T01:26:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 메인 프로젝트 회고록</title><link href="http://localhost:4000/main%20project/project-review/" rel="alternate" type="text/html" title="[Main Project] 메인 프로젝트 회고록" /><published>2023-02-07T00:00:00+09:00</published><updated>2023-02-07T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/project-review</id><content type="html" xml:base="http://localhost:4000/main%20project/project-review/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/95217370/215842925-37524a74-c2f4-454c-914f-3d19344bed16.png" /></p>
+
+<p><br />
 4주간 진행한 메인 프로젝트가 끝났다.</p>
 
 <p>프로젝트 기간 동안 배웠던 점들에 대해 잊기 전에 기록해두려고 한다.</p>
-
-<p><br /></p>
 
 <h2 id="프로젝트에-관해서">프로젝트에 관해서</h2>
 
@@ -12,7 +12,7 @@
 <ul>
   <li>서비스명 : 트리덤(tridom) - trip &amp; freedom</li>
   <li>기획 의도 : 코로나 19 제한 완화로 인한 관광객 수 증가, 여행에 관한 서비스의 수요가 증가할 것으로 예상</li>
-  <li>배포 링크 : bit.ly/3JMheyw</li>
+  <li><a href="bit.ly/3JMheyw">배포 링크</a></li>
 </ul>
 
 <h3 id="2-서비스-주요-기능">2. 서비스 주요 기능</h3>
@@ -23,8 +23,6 @@
   <li>게시글 등록을 통한 일정 공유, 좋아요 기능</li>
   <li>유저 페이지 수정, 작성한 일정과 게시글 확인</li>
 </ul>
-
-<p><br /></p>
 
 <h2 id="담당-기능">담당 기능</h2>
 
@@ -52,15 +50,12 @@
   <li>회원 탈퇴 기능</li>
 </ul>
 
-<p><br /></p>
-
 <h2 id="배운-점">배운 점</h2>
 
 <h3 id="코드를-공유한다는-것">코드를 공유한다는 것</h3>
 
 <ul>
-  <li>함께 작업을 하다보니 혼자 할 때와는 달리 다른 사람과 코드를 공유할 일이 많았다. 이때 작업하는 페이지에서만 사용할 것으로 가정하고 코드를 작성했더니 나중에 생각지 못한 문제가 생겨 코드를 계속 수정하게 되었다.
-사용 코드를 다른 사람도 알기 쉽게, 재사용하기 쉽게 만들어야 고치기에도 수월하다는 점을</li>
+  <li>함께 작업을 하다보니 혼자 할 때와는 달리 다른 사람과 코드를 공유할 일이 많았다. 이때 작업하는 페이지에서만 사용할 것으로 가정하고 코드를 작성했더니 나중에 생각지 못한 문제가 생겨 코드를 계속 수정하게 되었다.코드를 다른 사람도 알기 쉽게, 재사용하기 쉽게 만들어야 고치기에도 수월하다는 점을 알게 되었다.</li>
   <li>초반에 코드 스타일을 맞추지 않았더니 PR을 올릴 때마다 사소한 변경점이 계속 생기는 일이 발생했다. 띄어쓰기나 따옴표 등 몇 가지만 정했는데도 훨씬 편해졌다.</li>
 </ul>
 
@@ -80,7 +75,7 @@
 
 <ul>
   <li>코드 리뷰 : 코드를 작성하기에 급급해 충돌 여부만 확인 후 merge를 하는 일이 대부분이었다. 그러다보니 코드를 pull 해오고서 문제를 발견하는 일이 생겼다. 코드를 보다 신중하게 살펴보아야 할 필요성을 느꼈다.</li>
-  <li>커밋의 세분화 :커밋을 큰 기능 단위로 나누어서 하다보니 나중에 보기가 어려웠다. 작은 기능 별로 세세하게 커밋하는 습관을 들여야겠다.</li>
+  <li>커밋의 세분화 : 커밋을 큰 기능 단위로 나누어서 하다보니 나중에 보기가 어려웠다. 작은 기능 별로 세세하게 커밋하는 습관을 들여야겠다.</li>
 </ul>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="review" /><category term="react" /><summary type="html"><![CDATA[main project review]]></summary></entry><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/2-dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/2-dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
 
 <h3 id="1-설치">1. 설치</h3>
