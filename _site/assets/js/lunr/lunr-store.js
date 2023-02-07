@@ -1,4 +1,10 @@
 var store = [{
+        "title": "[HTML] HTML의 기본 구조",
+        "excerpt":"HTML 문서의 구조를 나타낸다. 웹페이지의 틀을 만드는 마크업 언어 tag들의 집합 tag 부등호(&lt;&gt;)로 묶인 HTML의 기본 구성 요소 트리 구조로 이루어져 있으며 tab을 이용하여 들여쓰기를 해서 부모와 자식 관계를 나타낼 수 있다. 1. 문서 형식 정의 tag &lt;!DOCTYPE html&gt; 웹 페이지의 형식을 알려주는 태그이다. 문서의 최상단에 위치하며, 대소문자를 구별하지 않는다....","categories": ["html"],
+        "tags": ["html","tag"],
+        "url": "/html/html/",
+        "teaser": null
+      },{
         "title": "[Recursive] 01. 시간 복잡도(Time Complexity)",
         "excerpt":"1. 시간 복잡도란? 알고리즘의 실행 시간을 표현하는 것을 말한다. 여기서 실행 시간이란 통상적으로 쓰이는 시분초 개념이 아니라, 함수나 알고리즘 수행에 필요한 스텝 수를 의미한다. (실행 환경마다 성능이 다르기 때문에 시간을 초(seconds)나 밀리초(milliseconds)로 표현하면 편차가 커질 수 있기 때문이라고 한다.) 시간 복잡도는 보통 점근 표기법으로 표현한다. 점근적 분석(asymptotic analysis) 임의의 함수가...","categories": ["algorithm"],
         "tags": ["study","recursive","time complexity"],
