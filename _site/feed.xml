@@ -1,4 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-07T23:08:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/2-dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/2-dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-08T01:20:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 메인 프로젝트 회고록</title><link href="http://localhost:4000/main%20project/project-review/" rel="alternate" type="text/html" title="[Main Project] 메인 프로젝트 회고록" /><published>2023-02-07T00:00:00+09:00</published><updated>2023-02-07T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/project-review</id><content type="html" xml:base="http://localhost:4000/main%20project/project-review/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/95217370/215842925-37524a74-c2f4-454c-914f-3d19344bed16.png" />
+4주간 진행한 메인 프로젝트가 끝났다.</p>
+
+<p>프로젝트 기간 동안 배웠던 점들에 대해 잊기 전에 기록해두려고 한다.</p>
+
+<p><br /></p>
+
+<h2 id="프로젝트에-관해서">프로젝트에 관해서</h2>
+
+<h3 id="1-서비스-개요">1. 서비스 개요</h3>
+
+<ul>
+  <li>서비스명 : 트리덤(tridom) - trip &amp; freedom</li>
+  <li>기획 의도 : 코로나 19 제한 완화로 인한 관광객 수 증가, 여행에 관한 서비스의 수요가 증가할 것으로 예상</li>
+  <li>배포 링크 : bit.ly/3JMheyw</li>
+</ul>
+
+<h3 id="2-서비스-주요-기능">2. 서비스 주요 기능</h3>
+
+<ul>
+  <li>국내 여행 일정 계획 기능 및 구글 지도를 통한 시각화</li>
+  <li>여행 일정에 대해 예산 및 비용 등록 기능, 사용량 확인 기능</li>
+  <li>게시글 등록을 통한 일정 공유, 좋아요 기능</li>
+  <li>유저 페이지 수정, 작성한 일정과 게시글 확인</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="담당-기능">담당 기능</h2>
+
+<h3 id="1-메인-페이지">1. 메인 페이지</h3>
+
+<ul>
+  <li>로그인 여부에 따라 다르게 나타나는 메인 페이지</li>
+  <li>달력을 통한 날짜 선택 기능</li>
+  <li>여행, 게시글 목록 공용 컴포넌트 구현</li>
+</ul>
+
+<h3 id="2-게시글-작성-수정-페이지">2. 게시글 작성, 수정 페이지</h3>
+
+<ul>
+  <li>여행 선택 페이지 : 게시글로 작성할 여행 선택 페이지</li>
+  <li>게시글 작성 페이지</li>
+  <li>게시글 수정 페이지 : 게시글 삭제 기능 포함</li>
+</ul>
+
+<h3 id="3-유저페이지">3. 유저페이지</h3>
+
+<ul>
+  <li>프로필과 작성한 여행, 게시글 조회 기능</li>
+  <li>프로필 수정 기능</li>
+  <li>회원 탈퇴 기능</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="배운-점">배운 점</h2>
+
+<h3 id="코드를-공유한다는-것">코드를 공유한다는 것</h3>
+
+<ul>
+  <li>함께 작업을 하다보니 혼자 할 때와는 달리 다른 사람과 코드를 공유할 일이 많았다. 이때 작업하는 페이지에서만 사용할 것으로 가정하고 코드를 작성했더니 나중에 생각지 못한 문제가 생겨 코드를 계속 수정하게 되었다.
+사용 코드를 다른 사람도 알기 쉽게, 재사용하기 쉽게 만들어야 고치기에도 수월하다는 점을</li>
+  <li>초반에 코드 스타일을 맞추지 않았더니 PR을 올릴 때마다 사소한 변경점이 계속 생기는 일이 발생했다. 띄어쓰기나 따옴표 등 몇 가지만 정했는데도 훨씬 편해졌다.</li>
+</ul>
+
+<h3 id="중복-코드의-유틸화">중복 코드의 유틸화</h3>
+
+<ul>
+  <li>날짜 포맷 라이브러리를 사용하다 변경할 일이 있었는데 컴포넌트마다 가져다 쓰다보니 일일이 변경하느라 고생했다. 유틸 파일로 분리해서 나중에 변경하기 쉽게 고쳤다.</li>
+</ul>
+
+<h3 id="상태관리-라이브러리의-필요성">상태관리 라이브러리의 필요성</h3>
+
+<ul>
+  <li>초반에 프로젝트의 규모가 크지 않아 상태 관리 라이브러리가 굳이 필요하지 않다고 생각했는데, 지도 api 사용과정에서 생각보다 props drilling이 많이 발생했다. 추후 사용할 일도 많을 것 같아 수료 후 학습해서 이 부분을 보충하고 싶다.</li>
+</ul>
+
+<h3 id="깃허브-사용">깃허브 사용</h3>
+
+<ul>
+  <li>코드 리뷰 : 코드를 작성하기에 급급해 충돌 여부만 확인 후 merge를 하는 일이 대부분이었다. 그러다보니 코드를 pull 해오고서 문제를 발견하는 일이 생겼다. 코드를 보다 신중하게 살펴보아야 할 필요성을 느꼈다.</li>
+  <li>커밋의 세분화 :커밋을 큰 기능 단위로 나누어서 하다보니 나중에 보기가 어려웠다. 작은 기능 별로 세세하게 커밋하는 습관을 들여야겠다.</li>
+</ul>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="review" /><category term="react" /><summary type="html"><![CDATA[main project review]]></summary></entry><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/2-dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/2-dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
 
 <h3 id="1-설치">1. 설치</h3>
 
@@ -854,28 +937,4 @@
 
 <p>위와 같이 시작 날짜, 종료 날짜를 선택하면 범위가 표시된다! (css는 좀 수정된 상태)</p>
 
-<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="calendar" /><summary type="html"><![CDATA[달력 라이브러리]]></summary></entry><entry><title type="html">[Github Blog] Github 블로그 만들기</title><link href="http://localhost:4000/blog/hello-blog/" rel="alternate" type="text/html" title="[Github Blog] Github 블로그 만들기" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/blog/hello-blog</id><content type="html" xml:base="http://localhost:4000/blog/hello-blog/"><![CDATA[<h2 id="1-repository-생성">1. Repository 생성</h2>
-
-<p><code class="language-plaintext highlighter-rouge">깃허브 계정.github.io</code> 라는 이름으로 레포지토리를 생성해서 로컬로 클론한다.</p>
-
-<h2 id="2-ruby-jekyll-bundler-설치">2. ruby, Jekyll, Bundler 설치</h2>
-
-<p>블로그를 참고해서 지킬을 설치했다! 이 부분은 정확히 이해 하고 있지 못해서 다시 알아볼 예정이다.</p>
-
-<p class="notice--primary"><a href="https://ansohxxn.github.io/blog/i-made-my-blog/">https://ansohxxn.github.io/blog/i-made-my-blog/</a>
-<br />
-<a href="https://jojoldu.tistory.com/288">https://jojoldu.tistory.com/288</a>
-<br />
-<a href="https://codecamper.me/blog/122/">https://codecamper.me/blog/122/</a></p>
-
-<h2 id="3-지킬-테마-선택">3. 지킬 테마 선택</h2>
-
-<p><strong>minimal-mistakes</strong> 테마를 선택했다.</p>
-
-<p class="notice--primary"><a href="https://github.com/mmistakes/minimal-mistakes">https://github.com/mmistakes/minimal-mistakes</a></p>
-
-<p>선택한 테마의 <code class="language-plaintext highlighter-rouge">github repository</code> 압축 파일을 받아서 만들어둔 폴더에 붙여넣고 원격 레포지토리로 <code class="language-plaintext highlighter-rouge">push</code> 한다.</p>
-
-<p class="notice--primary"><a href="https://github.com/sharadcodes/jekyll-theme-serial-programmer">https://github.com/sharadcodes/jekyll-theme-serial-programmer</a></p>
-
-<p><code class="language-plaintext highlighter-rouge">serial-programmer</code> 테마도 고민했는데 카테고리가 없고, 라이트 모드로 사용하려면 따로 설정을 해줘야 할 것 같아 익숙해지면 바꿔보고 싶다.</p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="First Post" /><summary type="html"><![CDATA[github pages를 이용해서 블로그 만들기.]]></summary></entry></feed>
+<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="calendar" /><summary type="html"><![CDATA[달력 라이브러리]]></summary></entry></feed>

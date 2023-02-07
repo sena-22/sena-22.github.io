@@ -64,4 +64,10 @@ var store = [{
         "tags": ["project","codestates","cookie","react"],
         "url": "/main%20project/3-cookies/",
         "teaser": null
+      },{
+        "title": "[Main Project] 메인 프로젝트 회고록",
+        "excerpt":"4주간 진행한 메인 프로젝트가 끝났다. 프로젝트 기간 동안 배웠던 점들에 대해 잊기 전에 기록해두려고 한다. 프로젝트에 관해서 1. 서비스 개요 서비스명 : 트리덤(tridom) - trip &amp; freedom 기획 의도 : 코로나 19 제한 완화로 인한 관광객 수 증가, 여행에 관한 서비스의 수요가 증가할 것으로 예상 배포 링크 : bit.ly/3JMheyw 2....","categories": ["main project"],
+        "tags": ["project","codestates","review","react"],
+        "url": "/main%20project/project-review/",
+        "teaser": null
       }]
