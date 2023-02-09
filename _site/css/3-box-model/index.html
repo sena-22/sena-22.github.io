@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[CSS] CSS의 기초 용어 - Reyna</title>
-<meta name="description" content="css 기초">
+<!-- begin _includes/seo.html --><title>[CSS] 박스 모델 - Reyna</title>
+<meta name="description" content="box model">
 
 
   <meta name="author" content="Reyna">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[CSS] CSS의 기초 용어">
-<meta property="og:url" content="http://localhost:4000/css/css/">
+<meta property="og:title" content="[CSS] 박스 모델">
+<meta property="og:url" content="http://localhost:4000/css/3-box-model/">
 
 
-  <meta property="og:description" content="css 기초">
+  <meta property="og:description" content="box model">
 
 
 
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/css/css/">
+<link rel="canonical" href="http://localhost:4000/css/3-box-model/">
 
 
 
@@ -346,10 +346,10 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[CSS] CSS의 기초 용어"
+      content="[CSS] 박스 모델"
     /> <meta
       itemprop="description"
-      content="css 기초"
+      content="box model"
     /> <meta
       itemprop="datePublished"
       content="2023-02-09T00:00:00+09:00"
@@ -363,7 +363,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[CSS] CSS의 기초 용어</p>
+          <p>[CSS] 박스 모델</p>
 
         </h1>
          
@@ -402,6 +402,8 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
+      <a href="/tags/#box-model" class="page__taxonomy-item p-category" rel="tag">box model</a><span class="sep">, </span>
+    
       <a href="/tags/#css" class="page__taxonomy-item p-category" rel="tag">css</a>
     
     </span>
@@ -420,82 +422,96 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#csscascading-style-sheets란">CSS(Cascading Style Sheets)란?</a></li><li><a href="#css-용어">CSS 용어</a><ul><li><a href="#1-선택자셀렉터">1. 선택자(셀렉터)</a></li><li><a href="#2-프로퍼티속성">2. 프로퍼티(속성)</a></li><li><a href="#3-값속성값">3. 값(속성값)</a></li><li><a href="#4-html에-css-연결하기">4. HTML에 CSS 연결하기</a><ul><li><a href="#1-link-style">1. Link style</a></li><li><a href="#2-embedding-style">2. Embedding style</a></li><li><a href="#3-inline-style">3. Inline style</a></li></ul></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#블록-요소와-인라인-요소">블록 요소와 인라인 요소</a></li><li><a href="#css-box-model">CSS Box Model</a><ul><li><a href="#css-box-model의-구성-요소">CSS Box Model의 구성 요소</a><ul><li><a href="#content">content</a></li><li><a href="#border-테두리">border (테두리)</a></li><li><a href="#padding안쪽-여백">padding(안쪽 여백)</a></li><li><a href="#margin바깥쪽-여백">margin(바깥쪽 여백)</a></li></ul></li></ul></li></ul>
 
           </nav>
         </aside>
-         <h1 id="csscascading-style-sheets란">CSS(Cascading Style Sheets)란?</h1>
+         <h1 id="블록-요소와-인라인-요소">블록 요소와 인라인 요소</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">분류</th>
+      <th style="text-align: center">태그</th>
+      <th style="text-align: center">줄바꿈</th>
+      <th style="text-align: center">기본 너비</th>
+      <th style="text-align: center">width, height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">block</td>
+      <td style="text-align: center">h1~h6, p, div, 리스트 태그, 레이아웃 태그</td>
+      <td style="text-align: center">자동</td>
+      <td style="text-align: center">100%</td>
+      <td style="text-align: center">사용 가능</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inline-block</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">display: inline-block</code> 설정</td>
+      <td style="text-align: center">일어나지 않음</td>
+      <td style="text-align: center">글자가 차지하는 만큼</td>
+      <td style="text-align: center">사용 가능</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inline</td>
+      <td style="text-align: center">strong, em, a, span</td>
+      <td style="text-align: center">일어나지 않음</td>
+      <td style="text-align: center">글자가 차지하는 만큼</td>
+      <td style="text-align: center">사용 불가능</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>블록 요소</strong>는 글의 레이아웃과 관련되고, <strong>인라인 요소</strong>는 글의 서식과 관련된다.
+<code class="language-plaintext highlighter-rouge">inline-block</code> 속성은 인라인 요소와 블록 요소의 속성을 모두 사용한다.</p>
+
+<h1 id="css-box-model">CSS Box Model</h1>
+
+<p><img width="270" alt="스크린샷 2023-02-09 오후 8 54 01" src="https://user-images.githubusercontent.com/110877564/217806069-1282faf6-2733-4da9-90a1-a989284b5aaa.png" /></p>
+
+<h2 id="css-box-model의-구성-요소">CSS Box Model의 구성 요소</h2>
+
+<h3 id="content">content</h3>
 
 <ul>
-  <li>HTML로 작성한 웹 애플리케이션의 구조에 <strong>디자인</strong>을 적용할 수 있는 스타일 시트 언어</li>
-  <li>좋은 사용자 경험(UX:user experience)을 제공하기 위한 도구</li>
+  <li>실제 내용이 위치하는 영역으로, width, height 속성을 가진다.</li>
 </ul>
 
-<h1 id="css-용어">CSS 용어</h1>
-
-<p><img width="744" alt="스크린샷 2023-02-09 오후 2 45 57" src="https://user-images.githubusercontent.com/110877564/217728793-1a9c5b56-17b9-41f6-904f-16587747cce6.png" style="border-radius:5px" /></p>
-
-<h2 id="1-선택자셀렉터">1. 선택자(셀렉터)</h2>
+<h3 id="border-테두리">border (테두리)</h3>
 
 <ul>
-  <li>스타일을 적용하고자 하는 HTML 요소를 선택하기 위해 사용하는 방법이다.</li>
+  <li>border 단축 속성</li>
 </ul>
 
-<h2 id="2-프로퍼티속성">2. 프로퍼티(속성)</h2>
+<ol>
+  <li>border-color</li>
+  <li>border-style</li>
+  <li>
+    <p>border-width</p>
+
+    <p class="notice--primary"><a href="https://developer.mozilla.org/ko/docs/Web/CSS/border-style">border style</a></p>
+  </li>
+</ol>
+
+<h3 id="padding안쪽-여백">padding(안쪽 여백)</h3>
 
 <ul>
-  <li>해당 선택자에 지정할 스타일을 말한다.</li>
-  <li>임의로 정할 수 없고 지정된 것을 사용해야 한다.</li>
-  <li>세미콜론을 끝에 붙여야 한다.</li>
+  <li>border 기준으로 박스 내부의 여백을 지정한다.</li>
 </ul>
 
-<p class="notice--primary"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#Keyword_index">프로퍼티 목록(mozilla)</a></p>
-
-<h2 id="3-값속성값">3. 값(속성값)</h2>
-
-<ul>
-  <li>프로퍼티에 사용할 수 있는 값.</li>
-  <li>프로퍼티마다 정해진 키워드나 단위로 지정해야 한다.</li>
-</ul>
-
-<h2 id="4-html에-css-연결하기">4. HTML에 CSS 연결하기</h2>
-
-<h3 id="1-link-style">1. Link style</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/style.css"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">div</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span><span class="p">;</span> <span class="c1">//top, right, bottom, left 순서(시계방향)</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span><span class="p">;</span> <span class="c1">//상하, 좌우</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span><span class="p">;</span> <span class="c1">// 모든 방향</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>html <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>태그 안에서 외부에 있는 css 파일을 로드하는 방식</p>
+<h3 id="margin바깥쪽-여백">margin(바깥쪽 여백)</h3>
 
-<h3 id="2-embedding-style">2. Embedding style</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;style&gt;</span>
-    <span class="nt">h1</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">background</span><span class="p">:</span> <span class="no">aqua</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-</code></pre></div></div>
-
-<p>html 내부에 css를 직접 포함시키는 방식.</p>
-
-<h3 id="3-inline-style">3. Inline style</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;h1</span> <span class="na">style=</span><span class="s">"color: red"</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
-  <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"background: aqua"</span><span class="nt">&gt;</span>This is a web page.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-</code></pre></div></div>
-
-<p>html 요소의 style 프로퍼티에 css를 포함시키는 방식.</p>
-
-<p class="notice--primary">HTML과 CSS의 역할을 분리시키기 위해 <strong>Link style</strong>을 사용하는 것이 바람직하다.</p>
+<ul>
+  <li>border 기준으로 박스 외부의 여백을 지정한다.</li>
+</ul>
  
       </section>
 
@@ -520,12 +536,11 @@
  
   <nav class="pagination">
     
-      <a href="/css/box-model/" class="pagination--pager" title="[CSS] 박스 모델
+      <a href="/css/2-selector/" class="pagination--pager" title="[CSS] 선택자(selector)
 ">Previous</a>
     
     
-      <a href="/css/selector/" class="pagination--pager" title="[CSS] 선택자(selector)
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -549,7 +564,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/css/selector/" rel="permalink">[CSS] 선택자(selector)
+        <a href="/css/2-selector/" rel="permalink">[CSS] 선택자(selector)
 </a>
       
     </h2>
@@ -587,7 +602,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/css/box-model/" rel="permalink">[CSS] 박스 모델
+        <a href="/css/1-css/" rel="permalink">[CSS] CSS의 기초 용어
 </a>
       
     </h2>
@@ -612,7 +627,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">box model
+    <p class="archive__item-excerpt" itemprop="description">css 기초
 </p>
   </article>
 </div>
