@@ -88,4 +88,10 @@ var store = [{
         "tags": ["css"],
         "url": "/css/css/",
         "teaser": null
+      },{
+        "title": "[CSS] 선택자(selector)",
+        "excerpt":"전체 선택자 HTML 문서 내의 모든 요소 선택. head 요소도 포함된다 * { border: 1px solid red; } 태그 선택자 특정 태그를 선택 h1 { border: 1px solid red; } h2 { border: 1px solid blue; } 자손 선택자 자식과 하위 요소를 모두 선택 //html &lt;p&gt; &lt;strong&gt;자손 텍스트 요소&lt;/strong&gt; &lt;/p&gt;...","categories": ["css"],
+        "tags": ["css","selector"],
+        "url": "/css/selector/",
+        "teaser": null
       }]
