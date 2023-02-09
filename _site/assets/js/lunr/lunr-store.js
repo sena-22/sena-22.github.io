@@ -82,4 +82,10 @@ var store = [{
         "tags": ["html","tag"],
         "url": "/html/tag/",
         "teaser": null
+      },{
+        "title": "[CSS] CSS의 기초 용어",
+        "excerpt":"CSS(Cascading Style Sheets)란? HTML로 작성한 웹 애플리케이션의 구조에 디자인을 적용할 수 있는 스타일 시트 언어 좋은 사용자 경험(UX:user experience)을 제공하기 위한 도구 CSS 용어 1. 선택자(셀렉터) 스타일을 적용하고자 하는 HTML 요소를 선택하기 위해 사용하는 방법이다. 2. 프로퍼티(속성) 해당 선택자에 지정할 스타일을 말한다. 임의로 정할 수 없고 지정된 것을 사용해야 한다....","categories": ["css"],
+        "tags": ["css"],
+        "url": "/css/css/",
+        "teaser": null
       }]
