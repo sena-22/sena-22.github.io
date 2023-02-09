@@ -100,4 +100,10 @@ var store = [{
         "tags": ["css","box model"],
         "url": "/css/3-box-model/",
         "teaser": null
+      },{
+        "title": "[CSS] transform 속성",
+        "excerpt":"transform(2D) //css section:nth-of-type(1) article { transform: scale(1.5); /* 요소를 1.5배 확대 */ } section:nth-of-type(2) article { transform: skewX(20deg); /* 요소를 x축으로 20도만큼 기울이기 */ } section:nth-of-type(3) article { transform: translateX(20px); /* 요소를 20px만큼 오른쪽으로 이동 */ } section:nth-of-type(4) article { transform: rotate(45deg); /* 요소를 45도만큼 회전 */ } transform(3D) section...","categories": ["css"],
+        "tags": ["css","transform"],
+        "url": "/css/4-transform/",
+        "teaser": null
       }]

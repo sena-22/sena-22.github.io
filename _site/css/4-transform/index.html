@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Main Project] 메인 프로젝트 회고록 - Reyna</title>
-<meta name="description" content="main project review">
+<!-- begin _includes/seo.html --><title>[CSS] transform 속성 - Reyna</title>
+<meta name="description" content="transform">
 
 
   <meta name="author" content="Reyna">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Main Project] 메인 프로젝트 회고록">
-<meta property="og:url" content="http://localhost:4000/main%20project/project-review/">
+<meta property="og:title" content="[CSS] transform 속성">
+<meta property="og:url" content="http://localhost:4000/css/4-transform/">
 
 
-  <meta property="og:description" content="main project review">
-
-
-
+  <meta property="og:description" content="transform">
 
 
 
 
-  <meta property="article:published_time" content="2023-02-07T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-02-08T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-02-09T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-02-09T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/main%20project/project-review/">
+
+<link rel="canonical" href="http://localhost:4000/css/4-transform/">
 
 
 
@@ -346,16 +346,16 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Main Project] 메인 프로젝트 회고록"
+      content="[CSS] transform 속성"
     /> <meta
       itemprop="description"
-      content="main project review"
+      content="transform"
     /> <meta
       itemprop="datePublished"
-      content="2023-02-07T00:00:00+09:00"
+      content="2023-02-09T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-02-08T00:00:00+09:00"
+      content="2023-02-09T00:00:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -363,7 +363,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Main Project] 메인 프로젝트 회고록</p>
+          <p>[CSS] transform 속성</p>
 
         </h1>
          
@@ -371,13 +371,13 @@
           <strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
           >
-          <time datetime="2023-02-07T00:00:00+09:00"
-            >2023.02.07</time
+          <time datetime="2023-02-09T00:00:00+09:00"
+            >2023.02.09</time
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-02-08"
-            >2023.02.08</time
+          <time datetime="2023-02-09"
+            >2023.02.09</time
           >
         </p>
           
@@ -389,7 +389,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#main-project" class="page__taxonomy-item p-category" rel="tag">main project</a>
+      <a href="/categories/#css" class="page__taxonomy-item p-category" rel="tag">css</a>
     
     </span>
   </p>
@@ -402,13 +402,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#codestates" class="page__taxonomy-item p-category" rel="tag">codestates</a><span class="sep">, </span>
+      <a href="/tags/#css" class="page__taxonomy-item p-category" rel="tag">css</a><span class="sep">, </span>
     
-      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a><span class="sep">, </span>
-    
-      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
-    
-      <a href="/tags/#review" class="page__taxonomy-item p-category" rel="tag">review</a>
+      <a href="/tags/#transform" class="page__taxonomy-item p-category" rel="tag">transform</a>
     
     </span>
   </p>
@@ -426,89 +422,61 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#프로젝트에-관해서">프로젝트에 관해서</a><ul><li><a href="#1-서비스-개요">1. 서비스 개요</a></li><li><a href="#2-서비스-주요-기능">2. 서비스 주요 기능</a></li></ul></li><li><a href="#담당-기능">담당 기능</a><ul><li><a href="#1-메인-페이지">1. 메인 페이지</a></li><li><a href="#2-게시글-작성-수정-페이지">2. 게시글 작성, 수정 페이지</a></li><li><a href="#3-유저페이지">3. 유저페이지</a></li></ul></li><li><a href="#배운-점">배운 점</a><ul><li><a href="#코드를-공유한다는-것">코드를 공유한다는 것</a></li><li><a href="#중복-코드의-유틸화">중복 코드의 유틸화</a></li><li><a href="#상태관리-라이브러리의-필요성">상태관리 라이브러리의 필요성</a></li><li><a href="#깃허브-사용">깃허브 사용</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#transform2d">transform(2D)</a></li><li><a href="#transform3d">transform(3D)</a></li><li><a href="#transform3d---중심축-이동">transform(3D) - 중심축 이동</a></li></ul>
 
           </nav>
         </aside>
-         <p><img src="https://user-images.githubusercontent.com/95217370/215842925-37524a74-c2f4-454c-914f-3d19344bed16.png" /></p>
+         <h2 id="transform2d">transform(2D)</h2>
 
-<p><br />
-4주간 진행한 메인 프로젝트가 끝났다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span><span class="nt">css</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span> <span class="c">/* 요소를 1.5배 확대 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">skewX</span><span class="p">(</span><span class="m">20deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 20도만큼 기울이기 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span> <span class="c">/* 요소를 20px만큼 오른쪽으로 이동 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 45도만큼 회전 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>프로젝트 기간 동안 배웠던 점들에 대해 잊기 전에 기록해두려고 한다.</p>
+<h2 id="transform3d">transform(3D)</h2>
 
-<h2 id="프로젝트에-관해서">프로젝트에 관해서</h2>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
+  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 45도 회전 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 y축으로 45도 회전 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 100px 이동 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 -100px 이동 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<h3 id="1-서비스-개요">1. 서비스 개요</h3>
+<h2 id="transform3d---중심축-이동">transform(3D) - 중심축 이동</h2>
 
-<ul>
-  <li>서비스명 : 트리덤(tridom) - trip &amp; freedom</li>
-  <li>기획 의도 : 코로나 19 제한 완화로 인한 관광객 수 증가, 여행에 관한 서비스의 수요가 증가할 것으로 예상</li>
-  <li><a href="bit.ly/3JMheyw">배포 링크</a></li>
-</ul>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
+  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 -&gt; 기본값 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">right</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 */</span>
+</code></pre></div></div>
 
-<h3 id="2-서비스-주요-기능">2. 서비스 주요 기능</h3>
-
-<ul>
-  <li>국내 여행 일정 계획 기능 및 구글 지도를 통한 시각화</li>
-  <li>여행 일정에 대해 예산 및 비용 등록 기능, 사용량 확인 기능</li>
-  <li>게시글 등록을 통한 일정 공유, 좋아요 기능</li>
-  <li>유저 페이지 수정, 작성한 일정과 게시글 확인</li>
-</ul>
-
-<h2 id="담당-기능">담당 기능</h2>
-
-<h3 id="1-메인-페이지">1. 메인 페이지</h3>
-
-<ul>
-  <li>로그인 여부에 따라 다르게 나타나는 메인 페이지</li>
-  <li>달력을 통한 날짜 선택 기능</li>
-  <li>여행, 게시글 목록 공용 컴포넌트 구현</li>
-</ul>
-
-<h3 id="2-게시글-작성-수정-페이지">2. 게시글 작성, 수정 페이지</h3>
-
-<ul>
-  <li>여행 선택 페이지 : 게시글로 작성할 여행 선택 페이지</li>
-  <li>게시글 작성 페이지</li>
-  <li>게시글 수정 페이지 : 게시글 삭제 기능 포함</li>
-</ul>
-
-<h3 id="3-유저페이지">3. 유저페이지</h3>
-
-<ul>
-  <li>프로필과 작성한 여행, 게시글 조회 기능</li>
-  <li>프로필 수정 기능</li>
-  <li>회원 탈퇴 기능</li>
-</ul>
-
-<h2 id="배운-점">배운 점</h2>
-
-<h3 id="코드를-공유한다는-것">코드를 공유한다는 것</h3>
-
-<ul>
-  <li>함께 작업을 하다보니 혼자 할 때와는 달리 다른 사람과 코드를 공유할 일이 많았다. 이때 작업하는 페이지에서만 사용할 것으로 가정하고 코드를 작성했더니 나중에 생각지 못한 문제가 생겨 코드를 계속 수정하게 되었다.코드를 다른 사람도 알기 쉽게, 재사용하기 쉽게 만들어야 고치기에도 수월하다는 점을 알게 되었다.</li>
-  <li>초반에 코드 스타일을 맞추지 않았더니 PR을 올릴 때마다 사소한 변경점이 계속 생기는 일이 발생했다. 띄어쓰기나 따옴표 등 몇 가지만 정했는데도 훨씬 편해졌다.</li>
-</ul>
-
-<h3 id="중복-코드의-유틸화">중복 코드의 유틸화</h3>
-
-<ul>
-  <li>날짜 포맷 라이브러리를 사용하다 변경할 일이 있었는데 컴포넌트마다 가져다 쓰다보니 일일이 변경하느라 고생했다. 유틸 파일로 분리해서 나중에 변경하기 쉽게 고쳤다.</li>
-</ul>
-
-<h3 id="상태관리-라이브러리의-필요성">상태관리 라이브러리의 필요성</h3>
-
-<ul>
-  <li>초반에 프로젝트의 규모가 크지 않아 상태 관리 라이브러리가 굳이 필요하지 않다고 생각했는데, 지도 api 사용과정에서 생각보다 props drilling이 많이 발생했다. 추후 사용할 일도 많을 것 같아 수료 후 학습해서 이 부분을 보충하고 싶다.</li>
-</ul>
-
-<h3 id="깃허브-사용">깃허브 사용</h3>
-
-<ul>
-  <li>코드 리뷰 : 코드를 작성하기에 급급해 충돌 여부만 확인 후 merge를 하는 일이 대부분이었다. 그러다보니 코드를 pull 해오고서 문제를 발견하는 일이 생겼다. 코드를 보다 신중하게 살펴보아야 할 필요성을 느꼈다.</li>
-  <li>커밋의 세분화 : 커밋을 큰 기능 단위로 나누어서 하다보니 나중에 보기가 어려웠다. 작은 기능 별로 세세하게 커밋하는 습관을 들여야겠다.</li>
-</ul>
+<p class="notice--primary"><a href="https://codesandbox.io/s/css-transform-sogseong-yesi-tzmpl1?file=/src/App.js">transform 예시(CodeSandbox)</a></p>
  
       </section>
 
@@ -533,12 +501,11 @@
  
   <nav class="pagination">
     
-      <a href="/main%20project/3-cookies/" class="pagination--pager" title="[Main Project] 07. Cookies
+      <a href="/css/3-box-model/" class="pagination--pager" title="[CSS] 박스 모델
 ">Previous</a>
     
     
-      <a href="/html/tag/" class="pagination--pager" title="[HTML] HTML Tag 정리
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -554,44 +521,6 @@
     </h2>
     <div class="grid__wrapper">
        
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/css/4-transform/" rel="permalink">[CSS] transform 속성
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">transform
-</p>
-  </article>
-</div>
-  
 
 
 
@@ -702,6 +631,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">css 기초
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/html/tag/" rel="permalink">[HTML] HTML Tag 정리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">html tag
 </p>
   </article>
 </div>
