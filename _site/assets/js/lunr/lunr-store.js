@@ -83,6 +83,12 @@ var store = [{
         "url": "/html/tag/",
         "teaser": null
       },{
+        "title": "[CSS] 박스 모델",
+        "excerpt":"블록 요소와 인라인 요소 분류 태그 줄바꿈 기본 너비 width, height block h1~h6, p, div, 리스트 태그, 레이아웃 태그 자동 100% 사용 가능 inline-block display: inline-block 설정 일어나지 않음 글자가 차지하는 만큼 사용 가능 inline strong, em, a, span 일어나지 않음 글자가 차지하는 만큼 사용 불가능 블록 요소는 글의 레이아웃과...","categories": ["css"],
+        "tags": ["css","box model"],
+        "url": "/css/box-model/",
+        "teaser": null
+      },{
         "title": "[CSS] CSS의 기초 용어",
         "excerpt":"CSS(Cascading Style Sheets)란? HTML로 작성한 웹 애플리케이션의 구조에 디자인을 적용할 수 있는 스타일 시트 언어 좋은 사용자 경험(UX:user experience)을 제공하기 위한 도구 CSS 용어 1. 선택자(셀렉터) 스타일을 적용하고자 하는 HTML 요소를 선택하기 위해 사용하는 방법이다. 2. 프로퍼티(속성) 해당 선택자에 지정할 스타일을 말한다. 임의로 정할 수 없고 지정된 것을 사용해야 한다....","categories": ["css"],
         "tags": ["css"],

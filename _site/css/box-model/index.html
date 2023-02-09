@@ -9,30 +9,36 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Reyna - Page 2</title>
-<meta name="description" content="An amazing website.">
+<!-- begin _includes/seo.html --><title>[CSS] 박스 모델 - Reyna</title>
+<meta name="description" content="box model">
 
 
   <meta name="author" content="Reyna">
   
+  <meta property="article:author" content="Reyna">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="Reyna">
-<meta property="og:url" content="http://localhost:4000/page2/">
+<meta property="og:title" content="[CSS] 박스 모델">
+<meta property="og:url" content="http://localhost:4000/css/box-model/">
 
 
-  <meta property="og:description" content="An amazing website.">
-
-
-
+  <meta property="og:description" content="box model">
 
 
 
 
 
+
+
+  <meta property="article:published_time" content="2023-02-09T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-02-09T00:00:00+09:00">
 
 
 
@@ -41,13 +47,9 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/page2/">
+<link rel="canonical" href="http://localhost:4000/css/box-model/">
 
 
-  <link rel="prev" href="http://localhost:4000/">
-
-
-  <link rel="next" href="http://localhost:4000/page3/">
 
 
 <script type="application/ld+json">
@@ -103,7 +105,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -141,9 +143,7 @@
 
 
     <div class="initial-content">
-      
-
-
+         
 
 <div id="main" role="main">
   
@@ -343,29 +343,267 @@
 
 
 
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title"></h1>
-    
-    
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[CSS] 박스 모델"
+    /> <meta
+      itemprop="description"
+      content="box model"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-02-09T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-02-09T00:00:00+09:00"
+    />
 
-<h3 class="archive__subtitle">Recent posts</h3>
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[CSS] 박스 모델</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-02-09T00:00:00+09:00"
+            >2023.02.09</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-02-09"
+            >2023.02.09</time
+          >
+        </p>
+          
 
 
-
-
-<div class="entries-list">
   
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
     
+      <a href="/categories/#css" class="page__taxonomy-item p-category" rel="tag">css</a>
+    
+    </span>
+  </p>
 
 
 
-<div class="list__item">
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#box-model" class="page__taxonomy-item p-category" rel="tag">box model</a><span class="sep">, </span>
+    
+      <a href="/tags/#css" class="page__taxonomy-item p-category" rel="tag">css</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#블록-요소와-인라인-요소">블록 요소와 인라인 요소</a></li><li><a href="#css-box-model">CSS Box Model</a><ul><li><a href="#css-box-model의-구성-요소">CSS Box Model의 구성 요소</a><ul><li><a href="#content">content</a></li><li><a href="#border-테두리">border (테두리)</a></li><li><a href="#padding안쪽-여백">padding(안쪽 여백)</a></li><li><a href="#margin바깥쪽-여백">margin(바깥쪽 여백)</a></li></ul></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <h1 id="블록-요소와-인라인-요소">블록 요소와 인라인 요소</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">분류</th>
+      <th style="text-align: center">태그</th>
+      <th style="text-align: center">줄바꿈</th>
+      <th style="text-align: center">기본 너비</th>
+      <th style="text-align: center">width, height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">block</td>
+      <td style="text-align: center">h1~h6, p, div, 리스트 태그, 레이아웃 태그</td>
+      <td style="text-align: center">자동</td>
+      <td style="text-align: center">100%</td>
+      <td style="text-align: center">사용 가능</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inline-block</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">display: inline-block</code> 설정</td>
+      <td style="text-align: center">일어나지 않음</td>
+      <td style="text-align: center">글자가 차지하는 만큼</td>
+      <td style="text-align: center">사용 가능</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inline</td>
+      <td style="text-align: center">strong, em, a, span</td>
+      <td style="text-align: center">일어나지 않음</td>
+      <td style="text-align: center">글자가 차지하는 만큼</td>
+      <td style="text-align: center">사용 불가능</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>블록 요소</strong>는 글의 레이아웃과 관련되고, <strong>인라인 요소</strong>는 글의 서식과 관련된다.
+<code class="language-plaintext highlighter-rouge">inline-block</code> 속성은 인라인 요소와 블록 요소의 속성을 모두 사용한다.</p>
+
+<h1 id="css-box-model">CSS Box Model</h1>
+
+<p><img width="270" alt="스크린샷 2023-02-09 오후 8 54 01" src="https://user-images.githubusercontent.com/110877564/217806069-1282faf6-2733-4da9-90a1-a989284b5aaa.png" /></p>
+
+<h2 id="css-box-model의-구성-요소">CSS Box Model의 구성 요소</h2>
+
+<h3 id="content">content</h3>
+
+<ul>
+  <li>실제 내용이 위치하는 영역으로, width, height 속성을 가진다.</li>
+</ul>
+
+<h3 id="border-테두리">border (테두리)</h3>
+
+<ul>
+  <li>border 단축 속성</li>
+</ul>
+
+<ol>
+  <li>border-color</li>
+  <li>border-style</li>
+  <li>
+    <p>border-width</p>
+
+    <p class="notice--primary"><a href="https://developer.mozilla.org/ko/docs/Web/CSS/border-style">border style</a></p>
+  </li>
+</ol>
+
+<h3 id="padding안쪽-여백">padding(안쪽 여백)</h3>
+
+<ul>
+  <li>border 기준으로 박스 내부의 여백을 지정한다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">div</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span><span class="p">;</span> <span class="c1">//top, right, bottom, left 순서(시계방향)</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span><span class="p">;</span> <span class="c1">//상하, 좌우</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span><span class="p">;</span> <span class="c1">// 모든 방향</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="margin바깥쪽-여백">margin(바깥쪽 여백)</h3>
+
+<ul>
+  <li>border 기준으로 박스 외부의 여백을 지정한다.</li>
+</ul>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/html/tag/" class="pagination--pager" title="[HTML] HTML Tag 정리
+">Previous</a>
+    
+    
+      <a href="/css/css/" class="pagination--pager" title="[CSS] CSS의 기초 용어
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/main%20project/3-cookies/" rel="permalink">[Main Project] 07. Cookies
+        <a href="/css/selector/" rel="permalink">[CSS] 선택자(selector)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">css 선택자
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/css/" rel="permalink">[CSS] CSS의 기초 용어
 </a>
       
     </h2>
@@ -390,22 +628,20 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">react-cookie
+    <p class="archive__item-excerpt" itemprop="description">css 기초
 </p>
   </article>
 </div>
-
   
-    
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/main%20project/2-dayjs/" rel="permalink">[Main Project] 06. Day.js 적용
+        <a href="/html/tag/" rel="permalink">[HTML] HTML Tag 정리
 </a>
       
     </h2>
@@ -423,29 +659,27 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          5 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">dayjs
+    <p class="archive__item-excerpt" itemprop="description">html tag
 </p>
   </article>
 </div>
-
   
-    
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/main%20project/1-error-log/" rel="permalink">[Main Project] 05. Error Log
+        <a href="/main%20project/project-review/" rel="permalink">[Main Project] 메인 프로젝트 회고록
 </a>
       
     </h2>
@@ -463,155 +697,23 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 minute read
+          1 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">프로젝트 진행 중 발생한 에러들
+    <p class="archive__item-excerpt" itemprop="description">main project review
 </p>
   </article>
 </div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/blog/label/" rel="permalink">[Github Blog] 라벨 변경
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">라벨 변경하기
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/main%20project/3-board/" rel="permalink">[Main Project] 04. 게시글 작성, 수정 페이지
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">board
-</p>
-  </article>
-</div>
-
-  
-</div>
-
-
-<nav class="pagination">
-  
-  <ul>
-    
-    
-      
-        <li><a href="/">Previous</a></li>
-      
-    
-
-    
-    
-      <li><a href="/">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-        <li><a href="/page2/" class="disabled current">2</a></li>
-      
-    
-      
-        
-        
-        
-        <li><a href="/page3/">3</a></li>
-      
-    
-
-    
-    
-
-    
-      <li><a href="/page4/">4</a></li>
-    
-
-    
-    
-      <li><a href="/page3/">Next</a></li>
-    
-  </ul>
-</nav>
-
-
-
+ 
+    </div>
   </div>
+   
 </div>
+
     </div>
 
     
