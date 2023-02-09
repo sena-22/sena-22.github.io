@@ -1,6 +1,6 @@
 var store = [{
         "title": "[HTML] HTML의 기본 구조",
-        "excerpt":"HTML 문서의 구조를 나타낸다. 웹페이지의 틀을 만드는 마크업 언어 tag들의 집합 tag 부등호(&lt;&gt;)로 묶인 HTML의 기본 구성 요소 트리 구조로 이루어져 있으며 tab을 이용하여 들여쓰기를 해서 부모와 자식 관계를 나타낼 수 있다. 1. 문서 형식 정의 tag &lt;!DOCTYPE html&gt; 웹 페이지의 형식을 알려주는 태그이다. 문서의 최상단에 위치하며, 대소문자를 구별하지 않는다....","categories": ["html"],
+        "excerpt":"HTML(Hyper Text Markup Language)      문서의 구조를 나타낸다.   웹페이지의 틀을 만드는 마크업 언어   tag들의 집합  ","categories": ["html"],
         "tags": ["html","tag"],
         "url": "/html/html/",
         "teaser": null
@@ -75,5 +75,11 @@ var store = [{
         "excerpt":"4주간 진행한 메인 프로젝트가 끝났다. 프로젝트 기간 동안 배웠던 점들에 대해 잊기 전에 기록해두려고 한다. 프로젝트에 관해서 1. 서비스 개요 서비스명 : 트리덤(tridom) - trip &amp; freedom 기획 의도 : 코로나 19 제한 완화로 인한 관광객 수 증가, 여행에 관한 서비스의 수요가 증가할 것으로 예상 배포 링크 2. 서비스 주요...","categories": ["main project"],
         "tags": ["project","codestates","review","react"],
         "url": "/main%20project/project-review/",
+        "teaser": null
+      },{
+        "title": "[HTML] HTML Tag 정리",
+        "excerpt":"HTML의 태그들을 그때그때 찾아가면서 하다보니 머릿속에서 정리되지 않았다는 생각이 들어 한번에 모아서 정리해보기로 했다. tag 부등호(&lt;&gt;)로 묶인 HTML의 기본 구성 요소 트리 구조로 이루어져 있으며 tab을 이용하여 들여쓰기를 해서 부모와 자식 관계를 나타낼 수 있다. 웹 페이지를 구성하는 태그 1. 문서 형식 정의 tag &lt;!DOCTYPE html&gt; 웹 페이지의 형식을 알려주는...","categories": ["html"],
+        "tags": ["html","tag"],
+        "url": "/html/tag/",
         "teaser": null
       }]

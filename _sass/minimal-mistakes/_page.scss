@@ -142,8 +142,9 @@ body {
   :not(pre) > code {
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
-    font-size: 0.7em;
-    background:$base08;
+    margin :0.1rem;
+    font-size: 0.9em;
+    background:$facebook-color;
     color:$base05;
     border-radius: $border-radius;
 

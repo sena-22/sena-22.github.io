@@ -1,4 +1,383 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-08T02:25:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Main Project] 메인 프로젝트 회고록</title><link href="http://localhost:4000/main%20project/project-review/" rel="alternate" type="text/html" title="[Main Project] 메인 프로젝트 회고록" /><published>2023-02-07T00:00:00+09:00</published><updated>2023-02-08T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/project-review</id><content type="html" xml:base="http://localhost:4000/main%20project/project-review/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/95217370/215842925-37524a74-c2f4-454c-914f-3d19344bed16.png" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-09T13:56:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[HTML] HTML Tag 정리</title><link href="http://localhost:4000/html/tag/" rel="alternate" type="text/html" title="[HTML] HTML Tag 정리" /><published>2023-02-08T00:00:00+09:00</published><updated>2023-02-08T00:00:00+09:00</updated><id>http://localhost:4000/html/tag</id><content type="html" xml:base="http://localhost:4000/html/tag/"><![CDATA[<p>HTML의 태그들을 그때그때 찾아가면서 하다보니 머릿속에서 정리되지 않았다는 생각이 들어 한번에 모아서 정리해보기로 했다.</p>
+
+<h1 id="tag">tag</h1>
+
+<ul>
+  <li>부등호(&lt;&gt;)로 묶인 HTML의 기본 구성 요소</li>
+  <li>트리 구조로 이루어져 있으며 <code class="language-plaintext highlighter-rouge">tab</code>을 이용하여 들여쓰기를 해서 부모와 자식 관계를 나타낼 수 있다.</li>
+</ul>
+
+<h1 id="웹-페이지를-구성하는-태그">웹 페이지를 구성하는 태그</h1>
+
+<h2 id="1-문서-형식-정의-tag">1. 문서 형식 정의 tag</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>웹 페이지의 형식을 알려주는 태그이다. 문서의 최상단에 위치하며, 대소문자를 구별하지 않는다.</p>
+
+<h2 id="2-html-tag">2. html tag</h2>
+
+<p>모든 요소의 부모 요소이고, 웹 페이지에 하나만 존재한다.</p>
+
+<h2 id="3-head-tag">3. head tag</h2>
+
+<p>웹 브라우저에 보이지 않는 문서 설정, CSS, 자바스크립트 같은 외부 파일 연결</p>
+
+<p>📍 meta tag : 메타데이터 정의에 사용되는 태그. 메타데이터는 브라우저, 검색 엔진 등에 의해 사용된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">UTF-8</span><span class="dl">"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>웹 문서의 인코딩 방식을 의미한다. UTF-8은 세계 표준 인코딩 방식이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">keywords</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">HTML, CSS, XML, XHTML, JavaScript</span><span class="dl">"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>검색엔진 최적화를 위해 사용할 키워드를 정의한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">웹 페이지에 관한 설명</span><span class="dl">"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>웹 페이지의 설명을 정의한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">viewport</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">width=device-width, initial-scale=1.0</span><span class="dl">"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>디바이스 종류별로 화면에 출력할 방식 지정. viewport가 있어야 반응형 웹 페이지를 만들 때 모바일 화면에 결과 출력이 가능하다.</p>
+
+<p><br />
+📍 title tag : 문서 제목 정의. 브라우저의 상단 탭에 표시된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">문서</span> <span class="nx">제목</span><span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p><br />
+📍 link tag : 외부 파일(주로 css)을 연결한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">stylesheet</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">style.css</span><span class="dl">"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><br />
+📍 script tag : src 속성을 사용하여 javascript 파일을 연결할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">app.js</span><span class="dl">"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="4-body-tag">4. body tag</h2>
+
+<p>웹 브라우저에 출력할 내용을 입력한다.</p>
+
+<p><br /></p>
+
+<h1 id="시맨틱-태그">시맨틱 태그</h1>
+
+<ul>
+  <li>시맨틱은 ‘의미가 있는, 의미론적인’이라는 뜻으로, <strong>의미를 가진 태그</strong>를 <mark style="background-color: #ffdce0">시맨틱 태그</mark>라고 한다.</li>
+  <li>시맨틱 태그는 검색 엔진에 노출이 잘 되고, 개발할 때 요소를 알아보기 쉽기 때문에 사용이 권장된다.</li>
+</ul>
+
+<p><img width="800" alt="스크린샷 2023-02-08 오후 9 46 41" src="https://user-images.githubusercontent.com/110877564/217534177-41ea763b-817f-4684-a947-1bd058cee466.png" /></p>
+
+<ul>
+  <li>시맨틱 태그를 사용하면 구조가 명확해진다</li>
+</ul>
+
+<h2 id="1-header-tag">1. header tag</h2>
+
+<p>웹 문서의 머리말에 해당한다. 로고, 메뉴 등을 지정한다.</p>
+
+<h2 id="2-nav-tag">2. nav tag</h2>
+
+<p>링크를 포함한 메뉴를 그룹화할 때 사용한다.</p>
+
+<h2 id="3-figure-tag">3. figure tag</h2>
+
+<p>멀티미디어 콘텐츠를 그룹화할 때 사용한다.
+<code class="language-plaintext highlighter-rouge">&lt;figcaption&gt;</code> 요소를 사용해 설명을 붙일 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">figure</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">scr</span><span class="o">=</span><span class="dl">"</span><span class="s2">이미지</span><span class="dl">"</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">이미지 설명</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">figcaption</span><span class="o">&gt;</span><span class="nx">이미지</span> <span class="nx">설명</span><span class="o">&lt;</span><span class="sr">/figcaption</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/figure</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p class="notice--primary"><a href="https://codesandbox.io/s/figure-example-lvxtin">figure tag 예제(CodeSandbox)</a></p>
+
+<h2 id="4-main-tag">4. main tag</h2>
+
+<p>중요한 콘텐츠를 그룹화할 때 사용한다.</p>
+
+<h2 id="5-aside-tag">5. aside tag</h2>
+
+<p>부수 콘텐츠를 그룹화할 때 사용한다. 광고 팝업창, 바로가기를 지정할 때 사용한다.</p>
+
+<h2 id="6-section-tag">6. section tag</h2>
+
+<p>콘텐츠 여러 개를 그룹화할 때 사용한다. 콘텐츠 간의 논리적인 연결고리가 없으면 <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code>요소를 사용하는 것이 바람직하다.</p>
+
+<h2 id="7-article-tag">7. article tag</h2>
+
+<p>개별 콘텐츠를 지정할 때 사용한다. 독립적인 내용을 담아 재사용이 가능하다.</p>
+
+<h2 id="8-footer-tag">8. footer tag</h2>
+
+<p>하단 콘텐츠를 나타낸다.</p>
+
+<h1 id="서식-태그">서식 태그</h1>
+
+<h2 id="1-hgroup">1. hgroup</h2>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code>~<code class="language-plaintext highlighter-rouge">&lt;h6&gt;</code> 태그는 문서의 제목을 중요도에 따라 분류해서 쓴다. <code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code>이 가장 중요한 제목에 쓰인다. 단순히 문자 크기를 조절하기 위해 사용하기보다 목차 역할, 콘텐츠의 상하 관계를 표시하기 위해 사용해야 한다.</p>
+
+<h2 id="2-pparagraph-tag">2. p(paragraph) tag</h2>
+
+<p>문단을 지정하는 태그이다.</p>
+
+<h2 id="3-divdivision-tag">3. div(division) tag</h2>
+
+<p>특정 주제의 제목과 여러 문단을 그룹화할 때 사용하는 태그이다. 시맨틱 태그는 아니지만 제일 많이 사용하게 되는 태그이다.</p>
+
+<h2 id="4-span-tag">4. span tag</h2>
+
+<p>인라인 요소 태그를 그룹화할 때 사용한다. <code class="language-plaintext highlighter-rouge">&lt;span&gt;</code> 태그 역시 인라인 태그이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">strong</span><span class="o">&gt;</span><span class="nx">인라인</span> <span class="nx">태그</span><span class="o">&lt;</span><span class="nx">strong</span><span class="o">&gt;</span><span class="nx">를</span> <span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;</span><span class="nx">그룹화</span><span class="o">&lt;</span><span class="sr">/em&gt;할 때 사</span><span class="err">용
+</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p class="notice--primary">⭐️ <u><b>div와 span의 차이</b></u> <br />
+<strong>div</strong> : 한 줄을 통째로 차지한다. 블록 요소이다.<br />
+<strong>span</strong> : 콘텐츠 크기만큼 공간을 차지한다. 인라인 요소이다.
+(인라인 요소 안에는 블록 요소가 들어가면 안된다)</p>
+
+<h2 id="5-strong-ememphasized-tag">5. strong, em(emphasized) tag</h2>
+
+<p>특정 문장이나 단어를 강조할 때 사용한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code> : 볼드체</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;em&gt;</code> : 이탤릭체</p>
+
+<p class="notice--primary">⭐️ <u><b> strong과 b의 차이</b></u> <br />
+두 요소 모두 볼드체로 보인다. <br />
+하지만 <code class="language-plaintext highlighter-rouge">&lt;b&gt;</code> 태그가 단순히 굵은 표시를 나타내는 반면 <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code> 태그의 경우 중요, 긴급한 의미를 나타낸다.</p>
+
+<p>⭐️ <u><b>em과 i의 차이</b></u> <br />
+두 요소 모두 이탤릭체로 보인다. <br />
+<code class="language-plaintext highlighter-rouge">&lt;i&gt;</code> 태그는 기술 용어, 외국어 구절 등 특정 이유로 구분할 때 사용하고,
+<code class="language-plaintext highlighter-rouge">&lt;em&gt;</code>은 주위 텍스트와 비교했을 때 강조할 때 사용한다.</p>
+
+<p class="notice--primary">단순히 기울임꼴을 사용할 때에는 css의 <code class="language-plaintext highlighter-rouge">font-style:italic</code>을 사용한다.</p>
+
+<h2 id="6-a-tag">6. a tag</h2>
+
+<p>링크를 연결할 때 사용한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">웹페이지 주소</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">링크</span> <span class="nx">이름</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>
+<span class="c1">//새로운 탭을 열어서 링크 이동할 때</span>
+<span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">웹페이지 주소</span><span class="dl">"</span> <span class="nx">target</span><span class="o">=</span><span class="dl">"</span><span class="s2">blank</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">링크</span> <span class="nx">이름</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>a는 anchor(정박지, 닻), href는 hyper reference(하이퍼 참조)를 의미한다.</p>
+
+<h2 id="7-img-tag">7. img tag</h2>
+
+<p>이미지를 삽입할 때 사용한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">이미지 경로</span><span class="dl">"</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">이미지 설명</span><span class="dl">"</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>src는 source, alt는 alternate를 의미한다. alt 속성은 이미지에 설명을 덧붙이는 역할을 하는데, 만약 그림 옆에 직접 설명이 붙어 있다면 null 값을 사용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">scr</span><span class="o">=</span><span class="dl">"</span><span class="s2">이미지 경로</span><span class="dl">"</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">""</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">strong</span><span class="o">&gt;</span><span class="nx">이미지</span> <span class="nx">설명</span><span class="o">&lt;</span><span class="sr">/strong</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p class="notice--primary"><a href="https://www.w3.org/WAI/tutorials/images/decorative/#example-3-image-with-adjacent-text-alternative">alt 속성 참고</a></p>
+
+<h2 id="8-br-tag">8. br tag</h2>
+
+<p>원하는 곳에 <code class="language-plaintext highlighter-rouge">&lt;br&gt;</code> 태그를 사용하면 강제로 줄을 바꿀 수 있다. 단, 이 태그를 남용하는 것은 좋지 않다. 스크린 리더가 <code class="language-plaintext highlighter-rouge">&lt;br&gt;</code> 태그를 읽어 글의 흐름이 끊기기 때문이다. <br /> 단락을 구분하고 싶을 때는 <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> 태그를 사용하고, 간격을 조정할 때는 css 속성을 주는 것이 좋다.</p>
+
+<p class="notice--primary"><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/br">br tag 참고</a></p>
+
+<h1 id="목록-태그">목록 태그</h1>
+
+<h2 id="1-ulunordered-list">1. ul(unordered list)</h2>
+
+<p>순서가 없는 목록을 만들 때 사용한다.
+<code class="language-plaintext highlighter-rouge">&lt;ul&gt;</code> 태그를 사용할 때는 <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code>태그를 자식 요소로 같이 써야 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">사과</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">토마토</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">아이스크림</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h2 id="2-olordered-list">2. ol(ordered list)</h2>
+
+<p>순서가 있는 목록을 만들 때 사용한다.
+<code class="language-plaintext highlighter-rouge">&lt;ol&gt;</code> 태그를 사용할 때에도 <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code>태그를 자식 요소로 같이 써야 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">ol</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="mi">1</span><span class="nx">번</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="mi">2</span><span class="nx">번</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="mi">3</span><span class="nx">번</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/ol</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h1 id="폼-태그">폼 태그</h1>
+
+<p>웹 브라우저에서 데이터를 입력받아 서버로 전송하는 태그이다.</p>
+
+<h2 id="1-input-tag">1. input tag</h2>
+
+<p>다양한 정보를 입력받는 태그이다. type 속성을 다르게 지정하여 여러 입력 형태를 만들 수 있다.</p>
+
+<p>📍 input type=”text”</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">input</span> <span class="nx">요소의</span> <span class="nx">제목</span><span class="o">&lt;</span><span class="sr">/label&gt; /</span><span class="o">/</span> <span class="nx">입력받을</span> <span class="nx">내용이</span> <span class="nx">무엇인지</span> <span class="nx">명시한다</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>텍스트를 입력할 수 있는 필드가 생성된다.
+input 태그에 placeholder를 넣으면 input box 안에 예시를 작성할 수 있어 많이 사용했는데, 레이블 대신 placeholder를 사용하는 것은 좋지 않다고 한다.</p>
+
+<p class="notice--primary"><a href="https://seunghayoo.com/2020/02/25/uxox-form-label-placeholder/">레이블 &amp; 플레이스 홀더 참고</a></p>
+
+<p>📍 input type=”password”</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">비밀번호</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>비밀번호를 입력할 수 있는 필드가 생성된다. 보안을 위해 ••• 기호로 표시된다.</p>
+
+<p>📍 input type=”checkbox”</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">값</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">서버로 전송할 값 1</span><span class="dl">"</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">값</span> <span class="mi">2</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">서버로 전송할 값 2</span><span class="dl">"</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">값</span> <span class="mi">3</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">서버로 전송할 값 3</span><span class="dl">"</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>체크박스를 만들 수 있다. 체크된 value 값이 서버로 전송되며, 여러 개를 선택할 수 있다.</p>
+
+<p>📍 input type=”radio”</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">unit</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">radio</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">unit 1</span><span class="dl">"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">unit</span> <span class="mi">2</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">radio</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">unit 2</span><span class="dl">"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">unit</span> <span class="mi">3</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">radio</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">unit 3</span><span class="dl">"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>라디오 박스를 만들 수 있다. name 속성을 똑같이 입력하면 하나만 선택할 수 있다.</p>
+
+<p>📍 input type=”file”</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">첨부</span> <span class="nx">파일</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">'</span><span class="s1">file</span><span class="dl">'</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>사용자의 컴퓨터에서 특정 파일을 첨부할 수 있다.</p>
+
+<p>📍 input type=”color” <br />
+type을 color로 설정하면 버튼이 나타나고, 클릭하면 특정 색상값을 선택할 수 있는 패널이 표시된다.</p>
+
+<p>📍 input type=”date” <br />
+날짜를 선택할 수 있는 창이 나타나 특정 날짜의 값을 입력받을 수 있다.</p>
+
+<p>📍 input type=”submit”, type=”reset” <br />
+submit은 폼에 입력한 모든 데이터를 서버로 전송하는 버튼을 생성한다.
+reset은 입력한 모든 값을 비우는 버튼을 생성한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">버튼 이름</span><span class="dl">"</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">reset</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">버튼 이름</span><span class="dl">"</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><a href="https://codesandbox.io/s/input-type-example-mueyie?file=/src/App.js">input type 예제</a></p>
+
+<h2 id="2-select-tag">2. select tag</h2>
+
+<p>드롭다운 메뉴를 출력해서 사용자가 선택할 수 있게 해주는 태그이다. 자식 태그로 option을 작성해서 <code class="language-plaintext highlighter-rouge">&lt;option&gt;</code> 태그 사이에 보여줄 값을 넣으면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">select</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">option</span><span class="o">&gt;</span><span class="nx">선택지</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/option</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">option</span><span class="o">&gt;</span><span class="nx">선택지</span> <span class="mi">2</span><span class="o">&lt;</span><span class="sr">/option</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">option</span><span class="o">&gt;</span><span class="nx">선택지</span> <span class="mi">3</span><span class="o">&lt;</span><span class="sr">/option</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/select</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h2 id="3-textarea-tag">3. textarea tag</h2>
+
+<p>여러 문장의 텍스트를 입력받을 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">textarea</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="4-form-tag">4. form tag</h2>
+
+<p>여러가지 폼 요소를 그룹으로 만들어 서버로 한번에 요청할 수 있다.
+action과 method 속성을 반드시 지정해야 한다.
+action은 특정 주소값이나 파일 위치를 지정하고, method는 입력값의 전송 방식을 지정한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="dl">"</span><span class="s2">전송 위치</span><span class="dl">"</span> <span class="nx">method</span><span class="o">=</span><span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">ID</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">비밀번호</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">password</span><span class="dl">"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">제출</span><span class="dl">"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">reset</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">초기화</span><span class="dl">"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>제출 버튼을 누르면 입력값이 action에서 지정한 위치로 전달된다.</p>
+
+<h1 id="멀티미디어-콘텐츠">멀티미디어 콘텐츠</h1>
+
+<h2 id="1-audio-tag">1. audio tag</h2>
+
+<p>오디오 파일을 재생할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">audio</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">파일 위치</span><span class="dl">"</span> <span class="nx">controls</span> <span class="nx">autoplay</span> <span class="nx">loop</span> <span class="nx">preload</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="audio-태그의-속성">audio 태그의 속성</h3>
+
+<ul>
+  <li>controls : 오디오를 재생하는 컨트롤 패널 생성</li>
+  <li>autoplay : 자동재생</li>
+  <li>loop : 무한반복 재생</li>
+  <li>preload : 오디오를 재생하기 전에 파일을 미리 불러옴</li>
+</ul>
+
+<h2 id="2-video-tag">2. video tag</h2>
+
+<p>동영상 파일을 재생할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">video</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">파일 위치</span><span class="dl">"</span> <span class="nx">poster</span><span class="o">=</span><span class="dl">"</span><span class="s2">img.jpg</span><span class="dl">"</span> <span class="nx">controls</span> <span class="nx">autoplay</span> <span class="nx">loop</span> <span class="nx">preload</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>audio와 비슷하다.</p>
+
+<h3 id="video-태그의-속성">video 태그의 속성</h3>
+
+<ul>
+  <li>muted : 동영상의 소리를 뮤트</li>
+  <li>poster : 초기 화면에 보여 줄 이미지를 지정</li>
+</ul>
+
+<h3 id="참고">참고</h3>
+
+<p class="notice--primary"><a href="https://poiemaweb.com/html5-tag-basic">웹페이지를 구성하는 기본 태그</a></p>]]></content><author><name>Reyna</name></author><category term="html" /><category term="html" /><category term="tag" /><summary type="html"><![CDATA[html tag]]></summary></entry><entry><title type="html">[Main Project] 메인 프로젝트 회고록</title><link href="http://localhost:4000/main%20project/project-review/" rel="alternate" type="text/html" title="[Main Project] 메인 프로젝트 회고록" /><published>2023-02-07T00:00:00+09:00</published><updated>2023-02-08T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/project-review</id><content type="html" xml:base="http://localhost:4000/main%20project/project-review/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/95217370/215842925-37524a74-c2f4-454c-914f-3d19344bed16.png" /></p>
 
 <p><br />
 4주간 진행한 메인 프로젝트가 끝났다.</p>
@@ -824,112 +1203,4 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$serif</span><span class="p">:</span> <span class="nx">Georgia</span><span class="p">,</span> <span class="nx">Times</span><span class="p">,</span> <span class="nx">serif</span> <span class="o">!</span><span class="k">default</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>사용하고 싶은 곳에서 변수처럼 사용하면 된다.</p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="Font" /></entry><entry><title type="html">[Main Project] 01. react-date-range 사용하기</title><link href="http://localhost:4000/main%20project/calendar-library/" rel="alternate" type="text/html" title="[Main Project] 01. react-date-range 사용하기" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/calendar-library</id><content type="html" xml:base="http://localhost:4000/main%20project/calendar-library/"><![CDATA[<h2 id="1-달력-라이브러리-선택">1. 달력 라이브러리 선택</h2>
-
-<p>여행 일정 선택을 위한 달력 라이브러리를 골라야했는데, 달력 라이브러리 종류가 많아서 필요한 기능이 있는지, 사용량이 많고 정보가 잘 정리되어 있는지를 기준으로 선택했다.</p>
-
-<p>🧐 <strong>필요한 기능</strong> <br /></p>
-
-<ol>
-  <li>시작 날짝와 종료 날짜 <br /></li>
-  <li>선택 시 기간 표시(다중 범위)<br /></li>
-  <li>달력 두 개가 붙어 있는 모양</li>
-</ol>
-
-<h3 id="react-date-range">react-date-range</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://hypeserver.github.io/react-date-range/#daterange">react-date-range 공식문서</a> <br />
-<a href="https://www.npmjs.com/package/react-date-range">react-date-range npm</a></p>
-
-<h3 id="react-calendar">react-calendar</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-calendar">react-calendar npm</a></p>
-
-<h3 id="react-day-picker">react-day-picker</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-day-picker">react-day-picker npm</a></p>
-
-<ul>
-  <li>최근까지 업데이트 됨</li>
-</ul>
-
-<h3 id="react-date-picker">react-date-picker</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-datepicker">react-date-picker</a></p>
-
-<ul>
-  <li>사용량 가장 많음</li>
-</ul>
-
-<p>여러 라이브러리를 비교해보고 두 개의 달력을 표시하기 쉽고 디자인을 크게 건드리지 않아도 될 것 같아 <code class="language-plaintext highlighter-rouge">react-date-range</code>를 사용했다.</p>
-
-<h2 id="2-달력-적용하기">2. 달력 적용하기</h2>
-
-<h3 id="설치">설치</h3>
-
-<hr />
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">react</span><span class="o">-</span><span class="nx">date</span><span class="o">-</span><span class="nx">range</span>
-</code></pre></div></div>
-
-<h3 id="적용">적용</h3>
-
-<hr />
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calendar.js</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/styles.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 메인 css 파일</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/theme/default.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 테마 CSS 파일</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">DateRange</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-date-range</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">formatTomorrow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/dayUtil</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span> <span class="c1">//날짜 형식을 내일로 변경</span>
-
-<span class="kd">const</span> <span class="p">[</span><span class="nx">date</span><span class="p">,</span> <span class="nx">setDate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span>
-  <span class="p">{</span>
-    <span class="na">startDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
-    <span class="na">endDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
-    <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">selection</span><span class="dl">"</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">]);</span>
-
-<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">handleDate</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
-<span class="p">},</span> <span class="p">[</span><span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">startDate</span><span class="p">,</span> <span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">endDate</span><span class="p">]);</span>
-</code></pre></div></div>
-
-<p>시작 날짜와 종료 날짜를 모두 다음 날로 지정해주었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">(</span>
-  <span class="p">...</span>
-  <span class="o">&lt;</span><span class="nx">DateRange</span>
-    <span class="nx">editableDateInputs</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-    <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setDate</span><span class="p">([</span><span class="nx">item</span><span class="p">.</span><span class="nx">selection</span><span class="p">])}</span>
-    <span class="nx">moveRangeOnFirstSelection</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span>
-    <span class="nx">ranges</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
-    <span class="nx">months</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="c1">//달력 두 달 표시</span>
-    <span class="nx">direction</span><span class="o">=</span><span class="dl">"</span><span class="s2">horizontal</span><span class="dl">"</span> <span class="c1">//달력을 가로로 배치</span>
-    <span class="nx">dateDisplayFormat</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">LLLL yyyy</span><span class="dl">"</span><span class="p">}</span> <span class="c1">// 날짜 포맷값</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">...</span>
-<span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="결과">결과</h3>
-
-<hr />
-
-<p><img width="561" alt="스크린샷 2023-02-02 오후 11 14 15" src="https://user-images.githubusercontent.com/110877564/216350582-67febd33-0ba2-4d8a-8d8c-e66710a527fb.png" class="align-center" /></p>
-
-<p>위와 같이 시작 날짜, 종료 날짜를 선택하면 범위가 표시된다! (css는 좀 수정된 상태)</p>
-
-<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="calendar" /><summary type="html"><![CDATA[달력 라이브러리]]></summary></entry></feed>
+<p>사용하고 싶은 곳에서 변수처럼 사용하면 된다.</p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="Font" /></entry></feed>

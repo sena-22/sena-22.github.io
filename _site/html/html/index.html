@@ -258,7 +258,7 @@
   <ul class="nav__items" id="category_tag_menu">
     <!--전체 글 수-->
     <li>
-      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(13)</style> 
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(14)</style> 
     </li>
     <li>
       <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
@@ -286,7 +286,7 @@
       <ul>
          
         <li>
-          <a href="/categories/html" class="">HTML (1)</a>
+          <a href="/categories/html" class="">HTML (2)</a>
         </li>
                
       </ul>
@@ -418,84 +418,17 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#html">HTML</a></li><li><a href="#tag">tag</a><ul><li><a href="#1-문서-형식-정의-tag">1. 문서 형식 정의 tag</a></li><li><a href="#2-html-tag">2. html tag</a></li><li><a href="#3-head-tag">3. head tag</a></li><li><a href="#3-body-tag">3. body tag</a></li><li><a href="#참고">참고</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#htmlhyper-text-markup-language">HTML(Hyper Text Markup Language)</a></li></ul>
 
           </nav>
         </aside>
-         <h2 id="html">HTML</h2>
+         <h2 id="htmlhyper-text-markup-language">HTML(Hyper Text Markup Language)</h2>
 
 <ul>
   <li>문서의 <strong>구조</strong>를 나타낸다.</li>
   <li>웹페이지의 틀을 만드는 마크업 언어</li>
   <li>tag들의 집합</li>
 </ul>
-
-<h2 id="tag">tag</h2>
-
-<ul>
-  <li>부등호(&lt;&gt;)로 묶인 HTML의 기본 구성 요소</li>
-  <li>트리 구조로 이루어져 있으며 <code class="language-plaintext highlighter-rouge">tab</code>을 이용하여 들여쓰기를 해서 부모와 자식 관계를 나타낼 수 있다.</li>
-</ul>
-
-<h3 id="1-문서-형식-정의-tag">1. 문서 형식 정의 tag</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<p>웹 페이지의 형식을 알려주는 태그이다. 문서의 최상단에 위치하며, 대소문자를 구별하지 않는다.</p>
-
-<h3 id="2-html-tag">2. html tag</h3>
-
-<p>모든 요소의 부모 요소이고, 웹 페이지에 하나만 존재한다.</p>
-
-<h3 id="3-head-tag">3. head tag</h3>
-
-<p>웹 브라우저에 보이지 않는 문서 설정, CSS, 자바스크립트 같은 외부 파일 연결</p>
-
-<p>📍 meta tag : 메타데이터 정의에 사용되는 태그. 메타데이터는 브라우저, 검색 엔진 등에 의해 사용된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">UTF-8</span><span class="dl">"</span> <span class="o">/&gt;</span>
-</code></pre></div></div>
-
-<p>웹 문서의 인코딩 방식을 의미한다. UTF-8은 세계 표준 인코딩 방식이다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">keywords</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">HTML, CSS, XML, XHTML, JavaScript</span><span class="dl">"</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<p>검색엔진 최적화를 위해 사용할 키워드를 정의한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">웹 페이지에 관한 설명</span><span class="dl">"</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<p>웹 페이지의 설명을 정의한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">viewport</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">width=device-width, initial-scale=1.0</span><span class="dl">"</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<p>디바이스 종류별로 화면에 출력할 방식 지정. viewport가 있어야 반응형 웹 페이지를 만들 때 모바일 화면에 결과 출력이 가능하다.</p>
-
-<p>📍 title tag : 문서 제목 정의. 브라우저의 상단 탭에 표시된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">문서</span> <span class="nx">제목</span><span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<p>📍 link tag : 외부 파일(주로 css)을 연결한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">stylesheet</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">style.css</span><span class="dl">"</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<p>📍 script tag : src 속성을 사용하여 javascript 파일을 연결할 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">app.js</span><span class="dl">"</span> <span class="o">/&gt;</span>
-</code></pre></div></div>
-
-<h3 id="3-body-tag">3. body tag</h3>
-
-<p>웹 브라우저에 출력할 내용을 입력한다.</p>
-
-<h3 id="참고">참고</h3>
-
-<p class="notice--primary"><a href="https://poiemaweb.com/html5-tag-basic">웹페이지를 구성하는 기본 태그</a></p>
  
       </section>
 
@@ -540,6 +473,44 @@
     </h2>
     <div class="grid__wrapper">
        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/html/tag/" rel="permalink">[HTML] HTML Tag 정리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">html tag
+</p>
+  </article>
+</div>
+  
 
 
 
@@ -650,44 +621,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">dayjs
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/main%20project/1-error-log/" rel="permalink">[Main Project] 05. Error Log
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">프로젝트 진행 중 발생한 에러들
 </p>
   </article>
 </div>
