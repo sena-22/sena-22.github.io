@@ -106,4 +106,10 @@ var store = [{
         "tags": ["css","transform"],
         "url": "/css/4-transform/",
         "teaser": null
+      },{
+        "title": "[CSS] transition & animation 속성",
+        "excerpt":"transition 사용자의 특정 동작에 반응하는 인터랙션을 기반으로 한 모션 기법 /* 전환 효과를 줄 css 속성명 지정. all을 이용하면 전체 속성 사용 가능 */ transition-property: 속성명 transition-duration: 지속시간 (초 단위) transition-delay: 지연시간(초 단위) transition-timing-function: 전환 효과의 가속도 - lenear: 등속 - ease: 가속 - ease-in: 모션 시작 시 가속 -...","categories": ["css"],
+        "tags": ["css","transition","animation"],
+        "url": "/css/transition/",
+        "teaser": null
       }]

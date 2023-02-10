@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Main Project] 01. react-date-range 사용하기 - Reyna</title>
-<meta name="description" content="달력 라이브러리">
+<!-- begin _includes/seo.html --><title>[CSS] transition &amp; animation 속성 - Reyna</title>
+<meta name="description" content="transition과 animation">
 
 
   <meta name="author" content="Reyna">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Main Project] 01. react-date-range 사용하기">
-<meta property="og:url" content="http://localhost:4000/main%20project/calendar-library/">
+<meta property="og:title" content="[CSS] transition &amp; animation 속성">
+<meta property="og:url" content="http://localhost:4000/css/transition/">
 
 
-  <meta property="og:description" content="달력 라이브러리">
-
-
-
+  <meta property="og:description" content="transition과 animation">
 
 
 
 
-  <meta property="article:published_time" content="2023-02-02T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-02-02T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-02-10T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-02-10T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/main%20project/calendar-library/">
+
+<link rel="canonical" href="http://localhost:4000/css/transition/">
 
 
 
@@ -346,16 +346,16 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Main Project] 01. react-date-range 사용하기"
+      content="[CSS] transition &amp; animation 속성"
     /> <meta
       itemprop="description"
-      content="달력 라이브러리"
+      content="transition과 animation"
     /> <meta
       itemprop="datePublished"
-      content="2023-02-02T00:00:00+09:00"
+      content="2023-02-10T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-02-02T00:00:00+09:00"
+      content="2023-02-10T00:00:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -363,7 +363,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Main Project] 01. react-date-range 사용하기</p>
+          <p>[CSS] transition &amp; animation 속성</p>
 
         </h1>
          
@@ -371,13 +371,13 @@
           <strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
           >
-          <time datetime="2023-02-02T00:00:00+09:00"
-            >2023.02.02</time
+          <time datetime="2023-02-10T00:00:00+09:00"
+            >2023.02.10</time
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-02-02"
-            >2023.02.02</time
+          <time datetime="2023-02-10"
+            >2023.02.10</time
           >
         </p>
           
@@ -389,7 +389,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#main-project" class="page__taxonomy-item p-category" rel="tag">main project</a>
+      <a href="/categories/#css" class="page__taxonomy-item p-category" rel="tag">css</a>
     
     </span>
   </p>
@@ -402,11 +402,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#calendar" class="page__taxonomy-item p-category" rel="tag">calendar</a><span class="sep">, </span>
+      <a href="/tags/#animation" class="page__taxonomy-item p-category" rel="tag">animation</a><span class="sep">, </span>
     
-      <a href="/tags/#codestates" class="page__taxonomy-item p-category" rel="tag">codestates</a><span class="sep">, </span>
+      <a href="/tags/#css" class="page__taxonomy-item p-category" rel="tag">css</a><span class="sep">, </span>
     
-      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a>
+      <a href="/tags/#transition" class="page__taxonomy-item p-category" rel="tag">transition</a>
     
     </span>
   </p>
@@ -424,119 +424,47 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#1-달력-라이브러리-선택">1. 달력 라이브러리 선택</a><ul><li><a href="#react-date-range">react-date-range</a></li><li><a href="#react-calendar">react-calendar</a></li><li><a href="#react-day-picker">react-day-picker</a></li><li><a href="#react-date-picker">react-date-picker</a></li></ul></li><li><a href="#2-달력-적용하기">2. 달력 적용하기</a><ul><li><a href="#설치">설치</a></li><li><a href="#적용">적용</a></li><li><a href="#결과">결과</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#transition">transition</a></li><li><a href="#animation">animation</a></li></ul>
 
           </nav>
         </aside>
-         <h2 id="1-달력-라이브러리-선택">1. 달력 라이브러리 선택</h2>
+         <h1 id="transition">transition</h1>
 
-<p>여행 일정 선택을 위한 달력 라이브러리를 골라야했는데, 달력 라이브러리 종류가 많아서 필요한 기능이 있는지, 사용량이 많고 정보가 잘 정리되어 있는지를 기준으로 선택했다.</p>
+<p>사용자의 특정 동작에 반응하는 인터랙션을 기반으로 한 모션 기법</p>
 
-<p>🧐 <strong>필요한 기능</strong> <br /></p>
-
-<ol>
-  <li>시작 날짝와 종료 날짜 <br /></li>
-  <li>선택 시 기간 표시(다중 범위)<br /></li>
-  <li>달력 두 개가 붙어 있는 모양</li>
-</ol>
-
-<h3 id="react-date-range">react-date-range</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://hypeserver.github.io/react-date-range/#daterange">react-date-range 공식문서</a> <br />
-<a href="https://www.npmjs.com/package/react-date-range">react-date-range npm</a></p>
-
-<h3 id="react-calendar">react-calendar</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-calendar">react-calendar npm</a></p>
-
-<h3 id="react-day-picker">react-day-picker</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-day-picker">react-day-picker npm</a></p>
-
-<ul>
-  <li>최근까지 업데이트 됨</li>
-</ul>
-
-<h3 id="react-date-picker">react-date-picker</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-datepicker">react-date-picker</a></p>
-
-<ul>
-  <li>사용량 가장 많음</li>
-</ul>
-
-<p>여러 라이브러리를 비교해보고 두 개의 달력을 표시하기 쉽고 디자인을 크게 건드리지 않아도 될 것 같아 <code class="language-plaintext highlighter-rouge">react-date-range</code>를 사용했다.</p>
-
-<h2 id="2-달력-적용하기">2. 달력 적용하기</h2>
-
-<h3 id="설치">설치</h3>
-
-<hr />
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">react</span><span class="o">-</span><span class="nx">date</span><span class="o">-</span><span class="nx">range</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 전환 효과를 줄 css 속성명 지정. all을 이용하면 전체 속성 사용 가능 */</span>
+<span class="nt">transition-property</span><span class="o">:</span> <span class="nt">속성명</span>
+<span class="nt">transition-duration</span><span class="o">:</span> <span class="nt">지속시간</span> <span class="o">(</span><span class="nt">초</span> <span class="nt">단위</span><span class="o">)</span>
+<span class="nt">transition-delay</span><span class="o">:</span> <span class="nt">지연시간</span><span class="o">(</span><span class="nt">초</span> <span class="nt">단위</span><span class="o">)</span>
+<span class="nt">transition-timing-function</span><span class="o">:</span> <span class="nt">전환</span> <span class="nt">효과의</span> <span class="nt">가속도</span>
+  <span class="nt">-</span> <span class="nt">lenear</span><span class="o">:</span> <span class="nt">등속</span>
+  <span class="nt">-</span> <span class="nt">ease</span><span class="o">:</span> <span class="nt">가속</span>
+  <span class="nt">-</span> <span class="nt">ease-in</span><span class="o">:</span> <span class="nt">모션</span> <span class="nt">시작</span> <span class="nt">시</span> <span class="nt">가속</span>
+  <span class="nt">-</span> <span class="nt">ease-out</span><span class="o">:</span> <span class="nt">모션</span> <span class="nt">종료</span> <span class="nt">시</span> <span class="nt">가속</span>
+  <span class="nt">-</span> <span class="nt">ease-in-out</span><span class="o">:</span> <span class="nt">모션</span> <span class="nt">시작</span><span class="o">,</span><span class="nt">종료</span> <span class="nt">시</span> <span class="nt">가속</span>
+  <span class="nt">-</span> <span class="nt">cubic-bezier</span><span class="o">:</span> <span class="nt">사용자</span> <span class="nt">지정</span> <span class="nt">가속</span> <span class="nt">효과</span> <span class="nt">사용</span>
+<span class="c">/* shorthand */</span>
+<span class="nt">transition</span><span class="o">:</span> <span class="nt">속성명</span> <span class="nt">지속시간</span> <span class="nt">가속도</span> <span class="nt">지연시간</span>
+<span class="c">/* example */</span>
+<span class="nt">transition</span><span class="o">:</span> <span class="nt">all</span> <span class="err">1</span><span class="nt">s</span> <span class="nt">ease-in-out</span> <span class="err">0</span><span class="nt">s</span>
 </code></pre></div></div>
 
-<h3 id="적용">적용</h3>
+<h1 id="animation">animation</h1>
 
-<hr />
+<p>미리 지정한 조건에 맞게 자동으로 반복하는 효과</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calendar.js</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/styles.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 메인 css 파일</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/theme/default.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 테마 CSS 파일</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">DateRange</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-date-range</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">formatTomorrow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/dayUtil</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span> <span class="c1">//날짜 형식을 내일로 변경</span>
-
-<span class="kd">const</span> <span class="p">[</span><span class="nx">date</span><span class="p">,</span> <span class="nx">setDate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span>
-  <span class="p">{</span>
-    <span class="na">startDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
-    <span class="na">endDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
-    <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">selection</span><span class="dl">"</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">]);</span>
-
-<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">handleDate</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
-<span class="p">},</span> <span class="p">[</span><span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">startDate</span><span class="p">,</span> <span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">endDate</span><span class="p">]);</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@keyframes</span><span class="p">:</span> <span class="n">애니메이션</span> <span class="n">세트</span> <span class="n">지정</span><span class="p">;</span>
+<span class="nt">animation-name</span><span class="o">:</span> <span class="nt">이름</span><span class="o">;</span>
+<span class="nt">animation-iteration-count</span><span class="o">:</span> <span class="nt">키프레임</span> <span class="nt">모션</span> <span class="nt">한</span> <span class="nt">세트가</span> <span class="nt">몇</span> <span class="nt">번</span> <span class="nt">동작하는지</span> <span class="nt">횟수</span> <span class="nt">설정</span><span class="o">(</span><span class="nt">무한반복은</span> <span class="nt">infinite</span><span class="o">)</span>
+<span class="nt">animation-play-state</span><span class="nd">:running</span><span class="o">(</span><span class="nt">모션</span> <span class="nt">그대로</span> <span class="nt">진행</span><span class="o">)/</span><span class="nt">paused</span><span class="o">(</span><span class="nt">일시</span> <span class="nt">정지</span>
+<span class="o">)</span>
+<span class="c">/* shorthand */</span>
+<span class="nt">animation</span><span class="o">:</span> <span class="nt">이름</span> <span class="nt">진행시간</span> <span class="nt">가속도</span> <span class="nt">지연시간</span> <span class="nt">반복횟수</span>
+<span class="c">/* example */</span>
+<span class="nt">animation</span><span class="o">:</span> <span class="nt">rotation</span> <span class="err">3</span><span class="nt">s</span> <span class="nt">lenear</span> <span class="err">0</span><span class="nt">s</span> <span class="nt">infinite</span><span class="o">;</span>
 </code></pre></div></div>
 
-<p>시작 날짜와 종료 날짜를 모두 다음 날로 지정해주었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">(</span>
-  <span class="p">...</span>
-  <span class="o">&lt;</span><span class="nx">DateRange</span>
-    <span class="nx">editableDateInputs</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-    <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setDate</span><span class="p">([</span><span class="nx">item</span><span class="p">.</span><span class="nx">selection</span><span class="p">])}</span>
-    <span class="nx">moveRangeOnFirstSelection</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span>
-    <span class="nx">ranges</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
-    <span class="nx">months</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="c1">//달력 두 달 표시</span>
-    <span class="nx">direction</span><span class="o">=</span><span class="dl">"</span><span class="s2">horizontal</span><span class="dl">"</span> <span class="c1">//달력을 가로로 배치</span>
-    <span class="nx">dateDisplayFormat</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">LLLL yyyy</span><span class="dl">"</span><span class="p">}</span> <span class="c1">// 날짜 포맷값</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">...</span>
-<span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="결과">결과</h3>
-
-<hr />
-
-<p><img width="561" alt="스크린샷 2023-02-02 오후 11 14 15" src="https://user-images.githubusercontent.com/110877564/216350582-67febd33-0ba2-4d8a-8d8c-e66710a527fb.png" class="align-center" /></p>
-
-<p>위와 같이 시작 날짜, 종료 날짜를 선택하면 범위가 표시된다! (css는 좀 수정된 상태)</p>
-
-<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>
+<p class="notice--primary"><a href="https://codesandbox.io/s/transition-animation-example-bbdiye?file=/src/App.js">transition &amp; animation 예제(CodeSandbox)</a></p>
  
       </section>
 
@@ -561,12 +489,11 @@
  
   <nav class="pagination">
     
-      <a href="/blog/font/" class="pagination--pager" title="[Github Blog] Github 블로그 폰트 변경하기
+      <a href="/css/4-transform/" class="pagination--pager" title="[CSS] transform 속성
 ">Previous</a>
     
     
-      <a href="/main%20project/1-main-page/" class="pagination--pager" title="[Main Project] 02. main page 구성
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -582,44 +509,6 @@
     </h2>
     <div class="grid__wrapper">
        
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/css/transition/" rel="permalink">[CSS] transition &amp; animation 속성
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">transition과 animation
-</p>
-  </article>
-</div>
-  
 
 
 
@@ -730,6 +619,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">css 선택자
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/1-css/" rel="permalink">[CSS] CSS의 기초 용어
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">css 기초
 </p>
   </article>
 </div>

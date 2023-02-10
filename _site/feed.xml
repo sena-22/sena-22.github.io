@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-09T22:22:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[CSS] 박스 모델</title><link href="http://localhost:4000/css/3-box-model/" rel="alternate" type="text/html" title="[CSS] 박스 모델" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/3-box-model</id><content type="html" xml:base="http://localhost:4000/css/3-box-model/"><![CDATA[<h1 id="블록-요소와-인라인-요소">블록 요소와 인라인 요소</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-10T21:31:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[CSS] transition &amp;amp; animation 속성</title><link href="http://localhost:4000/css/transition/" rel="alternate" type="text/html" title="[CSS] transition &amp;amp; animation 속성" /><published>2023-02-10T00:00:00+09:00</published><updated>2023-02-10T00:00:00+09:00</updated><id>http://localhost:4000/css/transition</id><content type="html" xml:base="http://localhost:4000/css/transition/"><![CDATA[<h1 id="transition">transition</h1>
+
+<p>사용자의 특정 동작에 반응하는 인터랙션을 기반으로 한 모션 기법</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 전환 효과를 줄 css 속성명 지정. all을 이용하면 전체 속성 사용 가능 */</span>
+<span class="nt">transition-property</span><span class="o">:</span> <span class="nt">속성명</span>
+<span class="nt">transition-duration</span><span class="o">:</span> <span class="nt">지속시간</span> <span class="o">(</span><span class="nt">초</span> <span class="nt">단위</span><span class="o">)</span>
+<span class="nt">transition-delay</span><span class="o">:</span> <span class="nt">지연시간</span><span class="o">(</span><span class="nt">초</span> <span class="nt">단위</span><span class="o">)</span>
+<span class="nt">transition-timing-function</span><span class="o">:</span> <span class="nt">전환</span> <span class="nt">효과의</span> <span class="nt">가속도</span>
+  <span class="nt">-</span> <span class="nt">lenear</span><span class="o">:</span> <span class="nt">등속</span>
+  <span class="nt">-</span> <span class="nt">ease</span><span class="o">:</span> <span class="nt">가속</span>
+  <span class="nt">-</span> <span class="nt">ease-in</span><span class="o">:</span> <span class="nt">모션</span> <span class="nt">시작</span> <span class="nt">시</span> <span class="nt">가속</span>
+  <span class="nt">-</span> <span class="nt">ease-out</span><span class="o">:</span> <span class="nt">모션</span> <span class="nt">종료</span> <span class="nt">시</span> <span class="nt">가속</span>
+  <span class="nt">-</span> <span class="nt">ease-in-out</span><span class="o">:</span> <span class="nt">모션</span> <span class="nt">시작</span><span class="o">,</span><span class="nt">종료</span> <span class="nt">시</span> <span class="nt">가속</span>
+  <span class="nt">-</span> <span class="nt">cubic-bezier</span><span class="o">:</span> <span class="nt">사용자</span> <span class="nt">지정</span> <span class="nt">가속</span> <span class="nt">효과</span> <span class="nt">사용</span>
+<span class="c">/* shorthand */</span>
+<span class="nt">transition</span><span class="o">:</span> <span class="nt">속성명</span> <span class="nt">지속시간</span> <span class="nt">가속도</span> <span class="nt">지연시간</span>
+<span class="c">/* example */</span>
+<span class="nt">transition</span><span class="o">:</span> <span class="nt">all</span> <span class="err">1</span><span class="nt">s</span> <span class="nt">ease-in-out</span> <span class="err">0</span><span class="nt">s</span>
+</code></pre></div></div>
+
+<h1 id="animation">animation</h1>
+
+<p>미리 지정한 조건에 맞게 자동으로 반복하는 효과</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@keyframes</span><span class="p">:</span> <span class="n">애니메이션</span> <span class="n">세트</span> <span class="n">지정</span><span class="p">;</span>
+<span class="nt">animation-name</span><span class="o">:</span> <span class="nt">이름</span><span class="o">;</span>
+<span class="nt">animation-iteration-count</span><span class="o">:</span> <span class="nt">키프레임</span> <span class="nt">모션</span> <span class="nt">한</span> <span class="nt">세트가</span> <span class="nt">몇</span> <span class="nt">번</span> <span class="nt">동작하는지</span> <span class="nt">횟수</span> <span class="nt">설정</span><span class="o">(</span><span class="nt">무한반복은</span> <span class="nt">infinite</span><span class="o">)</span>
+<span class="nt">animation-play-state</span><span class="nd">:running</span><span class="o">(</span><span class="nt">모션</span> <span class="nt">그대로</span> <span class="nt">진행</span><span class="o">)/</span><span class="nt">paused</span><span class="o">(</span><span class="nt">일시</span> <span class="nt">정지</span>
+<span class="o">)</span>
+<span class="c">/* shorthand */</span>
+<span class="nt">animation</span><span class="o">:</span> <span class="nt">이름</span> <span class="nt">진행시간</span> <span class="nt">가속도</span> <span class="nt">지연시간</span> <span class="nt">반복횟수</span>
+<span class="c">/* example */</span>
+<span class="nt">animation</span><span class="o">:</span> <span class="nt">rotation</span> <span class="err">3</span><span class="nt">s</span> <span class="nt">lenear</span> <span class="err">0</span><span class="nt">s</span> <span class="nt">infinite</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><a href="https://codesandbox.io/s/transition-animation-example-bbdiye?file=/src/App.js">transition &amp; animation 예제(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transition" /><category term="animation" /><summary type="html"><![CDATA[transition과 animation]]></summary></entry><entry><title type="html">[CSS] transform 속성</title><link href="http://localhost:4000/css/4-transform/" rel="alternate" type="text/html" title="[CSS] transform 속성" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/4-transform</id><content type="html" xml:base="http://localhost:4000/css/4-transform/"><![CDATA[<h2 id="transform2d">transform(2D)</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span><span class="nt">css</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span> <span class="c">/* 요소를 1.5배 확대 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">skewX</span><span class="p">(</span><span class="m">20deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 20도만큼 기울이기 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span> <span class="c">/* 요소를 20px만큼 오른쪽으로 이동 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 45도만큼 회전 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="transform3d">transform(3D)</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
+  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 45도 회전 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 y축으로 45도 회전 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 100px 이동 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 -100px 이동 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="transform3d---중심축-이동">transform(3D) - 중심축 이동</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
+  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 -&gt; 기본값 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">right</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 */</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><a href="https://codesandbox.io/s/css-transform-sogseong-yesi-tzmpl1?file=/src/App.js">transform 예시(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transform" /><summary type="html"><![CDATA[transform]]></summary></entry><entry><title type="html">[CSS] 박스 모델</title><link href="http://localhost:4000/css/3-box-model/" rel="alternate" type="text/html" title="[CSS] 박스 모델" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/3-box-model</id><content type="html" xml:base="http://localhost:4000/css/3-box-model/"><![CDATA[<h1 id="블록-요소와-인라인-요소">블록 요소와 인라인 요소</h1>
 
 <table>
   <thead>
@@ -344,57 +430,7 @@
 
 <p>html 요소의 style 프로퍼티에 css를 포함시키는 방식.</p>
 
-<p class="notice--primary">HTML과 CSS의 역할을 분리시키기 위해 <strong>Link style</strong>을 사용하는 것이 바람직하다.</p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><summary type="html"><![CDATA[css 기초]]></summary></entry><entry><title type="html">[CSS] transform 속성</title><link href="http://localhost:4000/css/4-transform/" rel="alternate" type="text/html" title="[CSS] transform 속성" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/4-transform</id><content type="html" xml:base="http://localhost:4000/css/4-transform/"><![CDATA[<h2 id="transform2d">transform(2D)</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span><span class="nt">css</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span> <span class="c">/* 요소를 1.5배 확대 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">skewX</span><span class="p">(</span><span class="m">20deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 20도만큼 기울이기 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span> <span class="c">/* 요소를 20px만큼 오른쪽으로 이동 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 45도만큼 회전 */</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="transform3d">transform(3D)</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
-  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 45도 회전 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 y축으로 45도 회전 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 100px 이동 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 -100px 이동 */</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="transform3d---중심축-이동">transform(3D) - 중심축 이동</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
-  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
-  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 -&gt; 기본값 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
-  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">right</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 */</span>
-</code></pre></div></div>
-
-<p class="notice--primary"><a href="https://codesandbox.io/s/css-transform-sogseong-yesi-tzmpl1?file=/src/App.js">transform 예시(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transform" /><summary type="html"><![CDATA[transform]]></summary></entry><entry><title type="html">[HTML] HTML Tag 정리</title><link href="http://localhost:4000/html/tag/" rel="alternate" type="text/html" title="[HTML] HTML Tag 정리" /><published>2023-02-08T00:00:00+09:00</published><updated>2023-02-08T00:00:00+09:00</updated><id>http://localhost:4000/html/tag</id><content type="html" xml:base="http://localhost:4000/html/tag/"><![CDATA[<p>HTML의 태그들을 그때그때 찾아가면서 하다보니 머릿속에서 정리되지 않았다는 생각이 들어 한번에 모아서 정리해보기로 했다.</p>
+<p class="notice--primary">HTML과 CSS의 역할을 분리시키기 위해 <strong>Link style</strong>을 사용하는 것이 바람직하다.</p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><summary type="html"><![CDATA[css 기초]]></summary></entry><entry><title type="html">[HTML] HTML Tag 정리</title><link href="http://localhost:4000/html/tag/" rel="alternate" type="text/html" title="[HTML] HTML Tag 정리" /><published>2023-02-08T00:00:00+09:00</published><updated>2023-02-08T00:00:00+09:00</updated><id>http://localhost:4000/html/tag</id><content type="html" xml:base="http://localhost:4000/html/tag/"><![CDATA[<p>HTML의 태그들을 그때그때 찾아가면서 하다보니 머릿속에서 정리되지 않았다는 생각이 들어 한번에 모아서 정리해보기로 했다.</p>
 
 <h1 id="tag">tag</h1>
 
@@ -850,115 +886,20 @@ action은 특정 주소값이나 파일 위치를 지정하고, method는 입력
 <ul>
   <li>코드 리뷰 : 코드를 작성하기에 급급해 충돌 여부만 확인 후 merge를 하는 일이 대부분이었다. 그러다보니 코드를 pull 해오고서 문제를 발견하는 일이 생겼다. 코드를 보다 신중하게 살펴보아야 할 필요성을 느꼈다.</li>
   <li>커밋의 세분화 : 커밋을 큰 기능 단위로 나누어서 하다보니 나중에 보기가 어려웠다. 작은 기능 별로 세세하게 커밋하는 습관을 들여야겠다.</li>
-</ul>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="review" /><category term="react" /><summary type="html"><![CDATA[main project review]]></summary></entry><entry><title type="html">[Main Project] 05. Error Log</title><link href="http://localhost:4000/main%20project/1-error-log/" rel="alternate" type="text/html" title="[Main Project] 05. Error Log" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/1-error-log</id><content type="html" xml:base="http://localhost:4000/main%20project/1-error-log/"><![CDATA[<p>프로젝트 진행 중 발생한 에러와 실제 웹사이트를 사용하며 불편함을 느꼈던 부분들을 정리해보았다.</p>
+</ul>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="review" /><category term="react" /><summary type="html"><![CDATA[main project review]]></summary></entry><entry><title type="html">[Github Blog] 라벨 변경</title><link href="http://localhost:4000/blog/label/" rel="alternate" type="text/html" title="[Github Blog] 라벨 변경" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/blog/label</id><content type="html" xml:base="http://localhost:4000/blog/label/"><![CDATA[<p>블로그의 날짜가 모두 Updated로 나와서 수정했다.</p>
 
-<h3 id="1-게시글-생성-페이지-에러">1. 게시글 생성 페이지 에러</h3>
+<p><img width="366" alt="스크린샷 2023-02-06 오후 6 26 05" src="https://user-images.githubusercontent.com/110877564/216954807-409da92a-0856-4413-a615-fde1d2fde846.png" /></p>
 
-<p class="notice--primary">🤔 특정 장소 선택 시 게시글 생성이 되지 않는 문제</p>
+<p>처음에는 레이아웃 문제인가 싶어서 __layouts 폴더의 <code class="language-plaintext highlighter-rouge">single.html</code> 파일을 살펴봤다.</p>
 
-<p>구글 api에서 장소 정보를 불러올 때 rating 부분이 존재하지 않을 경우 <code class="language-plaintext highlighter-rouge">null</code> 값으로 들어와서 발생하는 에러로 확인되어 백엔드 쪽에서 초기값을 0.0으로 설정 후 해결되었다.</p>
-
-<h3 id="2-유저-이름-수정-에러">2. 유저 이름 수정 에러</h3>
-
-<p class="notice--primary">🤔 유저 이름에 특수문자, 이모티콘 입력 시 제출은 되고 반영은 되지 않는 문제</p>
-
-<p>유저 이름 제출 시 유효성 검사를 추가했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">nameRegex</span> <span class="o">=</span> <span class="sr">/^</span><span class="se">[</span><span class="sr">a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣</span><span class="se">]{1,20}</span><span class="sr">$/</span><span class="p">;</span>
-    <span class="p">...</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">nameRegex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">submitInfo</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">영문과 한글 또는 숫자를 1~20자리로 입력하세요.</span><span class="dl">"</span><span class="p">);</span>
-      <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="p">...</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;strong&gt;</span>
+  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> Date:<span class="nt">&lt;/strong</span>
+<span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<h3 id="3-게시글-수정-페이지-reset-버튼이-안-되는-에러">3. 게시글 수정 페이지 reset 버튼이 안 되는 에러</h3>
+<p><code class="language-plaintext highlighter-rouge">site.data.ui-text[site.locale].date_label</code>에서 설정한 대로 나오는 것 같아서 __data 폴더의 <code class="language-plaintext highlighter-rouge">ui-text.yml</code> 파일을 봤더니 “Update: “ 로 되어 있었다. “Date: “ 로 수정했더니 잘 적용되었다.</p>
 
-<p class="notice--primary">🤔 reset 버튼을 눌렀을 때 화면 상으로는 리셋되는데 실제로는 저장이 되지 않는 문제</p>
-
-<p>입력값 초기화 시 <code class="language-plaintext highlighter-rouge">useRef</code>를 사용해서 해당 메모를 초기화하는 방식을 사용했는데, <code class="language-plaintext highlighter-rouge">state</code>에는 반영이 안되어서 생긴 문제로 확인되었다. 초기화 시에 해당 <code class="language-plaintext highlighter-rouge">ref</code>와 <code class="language-plaintext highlighter-rouge">state</code>를 함께 초기화하는 방식으로 해결했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//입력값 초기화</span>
-<span class="kd">const</span> <span class="nx">handelClear</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">findIndex</span> <span class="o">=</span> <span class="nx">placeNotes</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">placeNote</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">placeNote</span><span class="p">.</span><span class="nx">placeId</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
-  <span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">placeId</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">memoRef</span><span class="p">.</span><span class="nx">current</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">===</span> <span class="nx">id</span>
-  <span class="p">);</span>
-  <span class="nx">memoRef</span><span class="p">.</span><span class="nx">current</span><span class="p">[</span><span class="nx">placeId</span><span class="p">].</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">changeNotes</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">placeNotes</span><span class="p">];</span> <span class="c1">//ref, state 같이 변경</span>
-  <span class="nx">changeNotes</span><span class="p">[</span><span class="nx">findIndex</span><span class="p">].</span><span class="nx">description</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-  <span class="nx">setPlaceNotes</span><span class="p">(</span><span class="nx">changeNotes</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<h3 id="4-장소가-없는-경우-에러-발생">4. 장소가 없는 경우 에러 발생</h3>
-
-<p class="notice--primary">🤔 일정 등록 시 장소를 선택하지 않은 경우 다른 페이지에서 에러 발생</p>
-
-<p>장소가 있을 경우에만 <code class="language-plaintext highlighter-rouge">state</code>를 설정하도록 변경했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//장소가 있을 때만 setState로 위도와 경도 설정</span>
-<span class="nx">startCode</span> <span class="o">&amp;&amp;</span>
-  <span class="nx">setGeocode</span><span class="p">({</span>
-    <span class="na">lat</span><span class="p">:</span> <span class="nx">startCode</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span>
-    <span class="na">lng</span><span class="p">:</span> <span class="nx">startCode</span><span class="p">.</span><span class="nx">longitude</span><span class="p">,</span>
-  <span class="p">});</span>
-</code></pre></div></div>
-
-<h3 id="5-게시판-textarea-고정">5. 게시판 textarea 고정</h3>
-
-<p><code class="language-plaintext highlighter-rouge">textarea</code> 태그는 원래 사이즈를 조절할 수 있다. 사이즈를 고정하고 싶을 땐 <code class="language-plaintext highlighter-rouge">resize:none</code>을 사용하면 된다.</p>
-
-<h3 id="6-회원가입-페이지에서-비밀번호-입력-시-볼-수-있는-버튼-만들기">6. 회원가입 페이지에서 비밀번호 입력 시 볼 수 있는 버튼 만들기</h3>
-
-<p>password를 볼 수 있는 상태와 상태를 변경할 수 있는 함수를 만들었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">showPswd</span><span class="p">,</span> <span class="nx">setShowPswd</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-
-<span class="kd">const</span> <span class="nx">toggleShowPswd</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">setShowPswd</span><span class="p">(</span><span class="o">!</span><span class="nx">showPswd</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>상태에 따라 다른 이미지를 보여준다. 이미지를 클릭 시 상태가 바뀐다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleShowPswd</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">eye</span><span class="dl">"</span><span class="o">&gt;</span>
-  <span class="p">{</span><span class="nx">showPswd</span> <span class="p">?</span> <span class="err">😀</span> <span class="p">:</span> <span class="err">😔</span><span class="p">}</span>
-<span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<p>상태가 바뀔 때마다 <code class="language-plaintext highlighter-rouge">input</code>의 <code class="language-plaintext highlighter-rouge">type</code>을 바꿔준다. <code class="language-plaintext highlighter-rouge">type</code>이 <code class="language-plaintext highlighter-rouge">password</code>인 경우 값이 보이지 않고, <code class="language-plaintext highlighter-rouge">text</code>인 경우 입력한 값을 볼 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">input</span>
-  <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span>
-  <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="nx">showPswd</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">}</span>
-  <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Enter your password</span><span class="dl">"</span>
-<span class="o">/&gt;</span>
-</code></pre></div></div>
-
-<h3 id="6-활성화된-버튼-색상-바꾸기">6. 활성화된 버튼 색상 바꾸기</h3>
-
-<p>게시판에 조회수순, 최신순 등 여러 방식으로 정렬을 할 수 있는 버튼이 있는데, 어느 버튼을 눌렀는지 보여줄 필요가 있어서 모드에 따른 css를 변경했다.</p>
-
-<p>모드는 <code class="language-plaintext highlighter-rouge">state</code>로 관리했고, 버튼을 눌렀을 때 해당 모드로 바꿔서 api 요청을 하는 방식이었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">mode</span><span class="p">,</span> <span class="nx">setMode</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">"</span><span class="s2">boardId</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="o">&lt;</span><span class="nx">button</span>
-  <span class="nx">className</span><span class="o">=</span><span class="p">{</span>
-    <span class="nx">mode</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">boardId</span><span class="dl">"</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">mode--selected mode--button</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">mode--button</span><span class="dl">"</span>
-  <span class="p">}</span>
-  <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setMode</span><span class="p">(</span><span class="dl">"</span><span class="s2">boardId</span><span class="dl">"</span><span class="p">)}</span>
-<span class="o">&gt;</span>
-  <span class="nx">최신순</span>
-<span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
-</span></code></pre></div></div>
-
-<p>현재 모드의 상태와 버튼의 모드가 일치할 경우 <code class="language-plaintext highlighter-rouge">mode--selected</code>라는 <code class="language-plaintext highlighter-rouge">className</code>을 추가해서 css를 변경했다.</p>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="error" /><category term="react" /><summary type="html"><![CDATA[프로젝트 진행 중 발생한 에러들]]></summary></entry><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/2-dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/2-dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
+<p><img width="366" alt="스크린샷 2023-02-06 오후 8 02 50" src="https://user-images.githubusercontent.com/110877564/216955628-a33bf344-a812-4c38-8a16-cdad63dbe821.png" /></p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="label" /><summary type="html"><![CDATA[라벨 변경하기]]></summary></entry><entry><title type="html">[Main Project] 06. Day.js 적용</title><link href="http://localhost:4000/main%20project/2-dayjs/" rel="alternate" type="text/html" title="[Main Project] 06. Day.js 적용" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/2-dayjs</id><content type="html" xml:base="http://localhost:4000/main%20project/2-dayjs/"><![CDATA[<p>프로젝트를 처음 시작할 때 <code class="language-plaintext highlighter-rouge">moment</code>를 사용해서 날짜 형식을 지정했는데, 콘솔창에 경고문이 계속 생겼다. 알아보니 현재 개발이 중단되었고, 용량 이슈도 있어 대체하기로 했다. 보통 <code class="language-plaintext highlighter-rouge">Day.js</code>가 용량이 적고 <code class="language-plaintext highlighter-rouge">moment</code>와 유사해서 많이 사용되어 프로젝트에서도 바로 적용하기로 했다.</p>
 
 <h3 id="1-설치">1. 설치</h3>
 
@@ -1053,17 +994,4 @@ action은 특정 주소값이나 파일 위치를 지정하고, method는 입력
 
 <span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">accessToken</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">removeCookie</span><span class="p">(</span><span class="dl">"</span><span class="s2">memberId</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="cookie" /><category term="react" /><summary type="html"><![CDATA[react-cookie]]></summary></entry><entry><title type="html">[Github Blog] 라벨 변경</title><link href="http://localhost:4000/blog/label/" rel="alternate" type="text/html" title="[Github Blog] 라벨 변경" /><published>2023-02-06T00:00:00+09:00</published><updated>2023-02-06T00:00:00+09:00</updated><id>http://localhost:4000/blog/label</id><content type="html" xml:base="http://localhost:4000/blog/label/"><![CDATA[<p>블로그의 날짜가 모두 Updated로 나와서 수정했다.</p>
-
-<p><img width="366" alt="스크린샷 2023-02-06 오후 6 26 05" src="https://user-images.githubusercontent.com/110877564/216954807-409da92a-0856-4413-a615-fde1d2fde846.png" /></p>
-
-<p>처음에는 레이아웃 문제인가 싶어서 __layouts 폴더의 <code class="language-plaintext highlighter-rouge">single.html</code> 파일을 살펴봤다.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;strong&gt;</span>
-  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> Date:<span class="nt">&lt;/strong</span>
-<span class="nt">&gt;</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">site.data.ui-text[site.locale].date_label</code>에서 설정한 대로 나오는 것 같아서 __data 폴더의 <code class="language-plaintext highlighter-rouge">ui-text.yml</code> 파일을 봤더니 “Update: “ 로 되어 있었다. “Date: “ 로 수정했더니 잘 적용되었다.</p>
-
-<p><img width="366" alt="스크린샷 2023-02-06 오후 8 02 50" src="https://user-images.githubusercontent.com/110877564/216955628-a33bf344-a812-4c38-8a16-cdad63dbe821.png" /></p>]]></content><author><name>Reyna</name></author><category term="blog" /><category term="Blog" /><category term="Github" /><category term="label" /><summary type="html"><![CDATA[라벨 변경하기]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="cookie" /><category term="react" /><summary type="html"><![CDATA[react-cookie]]></summary></entry></feed>
