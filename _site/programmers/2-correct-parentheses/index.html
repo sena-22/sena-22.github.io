@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Programmers] 1. 같은 숫자는 싫어 (javascript) - Reyna</title>
-<meta name="description" content="같은 숫자는 싫어">
+<!-- begin _includes/seo.html --><title>[Programmers] 2. 올바른 괄호(javascript) - Reyna</title>
+<meta name="description" content="올바른 괄호">
 
 
   <meta name="author" content="Reyna">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Programmers] 1. 같은 숫자는 싫어 (javascript)">
+<meta property="og:title" content="[Programmers] 2. 올바른 괄호(javascript)">
 <meta property="og:url" content="http://localhost:4000/programmers/2-correct-parentheses/">
 
 
-  <meta property="og:description" content="같은 숫자는 싫어">
+  <meta property="og:description" content="올바른 괄호">
 
 
 
@@ -352,10 +352,10 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Programmers] 1. 같은 숫자는 싫어 (javascript)"
+      content="[Programmers] 2. 올바른 괄호(javascript)"
     /> <meta
       itemprop="description"
-      content="같은 숫자는 싫어"
+      content="올바른 괄호"
     /> <meta
       itemprop="datePublished"
       content="2022-11-25T00:00:00+09:00"
@@ -369,7 +369,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Programmers] 1. 같은 숫자는 싫어 (javascript)</p>
+          <p>[Programmers] 2. 올바른 괄호(javascript)</p>
 
         </h1>
          
@@ -430,11 +430,85 @@
                 Index
               </h4>
             </header>
-            
+            <ul class="toc__menu"><li><a href="#-문제">🤔 문제</a></li><li><a href="#제한사항">제한사항</a></li><li><a href="#입출력-예시">입출력 예시</a></li><li><a href="#의사코드">의사코드</a></li><li><a href="#제출한-답">제출한 답</a></li><li><a href="#다른-풀이">다른 풀이</a></li></ul>
 
           </nav>
         </aside>
-         
+         <h2 id="-문제">🤔 문제</h2>
+
+<p>주어진 문자열이 올바른 괄호로 이루어져있는지 여부를 리턴</p>
+
+<blockquote>
+  <p>올바른 괄호란?</p>
+</blockquote>
+
+<ul>
+  <li>열림 괄호(<code class="language-plaintext highlighter-rouge">(</code>)가 없이 닫힌 괄호(<code class="language-plaintext highlighter-rouge">)</code>)가 나오면 올바르지 않은 괄호</li>
+  <li>열린 괄호는 반드시 짝지어서 닫혀야 함</li>
+</ul>
+
+<h2 id="제한사항">제한사항</h2>
+
+<p>문자열 s의 길이 : 100,000 이하의 자연수
+문자열 s는 <code class="language-plaintext highlighter-rouge">(</code> 또는 <code class="language-plaintext highlighter-rouge">)</code> 로만 이루어져 있습니다.</p>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>입력</th>
+      <th>출력</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>”()()”</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>”)()(“</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<ol>
+  <li>만약 배열의 첫번째 요소가 닫힘 괄호이면 =&gt; <code class="language-plaintext highlighter-rouge">false</code> 리턴</li>
+  <li><code class="language-plaintext highlighter-rouge">open</code>,<code class="language-plaintext highlighter-rouge">close</code> 변수 선언(초기값 0)</li>
+  <li>주어진 문자열의 길이만큼 반복문을 돌리면서</li>
+  <li>배열의 <code class="language-plaintext highlighter-rouge">i</code> 번째 요소가 열림 괄호이면 <code class="language-plaintext highlighter-rouge">open</code>에 1을 더해주고,</li>
+  <li>아니라면 <code class="language-plaintext highlighter-rouge">close</code>에 1을 더해준다</li>
+  <li>만약 <code class="language-plaintext highlighter-rouge">open</code>의 개수보다 <code class="language-plaintext highlighter-rouge">close</code>의 개수가 많다면 열리지 않았는데 닫힌 것이므로 <code class="language-plaintext highlighter-rouge">false</code>를 리턴한다</li>
+  <li>반복이 끝나고 <code class="language-plaintext highlighter-rouge">open</code>과 <code class="language-plaintext highlighter-rouge">close</code>가 같다면 <code class="language-plaintext highlighter-rouge">true</code> 리턴, 아니라면 <code class="language-plaintext highlighter-rouge">false</code>를 리턴한다.</li>
+</ol>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">open</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">close</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">(</span><span class="dl">"</span> <span class="p">?</span> <span class="nx">open</span><span class="o">++</span> <span class="p">:</span> <span class="nx">close</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">open</span> <span class="o">&lt;</span> <span class="nx">close</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">open</span> <span class="o">===</span> <span class="nx">close</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="다른-풀이">다른 풀이</h2>
+
+<p>변수를 count 하나만 선언하고 <code class="language-plaintext highlighter-rouge">(</code> 일때 더해주고 <code class="language-plaintext highlighter-rouge">)</code>일때 빼주는 풀이도 있다. 이 경우 중간에 count가 음수가 될 경우 <code class="language-plaintext highlighter-rouge">false</code>를 리턴해주는 방식으로 풀면 된다.</p>
+
+<p class="notice--primary"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12909">문제</a></p>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>
  
       </section>
 

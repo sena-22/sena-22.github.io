@@ -23,8 +23,8 @@ var store = [{
         "url": "/programmers/1-hate-same-number/",
         "teaser": null
       },{
-        "title": "[Programmers] 1. 같은 숫자는 싫어 (javascript)",
-        "excerpt":" ","categories": ["programmers"],
+        "title": "[Programmers] 2. 올바른 괄호(javascript)",
+        "excerpt":"🤔 문제 주어진 문자열이 올바른 괄호로 이루어져있는지 여부를 리턴 올바른 괄호란? 열림 괄호(()가 없이 닫힌 괄호())가 나오면 올바르지 않은 괄호 열린 괄호는 반드시 짝지어서 닫혀야 함 제한사항 문자열 s의 길이 : 100,000 이하의 자연수 문자열 s는 ( 또는 ) 로만 이루어져 있습니다. 입출력 예시 입력 출력 ”()()” true ”)()(“ false...","categories": ["programmers"],
         "tags": ["study","recursive","javascript"],
         "url": "/programmers/2-correct-parentheses/",
         "teaser": null
