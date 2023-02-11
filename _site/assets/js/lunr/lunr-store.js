@@ -26,7 +26,7 @@ var store = [{
         "title": "[Recursive] BFS와 DFS",
         "excerpt":"BFS와 DFS는 트리나 그래프 등의 비선형 구조를 무차별 탐색할 때 사용한다. 여기서 무차별 탐색이란 가능한 경우의 수를 전부 시도한다는 의미이다. 거리, 지도 탐색 등에 많이 사용된다. BFS (Breadth-First Search) 넓이 우선 검색 BFS는 넓이 우선 검색으로, 같은 depth를 모두 확인한 후에 내려가서 다시 검색한다.자식 노드를 전부 방문하고 그 뒤에 후손...","categories": ["algorithm"],
         "tags": ["study","recursive","bfs","dfs"],
-        "url": "/algorithm/1-bfs-dfs/",
+        "url": "/algorithm/2-bfs-dfs/",
         "teaser": null
       },{
         "title": "[Github Blog] Github 블로그 만들기",
