@@ -23,6 +23,12 @@ var store = [{
         "url": "/algorithm/1-sort/",
         "teaser": null
       },{
+        "title": "[Recursive] BFS와 DFS",
+        "excerpt":"BFS와 DFS는 트리나 그래프 등의 비선형 구조를 무차별 탐색할 때 사용한다. 여기서 무차별 탐색이란 가능한 경우의 수를 전부 시도한다는 의미이다. 거리, 지도 탐색 등에 많이 사용된다. BFS (Breadth-First Search) 넓이 우선 검색 BFS는 넓이 우선 검색으로, 같은 depth를 모두 확인한 후에 내려가서 다시 검색한다.자식 노드를 전부 방문하고 그 뒤에 후손...","categories": ["algorithm"],
+        "tags": ["study","recursive","bfs","dfs"],
+        "url": "/algorithm/1-bfs-dfs/",
+        "teaser": null
+      },{
         "title": "[Github Blog] Github 블로그 만들기",
         "excerpt":"1. Repository 생성 깃허브 계정.github.io 라는 이름으로 레포지토리를 생성해서 로컬로 클론한다. 2. ruby, Jekyll, Bundler 설치 블로그를 참고해서 지킬을 설치했다! 이 부분은 정확히 이해 하고 있지 못해서 다시 알아볼 예정이다. https://ansohxxn.github.io/blog/i-made-my-blog/ https://jojoldu.tistory.com/288 https://codecamper.me/blog/122/ 3. 지킬 테마 선택 minimal-mistakes 테마를 선택했다. https://github.com/mmistakes/minimal-mistakes 선택한 테마의 github repository 압축 파일을 받아서 만들어둔 폴더에...","categories": ["blog"],
         "tags": ["Blog","Github","First Post"],
