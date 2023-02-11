@@ -5,10 +5,16 @@ var store = [{
         "url": "/html/html/",
         "teaser": null
       },{
-        "title": "[Recursive] 01. 시간 복잡도(Time Complexity)",
+        "title": "[Recursive] 시간 복잡도(Time Complexity)",
         "excerpt":"1. 시간 복잡도란? 알고리즘의 실행 시간을 표현하는 것을 말한다. 여기서 실행 시간이란 통상적으로 쓰이는 시분초 개념이 아니라, 함수나 알고리즘 수행에 필요한 스텝 수를 의미한다. (실행 환경마다 성능이 다르기 때문에 시간을 초(seconds)나 밀리초(milliseconds)로 표현하면 편차가 커질 수 있기 때문이라고 한다.) 시간 복잡도는 보통 점근 표기법으로 표현한다. 점근적 분석(asymptotic analysis) 임의의 함수가...","categories": ["algorithm"],
         "tags": ["study","recursive","time complexity"],
         "url": "/algorithm/1-time-complexity/",
+        "teaser": null
+      },{
+        "title": "[Recursive] Stack과 Queue",
+        "excerpt":"Stack 입력과 출력이 하나의 방향에서 일어나는 후입선출(LIFO)로 이루어지는 자료구조를 말한다. 즉 가장 최근에 넣은 데이터가 가장 먼저 나온다. Stack에 데이터를 넣는 것을 PUSH, 데이터를 꺼내는 것을 POP이라고 한다. 데이터는 하나씩만 넣고 뺄 수 있다. Stack Overflow와 Stack Underflow Stack Overflow : 스택이 가득 차 있는데 데이터를 넣으려고 할 때 발생한다....","categories": ["algorithm"],
+        "tags": ["study","recursive","stack","queue"],
+        "url": "/algorithm/stack-queue/",
         "teaser": null
       },{
         "title": "[Github Blog] Github 블로그 만들기",

@@ -1,5 +1,5 @@
 ---
-title: "[Recursive] 01. 시간 복잡도(Time Complexity)"
+title: "[Recursive] 시간 복잡도(Time Complexity)"
 excerpt: "시간 복잡도"
 
 categories:
