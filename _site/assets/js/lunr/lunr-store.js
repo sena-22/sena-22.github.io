@@ -29,6 +29,12 @@ var store = [{
         "url": "/algorithm/2-bfs-dfs/",
         "teaser": null
       },{
+        "title": "[Recursive] Hash",
+        "excerpt":"해시(Hash) 해시는 key-value를 쌍으로 데이터를 저장하는 자료구조이다. Space-Time trade off(시간-공간)의 대표적인 알고리즘에 속한다. Space-Time trade off(시간-공간) 기존의 배열과 다른 별도의 리스트 공간을 만들어 빠른 알고리즘을 구현하는 방법. 즉 시간을 빠르게 하기 위해서 많은 공간을 사용하는 알고리즘이다. 기수 정렬, 해시, B-tree 등이 이 방식을 사용한다. key 값이 배열의 인덱스로 저장되기 때문에...","categories": ["algorithm"],
+        "tags": ["study","recursive","hash"],
+        "url": "/algorithm/3-hash/",
+        "teaser": null
+      },{
         "title": "[Github Blog] Github 블로그 만들기",
         "excerpt":"1. Repository 생성 깃허브 계정.github.io 라는 이름으로 레포지토리를 생성해서 로컬로 클론한다. 2. ruby, Jekyll, Bundler 설치 블로그를 참고해서 지킬을 설치했다! 이 부분은 정확히 이해 하고 있지 못해서 다시 알아볼 예정이다. https://ansohxxn.github.io/blog/i-made-my-blog/ https://jojoldu.tistory.com/288 https://codecamper.me/blog/122/ 3. 지킬 테마 선택 minimal-mistakes 테마를 선택했다. https://github.com/mmistakes/minimal-mistakes 선택한 테마의 github repository 압축 파일을 받아서 만들어둔 폴더에...","categories": ["blog"],
         "tags": ["Blog","Github","First Post"],

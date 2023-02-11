@@ -1,0 +1,903 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Recursive] Hash - Reyna</title>
+<meta name="description" content="hash">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[Recursive] Hash">
+<meta property="og:url" content="http://localhost:4000/algorithm/3-hash/">
+
+
+  <meta property="og:description" content="hash">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-19T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-02-12T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/algorithm/3-hash/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(23)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                  
+      </ul>
+      <ul>
+                  
+      </ul>
+      <ul>
+                  
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                  
+      </ul>
+      <ul>
+                  
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (2)</a>
+        </li>
+                 
+      </ul>
+      <ul>
+                 
+        <li>
+          <a href="/categories/css" class="">CSS (5)</a>
+        </li>
+         
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+               
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+           
+      </ul>
+      <ul>
+                  
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                  
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+      <ul>
+             
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+             
+      </ul>
+      <ul>
+                  
+      </ul>
+      <ul>
+                  
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[Recursive] Hash"
+    /> <meta
+      itemprop="description"
+      content="hash"
+    /> <meta
+      itemprop="datePublished"
+      content="2022-12-19T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-02-12T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[Recursive] Hash</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2022-12-19T00:00:00+09:00"
+            >2022.12.19</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-02-12"
+            >2023.02.12</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#algorithm" class="page__taxonomy-item p-category" rel="tag">algorithm</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#hash" class="page__taxonomy-item p-category" rel="tag">hash</a><span class="sep">, </span>
+    
+      <a href="/tags/#recursive" class="page__taxonomy-item p-category" rel="tag">recursive</a><span class="sep">, </span>
+    
+      <a href="/tags/#study" class="page__taxonomy-item p-category" rel="tag">study</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#해시hash">해시(Hash)</a><ul><li><a href="#해시의-사용-용도">해시의 사용 용도</a></li></ul></li><li><a href="#해시-테이블">해시 테이블</a></li><li><a href="#해시-함수">해시 함수</a><ul><li><a href="#해시-함수를-구하는-방법">해시 함수를 구하는 방법</a><ul><li><a href="#1-나눗셈법division-method">1. 나눗셈법(division method)</a></li><li><a href="#2-자릿수-접기digit-folding">2. 자릿수 접기(digit folding)</a></li></ul></li></ul></li><li><a href="#충돌">충돌</a><ul><li><a href="#해시-함수에서-충돌-처리-방법">해시 함수에서 충돌 처리 방법</a><ul><li><a href="#1-개별-체이닝">1. 개별 체이닝</a></li><li><a href="#2-선형-탐색">2. 선형 탐색</a></li></ul></li></ul></li><li><a href="#해시의-시간-복잡도">해시의 시간 복잡도</a></li><li><a href="#자바스크립트에서-해시-테이블-구현하기">자바스크립트에서 해시 테이블 구현하기</a><ul><li><a href="#해시-함수-생성">해시 함수 생성</a></li><li><a href="#해시-테이블-생성">해시 테이블 생성</a></li></ul></li><li><a href="#map-객체">Map 객체</a></li><li><a href="#객체와의-차이점">객체와의 차이점</a></li><li><a href="#map을-사용하여-해시맵-구현">Map을 사용하여 해시맵 구현</a><ul><li><a href="#참고">참고</a></li></ul></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <h1 id="해시hash">해시(Hash)</h1>
+
+<p>해시는 <code class="language-plaintext highlighter-rouge">key-value</code>를 쌍으로 데이터를 저장하는 자료구조이다. <strong>Space-Time trade off(시간-공간)</strong>의 대표적인 알고리즘에 속한다.</p>
+
+<p class="notice--primary"><strong>Space-Time trade off(시간-공간)</strong> <br />
+기존의 배열과 다른 별도의 리스트 공간을 만들어 빠른 알고리즘을 구현하는 방법. 즉 시간을 빠르게 하기 위해서 많은 공간을 사용하는 알고리즘이다. 기수 정렬, 해시, B-tree 등이 이 방식을 사용한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">key</code> 값이 배열의 인덱스로 저장되기 때문에 검색과 저장이 빠르게 일어나게 된다.
+특정 데이터가 저장되는 인덱스가 그 데이터만의 고유한 위치이기 때문에 삽입 시 다른 데이터의 사이에 끼어들거나 삭제 시 다른 데이터로 채울 필요가 없으므로 삽입과 삭제 시 데이터의 이동이 없도록 만들어진 구조이다.</p>
+
+<h2 id="해시의-사용-용도">해시의 사용 용도</h2>
+
+<p>해시는 주로 해시 테이블, 암호화, 데이터 축약 등에 사용된다.</p>
+
+<p><br /></p>
+
+<h1 id="해시-테이블">해시 테이블</h1>
+
+<p><img src="https://velog.velcdn.com/images/sena-22/post/cf6d68c1-13a8-4517-b15f-e86d869343ec/image.png" alt="" /></p>
+
+<p>해시테이블은 데이터를 입력받아 해시함수를 사용하여 주소를 만들고 그 주소에 데이터를 담는 방식으로 작동한다.
+<br /></p>
+
+<h1 id="해시-함수">해시 함수</h1>
+
+<p>해시 테이블을 만들 때 인덱스로 사용할 고유한 숫자값을 만드는 함수.</p>
+
+<h2 id="해시-함수를-구하는-방법">해시 함수를 구하는 방법</h2>
+
+<h3 id="1-나눗셈법division-method">1. 나눗셈법(division method)</h3>
+
+<p>숫자로 된 키를 해시 테이블의 크기 m으로 나눈 <strong>나머지</strong>를 해시값으로 변환하는 방법
+간단하면서 빠른 연산이 장점이다.</p>
+
+<blockquote>
+  <p>주소 = 입력값 % 테이블 크기</p>
+</blockquote>
+
+<p>일반적으로 나눗셈법으로 해시 함수를 구현할 때 테이블의 크기를 소수(Prime Number)로 정하는 것이 좋다고 알려져 있다.</p>
+
+<h3 id="2-자릿수-접기digit-folding">2. 자릿수 접기(digit folding)</h3>
+
+<p>나눗셈법은 충돌을 일으킬 가능성이 높기 때문에 충돌이 일어날 가능성을 줄인 자릿수 접기 방법을 사용하기도 한다.
+자릿수 접기는 종이를 접듯이 숫자를 일정한 크기 이하의 수로 만드는 방법이다.</p>
+
+<blockquote>
+  <p>7891242 = 7+8+9+1+2+4+2
+78+91+24+2 = 195</p>
+</blockquote>
+
+<p>위와 같이 각 자릿수를 더해 해시 값을 만드는 방법을 말한다. 문자열의 경우 각 요소를 아스키코드로 바꾸고 이 값들을 각각 더해서 접으면 문자열을 해시 테이블 내의 주소로 바꿀 수 있다.</p>
+
+<p><br /></p>
+
+<h1 id="충돌">충돌</h1>
+
+<p>해시 함수가 서로 다른 입력값에 대해 동일한 해시 테이블 주소를 반환하는 것을 말한다. 충돌을 해결하는 방법에는 크게 두 가지가 있다.</p>
+
+<h2 id="해시-함수에서-충돌-처리-방법">해시 함수에서 충돌 처리 방법</h2>
+
+<h3 id="1-개별-체이닝">1. 개별 체이닝</h3>
+
+<p>해당 인덱스에 값이 있으면 그 뒤에 중첩해서 연결시키는 방법이다. 개별 체이닝을 사용하면 테이블의 길이보다 더 많은 데이터를 저장할 수 있다.</p>
+
+<p>체이닝의 경우 최악의 경우 한 버킷에 모든 데이터가 들어 있어 시간복잡도가 O(n)이 될 수 있다.</p>
+
+<h3 id="2-선형-탐색">2. 선형 탐색</h3>
+
+<p>해시 함수가 반환한 주소에 이미 다른 데이터가 있을 때, 자리가 있으면 데이터를 다음 주소로 이동하며 비어 있는 주소에 입력하는 방식이다.
+만약 모든 주소에 데이터가 있을 경우 해시 테이블을 늘리는 리사이징을 진행한 후에 다시 입력한다.
+선형 탐색법은 최대 테이블의 길이만큼만 저장할 수 있다.</p>
+
+<p><img src="https://velog.velcdn.com/images/sena-22/post/90883f3c-d188-4887-a744-7bea645738e8/image.png" alt="" /></p>
+
+<p><br /></p>
+
+<h1 id="해시의-시간-복잡도">해시의 시간 복잡도</h1>
+
+<p>데이터를 검색할 때 <code class="language-plaintext highlighter-rouge">key</code>와 <code class="language-plaintext highlighter-rouge">value</code>가 한 쌍으로 존재하고, key 값이 배열의 인덱스로 변환되기 때문에 검색과 저장의 평균적인 시간 복잡도가 O(1)이 된다.</p>
+
+<p><br /></p>
+
+<h1 id="자바스크립트에서-해시-테이블-구현하기">자바스크립트에서 해시 테이블 구현하기</h1>
+
+<h3 id="해시-함수-생성">해시 함수 생성</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">hashStringToInt</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">tableSize</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">hash</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">hash</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13</span> <span class="o">*</span> <span class="nx">hash</span> <span class="o">*</span> <span class="nx">s</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="o">%</span> <span class="nx">tableSize</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">hash</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>키로 들어온 문자열(s)를 반복문을 돌면서 하나씩 charCode로 변환한다.</li>
+  <li>hash에 17을 할당한 것은 효율적인 키 분산을 위해서이다.</li>
+</ul>
+
+<blockquote>
+  <p><strong>charCodeAt() 메서드는 주어진 인덱스에 대한 UTF-16 코드를 나타내는 0부터 65535 사이의 정수를 반환합니다.</strong> &gt; https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt</p>
+</blockquote>
+
+<h3 id="해시-테이블-생성">해시 테이블 생성</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">HashTable</span> <span class="p">{</span>
+  <span class="nx">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">71</span><span class="p">);</span>
+
+  <span class="c1">//key, value를 받아 테이블에 넣어주는 메서드</span>
+  <span class="nx">setItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">//해시 함수가 반환하는 해시 값이 인덱스가 된다.</span>
+    <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nx">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="c1">//해당 인덱스에 할당</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="c1">//key를 받아 해당하는 값을 불러오는 메서드</span>
+  <span class="nx">getItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nx">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">];</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myTable</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HashTable</span><span class="p">();</span>
+<span class="nx">myTable</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">k</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myTable</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myTable</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">));</span> <span class="c1">//k</span>
+</code></pre></div></div>
+
+<p><img src="https://velog.velcdn.com/images/sena-22/post/6a67d78e-e642-42c0-bab7-c5e19fbb55ac/image.png" alt="" /></p>
+
+<p><br /></p>
+
+<h2 id="map-객체">Map 객체</h2>
+
+<p>키와 값의 쌍으로 이루어진 데이터 구조</p>
+
+<h2 id="객체와의-차이점">객체와의 차이점</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>객체</th>
+      <th>Map 객체</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>키로 사용할 수 있는 값</td>
+      <td>문자열 또는 심벌 값</td>
+      <td>객체를 포함한 모든 값</td>
+    </tr>
+    <tr>
+      <td>이터러블</td>
+      <td>X</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>요소 개수 확인</td>
+      <td>Object.keys(obj).length</td>
+      <td>map.size()</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Map 객체는 이터러블이므로 for…of 문으로 순회가 가능하다.</li>
+</ul>
+
+<h2 id="map을-사용하여-해시맵-구현">Map을 사용하여 해시맵 구현</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//생성</span>
+<span class="kd">const</span> <span class="nx">hashMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span>
+
+<span class="c1">//요소 취득</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span> <span class="mi">700</span><span class="p">);</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hashMap</span><span class="p">);</span> <span class="c1">//Map(2) {'1' =&gt; 700, '2' =&gt; Array(3)}</span>
+
+<span class="c1">//값 얻기</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">//요소 존재 여부 확인</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//boolean</span>
+
+<span class="c1">//요소 탐색</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">hashMap</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> = </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//요소 삭제</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//boolean</span>
+
+<span class="c1">//요소 일괄 삭제</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span> <span class="c1">//undefined 반환</span>
+</code></pre></div></div>
+
+<p><img src="https://velog.velcdn.com/images/sena-22/post/c1b5488f-1ac5-4e17-8d6c-e617fd96ae4f/image.jpeg" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/sena-22/post/f0680747-e022-4a9f-b391-562177254bdb/image.jpeg" alt="" /></p>
+
+<h3 id="참고">참고</h3>
+
+<hr />
+
+<p class="notice--primary"><a href="https://dbehdrhs.tistory.com/70">해시 테이블</a> <br />
+<a href="https://ratsgo.github.io/data%20structure&amp;algorithm/2017/10/25/hash/">해싱, 해시함수, 해시테이블</a><br />
+<a href="https://www.geeksforgeeks.org/hashing-data-structure/">Hashing Data Structure</a><br />
+<a href="https://eunjinii.tistory.com/87">자바스크립트로 해시테이블 구현하는 방법</a></p>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/algorithm/2-bfs-dfs/" class="pagination--pager" title="[Recursive] BFS와 DFS
+">Previous</a>
+    
+    
+      <a href="/blog/hello-blog/" class="pagination--pager" title="[Github Blog] Github 블로그 만들기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/transition/" rel="permalink">[CSS] transition &amp; animation 속성
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">transition과 animation
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/4-transform/" rel="permalink">[CSS] transform 속성
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">transform
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/3-box-model/" rel="permalink">[CSS] 박스 모델
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">box model
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/2-selector/" rel="permalink">[CSS] 선택자(selector)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">css 선택자
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
