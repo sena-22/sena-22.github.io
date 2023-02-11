@@ -17,6 +17,12 @@ var store = [{
         "url": "/algorithm/stack-queue/",
         "teaser": null
       },{
+        "title": "[Recursive] Sort",
+        "excerpt":"1. 선택 정렬 대상 데이터에서 최솟값 (혹은 최댓값)을 찾고, 남은 정렬의 가장 앞에 있는 데이터와 교환하는 알고리즘을 가진 정렬이다. 선택 정렬은 구현 방법이 복잡하고, 시간 복잡도도 O(n^2)로 비효율적이기 때문에 자주 사용하지는 않는다. 선택 정렬의 과정 남은 정렬 부분에서 최솟값(혹은 최댓값)을 찾는다. 남은 정렬에서 가장 앞에 있는 데이터와 선택된 데이터를 교체한다....","categories": ["algorithm"],
+        "tags": ["study","recursive","selection sort","insert sort","bubble sort","quick sort","heap sort"],
+        "url": "/algorithm/1-sort/",
+        "teaser": null
+      },{
         "title": "[Github Blog] Github 블로그 만들기",
         "excerpt":"1. Repository 생성 깃허브 계정.github.io 라는 이름으로 레포지토리를 생성해서 로컬로 클론한다. 2. ruby, Jekyll, Bundler 설치 블로그를 참고해서 지킬을 설치했다! 이 부분은 정확히 이해 하고 있지 못해서 다시 알아볼 예정이다. https://ansohxxn.github.io/blog/i-made-my-blog/ https://jojoldu.tistory.com/288 https://codecamper.me/blog/122/ 3. 지킬 테마 선택 minimal-mistakes 테마를 선택했다. https://github.com/mmistakes/minimal-mistakes 선택한 테마의 github repository 압축 파일을 받아서 만들어둔 폴더에...","categories": ["blog"],
         "tags": ["Blog","Github","First Post"],

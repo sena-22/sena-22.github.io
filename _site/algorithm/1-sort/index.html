@@ -1,0 +1,979 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Recursive] Sort - Reyna</title>
+<meta name="description" content="선택정렬, 삽입정렬, 버블정렬, 퀵 정렬, 힙 정렬">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[Recursive] Sort">
+<meta property="og:url" content="http://localhost:4000/algorithm/1-sort/">
+
+
+  <meta property="og:description" content="선택정렬, 삽입정렬, 버블정렬, 퀵 정렬, 힙 정렬">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-11-29T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-02-12T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/algorithm/1-sort/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+<div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(21)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                  
+      </ul>
+      <ul>
+                  
+      </ul>
+      <ul>
+                  
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                  
+      </ul>
+      <ul>
+                  
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (2)</a>
+        </li>
+                 
+      </ul>
+      <ul>
+                 
+        <li>
+          <a href="/categories/css" class="">CSS (5)</a>
+        </li>
+         
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+               
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+           
+      </ul>
+      <ul>
+                  
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (3)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                  
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+      <ul>
+             
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+             
+      </ul>
+      <ul>
+                  
+      </ul>
+      <ul>
+                  
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[Recursive] Sort"
+    /> <meta
+      itemprop="description"
+      content="선택정렬, 삽입정렬, 버블정렬, 퀵 정렬, 힙 정렬"
+    /> <meta
+      itemprop="datePublished"
+      content="2022-11-29T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-02-12T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[Recursive] Sort</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2022-11-29T00:00:00+09:00"
+            >2022.11.29</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-02-12"
+            >2023.02.12</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#algorithm" class="page__taxonomy-item p-category" rel="tag">algorithm</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#bubble-sort" class="page__taxonomy-item p-category" rel="tag">bubble sort</a><span class="sep">, </span>
+    
+      <a href="/tags/#heap-sort" class="page__taxonomy-item p-category" rel="tag">heap sort</a><span class="sep">, </span>
+    
+      <a href="/tags/#insert-sort" class="page__taxonomy-item p-category" rel="tag">insert sort</a><span class="sep">, </span>
+    
+      <a href="/tags/#quick-sort" class="page__taxonomy-item p-category" rel="tag">quick sort</a><span class="sep">, </span>
+    
+      <a href="/tags/#recursive" class="page__taxonomy-item p-category" rel="tag">recursive</a><span class="sep">, </span>
+    
+      <a href="/tags/#selection-sort" class="page__taxonomy-item p-category" rel="tag">selection sort</a><span class="sep">, </span>
+    
+      <a href="/tags/#study" class="page__taxonomy-item p-category" rel="tag">study</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#1-선택-정렬">1. 선택 정렬</a><ul><li><a href="#선택-정렬의-과정">선택 정렬의 과정</a></li></ul></li><li><a href="#2-삽입-정렬">2. 삽입 정렬</a><ul><li><a href="#삽입-정렬의-과정">삽입 정렬의 과정</a></li></ul></li><li><a href="#3-버블-정렬">3. 버블 정렬</a><ul><li><a href="#버블-정렬의-과정">버블 정렬의 과정</a></li></ul></li><li><a href="#4-퀵-정렬quick-sort">4. 퀵 정렬(Quick Sort)</a><ul><li><a href="#퀵-정렬의-과정">퀵 정렬의 과정</a></li><li><a href="#퀵-정렬의-시간-복잡도">퀵 정렬의 시간 복잡도</a></li><li><a href="#코드">코드</a></li></ul></li><li><a href="#4-힙-정렬">4. 힙 정렬</a><ul><li><a href="#이진-트리">이진 트리</a></li><li><a href="#완전-이진-트리">완전 이진 트리</a></li><li><a href="#힙-생성-알고리즘">힙 생성 알고리즘</a></li><li><a href="#힙의-종류">힙의 종류</a></li><li><a href="#힙-정렬-과정">힙 정렬 과정</a></li><li><a href="#힙-정렬-구현">힙 정렬 구현</a><ul><li><a href="#부모-노드와-자식-노드의-관계">부모 노드와 자식 노드의 관계</a></li><li><a href="#코드-1">코드</a></li><li><a href="#참고">참고</a></li></ul></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <h1 id="1-선택-정렬">1. 선택 정렬</h1>
+
+<p>대상 데이터에서 <strong>최솟값 (혹은 최댓값)</strong>을 찾고, <strong>남은 정렬의 가장 앞에 있는 데이터와 교환</strong>하는 알고리즘을 가진 정렬이다.</p>
+
+<p>선택 정렬은 구현 방법이 복잡하고, 시간 복잡도도 O(n^2)로 비효율적이기 때문에 자주 사용하지는 않는다.</p>
+
+<h2 id="선택-정렬의-과정"><strong>선택 정렬의 과정</strong></h2>
+
+<ol>
+  <li>남은 정렬 부분에서 최솟값(혹은 최댓값)을 찾는다.</li>
+  <li>남은 정렬에서 가장 앞에 있는 데이터와 선택된 데이터를 교체한다.</li>
+  <li>가장 앞에 있는 데이터의 위치를 변경해서(index++) 남은 정렬 부분의 범위를 줄이다.</li>
+  <li>전체 데이터 크기만큼 인덱스가 커질 때까지 (남은 정렬 부분이 없어질 때까지) 반복한다.
+(이때 마지막 요소는 자동 정렬되므로 반복 횟수는 n-1이다.)</li>
+</ol>
+
+<p><br />
+이를 코드로 구현하면 다음과 같다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="mi">1</span><span class="p">.</span> <span class="nx">arr의</span> <span class="nx">길이</span><span class="o">-</span><span class="mi">1</span> <span class="nx">만큼</span> <span class="nx">반복문을</span> <span class="nx">돌린다</span><span class="p">.</span>
+  <span class="mi">2</span><span class="p">.</span> <span class="nx">최솟값의</span> <span class="nx">인덱스를</span> <span class="nx">담을</span> <span class="nx">변수를</span> <span class="nx">선언하여</span> <span class="nx">i를</span> <span class="nx">할당한다</span><span class="p">.</span>
+  <span class="mi">3</span><span class="p">.</span> <span class="nx">j를</span> <span class="nx">i</span><span class="o">+</span><span class="mi">1</span> <span class="o">~</span> <span class="nx">리스트</span> <span class="nx">길이만큼</span> <span class="nx">반복문을</span> <span class="nx">돌린다</span><span class="p">.</span>
+  <span class="mi">4</span><span class="p">.</span> <span class="nx">만약</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="nx">가</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">minIdx</span><span class="p">]</span><span class="nx">보다</span> <span class="nx">작다면</span> <span class="nx">최솟값</span> <span class="nx">인덱스에</span> <span class="nx">j를</span> <span class="nx">저장한다</span><span class="p">.</span>
+  <span class="mi">5</span><span class="p">.</span> <span class="nx">만약</span> <span class="nx">최솟값</span> <span class="nx">인덱스가</span> <span class="nx">다른</span> <span class="nx">값</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span><span class="nx">으로</span> <span class="nx">바뀌었다면</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="nx">와</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="nx">를</span> <span class="nx">swap</span> <span class="nx">해준다</span>
+</code></pre></div></div>
+
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">selectionSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">minIdx</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">minIdx</span><span class="p">])</span> <span class="p">{</span>
+        <span class="nx">minIdx</span> <span class="o">=</span> <span class="nx">j</span><span class="p">;</span> <span class="c1">//남은 정렬에서 최솟값의 인덱스를 찾는 과정</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">minIdx</span> <span class="o">!==</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">//가장 앞의 데이터(arr[i])와 선택된 데이터(arr[minIdx])교체</span>
+      <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">minIdx</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">minIdx</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><a href="https://www.acmicpc.net/problem/1427">sort inside 선택정렬 예제</a></p>
+
+<p><br /></p>
+<h1 id="2-삽입-정렬">2. 삽입 정렬</h1>
+
+<p>삽입 정렬은 <strong>이미 정렬된 데이터 범위에 아직 정렬이 안 된 데이터를 적절한 위치에 삽입</strong>시켜 정렬하는 알고리즘이다.</p>
+
+<p>삽입 정렬은 시간 복잡도가 O(n^2)이지만 구현이 쉽다.</p>
+
+<h2 id="삽입-정렬의-과정"><strong>삽입 정렬의 과정</strong></h2>
+
+<ol>
+  <li>현재 인덱스에 있는 데이터를 선택</li>
+  <li>현재 선택한 데이터가 정렬된 데이터 범위 중에서 삽입될 위치를 탐색</li>
+  <li>삽입 위치와 현재 선택한 데이터를 swap 해주고 index++</li>
+  <li>전체 데이터의 크기만큼 인덱스가 커질 때까지(선택할 데이터가 없을 때까지) 반복</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">insertSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// [5,4,3,2,1]</span>
+    <span class="kd">let</span> <span class="nx">insert_point</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//0</span>
+    <span class="kd">let</span> <span class="nx">insert_value</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="c1">//4</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="nx">insert_point</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">insert_point</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">insert_value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">//0  5&gt;4</span>
+      <span class="nx">arr</span><span class="p">[</span><span class="nx">insert_point</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">insert_point</span><span class="p">];</span> <span class="c1">//arr[1]=arr[0] //[5,5,3,2,1]</span>
+      <span class="nx">insert_point</span><span class="o">--</span><span class="p">;</span> <span class="c1">//-1</span>
+    <span class="p">}</span>
+    <span class="nx">arr</span><span class="p">[</span><span class="nx">insert_point</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">insert_value</span><span class="p">;</span> <span class="c1">//arr[0]=4 [4,5,3,2,1]</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>insert_value에 arr[i]를 담아두었다가 삽입할 위치를 탐색한 후에 넣어준다.</p>
+
+<p><br /></p>
+
+<h1 id="3-버블-정렬">3. 버블 정렬</h1>
+
+<p>버블 정렬은 <strong>두 인접한 데이터의 크기를 비교해 정렬</strong>하는 방법이다.</p>
+
+<h2 id="버블-정렬의-과정"><strong>버블 정렬의 과정</strong></h2>
+
+<ol>
+  <li>비교 연산이 필요한 루프 범위 설정</li>
+  <li>인접한 데이터 값을 비교</li>
+  <li>swap 조건에 부합하면 swap</li>
+  <li>반복문이 끝날 때까지 2~3번 반복</li>
+  <li>정렬 영역을 설정한다. 다음 루프에서 이 영역은 제외</li>
+  <li>비교 대상이 없을 때까지 반복</li>
+</ol>
+
+<blockquote>
+  <p>만약 특정 루프의 전체 영역에서 swap이 일어나지 않았다면 바로 종료한다.</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">bubbleSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">swapped</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">swapped</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 바깥 반복을 돌 때마다 false로 초기화</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">//뒤의 요소가 앞의 요소보다 작으면</span>
+        <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]];</span> <span class="c1">//swap</span>
+        <span class="nx">swapped</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//swap이 한 번이라도 일어났다면 true가 된다.</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">swapped</span><span class="p">)</span> <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span> <span class="c1">//모든 정렬이 끝난 배열 반환</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h1 id="4-퀵-정렬quick-sort">4. 퀵 정렬(Quick Sort)</h1>
+<p>기준값(<code class="language-plaintext highlighter-rouge">pivot</code>)을 선정해 해당 값보다 작은 데이터와 큰 데이터로 분류하는 것을 반복해 정렬하는 알고리즘이다.</p>
+
+<h2 id="퀵-정렬의-과정">퀵 정렬의 과정</h2>
+
+<ol>
+  <li>데이터를 분할하는 pivot을 설정한다. 이 경우 <code class="language-plaintext highlighter-rouge">pivot</code>의 위치는 임의로 설정해도 된다.</li>
+  <li><code class="language-plaintext highlighter-rouge">pivot</code>을 기준으로 데이터를 2개의 집합으로 분리한다.</li>
+</ol>
+
+<ul>
+  <li>이때 <code class="language-plaintext highlighter-rouge">pivot</code>의 왼쪽에는<code class="language-plaintext highlighter-rouge">pivot</code>보다 작은 수, 오른쪽에는 큰 수를 놓는다.</li>
+</ul>
+
+<ol>
+  <li>분리 집합에서 다시 <code class="language-plaintext highlighter-rouge">pivot</code> 을 선정한다.</li>
+  <li>분리 집합이 1개 이하가 될 때까지 위의 과정을 반복한다.</li>
+</ol>
+
+<h2 id="퀵-정렬의-시간-복잡도">퀵 정렬의 시간 복잡도</h2>
+
+<p>평균적인 시간 복잡도는 O(nlogn)이고, 최악의 경우 O(n^2)이다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//base case</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
+  <span class="kd">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">pivot</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">left</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">pivot</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">right</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">pivot</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">left</span><span class="p">).</span><span class="nx">concat</span><span class="p">(</span><span class="nx">pivot</span><span class="p">,</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">right</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="4-힙-정렬">4. 힙 정렬</h1>
+
+<p>힙은 완전 이진 트리의 일종으로 <strong>최댓값, 최솟값을 쉽게 추출</strong>할 수 있고, <strong>중복값을 허용</strong>한다는 특징을 가진다.</p>
+
+<p>힙 정렬을 이해하기 위해서는 먼저 <strong>이진 트리</strong>와 <strong>완전 이진 트리</strong>에 대해 알아야 한다.</p>
+
+<h2 id="이진-트리">이진 트리</h2>
+
+<p>컴퓨터가 데이터를 표현할 때 데이터를 각 노드에 담은 뒤 노드를 두 개씩 이어붙이는 구조를 말하며, 모든 노드의 <strong>자식 노드가 2개 이하</strong>이다. (데이터의 구조가 나무와 닮았다고 해서 트리 구조라고 부른다.)</p>
+
+<h2 id="완전-이진-트리">완전 이진 트리</h2>
+
+<p>데이터가 <strong>왼쪽부터</strong> 빽빽하게 들어가는 이진 트리를 말한다.</p>
+
+<h2 id="힙-생성-알고리즘">힙 생성 알고리즘</h2>
+
+<ul>
+  <li>힙 정렬을 수행하기 위해서는 <strong>힙 생성 알고리즘(Heapify Algorithm)</strong>을 사용한다.</li>
+  <li>힙 생성 알고리즘은 특정한 ‘하나의 노드’에 대해 수행하는 것으로, <strong>하나의 노드를 제외하고 최대 힙이 구성되어 있는 상태</strong>라고 가정한다. 특정 노드 때문에 힙이 붕괴되어 있다면, 그 노드의 자식 값 중에서 큰 값을 자기 자신으로 바꾼다. 이 과정을 자식이 없을 때까지 반복한다.
+<img src="https://velog.velcdn.com/images/sena-22/post/9dd2d171-d5b2-4729-8ec8-f9cdc86eafe4/image.jpeg" alt="" /></li>
+</ul>
+
+<p>위 이미지의 경우 부모 노드인 5보다 자식 노드인 7이 커서 힙에 붕괴가 일어났으므로 둘을 바꿔준다.</p>
+
+<p>힙 생성 알고리즘의 시간 복잡도는 <strong>O(log N)</strong>이다.</p>
+
+<h2 id="힙의-종류">힙의 종류</h2>
+
+<ol>
+  <li>최대 힙(max heap) <br />
+부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리</li>
+  <li>최소 힙(min heap) <br />
+부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리</li>
+</ol>
+
+<h2 id="힙-정렬-과정">힙 정렬 과정</h2>
+
+<p>기본적으로 완전 이진 트리를 표현하는 방법은 다음과 같이 그대로 배열에 담는 것이다.</p>
+
+<p><img src="https://velog.velcdn.com/images/sena-22/post/4dbf8edb-24a1-4430-a7a6-85a093bf3c6c/image.png" alt="" /></p>
+
+<p>이 상태에서 힙 생성 알고리즘을 실행하면 힙 구조가 될 때까지 알고리즘이 실행된다.</p>
+
+<p><img src="https://velog.velcdn.com/images/sena-22/post/56a40baf-b8c9-4564-928f-2f5e432c8063/image.jpeg" alt="" /></p>
+
+<p>힙 구조가 만들어지면 가장 큰 값인 루트 노드의 값과, 배열의 마지막 값을 교환한다. 가장 큰 값은 배열의 맨 뒤로 가서 정렬이 완료된 것이므로 제외하고, 나머지 배열로 다시 힙 생성 알고리즘을 수행한다. (만약 최소 힙을 구현하려면 반대로 가장 작은 값이 위에 오도록 한다)
+이 과정을 모든 값이 정렬될 때까지 반복하면 정렬이 끝나게 된다.
+<strong>힙 정렬</strong>은 힙 생성 알고리즘의 시간 복잡도인 logN이 전체 원소의 개수 n만큼 반복되므로 <strong>O(nlogn)</strong>의 시간 복잡도를 가진다.</p>
+
+<h2 id="힙-정렬-구현">힙 정렬 구현</h2>
+
+<ol>
+  <li>전체 트리 구조를 힙 구조로 바꾼다</li>
+  <li>크기를 줄여가며 반복적으로 힙을 구성한다.(이때 루트 노드와 마지막 노드를 바꾼다)</li>
+</ol>
+
+<h3 id="부모-노드와-자식-노드의-관계"><strong>부모 노드와 자식 노드의 관계</strong></h3>
+
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">부모의</span> <span class="nx">인덱스</span> <span class="o">=</span> <span class="p">(</span><span class="nx">자식</span> <span class="nx">인덱스</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="nx">왼쪽</span> <span class="nx">노드의</span> <span class="nx">인덱스</span> <span class="o">=</span> <span class="nx">부모</span> <span class="nx">인덱스</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nx">오른쪽</span> <span class="nx">노드의</span> <span class="nx">인덱스</span> <span class="o">=</span> <span class="nx">부모</span> <span class="nx">인덱스</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<h3 id="코드-1">코드</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">heapSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//1. 전체 트리 구조를 최대 힙 구조로 바꾼다</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="k">do</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">root</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">root</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">c</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">//자식 노드가 부모 노드보다 크면</span>
+        <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">root</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">c</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">c</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">root</span><span class="p">]];</span> <span class="c1">//swap</span>
+      <span class="p">}</span>
+      <span class="nx">c</span> <span class="o">=</span> <span class="nx">root</span><span class="p">;</span> <span class="c1">//자식이 부모로 이동</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">//2. 크기를 줄여가며 반복적으로 힙을 구성한다</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//루트 노드와 가장 마지막 노드를 swap</span>
+    <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
+    <span class="kd">let</span> <span class="nx">root</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">do</span> <span class="p">{</span>
+      <span class="nx">c</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nx">root</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//c는 루트의 자식</span>
+      <span class="c1">//자식 중에 더 큰 값을 찾는다.</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">c</span> <span class="o">&lt;</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//c가 범위를 벗어나지 않도록 방지</span>
+        <span class="nx">c</span><span class="o">++</span><span class="p">;</span> <span class="c1">//오른쪽 값이 더 크면 c를 오른쪽으로 이동(왼쪽 오른쪽 중 더 큰 값이 c가 되도록 함)</span>
+      <span class="p">}</span>
+      <span class="c1">//루트보다 자식이 크면 교환</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">root</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">c</span> <span class="o">&lt;</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">root</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">c</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">c</span><span class="p">],</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">root</span><span class="p">]];</span>
+      <span class="p">}</span>
+      <span class="nx">root</span> <span class="o">=</span> <span class="nx">c</span><span class="p">;</span> <span class="c1">//c를 루트로 이동시킨다.</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&lt;</span> <span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heapSort</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">397</span><span class="p">,</span> <span class="mi">5123</span><span class="p">,</span> <span class="mi">321</span><span class="p">,</span> <span class="mi">2135</span><span class="p">,</span> <span class="mi">534</span><span class="p">]));</span>
+</code></pre></div></div>
+
+<h3 id="참고">참고</h3>
+
+<hr />
+
+<p class="notice--primary"><a href="https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/Heap.md">github 참고자료</a> <br />
+<a href="https://www.youtube.com/watch?v=iyl9bfp_8ag">heap sort(youtube)</a></p>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/algorithm/stack-queue/" class="pagination--pager" title="[Recursive] Stack과 Queue
+">Previous</a>
+    
+    
+      <a href="/blog/hello-blog/" class="pagination--pager" title="[Github Blog] Github 블로그 만들기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/transition/" rel="permalink">[CSS] transition &amp; animation 속성
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">transition과 animation
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/4-transform/" rel="permalink">[CSS] transform 속성
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">transform
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/3-box-model/" rel="permalink">[CSS] 박스 모델
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">box model
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/2-selector/" rel="permalink">[CSS] 선택자(selector)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">css 선택자
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -71,3 +71,6 @@ Queue는 주로 데이터가 입력된 시간 순서대로 처리해야 할 필�
 [JS로 구현하는 큐 (Queue)](https://velog.io/@longroadhome/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-JS%EB%A1%9C-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-.%ED%81%90-Queue)
 [Queue 구현 및 시간 복잡도](https://ghost4551.tistory.com/133)
 {: .notice--primary}
+
+💡 알고리즘 스터디 Recursive에서 공부한 내용 정리
+{: .notice--danger}
