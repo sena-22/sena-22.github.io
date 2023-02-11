@@ -1,5 +1,5 @@
 ---
-title: "[Programmers] 3.타겟 넘버(javascript)"
+title: "[Programmers] 3. 타겟 넘버(javascript)"
 excerpt: "타겟 넘버"
 
 categories:
