@@ -59,6 +59,12 @@ var store = [{
         "url": "/algorithm/3-hash/",
         "teaser": null
       },{
+        "title": "[Programmers] 5. 완주하지 못한 선수 (javascript)",
+        "excerpt":"//시간 초과 function solution(participant, completion) { let hashMap = new Map(); for (let i = 0; i &lt; participant.length; i++) { hashMap.set(i, participant[i]); } for (let i = 0; i &lt; completion.length; i++) { for (let [key, value] of hashMap) { if (completion[i] === value) { hashMap.delete(key); break; //중복 방지...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript"],
+        "url": "/programmers/5-x-complete-player/",
+        "teaser": null
+      },{
         "title": "[Github Blog] Github 블로그 만들기",
         "excerpt":"1. Repository 생성 깃허브 계정.github.io 라는 이름으로 레포지토리를 생성해서 로컬로 클론한다. 2. ruby, Jekyll, Bundler 설치 블로그를 참고해서 지킬을 설치했다! 이 부분은 정확히 이해 하고 있지 못해서 다시 알아볼 예정이다. https://ansohxxn.github.io/blog/i-made-my-blog/ https://jojoldu.tistory.com/288 https://codecamper.me/blog/122/ 3. 지킬 테마 선택 minimal-mistakes 테마를 선택했다. https://github.com/mmistakes/minimal-mistakes 선택한 테마의 github repository 압축 파일을 받아서 만들어둔 폴더에...","categories": ["blog"],
         "tags": ["Blog","Github","First Post"],
