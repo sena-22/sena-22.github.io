@@ -17,6 +17,18 @@ var store = [{
         "url": "/algorithm/stack-queue/",
         "teaser": null
       },{
+        "title": "[Programmers] 1. 같은 숫자는 싫어 (javascript)",
+        "excerpt":"🤔 문제 주어진 배열에서 연속으로 나오는 숫자를 하나만 남기고 제거하고 남은 수들을 리턴하는 함수 만들기 제한사항 배열 arr의 크기 : 1,000,000 이하의 자연수 배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수 입출력 예시 입력 출력 [1,1,3,3,0,1,1] [1,3,0,1] [4,4,4,3,3] [4,3] 의사코드 빈 배열을 선언해준다. 주어진 배열을 순회하면서...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript"],
+        "url": "/programmers/1-hate-same-number/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 1. 같은 숫자는 싫어 (javascript)",
+        "excerpt":" ","categories": ["programmers"],
+        "tags": ["study","recursive","javascript"],
+        "url": "/programmers/2-correct-parentheses/",
+        "teaser": null
+      },{
         "title": "[Recursive] Sort",
         "excerpt":"1. 선택 정렬 대상 데이터에서 최솟값 (혹은 최댓값)을 찾고, 남은 정렬의 가장 앞에 있는 데이터와 교환하는 알고리즘을 가진 정렬이다. 선택 정렬은 구현 방법이 복잡하고, 시간 복잡도도 O(n^2)로 비효율적이기 때문에 자주 사용하지는 않는다. 선택 정렬의 과정 남은 정렬 부분에서 최솟값(혹은 최댓값)을 찾는다. 남은 정렬에서 가장 앞에 있는 데이터와 선택된 데이터를 교체한다....","categories": ["algorithm"],
         "tags": ["study","recursive","selection sort","insert sort","bubble sort","quick sort","heap sort"],
