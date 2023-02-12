@@ -166,4 +166,10 @@ var store = [{
         "tags": ["css","transition","animation"],
         "url": "/css/transition/",
         "teaser": null
+      },{
+        "title": "[HTML] 에디터에서 HTML 자동완성하기",
+        "excerpt":"태그 자동완성 입력 &lt;div&gt;div&gt;div*5&gt;img[src=\"img/$.png\"]+h2&gt;lorem5^p&lt;/div&gt; &gt; : 자식 태그로 생성 [] : 태그의 속성 지정 $ : 태그가 반복될 때마다 1씩 증가된 값이 입력. + : 형제 태그로 생성 ^ : 다시 상위 태그로 이동 lorem + 숫자 : Lorem Ipsum을 숫자만큼 생성 결과 &lt;div&gt; &lt;div&gt; &lt;img src=\"img/1.png\" alt=\"\" /&gt; &lt;h2&gt;Lorem...","categories": ["html"],
+        "tags": ["html","autocomplete"],
+        "url": "/html/autocomplete/",
+        "teaser": null
       }]

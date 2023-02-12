@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Github Blog] 라벨 변경 - Reyna</title>
-<meta name="description" content="라벨 변경하기">
+<!-- begin _includes/seo.html --><title>[HTML] 에디터에서 HTML 자동완성하기 - Reyna</title>
+<meta name="description" content="html code autocomplete">
 
 
   <meta name="author" content="Reyna">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Github Blog] 라벨 변경">
-<meta property="og:url" content="http://localhost:4000/blog/label/">
+<meta property="og:title" content="[HTML] 에디터에서 HTML 자동완성하기">
+<meta property="og:url" content="http://localhost:4000/html/autocomplete/">
 
 
-  <meta property="og:description" content="라벨 변경하기">
-
-
-
+  <meta property="og:description" content="html code autocomplete">
 
 
 
 
-  <meta property="article:published_time" content="2023-02-06T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-02-06T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-02-13T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-02-13T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/blog/label/">
+
+<link rel="canonical" href="http://localhost:4000/html/autocomplete/">
 
 
 
@@ -352,16 +352,16 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Github Blog] 라벨 변경"
+      content="[HTML] 에디터에서 HTML 자동완성하기"
     /> <meta
       itemprop="description"
-      content="라벨 변경하기"
+      content="html code autocomplete"
     /> <meta
       itemprop="datePublished"
-      content="2023-02-06T00:00:00+09:00"
+      content="2023-02-13T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-02-06T00:00:00+09:00"
+      content="2023-02-13T00:00:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -369,7 +369,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Github Blog] 라벨 변경</p>
+          <p>[HTML] 에디터에서 HTML 자동완성하기</p>
 
         </h1>
          
@@ -377,13 +377,13 @@
           <strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
           >
-          <time datetime="2023-02-06T00:00:00+09:00"
-            >2023.02.06</time
+          <time datetime="2023-02-13T00:00:00+09:00"
+            >2023.02.13</time
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-02-06"
-            >2023.02.06</time
+          <time datetime="2023-02-13"
+            >2023.02.13</time
           >
         </p>
           
@@ -395,7 +395,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a>
+      <a href="/categories/#html" class="page__taxonomy-item p-category" rel="tag">html</a>
     
     </span>
   </p>
@@ -408,11 +408,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#blog" class="page__taxonomy-item p-category" rel="tag">Blog</a><span class="sep">, </span>
+      <a href="/tags/#autocomplete" class="page__taxonomy-item p-category" rel="tag">autocomplete</a><span class="sep">, </span>
     
-      <a href="/tags/#github" class="page__taxonomy-item p-category" rel="tag">Github</a><span class="sep">, </span>
-    
-      <a href="/tags/#label" class="page__taxonomy-item p-category" rel="tag">label</a>
+      <a href="/tags/#html" class="page__taxonomy-item p-category" rel="tag">html</a>
     
     </span>
   </p>
@@ -430,24 +428,77 @@
                 Index
               </h4>
             </header>
-            
+            <ul class="toc__menu"><li><a href="#태그-자동완성">태그 자동완성</a><ul><li><a href="#입력">입력</a></li><li><a href="#결과">결과</a></li></ul></li><li><a href="#html-기본-틀">html 기본 틀</a><ul><li><a href="#입력-1">입력</a></li><li><a href="#결과-1">결과</a></li></ul></li></ul>
 
           </nav>
         </aside>
-         <p>블로그의 날짜가 모두 Updated로 나와서 수정했다.</p>
+         <h2 id="태그-자동완성">태그 자동완성</h2>
 
-<p><img width="366" alt="스크린샷 2023-02-06 오후 6 26 05" src="https://user-images.githubusercontent.com/110877564/216954807-409da92a-0856-4413-a615-fde1d2fde846.png" /></p>
+<h3 id="입력">입력</h3>
 
-<p>처음에는 레이아웃 문제인가 싶어서 __layouts 폴더의 <code class="language-plaintext highlighter-rouge">single.html</code> 파일을 살펴봤다.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;strong&gt;</span>
-  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> Date:<span class="nt">&lt;/strong</span>
-<span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>div&gt;div*5&gt;img[src="img/$.png"]+h2&gt;lorem5^p<span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">site.data.ui-text[site.locale].date_label</code>에서 설정한 대로 나오는 것 같아서 __data 폴더의 <code class="language-plaintext highlighter-rouge">ui-text.yml</code> 파일을 봤더니 “Update: “ 로 되어 있었다. “Date: “ 로 수정했더니 잘 적용되었다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&gt;</code> : 자식 태그로 생성</li>
+  <li><code class="language-plaintext highlighter-rouge">[]</code> : 태그의 속성 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> : 태그가 반복될 때마다 1씩 증가된 값이 입력.</li>
+  <li><code class="language-plaintext highlighter-rouge">+</code> : 형제 태그로 생성</li>
+  <li><code class="language-plaintext highlighter-rouge">^</code> : 다시 상위 태그로 이동</li>
+  <li><code class="language-plaintext highlighter-rouge">lorem + 숫자</code> : Lorem Ipsum을 숫자만큼 생성</li>
+</ul>
 
-<p><img width="366" alt="스크린샷 2023-02-06 오후 8 02 50" src="https://user-images.githubusercontent.com/110877564/216955628-a33bf344-a812-4c38-8a16-cdad63dbe821.png" /></p>
+<h3 id="결과">결과</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/1.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Lorem ipsum dolor sit amet.<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/2.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Sunt, fuga. Alias, repellat et.<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/3.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Dolorem unde reprehenderit sapiente hic?<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/4.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Odit cupiditate consectetur expedita ipsa.<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/5.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Et nam perspiciatis harum quaerat!<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="html-기본-틀">html 기본 틀</h2>
+
+<h3 id="입력-1">입력</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!tab
+</code></pre></div></div>
+
+<h3 id="결과-1">결과</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
  
       </section>
 
@@ -472,12 +523,11 @@
  
   <nav class="pagination">
     
-      <a href="/main%20project/3-board/" class="pagination--pager" title="[Main Project] 04. 게시글 작성, 수정 페이지
+      <a href="/css/transition/" class="pagination--pager" title="[CSS] transition &amp; animation 속성
 ">Previous</a>
     
     
-      <a href="/main%20project/1-error-log/" class="pagination--pager" title="[Main Project] 05. Error Log
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -493,44 +543,6 @@
     </h2>
     <div class="grid__wrapper">
        
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/html/autocomplete/" rel="permalink">[HTML] 에디터에서 HTML 자동완성하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">html code autocomplete
-</p>
-  </article>
-</div>
-  
 
 
 
@@ -641,6 +653,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">box model
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/2-selector/" rel="permalink">[CSS] 선택자(selector)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">css 선택자
 </p>
   </article>
 </div>
