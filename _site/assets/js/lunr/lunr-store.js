@@ -172,4 +172,10 @@ var store = [{
         "tags": ["html","autocomplete"],
         "url": "/html/autocomplete/",
         "teaser": null
+      },{
+        "title": "[Mini Project] 포트폴리오 만들기 1",
+        "excerpt":"사이드 프로젝트로 포트폴리오를 만들어보려고 한다. 팀 프로젝트 때 CSS를 많이 다루지 않아서 포트폴리오 페이지에서는 이것저것 적용해보고 싶다. 라우팅 &lt;Routes&gt; &lt;Route path=\"/\" element={&lt;Home /&gt;} /&gt; &lt;Route path=\"/about\" element={&lt;About /&gt;} /&gt; &lt;Route path=\"/project\" element={&lt;Project /&gt;} /&gt; &lt;Route path=\"/project/:id\" element={&lt;SingleProject /&gt;} /&gt; &lt;Route path=\"/contact\" element={&lt;Contact /&gt;} /&gt; &lt;/Routes&gt; Home Home 페이지에서는 전체 정보를...","categories": ["mini project"],
+        "tags": ["project","portfolio","react"],
+        "url": "/mini%20project/portfolio-1/",
+        "teaser": null
       }]
