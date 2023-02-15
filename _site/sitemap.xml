@@ -118,7 +118,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/mini%20project/portfolio-1/</loc>
-<lastmod>2023-02-13T00:00:00+09:00</lastmod>
+<lastmod>2023-02-14T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/mini%20project/portfolio-2/</loc>
+<lastmod>2023-02-14T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/categories/algorithm</loc>
@@ -182,5 +186,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page6/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page7/</loc>
 </url>
 </urlset>

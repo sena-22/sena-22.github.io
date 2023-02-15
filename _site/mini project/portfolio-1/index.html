@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Mini Project] 포트폴리오 만들기 1 - Reyna</title>
+<!-- begin _includes/seo.html --><title>[Mini Project] 포트폴리오 만들기 1.Home page - Reyna</title>
 <meta name="description" content="portfolio project">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Mini Project] 포트폴리오 만들기 1">
+<meta property="og:title" content="[Mini Project] 포트폴리오 만들기 1.Home page">
 <meta property="og:url" content="http://localhost:4000/mini%20project/portfolio-1/">
 
 
@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2023-02-13T00:00:00+09:00">
+  <meta property="article:modified_time" content="2023-02-14T00:00:00+09:00">
 
 
 
@@ -258,7 +258,7 @@
   <ul class="nav__items" id="category_tag_menu">
     <!--전체 글 수-->
     <li>
-      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(30)</style> 
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(31)</style> 
     </li>
     <li>
       <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
@@ -308,7 +308,7 @@
       <ul>
                      
         <li>
-          <a href="/categories/mini-project" class="">Mini Project (1)</a>
+          <a href="/categories/mini-project" class="">Mini Project (2)</a>
         </li>
          
       </ul>
@@ -356,7 +356,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Mini Project] 포트폴리오 만들기 1"
+      content="[Mini Project] 포트폴리오 만들기 1.Home page"
     /> <meta
       itemprop="description"
       content="portfolio project"
@@ -365,7 +365,7 @@
       content="2023-02-13T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-02-13T00:00:00+09:00"
+      content="2023-02-14T00:00:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -373,7 +373,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Mini Project] 포트폴리오 만들기 1</p>
+          <p>[Mini Project] 포트폴리오 만들기 1.Home page</p>
 
         </h1>
          
@@ -386,8 +386,8 @@
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-02-13"
-            >2023.02.13</time
+          <time datetime="2023-02-14"
+            >2023.02.14</time
           >
         </p>
           
@@ -434,7 +434,7 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#라우팅">라우팅</a></li><li><a href="#home">Home</a><ul><li><a href="#font-awesome-사용하기">font-awesome 사용하기</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#라우팅">라우팅</a></li><li><a href="#home">Home</a></li><li><a href="#font-awesome-사용하기">font-awesome 사용하기</a></li><li><a href="#컴포넌트">컴포넌트</a></li><li><a href="#애니메이션">애니메이션</a></li><li><a href="#외부링크-연결">외부링크 연결</a></li></ul>
 
           </nav>
         </aside>
@@ -454,7 +454,7 @@
 
 <h2 id="home">Home</h2>
 
-<p>Home 페이지에서는 전체 정보를 요약하는 카드형 컴포넌트를 원통형으로 돌아가게 만들었다.</p>
+<p>Home 페이지에서는 전체 정보를 요약하는 카드형 컴포넌트를 반구형으로 배치했다.</p>
 
 <p>각 카드의 제목은 <code class="language-plaintext highlighter-rouge">opacity</code>를 0으로 줘서 안 보이게 하다가 호버 시 위로 올라오면서 <code class="language-plaintext highlighter-rouge">opacity:1</code>로 보이게 만들었다.
 after 가상자도 넣어 같이 올라온다.</p>
@@ -468,7 +468,7 @@ after 가상자도 넣어 같이 올라온다.</p>
 
 <p>이미지는 img폴더에 넣어둔 png 파일을 불러와서 <code class="language-plaintext highlighter-rouge">src</code> 속성으로 넣어주었다.</p>
 
-<h3 id="font-awesome-사용하기">font-awesome 사용하기</h3>
+<h2 id="font-awesome-사용하기">font-awesome 사용하기</h2>
 
 <p>리액트에서 <code class="language-plaintext highlighter-rouge">font-awesome</code>을 사용할 때는 설치를 한 후에 <code class="language-plaintext highlighter-rouge">import</code>를 해주어야 한다.</p>
 
@@ -480,6 +480,101 @@ after 가상자도 넣어 같이 올라온다.</p>
 <span class="c1">//사용 시</span>
 <span class="o">&lt;</span><span class="nx">FontAwesomeIcon</span> <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">faGithub</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
 </span></code></pre></div></div>
+
+<h2 id="컴포넌트">컴포넌트</h2>
+
+<p>카드를 만드는데 반복되는 태그가 너무 많아서 컴포넌트로 만들어주었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Box3</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">pic</span><span class="dl">"</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">con</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">con</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">date</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>프로젝트 목록도 배열로 선언해서 추가하기 쉽게 바꿨다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">box3contents</span> <span class="o">=</span> <span class="p">[{</span>
+  <span class="na">src</span><span class="p">:</span><span class="nx">moon</span><span class="p">,</span>
+  <span class="na">title</span><span class="p">:</span><span class="dl">'</span><span class="s1">제목</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">con</span><span class="p">:</span><span class="dl">'</span><span class="s1">설명.</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">date</span><span class="p">:</span><span class="dl">'</span><span class="s1">기간</span><span class="dl">'</span>
+  <span class="p">},</span>
+  <span class="p">...</span>
+<span class="p">]</span>
+
+<span class="p">...</span>
+  <span class="p">{</span><span class="nx">box3contents</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">con</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">Box3</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">idx</span><span class="p">}</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">con</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span> <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">con</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span> <span class="nx">con</span><span class="o">=</span><span class="p">{</span><span class="nx">con</span><span class="p">.</span><span class="nx">con</span><span class="p">}</span> <span class="nx">date</span><span class="o">=</span><span class="p">{</span><span class="nx">con</span><span class="p">.</span><span class="nx">date</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">))}</span> <span class="c1">//map으로 나열</span>
+</code></pre></div></div>
+
+<h2 id="애니메이션">애니메이션</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//카드들을 둥글게 배치. -를 붙여야 안쪽에서 본 것처럼 보인다.</span>
+  <span class="p">.</span><span class="nx">box1</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">20</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translateZ</span><span class="p">(</span><span class="o">-</span><span class="mi">764</span><span class="nx">px</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="nx">box2</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">65</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translateZ</span><span class="p">(</span><span class="o">-</span><span class="mi">764</span><span class="nx">px</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="nx">box3</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translateZ</span><span class="p">(</span><span class="o">-</span><span class="mi">764</span><span class="nx">px</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="nx">box4</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="o">-</span><span class="mi">70</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translateZ</span><span class="p">(</span><span class="o">-</span><span class="mi">764</span><span class="nx">px</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="c1">//animation</span>
+<span class="p">@</span><span class="nd">keyframes</span> <span class="nx">ani</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="o">%</span> <span class="p">{</span>
+      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="nx">deg</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="mi">25</span><span class="o">%</span> <span class="p">{</span>
+      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">30</span><span class="nx">deg</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="mi">50</span><span class="o">%</span> <span class="p">{</span>
+      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="nx">deg</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="mi">75</span><span class="o">%</span> <span class="p">{</span>
+      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="nx">deg</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="mi">100</span><span class="o">%</span> <span class="p">{</span>
+      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="nx">deg</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">//animation 적용</span>
+   <span class="nl">animation</span><span class="p">:</span> <span class="nx">ani</span> <span class="nx">linear</span> <span class="mi">15</span><span class="nx">s</span> <span class="nx">infinite</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="외부링크-연결">외부링크 연결</h2>
+
+<p>클릭 시 내부 링크로 이동 시에는 useNavigate를 사용하고, 외부 링크 시에는 <code class="language-plaintext highlighter-rouge">window.open</code>을 사용해서 외부 링크로 연결하도록 만들었는데, 인수로 전달받은 url 앞에 <code class="language-plaintext highlighter-rouge">localhost:3000</code>이 붙어서 이동하는 문제가 발생했다.</p>
+
+<p>=&gt; url에 <code class="language-plaintext highlighter-rouge">http://</code> 를 붙였더니 잘 이동한다…</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="nx">div</span>
+        <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span>
+          <span class="nx">props</span><span class="p">.</span><span class="nx">nav</span>
+            <span class="p">?</span> <span class="nx">handleNavigate</span><span class="p">(</span><span class="s2">`/</span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">nav</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+            <span class="p">:</span> <span class="nx">handleOpenLink</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span>
+        <span class="p">}</span>
+      <span class="o">&gt;</span>
+
+  <span class="kd">const</span> <span class="nx">handleOpenLink</span> <span class="o">=</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
+  <span class="p">};</span>
+
+</code></pre></div></div>
  
       </section>
 
@@ -508,7 +603,8 @@ after 가상자도 넣어 같이 올라온다.</p>
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/mini%20project/portfolio-2/" class="pagination--pager" title="[Mini Project] 포트폴리오 만들기 2. Project page
+">Next</a>
     
   </nav>
 
@@ -524,6 +620,44 @@ after 가상자도 넣어 같이 올라온다.</p>
     </h2>
     <div class="grid__wrapper">
        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mini%20project/portfolio-2/" rel="permalink">[Mini Project] 포트폴리오 만들기 2. Project page
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">portfolio project
+</p>
+  </article>
+</div>
+  
 
 
 
@@ -634,44 +768,6 @@ after 가상자도 넣어 같이 올라온다.</p>
 
 
     <p class="archive__item-excerpt" itemprop="description">transform
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/css/3-box-model/" rel="permalink">[CSS] 박스 모델
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">box model
 </p>
   </article>
 </div>

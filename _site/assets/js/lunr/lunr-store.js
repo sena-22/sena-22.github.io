@@ -173,9 +173,15 @@ var store = [{
         "url": "/html/autocomplete/",
         "teaser": null
       },{
-        "title": "[Mini Project] 포트폴리오 만들기 1",
+        "title": "[Mini Project] 포트폴리오 만들기 1.Home page",
         "excerpt":"사이드 프로젝트로 포트폴리오를 만들어보려고 한다. 팀 프로젝트 때 CSS를 많이 다루지 않아서 포트폴리오 페이지에서는 이것저것 적용해보고 싶다. 라우팅 &lt;Routes&gt; &lt;Route path=\"/\" element={&lt;Home /&gt;} /&gt; &lt;Route path=\"/about\" element={&lt;About /&gt;} /&gt; &lt;Route path=\"/project\" element={&lt;Project /&gt;} /&gt; &lt;Route path=\"/project/:id\" element={&lt;SingleProject /&gt;} /&gt; &lt;Route path=\"/contact\" element={&lt;Contact /&gt;} /&gt; &lt;/Routes&gt; Home Home 페이지에서는 전체 정보를...","categories": ["mini project"],
         "tags": ["project","portfolio","react"],
         "url": "/mini%20project/portfolio-1/",
+        "teaser": null
+      },{
+        "title": "[Mini Project] 포트폴리오 만들기 2. Project page",
+        "excerpt":"프로젝트는 페이지에 따라 주소를 /project/:id로 만들었다. id 값은 Home 페이지에서 가져온 프로젝트의 index이다. //Home.jsx &lt;div onClick={() =&gt; handleNavigate(`/project/${props.idx}`)}&gt; 각 페이지에서 useParams로 id를 가져와서 id에 따라 페이지를 다르게 렌더링하게 만드려고 하는데 여기서 params 값이 undefined로 떴다. //Project.jsx import { useParams } from \"react-router-dom\"; const { params } = useParams(); 알고보니 App.js에서...","categories": ["mini project"],
+        "tags": ["project","portfolio","react"],
+        "url": "/mini%20project/portfolio-2/",
         "teaser": null
       }]
