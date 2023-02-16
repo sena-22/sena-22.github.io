@@ -190,4 +190,10 @@ var store = [{
         "tags": ["project","portfolio","react","EmailJS"],
         "url": "/mini%20project/portfolio-3/",
         "teaser": null
+      },{
+        "title": "[Mini Project] 포트폴리오 만들기 4. react-type-animation",
+        "excerpt":"react-type-animation를 이용해서 자동으로 단어가 타이핑되도록 만들었다. 설치 npm i react-type-animation react-type-animation example 사용방법이 공식 문서에 잘 나와있어서 거의 그대로 사용했다. import { TypeAnimation } from \"react-type-animation\"; &lt;TypeAnimation sequence={[\"text1\", 3000, \"text2\", 3000, \"text3\", 3000]} speed={1} style= wrapper=\"h1\" repeat={Infinity} /&gt;; sequence (필수) 원하는 문장과 멈춰 있는 시간을 지정해준다. sequence={[\"text1\", 3000, \"text2\", 3000,...","categories": ["mini project"],
+        "tags": ["project","portfolio","react","react-type-animation"],
+        "url": "/mini%20project/portfolio-4/",
+        "teaser": null
       }]
