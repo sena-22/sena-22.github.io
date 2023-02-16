@@ -258,7 +258,7 @@
   <ul class="nav__items" id="category_tag_menu">
     <!--전체 글 수-->
     <li>
-      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(31)</style> 
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(32)</style> 
     </li>
     <li>
       <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
@@ -308,7 +308,7 @@
       <ul>
                      
         <li>
-          <a href="/categories/mini-project" class="">Mini Project (2)</a>
+          <a href="/categories/mini-project" class="">Mini Project (3)</a>
         </li>
          
       </ul>
@@ -434,7 +434,7 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#이미지-불러오기">이미지 불러오기</a></li><li><a href="#hover-시-영상-재생">hover 시 영상 재생</a></li><li><a href="#styled-components-오류">styled-components 오류</a></li><li><a href="#push하지-않은-commit-조회">push하지 않은 commit 조회</a></li></ul>
+            <ul class="toc__menu"><li><a href="#이미지-불러오기">이미지 불러오기</a></li><li><a href="#hover-시-영상-재생">hover 시 영상 재생</a></li><li><a href="#styled-components-오류">styled-components 오류</a></li><li><a href="#push하지-않은-commit-조회">push하지 않은 commit 조회</a><ul><li><a href="#styled-props">styled props</a></li></ul></li></ul>
 
           </nav>
         </aside>
@@ -459,6 +459,20 @@ id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-p
 </span>
 <span class="c1">//Project.jsx</span>
 <span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useParams</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">projectId</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">currentData</span><span class="p">,</span> <span class="nx">setCurrentData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setCurrentData</span><span class="p">(</span><span class="nx">data1</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setCurrentData</span><span class="p">(</span><span class="nx">data2</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setCurrentData</span><span class="p">(</span><span class="nx">data3</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">id</span><span class="p">]);</span>
+
+<span class="c1">//id를 이용해서 현재 선택된 프로젝트의 데이터를 저장했다.</span>
 </code></pre></div></div>
 
 <h2 id="이미지-불러오기">이미지 불러오기</h2>
@@ -526,6 +540,17 @@ id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-p
 </code></pre></div></div>
 
 <p>다시 커밋 후 push 했더니 잘 올라갔다.</p>
+
+<h3 id="styled-props">styled props</h3>
+
+<p>페이지마다 영상의 높이가 조금씩 달라 공백이 생기는 등 문제가 생겨서 높이를 각각 설정했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//props로 넘기기</span>
+ <span class="o">&lt;</span><span class="nx">ArticleContainer</span> <span class="nx">height</span><span class="o">=</span><span class="p">{</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">50%</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">65%</span><span class="dl">"</span><span class="p">}</span><span class="o">&gt;</span>
+
+ <span class="c1">//style 지정</span>
+  <span class="nx">height</span><span class="p">:</span> <span class="nx">$</span><span class="p">{(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">props</span><span class="p">.</span><span class="nx">height</span> <span class="o">||</span> <span class="kc">null</span><span class="p">};</span>
+</code></pre></div></div>
  
       </section>
 
@@ -554,7 +579,8 @@ id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-p
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/mini%20project/portfolio-3/" class="pagination--pager" title="[Mini Project] 포트폴리오 만들기 3. 이메일 수신하기
+">Next</a>
     
   </nav>
 
@@ -570,6 +596,44 @@ id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-p
     </h2>
     <div class="grid__wrapper">
        
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mini%20project/portfolio-3/" rel="permalink">[Mini Project] 포트폴리오 만들기 3. 이메일 수신하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">portfolio project
+</p>
+  </article>
+</div>
+  
 
 
 
@@ -680,44 +744,6 @@ id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-p
 
 
     <p class="archive__item-excerpt" itemprop="description">transition과 animation
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/css/4-transform/" rel="permalink">[CSS] transform 속성
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">transform
 </p>
   </article>
 </div>

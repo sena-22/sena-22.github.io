@@ -184,4 +184,10 @@ var store = [{
         "tags": ["project","portfolio","react"],
         "url": "/mini%20project/portfolio-2/",
         "teaser": null
+      },{
+        "title": "[Mini Project] 포트폴리오 만들기 3. 이메일 수신하기",
+        "excerpt":"1. EmailJS 가입하기 EmailJS 가입 후 Account에서 키를 확인하고, Email Templates에서 어떤 양식으로 받을 지 설정한다. 2. EmailJS 설치하기 npm install @emailjs/browser --save 3. 이메일 전송하기 The basic method to send an email with EmailJS. 위의 공식문서를 참고해서 그대로 보내면 된다. const templateParams = { name: name, email: email, subject:...","categories": ["mini project"],
+        "tags": ["project","portfolio","react","EmailJS"],
+        "url": "/mini%20project/portfolio-3/",
+        "teaser": null
       }]

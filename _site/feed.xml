@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-15T00:50:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Mini Project] 포트폴리오 만들기 2. Project page</title><link href="http://localhost:4000/mini%20project/portfolio-2/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 2. Project page" /><published>2023-02-14T00:00:00+09:00</published><updated>2023-02-14T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-2</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-2/"><![CDATA[<p>프로젝트는 페이지에 따라 주소를 <code class="language-plaintext highlighter-rouge">/project/:id</code>로 만들었다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-16T12:21:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Mini Project] 포트폴리오 만들기 3. 이메일 수신하기</title><link href="http://localhost:4000/mini%20project/portfolio-3/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 3. 이메일 수신하기" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-3</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-3/"><![CDATA[<h2 id="1-emailjs-가입하기">1. EmailJS 가입하기</h2>
+
+<p class="notice--primary"><a href="https://dashboard.emailjs.com/admin">EmailJS</a></p>
+
+<p>가입 후 <code class="language-plaintext highlighter-rouge">Account</code>에서 키를 확인하고, <code class="language-plaintext highlighter-rouge">Email Templates</code>에서 어떤 양식으로 받을 지 설정한다.</p>
+
+<h2 id="2-emailjs-설치하기">2. EmailJS 설치하기</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="p">@</span><span class="nd">emailjs</span><span class="sr">/browser --sav</span><span class="err">e
+</span></code></pre></div></div>
+
+<h2 id="3-이메일-전송하기">3. 이메일 전송하기</h2>
+
+<p class="notice--primary"><a href="https://www.emailjs.com/docs/sdk/send/">The basic method to send an email with EmailJS.</a></p>
+
+<p>위의 공식문서를 참고해서 그대로 보내면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">templateParams</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="nx">name</span><span class="p">,</span>
+  <span class="na">email</span><span class="p">:</span> <span class="nx">email</span><span class="p">,</span>
+  <span class="na">subject</span><span class="p">:</span> <span class="nx">subject</span><span class="p">,</span>
+  <span class="na">message</span><span class="p">:</span> <span class="nx">message</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">emailjs</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">serviceID</span><span class="p">,</span> <span class="nx">templateID</span><span class="p">,</span> <span class="nx">templateParams</span><span class="p">,</span> <span class="nx">publicKey</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="4-환경변수-설정">4. 환경변수 설정</h2>
+
+<p>ID나 key를 환경변수로 설정했더니 오류가 발생했다.
+<img width="501" alt="스크린샷 2023-02-16 오전 2 14 41" src="https://user-images.githubusercontent.com/110877564/219106561-64b41e3b-1e89-410e-8862-98211a6d238e.png" /></p>
+
+<p>환경변수를 .env에 설정했는데 읽어오지 못해서 발생한 문제였다.</p>
+
+<ol>
+  <li>환경변수 선언 시 <code class="language-plaintext highlighter-rouge">REACT_APP_키 = 값</code> 형식으로 했는데 띄어쓰기를 모두 제거.</li>
+  <li><code class="language-plaintext highlighter-rouge">.env</code> 파일을 <code class="language-plaintext highlighter-rouge">src</code> 내부에 만들었는데 프로젝트 최상단으로 이동.</li>
+  <li>서버 재시작.</li>
+</ol>
+
+<p>3번까지 하니까 이메일이 잘 보내졌다!</p>
+
+<p><img width="283" alt="스크린샷 2023-02-16 오전 2 20 52" src="https://user-images.githubusercontent.com/110877564/219108214-5babafe8-d694-4149-9d11-37ca79cb2832.png" /></p>
+
+<p class="notice--primary">템플릿 설정</p>
+
+<p><img width="263" alt="스크린샷 2023-02-16 오전 2 20 19" src="https://user-images.githubusercontent.com/110877564/219108350-5be81c7e-50fd-41f8-9fb5-1d7b07fb3f21.png" /></p>
+
+<p class="notice--primary">메일로 받은 내용</p>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><category term="EmailJS" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 2. Project page</title><link href="http://localhost:4000/mini%20project/portfolio-2/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 2. Project page" /><published>2023-02-14T00:00:00+09:00</published><updated>2023-02-14T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-2</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-2/"><![CDATA[<p>프로젝트는 페이지에 따라 주소를 <code class="language-plaintext highlighter-rouge">/project/:id</code>로 만들었다.
 id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-plaintext highlighter-rouge">index</code>이다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Home.jsx</span>
@@ -19,6 +67,20 @@ id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-p
 </span>
 <span class="c1">//Project.jsx</span>
 <span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useParams</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">projectId</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">currentData</span><span class="p">,</span> <span class="nx">setCurrentData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setCurrentData</span><span class="p">(</span><span class="nx">data1</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setCurrentData</span><span class="p">(</span><span class="nx">data2</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setCurrentData</span><span class="p">(</span><span class="nx">data3</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">id</span><span class="p">]);</span>
+
+<span class="c1">//id를 이용해서 현재 선택된 프로젝트의 데이터를 저장했다.</span>
 </code></pre></div></div>
 
 <h2 id="이미지-불러오기">이미지 불러오기</h2>
@@ -85,7 +147,18 @@ id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-p
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">git</span> <span class="nx">reset</span> <span class="o">--</span><span class="nx">soft</span> <span class="dl">'</span><span class="s1">commit</span><span class="dl">'</span>
 </code></pre></div></div>
 
-<p>다시 커밋 후 push 했더니 잘 올라갔다.</p>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[HTML] 에디터에서 HTML 자동완성하기</title><link href="http://localhost:4000/html/autocomplete/" rel="alternate" type="text/html" title="[HTML] 에디터에서 HTML 자동완성하기" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/html/autocomplete</id><content type="html" xml:base="http://localhost:4000/html/autocomplete/"><![CDATA[<h2 id="태그-자동완성">태그 자동완성</h2>
+<p>다시 커밋 후 push 했더니 잘 올라갔다.</p>
+
+<h3 id="styled-props">styled props</h3>
+
+<p>페이지마다 영상의 높이가 조금씩 달라 공백이 생기는 등 문제가 생겨서 높이를 각각 설정했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//props로 넘기기</span>
+ <span class="o">&lt;</span><span class="nx">ArticleContainer</span> <span class="nx">height</span><span class="o">=</span><span class="p">{</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">50%</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">65%</span><span class="dl">"</span><span class="p">}</span><span class="o">&gt;</span>
+
+ <span class="c1">//style 지정</span>
+  <span class="nx">height</span><span class="p">:</span> <span class="nx">$</span><span class="p">{(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">props</span><span class="p">.</span><span class="nx">height</span> <span class="o">||</span> <span class="kc">null</span><span class="p">};</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[HTML] 에디터에서 HTML 자동완성하기</title><link href="http://localhost:4000/html/autocomplete/" rel="alternate" type="text/html" title="[HTML] 에디터에서 HTML 자동완성하기" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/html/autocomplete</id><content type="html" xml:base="http://localhost:4000/html/autocomplete/"><![CDATA[<h2 id="태그-자동완성">태그 자동완성</h2>
 
 <h3 id="입력">입력</h3>
 
@@ -323,7 +396,57 @@ after 가상자도 넣어 같이 올라온다.</p>
 <span class="nt">animation</span><span class="o">:</span> <span class="nt">rotation</span> <span class="err">3</span><span class="nt">s</span> <span class="nt">lenear</span> <span class="err">0</span><span class="nt">s</span> <span class="nt">infinite</span><span class="o">;</span>
 </code></pre></div></div>
 
-<p class="notice--primary"><a href="https://codesandbox.io/s/transition-animation-example-bbdiye?file=/src/App.js">transition &amp; animation 예제(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transition" /><category term="animation" /><summary type="html"><![CDATA[transition과 animation]]></summary></entry><entry><title type="html">[CSS] 박스 모델</title><link href="http://localhost:4000/css/3-box-model/" rel="alternate" type="text/html" title="[CSS] 박스 모델" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/3-box-model</id><content type="html" xml:base="http://localhost:4000/css/3-box-model/"><![CDATA[<h1 id="블록-요소와-인라인-요소">블록 요소와 인라인 요소</h1>
+<p class="notice--primary"><a href="https://codesandbox.io/s/transition-animation-example-bbdiye?file=/src/App.js">transition &amp; animation 예제(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transition" /><category term="animation" /><summary type="html"><![CDATA[transition과 animation]]></summary></entry><entry><title type="html">[CSS] transform 속성</title><link href="http://localhost:4000/css/4-transform/" rel="alternate" type="text/html" title="[CSS] transform 속성" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/4-transform</id><content type="html" xml:base="http://localhost:4000/css/4-transform/"><![CDATA[<h2 id="transform2d">transform(2D)</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span><span class="nt">css</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span> <span class="c">/* 요소를 1.5배 확대 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">skewX</span><span class="p">(</span><span class="m">20deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 20도만큼 기울이기 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span> <span class="c">/* 요소를 20px만큼 오른쪽으로 이동 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 45도만큼 회전 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="transform3d">transform(3D)</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
+  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 45도 회전 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 y축으로 45도 회전 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 100px 이동 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 -100px 이동 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="transform3d---중심축-이동">transform(3D) - 중심축 이동</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
+  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 -&gt; 기본값 */</span>
+<span class="p">}</span>
+<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">right</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 */</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><a href="https://codesandbox.io/s/css-transform-sogseong-yesi-tzmpl1?file=/src/App.js">transform 예시(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transform" /><summary type="html"><![CDATA[transform]]></summary></entry><entry><title type="html">[CSS] 박스 모델</title><link href="http://localhost:4000/css/3-box-model/" rel="alternate" type="text/html" title="[CSS] 박스 모델" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/3-box-model</id><content type="html" xml:base="http://localhost:4000/css/3-box-model/"><![CDATA[<h1 id="블록-요소와-인라인-요소">블록 요소와 인라인 요소</h1>
 
 <table>
   <thead>
@@ -669,57 +792,7 @@ after 가상자도 넣어 같이 올라온다.</p>
 
 <p>html 요소의 style 프로퍼티에 css를 포함시키는 방식.</p>
 
-<p class="notice--primary">HTML과 CSS의 역할을 분리시키기 위해 <strong>Link style</strong>을 사용하는 것이 바람직하다.</p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><summary type="html"><![CDATA[css 기초]]></summary></entry><entry><title type="html">[CSS] transform 속성</title><link href="http://localhost:4000/css/4-transform/" rel="alternate" type="text/html" title="[CSS] transform 속성" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/4-transform</id><content type="html" xml:base="http://localhost:4000/css/4-transform/"><![CDATA[<h2 id="transform2d">transform(2D)</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span><span class="nt">css</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span> <span class="c">/* 요소를 1.5배 확대 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">skewX</span><span class="p">(</span><span class="m">20deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 20도만큼 기울이기 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span> <span class="c">/* 요소를 20px만큼 오른쪽으로 이동 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 45도만큼 회전 */</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="transform3d">transform(3D)</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
-  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 45도 회전 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 y축으로 45도 회전 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 100px 이동 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 -100px 이동 */</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="transform3d---중심축-이동">transform(3D) - 중심축 이동</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
-  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
-  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 -&gt; 기본값 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
-  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">right</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 */</span>
-</code></pre></div></div>
-
-<p class="notice--primary"><a href="https://codesandbox.io/s/css-transform-sogseong-yesi-tzmpl1?file=/src/App.js">transform 예시(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transform" /><summary type="html"><![CDATA[transform]]></summary></entry><entry><title type="html">[HTML] HTML Tag 정리</title><link href="http://localhost:4000/html/tag/" rel="alternate" type="text/html" title="[HTML] HTML Tag 정리" /><published>2023-02-08T00:00:00+09:00</published><updated>2023-02-08T00:00:00+09:00</updated><id>http://localhost:4000/html/tag</id><content type="html" xml:base="http://localhost:4000/html/tag/"><![CDATA[<p>HTML의 태그들을 그때그때 찾아가면서 하다보니 머릿속에서 정리되지 않았다는 생각이 들어 한번에 모아서 정리해보기로 했다.</p>
+<p class="notice--primary">HTML과 CSS의 역할을 분리시키기 위해 <strong>Link style</strong>을 사용하는 것이 바람직하다.</p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><summary type="html"><![CDATA[css 기초]]></summary></entry><entry><title type="html">[HTML] HTML Tag 정리</title><link href="http://localhost:4000/html/tag/" rel="alternate" type="text/html" title="[HTML] HTML Tag 정리" /><published>2023-02-08T00:00:00+09:00</published><updated>2023-02-08T00:00:00+09:00</updated><id>http://localhost:4000/html/tag</id><content type="html" xml:base="http://localhost:4000/html/tag/"><![CDATA[<p>HTML의 태그들을 그때그때 찾아가면서 하다보니 머릿속에서 정리되지 않았다는 생각이 들어 한번에 모아서 정리해보기로 했다.</p>
 
 <h1 id="tag">tag</h1>
 
@@ -1097,82 +1170,4 @@ action은 특정 주소값이나 파일 위치를 지정하고, method는 입력
 
 <h3 id="참고">참고</h3>
 
-<p class="notice--primary"><a href="https://poiemaweb.com/html5-tag-basic">웹페이지를 구성하는 기본 태그</a></p>]]></content><author><name>Reyna</name></author><category term="html" /><category term="html" /><category term="tag" /><summary type="html"><![CDATA[html tag]]></summary></entry><entry><title type="html">[Main Project] 메인 프로젝트 회고록</title><link href="http://localhost:4000/main%20project/project-review/" rel="alternate" type="text/html" title="[Main Project] 메인 프로젝트 회고록" /><published>2023-02-07T00:00:00+09:00</published><updated>2023-02-08T00:00:00+09:00</updated><id>http://localhost:4000/main%20project/project-review</id><content type="html" xml:base="http://localhost:4000/main%20project/project-review/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/95217370/215842925-37524a74-c2f4-454c-914f-3d19344bed16.png" /></p>
-
-<p><br />
-4주간 진행한 메인 프로젝트가 끝났다.</p>
-
-<p>프로젝트 기간 동안 배웠던 점들에 대해 잊기 전에 기록해두려고 한다.</p>
-
-<h2 id="프로젝트에-관해서">프로젝트에 관해서</h2>
-
-<h3 id="1-서비스-개요">1. 서비스 개요</h3>
-
-<ul>
-  <li>서비스명 : 트리덤(tridom) - trip &amp; freedom</li>
-  <li>기획 의도 : 코로나 19 제한 완화로 인한 관광객 수 증가, 여행에 관한 서비스의 수요가 증가할 것으로 예상</li>
-  <li><a href="bit.ly/3JMheyw">배포 링크</a></li>
-</ul>
-
-<h3 id="2-서비스-주요-기능">2. 서비스 주요 기능</h3>
-
-<ul>
-  <li>국내 여행 일정 계획 기능 및 구글 지도를 통한 시각화</li>
-  <li>여행 일정에 대해 예산 및 비용 등록 기능, 사용량 확인 기능</li>
-  <li>게시글 등록을 통한 일정 공유, 좋아요 기능</li>
-  <li>유저 페이지 수정, 작성한 일정과 게시글 확인</li>
-</ul>
-
-<h2 id="담당-기능">담당 기능</h2>
-
-<h3 id="1-메인-페이지">1. 메인 페이지</h3>
-
-<ul>
-  <li>로그인 여부에 따라 다르게 나타나는 메인 페이지</li>
-  <li>달력을 통한 날짜 선택 기능</li>
-  <li>여행, 게시글 목록 공용 컴포넌트 구현</li>
-</ul>
-
-<h3 id="2-게시글-작성-수정-페이지">2. 게시글 작성, 수정 페이지</h3>
-
-<ul>
-  <li>여행 선택 페이지 : 게시글로 작성할 여행 선택 페이지</li>
-  <li>게시글 작성 페이지</li>
-  <li>게시글 수정 페이지 : 게시글 삭제 기능 포함</li>
-</ul>
-
-<h3 id="3-유저페이지">3. 유저페이지</h3>
-
-<ul>
-  <li>프로필과 작성한 여행, 게시글 조회 기능</li>
-  <li>프로필 수정 기능</li>
-  <li>회원 탈퇴 기능</li>
-</ul>
-
-<h2 id="배운-점">배운 점</h2>
-
-<h3 id="코드를-공유한다는-것">코드를 공유한다는 것</h3>
-
-<ul>
-  <li>함께 작업을 하다보니 혼자 할 때와는 달리 다른 사람과 코드를 공유할 일이 많았다. 이때 작업하는 페이지에서만 사용할 것으로 가정하고 코드를 작성했더니 나중에 생각지 못한 문제가 생겨 코드를 계속 수정하게 되었다.코드를 다른 사람도 알기 쉽게, 재사용하기 쉽게 만들어야 고치기에도 수월하다는 점을 알게 되었다.</li>
-  <li>초반에 코드 스타일을 맞추지 않았더니 PR을 올릴 때마다 사소한 변경점이 계속 생기는 일이 발생했다. 띄어쓰기나 따옴표 등 몇 가지만 정했는데도 훨씬 편해졌다.</li>
-</ul>
-
-<h3 id="중복-코드의-유틸화">중복 코드의 유틸화</h3>
-
-<ul>
-  <li>날짜 포맷 라이브러리를 사용하다 변경할 일이 있었는데 컴포넌트마다 가져다 쓰다보니 일일이 변경하느라 고생했다. 유틸 파일로 분리해서 나중에 변경하기 쉽게 고쳤다.</li>
-</ul>
-
-<h3 id="상태관리-라이브러리의-필요성">상태관리 라이브러리의 필요성</h3>
-
-<ul>
-  <li>초반에 프로젝트의 규모가 크지 않아 상태 관리 라이브러리가 굳이 필요하지 않다고 생각했는데, 지도 api 사용과정에서 생각보다 props drilling이 많이 발생했다. 추후 사용할 일도 많을 것 같아 수료 후 학습해서 이 부분을 보충하고 싶다.</li>
-</ul>
-
-<h3 id="깃허브-사용">깃허브 사용</h3>
-
-<ul>
-  <li>코드 리뷰 : 코드를 작성하기에 급급해 충돌 여부만 확인 후 merge를 하는 일이 대부분이었다. 그러다보니 코드를 pull 해오고서 문제를 발견하는 일이 생겼다. 코드를 보다 신중하게 살펴보아야 할 필요성을 느꼈다.</li>
-  <li>커밋의 세분화 : 커밋을 큰 기능 단위로 나누어서 하다보니 나중에 보기가 어려웠다. 작은 기능 별로 세세하게 커밋하는 습관을 들여야겠다.</li>
-</ul>]]></content><author><name>Reyna</name></author><category term="main project" /><category term="project" /><category term="codestates" /><category term="review" /><category term="react" /><summary type="html"><![CDATA[main project review]]></summary></entry></feed>
+<p class="notice--primary"><a href="https://poiemaweb.com/html5-tag-basic">웹페이지를 구성하는 기본 태그</a></p>]]></content><author><name>Reyna</name></author><category term="html" /><category term="html" /><category term="tag" /><summary type="html"><![CDATA[html tag]]></summary></entry></feed>
