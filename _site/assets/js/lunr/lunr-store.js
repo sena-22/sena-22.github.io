@@ -196,4 +196,28 @@ var store = [{
         "tags": ["project","portfolio","react","react-type-animation"],
         "url": "/mini%20project/portfolio-4/",
         "teaser": null
+      },{
+        "title": "[Mini Project] 포트폴리오 만들기 5. react-code-blocks",
+        "excerpt":" ","categories": ["mini project"],
+        "tags": ["project","portfolio","react","react-code-blocks"],
+        "url": "/mini%20project/portfolio-5/",
+        "teaser": null
+      },{
+        "title": "[typescript] ",
+        "excerpt":"ts 컴파일러 설치하기 npm i -g typescript ts-node 버전 확인 tsc - v; ts - node - v; 타입스크립트 기반 리액트 프로젝트 생성 npx create-react-app 프로젝트 이름 --template typescript Node.js의 패키지 중에서 라이브러리가 아니라 프로그램 형태로 동작하는 패키지 는 최신 버전으로 유지하기 위해 npx를 사용한다. (npx는 패키지의 최신 버전을 찾아...","categories": ["typescript"],
+        "tags": ["typescript"],
+        "url": "/typescript/tyscript-1/",
+        "teaser": null
+      },{
+        "title": "webpack, hot reloading, prettier",
+        "excerpt":"webpack 다양한 입력 모듈(HTML 파일, 이미지 파일..)을 결합해서 단순한 형태의 모듈로 변환해주는 모듈 번들러. 변환한 결과를 번들이라고 한다. 리액트에서 웹팩은 빌드 모드일 때와 개발 모드일 때 동작 방식이 다르다. 빌드 모드일 때 프로젝트 디렉터리의 파일을 모아 main이나 chunk라는 단어가 있는 번들 파일로 만든다. 이 번들 파일을 반영한 새로운 index.html 만든다....","categories": ["notes"],
+        "tags": ["study","webpack","hot reloading"],
+        "url": "/notes/webpack/",
+        "teaser": null
+      },{
+        "title": "[Mini Project] 포트폴리오 만들기 6. import 정리",
+        "excerpt":"프로젝트 페이지에서 데이터를 불러올 때 일일이 import를 하고 있었는데, 코드가 너무 복잡해서 * 를 이용해서 줄여보려고 한다. data 폴더에 index.js 파일을 만들어 export *로 내보냈다. //data/index.js export * from \"./first_project_data\"; export * from \"./second_project_data\"; export * from \"./third_project_data\"; export * from \"./meta_data\"; import * as D로 가져와서 사용할 때는 D.firstProjectData...","categories": ["mini project"],
+        "tags": ["project","portfolio","react"],
+        "url": "/mini%20project/portfolio-6/",
+        "teaser": null
       }]

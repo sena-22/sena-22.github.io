@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-16T13:37:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Mini Project] 포트폴리오 만들기 4. react-type-animation</title><link href="http://localhost:4000/mini%20project/portfolio-4/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 4. react-type-animation" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-4</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-4/"><![CDATA[<p>react-type-animation를 이용해서 자동으로 단어가 타이핑되도록 만들었다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-18T08:33:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Mini Project] 포트폴리오 만들기 6. import 정리</title><link href="http://localhost:4000/mini%20project/portfolio-6/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 6. import 정리" /><published>2023-02-18T00:00:00+09:00</published><updated>2023-02-18T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-6</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-6/"><![CDATA[<p>프로젝트 페이지에서 데이터를 불러올 때 일일이 import를 하고 있었는데, 코드가 너무 복잡해서 <code class="language-plaintext highlighter-rouge">*</code> 를 이용해서 줄여보려고 한다.</p>
+
+<p>data 폴더에 index.js 파일을 만들어 export <code class="language-plaintext highlighter-rouge">*</code>로 내보냈다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//data/index.js</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./first_project_data</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./second_project_data</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./third_project_data</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./meta_data</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">import * as D</code>로 가져와서 사용할 때는 <code class="language-plaintext highlighter-rouge">D.firstProjectData</code> 처럼 사용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Project.jsx</span>
+
+<span class="c1">//원래 코드</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">firstProjectData</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data/first_project_data</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">secondProjectData</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data/second_project_data</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">thirdProjectData</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data/third_project_data</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="nx">firstMetaData</span><span class="p">,</span>
+  <span class="nx">secondMetaData</span><span class="p">,</span>
+  <span class="nx">thirdMetaData</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data/meta_data</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">//변경 코드</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">D</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">webpack, hot reloading, prettier</title><link href="http://localhost:4000/notes/webpack/" rel="alternate" type="text/html" title="webpack, hot reloading, prettier" /><published>2023-02-18T00:00:00+09:00</published><updated>2023-02-18T00:00:00+09:00</updated><id>http://localhost:4000/notes/webpack</id><content type="html" xml:base="http://localhost:4000/notes/webpack/"><![CDATA[<h2 id="webpack">webpack</h2>
+
+<p>다양한 입력 모듈(HTML 파일, 이미지 파일..)을 결합해서 단순한 형태의 모듈로 변환해주는 모듈 번들러.
+변환한 결과를 번들이라고 한다.</p>
+
+<p>리액트에서 웹팩은 빌드 모드일 때와 개발 모드일 때 동작 방식이 다르다.</p>
+
+<h3 id="빌드-모드일-때">빌드 모드일 때</h3>
+
+<p>프로젝트 디렉터리의 파일을 모아 main이나 chunk라는 단어가 있는 번들 파일로 만든다.
+이 번들 파일을 반영한 새로운 <code class="language-plaintext highlighter-rouge">index.html</code> 만든다.</p>
+
+<h3 id="개발-모드일-때">개발 모드일 때</h3>
+
+<p><code class="language-plaintext highlighter-rouge">npm start</code> 명령을 내리면 react-scripts start가 내부적으로 웹팩을 서버 형태로 구동한다.
+웹팩 서버는 프로젝트 디렉터리의 파일을 빌드하여 번들 파일로 만든 다음, 이를 반영한 <code class="language-plaintext highlighter-rouge">index.html</code> 파일을 생성한다.
+react-scripts가 웹 브라우저를 실행하고 localhost:3000 주소로 접속한 다음 웹팩이 준비해 둔 <code class="language-plaintext highlighter-rouge">index.html</code>에서 <scripts>태그의 자바 스크립트 코드를 실행해 웹페이지를 화면에 띄운다.</scripts></p>
+
+<h2 id="핫-리로딩">핫 리로딩</h2>
+
+<p>개발 모드에서 변경 사항이 바로 웹 브라우저에 반영되어서 생산성을 높여주는 기능이다.
+웹팩 서버가 프로젝트 디렉터리에 변경 사항이 생기면 해당 부분만 빌드한 뒤 웹 브라우저의 js 코드에 심어 둔 웹팩 코드를 이용하여 변경된 내용을 실시간으로 반영한다.</p>
+
+<h2 id="프리티어">프리티어</h2>
+
+<h3 id="설치">설치</h3>
+
+<p>VSCode 확장 마켓플레이스에서 ‘prettier’ 검색 후 설치</p>
+
+<h3 id="settingsjson에-적용">settings.json에 적용</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"editor.defaultFormaatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esbenp.prettier-vscode"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"editor.formatOnsave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="디렉터리에서-설정하기">디렉터리에서 설정하기</h3>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">prettierrc.js</code> 파일을 만든다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//terminal</span>
+<span class="nx">touch</span><span class="p">.</span><span class="nx">prettierrc</span><span class="p">.</span><span class="nx">js</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>파일에 적용할 프리티어 설정을 입력한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//.prettierrc.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">bracketSpacing</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">jsxBracketSameLine</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">singleQuote</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">trailingComma</span><span class="p">:</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">arrowParens</span><span class="p">:</span> <span class="dl">"</span><span class="s2">avoid</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">semi</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">printWidth</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><a href="https://prettier.io/docs/en/options.html">prettier 옵션 종류</a></p>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="study" /><category term="webpack" /><category term="hot reloading" /><summary type="html"><![CDATA[웹팩, 핫 리로딩(핫 모듈 교체), 프리티어]]></summary></entry><entry><title type="html">[typescript]</title><link href="http://localhost:4000/typescript/tyscript-1/" rel="alternate" type="text/html" title="[typescript]" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T00:00:00+09:00</updated><id>http://localhost:4000/typescript/tyscript-1</id><content type="html" xml:base="http://localhost:4000/typescript/tyscript-1/"><![CDATA[<h3 id="ts-컴파일러-설치하기">ts 컴파일러 설치하기</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">typescript</span> <span class="nx">ts</span><span class="o">-</span><span class="nx">node</span>
+</code></pre></div></div>
+
+<h3 id="버전-확인">버전 확인</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">tsc</span> <span class="o">-</span> <span class="nx">v</span><span class="p">;</span>
+<span class="nx">ts</span> <span class="o">-</span> <span class="nx">node</span> <span class="o">-</span> <span class="nx">v</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="타입스크립트-기반-리액트-프로젝트-생성">타입스크립트 기반 리액트 프로젝트 생성</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="nx">프로젝트</span> <span class="nx">이름</span> <span class="o">--</span><span class="nx">template</span> <span class="nx">typescript</span>
+</code></pre></div></div>
+
+<p>Node.js의 패키지 중에서 라이브러리가 아니라 <mark style="background-color: #ffdce0">프로그램 형태로 동작하는 패키지</mark>
+는 최신 버전으로 유지하기 위해 <code class="language-plaintext highlighter-rouge">npx</code>를 사용한다.
+(npx는 패키지의 최신 버전을 찾아 <code class="language-plaintext highlighter-rouge">npm i -g</code> 명령으로 설치해주는 프로그램)</p>
+
+<h3 id="ts-파일-프리티어-적용">ts 파일 프리티어 적용</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="nl">"[typescript]"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"editor.formatOnPaste"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"editor.formatOnSave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"editor.defaultFormatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esbenp.prettier-vscode"</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><summary type="html"><![CDATA[typescript]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 5. react-code-blocks</title><link href="http://localhost:4000/mini%20project/portfolio-5/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 5. react-code-blocks" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-5</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-5/"><![CDATA[]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><category term="react-code-blocks" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 4. react-type-animation</title><link href="http://localhost:4000/mini%20project/portfolio-4/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 4. react-type-animation" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-4</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-4/"><![CDATA[<p>react-type-animation를 이용해서 자동으로 단어가 타이핑되도록 만들었다.</p>
 
 <h2 id="설치">설치</h2>
 
@@ -95,15 +208,7 @@
   <li>서버 재시작.</li>
 </ol>
 
-<p>3번까지 하니까 이메일이 잘 보내졌다!</p>
-
-<p><img width="283" alt="스크린샷 2023-02-16 오전 2 20 52" src="https://user-images.githubusercontent.com/110877564/219108214-5babafe8-d694-4149-9d11-37ca79cb2832.png" /></p>
-
-<p class="notice--primary">템플릿 설정</p>
-
-<p><img width="263" alt="스크린샷 2023-02-16 오전 2 20 19" src="https://user-images.githubusercontent.com/110877564/219108350-5be81c7e-50fd-41f8-9fb5-1d7b07fb3f21.png" /></p>
-
-<p class="notice--primary">메일로 받은 내용</p>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><category term="EmailJS" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 2. Project page</title><link href="http://localhost:4000/mini%20project/portfolio-2/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 2. Project page" /><published>2023-02-14T00:00:00+09:00</published><updated>2023-02-14T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-2</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-2/"><![CDATA[<p>프로젝트는 페이지에 따라 주소를 <code class="language-plaintext highlighter-rouge">/project/:id</code>로 만들었다.
+<p>3번까지 하니까 이메일이 잘 보내졌다</p>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><category term="EmailJS" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 2. Project page</title><link href="http://localhost:4000/mini%20project/portfolio-2/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 2. Project page" /><published>2023-02-14T00:00:00+09:00</published><updated>2023-02-14T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-2</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-2/"><![CDATA[<p>프로젝트는 페이지에 따라 주소를 <code class="language-plaintext highlighter-rouge">/project/:id</code>로 만들었다.
 id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-plaintext highlighter-rouge">index</code>이다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Home.jsx</span>
@@ -215,7 +320,73 @@ id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-p
 
  <span class="c1">//style 지정</span>
   <span class="nx">height</span><span class="p">:</span> <span class="nx">$</span><span class="p">{(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">props</span><span class="p">.</span><span class="nx">height</span> <span class="o">||</span> <span class="kc">null</span><span class="p">};</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 1.Home page</title><link href="http://localhost:4000/mini%20project/portfolio-1/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 1.Home page" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-14T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-1</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-1/"><![CDATA[<p>사이드 프로젝트로 포트폴리오를 만들어보려고 한다. <br />
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[HTML] 에디터에서 HTML 자동완성하기</title><link href="http://localhost:4000/html/autocomplete/" rel="alternate" type="text/html" title="[HTML] 에디터에서 HTML 자동완성하기" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/html/autocomplete</id><content type="html" xml:base="http://localhost:4000/html/autocomplete/"><![CDATA[<h2 id="태그-자동완성">태그 자동완성</h2>
+
+<h3 id="입력">입력</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>div&gt;div*5&gt;img[src="img/$.png"]+h2&gt;lorem5^p<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&gt;</code> : 자식 태그로 생성</li>
+  <li><code class="language-plaintext highlighter-rouge">[]</code> : 태그의 속성 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">$</code> : 태그가 반복될 때마다 1씩 증가된 값이 입력.</li>
+  <li><code class="language-plaintext highlighter-rouge">+</code> : 형제 태그로 생성</li>
+  <li><code class="language-plaintext highlighter-rouge">^</code> : 다시 상위 태그로 이동</li>
+  <li><code class="language-plaintext highlighter-rouge">lorem + 숫자</code> : Lorem Ipsum을 숫자만큼 생성</li>
+</ul>
+
+<h3 id="결과">결과</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/1.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Lorem ipsum dolor sit amet.<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/2.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Sunt, fuga. Alias, repellat et.<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/3.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Dolorem unde reprehenderit sapiente hic?<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/4.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Odit cupiditate consectetur expedita ipsa.<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/5.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Et nam perspiciatis harum quaerat!<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="html-기본-틀">html 기본 틀</h2>
+
+<h3 id="입력-1">입력</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!tab
+</code></pre></div></div>
+
+<h3 id="결과-1">결과</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="html" /><category term="html" /><category term="autocomplete" /><summary type="html"><![CDATA[html code autocomplete]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 1.Home page</title><link href="http://localhost:4000/mini%20project/portfolio-1/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 1.Home page" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-14T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-1</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-1/"><![CDATA[<p>사이드 프로젝트로 포트폴리오를 만들어보려고 한다. <br />
 팀 프로젝트 때 CSS를 많이 다루지 않아서 포트폴리오 페이지에서는 이것저것 적용해보고 싶다.</p>
 
 <h2 id="라우팅">라우팅</h2>
@@ -351,73 +522,7 @@ after 가상자도 넣어 같이 올라온다.</p>
     <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
   <span class="p">};</span>
 
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[HTML] 에디터에서 HTML 자동완성하기</title><link href="http://localhost:4000/html/autocomplete/" rel="alternate" type="text/html" title="[HTML] 에디터에서 HTML 자동완성하기" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/html/autocomplete</id><content type="html" xml:base="http://localhost:4000/html/autocomplete/"><![CDATA[<h2 id="태그-자동완성">태그 자동완성</h2>
-
-<h3 id="입력">입력</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>div&gt;div*5&gt;img[src="img/$.png"]+h2&gt;lorem5^p<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">&gt;</code> : 자식 태그로 생성</li>
-  <li><code class="language-plaintext highlighter-rouge">[]</code> : 태그의 속성 지정</li>
-  <li><code class="language-plaintext highlighter-rouge">$</code> : 태그가 반복될 때마다 1씩 증가된 값이 입력.</li>
-  <li><code class="language-plaintext highlighter-rouge">+</code> : 형제 태그로 생성</li>
-  <li><code class="language-plaintext highlighter-rouge">^</code> : 다시 상위 태그로 이동</li>
-  <li><code class="language-plaintext highlighter-rouge">lorem + 숫자</code> : Lorem Ipsum을 숫자만큼 생성</li>
-</ul>
-
-<h3 id="결과">결과</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/1.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Lorem ipsum dolor sit amet.<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/2.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Sunt, fuga. Alias, repellat et.<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/3.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Dolorem unde reprehenderit sapiente hic?<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/4.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Odit cupiditate consectetur expedita ipsa.<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/5.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Et nam perspiciatis harum quaerat!<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<h2 id="html-기본-틀">html 기본 틀</h2>
-
-<h3 id="입력-1">입력</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!tab
-</code></pre></div></div>
-
-<h3 id="결과-1">결과</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="html" /><category term="html" /><category term="autocomplete" /><summary type="html"><![CDATA[html code autocomplete]]></summary></entry><entry><title type="html">[CSS] transition &amp;amp; animation 속성</title><link href="http://localhost:4000/css/transition/" rel="alternate" type="text/html" title="[CSS] transition &amp;amp; animation 속성" /><published>2023-02-10T00:00:00+09:00</published><updated>2023-02-10T00:00:00+09:00</updated><id>http://localhost:4000/css/transition</id><content type="html" xml:base="http://localhost:4000/css/transition/"><![CDATA[<h1 id="transition">transition</h1>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[CSS] transition &amp;amp; animation 속성</title><link href="http://localhost:4000/css/transition/" rel="alternate" type="text/html" title="[CSS] transition &amp;amp; animation 속성" /><published>2023-02-10T00:00:00+09:00</published><updated>2023-02-10T00:00:00+09:00</updated><id>http://localhost:4000/css/transition</id><content type="html" xml:base="http://localhost:4000/css/transition/"><![CDATA[<h1 id="transition">transition</h1>
 
 <p>사용자의 특정 동작에 반응하는 인터랙션을 기반으로 한 모션 기법</p>
 
@@ -453,400 +558,4 @@ after 가상자도 넣어 같이 올라온다.</p>
 <span class="nt">animation</span><span class="o">:</span> <span class="nt">rotation</span> <span class="err">3</span><span class="nt">s</span> <span class="nt">lenear</span> <span class="err">0</span><span class="nt">s</span> <span class="nt">infinite</span><span class="o">;</span>
 </code></pre></div></div>
 
-<p class="notice--primary"><a href="https://codesandbox.io/s/transition-animation-example-bbdiye?file=/src/App.js">transition &amp; animation 예제(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transition" /><category term="animation" /><summary type="html"><![CDATA[transition과 animation]]></summary></entry><entry><title type="html">[CSS] 박스 모델</title><link href="http://localhost:4000/css/3-box-model/" rel="alternate" type="text/html" title="[CSS] 박스 모델" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/3-box-model</id><content type="html" xml:base="http://localhost:4000/css/3-box-model/"><![CDATA[<h1 id="블록-요소와-인라인-요소">블록 요소와 인라인 요소</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">분류</th>
-      <th style="text-align: center">태그</th>
-      <th style="text-align: center">줄바꿈</th>
-      <th style="text-align: center">기본 너비</th>
-      <th style="text-align: center">width, height</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">block</td>
-      <td style="text-align: center">h1~h6, p, div, 리스트 태그, 레이아웃 태그</td>
-      <td style="text-align: center">자동</td>
-      <td style="text-align: center">100%</td>
-      <td style="text-align: center">사용 가능</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">inline-block</td>
-      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">display: inline-block</code> 설정</td>
-      <td style="text-align: center">일어나지 않음</td>
-      <td style="text-align: center">글자가 차지하는 만큼</td>
-      <td style="text-align: center">사용 가능</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">inline</td>
-      <td style="text-align: center">strong, em, a, span</td>
-      <td style="text-align: center">일어나지 않음</td>
-      <td style="text-align: center">글자가 차지하는 만큼</td>
-      <td style="text-align: center">사용 불가능</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>블록 요소</strong>는 글의 레이아웃과 관련되고, <strong>인라인 요소</strong>는 글의 서식과 관련된다.
-<code class="language-plaintext highlighter-rouge">inline-block</code> 속성은 인라인 요소와 블록 요소의 속성을 모두 사용한다.</p>
-
-<h1 id="css-box-model">CSS Box Model</h1>
-
-<p><img width="270" alt="스크린샷 2023-02-09 오후 8 54 01" src="https://user-images.githubusercontent.com/110877564/217806069-1282faf6-2733-4da9-90a1-a989284b5aaa.png" /></p>
-
-<h2 id="css-box-model의-구성-요소">CSS Box Model의 구성 요소</h2>
-
-<h3 id="content">content</h3>
-
-<ul>
-  <li>실제 내용이 위치하는 영역으로, width, height 속성을 가진다.</li>
-</ul>
-
-<h3 id="border-테두리">border (테두리)</h3>
-
-<ul>
-  <li>border 단축 속성</li>
-</ul>
-
-<ol>
-  <li>border-color</li>
-  <li>border-style</li>
-  <li>
-    <p>border-width</p>
-
-    <p class="notice--primary"><a href="https://developer.mozilla.org/ko/docs/Web/CSS/border-style">border style</a></p>
-  </li>
-</ol>
-
-<h3 id="padding안쪽-여백">padding(안쪽 여백)</h3>
-
-<ul>
-  <li>border 기준으로 박스 내부의 여백을 지정한다.</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">div</span> <span class="p">{</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span><span class="p">;</span> <span class="c1">//top, right, bottom, left 순서(시계방향)</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="mi">1</span><span class="nx">px</span><span class="p">;</span> <span class="c1">//상하, 좌우</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span><span class="p">;</span> <span class="c1">// 모든 방향</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="margin바깥쪽-여백">margin(바깥쪽 여백)</h3>
-
-<ul>
-  <li>border 기준으로 박스 외부의 여백을 지정한다.</li>
-</ul>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="box model" /><summary type="html"><![CDATA[box model]]></summary></entry><entry><title type="html">[CSS] 선택자(selector)</title><link href="http://localhost:4000/css/2-selector/" rel="alternate" type="text/html" title="[CSS] 선택자(selector)" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/2-selector</id><content type="html" xml:base="http://localhost:4000/css/2-selector/"><![CDATA[<h2 id="전체-선택자">전체 선택자</h2>
-
-<p>HTML 문서 내의 모든 요소 선택. head 요소도 포함된다</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="태그-선택자">태그 선택자</h2>
-
-<p>특정 태그를 선택</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">h2</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">blue</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="자손-선택자">자손 선택자</h2>
-
-<p>자식과 하위 요소를 모두 선택</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//html</span>
-<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">strong</span><span class="o">&gt;</span><span class="nx">자손</span> <span class="nx">텍스트</span> <span class="nx">요소</span><span class="o">&lt;</span><span class="sr">/strong</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span><span class="nt">css</span>
-<span class="nt">p</span> <span class="nt">strong</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="자식-선택자">자식 선택자</h2>
-
-<p>직계 자식만 선택</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//html</span>
-<span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span>
-    <span class="nx">자식</span> <span class="nx">요소</span> <span class="c1">//테두리 적용</span>
-    <span class="o">&lt;</span><span class="nx">ol</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">자손</span> <span class="nx">요소</span><span class="o">&lt;</span><span class="sr">/li&gt; /</span><span class="o">/</span><span class="nx">적용</span> <span class="nx">x</span>
-    <span class="o">&lt;</span><span class="sr">/ol</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span><span class="nt">css</span>
-<span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="그룹-선택자">그룹 선택자</h2>
-
-<p>여러 요소를 선택하기</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span><span class="o">,</span>
-<span class="nt">h2</span><span class="o">,</span>
-<span class="nt">h3</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="순서-선택자">순서 선택자</h2>
-
-<p>html의 요소의 순서를 사용하여 필요한 요소를 선택</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//html
-<span class="nt">&lt;ul&gt;</span>
-  <span class="nt">&lt;li&gt;</span>unit 1<span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;</span>unit 2<span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;</span>unit 3<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</code></pre></div></div>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">blue</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">purple</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="수열-선택자">수열 선택자</h2>
-
-<p>배수 혹은 특정한 규칙에 따라 요소를 선택</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="nt">n</span><span class="o">)</span> <span class="p">{</span>
-  <span class="c">/* 짝수 선택자 1*/</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">purple</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span> <span class="p">{</span>
-  <span class="c">/* 짝수 선택자 2*/</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">purple</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="nt">n-1</span><span class="o">)</span> <span class="p">{</span>
-  <span class="c">/* 홀수 선택자 1*/</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">purple</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">ul</span> <span class="nt">li</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span> <span class="p">{</span>
-  <span class="c">/* 홀수 선택자 2*/</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">purple</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="마지막-요소-선택자">마지막 요소 선택자</h2>
-
-<p>형제 요소 중 마지막 요소를 선택</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">ul</span> <span class="nt">li</span><span class="nd">:last-child</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="속성-선택자">속성 선택자</h2>
-
-<p>html의 속성을 선택</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//html</span>
-<span class="o">&lt;</span><span class="nx">form</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="o">/&gt;</span>
-<span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span><span class="nt">css</span>
-<span class="nt">inputy</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"text"</span><span class="o">]</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="가상-선택자">가상 선택자</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">h1</span><span class="nd">:hover</span> <span class="p">{</span>
-  <span class="c">/* 마우스를 올렸을 때 css 적용 */</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">h1</span><span class="nd">:before</span> <span class="p">{</span>
-  <span class="c">/* 요소 앞에 가상 요소 추가*/</span>
-  <span class="nl">content</span><span class="p">:</span> <span class="s1">"before content"</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">h1</span><span class="nd">:after</span> <span class="p">{</span>
-  <span class="c">/* 요소 뒤에 가상 요소 추가*/</span>
-  <span class="nl">content</span><span class="p">:</span> <span class="s1">"after content"</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="클래스-선택자">클래스 선택자</h2>
-
-<p>특정 요소에 클래스를 붙이고 클래스를 이용하여 선택</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text1"</span><span class="nt">&gt;</span>text 1<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text2"</span><span class="nt">&gt;</span>text 2<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.text1</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.text2</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="아이디-선택자">아이디 선택자</h2>
-
-<p>클래스와 마찬가지로 아이디로 선택할 수 있다. 단, 클래스는 중복되어도 되지만 아이디는 고유해야 한다.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"text1"</span><span class="nt">&gt;</span>text 1<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"text2"</span><span class="nt">&gt;</span>text 2<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#text1</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nf">#text2</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="selector" /><summary type="html"><![CDATA[css 선택자]]></summary></entry><entry><title type="html">[CSS] CSS의 기초 용어</title><link href="http://localhost:4000/css/1-css/" rel="alternate" type="text/html" title="[CSS] CSS의 기초 용어" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/1-css</id><content type="html" xml:base="http://localhost:4000/css/1-css/"><![CDATA[<h1 id="csscascading-style-sheets란">CSS(Cascading Style Sheets)란?</h1>
-
-<ul>
-  <li>HTML로 작성한 웹 애플리케이션의 구조에 <strong>디자인</strong>을 적용할 수 있는 스타일 시트 언어</li>
-  <li>좋은 사용자 경험(UX:user experience)을 제공하기 위한 도구</li>
-</ul>
-
-<h1 id="css-용어">CSS 용어</h1>
-
-<p><img width="744" alt="스크린샷 2023-02-09 오후 2 45 57" src="https://user-images.githubusercontent.com/110877564/217728793-1a9c5b56-17b9-41f6-904f-16587747cce6.png" style="border-radius:5px" /></p>
-
-<h2 id="1-선택자셀렉터">1. 선택자(셀렉터)</h2>
-
-<ul>
-  <li>스타일을 적용하고자 하는 HTML 요소를 선택하기 위해 사용하는 방법이다.</li>
-</ul>
-
-<h2 id="2-프로퍼티속성">2. 프로퍼티(속성)</h2>
-
-<ul>
-  <li>해당 선택자에 지정할 스타일을 말한다.</li>
-  <li>임의로 정할 수 없고 지정된 것을 사용해야 한다.</li>
-  <li>세미콜론을 끝에 붙여야 한다.</li>
-</ul>
-
-<p class="notice--primary"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#Keyword_index">프로퍼티 목록(mozilla)</a></p>
-
-<h2 id="3-값속성값">3. 값(속성값)</h2>
-
-<ul>
-  <li>프로퍼티에 사용할 수 있는 값.</li>
-  <li>프로퍼티마다 정해진 키워드나 단위로 지정해야 한다.</li>
-</ul>
-
-<h2 id="4-html에-css-연결하기">4. HTML에 CSS 연결하기</h2>
-
-<h3 id="1-link-style">1. Link style</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/style.css"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-</code></pre></div></div>
-
-<p>html <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>태그 안에서 외부에 있는 css 파일을 로드하는 방식</p>
-
-<h3 id="2-embedding-style">2. Embedding style</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;style&gt;</span>
-    <span class="nt">h1</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">background</span><span class="p">:</span> <span class="no">aqua</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-</code></pre></div></div>
-
-<p>html 내부에 css를 직접 포함시키는 방식.</p>
-
-<h3 id="3-inline-style">3. Inline style</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
-  <span class="nt">&lt;h1</span> <span class="na">style=</span><span class="s">"color: red"</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
-  <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"background: aqua"</span><span class="nt">&gt;</span>This is a web page.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-</code></pre></div></div>
-
-<p>html 요소의 style 프로퍼티에 css를 포함시키는 방식.</p>
-
-<p class="notice--primary">HTML과 CSS의 역할을 분리시키기 위해 <strong>Link style</strong>을 사용하는 것이 바람직하다.</p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><summary type="html"><![CDATA[css 기초]]></summary></entry><entry><title type="html">[CSS] transform 속성</title><link href="http://localhost:4000/css/4-transform/" rel="alternate" type="text/html" title="[CSS] transform 속성" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/css/4-transform</id><content type="html" xml:base="http://localhost:4000/css/4-transform/"><![CDATA[<h2 id="transform2d">transform(2D)</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span><span class="nt">css</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.5</span><span class="p">);</span> <span class="c">/* 요소를 1.5배 확대 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">skewX</span><span class="p">(</span><span class="m">20deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 20도만큼 기울이기 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span> <span class="c">/* 요소를 20px만큼 오른쪽으로 이동 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 45도만큼 회전 */</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="transform3d">transform(3D)</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
-  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 x축으로 45도 회전 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">45deg</span><span class="p">);</span> <span class="c">/* 요소를 y축으로 45도 회전 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">3</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 100px 이동 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">4</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-100px</span><span class="p">);</span> <span class="c">/* 요소를 z축으로 -100px 이동 */</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="transform3d---중심축-이동">transform(3D) - 중심축 이동</h2>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span> <span class="p">{</span>
-  <span class="nl">perspective</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span> <span class="c">/* 원근감 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">1</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
-  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 -&gt; 기본값 */</span>
-<span class="p">}</span>
-<span class="nt">section</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="nt">article</span> <span class="p">{</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
-  <span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">right</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* 가로축, 세로축 순서 */</span>
-</code></pre></div></div>
-
-<p class="notice--primary"><a href="https://codesandbox.io/s/css-transform-sogseong-yesi-tzmpl1?file=/src/App.js">transform 예시(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transform" /><summary type="html"><![CDATA[transform]]></summary></entry></feed>
+<p class="notice--primary"><a href="https://codesandbox.io/s/transition-animation-example-bbdiye?file=/src/App.js">transition &amp; animation 예제(CodeSandbox)</a></p>]]></content><author><name>Reyna</name></author><category term="css" /><category term="css" /><category term="transition" /><category term="animation" /><summary type="html"><![CDATA[transition과 animation]]></summary></entry></feed>
