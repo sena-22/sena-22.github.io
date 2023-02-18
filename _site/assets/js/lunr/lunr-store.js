@@ -209,6 +209,12 @@ var store = [{
         "url": "/typescript/tyscript-1/",
         "teaser": null
       },{
+        "title": "더미 데이터 만들기",
+        "excerpt":"dummy image Lorem Picsum에서 무료 이미지 사용이 가능하다. 랜덤 이미지 https://picsum.photos/${width}/${height} 특정 이미지 https://picsum.photos/id/{image}/${width}/${height} {image}에 넣을 이미지 목록은 이곳에서 확인할 수 있다. 정적 이미지 같은 이미지를 불러오고 싶을 땐 /seed/{seed}를 이용한다. 같은 {seed}를 사용한 경우 같은 이미지를 불러온다. https://picsum.photos/seed/{지정한 글자}/${width}/${height} grayscale &amp; blur //흑백 https://picsum.photos/${width}/${height}?grayscale //블러 https://picsum.photos/${width}/${height}?blur // 블러 정도...","categories": ["notes"],
+        "tags": ["dummy"],
+        "url": "/notes/dummy-data/",
+        "teaser": null
+      },{
         "title": "webpack, hot reloading, prettier",
         "excerpt":"webpack 다양한 입력 모듈(HTML 파일, 이미지 파일..)을 결합해서 단순한 형태의 모듈로 변환해주는 모듈 번들러. 변환한 결과를 번들이라고 한다. 리액트에서 웹팩은 빌드 모드일 때와 개발 모드일 때 동작 방식이 다르다. 빌드 모드일 때 프로젝트 디렉터리의 파일을 모아 main이나 chunk라는 단어가 있는 번들 파일로 만든다. 이 번들 파일을 반영한 새로운 index.html 만든다....","categories": ["notes"],
         "tags": ["study","webpack","hot reloading"],
