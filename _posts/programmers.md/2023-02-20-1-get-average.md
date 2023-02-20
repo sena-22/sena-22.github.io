@@ -1,11 +1,11 @@
 ---
-title: "[Programmers] 6. 평균 구기 (javascript)"
-excerpt: "게임 맵 최단거리"
+title: "[Programmers] 6. 평균 구하기 (javascript)"
+excerpt: "평균 구하기"
 
 categories:
   - programmers
 tags:
-  - [study, recursive, javascript]
+  - [study, recursive, javascript, Lv.1]
 
 toc: true
 toc_sticky: true
@@ -16,8 +16,7 @@ last_modified_at: 2023-02-20
 
 ## 🤔 문제
 
-상대 팀 진영에 최대한 빨리 도착하기 위해 지나가야 하는 칸의 개수의 최솟값.
-상대 팀 진영에 도착할 수 없을 때는 -1을 return 한다.
+정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.
 
 ## 제한사항
 
