@@ -83,7 +83,7 @@ let character: Character = {
 };
 ```
 
-위의 예시에서 stat 종류를 제한하고 싶을 때에는 문자열 리터럴 타입(String Literal Types)을 추가하면 된다.
+위의 예시에서 stat 종류를 제한하고 싶을 때에는 <mark style='background-color: #ffdce0'>문자열 리터럴 타입(String Literal Types)</mark>을 추가하면 된다.
 
 ```typescript
 type Stat = "HP" | "MP" | "SP"
