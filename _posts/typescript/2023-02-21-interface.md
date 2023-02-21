@@ -72,25 +72,25 @@ character.birthYear = 1999; //readonly여서 에러가 발생한다.
 interface Character {
   name: string;
   age: number;
-  [stat: string]: number;
+  [stat: number]: string;
 }
 
 let character: Character = {
   name: "Jack",
   age: 20,
-  HP: 100,
-  MP: 200,
+  1: "HP",
+  2: "MP",
 };
 ```
 
 위의 예시에서 stat 종류를 제한하고 싶을 때에는 <mark style='background-color: #ffdce0'>문자열 리터럴 타입(String Literal Types)</mark>을 추가하면 된다.
 
 ```typescript
-type Stat = "HP" | "MP" | "SP"
+type Stat = 'HP' | 'MP' | 'SP'
 
 interface Character {
   ...
-  [stat: string]: Stat;
+  [stat: number]: Stat;
 }
 ```
 
