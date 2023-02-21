@@ -51,14 +51,13 @@ let character: Character = {
 interface Character {
   name: string;
   age: number;
-  readonly birthYear: number; //생성 이후 수정 불가능
+  readonly birthYear: number;
 }
 
-//height가 없어도 오류가 나지 않는다
 let character: Character = {
   name: "Jack",
   age: 20,
-  birthYear: 2000,
+  birthYear: 2000, // 이후 수정 불가능
 };
 
 character.birthYear = 1999; //readonly여서 에러가 발생한다.
