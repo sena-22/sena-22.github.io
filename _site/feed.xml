@@ -1,31 +1,571 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-18T12:18:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Mini Project] 포트폴리오 만들기 6. import 정리</title><link href="http://localhost:4000/mini%20project/portfolio-6/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 6. import 정리" /><published>2023-02-18T00:00:00+09:00</published><updated>2023-02-18T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-6</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-6/"><![CDATA[<p>프로젝트 페이지에서 데이터를 불러올 때 일일이 import를 하고 있었는데, 코드가 너무 복잡해서 <code class="language-plaintext highlighter-rouge">*</code> 를 이용해서 줄여보려고 한다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-22T08:45:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Deep Dive] 3. 변수</title><link href="http://localhost:4000/notes/variable/" rel="alternate" type="text/html" title="[Deep Dive] 3. 변수" /><published>2023-02-22T00:00:00+09:00</published><updated>2023-02-22T00:00:00+09:00</updated><id>http://localhost:4000/notes/variable</id><content type="html" xml:base="http://localhost:4000/notes/variable/"><![CDATA[<h2 id="1-변수의-정의와-사용하는-이유">1. 변수의 정의와 사용하는 이유</h2>
 
-<p>data 폴더에 index.js 파일을 만들어 export <code class="language-plaintext highlighter-rouge">*</code>로 내보냈다.</p>
+<h3 id="변수의-의미">변수의 의미</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//data/index.js</span>
-<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./first_project_data</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./second_project_data</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./third_project_data</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./meta_data</span><span class="dl">"</span><span class="p">;</span>
+<h3 id="변수를-사용하는-이유">변수를 사용하는 이유</h3>
+
+<h2 id="2-변수를-선언하는-방법">2. 변수를 선언하는 방법</h2>
+
+<h3 id="변수-선언">변수 선언</h3>
+
+<h3 id="변수-선언-방법">변수 선언 방법</h3>
+
+<h3 id="변수가-선언되는-단계">변수가 선언되는 단계</h3>
+
+<h2 id="3-값-할당--재할당하기">3. 값 할당 &amp; 재할당하기</h2>
+
+<h3 id="변수에-값을-할당하는-방법">변수에 값을 할당하는 방법</h3>
+
+<h3 id="변수-선언과-값의-할당-시점">변수 선언과 값의 할당 시점</h3>
+
+<h3 id="값을-재할당할-때-생기는-일">값을 재할당할 때 생기는 일</h3>
+
+<h2 id="4-식별자-네이밍-규칙">4. 식별자 네이밍 규칙</h2>
+
+<h3 id="식별자">식별자</h3>
+
+<h3 id="식별자-네이밍-규칙">식별자 네이밍 규칙</h3>
+
+<h3 id="네이밍-컨벤션">네이밍 컨벤션</h3>
+
+<h3 id="자주-사용되는-네이밍-컨벤션">자주 사용되는 네이밍 컨벤션</h3>
+
+<ul>
+  <li>카멜 케이스</li>
+  <li>스네이크 케이스</li>
+  <li>파스칼 케이스</li>
+  <li>헝가리안 케이스</li>
+</ul>
+
+<h2 id="5-변수의-호이스팅">5. 변수의 호이스팅</h2>
+
+<h3 id="변수-호이스팅의-의미">변수 호이스팅의 의미</h3>
+
+<h3 id="일시적-사각지대">일시적 사각지대</h3>
+
+<h3 id="함수-호이스팅과-변수-호이스팅의-차이">함수 호이스팅과 변수 호이스팅의 차이</h3>
+
+<h2 id="6-변수의-생명주기">6. 변수의 생명주기</h2>
+
+<h3 id="지역-변수의-생명주기">지역 변수의 생명주기</h3>
+
+<h3 id="전역-변수의-생명주기">전역 변수의 생명주기</h3>
+
+<h2 id="7-전역-변수의-문제점과-억제-방법">7. 전역 변수의 문제점과 억제 방법</h2>
+
+<h3 id="전역-변수의-문제점">전역 변수의 문제점</h3>
+
+<ul>
+  <li>암묵적 결합</li>
+  <li>긴 생명 주기</li>
+  <li>스코프 체인 상에서 종점에 존재</li>
+  <li>네임스페이스 오염</li>
+</ul>
+
+<h3 id="전역-변수의-사용을-억제하는-방법">전역 변수의 사용을 억제하는 방법</h3>
+
+<ul>
+  <li>즉시 실행 함수</li>
+  <li>네임스페이스 객체</li>
+  <li>모듈 패턴</li>
+  <li>ES6 모듈</li>
+</ul>
+
+<h2 id="8-let-const-키워드">8. let, const 키워드</h2>
+
+<h3 id="var-키워드로-선언한-변수의-문제점">var 키워드로 선언한 변수의 문제점</h3>
+
+<ul>
+  <li>변수의 중복 선언 허용</li>
+  <li>함수 레벨 스코프</li>
+  <li>변수 호이스팅</li>
+</ul>
+
+<h3 id="let-키워드">let 키워드</h3>
+
+<ul>
+  <li>변수 중복 선언 금지</li>
+  <li>블록 레벨 스코프</li>
+  <li>변수 호이스팅</li>
+  <li>전역 객체와 let</li>
+</ul>
+
+<h3 id="const-키워드">const 키워드</h3>
+
+<ul>
+  <li>선언과 초기화</li>
+  <li>재할당 금지</li>
+  <li>상수</li>
+  <li>const 키워드와 객체</li>
+</ul>
+
+<p class="notice--danger">deep dive 4장, 14장, 15장 참고</p>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="javascript" /><category term="variable" /><summary type="html"><![CDATA[variable]]></summary></entry><entry><title type="html">[typescript] 함수의 타입 정의</title><link href="http://localhost:4000/typescript/function/" rel="alternate" type="text/html" title="[typescript] 함수의 타입 정의" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/typescript/function</id><content type="html" xml:base="http://localhost:4000/typescript/function/"><![CDATA[<h2 id="1-함수의-타이핑typing-the-function">1. 함수의 타이핑(Typing the function)</h2>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 1. 각 매개변수의 타입 입력, 괄호 뒤에는 함수가 반환하는 값의 타입을 입력한다.</span>
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">num1</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">num2</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 2. 아무것도 리턴하지 않으면 void를 입력하면 된다.</span>
+<span class="kd">function</span> <span class="nx">add2</span><span class="p">(</span><span class="nx">num1</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">num2</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">import * as D</code>로 가져와서 사용할 때는 <code class="language-plaintext highlighter-rouge">D.firstProjectData</code> 처럼 사용하면 된다.</p>
+<h2 id="2-선택적-매개변수와-기본-매개변수optional-and-default-parameter">2. 선택적 매개변수와 기본 매개변수(Optional and Default Parameter)</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Project.jsx</span>
+<h3 id="선택적-매개변수">선택적 매개변수</h3>
 
-<span class="c1">//원래 코드</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">firstProjectData</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data/first_project_data</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">secondProjectData</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data/second_project_data</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">thirdProjectData</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data/third_project_data</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span>
-  <span class="nx">firstMetaData</span><span class="p">,</span>
-  <span class="nx">secondMetaData</span><span class="p">,</span>
-  <span class="nx">thirdMetaData</span><span class="p">,</span>
-<span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data/meta_data</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 1. 함수의 매개변수도 옵셔널로 지정할 수 있다.</span>
+<span class="kd">function</span> <span class="nx">hi</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">name</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">world</span><span class="dl">"</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="c1">//변경 코드</span>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">D</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../data</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">더미 데이터 만들기</title><link href="http://localhost:4000/notes/dummy-data/" rel="alternate" type="text/html" title="더미 데이터 만들기" /><published>2023-02-18T00:00:00+09:00</published><updated>2023-02-18T00:00:00+09:00</updated><id>http://localhost:4000/notes/dummy-data</id><content type="html" xml:base="http://localhost:4000/notes/dummy-data/"><![CDATA[<h2 id="dummy-image">dummy image</h2>
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">hi</span><span class="p">();</span> <span class="c1">// 에러 발생(매개변수가 없기 때문)</span>
+
+<span class="c1">// 2. name을 optional parameter(선택적 매개변수)로 변경</span>
+<span class="kd">function</span> <span class="nx">hi2</span><span class="p">(</span><span class="nx">name</span><span class="p">?:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">name</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">world</span><span class="dl">"</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">hi2</span><span class="p">();</span> <span class="c1">//에러가 사라진다</span>
+<span class="kd">const</span> <span class="nx">result2</span> <span class="o">=</span> <span class="nx">hi2</span><span class="p">(</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">// 3. 선택적 매개변수는 필수 매개변수보다 뒤에 와야 한다</span>
+<span class="kd">function</span> <span class="nx">hi4</span><span class="p">(</span><span class="nx">age</span><span class="p">?:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//에러가 발생한다</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">age</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">. You are </span><span class="p">${</span><span class="nx">age</span><span class="p">}</span><span class="s2">.`</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">name</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">world</span><span class="dl">"</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="기본-매개변수">기본 매개변수</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 매개변수에 기본(디폴트) 값을 줄 수도 있다</span>
+<span class="kd">function</span> <span class="nx">hi3</span><span class="p">(</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">world</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">result3</span> <span class="o">=</span> <span class="nx">hi3</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="3나머지-매개변수rest-parameters">3.나머지 매개변수(Rest Parameters)</h2>
+
+<ul>
+  <li>다수의 매개변수를 가지거나, 매개변수의 수가 정해지지 않았을 때 사용한다.</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add3</span><span class="p">(...</span><span class="nx">nums</span><span class="p">:</span> <span class="kr">number</span><span class="p">[])</span> <span class="p">{</span>
+  <span class="c1">//배열</span>
+  <span class="k">return</span> <span class="nx">nums</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">result</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">result</span> <span class="o">+</span> <span class="nx">num</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="4-this">4. this</h2>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">Jack</span><span class="p">:</span> <span class="nx">User</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">showName</span><span class="p">(</span><span class="k">this</span><span class="p">:</span> <span class="nx">User</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//this가 첫번째로 와야 한다</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">showName</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">Jack</span><span class="p">);</span>
+<span class="nx">a</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="5-함수-오버로드">5. 함수 오버로드</h2>
+
+<ul>
+  <li>전달받은 매개변수의 개수나 타입에 따라 다른 동작을 하게하는 것을 말한다</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">User2</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">join</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="kr">string</span><span class="p">;</span> <span class="c1">//age가 string일 때 string 반환</span>
+
+<span class="kd">function</span> <span class="nx">join</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="nx">User2</span><span class="p">;</span> <span class="c1">//age가 number 때 number 반환</span>
+
+<span class="kd">function</span> <span class="nx">join</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span> <span class="o">|</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">User2</span> <span class="o">|</span> <span class="kr">string</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">age</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">number</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">name</span><span class="p">,</span>
+      <span class="nx">age</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">나이는 숫자로 입력해주세요</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">jack2</span><span class="p">:</span> <span class="nx">User2</span> <span class="o">=</span> <span class="nx">join</span><span class="p">(</span><span class="dl">"</span><span class="s2">jack2</span><span class="dl">"</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="function" /><summary type="html"><![CDATA[function]]></summary></entry><entry><title type="html">[Deep Dive] 2. javascript</title><link href="http://localhost:4000/notes/2-javascript/" rel="alternate" type="text/html" title="[Deep Dive] 2. javascript" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/notes/2-javascript</id><content type="html" xml:base="http://localhost:4000/notes/2-javascript/"><![CDATA[<h2 id="자바스크립트">자바스크립트</h2>
+
+<ul>
+  <li>웹 브라우저에서 사용하기 위해 만들어진 프로그래밍 언어</li>
+</ul>
+
+<h3 id="자바스크립트의-특징">자바스크립트의 특징</h3>
+
+<ul>
+  <li>웹 브라우저에서 동작하는 유일한 프로그래밍 언어</li>
+  <li>인터프리터 언어</li>
+  <li>멀티 패러다임 프로그래밍 언어 : 명령형, 함수형, 프로토타입 기반 객체지향 프로그래밍 지원</li>
+</ul>
+
+<p>프로토타입 기반 객체지향 프로그래밍</p>
+
+<h2 id="ajaxasynchronous-javascript-and-xml">Ajax(Asynchronous Javascript and XML)</h2>
+
+<ul>
+  <li>자바스크립트를 이용해 서버와 브라우저가 <strong>비동기</strong>방식으로 데이터를 교환할 수 있는 통신 기능</li>
+  <li>서버에서 필요한 기능만 받아 변경해야 하는 부분만 한정적으로 렌더링함으로써 빠른 성능과 부드러운 화면 전환이 가능해졌다.</li>
+</ul>
+
+<h2 id="nodejs">Node.js</h2>
+
+<ul>
+  <li>구글 V8 자바스크립트 엔진</li>
+  <li>자바스크립트 엔진을 브라우저에서 독립시킨 자바스크립트의 런타임 환경</li>
+</ul>
+
+<h2 id="ecmascript">ECMAScript</h2>
+
+<ul>
+  <li>자바스크립트의 표준 사양인 ECMA-262</li>
+  <li>핵심 문법(값, 타입, 객체와 프로퍼티 함수, 표준 빌트인 객체 등) 규정</li>
+</ul>
+
+<p>즉, 자바스크립트는 ECMAScript + Client Side Web API(DOM,BOM,Canvas,fetch 등)</p>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="javascript" /><category term="Ajax" /><category term="Node.js" /><category term="ECMAScript" /><summary type="html"><![CDATA[javascript]]></summary></entry><entry><title type="html">[Deep Dive] 1. 프로그래밍</title><link href="http://localhost:4000/notes/1-programming/" rel="alternate" type="text/html" title="[Deep Dive] 1. 프로그래밍" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/notes/1-programming</id><content type="html" xml:base="http://localhost:4000/notes/1-programming/"><![CDATA[<h2 id="프로그래밍">프로그래밍</h2>
+
+<ul>
+  <li>컴퓨터에게 실행을 요구하는 커뮤니케이션</li>
+  <li>컴퓨터가 이해할 수 있을 정도로 정확하고 상세하게 요구사항을 설명하는 작업</li>
+  <li>요구사항의 집합을 분석해서 적절한 자료구조와 함수의 집합으로 변환한 뒤, 그 흐름을 제어하는 것</li>
+</ul>
+
+<h3 id="요구사항-분석">요구사항 분석</h3>
+
+<ol>
+  <li>문제(요구사항)를 명확히 이해하기</li>
+  <li>단순하게 분해하기</li>
+  <li>자료를 정리하고 구분하기</li>
+  <li>순서에 맞게 행위를 배열하기</li>
+</ol>
+
+<h2 id="프로그래밍-언어">프로그래밍 언어</h2>
+
+<ul>
+  <li>컴퓨터와의 대화에 사용되는 표현 수단</li>
+  <li>사람과 컴퓨터(컴파일러 또는 인터프리터)가 모두 이해할 수 있는 약속된 형태의 인공어</li>
+  <li>구문과 의미의 조합으로 표현된다.</li>
+</ul>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="programming" /><summary type="html"><![CDATA[프로그래밍]]></summary></entry><entry><title type="html">[typescript] interface</title><link href="http://localhost:4000/typescript/interface/" rel="alternate" type="text/html" title="[typescript] interface" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/typescript/interface</id><content type="html" xml:base="http://localhost:4000/typescript/interface/"><![CDATA[<p><strong>인터페이스</strong>는 객체의 타입을 정의하기 위해 사용된다.</p>
+
+<h3 id="인터페이스-정의하기">인터페이스 정의하기</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="선택적-프로퍼티optional-properties-사용하기">선택적 프로퍼티(Optional Properties) 사용하기</h3>
+
+<ul>
+  <li>프로퍼티가 필수 사항이 아닐 때에는 <code class="language-plaintext highlighter-rouge">?</code>를 붙여 표시한다.</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span> <span class="c1">//키를 Optional Properties로 처리</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">character</span><span class="p">:</span> <span class="nx">Character</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jack</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="c1">//height가 없어도 오류가 나지 않는다</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="읽기-전용-프로퍼티-사용하기">읽기 전용 프로퍼티 사용하기</h3>
+
+<ul>
+  <li>프로퍼티가 처음 생성될 때만 수정 가능하게 만들고 싶을 때에는 <code class="language-plaintext highlighter-rouge">readonly</code>를 앞에 붙여주면 된다.</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="k">readonly</span> <span class="nx">birthYear</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">character</span><span class="p">:</span> <span class="nx">Character</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jack</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="na">birthYear</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span> <span class="c1">// 이후 수정 불가능</span>
+<span class="p">};</span>
+
+<span class="nx">character</span><span class="p">.</span><span class="nx">birthYear</span> <span class="o">=</span> <span class="mi">1999</span><span class="p">;</span> <span class="c1">//readonly여서 에러가 발생한다.</span>
+</code></pre></div></div>
+
+<h3 id="문자열-인덱스-서명string-index-signatuer-추가하기">문자열 인덱스 서명(string index signatuer) 추가하기</h3>
+
+<p>비슷한 타입의 프로퍼티를 여러 개 만들고 싶을 때는 <code class="language-plaintext highlighter-rouge">[키 이름:타입]:타입</code> 처럼 만들면 된다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="p">[</span><span class="nx">stat</span><span class="p">:</span> <span class="kr">number</span><span class="p">]:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">character</span><span class="p">:</span> <span class="nx">Character</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jack</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HP</span><span class="dl">"</span><span class="p">,</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MP</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>위의 예시에서 stat 종류를 제한하고 싶을 때에는 <mark style="background-color: #ffdce0">문자열 리터럴 타입(String Literal Types)</mark>을 추가하면 된다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Stat</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">HP</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">MP</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">SP</span><span class="dl">'</span>
+
+<span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="p">[</span><span class="nx">stat</span><span class="p">:</span> <span class="kr">number</span><span class="p">]:</span> <span class="nx">Stat</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="인터페이스로-클래스-정의하기">인터페이스로 클래스 정의하기</h3>
+
+<p>클래스 선언문의 implements 뒤에 인터페이스를 선언하면 해당 클래스는 그 인터페이스를 반드시 구현해야 한다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Wizard</span> <span class="k">implements</span> <span class="nx">Character</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="p">;</span>
+  <span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">c</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">c</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">start!</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Wizard</span><span class="p">(</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">//Wizard: {"age": 20,"name": "jack"}</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span> <span class="c1">//  "start!"</span>
+</code></pre></div></div>
+
+<h3 id="인터페이스-확장하기">인터페이스 확장하기</h3>
+
+<p><code class="language-plaintext highlighter-rouge">extends</code>를 사용하면 인터페이스를 확장할 수 있다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Car</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">wheels</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Toy</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Toycar</span> <span class="kd">extends</span> <span class="nx">Car</span><span class="p">,</span> <span class="nx">Toy</span> <span class="p">{</span>
+  <span class="c1">// multiple-extends</span>
+  <span class="nl">price</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="참고">참고</h3>
+
+<p class="notice--primary"><a href="https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png">Typescript Cheat Sheet Interface</a> <br />
+<a href="https://typescript-kr.github.io/pages/interfaces.html">Typescript handbook Interface</a> <br />
+<a href="https://poiemaweb.com/typescript-interface">poiemaweb Interface</a></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="interface" /><summary type="html"><![CDATA[interface]]></summary></entry><entry><title type="html">[Programmers] 7. 짝수와 홀수 (javascript)</title><link href="http://localhost:4000/programmers/2-even-and-odd/" rel="alternate" type="text/html" title="[Programmers] 7. 짝수와 홀수 (javascript)" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T00:00:00+09:00</updated><id>http://localhost:4000/programmers/2-even-and-odd</id><content type="html" xml:base="http://localhost:4000/programmers/2-even-and-odd/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+
+<p>정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>num은 int 범위의 정수입니다.</li>
+  <li>0은 짝수입니다.</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>maps</th>
+      <th>answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>“Odd”</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>“Even”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<blockquote>
+  <p>3항 연산자를 사용해서 나머지가 0이면 짝수, 0이 아니면 홀수를 리턴한다.</p>
+</blockquote>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">Even</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Odd</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[짝수와 홀수]]></summary></entry><entry><title type="html">[Programmers] 6. 평균 구하기 (javascript)</title><link href="http://localhost:4000/programmers/1-get-average/" rel="alternate" type="text/html" title="[Programmers] 6. 평균 구하기 (javascript)" /><published>2023-02-20T00:00:00+09:00</published><updated>2023-02-20T00:00:00+09:00</updated><id>http://localhost:4000/programmers/1-get-average</id><content type="html" xml:base="http://localhost:4000/programmers/1-get-average/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+
+<p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
+  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>maps</th>
+      <th>answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[1,2,3,4]</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td>[5,5]</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<blockquote>
+  <p>reduce 메서드를 사용하여 모든 값을 더한다 <br />
+합계를 배열의 길이로 나눈다</p>
+</blockquote>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">cur</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[평균 구하기]]></summary></entry><entry><title type="html">page setting</title><link href="http://localhost:4000/notes/page-setting/" rel="alternate" type="text/html" title="page setting" /><published>2023-02-19T00:00:00+09:00</published><updated>2023-02-19T00:00:00+09:00</updated><id>http://localhost:4000/notes/page-setting</id><content type="html" xml:base="http://localhost:4000/notes/page-setting/"><![CDATA[<p>초기 페이지 설정</p>
+
+<h3 id="복사용-파일-만들기">복사용 파일 만들기</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//src/Copy.js</span>
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Copy</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Copy</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="터미널에서-복사">터미널에서 복사</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//terminal</span>
+<span class="nx">mkdir</span> <span class="nx">pages</span>
+<span class="nx">cp</span> <span class="nx">Copy</span><span class="p">.</span><span class="nx">js</span> <span class="nx">pages</span><span class="o">/</span><span class="nx">page1</span><span class="p">.</span><span class="nx">js</span>
+<span class="nx">cp</span> <span class="nx">Copy</span><span class="p">.</span><span class="nx">js</span> <span class="nx">pages</span><span class="o">/</span><span class="nx">page2</span><span class="p">.</span><span class="nx">js</span>
+<span class="nx">cp</span> <span class="nx">Copy</span><span class="p">.</span><span class="nx">js</span> <span class="nx">pages</span><span class="o">/</span><span class="nx">page3</span><span class="p">.</span><span class="nx">js</span>
+<span class="p">...</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="page" /><summary type="html"><![CDATA[page setting]]></summary></entry><entry><title type="html">webpack, hot reloading, prettier</title><link href="http://localhost:4000/notes/webpack/" rel="alternate" type="text/html" title="webpack, hot reloading, prettier" /><published>2023-02-18T00:00:00+09:00</published><updated>2023-02-18T00:00:00+09:00</updated><id>http://localhost:4000/notes/webpack</id><content type="html" xml:base="http://localhost:4000/notes/webpack/"><![CDATA[<h2 id="webpack">webpack</h2>
+
+<p>다양한 입력 모듈(HTML 파일, 이미지 파일..)을 결합해서 단순한 형태의 모듈로 변환해주는 모듈 번들러.
+변환한 결과를 번들이라고 한다.</p>
+
+<p>리액트에서 웹팩은 빌드 모드일 때와 개발 모드일 때 동작 방식이 다르다.</p>
+
+<h3 id="빌드-모드일-때">빌드 모드일 때</h3>
+
+<p>프로젝트 디렉터리의 파일을 모아 main이나 chunk라는 단어가 있는 번들 파일로 만든다.
+이 번들 파일을 반영한 새로운 <code class="language-plaintext highlighter-rouge">index.html</code> 만든다.</p>
+
+<h3 id="개발-모드일-때">개발 모드일 때</h3>
+
+<p><code class="language-plaintext highlighter-rouge">npm start</code> 명령을 내리면 react-scripts start가 내부적으로 웹팩을 서버 형태로 구동한다.
+웹팩 서버는 프로젝트 디렉터리의 파일을 빌드하여 번들 파일로 만든 다음, 이를 반영한 <code class="language-plaintext highlighter-rouge">index.html</code> 파일을 생성한다.
+react-scripts가 웹 브라우저를 실행하고 localhost:3000 주소로 접속한 다음 웹팩이 준비해 둔 <code class="language-plaintext highlighter-rouge">index.html</code>에서 <scripts>태그의 자바 스크립트 코드를 실행해 웹페이지를 화면에 띄운다.</scripts></p>
+
+<h2 id="핫-리로딩">핫 리로딩</h2>
+
+<p>개발 모드에서 변경 사항이 바로 웹 브라우저에 반영되어서 생산성을 높여주는 기능이다.
+웹팩 서버가 프로젝트 디렉터리에 변경 사항이 생기면 해당 부분만 빌드한 뒤 웹 브라우저의 js 코드에 심어 둔 웹팩 코드를 이용하여 변경된 내용을 실시간으로 반영한다.</p>
+
+<h2 id="프리티어">프리티어</h2>
+
+<h3 id="설치">설치</h3>
+
+<p>VSCode 확장 마켓플레이스에서 ‘prettier’ 검색 후 설치</p>
+
+<h3 id="settingsjson에-적용">settings.json에 적용</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"editor.defaultFormaatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esbenp.prettier-vscode"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"editor.formatOnsave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="디렉터리에서-설정하기">디렉터리에서 설정하기</h3>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">prettierrc.js</code> 파일을 만든다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//terminal</span>
+<span class="nx">touch</span><span class="p">.</span><span class="nx">prettierrc</span><span class="p">.</span><span class="nx">js</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>파일에 적용할 프리티어 설정을 입력한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//.prettierrc.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">bracketSpacing</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">jsxBracketSameLine</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">singleQuote</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">trailingComma</span><span class="p">:</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">arrowParens</span><span class="p">:</span> <span class="dl">"</span><span class="s2">avoid</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">semi</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">printWidth</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><a href="https://prettier.io/docs/en/options.html">prettier 옵션 종류</a></p>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="study" /><category term="webpack" /><category term="hot reloading" /><summary type="html"><![CDATA[웹팩, 핫 리로딩(핫 모듈 교체), 프리티어]]></summary></entry><entry><title type="html">더미 데이터 만들기</title><link href="http://localhost:4000/notes/dummy-data/" rel="alternate" type="text/html" title="더미 데이터 만들기" /><published>2023-02-18T00:00:00+09:00</published><updated>2023-02-18T00:00:00+09:00</updated><id>http://localhost:4000/notes/dummy-data</id><content type="html" xml:base="http://localhost:4000/notes/dummy-data/"><![CDATA[<h2 id="dummy-image">dummy image</h2>
 
 <p><a href="https://picsum.photos/">Lorem Picsum</a>에서 무료 이미지 사용이 가능하다.</p>
 
@@ -110,501 +650,4 @@
   <span class="kd">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">1000000</span><span class="p">;</span>
   <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">value</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">n</span><span class="p">));</span>
 <span class="p">};</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="dummy" /><summary type="html"><![CDATA[dummy, lorem picsum, chance, luxon]]></summary></entry><entry><title type="html">webpack, hot reloading, prettier</title><link href="http://localhost:4000/notes/webpack/" rel="alternate" type="text/html" title="webpack, hot reloading, prettier" /><published>2023-02-18T00:00:00+09:00</published><updated>2023-02-18T00:00:00+09:00</updated><id>http://localhost:4000/notes/webpack</id><content type="html" xml:base="http://localhost:4000/notes/webpack/"><![CDATA[<h2 id="webpack">webpack</h2>
-
-<p>다양한 입력 모듈(HTML 파일, 이미지 파일..)을 결합해서 단순한 형태의 모듈로 변환해주는 모듈 번들러.
-변환한 결과를 번들이라고 한다.</p>
-
-<p>리액트에서 웹팩은 빌드 모드일 때와 개발 모드일 때 동작 방식이 다르다.</p>
-
-<h3 id="빌드-모드일-때">빌드 모드일 때</h3>
-
-<p>프로젝트 디렉터리의 파일을 모아 main이나 chunk라는 단어가 있는 번들 파일로 만든다.
-이 번들 파일을 반영한 새로운 <code class="language-plaintext highlighter-rouge">index.html</code> 만든다.</p>
-
-<h3 id="개발-모드일-때">개발 모드일 때</h3>
-
-<p><code class="language-plaintext highlighter-rouge">npm start</code> 명령을 내리면 react-scripts start가 내부적으로 웹팩을 서버 형태로 구동한다.
-웹팩 서버는 프로젝트 디렉터리의 파일을 빌드하여 번들 파일로 만든 다음, 이를 반영한 <code class="language-plaintext highlighter-rouge">index.html</code> 파일을 생성한다.
-react-scripts가 웹 브라우저를 실행하고 localhost:3000 주소로 접속한 다음 웹팩이 준비해 둔 <code class="language-plaintext highlighter-rouge">index.html</code>에서 <scripts>태그의 자바 스크립트 코드를 실행해 웹페이지를 화면에 띄운다.</scripts></p>
-
-<h2 id="핫-리로딩">핫 리로딩</h2>
-
-<p>개발 모드에서 변경 사항이 바로 웹 브라우저에 반영되어서 생산성을 높여주는 기능이다.
-웹팩 서버가 프로젝트 디렉터리에 변경 사항이 생기면 해당 부분만 빌드한 뒤 웹 브라우저의 js 코드에 심어 둔 웹팩 코드를 이용하여 변경된 내용을 실시간으로 반영한다.</p>
-
-<h2 id="프리티어">프리티어</h2>
-
-<h3 id="설치">설치</h3>
-
-<p>VSCode 확장 마켓플레이스에서 ‘prettier’ 검색 후 설치</p>
-
-<h3 id="settingsjson에-적용">settings.json에 적용</h3>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"editor.defaultFormaatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esbenp.prettier-vscode"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"editor.formatOnsave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="디렉터리에서-설정하기">디렉터리에서 설정하기</h3>
-
-<p>먼저 <code class="language-plaintext highlighter-rouge">prettierrc.js</code> 파일을 만든다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//terminal</span>
-<span class="nx">touch</span><span class="p">.</span><span class="nx">prettierrc</span><span class="p">.</span><span class="nx">js</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>파일에 적용할 프리티어 설정을 입력한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//.prettierrc.js</span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">bracketSpacing</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="na">jsxBracketSameLine</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="na">singleQuote</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="na">trailingComma</span><span class="p">:</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">arrowParens</span><span class="p">:</span> <span class="dl">"</span><span class="s2">avoid</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">semi</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="na">printWidth</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p class="notice--primary"><a href="https://prettier.io/docs/en/options.html">prettier 옵션 종류</a></p>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="study" /><category term="webpack" /><category term="hot reloading" /><summary type="html"><![CDATA[웹팩, 핫 리로딩(핫 모듈 교체), 프리티어]]></summary></entry><entry><title type="html">[typescript]</title><link href="http://localhost:4000/typescript/tyscript-1/" rel="alternate" type="text/html" title="[typescript]" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T00:00:00+09:00</updated><id>http://localhost:4000/typescript/tyscript-1</id><content type="html" xml:base="http://localhost:4000/typescript/tyscript-1/"><![CDATA[<h3 id="ts-컴파일러-설치하기">ts 컴파일러 설치하기</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">typescript</span> <span class="nx">ts</span><span class="o">-</span><span class="nx">node</span>
-</code></pre></div></div>
-
-<h3 id="버전-확인">버전 확인</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">tsc</span> <span class="o">-</span> <span class="nx">v</span><span class="p">;</span>
-<span class="nx">ts</span> <span class="o">-</span> <span class="nx">node</span> <span class="o">-</span> <span class="nx">v</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h3 id="타입스크립트-기반-리액트-프로젝트-생성">타입스크립트 기반 리액트 프로젝트 생성</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="nx">프로젝트</span> <span class="nx">이름</span> <span class="o">--</span><span class="nx">template</span> <span class="nx">typescript</span>
-</code></pre></div></div>
-
-<p>Node.js의 패키지 중에서 라이브러리가 아니라 <mark style="background-color: #ffdce0">프로그램 형태로 동작하는 패키지</mark>
-는 최신 버전으로 유지하기 위해 <code class="language-plaintext highlighter-rouge">npx</code>를 사용한다.
-(npx는 패키지의 최신 버전을 찾아 <code class="language-plaintext highlighter-rouge">npm i -g</code> 명령으로 설치해주는 프로그램)</p>
-
-<h3 id="ts-파일-프리티어-적용">ts 파일 프리티어 적용</h3>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="nl">"[typescript]"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"editor.formatOnPaste"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"editor.formatOnSave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"editor.defaultFormatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esbenp.prettier-vscode"</span><span class="w">
-  </span><span class="p">}</span><span class="err">,</span><span class="w">
-</span></code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><summary type="html"><![CDATA[typescript]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 5. react-code-blocks</title><link href="http://localhost:4000/mini%20project/portfolio-5/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 5. react-code-blocks" /><published>2023-02-17T00:00:00+09:00</published><updated>2023-02-17T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-5</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-5/"><![CDATA[]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><category term="react-code-blocks" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 4. react-type-animation</title><link href="http://localhost:4000/mini%20project/portfolio-4/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 4. react-type-animation" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-4</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-4/"><![CDATA[<p>react-type-animation를 이용해서 자동으로 단어가 타이핑되도록 만들었다.</p>
-
-<h2 id="설치">설치</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">react</span><span class="o">-</span><span class="nx">type</span><span class="o">-</span><span class="nx">animation</span>
-</code></pre></div></div>
-
-<p class="notice--primary"><a href="https://react-type-animation.vercel.app/">react-type-animation example</a></p>
-
-<p>사용방법이 공식 문서에 잘 나와있어서 거의 그대로 사용했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">TypeAnimation</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-type-animation</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="o">&lt;</span><span class="nx">TypeAnimation</span>
-  <span class="nx">sequence</span><span class="o">=</span><span class="p">{[</span><span class="dl">"</span><span class="s2">text1</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text2</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text3</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]}</span>
-  <span class="nx">speed</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span>
-  <span class="nx">style</span><span class="o">=</span>
-  <span class="nx">wrapper</span><span class="o">=</span><span class="dl">"</span><span class="s2">h1</span><span class="dl">"</span>
-  <span class="nx">repeat</span><span class="o">=</span><span class="p">{</span><span class="kc">Infinity</span><span class="p">}</span>
-<span class="sr">/&gt;</span><span class="err">;
-</span></code></pre></div></div>
-
-<h3 id="sequence-필수">sequence (필수)</h3>
-
-<p>원하는 문장과 멈춰 있는 시간을 지정해준다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sequence</span><span class="o">=</span><span class="p">{[</span><span class="dl">"</span><span class="s2">text1</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text2</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text3</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]}</span>
-</code></pre></div></div>
-
-<h3 id="speed">speed</h3>
-
-<p>재생 속도를 지정해준다. 1-99까지 있고 낮을수록 느리다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">speed</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="c1">//default:40</span>
-</code></pre></div></div>
-
-<h3 id="style">style</h3>
-
-<p>글자 스타일을 지정해준다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">style</span><span class="o">=</span>
-</code></pre></div></div>
-
-<h3 id="wrapper">wrapper</h3>
-
-<p>렌더링 될 태그를 선택한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">wrapper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">h1</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//default:div</span>
-</code></pre></div></div>
-
-<h3 id="repeat">repeat</h3>
-
-<p>반복 횟수를 설정한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">repeat</span><span class="o">=</span><span class="p">{</span><span class="kc">Infinity</span><span class="p">}</span>
- <span class="c1">//숫자로 입력할 수도 있다</span>
- <span class="nx">repeat</span><span class="o">=</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><category term="react-type-animation" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 3. 이메일 수신하기</title><link href="http://localhost:4000/mini%20project/portfolio-3/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 3. 이메일 수신하기" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-3</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-3/"><![CDATA[<h2 id="1-emailjs-가입하기">1. EmailJS 가입하기</h2>
-
-<p class="notice--primary"><a href="https://dashboard.emailjs.com/admin">EmailJS</a></p>
-
-<p>가입 후 <code class="language-plaintext highlighter-rouge">Account</code>에서 키를 확인하고, <code class="language-plaintext highlighter-rouge">Email Templates</code>에서 어떤 양식으로 받을 지 설정한다.</p>
-
-<h2 id="2-emailjs-설치하기">2. EmailJS 설치하기</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="p">@</span><span class="nd">emailjs</span><span class="sr">/browser --sav</span><span class="err">e
-</span></code></pre></div></div>
-
-<h2 id="3-이메일-전송하기">3. 이메일 전송하기</h2>
-
-<p class="notice--primary"><a href="https://www.emailjs.com/docs/sdk/send/">The basic method to send an email with EmailJS.</a></p>
-
-<p>위의 공식문서를 참고해서 그대로 보내면 된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">templateParams</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="nx">name</span><span class="p">,</span>
-  <span class="na">email</span><span class="p">:</span> <span class="nx">email</span><span class="p">,</span>
-  <span class="na">subject</span><span class="p">:</span> <span class="nx">subject</span><span class="p">,</span>
-  <span class="na">message</span><span class="p">:</span> <span class="nx">message</span><span class="p">,</span>
-<span class="p">};</span>
-
-<span class="nx">emailjs</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">serviceID</span><span class="p">,</span> <span class="nx">templateID</span><span class="p">,</span> <span class="nx">templateParams</span><span class="p">,</span> <span class="nx">publicKey</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h2 id="4-환경변수-설정">4. 환경변수 설정</h2>
-
-<p>ID나 key를 환경변수로 설정했더니 오류가 발생했다.
-<img width="501" alt="스크린샷 2023-02-16 오전 2 14 41" src="https://user-images.githubusercontent.com/110877564/219106561-64b41e3b-1e89-410e-8862-98211a6d238e.png" /></p>
-
-<p>환경변수를 .env에 설정했는데 읽어오지 못해서 발생한 문제였다.</p>
-
-<ol>
-  <li>환경변수 선언 시 <code class="language-plaintext highlighter-rouge">REACT_APP_키 = 값</code> 형식으로 했는데 띄어쓰기를 모두 제거.</li>
-  <li><code class="language-plaintext highlighter-rouge">.env</code> 파일을 <code class="language-plaintext highlighter-rouge">src</code> 내부에 만들었는데 프로젝트 최상단으로 이동.</li>
-  <li>서버 재시작.</li>
-</ol>
-
-<p>3번까지 하니까 이메일이 잘 보내졌다</p>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><category term="EmailJS" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 2. Project page</title><link href="http://localhost:4000/mini%20project/portfolio-2/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 2. Project page" /><published>2023-02-14T00:00:00+09:00</published><updated>2023-02-14T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-2</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-2/"><![CDATA[<p>프로젝트는 페이지에 따라 주소를 <code class="language-plaintext highlighter-rouge">/project/:id</code>로 만들었다.
-id 값은 Home 페이지에서 가져온 프로젝트의 <code class="language-plaintext highlighter-rouge">index</code>이다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Home.jsx</span>
-    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleNavigate</span><span class="p">(</span><span class="s2">`/project/</span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">idx</span><span class="p">}</span><span class="s2">`</span><span class="p">)}</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<p>각 페이지에서 <code class="language-plaintext highlighter-rouge">useParams</code>로 id를 가져와서 id에 따라 페이지를 다르게 렌더링하게 만드려고 하는데 여기서 <code class="language-plaintext highlighter-rouge">params</code> 값이 <code class="language-plaintext highlighter-rouge">undefined</code>로 떴다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Project.jsx</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useParams</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="p">{</span> <span class="nx">params</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useParams</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>알고보니 <code class="language-plaintext highlighter-rouge">App.js</code>에서 라우팅할 때 <code class="language-plaintext highlighter-rouge">id</code>를 사용했기 때문에 가져올 때도 같은 값을 써야 한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.js</span>
-<span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/project/:id</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Project</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
-</span>
-<span class="c1">//Project.jsx</span>
-<span class="kd">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useParams</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">projectId</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
-<span class="kd">const</span> <span class="p">[</span><span class="nx">currentData</span><span class="p">,</span> <span class="nx">setCurrentData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
-
-<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">setCurrentData</span><span class="p">(</span><span class="nx">data1</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">setCurrentData</span><span class="p">(</span><span class="nx">data2</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">setCurrentData</span><span class="p">(</span><span class="nx">data3</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">},</span> <span class="p">[</span><span class="nx">id</span><span class="p">]);</span>
-
-<span class="c1">//id를 이용해서 현재 선택된 프로젝트의 데이터를 저장했다.</span>
-</code></pre></div></div>
-
-<h2 id="이미지-불러오기">이미지 불러오기</h2>
-
-<p>프로젝트 영상 파일을 불러올 때 일일이 import 하니까 컴포넌트가 복잡해져서 파일을 만들었다.</p>
-
-<p><img width="163" alt="스크린샷 2023-02-14 오후 11 05 53" src="https://user-images.githubusercontent.com/110877564/218761783-34a4e46d-9a5f-4617-9b30-98aeaea614a9.png" /></p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//index.js</span>
-<span class="k">import</span> <span class="nx">home</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./home.mov</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">main</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./main.mov</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">user</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./user.mov</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">user2</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./user2.mov</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="p">{</span> <span class="nx">home</span><span class="p">,</span> <span class="nx">main</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">user2</span> <span class="p">};</span>
-</code></pre></div></div>
-
-<p>이런 식으로 index 파일에서 import 하고 사용하는 컴포넌트에서 한 번에 불러왔다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">home</span><span class="p">,</span> <span class="nx">main</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">user2</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../img/project1/index</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h2 id="hover-시-영상-재생">hover 시 영상 재생</h2>
-
-<p>영상을 모두 재생하면 정신이 없어서 마우스를 올린 영역만 재생되도록 만들었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">video</span>
-  <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">video</span><span class="p">}</span>
-  <span class="nx">muted</span>
-  <span class="nx">onMouseOver</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">play</span><span class="p">()}</span>
-  <span class="nx">onMouseOut</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pause</span><span class="p">()}</span>
-<span class="sr">/</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<p>재생 중인 영상만 채도가 높아지게 조절했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">filter</span><span class="p">:</span> <span class="nx">saturate</span><span class="p">(</span><span class="mi">40</span><span class="o">%</span><span class="p">);</span> <span class="c1">//채도 낮춤</span>
-
-  <span class="p">:</span><span class="nx">hover</span> <span class="p">{</span>
-    <span class="nl">filter</span><span class="p">:</span> <span class="nx">saturate</span><span class="p">(</span><span class="mi">120</span><span class="o">%</span><span class="p">);</span>
-  <span class="p">}</span>
-</code></pre></div></div>
-
-<p><img width="1369" alt="스크린샷 2023-02-14 오후 11 11 32" src="https://user-images.githubusercontent.com/110877564/218763214-7185f93c-73ac-4f36-ada2-064d8416b193.png" /></p>
-
-<p>마우스를 올린 영역만 재생되면서 채도가 높아진다.</p>
-
-<h2 id="styled-components-오류">styled-components 오류</h2>
-
-<p><img width="521" alt="스크린샷 2023-02-14 오후 11 14 03" src="https://user-images.githubusercontent.com/110877564/218763932-c150eab2-fc10-4673-aed6-7ed318a4cbc9.png" /></p>
-
-<p>컴포넌트 안에서 스타일을 지정하면 이런 오류가 뜬다.
-전에도 이랬던 것 같은데 정리해두지 않으니까 똑같은 실수를 반복하는 것 같다..</p>
-
-<h2 id="push하지-않은-commit-조회">push하지 않은 commit 조회</h2>
-
-<p>영상 용량 문제로 push를 하다가 에러가 났다. 파일을 수정하고 다시 올리는데 계속 에러가 나서 이전 커밋을 조회해서 없애보기로 했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">log</span> <span class="o">--</span><span class="nx">branches</span> <span class="o">--</span><span class="nx">not</span> <span class="o">--</span><span class="nx">remotes</span>
-</code></pre></div></div>
-
-<p>조회된 커밋 중에서 마지막 커밋으로 되돌리려고 reset을 사용했다. <code class="language-plaintext highlighter-rouge">--soft</code>는 변경 이력은 삭제하지만 내용은 남기는 옵션이다. (<code class="language-plaintext highlighter-rouge">git add</code> 안 되어 있는 상태)</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">git</span> <span class="nx">reset</span> <span class="o">--</span><span class="nx">soft</span> <span class="dl">'</span><span class="s1">commit</span><span class="dl">'</span>
-</code></pre></div></div>
-
-<p>다시 커밋 후 push 했더니 잘 올라갔다.</p>
-
-<h3 id="styled-props">styled props</h3>
-
-<p>페이지마다 영상의 높이가 조금씩 달라 공백이 생기는 등 문제가 생겨서 높이를 각각 설정했다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//props로 넘기기</span>
- <span class="o">&lt;</span><span class="nx">ArticleContainer</span> <span class="nx">height</span><span class="o">=</span><span class="p">{</span><span class="nx">projectId</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">50%</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">65%</span><span class="dl">"</span><span class="p">}</span><span class="o">&gt;</span>
-
- <span class="c1">//style 지정</span>
-  <span class="nx">height</span><span class="p">:</span> <span class="nx">$</span><span class="p">{(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">props</span><span class="p">.</span><span class="nx">height</span> <span class="o">||</span> <span class="kc">null</span><span class="p">};</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry><entry><title type="html">[HTML] 에디터에서 HTML 자동완성하기</title><link href="http://localhost:4000/html/autocomplete/" rel="alternate" type="text/html" title="[HTML] 에디터에서 HTML 자동완성하기" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/html/autocomplete</id><content type="html" xml:base="http://localhost:4000/html/autocomplete/"><![CDATA[<h2 id="태그-자동완성">태그 자동완성</h2>
-
-<h3 id="입력">입력</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>div&gt;div*5&gt;img[src="img/$.png"]+h2&gt;lorem5^p<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">&gt;</code> : 자식 태그로 생성</li>
-  <li><code class="language-plaintext highlighter-rouge">[]</code> : 태그의 속성 지정</li>
-  <li><code class="language-plaintext highlighter-rouge">$</code> : 태그가 반복될 때마다 1씩 증가된 값이 입력.</li>
-  <li><code class="language-plaintext highlighter-rouge">+</code> : 형제 태그로 생성</li>
-  <li><code class="language-plaintext highlighter-rouge">^</code> : 다시 상위 태그로 이동</li>
-  <li><code class="language-plaintext highlighter-rouge">lorem + 숫자</code> : Lorem Ipsum을 숫자만큼 생성</li>
-</ul>
-
-<h3 id="결과">결과</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/1.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Lorem ipsum dolor sit amet.<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/2.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Sunt, fuga. Alias, repellat et.<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/3.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Dolorem unde reprehenderit sapiente hic?<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/4.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Odit cupiditate consectetur expedita ipsa.<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/5.png"</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;h2&gt;</span>Et nam perspiciatis harum quaerat!<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<h2 id="html-기본-틀">html 기본 틀</h2>
-
-<h3 id="입력-1">입력</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!tab
-</code></pre></div></div>
-
-<h3 id="결과-1">결과</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="html" /><category term="html" /><category term="autocomplete" /><summary type="html"><![CDATA[html code autocomplete]]></summary></entry><entry><title type="html">[Mini Project] 포트폴리오 만들기 1.Home page</title><link href="http://localhost:4000/mini%20project/portfolio-1/" rel="alternate" type="text/html" title="[Mini Project] 포트폴리오 만들기 1.Home page" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-14T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/portfolio-1</id><content type="html" xml:base="http://localhost:4000/mini%20project/portfolio-1/"><![CDATA[<p>사이드 프로젝트로 포트폴리오를 만들어보려고 한다. <br />
-팀 프로젝트 때 CSS를 많이 다루지 않아서 포트폴리오 페이지에서는 이것저것 적용해보고 싶다.</p>
-
-<h2 id="라우팅">라우팅</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">Routes</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Home</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/about</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">About</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/project</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Project</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/project/:id</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">SingleProject</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/contact</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Contact</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/Routes</span><span class="err">&gt;
-</span></code></pre></div></div>
-
-<h2 id="home">Home</h2>
-
-<p>Home 페이지에서는 전체 정보를 요약하는 카드형 컴포넌트를 반구형으로 배치했다.</p>
-
-<p>각 카드의 제목은 <code class="language-plaintext highlighter-rouge">opacity</code>를 0으로 줘서 안 보이게 하다가 호버 시 위로 올라오면서 <code class="language-plaintext highlighter-rouge">opacity:1</code>로 보이게 만들었다.
-after 가상자도 넣어 같이 올라온다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">transition: all 0.5s</code> 속성을 넣어 서서히 움직인다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">moon</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../img/moon.png</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">moon</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
-</span></code></pre></div></div>
-
-<p>이미지는 img폴더에 넣어둔 png 파일을 불러와서 <code class="language-plaintext highlighter-rouge">src</code> 속성으로 넣어주었다.</p>
-
-<h2 id="font-awesome-사용하기">font-awesome 사용하기</h2>
-
-<p>리액트에서 <code class="language-plaintext highlighter-rouge">font-awesome</code>을 사용할 때는 설치를 한 후에 <code class="language-plaintext highlighter-rouge">import</code>를 해주어야 한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">FontAwesomeIcon</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@fortawesome/react-fontawesome</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">//깃허브 아이콘</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">faGithub</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@fortawesome/free-brands-svg-icons</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">//사용 시</span>
-<span class="o">&lt;</span><span class="nx">FontAwesomeIcon</span> <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">faGithub</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
-</span></code></pre></div></div>
-
-<h2 id="컴포넌트">컴포넌트</h2>
-
-<p>카드를 만드는데 반복되는 태그가 너무 많아서 컴포넌트로 만들어주었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Box3</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">pic</span><span class="dl">"</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">con</span><span class="dl">"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">con</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">date</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>프로젝트 목록도 배열로 선언해서 추가하기 쉽게 바꿨다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">box3contents</span> <span class="o">=</span> <span class="p">[{</span>
-  <span class="na">src</span><span class="p">:</span><span class="nx">moon</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">:</span><span class="dl">'</span><span class="s1">제목</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">con</span><span class="p">:</span><span class="dl">'</span><span class="s1">설명.</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">date</span><span class="p">:</span><span class="dl">'</span><span class="s1">기간</span><span class="dl">'</span>
-  <span class="p">},</span>
-  <span class="p">...</span>
-<span class="p">]</span>
-
-<span class="p">...</span>
-  <span class="p">{</span><span class="nx">box3contents</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">con</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">Box3</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">idx</span><span class="p">}</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">con</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span> <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">con</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span> <span class="nx">con</span><span class="o">=</span><span class="p">{</span><span class="nx">con</span><span class="p">.</span><span class="nx">con</span><span class="p">}</span> <span class="nx">date</span><span class="o">=</span><span class="p">{</span><span class="nx">con</span><span class="p">.</span><span class="nx">date</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>    <span class="p">))}</span> <span class="c1">//map으로 나열</span>
-</code></pre></div></div>
-
-<h2 id="애니메이션">애니메이션</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//카드들을 둥글게 배치. -를 붙여야 안쪽에서 본 것처럼 보인다.</span>
-  <span class="p">.</span><span class="nx">box1</span> <span class="p">{</span>
-    <span class="nl">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">20</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translateZ</span><span class="p">(</span><span class="o">-</span><span class="mi">764</span><span class="nx">px</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="p">.</span><span class="nx">box2</span> <span class="p">{</span>
-    <span class="nl">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">65</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translateZ</span><span class="p">(</span><span class="o">-</span><span class="mi">764</span><span class="nx">px</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="p">.</span><span class="nx">box3</span> <span class="p">{</span>
-    <span class="nl">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translateZ</span><span class="p">(</span><span class="o">-</span><span class="mi">764</span><span class="nx">px</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="p">.</span><span class="nx">box4</span> <span class="p">{</span>
-    <span class="nl">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="o">-</span><span class="mi">70</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translateZ</span><span class="p">(</span><span class="o">-</span><span class="mi">764</span><span class="nx">px</span><span class="p">);</span>
-  <span class="p">}</span>
-
-<span class="c1">//animation</span>
-<span class="p">@</span><span class="nd">keyframes</span> <span class="nx">ani</span> <span class="p">{</span>
-    <span class="mi">0</span><span class="o">%</span> <span class="p">{</span>
-      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="nx">deg</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="mi">25</span><span class="o">%</span> <span class="p">{</span>
-      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">30</span><span class="nx">deg</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="mi">50</span><span class="o">%</span> <span class="p">{</span>
-      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="nx">deg</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="mi">75</span><span class="o">%</span> <span class="p">{</span>
-      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="nx">deg</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="mi">100</span><span class="o">%</span> <span class="p">{</span>
-      <span class="na">transform</span><span class="p">:</span> <span class="nx">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="nx">deg</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="c1">//animation 적용</span>
-   <span class="nl">animation</span><span class="p">:</span> <span class="nx">ani</span> <span class="nx">linear</span> <span class="mi">15</span><span class="nx">s</span> <span class="nx">infinite</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h2 id="외부링크-연결">외부링크 연결</h2>
-
-<p>클릭 시 내부 링크로 이동 시에는 useNavigate를 사용하고, 외부 링크 시에는 <code class="language-plaintext highlighter-rouge">window.open</code>을 사용해서 외부 링크로 연결하도록 만들었는데, 인수로 전달받은 url 앞에 <code class="language-plaintext highlighter-rouge">localhost:3000</code>이 붙어서 이동하는 문제가 발생했다.</p>
-
-<p>=&gt; url에 <code class="language-plaintext highlighter-rouge">http://</code> 를 붙였더니 잘 이동한다…</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="nx">div</span>
-        <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span>
-          <span class="nx">props</span><span class="p">.</span><span class="nx">nav</span>
-            <span class="p">?</span> <span class="nx">handleNavigate</span><span class="p">(</span><span class="s2">`/</span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">nav</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
-            <span class="p">:</span> <span class="nx">handleOpenLink</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span>
-        <span class="p">}</span>
-      <span class="o">&gt;</span>
-
-  <span class="kd">const</span> <span class="nx">handleOpenLink</span> <span class="o">=</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
-  <span class="p">};</span>
-
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="portfolio" /><category term="react" /><summary type="html"><![CDATA[portfolio project]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="dummy" /><summary type="html"><![CDATA[dummy, lorem picsum, chance, luxon]]></summary></entry></feed>

@@ -226,4 +226,52 @@ var store = [{
         "tags": ["project","portfolio","react"],
         "url": "/mini%20project/portfolio-6/",
         "teaser": null
+      },{
+        "title": "page setting",
+        "excerpt":"초기 페이지 설정   복사용 파일 만들기   //src/Copy.js export default function Copy() {   return &lt;div&gt;Copy&lt;/div&gt;; }   터미널에서 복사   //terminal mkdir pages cp Copy.js pages/page1.js cp Copy.js pages/page2.js cp Copy.js pages/page3.js ...  ","categories": ["notes"],
+        "tags": ["page"],
+        "url": "/notes/page-setting/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 6. 평균 구하기 (javascript)",
+        "excerpt":"🤔 문제 정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요. 제한사항 arr은 길이 1 이상, 100 이하인 배열입니다. arr의 원소는 -10,000 이상 10,000 이하인 정수입니다. 입출력 예시 maps answer [1,2,3,4] 2.5 [5,5] 5 의사코드 reduce 메서드를 사용하여 모든 값을 더한다 합계를 배열의 길이로 나눈다 제출한 답 function solution(arr)...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/1-get-average/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 7. 짝수와 홀수 (javascript)",
+        "excerpt":"🤔 문제 정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요. 제한사항 num은 int 범위의 정수입니다. 0은 짝수입니다. 입출력 예시 maps answer 3 “Odd” 4 “Even” 의사코드 3항 연산자를 사용해서 나머지가 0이면 짝수, 0이 아니면 홀수를 리턴한다. 제출한 답 function solution(num) { return num % 2...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/2-even-and-odd/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive]  1. 프로그래밍",
+        "excerpt":"프로그래밍 컴퓨터에게 실행을 요구하는 커뮤니케이션 컴퓨터가 이해할 수 있을 정도로 정확하고 상세하게 요구사항을 설명하는 작업 요구사항의 집합을 분석해서 적절한 자료구조와 함수의 집합으로 변환한 뒤, 그 흐름을 제어하는 것 요구사항 분석 문제(요구사항)를 명확히 이해하기 단순하게 분해하기 자료를 정리하고 구분하기 순서에 맞게 행위를 배열하기 프로그래밍 언어 컴퓨터와의 대화에 사용되는 표현 수단 사람과...","categories": ["notes"],
+        "tags": ["programming"],
+        "url": "/notes/1-programming/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive]  2. javascript",
+        "excerpt":"자바스크립트 웹 브라우저에서 사용하기 위해 만들어진 프로그래밍 언어 자바스크립트의 특징 웹 브라우저에서 동작하는 유일한 프로그래밍 언어 인터프리터 언어 멀티 패러다임 프로그래밍 언어 : 명령형, 함수형, 프로토타입 기반 객체지향 프로그래밍 지원 프로토타입 기반 객체지향 프로그래밍 Ajax(Asynchronous Javascript and XML) 자바스크립트를 이용해 서버와 브라우저가 비동기방식으로 데이터를 교환할 수 있는 통신 기능 서버에서...","categories": ["notes"],
+        "tags": ["javascript","Ajax","Node.js","ECMAScript"],
+        "url": "/notes/2-javascript/",
+        "teaser": null
+      },{
+        "title": "[typescript] 함수의 타입 정의",
+        "excerpt":"1. 함수의 타이핑(Typing the function) // 1. 각 매개변수의 타입 입력, 괄호 뒤에는 함수가 반환하는 값의 타입을 입력한다. function add(num1: number, num2: number): number { return num1 + num2; } // 2. 아무것도 리턴하지 않으면 void를 입력하면 된다. function add2(num1: number, num2: number): void { console.log(num1 + num2); } 2....","categories": ["typescript"],
+        "tags": ["typescript","function"],
+        "url": "/typescript/function/",
+        "teaser": null
+      },{
+        "title": "[typescript] interface",
+        "excerpt":"인터페이스는 객체의 타입을 정의하기 위해 사용된다. 인터페이스 정의하기 interface Character { name: string; age: number; } 선택적 프로퍼티(Optional Properties) 사용하기 프로퍼티가 필수 사항이 아닐 때에는 ?를 붙여 표시한다. interface Character { name: string; age: number; height?: string; //키를 Optional Properties로 처리 } let character: Character = { name: \"Jack\", age:...","categories": ["typescript"],
+        "tags": ["typescript","interface"],
+        "url": "/typescript/interface/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive]  3. 변수",
+        "excerpt":"1. 변수의 정의와 사용하는 이유 변수의 의미 변수를 사용하는 이유 2. 변수를 선언하는 방법 변수 선언 변수 선언 방법 변수가 선언되는 단계 3. 값 할당 &amp; 재할당하기 변수에 값을 할당하는 방법 변수 선언과 값의 할당 시점 값을 재할당할 때 생기는 일 4. 식별자 네이밍 규칙 식별자 식별자 네이밍 규칙 네이밍...","categories": ["notes"],
+        "tags": ["javascript","variable"],
+        "url": "/notes/variable/",
+        "teaser": null
       }]
