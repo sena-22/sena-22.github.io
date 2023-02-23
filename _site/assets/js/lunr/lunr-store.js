@@ -292,4 +292,10 @@ var store = [{
         "tags": ["javascript","type"],
         "url": "/javascript/2-type/",
         "teaser": null
+      },{
+        "title": "[Programmers] 9. 자릿수 구하기 (javascript)",
+        "excerpt":"🤔 문제 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요. 예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다. 제한사항 N의 범위 : 100,000,000 이하의 자연수 입출력 예시 maps answer 123 6 987 24 의사코드 Array.from() 메서드를 사용해서 N을...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/place-value/",
+        "teaser": null
       }]

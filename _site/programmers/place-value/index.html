@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Mini Project] 포트폴리오 만들기 4. react-type-animation - Reyna</title>
-<meta name="description" content="portfolio project">
+<!-- begin _includes/seo.html --><title>[Programmers] 9. 자릿수 구하기 (javascript) - Reyna</title>
+<meta name="description" content="자릿수 구하기">
 
 
   <meta name="author" content="Reyna">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Mini Project] 포트폴리오 만들기 4. react-type-animation">
-<meta property="og:url" content="http://localhost:4000/mini%20project/portfolio-4/">
+<meta property="og:title" content="[Programmers] 9. 자릿수 구하기 (javascript)">
+<meta property="og:url" content="http://localhost:4000/programmers/place-value/">
 
 
-  <meta property="og:description" content="portfolio project">
-
-
-
+  <meta property="og:description" content="자릿수 구하기">
 
 
 
 
-  <meta property="article:published_time" content="2023-02-16T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-02-16T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-02-23T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-02-23T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/mini%20project/portfolio-4/">
+
+<link rel="canonical" href="http://localhost:4000/programmers/place-value/">
 
 
 
@@ -374,16 +374,16 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Mini Project] 포트폴리오 만들기 4. react-type-animation"
+      content="[Programmers] 9. 자릿수 구하기 (javascript)"
     /> <meta
       itemprop="description"
-      content="portfolio project"
+      content="자릿수 구하기"
     /> <meta
       itemprop="datePublished"
-      content="2023-02-16T00:00:00+09:00"
+      content="2023-02-23T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-02-16T00:00:00+09:00"
+      content="2023-02-23T00:00:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -391,7 +391,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Mini Project] 포트폴리오 만들기 4. react-type-animation</p>
+          <p>[Programmers] 9. 자릿수 구하기 (javascript)</p>
 
         </h1>
          
@@ -399,13 +399,13 @@
           <strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
           >
-          <time datetime="2023-02-16T00:00:00+09:00"
-            >2023.02.16</time
+          <time datetime="2023-02-23T00:00:00+09:00"
+            >2023.02.23</time
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-02-16"
-            >2023.02.16</time
+          <time datetime="2023-02-23"
+            >2023.02.23</time
           >
         </p>
           
@@ -417,7 +417,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#mini-project" class="page__taxonomy-item p-category" rel="tag">mini project</a>
+      <a href="/categories/#programmers" class="page__taxonomy-item p-category" rel="tag">programmers</a>
     
     </span>
   </p>
@@ -430,13 +430,13 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#portfolio" class="page__taxonomy-item p-category" rel="tag">portfolio</a><span class="sep">, </span>
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a><span class="sep">, </span>
     
-      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a><span class="sep">, </span>
+      <a href="/tags/#lv-1" class="page__taxonomy-item p-category" rel="tag">Lv.1</a><span class="sep">, </span>
     
-      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
+      <a href="/tags/#recursive" class="page__taxonomy-item p-category" rel="tag">recursive</a><span class="sep">, </span>
     
-      <a href="/tags/#react-type-animation" class="page__taxonomy-item p-category" rel="tag">react-type-animation</a>
+      <a href="/tags/#study" class="page__taxonomy-item p-category" rel="tag">study</a>
     
     </span>
   </p>
@@ -454,68 +454,95 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#설치">설치</a><ul><li><a href="#sequence-필수">sequence (필수)</a></li><li><a href="#speed">speed</a></li><li><a href="#style">style</a></li><li><a href="#wrapper">wrapper</a></li><li><a href="#repeat">repeat</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#-문제">🤔 문제</a></li><li><a href="#제한사항">제한사항</a></li><li><a href="#입출력-예시">입출력 예시</a></li><li><a href="#의사코드">의사코드</a></li><li><a href="#제출한-답">제출한 답</a></li><li><a href="#숫자를-배열로-분할하기">숫자를 배열로 분할하기</a><ul><li><a href="#1-arrayfrom">1. Array.from()</a></li><li><a href="#2-split-메서드를-사용하는-방법">2. split 메서드를 사용하는 방법</a></li></ul></li><li><a href="#다른-풀이">다른 풀이</a></li></ul>
 
           </nav>
         </aside>
-         <p>react-type-animation를 이용해서 자동으로 단어가 타이핑되도록 만들었다.</p>
+         <h2 id="-문제">🤔 문제</h2>
 
-<h2 id="설치">설치</h2>
+<p>자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요. <br />
+예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">react</span><span class="o">-</span><span class="nx">type</span><span class="o">-</span><span class="nx">animation</span>
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>N의 범위 : 100,000,000 이하의 자연수</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>maps</th>
+      <th>answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>123</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>987</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Array.from()</code> 메서드를 사용해서 N을 배열로 만든다.</li>
+  <li><code class="language-plaintext highlighter-rouge">reduce()</code>로 각 자리의 합을 구한다.</li>
+</ol>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">n</span><span class="p">),</span> <span class="nb">Number</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">cur</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p class="notice--primary"><a href="https://react-type-animation.vercel.app/">react-type-animation example</a></p>
+<h2 id="숫자를-배열로-분할하기">숫자를 배열로 분할하기</h2>
 
-<p>사용방법이 공식 문서에 잘 나와있어서 거의 그대로 사용했다.</p>
+<h3 id="1-arrayfrom">1. Array.from()</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">TypeAnimation</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-type-animation</span><span class="dl">"</span><span class="p">;</span>
+<p><code class="language-plaintext highlighter-rouge">Array.from()</code>은 첫 번째 인자로 배열로 바꾸고 싶은 유사배열 객체나 이터러블 객체(인덱스를 가지고, 반복할 수 있는 객체) 를 전달하고, 두 번째 인자로 배열의 모든 요소에 대해 호출되는 함수를 전달한다.
+이 문제의 경우 문자열로 변환된 숫자와 Number 생성자를 전달한다.</p>
 
-<span class="o">&lt;</span><span class="nx">TypeAnimation</span>
-  <span class="nx">sequence</span><span class="o">=</span><span class="p">{[</span><span class="dl">"</span><span class="s2">text1</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text2</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text3</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]}</span>
-  <span class="nx">speed</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span>
-  <span class="nx">style</span><span class="o">=</span>
-  <span class="nx">wrapper</span><span class="o">=</span><span class="dl">"</span><span class="s2">h1</span><span class="dl">"</span>
-  <span class="nx">repeat</span><span class="o">=</span><span class="p">{</span><span class="kc">Infinity</span><span class="p">}</span>
-<span class="sr">/&gt;</span><span class="err">;
-</span></code></pre></div></div>
-
-<h3 id="sequence-필수">sequence (필수)</h3>
-
-<p>원하는 문장과 멈춰 있는 시간을 지정해준다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sequence</span><span class="o">=</span><span class="p">{[</span><span class="dl">"</span><span class="s2">text1</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text2</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text3</span><span class="dl">"</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]}</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Array.from(String(num), Number)</span>
+<span class="kd">let</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">),</span> <span class="nb">Number</span><span class="p">);</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
+<span class="c1">// 두 번째 인자를 전달하지 않으면 각 요소가 문자열로 반환된다.</span>
+<span class="kd">let</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">));</span> <span class="c1">//['1', '2', '3', '4', '5']</span>
 </code></pre></div></div>
 
-<h3 id="speed">speed</h3>
+<h3 id="2-split-메서드를-사용하는-방법">2. split 메서드를 사용하는 방법</h3>
 
-<p>재생 속도를 지정해준다. 1-99까지 있고 낮을수록 느리다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">speed</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="c1">//default:40</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">strArr</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span> <span class="c1">//['1', '2', '3', '4', '5']</span>
+<span class="kd">let</span> <span class="nx">numArr</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nb">Number</span><span class="p">);</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
 </code></pre></div></div>
 
-<h3 id="style">style</h3>
+<p>숫자를 문자로 변환할 때 String 생성자를 사용하는 방법 외에도 암묵적 타입 변환을 사용하는 방법도 있다.</p>
 
-<p>글자 스타일을 지정해준다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">style</span><span class="o">=</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12345</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nb">Number</span><span class="p">);</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
 </code></pre></div></div>
 
-<h3 id="wrapper">wrapper</h3>
+<h2 id="다른-풀이">다른 풀이</h2>
 
-<p>렌더링 될 태그를 선택한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">wrapper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">h1</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//default:div</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">cur</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="repeat">repeat</h3>
+<p>배열을 숫자 타입으로 바꾼 후 reduce를 사용하지 않고 reduce를 사용하면서 요소를 하나씩 숫자 타입으로 바꾼 방법이다.</p>
 
-<p>반복 횟수를 설정한다.</p>
+<p class="notice--primary">💡 <a href="https://sena-22.github.io/javascript/2-type/#1-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EB%B3%80%ED%99%98">숫자를 문자로 바꾸기</a> <br />
+💡 <a href="https://codingbeautydev.com/blog/javascript-split-number-into-array/">JavaScript에서 숫자를 배열로 분할하는 방법</a></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">repeat</span><span class="o">=</span><span class="p">{</span><span class="kc">Infinity</span><span class="p">}</span>
- <span class="c1">//숫자로 입력할 수도 있다</span>
- <span class="nx">repeat</span><span class="o">=</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span>
-</code></pre></div></div>
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>
  
       </section>
 
@@ -540,12 +567,11 @@
  
   <nav class="pagination">
     
-      <a href="/mini%20project/portfolio-3/" class="pagination--pager" title="[Mini Project] 포트폴리오 만들기 3. 이메일 수신하기
+      <a href="/javascript/2-type/" class="pagination--pager" title="[Deep Dive]  5. 데이터 타입
 ">Previous</a>
     
     
-      <a href="/mini%20project/portfolio-5/" class="pagination--pager" title="[Mini Project] 포트폴리오 만들기 5. react-code-blocks
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -561,44 +587,6 @@
     </h2>
     <div class="grid__wrapper">
        
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/programmers/place-value/" rel="permalink">[Programmers] 9. 자릿수 구하기 (javascript)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">자릿수 구하기
-</p>
-  </article>
-</div>
-  
 
 
 
@@ -625,7 +613,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          6 minute read
+          5 minute read
         
       </span>
     
@@ -709,6 +697,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">약수의 합
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/variable/" rel="permalink">[Deep Dive]  3. 변수
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">variable
 </p>
   </article>
 </div>
