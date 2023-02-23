@@ -246,15 +246,15 @@ var store = [{
         "teaser": null
       },{
         "title": "[Deep Dive]  1. 프로그래밍",
-        "excerpt":"프로그래밍 컴퓨터에게 실행을 요구하는 커뮤니케이션 컴퓨터가 이해할 수 있을 정도로 정확하고 상세하게 요구사항을 설명하는 작업 요구사항의 집합을 분석해서 적절한 자료구조와 함수의 집합으로 변환한 뒤, 그 흐름을 제어하는 것 요구사항 분석 문제(요구사항)를 명확히 이해하기 단순하게 분해하기 자료를 정리하고 구분하기 순서에 맞게 행위를 배열하기 프로그래밍 언어 컴퓨터와의 대화에 사용되는 표현 수단 사람과...","categories": ["notes"],
+        "excerpt":"프로그래밍 컴퓨터에게 실행을 요구하는 커뮤니케이션 컴퓨터가 이해할 수 있을 정도로 정확하고 상세하게 요구사항을 설명하는 작업 요구사항의 집합을 분석해서 적절한 자료구조와 함수의 집합으로 변환한 뒤, 그 흐름을 제어하는 것 요구사항 분석 문제(요구사항)를 명확히 이해하기 단순하게 분해하기 자료를 정리하고 구분하기 순서에 맞게 행위를 배열하기 프로그래밍 언어 컴퓨터와의 대화에 사용되는 표현 수단 사람과...","categories": ["javascript"],
         "tags": ["programming"],
-        "url": "/notes/1-programming/",
+        "url": "/javascript/1-programming/",
         "teaser": null
       },{
         "title": "[Deep Dive]  2. javascript",
-        "excerpt":"자바스크립트 웹 브라우저에서 사용하기 위해 만들어진 프로그래밍 언어 자바스크립트의 특징 웹 브라우저에서 동작하는 유일한 프로그래밍 언어 인터프리터 언어 멀티 패러다임 프로그래밍 언어 : 명령형, 함수형, 프로토타입 기반 객체지향 프로그래밍 지원 프로토타입 기반 객체지향 프로그래밍 Ajax(Asynchronous Javascript and XML) 자바스크립트를 이용해 서버와 브라우저가 비동기방식으로 데이터를 교환할 수 있는 통신 기능 서버에서...","categories": ["notes"],
+        "excerpt":"자바스크립트 웹 브라우저에서 사용하기 위해 만들어진 프로그래밍 언어 자바스크립트의 특징 웹 브라우저에서 동작하는 유일한 프로그래밍 언어 인터프리터 언어 멀티 패러다임 프로그래밍 언어 : 명령형, 함수형, 프로토타입 기반 객체지향 프로그래밍 지원 프로토타입 기반 객체지향 프로그래밍 Ajax(Asynchronous Javascript and XML) 자바스크립트를 이용해 서버와 브라우저가 비동기방식으로 데이터를 교환할 수 있는 통신 기능 서버에서...","categories": ["javascript"],
         "tags": ["javascript","Ajax","Node.js","ECMAScript"],
-        "url": "/notes/2-javascript/",
+        "url": "/javascript/2-javascript/",
         "teaser": null
       },{
         "title": "[typescript] 함수의 타입 정의",
@@ -270,8 +270,26 @@ var store = [{
         "teaser": null
       },{
         "title": "[Deep Dive]  3. 변수",
-        "excerpt":"1. 변수의 정의와 사용하는 이유 변수의 의미 변수를 사용하는 이유 2. 변수를 선언하는 방법 변수 선언 변수 선언 방법 변수가 선언되는 단계 3. 값 할당 &amp; 재할당하기 변수에 값을 할당하는 방법 변수 선언과 값의 할당 시점 값을 재할당할 때 생기는 일 4. 식별자 네이밍 규칙 식별자 식별자 네이밍 규칙 네이밍...","categories": ["notes"],
+        "excerpt":"1. 변수의 정의와 사용하는 이유 변수의 의미 변수를 사용하는 이유 2. 변수를 선언하는 방법 변수 선언 변수 선언 방법 변수가 선언되는 단계 3. 값 할당 &amp; 재할당하기 변수에 값을 할당하는 방법 변수 선언과 값의 할당 시점 값을 재할당할 때 생기는 일 4. 식별자 네이밍 규칙 식별자 식별자 네이밍 규칙 네이밍...","categories": ["javascript"],
         "tags": ["javascript","variable"],
-        "url": "/notes/variable/",
+        "url": "/javascript/variable/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 8. 약수의 합 (javascript)",
+        "excerpt":"🤔 문제 정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요. 제한사항 n은 0 이상 3000이하인 정수입니다 입출력 예시 maps answer 12 28 5 6 의사코드 해당 수를 나눈 나머지가 0이 되는 숫자가 약수 1부터 n까지 1씩 증가시키면서 n을 해당 수로 나눈 나머지가 0일 때만 더해준다. 더한...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/sum-of-divisor/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive]  4. 표현식",
+        "excerpt":"1. 값 값 표현식이 평가되어 생성된 결과 평가 식을 해석해서 값을 생성하거나 참조하는 것 2. 표현식 표현식 값으로 평가될 수 있는 문 리터럴 사람이 이해할 수 있는 문자 혹은 약속된 기호를 사용해서 값을 생성하는 표기법(notation) 자바스크립트 엔진이 런타임에 리터럴을 평가해서 값을 생성한다. 리터럴도 값으로 평가되므로 표현식이다. 3. 문 토큰 문법적인...","categories": ["javascript"],
+        "tags": ["javascript","expression"],
+        "url": "/javascript/1-expression/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive]  5. 데이터 타입",
+        "excerpt":"1. 타입(데이터 타입) 타입은 값의 종류를 말한다. ES6에서는 7개의 타입을 제공하며, 원시 타입과 객체 타입으로 분류할 수 있다. 원시 타입(primitive type) number javascript는 다른 언어와 달리 하나의 숫자 타입만 존재한다. 정수만을 위한 타입이 없어 모든 수를 실수로 처리한다. 양의 무한대(Infinity), 음의 무한대(-Infinity), 산술연산불가(NaN) 표현도 가능하다. NaN은 대소문자를 꼭 지켜야 한다....","categories": ["javascript"],
+        "tags": ["javascript","type"],
+        "url": "/javascript/2-type/",
         "teaser": null
       }]

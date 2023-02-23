@@ -5,7 +5,6 @@
 .archive {
   margin-top: 1em;
   margin-bottom: 2em;
-  
 
   @include breakpoint($large) {
     float: right;
@@ -29,7 +28,6 @@
 
   a[rel="permalink"] {
     position: static;
-
   }
 }
 
@@ -48,21 +46,18 @@
 
 .archive__item-title {
   margin-bottom: 0.25em;
-  font-family:$nanum-gothic-coding,$sans-serif-narrow;
+  font-family: $nanum-gothic-coding, $sans-serif-narrow;
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
 
-
   a[rel="permalink"]::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-
-
   }
 
   a + a {
@@ -79,11 +74,11 @@
 }
 
 .page__taxonomy-item-tag {
-  color:$lighter-gray;
-  background-color:$base08;
-  border-radius:3px;
-  font-size:13px;
-  padding:3px;
+  background: rgba(27, 31, 35, 0.05);
+  color: #476582;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 3px;
 }
 
 .archive__item-excerpt {
@@ -299,7 +294,7 @@
   }
 
   a.btn::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -325,7 +320,7 @@
     }
 
     a.btn::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -366,7 +361,7 @@
     }
 
     a.btn::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -410,7 +405,7 @@
     }
 
     a.btn::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -456,7 +451,7 @@
    Wide Pages
    ========================================================================== */
 
-  .wide {
+.wide {
   .archive {
     @include breakpoint($large) {
       padding-right: 0;
@@ -471,7 +466,7 @@
 /* Place inside a single layout */
 
 .layout--single {
-	.feature__wrapper {
-		display: inline-block;
-	}
+  .feature__wrapper {
+    display: inline-block;
+  }
 }

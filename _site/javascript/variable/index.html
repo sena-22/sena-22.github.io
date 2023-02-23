@@ -1,0 +1,816 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Deep Dive]  3. 변수 - Reyna</title>
+<meta name="description" content="variable">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[Deep Dive]  3. 변수">
+<meta property="og:url" content="http://localhost:4000/javascript/variable/">
+
+
+  <meta property="og:description" content="variable">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-22T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-02-22T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/variable/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(49)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                           
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (5)</a
+          >
+        </li>
+         
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (3)</a
+          >
+        </li>
+             
+      </ul>
+      <ul>
+                            
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                            
+      </ul>
+      <ul>
+                            
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                           
+      </ul>
+      <ul>
+                   
+        <li>
+          <a href="/categories/css" class="">CSS (5)</a>
+        </li>
+                 
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                   
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (6)</a>
+        </li>
+               
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                         
+      </ul>
+      <ul>
+             
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (8)</a
+          >
+        </li>
+                       
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+      <ul>
+               
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                     
+      </ul>
+      <ul>
+                            
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (3)</a
+          >
+        </li>
+           
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[Deep Dive]  3. 변수"
+    /> <meta
+      itemprop="description"
+      content="variable"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-02-22T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-02-22T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[Deep Dive]  3. 변수</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-02-22T00:00:00+09:00"
+            >2023.02.22</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-02-22"
+            >2023.02.22</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a><span class="sep">, </span>
+    
+      <a href="/tags/#variable" class="page__taxonomy-item p-category" rel="tag">variable</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#1-변수의-정의와-사용하는-이유">1. 변수의 정의와 사용하는 이유</a><ul><li><a href="#변수의-의미">변수의 의미</a></li><li><a href="#변수를-사용하는-이유">변수를 사용하는 이유</a></li></ul></li><li><a href="#2-변수를-선언하는-방법">2. 변수를 선언하는 방법</a><ul><li><a href="#변수-선언">변수 선언</a></li><li><a href="#변수-선언-방법">변수 선언 방법</a></li><li><a href="#변수가-선언되는-단계">변수가 선언되는 단계</a></li></ul></li><li><a href="#3-값-할당--재할당하기">3. 값 할당 &amp; 재할당하기</a><ul><li><a href="#변수에-값을-할당하는-방법">변수에 값을 할당하는 방법</a></li><li><a href="#변수-선언과-값의-할당-시점">변수 선언과 값의 할당 시점</a></li><li><a href="#값을-재할당할-때-생기는-일">값을 재할당할 때 생기는 일</a></li></ul></li><li><a href="#4-식별자-네이밍-규칙">4. 식별자 네이밍 규칙</a><ul><li><a href="#식별자">식별자</a></li><li><a href="#식별자-네이밍-규칙">식별자 네이밍 규칙</a></li><li><a href="#네이밍-컨벤션">네이밍 컨벤션</a></li><li><a href="#자주-사용되는-네이밍-컨벤션">자주 사용되는 네이밍 컨벤션</a></li></ul></li><li><a href="#5-변수의-호이스팅">5. 변수의 호이스팅</a><ul><li><a href="#변수-호이스팅의-의미">변수 호이스팅의 의미</a></li><li><a href="#일시적-사각지대">일시적 사각지대</a></li><li><a href="#함수-호이스팅과-변수-호이스팅의-차이">함수 호이스팅과 변수 호이스팅의 차이</a></li></ul></li><li><a href="#6-변수의-생명주기">6. 변수의 생명주기</a><ul><li><a href="#지역-변수의-생명주기">지역 변수의 생명주기</a></li><li><a href="#전역-변수의-생명주기">전역 변수의 생명주기</a></li></ul></li><li><a href="#7-전역-변수의-문제점과-억제-방법">7. 전역 변수의 문제점과 억제 방법</a><ul><li><a href="#전역-변수의-문제점">전역 변수의 문제점</a></li><li><a href="#전역-변수의-사용을-억제하는-방법">전역 변수의 사용을 억제하는 방법</a></li></ul></li><li><a href="#8-let-const-키워드">8. let, const 키워드</a><ul><li><a href="#var-키워드로-선언한-변수의-문제점">var 키워드로 선언한 변수의 문제점</a></li><li><a href="#let-키워드">let 키워드</a></li><li><a href="#const-키워드">const 키워드</a></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <h2 id="1-변수의-정의와-사용하는-이유">1. 변수의 정의와 사용하는 이유</h2>
+
+<h3 id="변수의-의미">변수의 의미</h3>
+
+<h3 id="변수를-사용하는-이유">변수를 사용하는 이유</h3>
+
+<h2 id="2-변수를-선언하는-방법">2. 변수를 선언하는 방법</h2>
+
+<h3 id="변수-선언">변수 선언</h3>
+
+<h3 id="변수-선언-방법">변수 선언 방법</h3>
+
+<h3 id="변수가-선언되는-단계">변수가 선언되는 단계</h3>
+
+<h2 id="3-값-할당--재할당하기">3. 값 할당 &amp; 재할당하기</h2>
+
+<h3 id="변수에-값을-할당하는-방법">변수에 값을 할당하는 방법</h3>
+
+<h3 id="변수-선언과-값의-할당-시점">변수 선언과 값의 할당 시점</h3>
+
+<h3 id="값을-재할당할-때-생기는-일">값을 재할당할 때 생기는 일</h3>
+
+<h2 id="4-식별자-네이밍-규칙">4. 식별자 네이밍 규칙</h2>
+
+<h3 id="식별자">식별자</h3>
+
+<h3 id="식별자-네이밍-규칙">식별자 네이밍 규칙</h3>
+
+<h3 id="네이밍-컨벤션">네이밍 컨벤션</h3>
+
+<h3 id="자주-사용되는-네이밍-컨벤션">자주 사용되는 네이밍 컨벤션</h3>
+
+<ul>
+  <li>카멜 케이스</li>
+  <li>스네이크 케이스</li>
+  <li>파스칼 케이스</li>
+  <li>헝가리안 케이스</li>
+</ul>
+
+<h2 id="5-변수의-호이스팅">5. 변수의 호이스팅</h2>
+
+<h3 id="변수-호이스팅의-의미">변수 호이스팅의 의미</h3>
+
+<h3 id="일시적-사각지대">일시적 사각지대</h3>
+
+<h3 id="함수-호이스팅과-변수-호이스팅의-차이">함수 호이스팅과 변수 호이스팅의 차이</h3>
+
+<h2 id="6-변수의-생명주기">6. 변수의 생명주기</h2>
+
+<h3 id="지역-변수의-생명주기">지역 변수의 생명주기</h3>
+
+<h3 id="전역-변수의-생명주기">전역 변수의 생명주기</h3>
+
+<h2 id="7-전역-변수의-문제점과-억제-방법">7. 전역 변수의 문제점과 억제 방법</h2>
+
+<h3 id="전역-변수의-문제점">전역 변수의 문제점</h3>
+
+<ul>
+  <li>암묵적 결합</li>
+  <li>긴 생명 주기</li>
+  <li>스코프 체인 상에서 종점에 존재</li>
+  <li>네임스페이스 오염</li>
+</ul>
+
+<h3 id="전역-변수의-사용을-억제하는-방법">전역 변수의 사용을 억제하는 방법</h3>
+
+<ul>
+  <li>즉시 실행 함수</li>
+  <li>네임스페이스 객체</li>
+  <li>모듈 패턴</li>
+  <li>ES6 모듈</li>
+</ul>
+
+<h2 id="8-let-const-키워드">8. let, const 키워드</h2>
+
+<h3 id="var-키워드로-선언한-변수의-문제점">var 키워드로 선언한 변수의 문제점</h3>
+
+<ul>
+  <li>변수의 중복 선언 허용</li>
+  <li>함수 레벨 스코프</li>
+  <li>변수 호이스팅</li>
+</ul>
+
+<h3 id="let-키워드">let 키워드</h3>
+
+<ul>
+  <li>변수 중복 선언 금지</li>
+  <li>블록 레벨 스코프</li>
+  <li>변수 호이스팅</li>
+  <li>전역 객체와 let</li>
+</ul>
+
+<h3 id="const-키워드">const 키워드</h3>
+
+<ul>
+  <li>선언과 초기화</li>
+  <li>재할당 금지</li>
+  <li>상수</li>
+  <li>const 키워드와 객체</li>
+</ul>
+
+<p class="notice--danger">deep dive 4장, 14장, 15장 참고</p>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/typescript/interface/" class="pagination--pager" title="[typescript] interface
+">Previous</a>
+    
+    
+      <a href="/programmers/sum-of-divisor/" class="pagination--pager" title="[Programmers] 8. 약수의 합 (javascript)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/2-type/" rel="permalink">[Deep Dive]  5. 데이터 타입
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">type
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/1-expression/" rel="permalink">[Deep Dive]  4. 표현식
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">expression
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/sum-of-divisor/" rel="permalink">[Programmers] 8. 약수의 합 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">약수의 합
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/typescript/interface/" rel="permalink">[typescript] interface
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">interface
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,5 +1,5 @@
 ---
-title: "SEB41 Main Project"
+title: "Mini Project"
 layout: archive
 permalink: categories/mini-project
 author_profile: true

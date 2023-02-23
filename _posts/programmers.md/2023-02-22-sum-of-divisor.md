@@ -1,5 +1,5 @@
 ---
-title: "[Programmers] 8. 약수의 합 (javascript)
+title: "[Programmers] 8. 약수의 합 (javascript)"
 excerpt: "약수의 합"
 
 categories:
