@@ -311,6 +311,12 @@ var store = [{
         "url": "/typescript/union-literal-intersection-types/",
         "teaser": null
       },{
+        "title": "[Programmers] 10. 자연수 뒤집어 배열로 만들기 (javascript)",
+        "excerpt":"🤔 문제 자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다. 제한사항 n은 10,000,000,000이하인 자연수입니다. 입출력 예시 n return 12345 [5,4,3,2,1] 의사코드 빈 배열 생성 n을 배열로 만들기 배열의 앞쪽부터 하나씩 빼서 새로운 배열의 맨 앞에 넣기 제출한 답 function solution(n) { const...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/1-natural-to-array/",
+        "teaser": null
+      },{
         "title": "[typescript] class",
         "excerpt":"클래스 클래스 정의하기 typescript에서 class를 선언할 때, 멤버 변수는 미리 선언해주어야 한다. title:string; public 혹은 readonly를 적어주는 방법도 있다 class Book { // 1. title:string; title: string; /* 생성자 */ constructor(title: string) { this.title = title; } /* 클래스 메서드*/ static create() {} /* 인스턴스 메서드*/ init() {} } //...","categories": ["typescript"],
         "tags": ["typescript","class","member visibility","abstract class"],
