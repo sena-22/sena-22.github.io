@@ -298,4 +298,16 @@ var store = [{
         "tags": ["study","recursive","javascript","Lv.1"],
         "url": "/programmers/place-value/",
         "teaser": null
+      },{
+        "title": "[Deep Dive]  6. 연산자",
+        "excerpt":"연산자와 피연산자 연산자는 하나 이상의 표현식을 대상으로 산술, 할당, 비교 등을 수행하여 하나의 값을 만든다. 이때 대상이 되는 표현식이 피연산자이다. 피연산자는 값으로 평가될 수 있어야 한다. 연산자 표현식 연산자와 피연산자의 조합으로 이루어진 표현식이다. 피연산자와 마찬가지로 값으로 평가될 수 있어야 한다. 1. 산술 연산자 산술 연산자는 피연산자를 대상으로 수학적 계산을 수행해...","categories": ["javascript"],
+        "tags": ["javascript","operator"],
+        "url": "/javascript/operator/",
+        "teaser": null
+      },{
+        "title": "[typescript] 리터럴, 유니온, 교차 타입",
+        "excerpt":" ","categories": ["typescript"],
+        "tags": ["typescript","literal type","union type","intersection type"],
+        "url": "/typescript/union-literal-intersection-types/",
+        "teaser": null
       }]
