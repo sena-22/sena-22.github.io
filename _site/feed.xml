@@ -1,60 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-26T22:36:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Programmers] 10. 자연수 뒤집어 배열로 만들기 (javascript)</title><link href="http://localhost:4000/programmers/1-natural-to-array/" rel="alternate" type="text/html" title="[Programmers] 10. 자연수 뒤집어 배열로 만들기 (javascript)" /><published>2023-02-26T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/programmers/1-natural-to-array</id><content type="html" xml:base="http://localhost:4000/programmers/1-natural-to-array/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>n은 10,000,000,000이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>n</th>
-      <th>return</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>12345</td>
-      <td>[5,4,3,2,1]</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<ol>
-  <li>빈 배열 생성</li>
-  <li>n을 배열로 만들기</li>
-  <li>배열의 앞쪽부터 하나씩 빼서 새로운 배열의 맨 앞에 넣기</li>
-</ol>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="nx">n</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">el</span><span class="p">)));</span>
-  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>
-
-<p>예전 풀이</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="nx">n</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">arr</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">[</span><span class="nx">i</span><span class="p">]));</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[자연수 뒤집어 배열로 만들기]]></summary></entry><entry><title type="html">[typescript] class</title><link href="http://localhost:4000/typescript/class/" rel="alternate" type="text/html" title="[typescript] class" /><published>2023-02-26T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/typescript/class</id><content type="html" xml:base="http://localhost:4000/typescript/class/"><![CDATA[<h1 id="클래스">클래스</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-26T23:13:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[typescript] class</title><link href="http://localhost:4000/typescript/class/" rel="alternate" type="text/html" title="[typescript] class" /><published>2023-02-26T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/typescript/class</id><content type="html" xml:base="http://localhost:4000/typescript/class/"><![CDATA[<h1 id="클래스">클래스</h1>
 
 <h2 id="클래스-정의하기">클래스 정의하기</h2>
 
@@ -181,7 +125,131 @@
 <a href="https://yamoo9.gitbook.io/typescript/classes">Typescript Guidbook</a> <br />
 <a href="https://developer-talk.tistory.com/368">DevStory</a> <br />
 <a href="https://poiemaweb.com/typescript-class">poiemaweb</a> <br />
-<a href="https://www.youtube.com/watch?v=17Oh028Jpis&amp;list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&amp;index=6">코딩앙마 youtube Typescript #6 클래스</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="class" /><category term="member visibility" /><category term="abstract class" /><summary type="html"><![CDATA[클래스, 접근제한자, 추상 클래스]]></summary></entry><entry><title type="html">[typescript] 리터럴, 유니온, 교차 타입</title><link href="http://localhost:4000/typescript/union-literal-intersection-types/" rel="alternate" type="text/html" title="[typescript] 리터럴, 유니온, 교차 타입" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/typescript/union-literal-intersection-types</id><content type="html" xml:base="http://localhost:4000/typescript/union-literal-intersection-types/"><![CDATA[<h1 id="리터럴-타입">리터럴 타입</h1>
+<a href="https://www.youtube.com/watch?v=17Oh028Jpis&amp;list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&amp;index=6">코딩앙마 youtube Typescript #6 클래스</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="class" /><category term="member visibility" /><category term="abstract class" /><summary type="html"><![CDATA[클래스, 접근제한자, 추상 클래스]]></summary></entry><entry><title type="html">[Programmers] 10. 자연수 뒤집어 배열로 만들기 (javascript)</title><link href="http://localhost:4000/programmers/1-natural-to-array/" rel="alternate" type="text/html" title="[Programmers] 10. 자연수 뒤집어 배열로 만들기 (javascript)" /><published>2023-02-26T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/programmers/1-natural-to-array</id><content type="html" xml:base="http://localhost:4000/programmers/1-natural-to-array/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+
+<p>자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>n은 10,000,000,000이하인 자연수입니다.</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>12345</td>
+      <td>[5,4,3,2,1]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<ol>
+  <li>빈 배열 생성</li>
+  <li>n을 배열로 만들기</li>
+  <li>배열의 앞쪽부터 하나씩 빼서 새로운 배열의 맨 앞에 넣기</li>
+</ol>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nx">n</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">el</span><span class="p">)));</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="예전-풀이">예전 풀이</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nx">n</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">arr</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">[</span><span class="nx">i</span><span class="p">]));</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[자연수 뒤집어 배열로 만들기]]></summary></entry><entry><title type="html">[Programmers] 11. 문자열 내 p와 y의 개수 (javascript)</title><link href="http://localhost:4000/programmers/2-count-p-y/" rel="alternate" type="text/html" title="[Programmers] 11. 문자열 내 p와 y의 개수 (javascript)" /><published>2023-02-26T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/programmers/2-count-p-y</id><content type="html" xml:base="http://localhost:4000/programmers/2-count-p-y/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+
+<p>대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 ‘p’의 개수와 ‘y’의 개수를 비교해 같으면 True, 다르면 False를 return 하는 solution를 완성하세요. ‘p’, ‘y’ 모두 하나도 없는 경우는 항상 True를 리턴합니다. 단, 개수를 비교할 때 대문자와 소문자는 구별하지 않습니다.</p>
+
+<p>예를 들어 s가 “pPoooyY”면 true를 return하고 “Pyy”라면 false를 return합니다.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>문자열 s의 길이 : 50 이하의 자연수</li>
+  <li>문자열 s는 알파벳으로만 이루어져 있습니다.</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>s</th>
+      <th>answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>‘pPoooyY’</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>‘Pyy’</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<ol>
+  <li>s를 소문자로 변경 후 배열로 변경</li>
+  <li>배열을 순회하면서 p이면 p에 +1, y면 y에 +1</li>
+  <li>p === y 이면 true, 아니면 false</li>
+</ol>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">p</span><span class="dl">"</span><span class="p">)</span> <span class="nx">p</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">)</span> <span class="nx">y</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">p</span> <span class="o">===</span> <span class="nx">y</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="다른-풀이">다른 풀이</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">P</span><span class="dl">"</span><span class="p">).</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">s</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">Y</span><span class="dl">"</span><span class="p">).</span><span class="nx">length</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//"pPoooyY".toUpperCase().split("P") //  ['', '', 'OOOYY']</span>
+<span class="c1">//"pPoooyY".toUpperCase().split("Y") //  ['PPOOO', '', '']</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[문자열 내 p와 y의 개수]]></summary></entry><entry><title type="html">[typescript] 리터럴, 유니온, 교차 타입</title><link href="http://localhost:4000/typescript/union-literal-intersection-types/" rel="alternate" type="text/html" title="[typescript] 리터럴, 유니온, 교차 타입" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/typescript/union-literal-intersection-types</id><content type="html" xml:base="http://localhost:4000/typescript/union-literal-intersection-types/"><![CDATA[<h1 id="리터럴-타입">리터럴 타입</h1>
 
 <p>리터럴 타입은 구체적인 문자열과 숫자 값을 타입으로 지정하여, 지정한 값만 사용할 수 있게 만든 타입이다.</p>
 
@@ -940,7 +1008,59 @@ false, undefined, null, 0, -0, NaN, ‘’</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="o">??</span> <span class="dl">"</span><span class="s2">default</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 0</span>
 </code></pre></div></div>
 
-<p class="notice--danger">deep dive 6장,9장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="type" /><summary type="html"><![CDATA[type]]></summary></entry><entry><title type="html">[Deep Dive] 3. 변수</title><link href="http://localhost:4000/javascript/variable/" rel="alternate" type="text/html" title="[Deep Dive] 3. 변수" /><published>2023-02-22T00:00:00+09:00</published><updated>2023-02-24T00:00:00+09:00</updated><id>http://localhost:4000/javascript/variable</id><content type="html" xml:base="http://localhost:4000/javascript/variable/"><![CDATA[<h2 id="1-변수의-정의와-사용하는-이유">1. 변수의 정의와 사용하는 이유</h2>
+<p class="notice--danger">deep dive 6장,9장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="type" /><summary type="html"><![CDATA[type]]></summary></entry><entry><title type="html">[Programmers] 8. 약수의 합 (javascript)</title><link href="http://localhost:4000/programmers/sum-of-divisor/" rel="alternate" type="text/html" title="[Programmers] 8. 약수의 합 (javascript)" /><published>2023-02-22T00:00:00+09:00</published><updated>2023-02-22T00:00:00+09:00</updated><id>http://localhost:4000/programmers/sum-of-divisor</id><content type="html" xml:base="http://localhost:4000/programmers/sum-of-divisor/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+
+<p>정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>n은 0 이상 3000이하인 정수입니다</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>maps</th>
+      <th>answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>12</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<blockquote>
+  <p>해당 수를 나눈 나머지가 0이 되는 숫자가 약수
+1부터 n까지 1씩 증가시키면서 n을 해당 수로 나눈 나머지가 0일 때만 더해준다.
+더한 결과를 리턴한다.</p>
+</blockquote>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[약수의 합]]></summary></entry><entry><title type="html">[Deep Dive] 3. 변수</title><link href="http://localhost:4000/javascript/variable/" rel="alternate" type="text/html" title="[Deep Dive] 3. 변수" /><published>2023-02-22T00:00:00+09:00</published><updated>2023-02-24T00:00:00+09:00</updated><id>http://localhost:4000/javascript/variable</id><content type="html" xml:base="http://localhost:4000/javascript/variable/"><![CDATA[<h2 id="1-변수의-정의와-사용하는-이유">1. 변수의 정의와 사용하는 이유</h2>
 
 <h3 id="변수의-의미">변수의 의미</h3>
 
@@ -1244,185 +1364,4 @@ const 키워드로 할당된 원시 값은 변경할 수 없지만, 객체는 �
 
 <p>변수를 선언할 때에는 기본적으로 const를 사용하고, 재할당이 필요한 경우에 한정하여 let을 사용하는 방법이 가장 안전하다고 한다.</p>
 
-<p class="notice--danger">deep dive 4장, 14장, 15장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="variable" /><summary type="html"><![CDATA[variable]]></summary></entry><entry><title type="html">[Programmers] 8. 약수의 합 (javascript)</title><link href="http://localhost:4000/programmers/sum-of-divisor/" rel="alternate" type="text/html" title="[Programmers] 8. 약수의 합 (javascript)" /><published>2023-02-22T00:00:00+09:00</published><updated>2023-02-22T00:00:00+09:00</updated><id>http://localhost:4000/programmers/sum-of-divisor</id><content type="html" xml:base="http://localhost:4000/programmers/sum-of-divisor/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>n은 0 이상 3000이하인 정수입니다</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>maps</th>
-      <th>answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>12</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<blockquote>
-  <p>해당 수를 나눈 나머지가 0이 되는 숫자가 약수
-1부터 n까지 1씩 증가시키면서 n을 해당 수로 나눈 나머지가 0일 때만 더해준다.
-더한 결과를 리턴한다.</p>
-</blockquote>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[약수의 합]]></summary></entry><entry><title type="html">[typescript] interface</title><link href="http://localhost:4000/typescript/interface/" rel="alternate" type="text/html" title="[typescript] interface" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/typescript/interface</id><content type="html" xml:base="http://localhost:4000/typescript/interface/"><![CDATA[<p><strong>인터페이스</strong>는 객체의 타입을 정의하기 위해 사용된다.</p>
-
-<h3 id="인터페이스-정의하기">인터페이스 정의하기</h3>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="선택적-프로퍼티optional-properties-사용하기">선택적 프로퍼티(Optional Properties) 사용하기</h3>
-
-<ul>
-  <li>프로퍼티가 필수 사항이 아닐 때에는 <code class="language-plaintext highlighter-rouge">?</code>를 붙여 표시한다.</li>
-</ul>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span> <span class="c1">//키를 Optional Properties로 처리</span>
-<span class="p">}</span>
-
-<span class="kd">let</span> <span class="nx">character</span><span class="p">:</span> <span class="nx">Character</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jack</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-  <span class="c1">//height가 없어도 오류가 나지 않는다</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<h3 id="읽기-전용-프로퍼티-사용하기">읽기 전용 프로퍼티 사용하기</h3>
-
-<ul>
-  <li>프로퍼티가 처음 생성될 때만 수정 가능하게 만들고 싶을 때에는 <code class="language-plaintext highlighter-rouge">readonly</code>를 앞에 붙여주면 된다.</li>
-</ul>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="k">readonly</span> <span class="nx">birthYear</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">let</span> <span class="nx">character</span><span class="p">:</span> <span class="nx">Character</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jack</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-  <span class="na">birthYear</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span> <span class="c1">// 이후 수정 불가능</span>
-<span class="p">};</span>
-
-<span class="nx">character</span><span class="p">.</span><span class="nx">birthYear</span> <span class="o">=</span> <span class="mi">1999</span><span class="p">;</span> <span class="c1">//readonly여서 에러가 발생한다.</span>
-</code></pre></div></div>
-
-<h3 id="문자열-인덱스-서명string-index-signatuer-추가하기">문자열 인덱스 서명(string index signatuer) 추가하기</h3>
-
-<p>비슷한 타입의 프로퍼티를 여러 개 만들고 싶을 때는 <code class="language-plaintext highlighter-rouge">[키 이름:타입]:타입</code> 처럼 만들면 된다.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="p">[</span><span class="nx">stat</span><span class="p">:</span> <span class="kr">number</span><span class="p">]:</span> <span class="kr">string</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">let</span> <span class="nx">character</span><span class="p">:</span> <span class="nx">Character</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jack</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-  <span class="mi">1</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HP</span><span class="dl">"</span><span class="p">,</span>
-  <span class="mi">2</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MP</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>위의 예시에서 stat 종류를 제한하고 싶을 때에는 <mark style="background-color: #ffdce0">문자열 리터럴 타입(String Literal Types)</mark>을 추가하면 된다.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Stat</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">HP</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">MP</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">SP</span><span class="dl">'</span>
-
-<span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="p">...</span>
-  <span class="p">[</span><span class="nx">stat</span><span class="p">:</span> <span class="kr">number</span><span class="p">]:</span> <span class="nx">Stat</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="인터페이스로-클래스-정의하기">인터페이스로 클래스 정의하기</h3>
-
-<p>클래스 선언문의 implements 뒤에 인터페이스를 선언하면 해당 클래스는 그 인터페이스를 반드시 구현해야 한다.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nx">Wizard</span> <span class="k">implements</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nx">name</span><span class="p">;</span>
-  <span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">c</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">c</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">start!</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Wizard</span><span class="p">(</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">//Wizard: {"age": 20,"name": "jack"}</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span> <span class="c1">//  "start!"</span>
-</code></pre></div></div>
-
-<h3 id="인터페이스-확장하기">인터페이스 확장하기</h3>
-
-<p><code class="language-plaintext highlighter-rouge">extends</code>를 사용하면 인터페이스를 확장할 수 있다.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Car</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">wheels</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kr">interface</span> <span class="nx">Toy</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kr">interface</span> <span class="nx">Toycar</span> <span class="kd">extends</span> <span class="nx">Car</span><span class="p">,</span> <span class="nx">Toy</span> <span class="p">{</span>
-  <span class="c1">// multiple-extends</span>
-  <span class="nl">price</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="참고">참고</h3>
-
-<p class="notice--primary"><a href="https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png">Typescript Cheat Sheet Interface</a> <br />
-<a href="https://typescript-kr.github.io/pages/interfaces.html">Typescript handbook Interface</a> <br />
-<a href="https://poiemaweb.com/typescript-interface">poiemaweb Interface</a></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="interface" /><summary type="html"><![CDATA[interface]]></summary></entry></feed>
+<p class="notice--danger">deep dive 4장, 14장, 15장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="variable" /><summary type="html"><![CDATA[variable]]></summary></entry></feed>

@@ -317,6 +317,12 @@ var store = [{
         "url": "/programmers/1-natural-to-array/",
         "teaser": null
       },{
+        "title": "[Programmers] 11. 문자열 내 p와 y의 개수 (javascript)",
+        "excerpt":"🤔 문제 대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 ‘p’의 개수와 ‘y’의 개수를 비교해 같으면 True, 다르면 False를 return 하는 solution를 완성하세요. ‘p’, ‘y’ 모두 하나도 없는 경우는 항상 True를 리턴합니다. 단, 개수를 비교할 때 대문자와 소문자는 구별하지 않습니다. 예를 들어 s가 “pPoooyY”면 true를 return하고 “Pyy”라면 false를 return합니다. 제한사항 문자열...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/2-count-p-y/",
+        "teaser": null
+      },{
         "title": "[typescript] class",
         "excerpt":"클래스 클래스 정의하기 typescript에서 class를 선언할 때, 멤버 변수는 미리 선언해주어야 한다. title:string; public 혹은 readonly를 적어주는 방법도 있다 class Book { // 1. title:string; title: string; /* 생성자 */ constructor(title: string) { this.title = title; } /* 클래스 메서드*/ static create() {} /* 인스턴스 메서드*/ init() {} } //...","categories": ["typescript"],
         "tags": ["typescript","class","member visibility","abstract class"],

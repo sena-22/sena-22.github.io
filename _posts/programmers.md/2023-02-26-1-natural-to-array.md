@@ -44,10 +44,7 @@ function solution(n) {
 }
 ```
 
-💡 알고리즘 스터디 Recursive에서 공부한 내용 정리
-{: .notice--danger}
-
-예전 풀이
+## 예전 풀이
 
 ```javascript
 function solution(n) {
@@ -59,3 +56,6 @@ function solution(n) {
   return arr;
 }
 ```
+
+💡 알고리즘 스터디 Recursive에서 공부한 내용 정리
+{: .notice--danger}
