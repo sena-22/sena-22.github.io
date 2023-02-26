@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Programmers] 9. 자릿수 더하기 (javascript) - Reyna</title>
-<meta name="description" content="자릿수 더하기">
+<!-- begin _includes/seo.html --><title>[typescript] class - Reyna</title>
+<meta name="description" content="클래스, 접근제한자, 추상 클래스">
 
 
   <meta name="author" content="Reyna">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Programmers] 9. 자릿수 더하기 (javascript)">
-<meta property="og:url" content="http://localhost:4000/programmers/place-value/">
+<meta property="og:title" content="[typescript] class">
+<meta property="og:url" content="http://localhost:4000/typescript/class/">
 
 
-  <meta property="og:description" content="자릿수 더하기">
-
-
-
+  <meta property="og:description" content="클래스, 접근제한자, 추상 클래스">
 
 
 
 
-  <meta property="article:published_time" content="2023-02-23T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-02-23T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-02-26T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-02-26T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/programmers/place-value/">
+
+<link rel="canonical" href="http://localhost:4000/typescript/class/">
 
 
 
@@ -374,16 +374,16 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Programmers] 9. 자릿수 더하기 (javascript)"
+      content="[typescript] class"
     /> <meta
       itemprop="description"
-      content="자릿수 더하기"
+      content="클래스, 접근제한자, 추상 클래스"
     /> <meta
       itemprop="datePublished"
-      content="2023-02-23T00:00:00+09:00"
+      content="2023-02-26T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-02-23T00:00:00+09:00"
+      content="2023-02-26T00:00:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -391,7 +391,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Programmers] 9. 자릿수 더하기 (javascript)</p>
+          <p>[typescript] class</p>
 
         </h1>
          
@@ -399,13 +399,13 @@
           <strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
           >
-          <time datetime="2023-02-23T00:00:00+09:00"
-            >2023.02.23</time
+          <time datetime="2023-02-26T00:00:00+09:00"
+            >2023.02.26</time
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-02-23"
-            >2023.02.23</time
+          <time datetime="2023-02-26"
+            >2023.02.26</time
           >
         </p>
           
@@ -417,7 +417,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#programmers" class="page__taxonomy-item p-category" rel="tag">programmers</a>
+      <a href="/categories/#typescript" class="page__taxonomy-item p-category" rel="tag">typescript</a>
     
     </span>
   </p>
@@ -430,13 +430,13 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a><span class="sep">, </span>
+      <a href="/tags/#abstract-class" class="page__taxonomy-item p-category" rel="tag">abstract class</a><span class="sep">, </span>
     
-      <a href="/tags/#lv-1" class="page__taxonomy-item p-category" rel="tag">Lv.1</a><span class="sep">, </span>
+      <a href="/tags/#class" class="page__taxonomy-item p-category" rel="tag">class</a><span class="sep">, </span>
     
-      <a href="/tags/#recursive" class="page__taxonomy-item p-category" rel="tag">recursive</a><span class="sep">, </span>
+      <a href="/tags/#member-visibility" class="page__taxonomy-item p-category" rel="tag">member visibility</a><span class="sep">, </span>
     
-      <a href="/tags/#study" class="page__taxonomy-item p-category" rel="tag">study</a>
+      <a href="/tags/#typescript" class="page__taxonomy-item p-category" rel="tag">typescript</a>
     
     </span>
   </p>
@@ -454,95 +454,138 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#-문제">🤔 문제</a></li><li><a href="#제한사항">제한사항</a></li><li><a href="#입출력-예시">입출력 예시</a></li><li><a href="#의사코드">의사코드</a></li><li><a href="#제출한-답">제출한 답</a></li><li><a href="#숫자를-배열로-분할하기">숫자를 배열로 분할하기</a><ul><li><a href="#1-arrayfrom">1. Array.from()</a></li><li><a href="#2-split-메서드를-사용하는-방법">2. split 메서드를 사용하는 방법</a></li></ul></li><li><a href="#다른-풀이">다른 풀이</a></li></ul>
+            <ul class="toc__menu"><li><a href="#클래스">클래스</a><ul><li><a href="#클래스-정의하기">클래스 정의하기</a></li><li><a href="#접근-제한자접근-제어자">접근 제한자(접근 제어자)</a></li></ul></li><li><a href="#추상-클래스">추상 클래스</a><ul><li><a href="#추상-클래스-1">추상 클래스</a></li></ul></li></ul>
 
           </nav>
         </aside>
-         <h2 id="-문제">🤔 문제</h2>
+         <h1 id="클래스">클래스</h1>
 
-<p>자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요. <br />
-예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.</p>
+<h2 id="클래스-정의하기">클래스 정의하기</h2>
 
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>N의 범위 : 100,000,000 이하의 자연수</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>maps</th>
-      <th>answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>123</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>987</td>
-      <td>24</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
+<p>typescript에서 class를 선언할 때, 멤버 변수는 미리 선언해주어야 한다.</p>
 
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">Array.from()</code> 메서드를 사용해서 N을 배열로 만든다.</li>
-  <li><code class="language-plaintext highlighter-rouge">reduce()</code>로 각 자리의 합을 구한다.</li>
+  <li>title:string;</li>
+  <li>public 혹은 readonly를 적어주는 방법도 있다</li>
 </ol>
 
-<h2 id="제출한-답">제출한 답</h2>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Book</span> <span class="p">{</span>
+  <span class="c1">// 1. title:string;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">n</span><span class="p">),</span> <span class="nb">Number</span><span class="p">);</span>
-  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">cur</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+  <span class="cm">/* 생성자 */</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* 클래스 메서드*/</span>
+  <span class="k">static</span> <span class="nx">create</span><span class="p">()</span> <span class="p">{}</span>
+
+  <span class="cm">/* 인스턴스 메서드*/</span>
+  <span class="nx">init</span><span class="p">()</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="숫자를-배열로-분할하기">숫자를 배열로 분할하기</h2>
-
-<h3 id="1-arrayfrom">1. Array.from()</h3>
-
-<p><code class="language-plaintext highlighter-rouge">Array.from()</code>은 첫 번째 인자로 배열로 바꾸고 싶은 유사배열 객체나 이터러블 객체(인덱스를 가지고, 반복할 수 있는 객체) 를 전달하고, 두 번째 인자로 배열의 모든 요소에 대해 호출되는 함수를 전달한다.
-이 문제의 경우 문자열로 변환된 숫자와 Number 생성자를 전달한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Array.from(String(num), Number)</span>
-<span class="kd">let</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">),</span> <span class="nb">Number</span><span class="p">);</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
-<span class="c1">// 두 번째 인자를 전달하지 않으면 각 요소가 문자열로 반환된다.</span>
-<span class="kd">let</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">));</span> <span class="c1">//['1', '2', '3', '4', '5']</span>
-</code></pre></div></div>
-
-<h3 id="2-split-메서드를-사용하는-방법">2. split 메서드를 사용하는 방법</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">strArr</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span> <span class="c1">//['1', '2', '3', '4', '5']</span>
-<span class="kd">let</span> <span class="nx">numArr</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nb">Number</span><span class="p">);</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
-</code></pre></div></div>
-
-<p>숫자를 문자로 변환할 때 String 생성자를 사용하는 방법 외에도 암묵적 타입 변환을 사용하는 방법도 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12345</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nb">Number</span><span class="p">);</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
-</code></pre></div></div>
-
-<h2 id="다른-풀이">다른 풀이</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">cur</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 2. public 혹은 readonly를 적어주는 방법도 있다</span>
+<span class="kd">class</span> <span class="nx">Book</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">public</span> <span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>배열을 숫자 타입으로 바꾼 후 reduce를 사용하지 않고 reduce를 사용하면서 요소를 하나씩 숫자 타입으로 바꾼 방법이다.</p>
+<h2 id="접근-제한자접근-제어자">접근 제한자(접근 제어자)</h2>
 
-<p class="notice--primary">💡 <a href="https://sena-22.github.io/javascript/2-type/#1-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EB%B3%80%ED%99%98">숫자를 문자로 바꾸기</a> <br />
-💡 <a href="https://codingbeautydev.com/blog/javascript-split-number-into-array/">JavaScript에서 숫자를 배열로 분할하는 방법</a></p>
+<p>javascript에는 없는 기능으로, 접근 가능한 범위를 설정할 수 있다.</p>
 
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>
+<ol>
+  <li>public - 자식 클래스, 클래스 인스턴스 모두 접근 가능(생략 가능하다)</li>
+  <li>protected - 자식 클래스에서 접근 가능</li>
+  <li>private - 해당 클래스 내부에서만 접근 가능(<code class="language-plaintext highlighter-rouge">#</code>으로 대체 가능)</li>
+</ol>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Book</span> <span class="p">{</span>
+  <span class="c1">//public</span>
+  <span class="k">public</span> <span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="c1">//public은 생략 가능</span>
+  <span class="nl">author</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="c1">//private : Book 클래스 내부에서만 접근 가능</span>
+  <span class="k">private</span> <span class="nx">public_year</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="c1">//protected : Book 클래스와 자식 클래스에서 접근 가능</span>
+  <span class="k">protected</span> <span class="nx">paper_type</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">author</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="k">public</span> <span class="nx">pages</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">author</span> <span class="o">=</span> <span class="nx">author</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">pages</span> <span class="o">=</span> <span class="nx">pages</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">paper_type</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">public_year</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* 인스턴스 생성*/</span>
+<span class="kd">let</span> <span class="nx">mythology</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Book</span><span class="p">(</span><span class="dl">"</span><span class="s2">mythology1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">sena</span><span class="dl">"</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mythology</span><span class="p">);</span> <span class="c1">//Book: {}</span>
+</code></pre></div></div>
+
+<h1 id="추상-클래스">추상 클래스</h1>
+
+<h2 id="추상-클래스-1">추상 클래스</h2>
+
+<p>추상 클래스는 상위 수준에 집중하고 하위 수준의 세부적인 사항을 미리 구현할 필요가 없어 복잡성을 최소화하고 설계에 집중할 수 있게 해준다.
+여기서 상위 수준이 추상 클래스가 되고, 하위 수준은 추상 클래스를 상속하는 구체 클래스가 된다.</p>
+
+<p>추상 클래스를 정의할 때는 <code class="language-plaintext highlighter-rouge">abstract</code>라는 키워드를 사용한다</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* 
+    추상 메서드 정의
+    추상 클래스 내부의 추상 메서드는 상속받은 쪽에서 구현해줘야 한다.
+  */</span>
+  <span class="kd">abstract</span> <span class="nx">sleep</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+
+  <span class="c1">//일반 메서드 정의</span>
+  <span class="nx">move</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">moving...</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>추상 클래스는 객체로 생성할 수 없다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Animal</span><span class="p">();</span> <span class="c1">//Cannot create an instance of an abstract class.</span>
+</code></pre></div></div>
+
+<p>따라서 구체 클래스를 생성해주어야 한다. 추상 클래스를 상속할 때는 <code class="language-plaintext highlighter-rouge">extends</code>라는 키워드를 사용한다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Rabbit</span> <span class="kd">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">sleep</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">sleeping...</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">rabbit</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rabbit</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rabbit</span><span class="p">);</span> <span class="c1">//Rabbit:{"age:3"}</span>
+</code></pre></div></div>
+
+<p class="notice--primary">💡 참고 <br />
+<a href="https://yamoo9.gitbook.io/typescript/classes">Typescript Guidbook</a> <br />
+<a href="https://developer-talk.tistory.com/368">DevStory</a> <br />
+<a href="https://poiemaweb.com/typescript-class">poiemaweb</a> <br />
+<a href="https://www.youtube.com/watch?v=17Oh028Jpis&amp;list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&amp;index=6">코딩앙마 youtube Typescript #6 클래스</a> <br /></p>
  
       </section>
 
@@ -567,12 +610,11 @@
  
   <nav class="pagination">
     
-      <a href="/javascript/2-type/" class="pagination--pager" title="[Deep Dive]  5. 데이터 타입
+      <a href="/typescript/union-literal-intersection-types/" class="pagination--pager" title="[typescript] 리터럴, 유니온, 교차 타입
 ">Previous</a>
     
     
-      <a href="/javascript/operator/" class="pagination--pager" title="[Deep Dive]  6. 연산자
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -588,44 +630,6 @@
     </h2>
     <div class="grid__wrapper">
        
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/typescript/class/" rel="permalink">[typescript] class
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">클래스, 접근제한자, 추상 클래스
-</p>
-  </article>
-</div>
-  
 
 
 
@@ -690,7 +694,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 minute read
+          1 minute read
         
       </span>
     
@@ -698,6 +702,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">operator
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/place-value/" rel="permalink">[Programmers] 9. 자릿수 더하기 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자릿수 더하기
 </p>
   </article>
 </div>

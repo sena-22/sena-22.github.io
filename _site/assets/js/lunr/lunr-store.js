@@ -293,7 +293,7 @@ var store = [{
         "url": "/javascript/2-type/",
         "teaser": null
       },{
-        "title": "[Programmers] 9. 자릿수 구하기 (javascript)",
+        "title": "[Programmers] 9. 자릿수 더하기 (javascript)",
         "excerpt":"🤔 문제 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요. 예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다. 제한사항 N의 범위 : 100,000,000 이하의 자연수 입출력 예시 maps answer 123 6 987 24 의사코드 Array.from() 메서드를 사용해서 N을...","categories": ["programmers"],
         "tags": ["study","recursive","javascript","Lv.1"],
         "url": "/programmers/place-value/",
@@ -306,8 +306,14 @@ var store = [{
         "teaser": null
       },{
         "title": "[typescript] 리터럴, 유니온, 교차 타입",
-        "excerpt":" ","categories": ["typescript"],
+        "excerpt":"리터럴 타입 리터럴 타입은 구체적인 문자열과 숫자 값을 타입으로 지정하여, 지정한 값만 사용할 수 있게 만든 타입이다. //const로 선언한 원시 값은 재할당이 불가능하다. // 리터럴 타입의 표현 방식은 const 키워드가 작동하는 방식과 유사하다. const userName1 = 'jack'; //let으로 선언한 값은 재할당이 가능하다. 이 경우 숫자도 함께 지정했기 때문에 숫자로 재할당이...","categories": ["typescript"],
         "tags": ["typescript","literal type","union type","intersection type"],
         "url": "/typescript/union-literal-intersection-types/",
+        "teaser": null
+      },{
+        "title": "[typescript] class",
+        "excerpt":"클래스 클래스 정의하기 typescript에서 class를 선언할 때, 멤버 변수는 미리 선언해주어야 한다. title:string; public 혹은 readonly를 적어주는 방법도 있다 class Book { // 1. title:string; title: string; /* 생성자 */ constructor(title: string) { this.title = title; } /* 클래스 메서드*/ static create() {} /* 인스턴스 메서드*/ init() {} } //...","categories": ["typescript"],
+        "tags": ["typescript","class","member visibility","abstract class"],
+        "url": "/typescript/class/",
         "teaser": null
       }]

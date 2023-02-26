@@ -1,4 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-25T20:12:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Deep Dive] 6. 연산자</title><link href="http://localhost:4000/javascript/operator/" rel="alternate" type="text/html" title="[Deep Dive] 6. 연산자" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-25T00:00:00+09:00</updated><id>http://localhost:4000/javascript/operator</id><content type="html" xml:base="http://localhost:4000/javascript/operator/"><![CDATA[<h1 id="연산자와-피연산자">연산자와 피연산자</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-26T22:19:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[typescript] class</title><link href="http://localhost:4000/typescript/class/" rel="alternate" type="text/html" title="[typescript] class" /><published>2023-02-26T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/typescript/class</id><content type="html" xml:base="http://localhost:4000/typescript/class/"><![CDATA[<h1 id="클래스">클래스</h1>
+
+<h2 id="클래스-정의하기">클래스 정의하기</h2>
+
+<p>typescript에서 class를 선언할 때, 멤버 변수는 미리 선언해주어야 한다.</p>
+
+<ol>
+  <li>title:string;</li>
+  <li>public 혹은 readonly를 적어주는 방법도 있다</li>
+</ol>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Book</span> <span class="p">{</span>
+  <span class="c1">// 1. title:string;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="cm">/* 생성자 */</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* 클래스 메서드*/</span>
+  <span class="k">static</span> <span class="nx">create</span><span class="p">()</span> <span class="p">{}</span>
+
+  <span class="cm">/* 인스턴스 메서드*/</span>
+  <span class="nx">init</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 2. public 혹은 readonly를 적어주는 방법도 있다</span>
+<span class="kd">class</span> <span class="nx">Book</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">public</span> <span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="접근-제한자접근-제어자">접근 제한자(접근 제어자)</h2>
+
+<p>javascript에는 없는 기능으로, 접근 가능한 범위를 설정할 수 있다.</p>
+
+<ol>
+  <li>public - 자식 클래스, 클래스 인스턴스 모두 접근 가능(생략 가능하다)</li>
+  <li>protected - 자식 클래스에서 접근 가능</li>
+  <li>private - 해당 클래스 내부에서만 접근 가능(<code class="language-plaintext highlighter-rouge">#</code>으로 대체 가능)</li>
+</ol>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Book</span> <span class="p">{</span>
+  <span class="c1">//public</span>
+  <span class="k">public</span> <span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="c1">//public은 생략 가능</span>
+  <span class="nl">author</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="c1">//private : Book 클래스 내부에서만 접근 가능</span>
+  <span class="k">private</span> <span class="nx">public_year</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="c1">//protected : Book 클래스와 자식 클래스에서 접근 가능</span>
+  <span class="k">protected</span> <span class="nx">paper_type</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">author</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="k">public</span> <span class="nx">pages</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">author</span> <span class="o">=</span> <span class="nx">author</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">pages</span> <span class="o">=</span> <span class="nx">pages</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">paper_type</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">public_year</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* 인스턴스 생성*/</span>
+<span class="kd">let</span> <span class="nx">mythology</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Book</span><span class="p">(</span><span class="dl">"</span><span class="s2">mythology1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">sena</span><span class="dl">"</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mythology</span><span class="p">);</span> <span class="c1">//Book: {}</span>
+</code></pre></div></div>
+
+<h1 id="추상-클래스">추상 클래스</h1>
+
+<h2 id="추상-클래스-1">추상 클래스</h2>
+
+<p>추상 클래스는 상위 수준에 집중하고 하위 수준의 세부적인 사항을 미리 구현할 필요가 없어 복잡성을 최소화하고 설계에 집중할 수 있게 해준다.
+여기서 상위 수준이 추상 클래스가 되고, 하위 수준은 추상 클래스를 상속하는 구체 클래스가 된다.</p>
+
+<p>추상 클래스를 정의할 때는 <code class="language-plaintext highlighter-rouge">abstract</code>라는 키워드를 사용한다</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* 
+    추상 메서드 정의
+    추상 클래스 내부의 추상 메서드는 상속받은 쪽에서 구현해줘야 한다.
+  */</span>
+  <span class="kd">abstract</span> <span class="nx">sleep</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+
+  <span class="c1">//일반 메서드 정의</span>
+  <span class="nx">move</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">moving...</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>추상 클래스는 객체로 생성할 수 없다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Animal</span><span class="p">();</span> <span class="c1">//Cannot create an instance of an abstract class.</span>
+</code></pre></div></div>
+
+<p>따라서 구체 클래스를 생성해주어야 한다. 추상 클래스를 상속할 때는 <code class="language-plaintext highlighter-rouge">extends</code>라는 키워드를 사용한다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Rabbit</span> <span class="kd">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">sleep</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">sleeping...</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">rabbit</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rabbit</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rabbit</span><span class="p">);</span> <span class="c1">//Rabbit:{"age:3"}</span>
+</code></pre></div></div>
+
+<p class="notice--primary">💡 참고 <br />
+<a href="https://yamoo9.gitbook.io/typescript/classes">Typescript Guidbook</a> <br />
+<a href="https://developer-talk.tistory.com/368">DevStory</a> <br />
+<a href="https://poiemaweb.com/typescript-class">poiemaweb</a> <br />
+<a href="https://www.youtube.com/watch?v=17Oh028Jpis&amp;list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&amp;index=6">코딩앙마 youtube Typescript #6 클래스</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="class" /><category term="member visibility" /><category term="abstract class" /><summary type="html"><![CDATA[클래스, 접근제한자, 추상 클래스]]></summary></entry><entry><title type="html">[Deep Dive] 6. 연산자</title><link href="http://localhost:4000/javascript/operator/" rel="alternate" type="text/html" title="[Deep Dive] 6. 연산자" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-25T00:00:00+09:00</updated><id>http://localhost:4000/javascript/operator</id><content type="html" xml:base="http://localhost:4000/javascript/operator/"><![CDATA[<h1 id="연산자와-피연산자">연산자와 피연산자</h1>
 
 <p>연산자는 하나 이상의 표현식을 대상으로 산술, 할당, 비교 등을 수행하여 하나의 값을 만든다. 이때 대상이 되는 표현식이 피연산자이다. 피연산자는 값으로 평가될 수 있어야 한다.</p>
 
@@ -122,7 +249,84 @@
 
 <h1 id="연산자-결합-순서">연산자 결합 순서</h1>
 
-<p class="notice--danger">deep dive 4장, 14장, 15장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="operator" /><summary type="html"><![CDATA[operator]]></summary></entry><entry><title type="html">[typescript] 리터럴, 유니온, 교차 타입</title><link href="http://localhost:4000/typescript/union-literal-intersection-types/" rel="alternate" type="text/html" title="[typescript] 리터럴, 유니온, 교차 타입" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-25T00:00:00+09:00</updated><id>http://localhost:4000/typescript/union-literal-intersection-types</id><content type="html" xml:base="http://localhost:4000/typescript/union-literal-intersection-types/"><![CDATA[]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="literal type" /><category term="union type" /><category term="intersection type" /><summary type="html"><![CDATA[literal, union, intersection type]]></summary></entry><entry><title type="html">[Deep Dive] 5. 데이터 타입</title><link href="http://localhost:4000/javascript/2-type/" rel="alternate" type="text/html" title="[Deep Dive] 5. 데이터 타입" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/javascript/2-type</id><content type="html" xml:base="http://localhost:4000/javascript/2-type/"><![CDATA[<h1 id="1-타입데이터-타입">1. 타입(데이터 타입)</h1>
+<p class="notice--danger">deep dive 4장, 14장, 15장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="operator" /><summary type="html"><![CDATA[operator]]></summary></entry><entry><title type="html">[typescript] 리터럴, 유니온, 교차 타입</title><link href="http://localhost:4000/typescript/union-literal-intersection-types/" rel="alternate" type="text/html" title="[typescript] 리터럴, 유니온, 교차 타입" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/typescript/union-literal-intersection-types</id><content type="html" xml:base="http://localhost:4000/typescript/union-literal-intersection-types/"><![CDATA[<h1 id="리터럴-타입">리터럴 타입</h1>
+
+<p>리터럴 타입은 구체적인 문자열과 숫자 값을 타입으로 지정하여, 지정한 값만 사용할 수 있게 만든 타입이다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//const로 선언한 원시 값은 재할당이 불가능하다.</span>
+<span class="c1">// 리터럴 타입의 표현 방식은 const 키워드가 작동하는 방식과 유사하다.</span>
+<span class="kd">const</span> <span class="nx">userName1</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">jack</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">//let으로 선언한 값은 재할당이 가능하다. 이 경우 숫자도 함께 지정했기 때문에 숫자로 재할당이 가능하다</span>
+<span class="kd">let</span> <span class="nx">userName2</span> <span class="o">=</span> <span class="kr">string</span><span class="o">|</span><span class="kr">number</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">clive</span><span class="dl">'</span>
+<span class="nx">userName2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">Job</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">police</span><span class="dl">'</span> <span class="o">|</span><span class="dl">'</span><span class="s1">developer</span><span class="dl">'</span><span class="o">|</span><span class="dl">'</span><span class="s1">teacher</span><span class="dl">'</span><span class="p">;</span> <span class="c1">//리터럴 타입</span>
+
+<span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span><span class="kr">string</span><span class="p">;</span>
+  <span class="nl">job</span><span class="p">:</span><span class="nx">Job</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">user</span><span class="p">:</span><span class="nx">User</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Jack</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">job</span><span class="p">:</span><span class="dl">'</span><span class="s1">developer</span><span class="dl">'</span> <span class="c1">//위에서 선언한 목록만 사용 가능하다.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="유니언-타입">유니언 타입</h1>
+
+<p>유니언 타입은 타입을 조합하는 방법 중에 하나이며, <code class="language-plaintext highlighter-rouge">or</code> 조건을 나타낼 때 사용한다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Car</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">car</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Mobile</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mobile</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nx">call</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Car | Mobile처럼 |를 사용한 타입을 유니온타입이라고 한다.</span>
+<span class="kd">function</span> <span class="nx">getGift</span><span class="p">(</span><span class="nx">gift</span><span class="p">:</span> <span class="nx">Car</span> <span class="o">|</span> <span class="nx">Mobile</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gift</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span> <span class="c1">//둘다 가지고 있는 속성은 사용 가능</span>
+  <span class="nx">gift</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span> <span class="c1">// 하나에만 있는 속성은 사용 불가능 (에러 발생)</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">gift</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">car</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//이런 식으로 조건문을 달아서 사용 가능</span>
+    <span class="nx">gift</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">gift</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="교차-타입">교차 타입</h1>
+
+<p>유니언 타입과 마찬가지로 타입을 조합할 수 있는데, <code class="language-plaintext highlighter-rouge">and</code> 조건을 나타낼 때 사용한다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Car2</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Toy</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">price</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Toy와 Car의 모든 속성을 적어줘야 한다</span>
+<span class="kd">const</span> <span class="nx">toyCar</span><span class="p">:</span> <span class="nx">Toy</span> <span class="o">&amp;</span> <span class="nx">Car2</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tayo</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">start</span><span class="p">()</span> <span class="p">{},</span>
+  <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">price</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="literal type" /><category term="union type" /><category term="intersection type" /><summary type="html"><![CDATA[literal, union, intersection type]]></summary></entry><entry><title type="html">[Deep Dive] 5. 데이터 타입</title><link href="http://localhost:4000/javascript/2-type/" rel="alternate" type="text/html" title="[Deep Dive] 5. 데이터 타입" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/javascript/2-type</id><content type="html" xml:base="http://localhost:4000/javascript/2-type/"><![CDATA[<h1 id="1-타입데이터-타입">1. 타입(데이터 타입)</h1>
 
 <ul>
   <li>타입은 값의 종류를 말한다.</li>
@@ -596,7 +800,7 @@ false, undefined, null, 0, -0, NaN, ‘’</p>
 <p align="center">
 <img width="132" alt="스크린샷 2023-02-23 오전 8 36 31" src="https://user-images.githubusercontent.com/110877564/220787968-36f8c02c-5289-4887-8468-b24da316bcef.png" />
 </p>
-<p class="notice--danger">deep dive 5장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="expression" /><summary type="html"><![CDATA[expression]]></summary></entry><entry><title type="html">[Programmers] 9. 자릿수 구하기 (javascript)</title><link href="http://localhost:4000/programmers/place-value/" rel="alternate" type="text/html" title="[Programmers] 9. 자릿수 구하기 (javascript)" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/programmers/place-value</id><content type="html" xml:base="http://localhost:4000/programmers/place-value/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+<p class="notice--danger">deep dive 5장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="expression" /><summary type="html"><![CDATA[expression]]></summary></entry><entry><title type="html">[Programmers] 9. 자릿수 더하기 (javascript)</title><link href="http://localhost:4000/programmers/place-value/" rel="alternate" type="text/html" title="[Programmers] 9. 자릿수 더하기 (javascript)" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/programmers/place-value</id><content type="html" xml:base="http://localhost:4000/programmers/place-value/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
 
 <p>자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요. <br />
 예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.</p>
@@ -680,7 +884,7 @@ false, undefined, null, 0, -0, NaN, ‘’</p>
 <p class="notice--primary">💡 <a href="https://sena-22.github.io/javascript/2-type/#1-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EB%B3%80%ED%99%98">숫자를 문자로 바꾸기</a> <br />
 💡 <a href="https://codingbeautydev.com/blog/javascript-split-number-into-array/">JavaScript에서 숫자를 배열로 분할하는 방법</a></p>
 
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[자릿수 구하기]]></summary></entry><entry><title type="html">[Programmers] 8. 약수의 합 (javascript)</title><link href="http://localhost:4000/programmers/sum-of-divisor/" rel="alternate" type="text/html" title="[Programmers] 8. 약수의 합 (javascript)" /><published>2023-02-22T00:00:00+09:00</published><updated>2023-02-22T00:00:00+09:00</updated><id>http://localhost:4000/programmers/sum-of-divisor</id><content type="html" xml:base="http://localhost:4000/programmers/sum-of-divisor/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[자릿수 더하기]]></summary></entry><entry><title type="html">[Programmers] 8. 약수의 합 (javascript)</title><link href="http://localhost:4000/programmers/sum-of-divisor/" rel="alternate" type="text/html" title="[Programmers] 8. 약수의 합 (javascript)" /><published>2023-02-22T00:00:00+09:00</published><updated>2023-02-22T00:00:00+09:00</updated><id>http://localhost:4000/programmers/sum-of-divisor</id><content type="html" xml:base="http://localhost:4000/programmers/sum-of-divisor/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
 
 <p>정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.</p>
 
@@ -1203,29 +1407,4 @@ const 키워드로 할당된 원시 값은 변경할 수 없지만, 객체는 �
 
 <p>즉, 자바스크립트는 ECMAScript + Client Side Web API(DOM,BOM,Canvas,fetch 등)</p>
 
-<p class="notice--danger">deep dive 2장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="Ajax" /><category term="Node.js" /><category term="ECMAScript" /><summary type="html"><![CDATA[javascript]]></summary></entry><entry><title type="html">[Deep Dive] 1. 프로그래밍</title><link href="http://localhost:4000/javascript/1-programming/" rel="alternate" type="text/html" title="[Deep Dive] 1. 프로그래밍" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/javascript/1-programming</id><content type="html" xml:base="http://localhost:4000/javascript/1-programming/"><![CDATA[<h2 id="프로그래밍">프로그래밍</h2>
-
-<ul>
-  <li>컴퓨터에게 실행을 요구하는 커뮤니케이션</li>
-  <li>컴퓨터가 이해할 수 있을 정도로 정확하고 상세하게 요구사항을 설명하는 작업</li>
-  <li>요구사항의 집합을 분석해서 적절한 자료구조와 함수의 집합으로 변환한 뒤, 그 흐름을 제어하는 것</li>
-</ul>
-
-<h3 id="요구사항-분석">요구사항 분석</h3>
-
-<ol>
-  <li>문제(요구사항)를 명확히 이해하기</li>
-  <li>단순하게 분해하기</li>
-  <li>자료를 정리하고 구분하기</li>
-  <li>순서에 맞게 행위를 배열하기</li>
-</ol>
-
-<h2 id="프로그래밍-언어">프로그래밍 언어</h2>
-
-<ul>
-  <li>컴퓨터와의 대화에 사용되는 표현 수단</li>
-  <li>사람과 컴퓨터(컴파일러 또는 인터프리터)가 모두 이해할 수 있는 약속된 형태의 인공어</li>
-  <li>구문과 의미의 조합으로 표현된다.</li>
-</ul>
-
-<p class="notice--danger">deep dive 1장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="programming" /><summary type="html"><![CDATA[프로그래밍]]></summary></entry></feed>
+<p class="notice--danger">deep dive 2장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="Ajax" /><category term="Node.js" /><category term="ECMAScript" /><summary type="html"><![CDATA[javascript]]></summary></entry></feed>

@@ -1,6 +1,6 @@
 ---
-title: "[Programmers] 9. 자릿수 구하기 (javascript)"
-excerpt: "자릿수 구하기"
+title: "[Programmers] 9. 자릿수 더하기 (javascript)"
+excerpt: "자릿수 더하기"
 
 categories:
   - programmers
