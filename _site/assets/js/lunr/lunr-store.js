@@ -328,4 +328,10 @@ var store = [{
         "tags": ["typescript","class","member visibility","abstract class"],
         "url": "/typescript/class/",
         "teaser": null
+      },{
+        "title": "[Deep Dive]  7. 제어문",
+        "excerpt":"제어문은 조건에 따라 코드 블록을 실행하거나 반복 실행할 때 사용한다. 블록문 블록문(코드 블록, 블록)은 0개 이상의 문을 중괄호({})로 묶은 것을 말한다. 블록문은 자체 종결성을 가지기 때문에 끝에 세미콜론을 붙이지 않는다. 조건문 1. if…else 문 if (조건식) { //조건식이 true일 때 실행 } else { //조건식이 false일 때 실행 } 조건이...","categories": ["javascript"],
+        "tags": ["javascript","control flow statement"],
+        "url": "/javascript/control-flow-statement/",
+        "teaser": null
       }]
