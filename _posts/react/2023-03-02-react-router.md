@@ -31,6 +31,19 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 라우터를 분리해서 작성할 수도 있다.
 
+### index.js
+
+```javascript
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+root.render(
+    <App />
+)
+```
+
 ### App.js
 
 ```javascript
