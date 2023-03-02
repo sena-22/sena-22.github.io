@@ -14,13 +14,13 @@ date: 2023-03-02
 last_modified_at: 2023-03-02
 ---
 
-## createBrowserRouter(), ReactProvider
+## createBrowserRouter(), RouterProvider
 
-먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. `createBrowserRouter()`함수로 생성한 `router`를 `ReactProvider` 컴포넌트에 `props`로 넣어준다.
+먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. `createBrowserRouter()`함수로 생성한 `router`를 `RouterProvider` 컴포넌트에 `props`로 넣어준다.
 
 ```javascript
 //App.js
-import { createBrowserRouter, ReactProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([]);
 
