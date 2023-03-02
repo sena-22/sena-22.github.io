@@ -353,16 +353,16 @@ var store = [{
         "url": "/programmers/number-with-x-interval/",
         "teaser": null
       },{
+        "title": "project setting",
+        "excerpt":"초기 환경 설정 CRA &amp; typescript 설치 npx create-react-app &lt;프로젝트 이름&gt; --templage typescript styled-components 설치 npm i styled-components //type definition npm i -D @types/styled-components styled-reset 설치 및 적용 styled-reset 설치 npm i styled-reset styled-reset 적용 import { createGlobalStyle } from \"styled-components\"; import reset from \"styled-reset\"; const GlobalStyles = createGlobalStyle`${reset}`; function...","categories": ["note"],
+        "tags": ["react","typesciprt","redux"],
+        "url": "/note/setting/",
+        "teaser": null
+      },{
         "title": "[Programmers] 13. 정수 제곱근 판별 (javascript)",
         "excerpt":"🤔 문제 임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다. n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요. 제한사항 n은 1이상, 50000000000000 이하인 양의 정수입니다. 입출력 예시 n return 121 144 3 -1 의사코드...","categories": ["programmers"],
         "tags": ["study","recursive","javascript","Lv.1"],
         "url": "/programmers/distinguish-sqrt/",
-        "teaser": null
-      },{
-        "title": "[Wanted Pre Onboarding] 1. 사전 과제",
-        "excerpt":"초기 환경 설정 CRA &amp; typescript 설치 npx create-react-app &lt;프로젝트 이름&gt; --templage typescript styled-components 설치 npm i styled-components //type definition npm i -D @types/styled-components styled-reset 설치 및 적용 styled-reset 설치 npm i styled-reset styled-reset 적용 import { createGlobalStyle } from \"styled-components\"; import reset from \"styled-reset\"; const GlobalStyles = createGlobalStyle`${reset}`; function...","categories": ["mini project"],
-        "tags": ["project","react","typesciprt","redux"],
-        "url": "/mini%20project/wanted-pre-onboarding/",
         "teaser": null
       },{
         "title": "createBrowserRouter를 이용한 라우팅 적용",

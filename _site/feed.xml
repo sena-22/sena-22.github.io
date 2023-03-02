@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-02T19:47:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">createBrowserRouter를 이용한 라우팅 적용</title><link href="http://localhost:4000/react/react-router/" rel="alternate" type="text/html" title="createBrowserRouter를 이용한 라우팅 적용" /><published>2023-03-02T00:00:00+09:00</published><updated>2023-03-02T00:00:00+09:00</updated><id>http://localhost:4000/react/react-router</id><content type="html" xml:base="http://localhost:4000/react/react-router/"><![CDATA[<h2 id="createbrowserrouter-reactprovider">createBrowserRouter(), ReactProvider</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-02T19:58:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">createBrowserRouter를 이용한 라우팅 적용</title><link href="http://localhost:4000/react/react-router/" rel="alternate" type="text/html" title="createBrowserRouter를 이용한 라우팅 적용" /><published>2023-03-02T00:00:00+09:00</published><updated>2023-03-02T00:00:00+09:00</updated><id>http://localhost:4000/react/react-router</id><content type="html" xml:base="http://localhost:4000/react/react-router/"><![CDATA[<h2 id="createbrowserrouter-reactprovider">createBrowserRouter(), ReactProvider</h2>
 
 <p>먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. <code class="language-plaintext highlighter-rouge">createBrowserRouter()</code>함수로 생성한 <code class="language-plaintext highlighter-rouge">router</code>를 <code class="language-plaintext highlighter-rouge">ReactProvider</code> 컴포넌트에 <code class="language-plaintext highlighter-rouge">props</code>로 넣어준다.</p>
 
@@ -133,7 +133,52 @@
 <span class="k">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>라우터마다 적용할 로더를 설정하면 요소가 렌더링되기 전 함수가 실행된다.</p>]]></content><author><name>Reyna</name></author><category term="react" /><category term="react-router-dom" /><category term="react" /><category term="createBrowserRouter" /><summary type="html"><![CDATA[react-router-dom V6의 createBrowserRouter 적용해보기]]></summary></entry><entry><title type="html">[Programmers] 13. 정수 제곱근 판별 (javascript)</title><link href="http://localhost:4000/programmers/distinguish-sqrt/" rel="alternate" type="text/html" title="[Programmers] 13. 정수 제곱근 판별 (javascript)" /><published>2023-03-01T00:00:00+09:00</published><updated>2023-03-01T00:00:00+09:00</updated><id>http://localhost:4000/programmers/distinguish-sqrt</id><content type="html" xml:base="http://localhost:4000/programmers/distinguish-sqrt/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+<p>라우터마다 적용할 로더를 설정하면 요소가 렌더링되기 전 함수가 실행된다.</p>]]></content><author><name>Reyna</name></author><category term="react" /><category term="react-router-dom" /><category term="react" /><category term="createBrowserRouter" /><summary type="html"><![CDATA[react-router-dom V6의 createBrowserRouter 적용해보기]]></summary></entry><entry><title type="html">project setting</title><link href="http://localhost:4000/note/setting/" rel="alternate" type="text/html" title="project setting" /><published>2023-03-01T00:00:00+09:00</published><updated>2023-03-02T00:00:00+09:00</updated><id>http://localhost:4000/note/setting</id><content type="html" xml:base="http://localhost:4000/note/setting/"><![CDATA[<h1 id="초기-환경-설정">초기 환경 설정</h1>
+
+<h2 id="cra--typescript-설치">CRA &amp; typescript 설치</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="o">&lt;</span><span class="nx">프로젝트</span> <span class="nx">이름</span><span class="o">&gt;</span> <span class="o">--</span><span class="nx">templage</span> <span class="nx">typescript</span>
+</code></pre></div></div>
+
+<h2 id="styled-components-설치">styled-components 설치</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">styled</span><span class="o">-</span><span class="nx">components</span>
+
+<span class="c1">//type definition</span>
+<span class="nx">npm</span> <span class="nx">i</span> <span class="o">-</span><span class="nx">D</span> <span class="p">@</span><span class="nd">types</span><span class="sr">/styled-component</span><span class="err">s
+</span></code></pre></div></div>
+
+<h2 id="styled-reset-설치-및-적용">styled-reset 설치 및 적용</h2>
+
+<h3 id="styled-reset-설치">styled-reset 설치</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">styled</span><span class="o">-</span><span class="nx">reset</span>
+</code></pre></div></div>
+
+<h3 id="styled-reset-적용">styled-reset 적용</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createGlobalStyle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="nx">reset</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-reset</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">GlobalStyles</span> <span class="o">=</span> <span class="nx">createGlobalStyle</span><span class="s2">`</span><span class="p">${</span><span class="nx">reset</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">GlobalStyles</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><a href="https://defineall.tistory.com/919">styled-reset 이란? / 사용법</a></p>
+
+<h2 id="redux-toolkit-설치">redux-toolkit 설치</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="p">@</span><span class="nd">reduxjs</span><span class="sr">/toolkit react-redu</span><span class="err">x
+</span></code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="note" /><category term="react" /><category term="typesciprt" /><category term="redux" /><summary type="html"><![CDATA[project setting]]></summary></entry><entry><title type="html">[Programmers] 13. 정수 제곱근 판별 (javascript)</title><link href="http://localhost:4000/programmers/distinguish-sqrt/" rel="alternate" type="text/html" title="[Programmers] 13. 정수 제곱근 판별 (javascript)" /><published>2023-03-01T00:00:00+09:00</published><updated>2023-03-01T00:00:00+09:00</updated><id>http://localhost:4000/programmers/distinguish-sqrt</id><content type="html" xml:base="http://localhost:4000/programmers/distinguish-sqrt/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
 
 <p>임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다.
 n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요.</p>
@@ -181,52 +226,7 @@ n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양�
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[정수 제곱근 판별]]></summary></entry><entry><title type="html">[Wanted Pre Onboarding] 1. 사전 과제</title><link href="http://localhost:4000/mini%20project/wanted-pre-onboarding/" rel="alternate" type="text/html" title="[Wanted Pre Onboarding] 1. 사전 과제" /><published>2023-03-01T00:00:00+09:00</published><updated>2023-03-01T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/wanted-pre-onboarding</id><content type="html" xml:base="http://localhost:4000/mini%20project/wanted-pre-onboarding/"><![CDATA[<h1 id="초기-환경-설정">초기 환경 설정</h1>
-
-<h2 id="cra--typescript-설치">CRA &amp; typescript 설치</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="o">&lt;</span><span class="nx">프로젝트</span> <span class="nx">이름</span><span class="o">&gt;</span> <span class="o">--</span><span class="nx">templage</span> <span class="nx">typescript</span>
-</code></pre></div></div>
-
-<h2 id="styled-components-설치">styled-components 설치</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">styled</span><span class="o">-</span><span class="nx">components</span>
-
-<span class="c1">//type definition</span>
-<span class="nx">npm</span> <span class="nx">i</span> <span class="o">-</span><span class="nx">D</span> <span class="p">@</span><span class="nd">types</span><span class="sr">/styled-component</span><span class="err">s
-</span></code></pre></div></div>
-
-<h2 id="styled-reset-설치-및-적용">styled-reset 설치 및 적용</h2>
-
-<h3 id="styled-reset-설치">styled-reset 설치</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">styled</span><span class="o">-</span><span class="nx">reset</span>
-</code></pre></div></div>
-
-<h3 id="styled-reset-적용">styled-reset 적용</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createGlobalStyle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="k">import</span> <span class="nx">reset</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-reset</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">GlobalStyles</span> <span class="o">=</span> <span class="nx">createGlobalStyle</span><span class="s2">`</span><span class="p">${</span><span class="nx">reset</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">GlobalStyles</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
-<span class="p">}</span>
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p class="notice--primary"><a href="https://defineall.tistory.com/919">styled-reset 이란? / 사용법</a></p>
-
-<h2 id="redux-toolkit-설치">redux-toolkit 설치</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="p">@</span><span class="nd">reduxjs</span><span class="sr">/toolkit react-redu</span><span class="err">x
-</span></code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="react" /><category term="typesciprt" /><category term="redux" /><summary type="html"><![CDATA[wanted project]]></summary></entry><entry><title type="html">[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)</title><link href="http://localhost:4000/programmers/number-with-x-interval/" rel="alternate" type="text/html" title="[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)" /><published>2023-02-28T00:00:00+09:00</published><updated>2023-02-28T00:00:00+09:00</updated><id>http://localhost:4000/programmers/number-with-x-interval</id><content type="html" xml:base="http://localhost:4000/programmers/number-with-x-interval/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[정수 제곱근 판별]]></summary></entry><entry><title type="html">[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)</title><link href="http://localhost:4000/programmers/number-with-x-interval/" rel="alternate" type="text/html" title="[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)" /><published>2023-02-28T00:00:00+09:00</published><updated>2023-02-28T00:00:00+09:00</updated><id>http://localhost:4000/programmers/number-with-x-interval</id><content type="html" xml:base="http://localhost:4000/programmers/number-with-x-interval/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
 
 <p>함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.</p>
 
