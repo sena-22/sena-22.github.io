@@ -1,4 +1,456 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-27T09:54:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">[Deep Dive] 7. 제어문</title><link href="http://localhost:4000/javascript/control-flow-statement/" rel="alternate" type="text/html" title="[Deep Dive] 7. 제어문" /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T00:00:00+09:00</updated><id>http://localhost:4000/javascript/control-flow-statement</id><content type="html" xml:base="http://localhost:4000/javascript/control-flow-statement/"><![CDATA[<p>제어문은 조건에 따라 코드 블록을 실행하거나 반복 실행할 때 사용한다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-02T19:47:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">createBrowserRouter를 이용한 라우팅 적용</title><link href="http://localhost:4000/react/react-router/" rel="alternate" type="text/html" title="createBrowserRouter를 이용한 라우팅 적용" /><published>2023-03-02T00:00:00+09:00</published><updated>2023-03-02T00:00:00+09:00</updated><id>http://localhost:4000/react/react-router</id><content type="html" xml:base="http://localhost:4000/react/react-router/"><![CDATA[<h2 id="createbrowserrouter-reactprovider">createBrowserRouter(), ReactProvider</h2>
+
+<p>먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. <code class="language-plaintext highlighter-rouge">createBrowserRouter()</code>함수로 생성한 <code class="language-plaintext highlighter-rouge">router</code>를 <code class="language-plaintext highlighter-rouge">ReactProvider</code> 컴포넌트에 <code class="language-plaintext highlighter-rouge">props</code>로 넣어준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createBrowserRouter</span><span class="p">,</span> <span class="nx">ReactProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createBrowserRouter</span><span class="p">([]);</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">)).</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">RouterProvider</span> <span class="nx">router</span><span class="o">=</span><span class="p">{</span><span class="nx">router</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>라우터를 분리해서 작성할 수도 있다.</p>
+
+<h3 id="appjs">App.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">RouterProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">router</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./router/Router</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">RouterProvider</span> <span class="nx">router</span><span class="o">=</span><span class="p">{</span><span class="nx">router</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="routerjs">router.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createBrowserRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createBrowserRouter</span><span class="p">([]);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="path-element-children">path, element, children</h2>
+
+<p><code class="language-plaintext highlighter-rouge">path</code>와 <code class="language-plaintext highlighter-rouge">element</code>를 이용해서 경로와 컴포넌트를, <code class="language-plaintext highlighter-rouge">children</code> 속성으로 중첩된 라우터를 배열 형식으로 추가할 수 있다.</p>
+
+<h3 id="routerjs-1">router.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createBrowserRouter</span><span class="p">([</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">//렌더링되는 요소</span>
+    <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Layout</span> <span class="o">/&gt;</span><span class="p">,</span>
+    <span class="na">children</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">PageA</span> <span class="o">/&gt;</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+<span class="p">]);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="outlet">Outlet</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Outlet</code>은 부모 루트가 자식 루트를 렌더링하도록 해준다.</p>
+
+<h3 id="layoutjs">Layout.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">Outlet</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">Layout</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Nav</span> <span class="o">/&gt;</span>
+        <span class="c1">// url이 '/a'일 때, 위에서 설정한 자식 요소인 &lt;PageA&gt; 컴포넌트가 여기서 출력된다.</span>
+        <span class="o">&lt;</span><span class="nx">Outlet</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Layout</span>
+</code></pre></div></div>
+
+<h2 id="loader">loader</h2>
+
+<p>라우트가 렌더링되기 전에 loader를 이용하여 정의한 함수를 실행할 수 있다.</p>
+
+<h3 id="loaderjs">loader.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">redirect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Loader</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">isLogged</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">logIn</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isLogged</span><span class="p">)</span> <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="dl">"</span><span class="s2">/login</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">LoginLoader</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">isLogged</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">logIn</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isLogged</span><span class="p">)</span> <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>loader 함수를 미리 정의해두었다. localStoragedp logIn 이라는 이름의 키의 존재 여부로 redirect를 실행하는 함수이다.</p>
+
+<h3 id="routerjs-2">router.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Loader</span><span class="p">,</span> <span class="nx">LoginLoader</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Loader/loader</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createBrowserRouter</span><span class="p">([</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Layout</span> <span class="o">/&gt;</span><span class="p">,</span>
+    <span class="na">children</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">PageA</span> <span class="o">/&gt;</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="nx">Loader</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">login</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Login</span> <span class="o">/&gt;</span><span class="p">,</span>
+    <span class="na">loader</span><span class="p">:</span> <span class="nx">LoginLoader</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">]);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>라우터마다 적용할 로더를 설정하면 요소가 렌더링되기 전 함수가 실행된다.</p>]]></content><author><name>Reyna</name></author><category term="react" /><category term="react-router-dom" /><category term="react" /><category term="createBrowserRouter" /><summary type="html"><![CDATA[react-router-dom V6의 createBrowserRouter 적용해보기]]></summary></entry><entry><title type="html">[Programmers] 13. 정수 제곱근 판별 (javascript)</title><link href="http://localhost:4000/programmers/distinguish-sqrt/" rel="alternate" type="text/html" title="[Programmers] 13. 정수 제곱근 판별 (javascript)" /><published>2023-03-01T00:00:00+09:00</published><updated>2023-03-01T00:00:00+09:00</updated><id>http://localhost:4000/programmers/distinguish-sqrt</id><content type="html" xml:base="http://localhost:4000/programmers/distinguish-sqrt/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+
+<p>임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다.
+n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>n은 1이상, 50000000000000 이하인 양의 정수입니다.</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>121</td>
+      <td>144</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<ol>
+  <li>n의 제곱근을 구한다.</li>
+  <li>n이 정수이면 (x+1)의 제곱을 리턴한다.</li>
+  <li>정수가 아니면 -1을 리턴한다.</li>
+</ol>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">?</span> <span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[정수 제곱근 판별]]></summary></entry><entry><title type="html">[Wanted Pre Onboarding] 1. 사전 과제</title><link href="http://localhost:4000/mini%20project/wanted-pre-onboarding/" rel="alternate" type="text/html" title="[Wanted Pre Onboarding] 1. 사전 과제" /><published>2023-03-01T00:00:00+09:00</published><updated>2023-03-01T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/wanted-pre-onboarding</id><content type="html" xml:base="http://localhost:4000/mini%20project/wanted-pre-onboarding/"><![CDATA[<h1 id="초기-환경-설정">초기 환경 설정</h1>
+
+<h2 id="cra--typescript-설치">CRA &amp; typescript 설치</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="o">&lt;</span><span class="nx">프로젝트</span> <span class="nx">이름</span><span class="o">&gt;</span> <span class="o">--</span><span class="nx">templage</span> <span class="nx">typescript</span>
+</code></pre></div></div>
+
+<h2 id="styled-components-설치">styled-components 설치</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">styled</span><span class="o">-</span><span class="nx">components</span>
+
+<span class="c1">//type definition</span>
+<span class="nx">npm</span> <span class="nx">i</span> <span class="o">-</span><span class="nx">D</span> <span class="p">@</span><span class="nd">types</span><span class="sr">/styled-component</span><span class="err">s
+</span></code></pre></div></div>
+
+<h2 id="styled-reset-설치-및-적용">styled-reset 설치 및 적용</h2>
+
+<h3 id="styled-reset-설치">styled-reset 설치</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">styled</span><span class="o">-</span><span class="nx">reset</span>
+</code></pre></div></div>
+
+<h3 id="styled-reset-적용">styled-reset 적용</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createGlobalStyle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="nx">reset</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-reset</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">GlobalStyles</span> <span class="o">=</span> <span class="nx">createGlobalStyle</span><span class="s2">`</span><span class="p">${</span><span class="nx">reset</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">GlobalStyles</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><a href="https://defineall.tistory.com/919">styled-reset 이란? / 사용법</a></p>
+
+<h2 id="redux-toolkit-설치">redux-toolkit 설치</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="p">@</span><span class="nd">reduxjs</span><span class="sr">/toolkit react-redu</span><span class="err">x
+</span></code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="react" /><category term="typesciprt" /><category term="redux" /><summary type="html"><![CDATA[wanted project]]></summary></entry><entry><title type="html">[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)</title><link href="http://localhost:4000/programmers/number-with-x-interval/" rel="alternate" type="text/html" title="[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)" /><published>2023-02-28T00:00:00+09:00</published><updated>2023-02-28T00:00:00+09:00</updated><id>http://localhost:4000/programmers/number-with-x-interval</id><content type="html" xml:base="http://localhost:4000/programmers/number-with-x-interval/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+
+<p>함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>x는 -10000000 이상, 10000000 이하인 정수입니다.</li>
+  <li>n은 1000 이하인 자연수입니다.</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>x</th>
+      <th>n</th>
+      <th>answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>5</td>
+      <td>[2,4,6,8,10]</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3</td>
+      <td>[4,8,12]</td>
+    </tr>
+    <tr>
+      <td>-4</td>
+      <td>2</td>
+      <td>[-4,-8]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<ol>
+  <li>빈 배열 생성</li>
+  <li>1~n만큼 순회를 돌면서 arr에 x*i를 push</li>
+  <li>배열 리턴</li>
+</ol>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">x</span> <span class="o">*</span> <span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[x만큼 간격이 있는 n개의 숫자]]></summary></entry><entry><title type="html">[Deep Dive] DOM</title><link href="http://localhost:4000/javascript/1-DOM/" rel="alternate" type="text/html" title="[Deep Dive] DOM" /><published>2023-02-28T00:00:00+09:00</published><updated>2023-02-28T00:00:00+09:00</updated><id>http://localhost:4000/javascript/1-DOM</id><content type="html" xml:base="http://localhost:4000/javascript/1-DOM/"><![CDATA[<p>DOM은 노드들로 구성된 트리자료를 말한다. <br /> HTML 문서는 텍스트로 이루어져 있는데, 이 문서를 브라우저에 시각적으로 보여주려면 브라우저가 이해할 수 있게 변환해주어야 한다. <br /> HTML을 파싱하여 브라우저가 이해할 수 있도록 만들어진 트리구조가 DOM이다. DOM은 HTML 문서의 계층적 구조와 정보를 표현하며, 이를 제어할 수 있는 API(프로퍼티와 메서드)를 제공한다.</p>
+
+<h3 id="-파싱">🤔 파싱?<br /></h3>
+
+<p>파싱은 텍스트 문서의 문자들을 토큰으로 분해하여 분석하고, 토큰의 문법적 의미와 구조를 반영하여 파스 트리를 생성하는 것을 말한다. 여기서 토큰은 문법적 의미를 가지는 최소 단위를 말한다. (html 시작 토큰, html 종료 토큰.. )</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+      <span class="p">.</span><span class="nx">red</span>  <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="err">#</span><span class="nx">ff0000</span><span class="p">;</span> <span class="p">}</span>
+      <span class="p">.</span><span class="nx">blue</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="err">#</span><span class="mi">0000</span><span class="nx">ff</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Cities</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Seoul</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">two</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">London</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">three</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Newyork</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">four</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Tokyo</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/110877564/221693063-161becb4-b0e7-4a41-9dd1-e17f5cef5a02.png" alt="dom-tree" /></p>
+
+<p>위의 DOM tree는 HTML 문서를 파싱하여 만들어졌다.</p>
+
+<h1 id="1-노드">1. 노드</h1>
+
+<h2 id="html-요소와-노드-객체">HTML 요소와 노드 객체</h2>
+
+<h2 id="노드-객체의-타입">노드 객체의 타입</h2>
+
+<h2 id="노드-객체의-상속-구조">노드 객체의 상속 구조</h2>
+
+<h1 id="2-요소-노드-취득">2. 요소 노드 취득</h1>
+
+<h2 id="id를-이용한-요소-노드-취득">id를 이용한 요소 노드 취득</h2>
+
+<h2 id="태그-이름을-이용한-요소-노드-취득">태그 이름을 이용한 요소 노드 취득</h2>
+
+<h2 id="class를-이용한-요소-노드-취득">class를 이용한 요소 노드 취득</h2>
+
+<h2 id="css-선택자를-이용한-요소-노드-취득">CSS 선택자를 이용한 요소 노드 취득</h2>
+
+<h2 id="특정-요소-노드-취득-여부-확인하기">특정 요소 노드 취득 여부 확인하기</h2>
+
+<h2 id="htmlcollection과-nodelist">HTMLCollection과 NodeList</h2>
+
+<p><a href="https://codesandbox.io/s/dom-example-c6qf9c">DOM example</a></p>
+
+<h1 id="3-노드-탐색">3. 노드 탐색</h1>
+
+<h2 id="공백-텍스트-노드">공백 텍스트 노드</h2>
+
+<h2 id="자식-노드-탐색">자식 노드 탐색</h2>
+
+<h2 id="자식-노드-존재-확인">자식 노드 존재 확인</h2>
+
+<h2 id="요소-노드의-텍스트-노드-탐색">요소 노드의 텍스트 노드 탐색</h2>
+
+<h2 id="부모-노드-탐색">부모 노드 탐색</h2>
+
+<h2 id="형제-노드-탐색">형제 노드 탐색</h2>
+
+<h1 id="4-노드-정보-취득">4. 노드 정보 취득</h1>
+
+<h1 id="5-요소-노드의-텍스트-조작">5. 요소 노드의 텍스트 조작</h1>
+
+<h2 id="nodevalue">nodeValue</h2>
+
+<h2 id="textcontent">textContent</h2>
+
+<h1 id="6-dom-조작">6. DOM 조작</h1>
+
+<h2 id="innerhtml">innerHTML</h2>
+
+<h2 id="insertadjacenthtml">insertAdjacentHTML</h2>
+
+<h2 id="노드-생성과-추가">노드 생성과 추가</h2>
+
+<h2 id="복수-노드-생성과-추가">복수 노드 생성과 추가</h2>
+
+<h2 id="노드-삽입">노드 삽입</h2>
+
+<h2 id="노드-이동">노드 이동</h2>
+
+<h2 id="노드-복사">노드 복사</h2>
+
+<h2 id="노드-교체">노드 교체</h2>
+
+<h2 id="노드-삭제">노드 삭제</h2>
+
+<h1 id="7-어트리뷰트">7. 어트리뷰트</h1>
+
+<h2 id="어트리뷰트-노드와-attributes-프로퍼티">어트리뷰트 노드와 attributes 프로퍼티</h2>
+
+<h2 id="html-어트리뷰트-조작">HTML 어트리뷰트 조작</h2>
+
+<h2 id="html-어트리뷰트-vs-dom-프로퍼티">HTML 어트리뷰트 vs. DOM 프로퍼티</h2>
+
+<h2 id="data-어트리뷰트와-dataset-프로퍼티">data 어트리뷰트와 dataset 프로퍼티</h2>
+
+<h1 id="8-스타일">8. 스타일</h1>
+
+<h2 id="인라인-스타일-조작">인라인 스타일 조작</h2>
+
+<h2 id="클래스-조작">클래스 조작</h2>
+
+<h2 id="요소에-적용되어-있는-css-스타일-참조">요소에 적용되어 있는 CSS 스타일 참조</h2>
+
+<h1 id="9-dom-표준">9. DOM 표준</h1>
+
+<p class="notice--primary"><a href="https://mystudy.tistory.com/21">HTML 파싱(HTML Parsing) 이란?</a></p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="DOM" /><summary type="html"><![CDATA[Document Object Model]]></summary></entry><entry><title type="html">[Deep Dive] Event</title><link href="http://localhost:4000/javascript/2-Event/" rel="alternate" type="text/html" title="[Deep Dive] Event" /><published>2023-02-28T00:00:00+09:00</published><updated>2023-02-28T00:00:00+09:00</updated><id>http://localhost:4000/javascript/2-Event</id><content type="html" xml:base="http://localhost:4000/javascript/2-Event/"><![CDATA[<h1 id="1-이벤트-드리븐-프로그래밍">1. 이벤트 드리븐 프로그래밍</h1>
+
+<h1 id="2-이벤트-타입">2. 이벤트 타입</h1>
+
+<h1 id="3-이벤트-핸들러-등록">3. 이벤트 핸들러 등록</h1>
+
+<h2 id="이벤트-핸들러-어트리뷰트-방식">이벤트 핸들러 어트리뷰트 방식</h2>
+
+<h2 id="이벤트-핸들러-프로퍼티-방식">이벤트 핸들러 프로퍼티 방식</h2>
+
+<h2 id="addeventlistener-방식">addEventListener 방식</h2>
+
+<h1 id="4-이벤트-핸들러-제거">4. 이벤트 핸들러 제거</h1>
+
+<h1 id="5-이벤트-객체">5. 이벤트 객체</h1>
+
+<h2 id="이벤트-객체의-상속-구조">이벤트 객체의 상속 구조</h2>
+
+<h2 id="이벤트-객체의-공통-프로퍼티">이벤트 객체의 공통 프로퍼티</h2>
+
+<h2 id="마우스-정보-취득">마우스 정보 취득</h2>
+
+<h2 id="키보드-정보-취득">키보드 정보 취득</h2>
+
+<h1 id="6-이벤트-전파">6. 이벤트 전파</h1>
+
+<h1 id="7-이벤트-위임">7. 이벤트 위임</h1>
+
+<h1 id="8-dom-요소의-기본-동작-조작">8. DOM 요소의 기본 동작 조작</h1>
+
+<h2 id="dom-요소의-기본-동작-중단">DOM 요소의 기본 동작 중단</h2>
+
+<h2 id="이벤트-전파-방지">이벤트 전파 방지</h2>
+
+<h1 id="9-이벤트-핸들러-내부의-this">9. 이벤트 핸들러 내부의 this</h1>
+
+<h2 id="이벤트-핸들러-어트리뷰트-방식-1">이벤트 핸들러 어트리뷰트 방식</h2>
+
+<h2 id="이벤트-핸들러-프로퍼티-방식과-addeventlistener-방식">이벤트 핸들러 프로퍼티 방식과 addEventListener 방식</h2>
+
+<h1 id="10-이벤트-핸들러에-인수-전달">10. 이벤트 핸들러에 인수 전달</h1>
+
+<h1 id="11-커스텀-이벤트">11. 커스텀 이벤트</h1>
+
+<h2 id="커스텀-이벤트-생성">커스텀 이벤트 생성</h2>
+
+<h2 id="커스텀-이벤트-디스패치">커스텀 이벤트 디스패치</h2>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="event" /><summary type="html"><![CDATA[event]]></summary></entry><entry><title type="html">[Deep Dive] 7. 제어문</title><link href="http://localhost:4000/javascript/control-flow-statement/" rel="alternate" type="text/html" title="[Deep Dive] 7. 제어문" /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T00:00:00+09:00</updated><id>http://localhost:4000/javascript/control-flow-statement</id><content type="html" xml:base="http://localhost:4000/javascript/control-flow-statement/"><![CDATA[<p>제어문은 조건에 따라 코드 블록을 실행하거나 반복 실행할 때 사용한다.</p>
 
 <h1 id="블록문">블록문</h1>
 
@@ -359,952 +811,4 @@ break문처럼 반복문을 탈출하지는 않는다.</p>]]></content><author><
 <a href="https://yamoo9.gitbook.io/typescript/classes">Typescript Guidbook</a> <br />
 <a href="https://developer-talk.tistory.com/368">DevStory</a> <br />
 <a href="https://poiemaweb.com/typescript-class">poiemaweb</a> <br />
-<a href="https://www.youtube.com/watch?v=17Oh028Jpis&amp;list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&amp;index=6">코딩앙마 youtube Typescript #6 클래스</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="class" /><category term="member visibility" /><category term="abstract class" /><summary type="html"><![CDATA[클래스, 접근제한자, 추상 클래스]]></summary></entry><entry><title type="html">[typescript] 리터럴, 유니온, 교차 타입</title><link href="http://localhost:4000/typescript/union-literal-intersection-types/" rel="alternate" type="text/html" title="[typescript] 리터럴, 유니온, 교차 타입" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/typescript/union-literal-intersection-types</id><content type="html" xml:base="http://localhost:4000/typescript/union-literal-intersection-types/"><![CDATA[<h1 id="리터럴-타입">리터럴 타입</h1>
-
-<p>리터럴 타입은 구체적인 문자열과 숫자 값을 타입으로 지정하여, 지정한 값만 사용할 수 있게 만든 타입이다.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//const로 선언한 원시 값은 재할당이 불가능하다.</span>
-<span class="c1">// 리터럴 타입의 표현 방식은 const 키워드가 작동하는 방식과 유사하다.</span>
-<span class="kd">const</span> <span class="nx">userName1</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">jack</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="c1">//let으로 선언한 값은 재할당이 가능하다. 이 경우 숫자도 함께 지정했기 때문에 숫자로 재할당이 가능하다</span>
-<span class="kd">let</span> <span class="nx">userName2</span> <span class="o">=</span> <span class="kr">string</span><span class="o">|</span><span class="kr">number</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">clive</span><span class="dl">'</span>
-<span class="nx">userName2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-
-<span class="kd">type</span> <span class="nx">Job</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">police</span><span class="dl">'</span> <span class="o">|</span><span class="dl">'</span><span class="s1">developer</span><span class="dl">'</span><span class="o">|</span><span class="dl">'</span><span class="s1">teacher</span><span class="dl">'</span><span class="p">;</span> <span class="c1">//리터럴 타입</span>
-
-<span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span><span class="kr">string</span><span class="p">;</span>
-  <span class="nl">job</span><span class="p">:</span><span class="nx">Job</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">user</span><span class="p">:</span><span class="nx">User</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">name</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Jack</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">job</span><span class="p">:</span><span class="dl">'</span><span class="s1">developer</span><span class="dl">'</span> <span class="c1">//위에서 선언한 목록만 사용 가능하다.</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="유니언-타입">유니언 타입</h1>
-
-<p>유니언 타입은 타입을 조합하는 방법 중에 하나이며, <code class="language-plaintext highlighter-rouge">or</code> 조건을 나타낼 때 사용한다.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Car</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">car</span><span class="dl">"</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kr">interface</span> <span class="nx">Mobile</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mobile</span><span class="dl">"</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nx">call</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//Car | Mobile처럼 |를 사용한 타입을 유니온타입이라고 한다.</span>
-<span class="kd">function</span> <span class="nx">getGift</span><span class="p">(</span><span class="nx">gift</span><span class="p">:</span> <span class="nx">Car</span> <span class="o">|</span> <span class="nx">Mobile</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gift</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span> <span class="c1">//둘다 가지고 있는 속성은 사용 가능</span>
-  <span class="nx">gift</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span> <span class="c1">// 하나에만 있는 속성은 사용 불가능 (에러 발생)</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="nx">gift</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">car</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//이런 식으로 조건문을 달아서 사용 가능</span>
-    <span class="nx">gift</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">gift</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="교차-타입">교차 타입</h1>
-
-<p>유니언 타입과 마찬가지로 타입을 조합할 수 있는데, <code class="language-plaintext highlighter-rouge">and</code> 조건을 나타낼 때 사용한다.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Car2</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kr">interface</span> <span class="nx">Toy</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">price</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">//Toy와 Car의 모든 속성을 적어줘야 한다</span>
-<span class="kd">const</span> <span class="nx">toyCar</span><span class="p">:</span> <span class="nx">Toy</span> <span class="o">&amp;</span> <span class="nx">Car2</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tayo</span><span class="dl">"</span><span class="p">,</span>
-  <span class="nx">start</span><span class="p">()</span> <span class="p">{},</span>
-  <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">price</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="literal type" /><category term="union type" /><category term="intersection type" /><summary type="html"><![CDATA[literal, union, intersection type]]></summary></entry><entry><title type="html">[Deep Dive] 6. 연산자</title><link href="http://localhost:4000/javascript/operator/" rel="alternate" type="text/html" title="[Deep Dive] 6. 연산자" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-27T00:00:00+09:00</updated><id>http://localhost:4000/javascript/operator</id><content type="html" xml:base="http://localhost:4000/javascript/operator/"><![CDATA[<h1 id="연산자와-피연산자">연산자와 피연산자</h1>
-
-<p>연산자는 하나 이상의 표현식을 대상으로 산술, 할당, 비교 등을 수행하여 하나의 값을 만든다. 이때 대상이 되는 표현식이 피연산자이다. 피연산자는 값으로 평가될 수 있어야 한다.</p>
-
-<h2 id="연산자-표현식">연산자 표현식</h2>
-
-<p>연산자와 피연산자의 조합으로 이루어진 표현식이다. 피연산자와 마찬가지로 값으로 평가될 수 있어야 한다.</p>
-
-<h1 id="1-산술-연산자">1. 산술 연산자</h1>
-
-<p>산술 연산자는 피연산자를 대상으로 수학적 계산을 수행해 새로운 숫자 값을 만드는 연산자이다. 산술 연산이 불가능한 경우 NaN을 반환한다.</p>
-
-<h2 id="11-이항-산술-연산자">1.1. 이항 산술 연산자</h2>
-
-<p>2개의 피연산자를 연산하여 숫자 값을 만든다. 피연산자를 바꾸는 부수효과는 없고, 항상 새로운 값을 만든다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 여기서 5와 2는 피연산자, +는 연산자가 된다.</span>
-<span class="c1">// 연산을 수행해도 5와 2는 변경되지 않고, 7이라는 새로운 값이 만들어진다.</span>
-<span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 7</span>
-</code></pre></div></div>
-
-<p>이항 산술 연산자는 사칙연산과 동일하게 덧셈(<code class="language-plaintext highlighter-rouge">+</code>), 뺄셈(<code class="language-plaintext highlighter-rouge">-</code>), 곱셈(<code class="language-plaintext highlighter-rouge">*</code>), 나눗셈(<code class="language-plaintext highlighter-rouge">/</code>) 등이 있다. <br />
-주의할 점은 나눗셈은 <code class="language-plaintext highlighter-rouge">/</code>를 사용하고, 나머지를 구할 때는 <code class="language-plaintext highlighter-rouge">%</code>를 사용한다는 점이다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//2.5</span>
-
-<span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//1</span>
-</code></pre></div></div>
-
-<h2 id="12-단항-산술-연산자">1.2. 단항 산술 연산자</h2>
-
-<p>단항 산술 연산자는 1개의 피연산자를 연산해서 숫자 값을 만든다. <br />
-증가/감소 연산자인 <code class="language-plaintext highlighter-rouge">++</code>와 <code class="language-plaintext highlighter-rouge">--</code>연산자는 부수효과가 있지만, <code class="language-plaintext highlighter-rouge">+</code>와 <code class="language-plaintext highlighter-rouge">-</code> 연산자는 부수효과를 가지지 않는다.</p>
-
-<h3 id="--"><code class="language-plaintext highlighter-rouge">++/--</code></h3>
-
-<p>증가/감소 연산자는 위치에 따라 다른 효과를 가진다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">result</span><span class="p">;</span>
-
-<span class="c1">// 할당 후 증가</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span><span class="o">++</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span> <span class="c1">// 5,6</span>
-
-<span class="c1">// 증가 후 할당</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="o">++</span><span class="nx">a</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span> <span class="c1">// 7 7</span>
-
-<span class="c1">// 할당 후 감소</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span><span class="o">--</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span> <span class="c1">// 7 6</span>
-
-<span class="c1">// 감소 후 할당</span>
-<span class="nx">result</span> <span class="o">=</span> <span class="o">--</span><span class="nx">a</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span> <span class="c1">// 5 5</span>
-
-<span class="c1">//이때 피연산자인 a의 값이 변한다(부수효과를 가진다)</span>
-</code></pre></div></div>
-
-<h3><code class="language-plaintext highlighter-rouge">+</code></h3>
-
-<p><code class="language-plaintext highlighter-rouge">+</code> 단항 연산자는 아무런 효과도 없다. 다만 숫자 타입이 아닌 피연산자에 사용하면 피연산자를 숫자로 변환한 값을 생성해서 반환한다.(피연산자를 변경하는 것은 아니다)</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">//숫자로 타입 변환한다</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="o">+</span><span class="nx">x</span><span class="p">);</span> <span class="c1">//number</span>
-<span class="c1">//피연산자를 변경하는 것은 아니다.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="k">typeof</span> <span class="nx">x</span><span class="p">);</span> <span class="c1">// 1 string</span>
-
-<span class="nx">x</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">+</span><span class="nx">x</span><span class="p">);</span> <span class="c1">//1</span>
-
-<span class="c1">// 숫자로 변경하지 못하면 NaN을 반환한다.</span>
-<span class="nx">x</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hi</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">+</span><span class="nx">x</span><span class="p">);</span> <span class="c1">//NaN</span>
-</code></pre></div></div>
-
-<h3 id="-"><code class="language-plaintext highlighter-rouge">-</code></h3>
-
-<p><code class="language-plaintext highlighter-rouge">-</code> 단항 연산자는 부호를 반전한 값을 반환한다. <code class="language-plaintext highlighter-rouge">+</code> 단항 연산자와 마찬가지로 부수 효과는 없다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">-</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// -1</span>
-</code></pre></div></div>
-
-<h2 id="13-문자열-연결-연산자">1.3. 문자열 연결 연산자</h2>
-
-<p><code class="language-plaintext highlighter-rouge">+</code> 연산자는 피연산자 중에 하나 이상이 문자열인 경우 문자열 연결 연산자로 동작한다.
-<br /> 이때 타입이 강제로 변환되는 암묵적 타입 변환이 일어나는데, 암묵적 타입 변환은 <a href="https://sena-22.github.io/javascript/2-type/#%EC%95%94%EB%AC%B5%EC%A0%81-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98">여기</a>에 정리해두었다.</p>
-
-<h1 id="2-할당-연산자">2. 할당 연산자</h1>
-
-<p>할당 연산자는 우항 피연산자의 결과를 좌항에 있는 변수에 할당한다. 좌항의 값을 바꾸므로 부수 효과가 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="nx">x</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// x = x +5 //복합 할당 연산자라고 한다</span>
-</code></pre></div></div>
-
-<p>할당문은 값으로 표현되는 표현식인 문으로, 할당된 값으로 평가되고, 그 값을 반환한다.
-위에서 <code class="language-plaintext highlighter-rouge">x=5</code>는 <code class="language-plaintext highlighter-rouge">5</code>를 반환한다. <br />이런 특징을 이용하여 할당 연산자 체이닝도 가능하다.(가독성을 해치기 때문에 지양하는 것이 좋다)</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">;</span>
-<span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">);</span> <span class="c1">// 2 2 2</span>
-</code></pre></div></div>
-
-<h1 id="3-비교-연산자">3. 비교 연산자</h1>
-
-<p>비교 연산자는 좌항과 우항을 비교한 후, 결과를 불리언 값으로 반환한다. 조건식에서 자주 사용된다.</p>
-
-<h2 id="31-동등-비교-연산자--일치-비교-연산자">3.1. 동등 비교 연산자 / 일치 비교 연산자</h2>
-
-<p>동등 (비교) 연산자와 일치 비교 연산자는 좌항과 우항이 같은 값으로 평가되는지 비교한 후 불리언 값을 반환하는데, 어느 정도로 엄격하게 비교하는지에 따라 나뉜다.</p>
-
-<h3 id="동등-비교-연산자">동등 비교 연산자(==)</h3>
-
-<p>동등 비교 연산자는 비교할 때 암묵적으로 타입을 일치시킨 후 같은 값인지 비교한다. 이 때문에 비교 결과를 예측하기 어려워지는 단점을 가진다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="kc">false</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="kc">undefined</span> <span class="o">==</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">//true</span>
-</code></pre></div></div>
-
-<p>위와 같은 문제를 해결하려면 일치 연산자를 사용하면 된다.</p>
-
-<h3 id="일치-비교-연산자">일치 비교 연산자</h3>
-
-<p>일치 비교 연산자는 암묵적 타입 변환 없이 값과 타입을 모두 검사한다. 위의 예제를 모두 ‘===’로 변경하면 예측한 결과가 나온다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//false</span>
-<span class="kc">false</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//false</span>
-<span class="kc">undefined</span> <span class="o">===</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">//false</span>
-</code></pre></div></div>
-
-<h2 id="32-대소-관계-비교-연산자">3.2. 대소 관계 비교 연산자</h2>
-
-<p>대소 관계 비교 연산자는 피연산자의 크기를 비교하여 불리언 값을 반환한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//false</span>
-<span class="mi">5</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="mi">5</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//true</span>
-</code></pre></div></div>
-
-<h3 id="문자열-비교">문자열 비교</h3>
-
-<p>문자열의 경우 유니코드 순으로 비교하는데, 뒤쪽에 있는 문자열이 앞쪽에 있는 문자열보다 크다고 판단한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">Z</span><span class="dl">"</span> <span class="o">&gt;</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//true</span>
-</code></pre></div></div>
-
-<p>비교 시 대소문자를 구분한다. 소문자가 대문자보다 크다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span> <span class="o">&gt;</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//true</span>
-</code></pre></div></div>
-
-<p>문자열을 비교할 때, 두 문자열의 첫 글자가 같으면 그 다음 글자를 비교해서, 더 큰 글자가 있으면 비교를 종료한다. <br />
-글자 간 비교가 끝날 때까지 이 과정을 반복하는데, 이때 문자열의 길이가 같으면 문자열이 동일하다고 판단하고, 한 쪽이 더 길면 긴 쪽이 더 크다고 판단한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">ab</span><span class="dl">"</span> <span class="o">&gt;</span> <span class="dl">"</span><span class="s2">ac</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//false // 'b'&lt;'c'이기 때문에 false가 나온다</span>
-<span class="dl">"</span><span class="s2">ab</span><span class="dl">"</span> <span class="o">&gt;</span> <span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//false 비교가 종료된 후, 길이가 더 긴 'abc'가 더 크다고 판단한다</span>
-<span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//true</span>
-</code></pre></div></div>
-
-<h1 id="4-삼항-조건-연산자">4. 삼항 조건 연산자</h1>
-
-<p>삼항 연산자는 조건식이 true일 때 두 번째 피연산자, false일 때 세 번째 피연산자로 평가되는 표현식이다.
-조건식의 결과가 불리언 값이 아니면 불리언으로 암묵적 타입 변환된다. <br />
-if…else문과 비슷하게 사용 가능하지만, 값처럼 사용할 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//조건식 ? 조건식이 true일 때 반환할 값 : 조건식이 false일 때 반환할 값</span>
-<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">짝수</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">홀수</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">//홀수</span>
-</code></pre></div></div>
-
-<h1 id="5-논리-연산자">5. 논리 연산자</h1>
-
-<p>javascript의 논리 연산자는 <code class="language-plaintext highlighter-rouge">||</code>,<code class="language-plaintext highlighter-rouge">&amp;&amp;</code>,<code class="language-plaintext highlighter-rouge">!</code> 의 세 종류가 있다.</p>
-
-<h2 id="-or">|| (or)</h2>
-
-<p>or 연산자는 둘 중 하나라도 true면 true를 반환한다. 만약 피연산자가 불리언 값이 아닌 경우 암묵적으로 타입이 변환된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">true</span> <span class="o">||</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="kc">false</span> <span class="o">||</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="kc">true</span> <span class="o">||</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="kc">false</span> <span class="o">||</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//true</span>
-</code></pre></div></div>
-
-<h2 id="-and">&amp;&amp; (and)</h2>
-
-<p>and 연산자는 둘 다 true여야 true를 반환한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//false</span>
-<span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//false</span>
-<span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//false</span>
-</code></pre></div></div>
-
-<h2 id="not">!(not)</h2>
-
-<p>not 연산자는 피연산자를 불리언 값으로 변환한 후에, 그 역을 반환한다</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="mi">0</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="o">!</span><span class="mi">1</span><span class="p">;</span> <span class="c1">//false</span>
-<span class="o">!</span><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//false</span>
-</code></pre></div></div>
-
-<h1 id="6-쉼표-연산자">6. 쉼표 연산자</h1>
-
-<p>쉼표 연산자는 왼쪽부터 피연산자를 평가하고, 마지막 피연산자의 평가가 끝난 후에 그 결과를 반환한다</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">;</span>
-<span class="p">(</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="nx">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">//3</span>
-</code></pre></div></div>
-
-<h1 id="7-그룹-연산자">7. 그룹 연산자</h1>
-
-<p>그룹 연산자는 괄호 안의 표현식 먼저 평가하며, 연산자 우선순위가 가장 높다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">10</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//12</span>
-<span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">//30</span>
-</code></pre></div></div>
-
-<h1 id="8-typeof-연산자">8. typeof 연산자</h1>
-
-<p>typeof 연산자는 피연산자의 타입을 문자열로 반환한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typeof</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//'number'</span>
-<span class="k">typeof</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//'string'</span>
-<span class="k">typeof</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">//'boolean'</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">null</code>의 경우 <code class="language-plaintext highlighter-rouge">object</code>로 반환되는 문제가 있으므로, <code class="language-plaintext highlighter-rouge">null</code> 값을 확인할 때는 일치 연산자(===)를 사용한다.</p>
-
-<h1 id="9-지수-연산자">9. 지수 연산자(<code class="language-plaintext highlighter-rouge">**</code>)</h1>
-
-<p>지수 연산자는 좌항의 피연산자를 밑으로, 우항의 피연산자를 지수로 거듭 제곱한 숫자 값을 반환한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//4</span>
-<span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//8</span>
-</code></pre></div></div>
-
-<p>음수를 거듭제곱의 밑으로 계산하려면 괄호로 묶어야 한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//4</span>
-</code></pre></div></div>
-
-<h1 id="연산자-우선순위">연산자 우선순위</h1>
-
-<p>연산자가 여러 개 있을 때, 우선순위가 높을수록 먼저 실행된다.</p>
-
-<p class="notice--primary"><a href="https://ko.javascript.info/operators#ref-80">연산자 우선순위 표</a></p>
-
-<p class="notice--danger">deep dive 4장, 14장, 15장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="operator" /><summary type="html"><![CDATA[operator]]></summary></entry><entry><title type="html">[Programmers] 9. 자릿수 더하기 (javascript)</title><link href="http://localhost:4000/programmers/place-value/" rel="alternate" type="text/html" title="[Programmers] 9. 자릿수 더하기 (javascript)" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/programmers/place-value</id><content type="html" xml:base="http://localhost:4000/programmers/place-value/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요. <br />
-예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>N의 범위 : 100,000,000 이하의 자연수</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>maps</th>
-      <th>answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>123</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>987</td>
-      <td>24</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">Array.from()</code> 메서드를 사용해서 N을 배열로 만든다.</li>
-  <li><code class="language-plaintext highlighter-rouge">reduce()</code>로 각 자리의 합을 구한다.</li>
-</ol>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">n</span><span class="p">),</span> <span class="nb">Number</span><span class="p">);</span>
-  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">cur</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="숫자를-배열로-분할하기">숫자를 배열로 분할하기</h2>
-
-<h3 id="1-arrayfrom">1. Array.from()</h3>
-
-<p><code class="language-plaintext highlighter-rouge">Array.from()</code>은 첫 번째 인자로 배열로 바꾸고 싶은 유사배열 객체나 이터러블 객체(인덱스를 가지고, 반복할 수 있는 객체) 를 전달하고, 두 번째 인자로 배열의 모든 요소에 대해 호출되는 함수를 전달한다.
-이 문제의 경우 문자열로 변환된 숫자와 Number 생성자를 전달한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Array.from(String(num), Number)</span>
-<span class="kd">let</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">),</span> <span class="nb">Number</span><span class="p">);</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
-<span class="c1">// 두 번째 인자를 전달하지 않으면 각 요소가 문자열로 반환된다.</span>
-<span class="kd">let</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">));</span> <span class="c1">//['1', '2', '3', '4', '5']</span>
-</code></pre></div></div>
-
-<h3 id="2-split-메서드를-사용하는-방법">2. split 메서드를 사용하는 방법</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">strArr</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span> <span class="c1">//['1', '2', '3', '4', '5']</span>
-<span class="kd">let</span> <span class="nx">numArr</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="mi">12345</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nb">Number</span><span class="p">);</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
-</code></pre></div></div>
-
-<p>숫자를 문자로 변환할 때 String 생성자를 사용하는 방법 외에도 암묵적 타입 변환을 사용하는 방법도 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12345</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nb">Number</span><span class="p">);</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
-</code></pre></div></div>
-
-<h2 id="다른-풀이">다른 풀이</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">cur</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>배열을 숫자 타입으로 바꾼 후 reduce를 사용하지 않고 reduce를 사용하면서 요소를 하나씩 숫자 타입으로 바꾼 방법이다.</p>
-
-<p class="notice--primary">💡 <a href="https://sena-22.github.io/javascript/2-type/#1-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EB%B3%80%ED%99%98">숫자를 문자로 바꾸기</a> <br />
-💡 <a href="https://codingbeautydev.com/blog/javascript-split-number-into-array/">JavaScript에서 숫자를 배열로 분할하는 방법</a></p>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[자릿수 더하기]]></summary></entry><entry><title type="html">[Deep Dive] 4. 표현식</title><link href="http://localhost:4000/javascript/1-expression/" rel="alternate" type="text/html" title="[Deep Dive] 4. 표현식" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/javascript/1-expression</id><content type="html" xml:base="http://localhost:4000/javascript/1-expression/"><![CDATA[<h2 id="1-값">1. 값</h2>
-
-<h3 id="값">값</h3>
-
-<ul>
-  <li>표현식이 평가되어 생성된 결과</li>
-</ul>
-
-<h3 id="평가">평가</h3>
-
-<ul>
-  <li>식을 해석해서 값을 생성하거나 참조하는 것</li>
-</ul>
-
-<h2 id="2-표현식">2. 표현식</h2>
-
-<h3 id="표현식">표현식</h3>
-
-<ul>
-  <li>값으로 평가될 수 있는 문</li>
-</ul>
-
-<h3 id="리터럴">리터럴</h3>
-
-<ul>
-  <li>사람이 이해할 수 있는 문자 혹은 약속된 기호를 사용해서 값을 생성하는 표기법(notation)</li>
-  <li>자바스크립트 엔진이 런타임에 리터럴을 평가해서 값을 생성한다.</li>
-  <li>리터럴도 값으로 평가되므로 표현식이다.</li>
-</ul>
-
-<h2 id="3-문">3. 문</h2>
-
-<h3 id="토큰">토큰</h3>
-
-<ul>
-  <li>문법적인 의미를 가지고, 더 이상 나눌 수 없는 코드의 기본 요소</li>
-  <li>키워드, 식별자, 연산자, 리터럴, 세미콜론, 마침표 등은 모두 토큰이다.</li>
-</ul>
-
-<h3 id="문">문</h3>
-
-<ul>
-  <li>프로그램을 구성하는 기본 단위, 최소 실행 단위</li>
-  <li>명령문이라고도 한다.</li>
-  <li>문은 토큰으로 구성된다.</li>
-</ul>
-
-<h3 id="문의-종류">문의 종류</h3>
-
-<ul>
-  <li>선언문, 할당문, 조건문, 반복문 등이 있다.</li>
-  <li>예를 들어 변수 선언문은 실행하면 변수가 선언되고, 할당문을 실행하면 값이 할당된다.</li>
-</ul>
-
-<h2 id="4-세미콜론">4. 세미콜론</h2>
-
-<h3 id="세미콜론">세미콜론</h3>
-
-<ul>
-  <li>문을 끝낼 때 붙여야 하며, 문의 종료를 나타낸다.</li>
-  <li>생략이 가능하다.</li>
-  <li>코드 블록은 자체 종결성을 가지기 때문에 세미콜론을 붙이지 않는다.</li>
-</ul>
-
-<h2 id="5-표현식인-문-vs-표현식이-아닌-문">5. 표현식인 문 vs. 표현식이 아닌 문</h2>
-
-<ul>
-  <li>표현식은 문의 일부이거나, 그 자체로 문이 될 수 있다.</li>
-</ul>
-
-<h3 id="표현식인-문과-표현식이-아닌-문을-구별하는-방법">표현식인 문과 표현식이 아닌 문을 구별하는 방법</h3>
-
-<p>둘을 구별하는 가장 간단한 방법은 <mark>변수에 할당해보는 것</mark>이다.</p>
-
-<ul>
-  <li>표현식인 문은 값으로 평가되므로 변수에 할당이 가능하지만, 표현식이 아닌 문은 에러가 발생한다.</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//변수 선언식은 표현식이 아닌 문이다.</span>
-<span class="kd">let</span> <span class="nx">notExpression</span> <span class="o">=</span> <span class="kd">let</span> <span class="nx">x</span> <span class="c1">// 에러가 발생</span>
-
-<span class="c1">//할당문은 표현식인 문이다.</span>
-<span class="nx">expression</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>크롬 개발자 도구 콘솔 창에서 문을 실행해볼 수도 있다.</p>
-
-<ul>
-  <li>표현식인 문은 평가된 값을 반환한다</li>
-  <li>표현식이 아닌 문은 <code class="language-plaintext highlighter-rouge">undefined</code>를 반환한다.</li>
-  <li>이때 <code class="language-plaintext highlighter-rouge">undefined</code>를 완료 값이라고 한다.</li>
-</ul>
-
-<p align="center">
-<img width="132" alt="스크린샷 2023-02-23 오전 8 36 31" src="https://user-images.githubusercontent.com/110877564/220787968-36f8c02c-5289-4887-8468-b24da316bcef.png" />
-</p>
-<p class="notice--danger">deep dive 5장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="expression" /><summary type="html"><![CDATA[expression]]></summary></entry><entry><title type="html">[Deep Dive] 5. 데이터 타입</title><link href="http://localhost:4000/javascript/2-type/" rel="alternate" type="text/html" title="[Deep Dive] 5. 데이터 타입" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/javascript/2-type</id><content type="html" xml:base="http://localhost:4000/javascript/2-type/"><![CDATA[<h1 id="1-타입데이터-타입">1. 타입(데이터 타입)</h1>
-
-<ul>
-  <li>타입은 값의 종류를 말한다.</li>
-  <li>ES6에서는 7개의 타입을 제공하며, 원시 타입과 객체 타입으로 분류할 수 있다.</li>
-</ul>
-
-<h2 id="원시-타입primitive-type">원시 타입(primitive type)</h2>
-
-<h3 id="number">number</h3>
-
-<ul>
-  <li>javascript는 다른 언어와 달리 하나의 숫자 타입만 존재한다.</li>
-  <li>정수만을 위한 타입이 없어 모든 수를 실수로 처리한다.</li>
-  <li>양의 무한대(Infinity), 음의 무한대(-Infinity), 산술연산불가(NaN) 표현도 가능하다.</li>
-</ul>
-
-<p class="notice--primary">NaN은 대소문자를 꼭 지켜야 한다. nan, NAN처럼 사용하면 식별자로 해석된다.</p>
-
-<h3 id="string">string</h3>
-
-<ul>
-  <li>템플릿 리터럴(template literal) : ES6부터 도입된 문자열 표기법. 백틱을 사용해 표현한다. <br /></li>
-</ul>
-
-<p>(1) 멀티라인 문자열</p>
-
-<ul>
-  <li>템플릿 리터럴 내에서 이스케이프 시퀀스를 사용하지 않아도 줄바꿈이 허용된다.</li>
-</ul>
-
-<p class="notice--primary">💡 이스케이프 시퀀스 <br />
-백스페이스() 뒤에 문자나 숫자 조합이 오는 문자 조합을 말한다. 공백이나 줄바꿈처럼 프로그래밍 언어 특성상 표현하기 어려운 문자열을 표현할 수 있다.
-(<code class="language-plaintext highlighter-rouge">\0</code> : null, <code class="language-plaintext highlighter-rouge">\b</code> : 백스페이스…)</p>
-
-<p>(2) 표현식 삽입</p>
-
-<ul>
-  <li>문자열 연산자(+)를 사용해서 문자열을 연결하는 방법보다 <code class="language-plaintext highlighter-rouge">${}</code>를 사용해서 표현식을 삽입하면 더 가독성이 좋아진다.</li>
-  <li>표현식 삽입은 템플릿 리터럴 내에서 사용해야 하고, 평가 결과가 문자열이 아니어도 문자열로 타입이 강제 변환된다.</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">front</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">back</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">World</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">// 문자열 연산자 사용</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">front</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">back</span><span class="p">);</span> <span class="c1">//Hello World</span>
-
-<span class="c1">//표현식 삽입</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">front</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">back</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span> <span class="c1">//Hello World</span>
-
-<span class="c1">//일반 문자열에서 표현식을 삽입하면 그냥 문자열로 취급된다.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">${front} ${back}</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//${front} ${back}</span>
-</code></pre></div></div>
-
-<h3 id="boolean">boolean</h3>
-
-<ul>
-  <li>불리언 타입은 <code class="language-plaintext highlighter-rouge">true</code>와 <code class="language-plaintext highlighter-rouge">false</code> 뿐이다.</li>
-</ul>
-
-<h3 id="undefined">undefined</h3>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">undefined</code> 타입은 <code class="language-plaintext highlighter-rouge">undefined</code> 뿐이다.</li>
-  <li>변수를 선언하고 값을 할당하지 않으면 <code class="language-plaintext highlighter-rouge">undefined</code>가 반환된다.</li>
-  <li>함수에 리턴 값이 없을 때도 <code class="language-plaintext highlighter-rouge">undefined</code>가 반환된다.</li>
-</ul>
-
-<h3 id="null">null</h3>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">null</code> 타입은 <code class="language-plaintext highlighter-rouge">null</code> 뿐이다.</li>
-  <li><code class="language-plaintext highlighter-rouge">null</code>은 변수에 값이 없다는 것을 의도적으로 명시할 때 사용한다.</li>
-  <li>변수에 <code class="language-plaintext highlighter-rouge">null</code>을 할당하는 것은 변수가 이전에 참조하던 값을 더 이상 참조하지 않음을 의미한다.</li>
-</ul>
-
-<h3 id="symbol">symbol</h3>
-
-<ul>
-  <li>ES6에서 추가된 7번째 타입</li>
-  <li>다른 값과 중복되지 않는 유일무이한 값이다.</li>
-  <li>Symbol 함수를 호출해서 생성한다.</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">key</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="dl">"</span><span class="s2">key</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">key</span><span class="p">);</span> <span class="c1">//symbol</span>
-
-<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span> <span class="c1">//value</span>
-</code></pre></div></div>
-
-<h2 id="객체-타입">객체 타입</h2>
-
-<p>원시 타입 외의 값은 모두 객체 타입이다.</p>
-
-<h2 id="타입이-왜-필요할까">타입이 왜 필요할까?</h2>
-
-<ul>
-  <li>자바스크립트는 데이터 타입에 따라 정해진 크기의 메모리 공간을 확보한다.</li>
-  <li>값을 참조할 때 타입에 따라 한 번에 읽어들이는 메모리 공간의 크기가 다르다.</li>
-  <li>메모리에서 읽은 2진수의 타입에 따라 해석 방법을 결정한다.</li>
-</ul>
-
-<p class="notice--primary">0100 0001을 숫자로 해석하면 65가 되지만, 문자열로 해석하면 ‘A’가 된다.</p>
-
-<h2 id="동적-타이핑">동적 타이핑</h2>
-
-<p>자바스크립트의 변수는 선언이 아닌 할당에 의해 <mark style="background: rgba(27, 31, 35, 0.05)">타입을 추론</mark>하여 결정한다. 그리고 다시 재할당하면 타입이 변한다. 이런 특징을 동적 타이핑이라고 하고, 선언할 때 타입을 선언해야 하는 정적 타입 언어와 구별하여 동적 타입 언어라고 한다.</p>
-
-<h3 id="동적-타입-언어의-단점">동적 타입 언어의 단점</h3>
-
-<ul>
-  <li>동적 타입 언어는 개발자의 의도와 다르게 암묵적으로 타입이 변할 수 있다.</li>
-</ul>
-
-<h1 id="2-타입-변환">2. 타입 변환</h1>
-
-<ul>
-  <li>타입 변환은 개발자의 의도 여부에 따라 명시적 타입 변환과 암묵적 타입 변환으로 나뉜다.</li>
-  <li>타입 변환이 기존의 원시 값을 직접 변경하는 것은 아니고,(원시 값은 변경 불가능한 값이다) 기존의 원시 값을 이용해 다른 타입의 새로운 원시 값을 생성한다.</li>
-</ul>
-
-<h2 id="명시적-타입-변환">명시적 타입 변환</h2>
-
-<ul>
-  <li>개발자가 의도적으로 타입을 변환하는 것을 말한다.</li>
-  <li>타입 캐스팅(type casting)이라고도 한다.</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// 명시적 타입 변환</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">num</span><span class="p">,</span> <span class="k">typeof</span> <span class="nx">str</span><span class="p">);</span> <span class="c1">//number string</span>
-</code></pre></div></div>
-
-<h3 id="1-문자열-타입으로-변환">1. 문자열 타입으로 변환</h3>
-
-<ul>
-  <li>String 생성자 함수를 new 연산자 없이 호출하는 방법</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">String</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// "1"</span>
-<span class="nb">String</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// "true"</span>
-</code></pre></div></div>
-
-<ul>
-  <li>Object.prototype.toString() 메서드를 사용하는 방법</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// "1"</span>
-<span class="kc">true</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span> <span class="c1">// "true"</span>
-</code></pre></div></div>
-
-<ul>
-  <li>문자열 연결 연산자를 사용하는 방법(암묵적 타입 변환 이용)</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">+</span> <span class="dl">""</span><span class="p">;</span> <span class="c1">// "1"</span>
-<span class="kc">NaN</span> <span class="o">+</span> <span class="dl">""</span><span class="p">;</span> <span class="c1">// 'NaN'</span>
-</code></pre></div></div>
-
-<h3 id="2-숫자-타입으로-변환">2. 숫자 타입으로 변환</h3>
-
-<ul>
-  <li>Number 생성자 함수를 new 연산자 없이 호출하는 방법</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Number</span><span class="p">(</span><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 0</span>
-<span class="nb">Number</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// 1</span>
-</code></pre></div></div>
-
-<ul>
-  <li>parseInt, parseFloat 함수를 사용하는 방법(문자열에만 적용 가능)</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 0</span>
-<span class="nb">parseFloat</span><span class="p">(</span><span class="dl">"</span><span class="s2">10.53</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 10.53</span>
-<span class="nb">parseInt</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// NaN</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">+</code> 단항 산술 연산자를 이용하는 방법</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">+</span><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 0</span>
-<span class="o">+</span><span class="kc">true</span><span class="p">;</span> <span class="c1">// 1</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">*</code> 산술 연산자를 이용하는 방법</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span> <span class="o">*</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 0</span>
-<span class="kc">true</span> <span class="o">*</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 1</span>
-</code></pre></div></div>
-
-<h3 id="3-불리언-타입으로-변환">3. 불리언 타입으로 변환</h3>
-
-<ul>
-  <li>Boolean 생성자 함수를 new 연산자 없이 호출하는 방법</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Boolean</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//true</span>
-<span class="nb">Boolean</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//false</span>
-<span class="nb">Boolean</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//true</span>
-<span class="nb">Boolean</span><span class="p">(</span><span class="kc">Infinity</span><span class="p">);</span> <span class="c1">//true</span>
-<span class="nb">Boolean</span><span class="p">({});</span> <span class="c1">//true</span>
-<span class="nb">Boolean</span><span class="p">([]);</span> <span class="c1">//true</span>
-<span class="nb">Boolean</span><span class="p">([</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">//true</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">!</code> 부정 논리 연산자를 두 번 사용하는 방법</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!!</span><span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//true</span>
-<span class="o">!!</span><span class="mi">0</span><span class="p">;</span> <span class="c1">// false</span>
-<span class="o">!!</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// true</span>
-<span class="o">!!</span><span class="kc">null</span><span class="p">;</span> <span class="c1">//false</span>
-<span class="o">!!</span><span class="p">{};</span> <span class="c1">//true</span>
-</code></pre></div></div>
-
-<h2 id="암묵적-타입-변환">암묵적 타입 변환</h2>
-
-<ul>
-  <li>자바스크립트 엔진에 의해 암묵적으로 타입이 변하는 것을 말한다.</li>
-  <li>타입 강제 변환(type coercion)이라고도 한다.</li>
-</ul>
-
-<h3 id="1-문자열-타입으로-변환-1">1. 문자열 타입으로 변환</h3>
-
-<p>문자열 연결 연산자(+)의 피연산자 중에서 문자열 타입이 하나 이상일 때, 문자열 타입이 아닌 피연산자가 있으면 암묵적으로 문자열 타입으로 변환한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">toStr</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">+</span> <span class="dl">""</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">toStr</span><span class="p">);</span> <span class="c1">//string</span>
-</code></pre></div></div>
-
-<h3 id="2-숫자-타입으로-변환-1">2. 숫자 타입으로 변환</h3>
-
-<ul>
-  <li>산술 연산자, 비교 연산자, + 단항 연산자의 피연산자는 모두 숫자 타입이어야 하며, 숫자 타입의 값이 아니면 암묵적으로 숫자 타입으로 변환한다.</li>
-  <li>만약 숫자 타입으로 변환할 수 없는 경우(객체, 빈 배열이 아닌 배열, undefined) NaN이 반환된다.</li>
-  <li>빈 문자열(‘’), 빈 배열([]), null, false는 0으로, true는 1로 변환된다.</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">5</span><span class="dl">"</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">+</span> <span class="c1">// true</span>
-</code></pre></div></div>
-
-<p>문자열 5가 숫자 타입으로 변환된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//prettier-ignore</span>
-<span class="dl">""</span> <span class="o">+</span> <span class="c1">// 0</span>
-<span class="kc">true</span> <span class="o">+</span> <span class="c1">// 1</span>
-<span class="kc">false</span> <span class="o">+</span> <span class="c1">// 0</span>
-<span class="p">{}</span> <span class="o">+</span> <span class="c1">// NaN</span>
-<span class="p">[]</span> <span class="o">+</span> <span class="c1">// 0</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="c1">// 1</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span> <span class="c1">// NaN</span>
-</code></pre></div></div>
-
-<h3 id="3-불리언-타입으로-변환-1">3. 불리언 타입으로 변환</h3>
-
-<p>if문이 for문 같은 제어문, 삼항 조건 연산자의 조건식은 불리언 값으로 표현되어야 한다. 따라서 이때 불리언 타입이 아닌 값을 Truthy나 Falsy 값으로 구분하여, Truthy 값은 true로, Falsy 값은 false로 암묵적 타입 변환한다.</p>
-
-<p class="notice--danger"><strong>Falsy 값</strong> <br />
-false, undefined, null, 0, -0, NaN, ‘’</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="kc">false</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">//false</span>
-</code></pre></div></div>
-
-<h1 id="3-단축-평가">3. 단축 평가</h1>
-
-<ul>
-  <li>단축 평가는 표현식을 평가하는 도중에 평가 결과가 확정된 경우, 나머지 평가 과정을 생략하는 것을 말한다.</li>
-</ul>
-
-<h2 id="논리-연산자-사용">논리 연산자 사용</h2>
-
-<ul>
-  <li>논리합, 논리곱의 연산자 표현식은 언제나 2개의 피연산자 중 한쪽으로 평가된다.</li>
-</ul>
-
-<h3 id="논리곱-연산자">논리곱 연산자</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">Apple</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">Cherry</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 'Cherry'</span>
-<span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">Apple</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//false</span>
-<span class="dl">"</span><span class="s2">Apple</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 'false'</span>
-</code></pre></div></div>
-
-<ul>
-  <li>논리곱(&amp;&amp;) 연산자는 모두 true일 때 true를 반환한다.</li>
-  <li>만약 첫 번째 피연산자가 false면 false를 바로 반환한다.</li>
-</ul>
-
-<h3 id="논리합-연산자">논리합 연산자</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">Apple</span><span class="dl">"</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">Cherry</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 'Apple'</span>
-<span class="kc">false</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">Apple</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 'Apple'</span>
-<span class="dl">"</span><span class="s2">Apple</span><span class="dl">"</span> <span class="o">||</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// 'Apple'</span>
-</code></pre></div></div>
-
-<ul>
-  <li>논리합 연산자는 하나만 true여도 true를 반환한다.</li>
-  <li>첫 번째 피연산자가 false여도 두 번째 연산자까지 확인한다.</li>
-</ul>
-
-<h3 id="단축-평가를-이용하여-if문-대체하기">단축 평가를 이용하여 if문 대체하기</h3>
-
-<ul>
-  <li>논리곱 연산자를 이용하면 조건이 Truthy 값일 때 if문을 대체할 수 있다.</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">done</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-
-<span class="c1">// 조건이 참이면 message에 'done'을 할당한다.</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">done</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">//if문 대신 이렇게 쓸 수 있다</span>
-<span class="nx">message</span> <span class="o">=</span> <span class="nx">done</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">done</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="c1">// 'done'</span>
-</code></pre></div></div>
-
-<ul>
-  <li>논리합 연산자를 이용하면 조건이 Falsy일 때 if문을 대체할 수 있다.</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">done</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">done</span><span class="p">)</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">not yet</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">//if문 대신 이렇게 쓸 수 있다</span>
-<span class="nx">message</span> <span class="o">=</span> <span class="nx">done</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">not yet</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// false || anything 이므로 anything을 반환</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="c1">// 'not yet'</span>
-</code></pre></div></div>
-
-<h2 id="옵셔널-체이닝-연산자">옵셔널 체이닝 연산자(?.)</h2>
-
-<ul>
-  <li>ES11에서 도입되었다.</li>
-  <li><code class="language-plaintext highlighter-rouge">?.</code> 의 왼쪽에 null 혹은 undefined이면 undefined를 반환하고, 그렇지 않으면 오른쪽 프로퍼티 참조를 계속한다.</li>
-</ul>
-
-<p>논리곱 연산자 &amp;&amp;의 경우 왼쪽이 Falsy 값이면 왼쪽 값을 그대로 반환한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//논리곱 연산자 사용</span>
-<span class="dl">""</span> <span class="o">&amp;&amp;</span> <span class="dl">""</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">//''</span>
-</code></pre></div></div>
-
-<p>위의 경우 ‘‘.length는 0이 나와야 하는데, 빈 문자열이 Falsy 값이기 때문에 논리곱 연산자는 false로 판단해 왼쪽의 ‘‘를 반환하게 된다.</p>
-
-<p>반면 옵셔널 체이닝 연산자인 <code class="language-plaintext highlighter-rouge">?.</code>는 왼쪽 값이 Falsy 값이라도 null이나 undefined가 아니면 참조가 가능하다</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//옵셔널 체이닝 연산자 사용</span>
-<span class="dl">""</span><span class="p">?.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 0</span>
-</code></pre></div></div>
-
-<h2 id="null-병합-연산자">null 병합 연산자(??)</h2>
-
-<ul>
-  <li>ES11에서 도입되었다.</li>
-  <li>왼쪽 피연산자가 null이나 undefined인 경우 오른쪽 피연산자를 반환한다.</li>
-  <li>그렇지 않으면 왼쪽 피연산자를 반환한다.</li>
-  <li>변수에 기본값을 설정할 때 유용하다.</li>
-</ul>
-
-<p>논리합 연산자 ||의 경우 왼쪽이 Falsy 값이면 오른쪽 값을 그대로 반환한다.
-만약 0이나 ‘‘이 기본값이라면 생각한 대로 동작하지 않을 수 있다</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">default</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 'default'</span>
-</code></pre></div></div>
-
-<p>반면 null 병합 연산자의 경우 왼쪽 값이 Falsy 값이어도 null이나 undefined가 아니라면 왼쪽 값을 반환한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="o">??</span> <span class="dl">"</span><span class="s2">default</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 0</span>
-</code></pre></div></div>
-
-<p class="notice--danger">deep dive 6장,9장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="type" /><summary type="html"><![CDATA[type]]></summary></entry><entry><title type="html">[Programmers] 8. 약수의 합 (javascript)</title><link href="http://localhost:4000/programmers/sum-of-divisor/" rel="alternate" type="text/html" title="[Programmers] 8. 약수의 합 (javascript)" /><published>2023-02-22T00:00:00+09:00</published><updated>2023-02-22T00:00:00+09:00</updated><id>http://localhost:4000/programmers/sum-of-divisor</id><content type="html" xml:base="http://localhost:4000/programmers/sum-of-divisor/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>n은 0 이상 3000이하인 정수입니다</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>maps</th>
-      <th>answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>12</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<blockquote>
-  <p>해당 수를 나눈 나머지가 0이 되는 숫자가 약수
-1부터 n까지 1씩 증가시키면서 n을 해당 수로 나눈 나머지가 0일 때만 더해준다.
-더한 결과를 리턴한다.</p>
-</blockquote>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[약수의 합]]></summary></entry></feed>
+<a href="https://www.youtube.com/watch?v=17Oh028Jpis&amp;list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&amp;index=6">코딩앙마 youtube Typescript #6 클래스</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="class" /><category term="member visibility" /><category term="abstract class" /><summary type="html"><![CDATA[클래스, 접근제한자, 추상 클래스]]></summary></entry></feed>

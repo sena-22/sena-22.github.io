@@ -1,0 +1,857 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>createBrowserRouter를 이용한 라우팅 적용 - Reyna</title>
+<meta name="description" content="react-router-dom V6의 createBrowserRouter 적용해보기">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="createBrowserRouter를 이용한 라우팅 적용">
+<meta property="og:url" content="http://localhost:4000/react/react-router/">
+
+
+  <meta property="og:description" content="react-router-dom V6의 createBrowserRouter 적용해보기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-02T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-02T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/react/react-router/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+         
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(62)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                           
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (9)</a
+          >
+        </li>
+           
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (5)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                              
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                             
+        <li>
+          <a href="/categories/react" class=""
+            >React (1)</a
+          >
+        </li>
+         
+      </ul>
+      <ul>
+                              
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                             
+      </ul>
+      <ul>
+                   
+        <li>
+          <a href="/categories/css" class="">CSS (5)</a>
+        </li>
+                   
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                     
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (7)</a>
+        </li>
+                 
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                           
+      </ul>
+      <ul>
+             
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (13)</a
+          >
+        </li>
+                         
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+      <ul>
+               
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                       
+      </ul>
+      <ul>
+                              
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (3)</a
+          >
+        </li>
+             
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="createBrowserRouter를 이용한 라우팅 적용"
+    /> <meta
+      itemprop="description"
+      content="react-router-dom V6의 createBrowserRouter 적용해보기"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-03-02T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-03-02T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>createBrowserRouter를 이용한 라우팅 적용</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-03-02T00:00:00+09:00"
+            >2023.03.02</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-03-02"
+            >2023.03.02</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#react" class="page__taxonomy-item p-category" rel="tag">react</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#createbrowserrouter" class="page__taxonomy-item p-category" rel="tag">createBrowserRouter</a><span class="sep">, </span>
+    
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
+    
+      <a href="/tags/#react-router-dom" class="page__taxonomy-item p-category" rel="tag">react-router-dom</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#createbrowserrouter-reactprovider">createBrowserRouter(), ReactProvider</a><ul><li><a href="#appjs">App.js</a></li><li><a href="#routerjs">router.js</a></li></ul></li><li><a href="#path-element-children">path, element, children</a><ul><li><a href="#routerjs-1">router.js</a></li></ul></li><li><a href="#outlet">Outlet</a><ul><li><a href="#layoutjs">Layout.js</a></li></ul></li><li><a href="#loader">loader</a><ul><li><a href="#loaderjs">loader.js</a></li><li><a href="#routerjs-2">router.js</a></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <h2 id="createbrowserrouter-reactprovider">createBrowserRouter(), ReactProvider</h2>
+
+<p>먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. <code class="language-plaintext highlighter-rouge">createBrowserRouter()</code>함수로 생성한 <code class="language-plaintext highlighter-rouge">router</code>를 <code class="language-plaintext highlighter-rouge">ReactProvider</code> 컴포넌트에 <code class="language-plaintext highlighter-rouge">props</code>로 넣어준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.js</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createBrowserRouter</span><span class="p">,</span> <span class="nx">ReactProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createBrowserRouter</span><span class="p">([]);</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">)).</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">RouterProvider</span> <span class="nx">router</span><span class="o">=</span><span class="p">{</span><span class="nx">router</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>라우터를 분리해서 작성할 수도 있다.</p>
+
+<h3 id="appjs">App.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">RouterProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">router</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./router/Router</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">RouterProvider</span> <span class="nx">router</span><span class="o">=</span><span class="p">{</span><span class="nx">router</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="routerjs">router.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createBrowserRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createBrowserRouter</span><span class="p">([]);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="path-element-children">path, element, children</h2>
+
+<p><code class="language-plaintext highlighter-rouge">path</code>와 <code class="language-plaintext highlighter-rouge">element</code>를 이용해서 경로와 컴포넌트를, <code class="language-plaintext highlighter-rouge">children</code> 속성으로 중첩된 라우터를 배열 형식으로 추가할 수 있다.</p>
+
+<h3 id="routerjs-1">router.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createBrowserRouter</span><span class="p">([</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">//렌더링되는 요소</span>
+    <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Layout</span> <span class="o">/&gt;</span><span class="p">,</span>
+    <span class="na">children</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">PageA</span> <span class="o">/&gt;</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+<span class="p">]);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="outlet">Outlet</h2>
+
+<p><code class="language-plaintext highlighter-rouge">Outlet</code>은 부모 루트가 자식 루트를 렌더링하도록 해준다.</p>
+
+<h3 id="layoutjs">Layout.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">Outlet</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">Layout</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Nav</span> <span class="o">/&gt;</span>
+        <span class="c1">// url이 '/a'일 때, 위에서 설정한 자식 요소인 &lt;PageA&gt; 컴포넌트가 여기서 출력된다.</span>
+        <span class="o">&lt;</span><span class="nx">Outlet</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Layout</span>
+</code></pre></div></div>
+
+<h2 id="loader">loader</h2>
+
+<p>라우트가 렌더링되기 전에 loader를 이용하여 정의한 함수를 실행할 수 있다.</p>
+
+<h3 id="loaderjs">loader.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">redirect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Loader</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">isLogged</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">logIn</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isLogged</span><span class="p">)</span> <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="dl">"</span><span class="s2">/login</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">LoginLoader</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">isLogged</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">logIn</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isLogged</span><span class="p">)</span> <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>loader 함수를 미리 정의해두었다. localStoragedp logIn 이라는 이름의 키의 존재 여부로 redirect를 실행하는 함수이다.</p>
+
+<h3 id="routerjs-2">router.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Loader</span><span class="p">,</span> <span class="nx">LoginLoader</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Loader/loader</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createBrowserRouter</span><span class="p">([</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Layout</span> <span class="o">/&gt;</span><span class="p">,</span>
+    <span class="na">children</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">PageA</span> <span class="o">/&gt;</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="nx">Loader</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">login</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">element</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Login</span> <span class="o">/&gt;</span><span class="p">,</span>
+    <span class="na">loader</span><span class="p">:</span> <span class="nx">LoginLoader</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">]);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>라우터마다 적용할 로더를 설정하면 요소가 렌더링되기 전 함수가 실행된다.</p>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/mini%20project/wanted-pre-onboarding/" class="pagination--pager" title="[Wanted Pre Onboarding] 1. 사전 과제
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mini%20project/wanted-pre-onboarding/" rel="permalink">[Wanted Pre Onboarding] 1. 사전 과제
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">wanted project
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/distinguish-sqrt/" rel="permalink">[Programmers] 13. 정수 제곱근 판별 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">정수 제곱근 판별
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/number-with-x-interval/" rel="permalink">[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">x만큼 간격이 있는 n개의 숫자
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/2-Event/" rel="permalink">[Deep Dive] Event
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">event
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

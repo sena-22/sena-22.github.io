@@ -334,4 +334,40 @@ var store = [{
         "tags": ["javascript","control flow statement"],
         "url": "/javascript/control-flow-statement/",
         "teaser": null
+      },{
+        "title": "[Deep Dive]  DOM",
+        "excerpt":"DOM은 노드들로 구성된 트리자료를 말한다. HTML 문서는 텍스트로 이루어져 있는데, 이 문서를 브라우저에 시각적으로 보여주려면 브라우저가 이해할 수 있게 변환해주어야 한다. HTML을 파싱하여 브라우저가 이해할 수 있도록 만들어진 트리구조가 DOM이다. DOM은 HTML 문서의 계층적 구조와 정보를 표현하며, 이를 제어할 수 있는 API(프로퍼티와 메서드)를 제공한다. 🤔 파싱? 파싱은 텍스트 문서의 문자들을...","categories": ["javascript"],
+        "tags": ["javascript","DOM"],
+        "url": "/javascript/1-DOM/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive] Event",
+        "excerpt":"1. 이벤트 드리븐 프로그래밍 2. 이벤트 타입 3. 이벤트 핸들러 등록 이벤트 핸들러 어트리뷰트 방식 이벤트 핸들러 프로퍼티 방식 addEventListener 방식 4. 이벤트 핸들러 제거 5. 이벤트 객체 이벤트 객체의 상속 구조 이벤트 객체의 공통 프로퍼티 마우스 정보 취득 키보드 정보 취득 6. 이벤트 전파 7. 이벤트 위임 8. DOM...","categories": ["javascript"],
+        "tags": ["javascript","event"],
+        "url": "/javascript/2-Event/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)",
+        "excerpt":"🤔 문제 함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요. 제한사항 x는 -10000000 이상, 10000000 이하인 정수입니다. n은 1000 이하인 자연수입니다. 입출력 예시 x n answer 2 5 [2,4,6,8,10] 4 3...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/number-with-x-interval/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 13. 정수 제곱근 판별 (javascript)",
+        "excerpt":"🤔 문제 임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다. n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요. 제한사항 n은 1이상, 50000000000000 이하인 양의 정수입니다. 입출력 예시 n return 121 144 3 -1 의사코드...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/distinguish-sqrt/",
+        "teaser": null
+      },{
+        "title": "[Wanted Pre Onboarding] 1. 사전 과제",
+        "excerpt":"초기 환경 설정 CRA &amp; typescript 설치 npx create-react-app &lt;프로젝트 이름&gt; --templage typescript styled-components 설치 npm i styled-components //type definition npm i -D @types/styled-components styled-reset 설치 및 적용 styled-reset 설치 npm i styled-reset styled-reset 적용 import { createGlobalStyle } from \"styled-components\"; import reset from \"styled-reset\"; const GlobalStyles = createGlobalStyle`${reset}`; function...","categories": ["mini project"],
+        "tags": ["project","react","typesciprt","redux"],
+        "url": "/mini%20project/wanted-pre-onboarding/",
+        "teaser": null
+      },{
+        "title": "createBrowserRouter를 이용한 라우팅 적용",
+        "excerpt":"createBrowserRouter(), ReactProvider 먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. createBrowserRouter()함수로 생성한 router를 ReactProvider 컴포넌트에 props로 넣어준다. //App.js import { createBrowserRouter, ReactProvider } from \"react-router-dom\"; const router = createBrowserRouter([]); ReactDOM.createRoot(document.getElementById(\"root\")).render( &lt;RouterProvider router={router} /&gt; ); 라우터를 분리해서 작성할 수도 있다. App.js import { RouterProvider } from \"react-router-dom\"; import router from \"./router/Router\";...","categories": ["react"],
+        "tags": ["react-router-dom","react","createBrowserRouter"],
+        "url": "/react/react-router/",
+        "teaser": null
       }]
