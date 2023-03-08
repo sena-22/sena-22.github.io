@@ -1,4 +1,10 @@
 var store = [{
+        "title": "[baekjoon] 2231. 분해합(node.js)",
+        "excerpt":"🤔 문제 어떤 자연수 N이 있을 때, 그 자연수 N의 분해합은 N과 N을 이루는 각 자리수의 합을 의미한다. 어떤 자연수 M의 분해합이 N인 경우, M을 N의 생성자라 한다. 예를 들어, 245의 분해합은 256(=245+2+4+5)이 된다. 따라서 245는 256의 생성자가 된다. 물론, 어떤 자연수의 경우에는 생성자가 없을 수도 있다. 반대로, 생성자가 여러...","categories": ["baekjoon"],
+        "tags": ["study","분해합","완전탐색","브론즈2"],
+        "url": "/baekjoon/1/",
+        "teaser": null
+      },{
         "title": "[HTML] HTML의 기본 구조",
         "excerpt":"HTML(Hyper Text Markup Language)      문서의 구조를 나타낸다.   웹페이지의 틀을 만드는 마크업 언어   tag들의 집합  ","categories": ["html"],
         "tags": ["html","tag"],
@@ -366,8 +372,56 @@ var store = [{
         "teaser": null
       },{
         "title": "createBrowserRouter를 이용한 라우팅 적용",
-        "excerpt":"createBrowserRouter(), ReactProvider 먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. createBrowserRouter()함수로 생성한 router를 ReactProvider 컴포넌트에 props로 넣어준다. //App.js import { createBrowserRouter, ReactProvider } from \"react-router-dom\"; const router = createBrowserRouter([]); ReactDOM.createRoot(document.getElementById(\"root\")).render( &lt;RouterProvider router={router} /&gt; ); 라우터를 분리해서 작성할 수도 있다. App.js import { RouterProvider } from \"react-router-dom\"; import router from \"./router/Router\";...","categories": ["react"],
+        "excerpt":"createBrowserRouter(), RouterProvider 먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. createBrowserRouter()함수로 생성한 router를 RouterProvider 컴포넌트에 props로 넣어준다. //App.js import { createBrowserRouter, RouterProvider } from \"react-router-dom\"; const router = createBrowserRouter([]); ReactDOM.createRoot(document.getElementById(\"root\")).render( &lt;RouterProvider router={router} /&gt; ); 라우터를 분리해서 작성할 수도 있다. index.js import ReactDOM from 'react-dom/client' import App from './App' import './index.css'...","categories": ["react"],
         "tags": ["react-router-dom","react","createBrowserRouter"],
         "url": "/react/react-router/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive] 8. object",
+        "excerpt":"1. 객체 객체 : 0개 이상의 프로퍼티로 구성된 집합 프로퍼티 : 객체의 상태를 나타내는 값으로, 키와 값의 쌍으로 구성된다. 2. 객체 생성 객체를 만드는 방법은 객체 리터럴을 사용하는 방법과 Object 생성자 함수, 클래스 등을 이용하는 방법이 있다. 객체 리터럴을 사용하여 객체 만들기 리터럴은 값을 생성하기 위한 표기법이고, 객체 리터럴은 객체를...","categories": ["javascript"],
+        "tags": ["javascript","object"],
+        "url": "/javascript/1-object/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive] 8. 원시 값과 객체의 차이점",
+        "excerpt":"원시값 과 객체의 차이점 변경 불가능한 값 vs. 변경 가능한 값 원시 값은 변경 불가능한 값이고, 객체는 변경 가능한 값이다. 여기서 주의해야 할 점은 변수와 값을 구분해서 생각해야 한다는 것이다. let a = 1; // 메모리 공간을 확보하고 1을 저장한 후 그 공간에 a라는 이름을 붙인다. a = 2; //...","categories": ["javascript"],
+        "tags": ["javascript","primitive type","object/reference type"],
+        "url": "/javascript/2-primitive_object/",
+        "teaser": null
+      },{
+        "title": "innerHTML",
+        "excerpt":"innerHTML 요소 안에 포함된 HTML 또는 XML 마크업을 가져오거나 설정함 ... &lt;body&gt; &lt;div id=\"insert\"&gt;text&lt;/div&gt; &lt;/body&gt; &lt;script&gt; const $insert = document.getElementById(\"insert\"); console.log($insert.innerHTML); // text &lt;div&gt;inner&lt;/div&gt; &lt;/script&gt; closest() 주어진 CSS 선택자와 일치하는 요소를 찾을 때까지 자기 자신을 포함해 위쪽을 순회 closest(selectors); data-* 속성 사용자 정의 속성 /* &lt;태그 data-*='값'&gt;&lt;/태그&gt; *에는 대문자를 포함할...","categories": ["note"],
+        "tags": ["javascript"],
+        "url": "/note/js-test-1/",
+        "teaser": null
+      },{
+        "title": "login",
+        "excerpt":"로그인과 관련된 기술 일반적으로 로그인 구현 방법 백엔드에서 일어나는 일 맛보기 인프라 관점에서 생각해보기 여러가지 실습과 질문/답변 로그인의 기술적 정의와 실제 서비스에서의 사용도 직접 로그인 화면과 mock api 세팅 구성해 본 로그인 로직이 실제 서비스에 적용되기 위해 필요한 부분 로그인이란? 시스템에 엑세스(접근)하기 위해 식별자 정보를 입력하는 것 시스템 로그를 남긴다(의심스러운...","categories": ["note"],
+        "tags": ["login"],
+        "url": "/note/login/",
+        "teaser": null
+      },{
+        "title": "Lighthouse로 성능 검사하기",
+        "excerpt":"Lighthouse Lighthouse는 사이트를 검사해서 성능 측정 결과와 개선책을 제공해주는 도구이다. 크롬 개발자 도구에서 바로 사용할 수 있다. 옵션을 선택 후 Analyze page load를 누르면 분석을 시작한다. Lighthouse 분석 항목 Mode (택 1) 1. Navigation 초기 페이지를 불러올 때 발생하는 성능을 분석한다. 2. Timespan 사용자가 지정한 시간 동안 발생한 성능을 분석한다....","categories": ["note"],
+        "tags": ["Lighthouse"],
+        "url": "/note/lighthouse/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 14. 행렬의 덧셈 (javascript)",
+        "excerpt":"🤔 문제 행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요. 제한사항 행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다. 입출력 예시 arr1 arr2 return [[1,2],[2,3]] [[3,4],[5,6]] [[4,6],[7,9]] [[1],[2]]...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/1-matrix_addition/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 15. 직사각형 별찍기 (javascript)",
+        "excerpt":"🤔 문제 이 문제에는 표준 입력으로 두 개의 정수 n과 m이 주어집니다. 별(*) 문자를 이용해 가로의 길이가 n, 세로의 길이가 m인 직사각형 형태를 출력해보세요. 제한사항 n과 m은 각각 1000 이하인 자연수입니다. 입출력 예시 입력 5 3 출력 ***** ***** ***** 의사코드 행 개수만큼 별을 추가한다 행의 마지막이면 스페이스를 추가한다 열...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/2-rectangle-star/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 16. 최대공약수와 최소공배수 (javascript)",
+        "excerpt":"🤔 문제 두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다. 제한사항 두 수는 1이상 1000000이하의 자연수입니다. 입출력 예시 n m return...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/3-gcdlcm/",
         "teaser": null
       }]

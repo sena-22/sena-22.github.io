@@ -1,0 +1,910 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Deep Dive] 8. object - Reyna</title>
+<meta name="description" content="object">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[Deep Dive] 8. object">
+<meta property="og:url" content="http://localhost:4000/javascript/1-object/">
+
+
+  <meta property="og:description" content="object">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-04T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-04T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/1-object/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+           
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#javascript" itemprop="item"><span itemprop="name">Javascript</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Deep Dive] 8. object</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(71)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                             
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (11)</a
+          >
+        </li>
+             
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (5)</a
+          >
+        </li>
+                 
+      </ul>
+      <ul>
+                                  
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                                 
+        <li>
+          <a href="/categories/react" class=""
+            >React (1)</a
+          >
+        </li>
+         
+      </ul>
+      <ul>
+                                  
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+           
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                               
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/css" class="">CSS (5)</a>
+        </li>
+                     
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                   
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                       
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (6)</a>
+        </li>
+                   
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+             
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                             
+      </ul>
+      <ul>
+               
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (16)</a
+          >
+        </li>
+                           
+      </ul>
+         <ul>
+         
+        <li>
+          <a href="/categories/baekjoon" class=""
+            >Baekjoon (1)</a
+          >
+        </li>
+                                 
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                         
+      </ul>
+      <ul>
+                                  
+      </ul>
+      <ul>
+                           
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (3)</a
+          >
+        </li>
+               
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[Deep Dive] 8. object"
+    /> <meta
+      itemprop="description"
+      content="object"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-03-04T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-03-04T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[Deep Dive] 8. object</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-03-04T00:00:00+09:00"
+            >2023.03.04</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-03-04"
+            >2023.03.04</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a><span class="sep">, </span>
+    
+      <a href="/tags/#object" class="page__taxonomy-item p-category" rel="tag">object</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#1-객체">1. 객체</a></li><li><a href="#2-객체-생성">2. 객체 생성</a><ul><li><a href="#객체-리터럴을-사용하여-객체-만들기">객체 리터럴을 사용하여 객체 만들기</a></li></ul></li><li><a href="#3-프로퍼티">3. 프로퍼티</a><ul><li><a href="#프로퍼티에-사용할-수-있는-값">프로퍼티에 사용할 수 있는 값</a></li><li><a href="#프로퍼티-접근법">프로퍼티 접근법</a></li><li><a href="#프로퍼티-생성하기">프로퍼티 생성하기</a></li><li><a href="#프로퍼티-삭제하기">프로퍼티 삭제하기</a></li><li><a href="#프로퍼티-축약property-shorthand">프로퍼티 축약(property shorthand)</a></li><li><a href="#계산된-프로퍼티">계산된 프로퍼티</a></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <h1 id="1-객체">1. 객체</h1>
+
+<ul>
+  <li>객체 : 0개 이상의 프로퍼티로 구성된 집합</li>
+  <li>프로퍼티 : 객체의 상태를 나타내는 값으로, 키와 값의 쌍으로 구성된다.</li>
+</ul>
+
+<h1 id="2-객체-생성">2. 객체 생성</h1>
+
+<ul>
+  <li>객체를 만드는 방법은 객체 리터럴을 사용하는 방법과 Object 생성자 함수, 클래스 등을 이용하는 방법이 있다.</li>
+</ul>
+
+<h2 id="객체-리터럴을-사용하여-객체-만들기">객체 리터럴을 사용하여 객체 만들기</h2>
+
+<ul>
+  <li><a href="https://sena-22.github.io/javascript/1-expression/#%EB%A6%AC%ED%84%B0%EB%9F%B4">리터럴</a>은 값을 생성하기 위한 표기법이고, 객체 리터럴은 객체를 생성하기 위한 표기법이다.</li>
+  <li>중괄호<code class="language-plaintext highlighter-rouge">{...}</code> 안에 0개 이상의 프로퍼티를 정의하는 방법으로 객체를 만들 수 있다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 키: 'name', 값 : 'jack'</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="c1">// 키: 'age', 값 : '20'</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">character</code>라는 변수에 두 개의 프로퍼티가 들어간 객체가 할당되어 있다.</p>
+
+<h1 id="3-프로퍼티">3. 프로퍼티</h1>
+
+<h2 id="프로퍼티에-사용할-수-있는-값">프로퍼티에 사용할 수 있는 값</h2>
+
+<ul>
+  <li>프로퍼티 키에는 문자열 또는 심벌값, 프로퍼티 값에는 모든 값을 사용할 수 있다.</li>
+</ul>
+
+<h2 id="프로퍼티-접근법">프로퍼티 접근법</h2>
+
+<p>프로퍼티를 읽는 방법에는 마침표 표기법과 대괄호 표기법 두 가지가 있다.</p>
+
+<ul>
+  <li>식별자 네이밍 규칙을 준수하면 두 가지 모두 사용 가능하다. 이때 대괄호 표기법의 키 값은 따옴표로 감싸야 한다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">//jack (마침표 표기법)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">[</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">]);</span> <span class="c1">//jack (대괄호 표기법)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>키 값이 식별자 네이밍 규칙을 준수하지 않는 경우 대괄호 표기법만 가능하다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span><span class="dl">"</span><span class="s2">last-name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="dl">'</span><span class="s1">last-name</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Uncaught SyntaxError: Unexpected string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">[</span><span class="dl">"</span><span class="s2">last-name</span><span class="dl">"</span><span class="p">]);</span> <span class="c1">//jack</span>
+</code></pre></div></div>
+
+<ul>
+  <li>만약 존재하지 않는 프로퍼티에 접근하면 <code class="language-plaintext highlighter-rouge">undefined</code>가 뜬다(에러가 발생하지 않는다!)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span> <span class="c1">//undefined</span>
+</code></pre></div></div>
+
+<h2 id="프로퍼티-생성하기">프로퍼티 생성하기</h2>
+
+<p>존재하지 않는 프로퍼티에 값을 할당하면 프로퍼티가 동적으로 추가된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="nx">character</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">);</span> <span class="c1">//{name: 'jack', age: 20}</span>
+</code></pre></div></div>
+
+<p>만약 존재하는 프로퍼티에 할당하면 원래 존재하는 프로퍼티의 값이 갱신된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">20</span> <span class="p">};</span>
+
+<span class="nx">character</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span> <span class="c1">//10</span>
+</code></pre></div></div>
+
+<h2 id="프로퍼티-삭제하기">프로퍼티 삭제하기</h2>
+
+<p>프로퍼티는 delete라는 연산자로 삭제할 수 없다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">20</span> <span class="p">};</span>
+
+<span class="k">delete</span> <span class="nx">character</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">);</span> <span class="c1">//{name: 'jack'}</span>
+</code></pre></div></div>
+
+<h2 id="프로퍼티-축약property-shorthand">프로퍼티 축약(property shorthand)</h2>
+
+<p>ES6에서 추가된 기능으로, 프로퍼티의 키와 프로퍼티의 값이 동일할 경우 생략이 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">createCharacter</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="nx">name</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="nx">age</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">newCharacter</span> <span class="o">=</span> <span class="nx">createCharacter</span><span class="p">(</span><span class="dl">"</span><span class="s2">cleve</span><span class="dl">"</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newCharacter</span><span class="p">);</span> <span class="c1">//{name: 'cleve', age: 25}</span>
+</code></pre></div></div>
+
+<p>위와 같이 프로퍼티 값을 받아와서 사용할 때, 프로퍼티 키와 동일하게 설정하는 경우 축약이 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">createCharacter</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="p">,</span>
+    <span class="nx">age</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">newCharacter</span> <span class="o">=</span> <span class="nx">createCharacter</span><span class="p">(</span><span class="dl">"</span><span class="s2">cleve</span><span class="dl">"</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newCharacter</span><span class="p">);</span> <span class="c1">//{name: 'cleve', age: 25}</span>
+</code></pre></div></div>
+
+<h2 id="계산된-프로퍼티">계산된 프로퍼티</h2>
+
+<p>프로퍼티 축약과 마찬가지로 ES6에서 추가된 기능. 객체 외부에서 프로퍼티 키를 동적으로 생성했던 ES5와 달리, 객체 내부에서도 프로퍼티 키를 동적으로 생성할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">animal</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="dl">"</span><span class="s2">좋아하는 동물은?</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">cat</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">likeAnimal</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">animal</span><span class="p">]:</span> <span class="dl">"</span><span class="s2">♥️</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">likeAnimal</span><span class="p">);</span> <span class="c1">//{cat: '♥️'}</span>
+</code></pre></div></div>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/react/react-router/" class="pagination--pager" title="createBrowserRouter를 이용한 라우팅 적용
+">Previous</a>
+    
+    
+      <a href="/javascript/2-primitive_object/" class="pagination--pager" title="[Deep Dive] 8. 원시 값과 객체의 차이점
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/3-gcdlcm/" rel="permalink">[Programmers] 16. 최대공약수와 최소공배수 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">최대공약수와 최소공배수
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/2-rectangle-star/" rel="permalink">[Programmers] 15. 직사각형 별찍기 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">직사각형 별찍기
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/1-matrix_addition/" rel="permalink">[Programmers] 14. 행렬의 덧셈 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">행렬의 덧셈
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/note/lighthouse/" rel="permalink">Lighthouse로 성능 검사하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Lighthouse
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'sena-22/sena-22.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

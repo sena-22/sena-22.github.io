@@ -1,9 +1,716 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-02T20:15:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>An amazing website.</subtitle><author><name>Reyna</name></author><entry><title type="html">createBrowserRouter를 이용한 라우팅 적용</title><link href="http://localhost:4000/react/react-router/" rel="alternate" type="text/html" title="createBrowserRouter를 이용한 라우팅 적용" /><published>2023-03-02T00:00:00+09:00</published><updated>2023-03-02T00:00:00+09:00</updated><id>http://localhost:4000/react/react-router</id><content type="html" xml:base="http://localhost:4000/react/react-router/"><![CDATA[<h2 id="createbrowserrouter-reactprovider">createBrowserRouter(), ReactProvider</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-08T20:45:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>frontend devleopment</subtitle><author><name>Reyna</name></author><entry><title type="html">[Programmers] 15. 직사각형 별찍기 (javascript)</title><link href="http://localhost:4000/programmers/2-rectangle-star/" rel="alternate" type="text/html" title="[Programmers] 15. 직사각형 별찍기 (javascript)" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T00:00:00+09:00</updated><id>http://localhost:4000/programmers/2-rectangle-star</id><content type="html" xml:base="http://localhost:4000/programmers/2-rectangle-star/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
 
-<p>먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. <code class="language-plaintext highlighter-rouge">createBrowserRouter()</code>함수로 생성한 <code class="language-plaintext highlighter-rouge">router</code>를 <code class="language-plaintext highlighter-rouge">ReactProvider</code> 컴포넌트에 <code class="language-plaintext highlighter-rouge">props</code>로 넣어준다.</p>
+<p>이 문제에는 표준 입력으로 두 개의 정수 n과 m이 주어집니다.
+별(*) 문자를 이용해 가로의 길이가 n, 세로의 길이가 m인 직사각형 형태를 출력해보세요.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>n과 m은 각각 1000 이하인 자연수입니다.</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<p>입력</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">5</span> <span class="mi">3</span>
+</code></pre></div></div>
+
+<p>출력</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*****</span>
+<span class="o">*****</span>
+<span class="o">*****</span>
+</code></pre></div></div>
+
+<h2 id="의사코드">의사코드</h2>
+
+<ul>
+  <li>행 개수만큼 별을 추가한다</li>
+  <li>행의 마지막이면 스페이스를 추가한다</li>
+  <li>열 개수만큼 반복한다</li>
+</ul>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">.</span><span class="nx">setEncoding</span><span class="p">(</span><span class="dl">"</span><span class="s2">utf8</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">//a : 행, b : 열</span>
+
+  <span class="kd">const</span> <span class="nx">star</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">line</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">a</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">i</span> <span class="o">===</span> <span class="nx">a</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">?</span> <span class="p">(</span><span class="nx">line</span> <span class="o">+=</span> <span class="nx">star</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span><span class="p">)</span> <span class="p">:</span> <span class="p">(</span><span class="nx">line</span> <span class="o">+=</span> <span class="nx">star</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">line</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">answer</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="다른-풀이">다른 풀이</h2>
+
+<ul>
+  <li>행 길이만큼 별을 찍은 문자열을 row에 할당한다.(<code class="language-plaintext highlighter-rouge">*****</code>)</li>
+  <li>열 길이만큼 row를 반복한다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">.</span><span class="nx">setEncoding</span><span class="p">(</span><span class="dl">"</span><span class="s2">utf8</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="kd">const</span> <span class="nx">row</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[직사각형 별찍기]]></summary></entry><entry><title type="html">[Programmers] 14. 행렬의 덧셈 (javascript)</title><link href="http://localhost:4000/programmers/1-matrix_addition/" rel="alternate" type="text/html" title="[Programmers] 14. 행렬의 덧셈 (javascript)" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T00:00:00+09:00</updated><id>http://localhost:4000/programmers/1-matrix_addition</id><content type="html" xml:base="http://localhost:4000/programmers/1-matrix_addition/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+
+<p>행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다.</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>arr1</th>
+      <th>arr2</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[[1,2],[2,3]]</td>
+      <td>[[3,4],[5,6]]</td>
+      <td>[[4,6],[7,9]]</td>
+    </tr>
+    <tr>
+      <td>[[1],[2]]</td>
+      <td>[[3],[4]]</td>
+      <td>[[4],[6]]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<ul>
+  <li>행 -&gt; 열 순서로 for문을 돌린다</li>
+  <li>0행 0열, 0행 1열… 순서로 arr1의 값과 arr2의 값을 더해서 arr에 push한다.</li>
+  <li>안쪽 for문을 순회하면서 만들어진 배열 arr을 answer에 push 해준다.</li>
+</ul>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">arr2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">arr1</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr1</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">+</span> <span class="nx">arr2</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="다른-풀이">다른 풀이</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sumMatrix</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">A</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">idx1</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">val</span><span class="p">,</span> <span class="nx">idx2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">val</span> <span class="o">+</span> <span class="nx">B</span><span class="p">[</span><span class="nx">idx1</span><span class="p">][</span><span class="nx">idx2</span><span class="p">]));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[행렬의 덧셈]]></summary></entry><entry><title type="html">Lighthouse로 성능 검사하기</title><link href="http://localhost:4000/note/lighthouse/" rel="alternate" type="text/html" title="Lighthouse로 성능 검사하기" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T00:00:00+09:00</updated><id>http://localhost:4000/note/lighthouse</id><content type="html" xml:base="http://localhost:4000/note/lighthouse/"><![CDATA[<h1 id="lighthouse">Lighthouse</h1>
+
+<p>Lighthouse는 사이트를 검사해서 성능 측정 결과와 개선책을 제공해주는 도구이다.</p>
+
+<p><img width="637" alt="스크린샷 2023-03-07 오후 4 20 56" src="https://user-images.githubusercontent.com/110877564/223352258-db1c0997-724e-4158-9cea-67dae390d277.png" /></p>
+
+<p>크롬 개발자 도구에서 바로 사용할 수 있다. 옵션을 선택 후 <code class="language-plaintext highlighter-rouge">Analyze page load</code>를 누르면 분석을 시작한다.</p>
+
+<p><br /></p>
+
+<h1 id="lighthouse-분석-항목">Lighthouse 분석 항목</h1>
+
+<h2 id="mode-택-1">Mode (택 1)</h2>
+
+<h3 id="1-navigation">1. Navigation</h3>
+
+<p>초기 페이지를 불러올 때 발생하는 성능을 분석한다.</p>
+
+<h3 id="2-timespan">2. Timespan</h3>
+
+<p>사용자가 지정한 시간 동안 발생한 성능을 분석한다.</p>
+
+<p>Timespan을 선택한 경우 Categories의 Accessibility, SEO, Progressive Web App은 검사하지 못한다.</p>
+
+<h3 id="3-snapshot">3. Snapshot</h3>
+
+<p>현재 상태의 성능을 분석한다.</p>
+
+<p>Snapshot을 선택한 경우 Progressive Web App 항목을 검사하지 못한다.</p>
+
+<p><br /></p>
+
+<h2 id="categories">Categories</h2>
+
+<h3 id="1-performance">1. Performance</h3>
+
+<p>웹 페이지의 로딩 과정에서 발생하는 성능 문제를 분석한다.</p>
+
+<p>화면에 콘텐츠가 표시되는 시간, 표시된 후 사용자와 상호작용하기까지 걸리는 시간, 화면의 불안정한 요소 등을 확인한다.</p>
+
+<h3 id="2-accessibility">2. Accessibility</h3>
+
+<p>웹 접근성을 분석한다. 대체 텍스트를 잘 작성했는지, 배경색과 콘텐츠 색상의 대비가 충분한지, WAI-ARIA 속성을 적절하게 사용했는지 등을 확인한다.</p>
+
+<h3 id="3-best-practices">3. Best Practices</h3>
+
+<p>웹 페이지의 보안과 웹 표준 모범을 잘 따르고 있는지를 분석한다. HTTPS 프로토콜을 사용하는지, 콘솔 창에 오류가 표시되지 않는지 등을 확인한다.</p>
+
+<h3 id="4-seo">4. SEO</h3>
+
+<p>검색 엔진 최적화가 잘 되어 있는지 분석한다. <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> 요소가 잘 작성되어 있는지, <code class="language-plaintext highlighter-rouge">robots.txt</code>가 유효한지 확인한다.</p>
+
+<p class="notice--primary"><strong>참고</strong> <br />
+<a href="https://seo.tbwakorea.com/blog/robots-txt-complete-guide/">robots.txt 10분 안에 끝내는 총정리 가이드</a></p>
+
+<h3 id="5-pwa-progressive-web-app">5. PWA (Progressive Web App)</h3>
+
+<p>해당 웹 사이트가 모바일 애플리케이션으로도 잘 작동하는지 확인. 앱 아이콘을 제공하는지, 스플래시 화면이 있는지, 콘텐츠를 적절하게 배치했는지 확인(체크리스트)</p>
+
+<p><br /></p>
+
+<h1 id="lighthouse의-performance-측정-지표">Lighthouse의 Performance 측정 지표</h1>
+
+<p><img width="641" alt="스크린샷 2023-03-07 오후 4 48 08" src="https://user-images.githubusercontent.com/110877564/223357752-cc0e8217-c730-4fd5-ab4a-5e7c44e5ccca.png" /></p>
+
+<p>위 페이지의 종합 성능 점수는 98점이다. 이 점수는 아래의 지표(메트릭)에 가중치를 적용해서 평균을 낸 숫자이다. 이 지표들을 웹 바이탈(Web Vitals)이라고 부르기도 한다.</p>
+
+<h2 id="1-first-contentful-paintfcp">1. First Contentful Paint(FCP)</h2>
+
+<p>페이지가 로드될 때 브라우저가 DOM 콘텐츠의 첫 부분을 렌더링하기까지 걸리는 시간에 관한 지표이다.
+페이지의 이미지, <code class="language-plaintext highlighter-rouge">&lt;canvas&gt;</code> 요소, SVG 등도 DOM 콘텐츠로 구분되고, <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code>요소는 포함되지 않는다.
+총점 계산 시 10%의 가중치를 가진다.</p>
+
+<h2 id="2-largest-contentful-paintlcp">2. Largest Contentful Paint(LCP)</h2>
+
+<p>페이지가 로드될 때 뷰포트를 차지하는 가장 큰 이미지나 텍스트 요소가 렌더링되기까지 걸리는 시간을 나타내는 지표이다. 주요 콘텐츠가 유저에게 보이는 시간을 가늠할 수 있고, 가중치는 25%이다.</p>
+
+<h2 id="3-speed-indexsi">3. Speed Index(SI)</h2>
+
+<p>페이지를 로드하는 동안 얼마나 빨리 콘텐츠가 시각적으로 표시되는지를 나타내는 지표이다. 가중치는 10%이다.</p>
+
+<h2 id="4-time-to-interactivetti">4. Time to interactive(TTI)</h2>
+
+<p>페이지가 로드되는 시점부터 사용자와 상호 작용이 가능한 시점까지 걸리는 시간을 측정한 지표. 상호 작용은 클릭 혹은 키보드 누름 등의 사용자 입력을 의미한다. 이 시점 전까지는 화면이 보여도 클릭 등이 작동하지 않는다. 가중치는 10%이다.</p>
+
+<h2 id="5-total-blocking-timetbt">5. Total Blocking Time(TBT)</h2>
+
+<p>페이지가 유저와 상호작용하기까지 막혀 있는 시간을 의미한다. FCP와 TTI 사이의 작업들을 기록하여 측정한다. 가중치는 30%이다.</p>
+
+<h2 id="6-cumulative-layout-shiftcls">6. Cumulative Layout Shift(CLS)</h2>
+
+<p>페이지 로드 과정에서 예상하지 못한 레이아웃 이동을 측정한 지표이다. 버튼 등의 요소가 갑자기 움직이면 사용자가 의도하지 않은 방식으로 작동할 수도 있는데 이런 상황을 측정하기 위한 지표라고 할 수 있다.
+가중치는 15%이다.</p>
+
+<h1 id="lighthouse의-개선-방향-제안">Lighthouse의 개선 방향 제안</h1>
+
+<p><img width="636" alt="스크린샷 2023-03-07 오후 5 43 11" src="https://user-images.githubusercontent.com/110877564/223369673-3723a953-979b-486a-9040-a682d01462c2.png" /></p>
+
+<p>Lighthouse는 Opportunity와 Diagnostic 섹션을 통해 문제점과 해결 방안, 그리고 얻을 수 있는 이점을 제공한다.</p>
+
+<h2 id="opportunity">Opportunity</h2>
+
+<ul>
+  <li>페이지를 더 빨리 로드하는 데 도움이 되는 제안을 나열한다.</li>
+</ul>
+
+<h2 id="diagnostic">Diagnostic</h2>
+
+<ul>
+  <li>성능과 관련된 기타 정보를 보여준다.</li>
+</ul>]]></content><author><name>Reyna</name></author><category term="note" /><category term="Lighthouse" /><summary type="html"><![CDATA[Lighthouse]]></summary></entry><entry><title type="html">[Programmers] 16. 최대공약수와 최소공배수 (javascript)</title><link href="http://localhost:4000/programmers/3-gcdlcm/" rel="alternate" type="text/html" title="[Programmers] 16. 최대공약수와 최소공배수 (javascript)" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T00:00:00+09:00</updated><id>http://localhost:4000/programmers/3-gcdlcm</id><content type="html" xml:base="http://localhost:4000/programmers/3-gcdlcm/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+
+<p>두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.</p>
+
+<h2 id="제한사항">제한사항</h2>
+
+<ul>
+  <li>두 수는 1이상 1000000이하의 자연수입니다.</li>
+</ul>
+
+<h2 id="입출력-예시">입출력 예시</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>m</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>12</td>
+      <td>[3,12]</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>5</td>
+      <td>[1,10]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="의사코드">의사코드</h2>
+
+<ul>
+  <li>n % m이 0이면 m은 최대공약수가 된다.</li>
+  <li>n % m이 0이 아니면 n에 m을 할당하고 m에 n % m을 할당해서 n % m이 0이 될 때까지 반복한다.</li>
+  <li>최소공배수는 (n * m) / 최대공약수로 구한다.</li>
+  <li>배열에 최대공약수와 최소공배수를 순서대로 할당한다.</li>
+</ul>
+
+<h2 id="제출한-답">제출한 답</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span><span class="p">;</span>
+
+  <span class="c1">//최대공약수</span>
+  <span class="kd">const</span> <span class="nx">GCD</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">m</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nx">GCD</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">n</span> <span class="o">%</span> <span class="nx">m</span><span class="p">);</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="nx">m</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="c1">//최소공배수</span>
+  <span class="kd">const</span> <span class="nx">LCM</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">n</span> <span class="o">*</span> <span class="nx">m</span><span class="p">)</span> <span class="o">/</span> <span class="nx">GCD</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span><span class="nx">answer</span> <span class="o">=</span> <span class="p">[</span><span class="nx">GCD</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">),</span> <span class="nx">LCM</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="다른-풀이">다른 풀이</h2>
+
+<p>for 문의 조건식이 0이면 false가 되어 조건문을 탈출한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">gcdlcm</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">r</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">ab</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span> <span class="p">(</span><span class="nx">r</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">b</span><span class="p">);</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">r</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">ab</span> <span class="o">/</span> <span class="nx">b</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[최대공약수와 최소공배수]]></summary></entry><entry><title type="html">login</title><link href="http://localhost:4000/note/login/" rel="alternate" type="text/html" title="login" /><published>2023-03-06T00:00:00+09:00</published><updated>2023-03-06T00:00:00+09:00</updated><id>http://localhost:4000/note/login</id><content type="html" xml:base="http://localhost:4000/note/login/"><![CDATA[<p>로그인과 관련된 기술
+일반적으로 로그인 구현 방법
+백엔드에서 일어나는 일 맛보기
+인프라 관점에서 생각해보기
+여러가지 실습과 질문/답변</p>
+
+<p>로그인의 기술적 정의와 실제 서비스에서의 사용도
+직접 로그인 화면과 mock api 세팅
+구성해 본 로그인 로직이 실제 서비스에 적용되기 위해 필요한 부분</p>
+
+<h1 id="로그인이란">로그인이란?</h1>
+
+<ul>
+  <li>시스템에 엑세스(접근)하기 위해 식별자 정보를 입력하는 것</li>
+  <li>
+    <p>시스템 로그를 남긴다(의심스러운 홣동도 기록 가능)</p>
+  </li>
+  <li>사용자가 시스템에 <strong>접근</strong>하거나 <strong>동작을 수행하는 것을 제어</strong>하고 기록하기 위한 컴퓨터 보안 절차</li>
+  <li>접근 &amp; 동작 : 서비스와 상호작용하는 일</li>
+  <li>유저 인증/구분/제어</li>
+</ul>
+
+<h1 id="구현을-위해-해야하는-것">구현을 위해 해야하는 것</h1>
+
+<h2 id="1-사용자-식별be">1. 사용자 식별(BE)</h2>
+
+<ul>
+  <li>누군지 알아야 함!</li>
+</ul>
+
+<h2 id="2-접근-및-동작-제어be">2. 접근 및 동작 제어(BE)</h2>
+
+<ul>
+  <li>접근하지 못하고(존재 유무를 알지 못하게) 제어하지 못하게 함</li>
+</ul>
+
+<h2 id="3-권한이-없는-자원에-접근하지-않는-구조-만들기fe">3. 권한이 없는 자원에 접근하지 않는 구조 만들기(FE)</h2>
+
+<ul>
+  <li>유저 전용 페이지 &amp; 데이터 / 사장님 전용 페이지 &amp; 데이터</li>
+  <li>유저는 사장님 페이지가 아예 노출되지 않게 해야 함</li>
+</ul>
+
+<h2 id="4-로그인--로그아웃-만들기">4. 로그인 / 로그아웃 만들기</h2>
+
+<h2 id="5-인증-정보-관리하기">5. 인증 정보 관리하기</h2>
+
+<h2 id="필요한-최소한의-구현-요구사항">필요한 최소한의 구현 요구사항</h2>
+
+<p>로그인 페이지
+로그인 인증관련 데이터 관리
+로그인 상태에 따른 화면/기능 제어
+로그아웃(로그인 된 상태 제거, 토큰 삭제, 다른 페이지로 이동) : 무효화 처리(be), 세션 끊기, 등등</p>
+
+<h2 id="실제-서비스가-되려면">실제 서비스가 되려면?</h2>
+
+<h3 id="토큰이-뭔지">토큰이 뭔지…?</h3>
+
+<p>ㅌ</p>
+
+<h3 id="토큰을-어디에-저장할-것인지">토큰을 어디에 저장할 것인지?</h3>
+
+<ol>
+  <li>
+    <p>쿠키</p>
+  </li>
+  <li>로컬 스토리지</li>
+  <li>세션 스토리지</li>
+</ol>
+
+<h3 id="전역-상태-관리">전역 상태 관리?</h3>
+
+<h3 id="로그인-정보를-어디에-보관">로그인 정보를 어디에 보관?</h3>
+
+<h2 id="실제-서비스-구조">실제 서비스 구조</h2>
+
+<h3 id="로그인이-필요한-페이지와-그렇지-않은-페이지-분리">로그인이 필요한 페이지와 그렇지 않은 페이지 분리</h3>
+
+<ul>
+  <li>로그인이 필요하지 않은 페이지
+그냥 뿌려주기!</li>
+  <li>로그인이 필요한 페이지
+로그인이 되지 않으면 리턴 &gt; 로그인 페이지로 이동합니다(컴포넌트) 하나 뿌려줘야 함(!!)
+=&gt; 반복되는 로그인 확인 코드와 로직은 모듈화해야 함 (고차 컴포넌트 사용해서 감싸주기)
+=&gt; children <code class="language-plaintext highlighter-rouge">&lt;Authorization&gt;</code> 컴포넌트</li>
+</ul>
+
+<p>모든 페이지에서 반복되는 또다른부분
+로그 수집할 때도 글로벌 컴포넌트 유용, 페이지 뷰 체크</p>
+
+<h1 id="csrssr-유지보수-관점에서-생각해보기">csr,ssr 유지보수 관점에서 생각해보기</h1>
+
+<h2 id="csr">csr</h2>
+
+<h2 id="ssr">ssr</h2>
+
+<p>html을 반조립상태로…
+seo에 유리
+서버 사이드 렌더링 -&gt; 서버 세팅해야 함..
+페이지 이동 vs 페이지 내 인터렉션 =&gt;</p>
+
+<p>브라우저에서 말하는 렌더링 =&gt; html,css 가져와서 화면 그리기(v8까보기?)
+그게 아닌 렌더링? =&gt; 개체를 그래픽으로 그려내는 동작</p>
+
+<h2 id="ssg--제일-빠름">ssg : 제일 빠름</h2>
+
+<p>빌드 레벨에서 html을 만들어놓는것(완제품)</p>
+
+<p>ssr 개발이 힘들때?</p>
+
+<h3 id="csr---ssr---인프라데브옵스-순서로-공부">CSR -&gt; SSR -&gt; (인프라(데브옵스)) 순서로 공부</h3>
+
+<ul>
+  <li>nextjs -&gt; 가볍게 지켜보기</li>
+  <li>ssr에서 서버는 프론트 관리</li>
+  <li>
+    <p>인프라 : 구조 고민할 때 …</p>
+  </li>
+  <li>신입 개발자에게 필요한 역량</li>
+</ul>
+
+<ol>
+  <li>코드 리딩 능력</li>
+  <li>뭘 모르는지 알기(메타인지)</li>
+  <li>질문 잘하기</li>
+</ol>
+
+<p>챗 gpt</p>
+
+<ul>
+  <li>
+    <p>상태관리 : 리덕스mobx리코일zustand</p>
+  </li>
+  <li>프론트 테스트 : 실효성이 크지 않음</li>
+  <li>ts 필수 : 투두리스트 만들어보기~</li>
+  <li>생활코딩, react+ts 프로젝트</li>
+  <li>cs 지식 : 알고리즘, 자료구조 정도?</li>
+  <li>
+    <p>인프런 김영한..</p>
+  </li>
+  <li>성능최적화 : dev 툴 리렌더링 관리</li>
+  <li>nextjs-&gt; 깊게 안해도 됨</li>
+  <li>contextapi =&gt; 별로 안씀</li>
+  <li>vite-&gt;써도좋음</li>
+  <li>얼리 리턴 패턴</li>
+  <li>포폴 어떤거 얼마나 배웠는지?</li>
+  <li>
+    <h2 id="뷰-문서-번역">뷰 문서 번역…</h2>
+  </li>
+</ul>]]></content><author><name>Reyna</name></author><category term="note" /><category term="login" /><summary type="html"><![CDATA[login]]></summary></entry><entry><title type="html">innerHTML</title><link href="http://localhost:4000/note/js-test-1/" rel="alternate" type="text/html" title="innerHTML" /><published>2023-03-06T00:00:00+09:00</published><updated>2023-03-06T00:00:00+09:00</updated><id>http://localhost:4000/note/js-test-1</id><content type="html" xml:base="http://localhost:4000/note/js-test-1/"><![CDATA[<h1 id="innerhtml">innerHTML</h1>
+
+<p>요소 안에 포함된 HTML 또는 XML 마크업을 가져오거나 설정함</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">insert</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">text</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+  <span class="kd">const</span> <span class="nx">$insert</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">insert</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$insert</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>  <span class="c1">// text &lt;div&gt;inner&lt;/div&gt;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h1 id="closest">closest()</h1>
+
+<p>주어진 CSS 선택자와 일치하는 요소를 찾을 때까지 자기 자신을 포함해 위쪽을 순회</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">closest</span><span class="p">(</span><span class="nx">selectors</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="data--속성">data-* 속성</h1>
+
+<p>사용자 정의 속성</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+    &lt;태그 data-*='값'&gt;&lt;/태그&gt;
+    *에는 대문자를 포함할 수 없다.
+ */</span>
+
+<span class="c1">//body</span>
+<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">data</span><span class="o">-</span><span class="nx">user</span><span class="o">-</span><span class="nx">name</span><span class="o">=</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">data</span><span class="o">-</span><span class="nx">user</span><span class="o">-</span><span class="nx">name</span><span class="o">=</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">data</span><span class="o">-</span><span class="nx">user</span><span class="o">-</span><span class="nx">name</span><span class="o">=</span><span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">user</span> <span class="nx">name</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+<span class="c1">//script</span>
+    <span class="kd">let</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.button</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">button</span><span class="p">);</span> <span class="c1">//NodeList(3) [button.button, button.button, button.button]</span>
+
+    <span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">button</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">button</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">dataset</span><span class="p">);</span> <span class="c1">//DOMStringMap {userName: 'a'}..</span>
+      <span class="c1">//addEventListener에서 화살표 함수는 작동하지 않는다..</span>
+      <span class="nx">button</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+        <span class="c1">//dataset을 가져올 때는 카멜 케이스를 이용한다.</span>
+        <span class="kd">let</span> <span class="nx">userName</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">userName</span><span class="p">;</span>
+        <span class="nx">user</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">userName</span><span class="p">;</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="note" /><category term="javascript" /><summary type="html"><![CDATA[innerHTML]]></summary></entry><entry><title type="html">[Deep Dive] 8. 원시 값과 객체의 차이점</title><link href="http://localhost:4000/javascript/2-primitive_object/" rel="alternate" type="text/html" title="[Deep Dive] 8. 원시 값과 객체의 차이점" /><published>2023-03-04T00:00:00+09:00</published><updated>2023-03-04T00:00:00+09:00</updated><id>http://localhost:4000/javascript/2-primitive_object</id><content type="html" xml:base="http://localhost:4000/javascript/2-primitive_object/"><![CDATA[<h1 id="원시값-과-객체의-차이점">원시값 과 객체의 차이점</h1>
+
+<h2 id="변경-불가능한-값-vs-변경-가능한-값">변경 불가능한 값 vs. 변경 가능한 값</h2>
+
+<p>원시 값은 변경 불가능한 값이고, 객체는 변경 가능한 값이다.
+여기서 주의해야 할 점은 변수와 값을 구분해서 생각해야 한다는 것이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 메모리 공간을 확보하고 1을 저장한 후 그 공간에 a라는 이름을 붙인다.</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 새로운 메모리 공간을 확보하고 재할당한 2를 저장한다.</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">//2</span>
+</code></pre></div></div>
+
+<p>여기서 값이 1에서 2로 변한 게 아니라 a가 다른 메모리 공간의 주소를 참조하는 방식으로 작동한다.</p>
+
+<p>반면 객체는 변경이 가능한 값이다. 객체를 변수에 할당할 때, 변수는 실제 객체가 저장된 메모리 공간의 주소(참조값)를 저장한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rin</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>위의 코드에서 <code class="language-plaintext highlighter-rouge">{ name : 'rin'}</code>을 <mark>참조</mark>할 수 있는 값이 변수(a)에 저장된다.</p>
+
+<h2 id="값에-의한-전달-vs-참조에-의한-전달">값에 의한 전달 vs. 참조에 의한 전달</h2>
+
+<p>변수에 변수를 할당했을 때, 원시 값과 객체는 다르게 작동한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">point</span> <span class="o">=</span> <span class="mi">90</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">copy</span> <span class="o">=</span> <span class="nx">point</span><span class="p">;</span>
+
+<span class="nx">point</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">point</span><span class="p">);</span> <span class="c1">//100</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">copy</span><span class="p">);</span> <span class="c1">//90</span>
+</code></pre></div></div>
+
+<p>위의 경우 각각의 변수에 90이라는 값이 저장된다. 이때 두 변수는 별개이기 때문에 서로 간섭하지 못한다. 따라서 어느 한 쪽을 변경해도 다른 변수에는 영향을 끼치지 않는다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">rin</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">point</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="primitive type" /><category term="object/reference type" /><summary type="html"><![CDATA[primitive type & object/reference type]]></summary></entry><entry><title type="html">[Deep Dive] 8. object</title><link href="http://localhost:4000/javascript/1-object/" rel="alternate" type="text/html" title="[Deep Dive] 8. object" /><published>2023-03-04T00:00:00+09:00</published><updated>2023-03-04T00:00:00+09:00</updated><id>http://localhost:4000/javascript/1-object</id><content type="html" xml:base="http://localhost:4000/javascript/1-object/"><![CDATA[<h1 id="1-객체">1. 객체</h1>
+
+<ul>
+  <li>객체 : 0개 이상의 프로퍼티로 구성된 집합</li>
+  <li>프로퍼티 : 객체의 상태를 나타내는 값으로, 키와 값의 쌍으로 구성된다.</li>
+</ul>
+
+<h1 id="2-객체-생성">2. 객체 생성</h1>
+
+<ul>
+  <li>객체를 만드는 방법은 객체 리터럴을 사용하는 방법과 Object 생성자 함수, 클래스 등을 이용하는 방법이 있다.</li>
+</ul>
+
+<h2 id="객체-리터럴을-사용하여-객체-만들기">객체 리터럴을 사용하여 객체 만들기</h2>
+
+<ul>
+  <li><a href="https://sena-22.github.io/javascript/1-expression/#%EB%A6%AC%ED%84%B0%EB%9F%B4">리터럴</a>은 값을 생성하기 위한 표기법이고, 객체 리터럴은 객체를 생성하기 위한 표기법이다.</li>
+  <li>중괄호<code class="language-plaintext highlighter-rouge">{...}</code> 안에 0개 이상의 프로퍼티를 정의하는 방법으로 객체를 만들 수 있다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 키: 'name', 값 : 'jack'</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="c1">// 키: 'age', 값 : '20'</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">character</code>라는 변수에 두 개의 프로퍼티가 들어간 객체가 할당되어 있다.</p>
+
+<h1 id="3-프로퍼티">3. 프로퍼티</h1>
+
+<h2 id="프로퍼티에-사용할-수-있는-값">프로퍼티에 사용할 수 있는 값</h2>
+
+<ul>
+  <li>프로퍼티 키에는 문자열 또는 심벌값, 프로퍼티 값에는 모든 값을 사용할 수 있다.</li>
+</ul>
+
+<h2 id="프로퍼티-접근법">프로퍼티 접근법</h2>
+
+<p>프로퍼티를 읽는 방법에는 마침표 표기법과 대괄호 표기법 두 가지가 있다.</p>
+
+<ul>
+  <li>식별자 네이밍 규칙을 준수하면 두 가지 모두 사용 가능하다. 이때 대괄호 표기법의 키 값은 따옴표로 감싸야 한다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">//jack (마침표 표기법)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">[</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">]);</span> <span class="c1">//jack (대괄호 표기법)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>키 값이 식별자 네이밍 규칙을 준수하지 않는 경우 대괄호 표기법만 가능하다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span><span class="dl">"</span><span class="s2">last-name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="dl">'</span><span class="s1">last-name</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Uncaught SyntaxError: Unexpected string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">[</span><span class="dl">"</span><span class="s2">last-name</span><span class="dl">"</span><span class="p">]);</span> <span class="c1">//jack</span>
+</code></pre></div></div>
+
+<ul>
+  <li>만약 존재하지 않는 프로퍼티에 접근하면 <code class="language-plaintext highlighter-rouge">undefined</code>가 뜬다(에러가 발생하지 않는다!)</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span> <span class="c1">//undefined</span>
+</code></pre></div></div>
+
+<h2 id="프로퍼티-생성하기">프로퍼티 생성하기</h2>
+
+<p>존재하지 않는 프로퍼티에 값을 할당하면 프로퍼티가 동적으로 추가된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="p">};</span>
+
+<span class="nx">character</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">);</span> <span class="c1">//{name: 'jack', age: 20}</span>
+</code></pre></div></div>
+
+<p>만약 존재하는 프로퍼티에 할당하면 원래 존재하는 프로퍼티의 값이 갱신된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">20</span> <span class="p">};</span>
+
+<span class="nx">character</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span> <span class="c1">//10</span>
+</code></pre></div></div>
+
+<h2 id="프로퍼티-삭제하기">프로퍼티 삭제하기</h2>
+
+<p>프로퍼티는 delete라는 연산자로 삭제할 수 없다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">character</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">20</span> <span class="p">};</span>
+
+<span class="k">delete</span> <span class="nx">character</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">character</span><span class="p">);</span> <span class="c1">//{name: 'jack'}</span>
+</code></pre></div></div>
+
+<h2 id="프로퍼티-축약property-shorthand">프로퍼티 축약(property shorthand)</h2>
+
+<p>ES6에서 추가된 기능으로, 프로퍼티의 키와 프로퍼티의 값이 동일할 경우 생략이 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">createCharacter</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="nx">name</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="nx">age</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">newCharacter</span> <span class="o">=</span> <span class="nx">createCharacter</span><span class="p">(</span><span class="dl">"</span><span class="s2">cleve</span><span class="dl">"</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newCharacter</span><span class="p">);</span> <span class="c1">//{name: 'cleve', age: 25}</span>
+</code></pre></div></div>
+
+<p>위와 같이 프로퍼티 값을 받아와서 사용할 때, 프로퍼티 키와 동일하게 설정하는 경우 축약이 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">createCharacter</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="p">,</span>
+    <span class="nx">age</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">newCharacter</span> <span class="o">=</span> <span class="nx">createCharacter</span><span class="p">(</span><span class="dl">"</span><span class="s2">cleve</span><span class="dl">"</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newCharacter</span><span class="p">);</span> <span class="c1">//{name: 'cleve', age: 25}</span>
+</code></pre></div></div>
+
+<h2 id="계산된-프로퍼티">계산된 프로퍼티</h2>
+
+<p>프로퍼티 축약과 마찬가지로 ES6에서 추가된 기능. 객체 외부에서 프로퍼티 키를 동적으로 생성했던 ES5와 달리, 객체 내부에서도 프로퍼티 키를 동적으로 생성할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">animal</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="dl">"</span><span class="s2">좋아하는 동물은?</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">cat</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">likeAnimal</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">animal</span><span class="p">]:</span> <span class="dl">"</span><span class="s2">♥️</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">likeAnimal</span><span class="p">);</span> <span class="c1">//{cat: '♥️'}</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="object" /><summary type="html"><![CDATA[object]]></summary></entry><entry><title type="html">createBrowserRouter를 이용한 라우팅 적용</title><link href="http://localhost:4000/react/react-router/" rel="alternate" type="text/html" title="createBrowserRouter를 이용한 라우팅 적용" /><published>2023-03-02T00:00:00+09:00</published><updated>2023-03-02T00:00:00+09:00</updated><id>http://localhost:4000/react/react-router</id><content type="html" xml:base="http://localhost:4000/react/react-router/"><![CDATA[<h2 id="createbrowserrouter-routerprovider">createBrowserRouter(), RouterProvider</h2>
+
+<p>먼저 라우터를 만들고 첫 번째 루트를 구성해야 한다. <code class="language-plaintext highlighter-rouge">createBrowserRouter()</code>함수로 생성한 <code class="language-plaintext highlighter-rouge">router</code>를 <code class="language-plaintext highlighter-rouge">RouterProvider</code> 컴포넌트에 <code class="language-plaintext highlighter-rouge">props</code>로 넣어준다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.js</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">createBrowserRouter</span><span class="p">,</span> <span class="nx">ReactProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createBrowserRouter</span><span class="p">,</span> <span class="nx">RouterProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">createBrowserRouter</span><span class="p">([]);</span>
 
@@ -13,6 +720,18 @@
 </code></pre></div></div>
 
 <p>라우터를 분리해서 작성할 수도 있다.</p>
+
+<h3 id="indexjs">index.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-dom/client</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./index.css</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLElement</span><span class="p">)</span>
+<span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
+<span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="appjs">App.js</h3>
 
@@ -178,637 +897,4 @@
 <h2 id="redux-toolkit-설치">redux-toolkit 설치</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="p">@</span><span class="nd">reduxjs</span><span class="sr">/toolkit react-redu</span><span class="err">x
-</span></code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="note" /><category term="react" /><category term="typesciprt" /><category term="redux" /><summary type="html"><![CDATA[project setting]]></summary></entry><entry><title type="html">[Programmers] 13. 정수 제곱근 판별 (javascript)</title><link href="http://localhost:4000/programmers/distinguish-sqrt/" rel="alternate" type="text/html" title="[Programmers] 13. 정수 제곱근 판별 (javascript)" /><published>2023-03-01T00:00:00+09:00</published><updated>2023-03-01T00:00:00+09:00</updated><id>http://localhost:4000/programmers/distinguish-sqrt</id><content type="html" xml:base="http://localhost:4000/programmers/distinguish-sqrt/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다.
-n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>n은 1이상, 50000000000000 이하인 양의 정수입니다.</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>n</th>
-      <th>return</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>121</td>
-      <td>144</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>-1</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<ol>
-  <li>n의 제곱근을 구한다.</li>
-  <li>n이 정수이면 (x+1)의 제곱을 리턴한다.</li>
-  <li>정수가 아니면 -1을 리턴한다.</li>
-</ol>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">?</span> <span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[정수 제곱근 판별]]></summary></entry><entry><title type="html">[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)</title><link href="http://localhost:4000/programmers/number-with-x-interval/" rel="alternate" type="text/html" title="[Programmers] 12. x만큼 간격이 있는 n개의 숫자 (javascript)" /><published>2023-02-28T00:00:00+09:00</published><updated>2023-02-28T00:00:00+09:00</updated><id>http://localhost:4000/programmers/number-with-x-interval</id><content type="html" xml:base="http://localhost:4000/programmers/number-with-x-interval/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>x는 -10000000 이상, 10000000 이하인 정수입니다.</li>
-  <li>n은 1000 이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>x</th>
-      <th>n</th>
-      <th>answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2</td>
-      <td>5</td>
-      <td>[2,4,6,8,10]</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>3</td>
-      <td>[4,8,12]</td>
-    </tr>
-    <tr>
-      <td>-4</td>
-      <td>2</td>
-      <td>[-4,-8]</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<ol>
-  <li>빈 배열 생성</li>
-  <li>1~n만큼 순회를 돌면서 arr에 x*i를 push</li>
-  <li>배열 리턴</li>
-</ol>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">x</span> <span class="o">*</span> <span class="nx">i</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[x만큼 간격이 있는 n개의 숫자]]></summary></entry><entry><title type="html">[Deep Dive] DOM</title><link href="http://localhost:4000/javascript/1-DOM/" rel="alternate" type="text/html" title="[Deep Dive] DOM" /><published>2023-02-28T00:00:00+09:00</published><updated>2023-02-28T00:00:00+09:00</updated><id>http://localhost:4000/javascript/1-DOM</id><content type="html" xml:base="http://localhost:4000/javascript/1-DOM/"><![CDATA[<p>DOM은 노드들로 구성된 트리자료를 말한다. <br /> HTML 문서는 텍스트로 이루어져 있는데, 이 문서를 브라우저에 시각적으로 보여주려면 브라우저가 이해할 수 있게 변환해주어야 한다. <br /> HTML을 파싱하여 브라우저가 이해할 수 있도록 만들어진 트리구조가 DOM이다. DOM은 HTML 문서의 계층적 구조와 정보를 표현하며, 이를 제어할 수 있는 API(프로퍼티와 메서드)를 제공한다.</p>
-
-<h3 id="-파싱">🤔 파싱?<br /></h3>
-
-<p>파싱은 텍스트 문서의 문자들을 토큰으로 분해하여 분석하고, 토큰의 문법적 의미와 구조를 반영하여 파스 트리를 생성하는 것을 말한다. 여기서 토큰은 문법적 의미를 가지는 최소 단위를 말한다. (html 시작 토큰, html 종료 토큰.. )</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
-      <span class="p">.</span><span class="nx">red</span>  <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="err">#</span><span class="nx">ff0000</span><span class="p">;</span> <span class="p">}</span>
-      <span class="p">.</span><span class="nx">blue</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="err">#</span><span class="mi">0000</span><span class="nx">ff</span><span class="p">;</span> <span class="p">}</span>
-    <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Cities</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Seoul</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">two</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">London</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">three</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Newyork</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">four</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Tokyo</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
-</span>
-</code></pre></div></div>
-
-<p><img src="https://user-images.githubusercontent.com/110877564/221693063-161becb4-b0e7-4a41-9dd1-e17f5cef5a02.png" alt="dom-tree" /></p>
-
-<p>위의 DOM tree는 HTML 문서를 파싱하여 만들어졌다.</p>
-
-<h1 id="1-노드">1. 노드</h1>
-
-<h2 id="html-요소와-노드-객체">HTML 요소와 노드 객체</h2>
-
-<h2 id="노드-객체의-타입">노드 객체의 타입</h2>
-
-<h2 id="노드-객체의-상속-구조">노드 객체의 상속 구조</h2>
-
-<h1 id="2-요소-노드-취득">2. 요소 노드 취득</h1>
-
-<h2 id="id를-이용한-요소-노드-취득">id를 이용한 요소 노드 취득</h2>
-
-<h2 id="태그-이름을-이용한-요소-노드-취득">태그 이름을 이용한 요소 노드 취득</h2>
-
-<h2 id="class를-이용한-요소-노드-취득">class를 이용한 요소 노드 취득</h2>
-
-<h2 id="css-선택자를-이용한-요소-노드-취득">CSS 선택자를 이용한 요소 노드 취득</h2>
-
-<h2 id="특정-요소-노드-취득-여부-확인하기">특정 요소 노드 취득 여부 확인하기</h2>
-
-<h2 id="htmlcollection과-nodelist">HTMLCollection과 NodeList</h2>
-
-<p><a href="https://codesandbox.io/s/dom-example-c6qf9c">DOM example</a></p>
-
-<h1 id="3-노드-탐색">3. 노드 탐색</h1>
-
-<h2 id="공백-텍스트-노드">공백 텍스트 노드</h2>
-
-<h2 id="자식-노드-탐색">자식 노드 탐색</h2>
-
-<h2 id="자식-노드-존재-확인">자식 노드 존재 확인</h2>
-
-<h2 id="요소-노드의-텍스트-노드-탐색">요소 노드의 텍스트 노드 탐색</h2>
-
-<h2 id="부모-노드-탐색">부모 노드 탐색</h2>
-
-<h2 id="형제-노드-탐색">형제 노드 탐색</h2>
-
-<h1 id="4-노드-정보-취득">4. 노드 정보 취득</h1>
-
-<h1 id="5-요소-노드의-텍스트-조작">5. 요소 노드의 텍스트 조작</h1>
-
-<h2 id="nodevalue">nodeValue</h2>
-
-<h2 id="textcontent">textContent</h2>
-
-<h1 id="6-dom-조작">6. DOM 조작</h1>
-
-<h2 id="innerhtml">innerHTML</h2>
-
-<h2 id="insertadjacenthtml">insertAdjacentHTML</h2>
-
-<h2 id="노드-생성과-추가">노드 생성과 추가</h2>
-
-<h2 id="복수-노드-생성과-추가">복수 노드 생성과 추가</h2>
-
-<h2 id="노드-삽입">노드 삽입</h2>
-
-<h2 id="노드-이동">노드 이동</h2>
-
-<h2 id="노드-복사">노드 복사</h2>
-
-<h2 id="노드-교체">노드 교체</h2>
-
-<h2 id="노드-삭제">노드 삭제</h2>
-
-<h1 id="7-어트리뷰트">7. 어트리뷰트</h1>
-
-<h2 id="어트리뷰트-노드와-attributes-프로퍼티">어트리뷰트 노드와 attributes 프로퍼티</h2>
-
-<h2 id="html-어트리뷰트-조작">HTML 어트리뷰트 조작</h2>
-
-<h2 id="html-어트리뷰트-vs-dom-프로퍼티">HTML 어트리뷰트 vs. DOM 프로퍼티</h2>
-
-<h2 id="data-어트리뷰트와-dataset-프로퍼티">data 어트리뷰트와 dataset 프로퍼티</h2>
-
-<h1 id="8-스타일">8. 스타일</h1>
-
-<h2 id="인라인-스타일-조작">인라인 스타일 조작</h2>
-
-<h2 id="클래스-조작">클래스 조작</h2>
-
-<h2 id="요소에-적용되어-있는-css-스타일-참조">요소에 적용되어 있는 CSS 스타일 참조</h2>
-
-<h1 id="9-dom-표준">9. DOM 표준</h1>
-
-<p class="notice--primary"><a href="https://mystudy.tistory.com/21">HTML 파싱(HTML Parsing) 이란?</a></p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="DOM" /><summary type="html"><![CDATA[Document Object Model]]></summary></entry><entry><title type="html">[Deep Dive] Event</title><link href="http://localhost:4000/javascript/2-Event/" rel="alternate" type="text/html" title="[Deep Dive] Event" /><published>2023-02-28T00:00:00+09:00</published><updated>2023-02-28T00:00:00+09:00</updated><id>http://localhost:4000/javascript/2-Event</id><content type="html" xml:base="http://localhost:4000/javascript/2-Event/"><![CDATA[<h1 id="1-이벤트-드리븐-프로그래밍">1. 이벤트 드리븐 프로그래밍</h1>
-
-<h1 id="2-이벤트-타입">2. 이벤트 타입</h1>
-
-<h1 id="3-이벤트-핸들러-등록">3. 이벤트 핸들러 등록</h1>
-
-<h2 id="이벤트-핸들러-어트리뷰트-방식">이벤트 핸들러 어트리뷰트 방식</h2>
-
-<h2 id="이벤트-핸들러-프로퍼티-방식">이벤트 핸들러 프로퍼티 방식</h2>
-
-<h2 id="addeventlistener-방식">addEventListener 방식</h2>
-
-<h1 id="4-이벤트-핸들러-제거">4. 이벤트 핸들러 제거</h1>
-
-<h1 id="5-이벤트-객체">5. 이벤트 객체</h1>
-
-<h2 id="이벤트-객체의-상속-구조">이벤트 객체의 상속 구조</h2>
-
-<h2 id="이벤트-객체의-공통-프로퍼티">이벤트 객체의 공통 프로퍼티</h2>
-
-<h2 id="마우스-정보-취득">마우스 정보 취득</h2>
-
-<h2 id="키보드-정보-취득">키보드 정보 취득</h2>
-
-<h1 id="6-이벤트-전파">6. 이벤트 전파</h1>
-
-<h1 id="7-이벤트-위임">7. 이벤트 위임</h1>
-
-<h1 id="8-dom-요소의-기본-동작-조작">8. DOM 요소의 기본 동작 조작</h1>
-
-<h2 id="dom-요소의-기본-동작-중단">DOM 요소의 기본 동작 중단</h2>
-
-<h2 id="이벤트-전파-방지">이벤트 전파 방지</h2>
-
-<h1 id="9-이벤트-핸들러-내부의-this">9. 이벤트 핸들러 내부의 this</h1>
-
-<h2 id="이벤트-핸들러-어트리뷰트-방식-1">이벤트 핸들러 어트리뷰트 방식</h2>
-
-<h2 id="이벤트-핸들러-프로퍼티-방식과-addeventlistener-방식">이벤트 핸들러 프로퍼티 방식과 addEventListener 방식</h2>
-
-<h1 id="10-이벤트-핸들러에-인수-전달">10. 이벤트 핸들러에 인수 전달</h1>
-
-<h1 id="11-커스텀-이벤트">11. 커스텀 이벤트</h1>
-
-<h2 id="커스텀-이벤트-생성">커스텀 이벤트 생성</h2>
-
-<h2 id="커스텀-이벤트-디스패치">커스텀 이벤트 디스패치</h2>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="event" /><summary type="html"><![CDATA[event]]></summary></entry><entry><title type="html">[Deep Dive] 7. 제어문</title><link href="http://localhost:4000/javascript/control-flow-statement/" rel="alternate" type="text/html" title="[Deep Dive] 7. 제어문" /><published>2023-02-27T00:00:00+09:00</published><updated>2023-02-27T00:00:00+09:00</updated><id>http://localhost:4000/javascript/control-flow-statement</id><content type="html" xml:base="http://localhost:4000/javascript/control-flow-statement/"><![CDATA[<p>제어문은 조건에 따라 코드 블록을 실행하거나 반복 실행할 때 사용한다.</p>
-
-<h1 id="블록문">블록문</h1>
-
-<ul>
-  <li>블록문(코드 블록, 블록)은 0개 이상의 문을 중괄호({})로 묶은 것을 말한다.</li>
-  <li>블록문은 자체 종결성을 가지기 때문에 끝에 세미콜론을 붙이지 않는다.</li>
-</ul>
-
-<h1 id="조건문">조건문</h1>
-
-<h2 id="1-ifelse-문">1. if…else 문</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건식</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">//조건식이 true일 때 실행</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="c1">//조건식이 false일 때 실행</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>조건이 2개 이상인 경우 else if 문을 추가한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건식1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">//조건식1이 true일 때 실행</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">조건식2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">//조건식2가 true일 때 실행</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="c1">//조건식이 모두 false일 때 실행</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>코드블록 내의 문이 하나면 중괄호를 생략할 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">조건식1</span><span class="p">)</span>  <span class="c1">//조건식1이 true일 때 실행</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">조건식2</span><span class="p">)</span>   <span class="c1">//조건식2가 true일 때 실행</span>
-<span class="k">else</span>   <span class="c1">//조건식이 모두 false일 때 실행</span>
-</code></pre></div></div>
-
-<h2 id="2-switch-문">2. switch 문</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="nx">표현식</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">case</span> <span class="nx">표현식1</span><span class="p">:</span>
-    <span class="c1">// 표현식과 표현식1이 일치하면 실행</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="k">case</span> <span class="nx">표현식2</span><span class="p">:</span>
-    <span class="c1">// 표현식과 표현식2가 일치하면 실행</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="p">...</span>
-  <span class="k">default</span><span class="p">:</span>
-    <span class="c1">// 표현식과 일치하는 case문이 없을 때 실행</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>switch문은 조건이 많을 때 사용하면 좋다.</p>
-
-<h1 id="반복문">반복문</h1>
-
-<h2 id="1-for문">1. for문</h2>
-
-<p>조건식이 거짓으로 평가될 때까지 코드 블록을 반복 실행한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span><span class="p">(</span><span class="nx">변수</span> <span class="nx">선언문</span><span class="p">(</span><span class="nx">할당문</span><span class="p">);</span> <span class="nx">조건식</span><span class="p">;</span> <span class="nx">증감식</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//조건식이 참인 경우 반복해서 실행할 문</span>
-  <span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>변수 선언문은 한 번만 실행된다.</li>
-  <li>조건식이 true이면 코드 블록이 실행된다</li>
-  <li>코드 블록이 종료되면 증감식이 실행된다</li>
-  <li>다시 조건식이 실행되고, 조건식이 false가 될 때까지 반복된다. 조건식이 false가 되면 for문이 종료된다.</li>
-</ul>
-
-<h2 id="2-while문">2. while문</h2>
-
-<p>조건식의 평가 결과가 참인 동안 코드 블록이 반복 실행된다. for문은 반복 횟수가 정해져 있을 때, while문은 횟수가 명확하지 않을 때 사용하면 좋다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nx">조건식</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">//조건식이 참인 경우 반복해서 실행할 문</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>만약 조건식이 계속 true이면 무한 루프가 발생한다.
-여기서 빠져나가려면 코드 블록 내에 if문을 넣고, if문의 조건이 true일 때 break 문을 사용하면 탈출할 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">//조건식이 참인 경우 반복해서 실행할 문</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="nx">조건식</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span> <span class="c1">//조건식이 참이면 코드 블록 탈출</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="3-dowhile문">3. do…while문</h2>
-
-<p>do…while문은 코드 블록을 먼저 실행하고 조건식을 평가한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
-  <span class="c1">// 최초 한 번 + 조건식이 참인 경우 반복해서 실행할 문</span>
-<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">조건식</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h1 id="break-문">break 문</h1>
-
-<p>레이블 문, 반복문, switch문의 코드 블록을 탈출한다</p>
-
-<p>레이블 문은 식별자가 붙은 문을 말한다. switch문의 <code class="language-plaintext highlighter-rouge">case:</code>나 <code class="language-plaintext highlighter-rouge">defuault:</code>도 레이블 문이다.</p>
-
-<h1 id="continue-문">continue 문</h1>
-
-<p>continue문은 반복문의 코드 블록 실행을 중지하고, 증감식으로 실행 흐름을 이동시킨다. <br />
-break문처럼 반복문을 탈출하지는 않는다.</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="control flow statement" /><summary type="html"><![CDATA[control flow statement]]></summary></entry><entry><title type="html">[Programmers] 11. 문자열 내 p와 y의 개수 (javascript)</title><link href="http://localhost:4000/programmers/2-count-p-y/" rel="alternate" type="text/html" title="[Programmers] 11. 문자열 내 p와 y의 개수 (javascript)" /><published>2023-02-26T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/programmers/2-count-p-y</id><content type="html" xml:base="http://localhost:4000/programmers/2-count-p-y/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 ‘p’의 개수와 ‘y’의 개수를 비교해 같으면 True, 다르면 False를 return 하는 solution를 완성하세요. ‘p’, ‘y’ 모두 하나도 없는 경우는 항상 True를 리턴합니다. 단, 개수를 비교할 때 대문자와 소문자는 구별하지 않습니다.</p>
-
-<p>예를 들어 s가 “pPoooyY”면 true를 return하고 “Pyy”라면 false를 return합니다.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>문자열 s의 길이 : 50 이하의 자연수</li>
-  <li>문자열 s는 알파벳으로만 이루어져 있습니다.</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>s</th>
-      <th>answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>‘pPoooyY’</td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>‘Pyy’</td>
-      <td>false</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<ol>
-  <li>s를 소문자로 변경 후 배열로 변경</li>
-  <li>배열을 순회하면서 p이면 p에 +1, y면 y에 +1</li>
-  <li>p === y 이면 true, 아니면 false</li>
-</ol>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">p</span><span class="dl">"</span><span class="p">)</span> <span class="nx">p</span><span class="o">++</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">y</span><span class="dl">"</span><span class="p">)</span> <span class="nx">y</span><span class="o">++</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">p</span> <span class="o">===</span> <span class="nx">y</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="다른-풀이">다른 풀이</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="nx">s</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">P</span><span class="dl">"</span><span class="p">).</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">s</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">Y</span><span class="dl">"</span><span class="p">).</span><span class="nx">length</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">//"pPoooyY".toUpperCase().split("P") //  ['', '', 'OOOYY']</span>
-<span class="c1">//"pPoooyY".toUpperCase().split("Y") //  ['PPOOO', '', '']</span>
-</code></pre></div></div>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[문자열 내 p와 y의 개수]]></summary></entry><entry><title type="html">[Programmers] 10. 자연수 뒤집어 배열로 만들기 (javascript)</title><link href="http://localhost:4000/programmers/1-natural-to-array/" rel="alternate" type="text/html" title="[Programmers] 10. 자연수 뒤집어 배열로 만들기 (javascript)" /><published>2023-02-26T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/programmers/1-natural-to-array</id><content type="html" xml:base="http://localhost:4000/programmers/1-natural-to-array/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>n은 10,000,000,000이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>n</th>
-      <th>return</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>12345</td>
-      <td>[5,4,3,2,1]</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<ol>
-  <li>빈 배열 생성</li>
-  <li>n을 배열로 만들기</li>
-  <li>배열의 앞쪽부터 하나씩 빼서 새로운 배열의 맨 앞에 넣기</li>
-</ol>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="nx">n</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">el</span><span class="p">)));</span>
-  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="예전-풀이">예전 풀이</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="nx">n</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">arr</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">n</span><span class="p">[</span><span class="nx">i</span><span class="p">]));</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[자연수 뒤집어 배열로 만들기]]></summary></entry><entry><title type="html">[typescript] class</title><link href="http://localhost:4000/typescript/class/" rel="alternate" type="text/html" title="[typescript] class" /><published>2023-02-26T00:00:00+09:00</published><updated>2023-02-26T00:00:00+09:00</updated><id>http://localhost:4000/typescript/class</id><content type="html" xml:base="http://localhost:4000/typescript/class/"><![CDATA[<h1 id="클래스">클래스</h1>
-
-<h2 id="클래스-정의하기">클래스 정의하기</h2>
-
-<p>typescript에서 class를 선언할 때, 멤버 변수는 미리 선언해주어야 한다.</p>
-
-<ol>
-  <li>title:string;</li>
-  <li>public 혹은 readonly를 적어주는 방법도 있다</li>
-</ol>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Book</span> <span class="p">{</span>
-  <span class="c1">// 1. title:string;</span>
-  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-
-  <span class="cm">/* 생성자 */</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="cm">/* 클래스 메서드*/</span>
-  <span class="k">static</span> <span class="nx">create</span><span class="p">()</span> <span class="p">{}</span>
-
-  <span class="cm">/* 인스턴스 메서드*/</span>
-  <span class="nx">init</span><span class="p">()</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 2. public 혹은 readonly를 적어주는 방법도 있다</span>
-<span class="kd">class</span> <span class="nx">Book</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">public</span> <span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="접근-제한자접근-제어자">접근 제한자(접근 제어자)</h2>
-
-<p>javascript에는 없는 기능으로, 접근 가능한 범위를 설정할 수 있다.</p>
-
-<ol>
-  <li>public - 자식 클래스, 클래스 인스턴스 모두 접근 가능(생략 가능하다)</li>
-  <li>protected - 자식 클래스에서 접근 가능</li>
-  <li>private - 해당 클래스 내부에서만 접근 가능(<code class="language-plaintext highlighter-rouge">#</code>으로 대체 가능)</li>
-</ol>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Book</span> <span class="p">{</span>
-  <span class="c1">//public</span>
-  <span class="k">public</span> <span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-
-  <span class="c1">//public은 생략 가능</span>
-  <span class="nl">author</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-
-  <span class="c1">//private : Book 클래스 내부에서만 접근 가능</span>
-  <span class="k">private</span> <span class="nx">public_year</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-
-  <span class="c1">//protected : Book 클래스와 자식 클래스에서 접근 가능</span>
-  <span class="k">protected</span> <span class="nx">paper_type</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">author</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="k">public</span> <span class="nx">pages</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">author</span> <span class="o">=</span> <span class="nx">author</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">pages</span> <span class="o">=</span> <span class="nx">pages</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">paper_type</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">public_year</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="cm">/* 인스턴스 생성*/</span>
-<span class="kd">let</span> <span class="nx">mythology</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Book</span><span class="p">(</span><span class="dl">"</span><span class="s2">mythology1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">sena</span><span class="dl">"</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mythology</span><span class="p">);</span> <span class="c1">//Book: {}</span>
-</code></pre></div></div>
-
-<h1 id="추상-클래스">추상 클래스</h1>
-
-<h2 id="추상-클래스-1">추상 클래스</h2>
-
-<p>추상 클래스는 상위 수준에 집중하고 하위 수준의 세부적인 사항을 미리 구현할 필요가 없어 복잡성을 최소화하고 설계에 집중할 수 있게 해준다.
-여기서 상위 수준이 추상 클래스가 되고, 하위 수준은 추상 클래스를 상속하는 구체 클래스가 된다.</p>
-
-<p>추상 클래스를 정의할 때는 <code class="language-plaintext highlighter-rouge">abstract</code>라는 키워드를 사용한다</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="cm">/* 
-    추상 메서드 정의
-    추상 클래스 내부의 추상 메서드는 상속받은 쪽에서 구현해줘야 한다.
-  */</span>
-  <span class="kd">abstract</span> <span class="nx">sleep</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
-
-  <span class="c1">//일반 메서드 정의</span>
-  <span class="nx">move</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">moving...</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>추상 클래스는 객체로 생성할 수 없다.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">Animal</span><span class="p">();</span> <span class="c1">//Cannot create an instance of an abstract class.</span>
-</code></pre></div></div>
-
-<p>따라서 구체 클래스를 생성해주어야 한다. 추상 클래스를 상속할 때는 <code class="language-plaintext highlighter-rouge">extends</code>라는 키워드를 사용한다.</p>
-
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Rabbit</span> <span class="kd">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="nx">sleep</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">sleeping...</span><span class="dl">"</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">rabbit</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rabbit</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rabbit</span><span class="p">);</span> <span class="c1">//Rabbit:{"age:3"}</span>
-</code></pre></div></div>
-
-<p class="notice--primary">💡 참고 <br />
-<a href="https://yamoo9.gitbook.io/typescript/classes">Typescript Guidbook</a> <br />
-<a href="https://developer-talk.tistory.com/368">DevStory</a> <br />
-<a href="https://poiemaweb.com/typescript-class">poiemaweb</a> <br />
-<a href="https://www.youtube.com/watch?v=17Oh028Jpis&amp;list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&amp;index=6">코딩앙마 youtube Typescript #6 클래스</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="class" /><category term="member visibility" /><category term="abstract class" /><summary type="html"><![CDATA[클래스, 접근제한자, 추상 클래스]]></summary></entry></feed>
+</span></code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="note" /><category term="react" /><category term="typesciprt" /><category term="redux" /><summary type="html"><![CDATA[project setting]]></summary></entry></feed>
