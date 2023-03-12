@@ -20,8 +20,8 @@ last_modified_at: 2023-02-21
 
 ```typescript
 interface Character {
-  name: string;
-  age: number;
+  name: string
+  age: number
 }
 ```
 
@@ -31,16 +31,16 @@ interface Character {
 
 ```typescript
 interface Character {
-  name: string;
-  age: number;
-  height?: string; //키를 Optional Properties로 처리
+  name: string
+  age: number
+  height?: string //키를 Optional Properties로 처리
 }
 
 let character: Character = {
   name: "Jack",
   age: 20,
   //height가 없어도 오류가 나지 않는다
-};
+}
 ```
 
 ### 읽기 전용 프로퍼티 사용하기
@@ -49,29 +49,29 @@ let character: Character = {
 
 ```typescript
 interface Character {
-  name: string;
-  age: number;
-  readonly birthYear: number;
+  name: string
+  age: number
+  readonly birthYear: number
 }
 
 let character: Character = {
   name: "Jack",
   age: 20,
   birthYear: 2000, // 이후 수정 불가능
-};
+}
 
-character.birthYear = 1999; //readonly여서 에러가 발생한다.
+character.birthYear = 1999 //readonly여서 에러가 발생한다.
 ```
 
-### 문자열 인덱스 서명(string index signatuer) 추가하기
+### 문자열 인덱스 서명(string index signature) 추가하기
 
 비슷한 타입의 프로퍼티를 여러 개 만들고 싶을 때는 `[키 이름:타입]:타입` 처럼 만들면 된다.
 
 ```typescript
 interface Character {
-  name: string;
-  age: number;
-  [stat: number]: string;
+  name: string
+  age: number
+  [stat: number]: string
 }
 
 let character: Character = {
@@ -79,7 +79,7 @@ let character: Character = {
   age: 20,
   1: "HP",
   2: "MP",
-};
+}
 ```
 
 위의 예시에서 stat 종류를 제한하고 싶을 때에는 <mark style='background-color: #ffdce0'>문자열 리터럴 타입(String Literal Types)</mark>을 추가하면 된다.
@@ -99,26 +99,26 @@ interface Character {
 
 ```typescript
 interface Character {
-  name: string;
-  age: number;
-  start(): void;
+  name: string
+  age: number
+  start(): void
 }
 
 class Wizard implements Character {
-  name;
-  age = 20;
+  name
+  age = 20
   constructor(c: string) {
-    this.name = c;
+    this.name = c
   }
   start() {
-    console.log("start!");
+    console.log("start!")
   }
 }
 
-const a = new Wizard("jack");
+const a = new Wizard("jack")
 
-console.log(a); //Wizard: {"age": 20,"name": "jack"}
-a.start(); //  "start!"
+console.log(a) //Wizard: {"age": 20,"name": "jack"}
+a.start() //  "start!"
 ```
 
 ### 인터페이스 확장하기
@@ -127,18 +127,18 @@ a.start(); //  "start!"
 
 ```typescript
 interface Car {
-  color: string;
-  wheels: number;
-  start(): void;
+  color: string
+  wheels: number
+  start(): void
 }
 
 interface Toy {
-  name: string;
+  name: string
 }
 
 interface Toycar extends Car, Toy {
   // multiple-extends
-  price: number;
+  price: number
 }
 ```
 
