@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Programmers] 17. 삼총사 (javascript) - Reyna</title>
-<meta name="description" content="삼총사">
+<!-- begin _includes/seo.html --><title>[Programmers] 21. 시저 암호 (javascript) - Reyna</title>
+<meta name="description" content="시저 암호">
 
 
   <meta name="author" content="Reyna">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Programmers] 17. 삼총사 (javascript)">
-<meta property="og:url" content="http://localhost:4000/programmers/three-musketeers/">
+<meta property="og:title" content="[Programmers] 21. 시저 암호 (javascript)">
+<meta property="og:url" content="http://localhost:4000/programmers/3-caesar-cipher/">
 
 
-  <meta property="og:description" content="삼총사">
-
-
-
+  <meta property="og:description" content="시저 암호">
 
 
 
 
-  <meta property="article:published_time" content="2023-03-14T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-03-14T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-03-16T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-03-16T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/programmers/three-musketeers/">
+
+<link rel="canonical" href="http://localhost:4000/programmers/3-caesar-cipher/">
 
 
 
@@ -171,7 +171,7 @@
     
       
       
-        <li class="current">[Programmers] 17. 삼총사 (javascript)</li>
+        <li class="current">[Programmers] 21. 시저 암호 (javascript)</li>
       
     
   </ol>
@@ -414,16 +414,16 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Programmers] 17. 삼총사 (javascript)"
+      content="[Programmers] 21. 시저 암호 (javascript)"
     /> <meta
       itemprop="description"
-      content="삼총사"
+      content="시저 암호"
     /> <meta
       itemprop="datePublished"
-      content="2023-03-14T00:00:00+09:00"
+      content="2023-03-16T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-03-14T00:00:00+09:00"
+      content="2023-03-16T00:00:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -431,7 +431,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Programmers] 17. 삼총사 (javascript)</p>
+          <p>[Programmers] 21. 시저 암호 (javascript)</p>
 
         </h1>
          
@@ -439,13 +439,13 @@
           <strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
           >
-          <time datetime="2023-03-14T00:00:00+09:00"
-            >2023.03.14</time
+          <time datetime="2023-03-16T00:00:00+09:00"
+            >2023.03.16</time
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-03-14"
-            >2023.03.14</time
+          <time datetime="2023-03-16"
+            >2023.03.16</time
           >
         </p>
           
@@ -500,65 +500,37 @@
         </aside>
          <h2 id="-문제">🤔 문제</h2>
 
-<p>한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 -2, 3, 0, 2, -5일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 0이므로 세 학생은 삼총사입니다. 또한, 두 번째, 네 번째, 다섯 번째 학생의 정수 번호를 더해도 0이므로 세 학생도 삼총사입니다. 따라서 이 경우 한국중학교에서는 두 가지 방법으로 삼총사를 만들 수 있습니다.</p>
-
-<p>한국중학교 학생들의 번호를 나타내는 정수 배열 number가 매개변수로 주어질 때, 학생들 중 삼총사를 만들 수 있는 방법의 수를 return 하도록 solution 함수를 완성하세요.</p>
-
 <h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>3 ≤ number의 길이 ≤ 13</li>
-  <li>-1,000 ≤ number의 각 원소 ≤ 1,000</li>
-  <li>서로 다른 학생의 정수 번호가 같을 수 있습니다.</li>
-</ul>
 
 <h2 id="입출력-예시">입출력 예시</h2>
 
 <table>
   <thead>
     <tr>
-      <th>number</th>
-      <th>result</th>
+      <th>d</th>
+      <th>budget</th>
+      <th>return</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>[-2, 3, 0, 2, -5]</td>
-      <td>2</td>
+      <td> </td>
+      <td>9</td>
+      <td>3</td>
     </tr>
     <tr>
-      <td>[-3, -2, -1, 0, 1, 2, 3]</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>[-1, 1, -1, 1]</td>
-      <td>0</td>
+      <td> </td>
+      <td>10</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
 
 <h2 id="의사코드">의사코드</h2>
 
-<ul>
-  <li>3중 for문을 돌려서 학생을 한 명씩 선택한 후 세 명의 번호의 합이 0이 되면 answer를 1 더해준다.</li>
-  <li>배열의 끝에서 3명을 고를 경우 안쪽 for문 외에는 배열 끝까지 돌 필요가 없으므로 외부 for문은 각각 길이에서 두 명, 한 명씩 뺀 숫자만큼만 반복문을 돌린다.</li>
-</ul>
-
 <h2 id="제출한-답">제출한 답</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">n</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">n</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">number</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">n</span> <span class="o">+</span> <span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">n</span> <span class="o">+</span> <span class="nx">j</span><span class="p">]</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">answer</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span>
-<span class="p">}</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 </code></pre></div></div>
 
 <p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>
@@ -586,12 +558,11 @@
  
   <nav class="pagination">
     
-      <a href="/javascript/scope/" class="pagination--pager" title="[Deep Dive] 11. 스코프
+      <a href="/programmers/2-budget/" class="pagination--pager" title="[Programmers] 20. 예산 (javascript)
 ">Previous</a>
     
     
-      <a href="/programmers/reverse-ternary/" class="pagination--pager" title="[Programmers] 18. 삼진법 뒤집기 (javascript)
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -607,44 +578,6 @@
     </h2>
     <div class="grid__wrapper">
        
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/programmers/3-caesar-cipher/" rel="permalink">[Programmers] 21. 시저 암호 (javascript)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">시저 암호
-</p>
-  </article>
-</div>
-  
 
 
 
@@ -755,6 +688,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">삼진법 뒤집기
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/three-musketeers/" rel="permalink">[Programmers] 17. 삼총사 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">삼총사
 </p>
   </article>
 </div>

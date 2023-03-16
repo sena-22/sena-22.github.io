@@ -484,4 +484,10 @@ var store = [{
         "tags": ["study","recursive","javascript","Lv.1"],
         "url": "/programmers/2-budget/",
         "teaser": null
+      },{
+        "title": "[Programmers] 21. 시저 암호 (javascript)",
+        "excerpt":"🤔 문제   제한사항   입출력 예시                  d       budget       return                               9       3                         10       4           의사코드   제출한 답      💡 알고리즘 스터디 Recursive에서 공부한 내용 정리  ","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/3-caesar-cipher/",
+        "teaser": null
       }]
