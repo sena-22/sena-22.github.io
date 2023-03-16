@@ -283,7 +283,7 @@
   <ul class="nav__items" id="category_tag_menu">
     <!--전체 글 수-->
     <li>
-      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(75)</style> 
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(81)</style> 
     </li>
     <li>
       <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
@@ -295,7 +295,7 @@
                            
         <li>
           <a href="/categories/javascript" class=""
-            >Javascript (11)</a
+            >Javascript (13)</a
           >
         </li>
                
@@ -369,7 +369,7 @@
              
         <li>
           <a href="/categories/programmers" class=""
-            >Programmers (16)</a
+            >Programmers (20)</a
           >
         </li>
                              
@@ -490,7 +490,7 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#인터페이스-정의하기">인터페이스 정의하기</a></li><li><a href="#선택적-프로퍼티optional-properties-사용하기">선택적 프로퍼티(Optional Properties) 사용하기</a></li><li><a href="#읽기-전용-프로퍼티-사용하기">읽기 전용 프로퍼티 사용하기</a></li><li><a href="#문자열-인덱스-서명string-index-signatuer-추가하기">문자열 인덱스 서명(string index signatuer) 추가하기</a></li><li><a href="#인터페이스로-클래스-정의하기">인터페이스로 클래스 정의하기</a></li><li><a href="#인터페이스-확장하기">인터페이스 확장하기</a></li><li><a href="#참고">참고</a></li></ul>
+            <ul class="toc__menu"><li><a href="#인터페이스-정의하기">인터페이스 정의하기</a></li><li><a href="#선택적-프로퍼티optional-properties-사용하기">선택적 프로퍼티(Optional Properties) 사용하기</a></li><li><a href="#읽기-전용-프로퍼티-사용하기">읽기 전용 프로퍼티 사용하기</a></li><li><a href="#문자열-인덱스-서명string-index-signature-추가하기">문자열 인덱스 서명(string index signature) 추가하기</a></li><li><a href="#인터페이스로-클래스-정의하기">인터페이스로 클래스 정의하기</a></li><li><a href="#인터페이스-확장하기">인터페이스 확장하기</a></li><li><a href="#참고">참고</a></li></ul>
 
           </nav>
         </aside>
@@ -499,8 +499,8 @@
 <h3 id="인터페이스-정의하기">인터페이스 정의하기</h3>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -511,16 +511,16 @@
 </ul>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span> <span class="c1">//키를 Optional Properties로 처리</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="nx">height</span><span class="p">?:</span> <span class="kr">string</span> <span class="c1">//키를 Optional Properties로 처리</span>
 <span class="p">}</span>
 
 <span class="kd">let</span> <span class="nx">character</span><span class="p">:</span> <span class="nx">Character</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jack</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
   <span class="c1">//height가 없어도 오류가 나지 않는다</span>
-<span class="p">};</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="읽기-전용-프로퍼티-사용하기">읽기 전용 프로퍼티 사용하기</h3>
@@ -530,28 +530,28 @@
 </ul>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="k">readonly</span> <span class="nx">birthYear</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="k">readonly</span> <span class="nx">birthYear</span><span class="p">:</span> <span class="kr">number</span>
 <span class="p">}</span>
 
 <span class="kd">let</span> <span class="nx">character</span><span class="p">:</span> <span class="nx">Character</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jack</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
   <span class="na">birthYear</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span> <span class="c1">// 이후 수정 불가능</span>
-<span class="p">};</span>
+<span class="p">}</span>
 
-<span class="nx">character</span><span class="p">.</span><span class="nx">birthYear</span> <span class="o">=</span> <span class="mi">1999</span><span class="p">;</span> <span class="c1">//readonly여서 에러가 발생한다.</span>
+<span class="nx">character</span><span class="p">.</span><span class="nx">birthYear</span> <span class="o">=</span> <span class="mi">1999</span> <span class="c1">//readonly여서 에러가 발생한다.</span>
 </code></pre></div></div>
 
-<h3 id="문자열-인덱스-서명string-index-signatuer-추가하기">문자열 인덱스 서명(string index signatuer) 추가하기</h3>
+<h3 id="문자열-인덱스-서명string-index-signature-추가하기">문자열 인덱스 서명(string index signature) 추가하기</h3>
 
 <p>비슷한 타입의 프로퍼티를 여러 개 만들고 싶을 때는 <code class="language-plaintext highlighter-rouge">[키 이름:타입]:타입</code> 처럼 만들면 된다.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="p">[</span><span class="nx">stat</span><span class="p">:</span> <span class="kr">number</span><span class="p">]:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="p">[</span><span class="nx">stat</span><span class="p">:</span> <span class="kr">number</span><span class="p">]:</span> <span class="kr">string</span>
 <span class="p">}</span>
 
 <span class="kd">let</span> <span class="nx">character</span><span class="p">:</span> <span class="nx">Character</span> <span class="o">=</span> <span class="p">{</span>
@@ -559,7 +559,7 @@
   <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
   <span class="mi">1</span><span class="p">:</span> <span class="dl">"</span><span class="s2">HP</span><span class="dl">"</span><span class="p">,</span>
   <span class="mi">2</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MP</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">};</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>위의 예시에서 stat 종류를 제한하고 싶을 때에는 <mark style="background-color: #ffdce0">문자열 리터럴 타입(String Literal Types)</mark>을 추가하면 된다.</p>
@@ -577,26 +577,26 @@
 <p>클래스 선언문의 implements 뒤에 인터페이스를 선언하면 해당 클래스는 그 인터페이스를 반드시 구현해야 한다.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span>
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="nx">Wizard</span> <span class="k">implements</span> <span class="nx">Character</span> <span class="p">{</span>
-  <span class="nx">name</span><span class="p">;</span>
-  <span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="nx">name</span>
+  <span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span>
   <span class="kd">constructor</span><span class="p">(</span><span class="nx">c</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">c</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">c</span>
   <span class="p">}</span>
   <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">start!</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">start!</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Wizard</span><span class="p">(</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Wizard</span><span class="p">(</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">)</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">//Wizard: {"age": 20,"name": "jack"}</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span> <span class="c1">//  "start!"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="c1">//Wizard: {"age": 20,"name": "jack"}</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span> <span class="c1">//  "start!"</span>
 </code></pre></div></div>
 
 <h3 id="인터페이스-확장하기">인터페이스 확장하기</h3>
@@ -604,18 +604,18 @@
 <p><code class="language-plaintext highlighter-rouge">extends</code>를 사용하면 인터페이스를 확장할 수 있다.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Car</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
-  <span class="nl">wheels</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
-  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">wheels</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="nx">start</span><span class="p">():</span> <span class="k">void</span>
 <span class="p">}</span>
 
 <span class="kr">interface</span> <span class="nx">Toy</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
 <span class="p">}</span>
 
 <span class="kr">interface</span> <span class="nx">Toycar</span> <span class="kd">extends</span> <span class="nx">Car</span><span class="p">,</span> <span class="nx">Toy</span> <span class="p">{</span>
   <span class="c1">// multiple-extends</span>
-  <span class="nl">price</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">price</span><span class="p">:</span> <span class="kr">number</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -677,45 +677,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/baekjoon/5/" rel="permalink">[baekjoon] 1018. 체스판 다시 칠하기(node.js)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">체스판 다시 칠하기
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/baekjoon/4/" rel="permalink">[baekjoon] 1436. 영화감독 숌(node.js)
+        <a href="/programmers/2-budget/" rel="permalink">[Programmers] 20. 예산 (javascript)
 </a>
       
     </h2>
@@ -740,7 +702,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">영화감독 숌
+    <p class="archive__item-excerpt" itemprop="description">예산
 </p>
   </article>
 </div>
@@ -753,7 +715,83 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/baekjoon/3/" rel="permalink">[baekjoon] 10448. 유레카 이론(node.js)
+        <a href="/programmers/1-weird-string/" rel="permalink">[Programmers] 19. 이상한 문자 만들기 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이상한 문자 만들기
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/reverse-ternary/" rel="permalink">[Programmers] 18. 삼진법 뒤집기 (javascript)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">삼진법 뒤집기
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/three-musketeers/" rel="permalink">[Programmers] 17. 삼총사 (javascript)
 </a>
       
     </h2>
@@ -778,45 +816,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">유레카 이론
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/baekjoon/2/" rel="permalink">[baekjoon] 2309. 일곱 난쟁이(node.js)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">일곱 난쟁이
+    <p class="archive__item-excerpt" itemprop="description">삼총사
 </p>
   </article>
 </div>

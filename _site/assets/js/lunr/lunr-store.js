@@ -264,7 +264,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[typescript] interface",
-        "excerpt":"인터페이스는 객체의 타입을 정의하기 위해 사용된다. 인터페이스 정의하기 interface Character { name: string; age: number; } 선택적 프로퍼티(Optional Properties) 사용하기 프로퍼티가 필수 사항이 아닐 때에는 ?를 붙여 표시한다. interface Character { name: string; age: number; height?: string; //키를 Optional Properties로 처리 } let character: Character = { name: \"Jack\", age:...","categories": ["typescript"],
+        "excerpt":"인터페이스는 객체의 타입을 정의하기 위해 사용된다. 인터페이스 정의하기 interface Character { name: string age: number } 선택적 프로퍼티(Optional Properties) 사용하기 프로퍼티가 필수 사항이 아닐 때에는 ?를 붙여 표시한다. interface Character { name: string age: number height?: string //키를 Optional Properties로 처리 } let character: Character = { name: \"Jack\", age:...","categories": ["typescript"],
         "tags": ["typescript","interface"],
         "url": "/typescript/interface/",
         "teaser": null
@@ -447,5 +447,41 @@ var store = [{
         "excerpt":"🤔 문제 지민이는 자신의 저택에서 MN개의 단위 정사각형으로 나누어져 있는 M×N 크기의 보드를 찾았다. 어떤 정사각형은 검은색으로 칠해져 있고, 나머지는 흰색으로 칠해져 있다. 지민이는 이 보드를 잘라서 8×8 크기의 체스판으로 만들려고 한다. 체스판은 검은색과 흰색이 번갈아서 칠해져 있어야 한다. 구체적으로, 각 칸이 검은색과 흰색 중 하나로 색칠되어 있고, 변을 공유하는...","categories": ["baekjoon"],
         "tags": ["study","체스판 다시 칠하기","완전탐색","실버4"],
         "url": "/baekjoon/5/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive] 10. 함수",
+        "excerpt":"함수 동일한 작업을 반복해야 할 때 함수를 사용한다. 함수를 이용하면 코드를 다시 사용할 수 있기 때문에 유지보수하기도 편하고 실수를 줄일 수 있다. 함수 리터럴 함수 리터럴을 이용하여 함수를 생성할 수 있다. 함수 리터럴은 function 키워드, 함수 이름, 매개변수, 함수 몸체로 구성된다. 함수 이름 함수 이름은 식별자이다. 따라서 식별자 네이밍 규칙을...","categories": ["javascript"],
+        "tags": ["javascript","function"],
+        "url": "/javascript/function/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive] 11. 스코프",
+        "excerpt":"스코프 스코프는 변수나 함수가 유효한 범위를 말한다. 만약 같은 이름의 변수가 두 개인 경우, 그 변수를 참조할 때 둘 중 어느 변수를 참조할 지 결정해야 한다. 이때 자바스크립트 엔진은 스코프를 통해 어떤 변수를 참조할 지 결정한다. let name = \"jack\" function getName() { let name = \"an\" console.log(\"local\", name) //...","categories": ["javascript"],
+        "tags": ["javascript","scope"],
+        "url": "/javascript/scope/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 17. 삼총사 (javascript)",
+        "excerpt":"🤔 문제 한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 -2, 3, 0, 2, -5일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 0이므로...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/three-musketeers/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 18. 삼진법 뒤집기 (javascript)",
+        "excerpt":"🤔 문제 자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요. 제한사항 n은 1 이상 100,000,000 이하인 자연수입니다. 입출력 예시 n result 45 7 2 229 의사코드 toString()에 매개변수를 넣을 경우 매개변수에 넣은 진수로 변환이 가능하다 parseInt()의 두 번째...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/reverse-ternary/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 19. 이상한 문자 만들기 (javascript)",
+        "excerpt":"🤔 문제 문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다. 각 단어의 짝수번째 알파벳은 대문자로, 홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요. 제한사항 문자열 전체의 짝/홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝/홀수 인덱스를 판단해야합니다. 첫 번째 글자는 0번째 인덱스로 보아 짝수번째 알파벳으로...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/1-weird-string/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 20. 예산 (javascript)",
+        "excerpt":"🤔 문제 S사에서는 각 부서에 필요한 물품을 지원해 주기 위해 부서별로 물품을 구매하는데 필요한 금액을 조사했습니다. 그러나, 전체 예산이 정해져 있기 때문에 모든 부서의 물품을 구매해 줄 수는 없습니다. 그래서 최대한 많은 부서의 물품을 구매해 줄 수 있도록 하려고 합니다. 물품을 구매해 줄 때는 각 부서가 신청한 금액만큼을 모두 지원해...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/2-budget/",
         "teaser": null
       }]
