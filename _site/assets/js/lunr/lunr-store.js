@@ -486,8 +486,32 @@ var store = [{
         "teaser": null
       },{
         "title": "[Programmers] 21. 시저 암호 (javascript)",
-        "excerpt":"🤔 문제   제한사항   입출력 예시                  d       budget       return                               9       3                         10       4           의사코드   제출한 답      💡 알고리즘 스터디 Recursive에서 공부한 내용 정리  ","categories": ["programmers"],
+        "excerpt":"🤔 문제 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요. 제한사항 공백은 아무리...","categories": ["programmers"],
         "tags": ["study","recursive","javascript","Lv.1"],
         "url": "/programmers/3-caesar-cipher/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive] 12. 프로퍼티 어트리뷰트",
+        "excerpt":"1. 내부 슬롯, 내부 메서드 내부 슬롯, 내부 메서드? 자바스크립트 엔진의 내부 로직으로, 이중 대괄호([[ ]])로 감싼 것들을 말한다. 보통은 접근이 불가능하다. 하지만 일부의 내부 슬롯과 메서드들은 간접적으로 접근할 수 있다. 예를 들어, [[Prototype]] 내부 슬롯의 경우, __proto__로 접근이 가능하다. 2. 프로퍼티 어트리뷰트 JS 엔진이 관리하는 meta-property를 말한다. 프로퍼티 생성...","categories": ["javascript"],
+        "tags": ["javascript","property attribute"],
+        "url": "/javascript/1-property-attribute/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive] 13. 생성자 함수에 의한 객체 생성",
+        "excerpt":"Object 생성자 함수 new 연산자와 Object 생성자 함수를 이용하여 객체를 만들 수 있다. 이때 만들어지는 객체는 빈 객체이다. const character = new Object() console.log(character) // {} 만들어진 객체에 프로퍼티나 메서드를 추가할 수 있다. character.name = \"jack\" //프로퍼티 추가 character.go = () =&gt; console.log(\"go!\") // 메서드 추가 console.log(character) //{name: 'jack', go:...","categories": ["javascript"],
+        "tags": ["javascript"],
+        "url": "/javascript/2-new-Object/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 21. 최소직사각형 (javascript)",
+        "excerpt":"🤔 문제 명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다. 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서, 작아서 들고 다니기 편한 지갑을 만들어야 합니다. 이러한 요건을 만족하는 지갑을 만들기 위해 디자인팀은 모든 명함의 가로 길이와 세로 길이를 조사했습니다. 아래 표는 4가지 명함의 가로 길이와 세로 길이를 나타냅니다. 명함 번호...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/min-rectangle/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 22. 비밀 지도 (javascript)",
+        "excerpt":"🤔 문제 네오는 평소 프로도가 비상금을 숨겨놓는 장소를 알려줄 비밀지도를 손에 넣었다. 그런데 이 비밀지도는 숫자로 암호화되어 있어 위치를 확인하기 위해서는 암호를 해독해야 한다. 다행히 지도 암호를 해독할 방법을 적어놓은 메모도 함께 발견했다. 지도는 한 변의 길이가 n인 정사각형 배열 형태로, 각 칸은 “공백”(“ “) 또는 “벽”(“#”) 두 종류로 이루어져...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/secret-map/",
         "teaser": null
       }]
