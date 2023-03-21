@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Main Project] 01. react-date-range 사용하기 - Reyna</title>
-<meta name="description" content="달력 라이브러리">
+<!-- begin _includes/seo.html --><title>[typescript] 제네릭(Generics) - Reyna</title>
+<meta name="description" content="generics">
 
 
   <meta name="author" content="Reyna">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
-<meta property="og:title" content="[Main Project] 01. react-date-range 사용하기">
-<meta property="og:url" content="http://localhost:4000/main%20project/calendar-library/">
+<meta property="og:title" content="[typescript] 제네릭(Generics)">
+<meta property="og:url" content="http://localhost:4000/typescript/generics/">
 
 
-  <meta property="og:description" content="달력 라이브러리">
-
-
-
+  <meta property="og:description" content="generics">
 
 
 
 
-  <meta property="article:published_time" content="2023-02-02T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-02-02T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-03-21T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2023-03-21T00:00:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/main%20project/calendar-library/">
+
+<link rel="canonical" href="http://localhost:4000/typescript/generics/">
 
 
 
@@ -163,7 +163,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/#main-project" itemprop="item"><span itemprop="name">Main project</span></a>
+          <a href="/categories/#typescript" itemprop="item"><span itemprop="name">Typescript</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -171,7 +171,7 @@
     
       
       
-        <li class="current">[Main Project] 01. react-date-range 사용하기</li>
+        <li class="current">[typescript] 제네릭(Generics)</li>
       
     
   </ol>
@@ -414,16 +414,16 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta
       itemprop="headline"
-      content="[Main Project] 01. react-date-range 사용하기"
+      content="[typescript] 제네릭(Generics)"
     /> <meta
       itemprop="description"
-      content="달력 라이브러리"
+      content="generics"
     /> <meta
       itemprop="datePublished"
-      content="2023-02-02T00:00:00+09:00"
+      content="2023-03-21T00:00:00+09:00"
     /> <meta
       itemprop="dateModified"
-      content="2023-02-02T00:00:00+09:00"
+      content="2023-03-21T00:00:00+09:00"
     />
 
     <div class="page__inner-wrap">
@@ -431,7 +431,7 @@
       <header>
         
         <h1 id="page-title" class="page__title" itemprop="headline">
-          <p>[Main Project] 01. react-date-range 사용하기</p>
+          <p>[typescript] 제네릭(Generics)</p>
 
         </h1>
          
@@ -439,13 +439,13 @@
           <strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
           >
-          <time datetime="2023-02-02T00:00:00+09:00"
-            >2023.02.02</time
+          <time datetime="2023-03-21T00:00:00+09:00"
+            >2023.03.21</time
           >&nbsp&nbsp&nbsp<strong
             ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
           >
-          <time datetime="2023-02-02"
-            >2023.02.02</time
+          <time datetime="2023-03-21"
+            >2023.03.21</time
           >
         </p>
           
@@ -457,7 +457,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#main-project" class="page__taxonomy-item p-category" rel="tag">main project</a>
+      <a href="/categories/#typescript" class="page__taxonomy-item p-category" rel="tag">typescript</a>
     
     </span>
   </p>
@@ -470,11 +470,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#calendar" class="page__taxonomy-item p-category" rel="tag">calendar</a><span class="sep">, </span>
+      <a href="/tags/#generics" class="page__taxonomy-item p-category" rel="tag">generics</a><span class="sep">, </span>
     
-      <a href="/tags/#codestates" class="page__taxonomy-item p-category" rel="tag">codestates</a><span class="sep">, </span>
-    
-      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a>
+      <a href="/tags/#typescript" class="page__taxonomy-item p-category" rel="tag">typescript</a>
     
     </span>
   </p>
@@ -492,119 +490,99 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#1-달력-라이브러리-선택">1. 달력 라이브러리 선택</a><ul><li><a href="#react-date-range">react-date-range</a></li><li><a href="#react-calendar">react-calendar</a></li><li><a href="#react-day-picker">react-day-picker</a></li><li><a href="#react-date-picker">react-date-picker</a></li></ul></li><li><a href="#2-달력-적용하기">2. 달력 적용하기</a><ul><li><a href="#설치">설치</a></li><li><a href="#적용">적용</a></li><li><a href="#결과">결과</a></li></ul></li></ul>
+            <ul class="toc__menu"><li><a href="#제네릭">제네릭</a></li><li><a href="#제네릭-사용방법">제네릭 사용방법</a><ul><li><a href="#-any를-사용하면-되지-않을까">🤔 any를 사용하면 되지 않을까?</a></li></ul></li><li><a href="#인터페이스에-제네릭-선언하기">인터페이스에 제네릭 선언하기</a></li><li><a href="#제네릭에-타입-제한하기-1">제네릭에 타입 제한하기 1</a></li><li><a href="#제네릭에-타입-제한하기-2---정의된-타입-이용하기">제네릭에 타입 제한하기 2 - 정의된 타입 이용하기</a></li><li><a href="#제네릭에-타입-제한하기-3---keyof">제네릭에 타입 제한하기 3 - keyof</a></li></ul>
 
           </nav>
         </aside>
-         <h2 id="1-달력-라이브러리-선택">1. 달력 라이브러리 선택</h2>
+         <p><img src="https://user-images.githubusercontent.com/110877564/226537175-291666d8-03bd-4e58-9dff-8c33f3ac133b.png" /></p>
 
-<p>여행 일정 선택을 위한 달력 라이브러리를 골라야했는데, 달력 라이브러리 종류가 많아서 필요한 기능이 있는지, 사용량이 많고 정보가 잘 정리되어 있는지를 기준으로 선택했다.</p>
+<h2 id="제네릭">제네릭</h2>
 
-<p>🧐 <strong>필요한 기능</strong> <br /></p>
+<p>타입을 <strong>함수의 파라미터</strong>처럼 사용하게 해주는 타입을 말한다.</p>
 
-<ol>
-  <li>시작 날짝와 종료 날짜 <br /></li>
-  <li>선택 시 기간 표시(다중 범위)<br /></li>
-  <li>달력 두 개가 붙어 있는 모양</li>
-</ol>
+<h2 id="제네릭-사용방법">제네릭 사용방법</h2>
 
-<h3 id="react-date-range">react-date-range</h3>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getInfo</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">info</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">info</span>
+<span class="p">}</span>
 
-<hr />
-
-<p class="notice--primary"><a href="https://hypeserver.github.io/react-date-range/#daterange">react-date-range 공식문서</a> <br />
-<a href="https://www.npmjs.com/package/react-date-range">react-date-range npm</a></p>
-
-<h3 id="react-calendar">react-calendar</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-calendar">react-calendar npm</a></p>
-
-<h3 id="react-day-picker">react-day-picker</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-day-picker">react-day-picker npm</a></p>
-
-<ul>
-  <li>최근까지 업데이트 됨</li>
-</ul>
-
-<h3 id="react-date-picker">react-date-picker</h3>
-
-<hr />
-
-<p class="notice--primary"><a href="https://www.npmjs.com/package/react-datepicker">react-date-picker</a></p>
-
-<ul>
-  <li>사용량 가장 많음</li>
-</ul>
-
-<p>여러 라이브러리를 비교해보고 두 개의 달력을 표시하기 쉽고 디자인을 크게 건드리지 않아도 될 것 같아 <code class="language-plaintext highlighter-rouge">react-date-range</code>를 사용했다.</p>
-
-<h2 id="2-달력-적용하기">2. 달력 적용하기</h2>
-
-<h3 id="설치">설치</h3>
-
-<hr />
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">react</span><span class="o">-</span><span class="nx">date</span><span class="o">-</span><span class="nx">range</span>
+<span class="cm">/* 함수를 호출할 때 타입 정의 */</span>
+<span class="nx">getInfo</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">getInfo</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="적용">적용</h3>
+<p>제네릭은 함수를 호출할 때 타입이 동적으로 결정된다.</p>
 
-<hr />
+<h3 id="-any를-사용하면-되지-않을까">🤔 any를 사용하면 되지 않을까?</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calendar.js</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/styles.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 메인 css 파일</span>
-<span class="k">import</span> <span class="dl">"</span><span class="s2">react-date-range/dist/theme/default.css</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 테마 CSS 파일</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">DateRange</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-date-range</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">formatTomorrow</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../Util/dayUtil</span><span class="dl">"</span><span class="p">;</span>
+<p>제네릭을 사용하지 않더라도 any 타입을 사용하면 여러 타입을 받을 수 있다. 하지만 any는 타입 검사를 하지 않고, 제네릭은 입력값과 출력값의 타입이 적절한지 검사한다는 차이점이 있다. 제네릭을 사용하게 되면 함수를 호출할 때 넘긴 타입으로 타입스크립트가 타입을 추정하여 검사할 수 있게 된다.</p>
 
-<span class="kd">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">tomorrow</span> <span class="o">=</span> <span class="nx">formatTomorrow</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span> <span class="c1">//날짜 형식을 내일로 변경</span>
+<h2 id="인터페이스에-제네릭-선언하기">인터페이스에 제네릭 선언하기</h2>
 
-<span class="kd">const</span> <span class="p">[</span><span class="nx">date</span><span class="p">,</span> <span class="nx">setDate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span>
-  <span class="p">{</span>
-    <span class="na">startDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
-    <span class="na">endDate</span><span class="p">:</span> <span class="nx">tomorrow</span><span class="p">,</span>
-    <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">selection</span><span class="dl">"</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">]);</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Dropdown</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="nx">T</span>
+  <span class="na">selected</span><span class="p">:</span> <span class="nx">boolean</span>
+<span class="p">}</span>
 
-<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">handleDate</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
-<span class="p">},</span> <span class="p">[</span><span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">startDate</span><span class="p">,</span> <span class="nx">date</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">endDate</span><span class="p">]);</span>
+<span class="kd">const</span> <span class="nx">obj</span><span class="p">:</span> <span class="nx">Dropdown</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="na">selected</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>시작 날짜와 종료 날짜를 모두 다음 날로 지정해주었다.</p>
+<h2 id="제네릭에-타입-제한하기-1">제네릭에 타입 제한하기 1</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">(</span>
-  <span class="p">...</span>
-  <span class="o">&lt;</span><span class="nx">DateRange</span>
-    <span class="nx">editableDateInputs</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-    <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setDate</span><span class="p">([</span><span class="nx">item</span><span class="p">.</span><span class="nx">selection</span><span class="p">])}</span>
-    <span class="nx">moveRangeOnFirstSelection</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span>
-    <span class="nx">ranges</span><span class="o">=</span><span class="p">{</span><span class="nx">date</span><span class="p">}</span>
-    <span class="nx">months</span><span class="o">=</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="c1">//달력 두 달 표시</span>
-    <span class="nx">direction</span><span class="o">=</span><span class="dl">"</span><span class="s2">horizontal</span><span class="dl">"</span> <span class="c1">//달력을 가로로 배치</span>
-    <span class="nx">dateDisplayFormat</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">LLLL yyyy</span><span class="dl">"</span><span class="p">}</span> <span class="c1">// 날짜 포맷값</span>
-  <span class="sr">/</span><span class="err">&gt;
-</span>  <span class="p">...</span>
-<span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">logText</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">text</span><span class="p">:</span> <span class="nx">T</span><span class="p">[]):</span> <span class="nx">T</span><span class="p">[]</span> <span class="p">{</span>
+  <span class="c1">//제네릭의 타입이 배열이라 length 프로퍼티를 사용할 수 있다.</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">text</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="결과">결과</h3>
+<p>만약 타입을 제한하지 않는다면 에러가 발생한다.</p>
 
-<hr />
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">logText</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">text</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="c1">//error: Property 'length' does not exist on type 'T'.</span>
+  <span class="k">return</span> <span class="nx">text</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p><img width="561" alt="스크린샷 2023-02-02 오후 11 14 15" src="https://user-images.githubusercontent.com/110877564/216350582-67febd33-0ba2-4d8a-8d8c-e66710a527fb.png" class="align-center" /></p>
+<h2 id="제네릭에-타입-제한하기-2---정의된-타입-이용하기">제네릭에 타입 제한하기 2 - 정의된 타입 이용하기</h2>
 
-<p>위와 같이 시작 날짜, 종료 날짜를 선택하면 범위가 표시된다! (css는 좀 수정된 상태)</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">LengthType</span> <span class="p">{</span>
+  <span class="nl">length</span><span class="p">:</span> <span class="kr">number</span>
+<span class="p">}</span>
 
-<p class="notice--primary">💡 사용 전에 <a href="https://codesandbox.io/s/react-date-range-o3cvs0?file=/src/App.js">CodeSandbox</a>에서 간단하게 적용해본 것</p>
+<span class="kd">function</span> <span class="nx">logTextLength</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="nx">LengthType</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">text</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+  <span class="nx">text</span><span class="p">.</span><span class="nx">length</span>
+  <span class="k">return</span> <span class="nx">text</span>
+<span class="p">}</span>
+
+<span class="nx">logTextLength</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// 문자열은 length 프로퍼티를 가짐</span>
+<span class="nx">logTextLength</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// error: 숫자는 length 프로퍼티 없음</span>
+<span class="nx">logTextLength</span><span class="p">({</span> <span class="na">length</span><span class="p">:</span> <span class="mi">10</span> <span class="p">})</span>
+<span class="nx">logTextLength</span><span class="p">({</span> <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span> <span class="p">})</span> <span class="c1">//error: length 프로퍼티가 정의되어 있지 않으므로 에러 발생</span>
+</code></pre></div></div>
+
+<h2 id="제네릭에-타입-제한하기-3---keyof">제네릭에 타입 제한하기 3 - keyof</h2>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Item</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">price</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="nx">stock</span><span class="p">:</span> <span class="kr">number</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">getItemOption</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="kr">keyof</span> <span class="nx">Item</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">itemOption</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">itemOption</span>
+<span class="p">}</span>
+<span class="c1">//아이템의 key 중에 한가지가 들어갈 수 있다.</span>
+<span class="nx">getItemOption</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">getItemOption</span><span class="p">(</span><span class="dl">"</span><span class="s2">10</span><span class="dl">"</span><span class="p">)</span> <span class="c1">//error:Argument of type '"10"' is not assignable to parameter of type 'keyof Item'.</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 참고 <br />
+<a href="https://joshua1988.github.io/ts/guide/generics.html#%EC%A0%9C%EB%84%A4%EB%A6%AD-generics-%EC%9D%98-%EC%82%AC%EC%A0%84%EC%A0%81-%EC%A0%95%EC%9D%98">타입스크립트 핸드북</a> <br />
+<a href="https://kyounghwan01.github.io/blog/TS/fundamentals/generic/">타입스크립트 제네릭</a></p>
  
       </section>
 
@@ -629,12 +607,11 @@
  
   <nav class="pagination">
     
-      <a href="/blog/font/" class="pagination--pager" title="[Github Blog] Github 블로그 폰트 변경하기
+      <a href="/programmers/secret-map/" class="pagination--pager" title="[Programmers] 22. 비밀 지도 (javascript)
 ">Previous</a>
     
     
-      <a href="/main%20project/1-main-page/" class="pagination--pager" title="[Main Project] 02. main page 구성
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -650,44 +627,6 @@
     </h2>
     <div class="grid__wrapper">
        
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/typescript/generics/" rel="permalink">[typescript] 제네릭(Generics)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">generics
-</p>
-  </article>
-</div>
-  
 
 
 
@@ -798,6 +737,44 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">new 연산자와 Object 생성자 함수를 이용하여 객체 만들기
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/1-property-attribute/" rel="permalink">[Deep Dive] 12. 프로퍼티 어트리뷰트
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">property attribute
 </p>
   </article>
 </div>

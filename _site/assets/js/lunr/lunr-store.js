@@ -514,4 +514,10 @@ var store = [{
         "tags": ["study","recursive","javascript","Lv.1"],
         "url": "/programmers/secret-map/",
         "teaser": null
+      },{
+        "title": "[typescript] 제네릭(Generics)",
+        "excerpt":"제네릭 타입을 함수의 파라미터처럼 사용하게 해주는 타입을 말한다. 제네릭 사용방법 function getInfo&lt;T&gt;(info: T): T { return info } /* 함수를 호출할 때 타입 정의 */ getInfo&lt;string&gt;(\"jack\") getInfo&lt;number&gt;(10) 제네릭은 함수를 호출할 때 타입이 동적으로 결정된다. 🤔 any를 사용하면 되지 않을까? 제네릭을 사용하지 않더라도 any 타입을 사용하면 여러 타입을 받을 수 있다....","categories": ["typescript"],
+        "tags": ["typescript","generics"],
+        "url": "/typescript/generics/",
+        "teaser": null
       }]

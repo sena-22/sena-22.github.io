@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-20T21:48:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>frontend devleopment</subtitle><author><name>Reyna</name></author><entry><title type="html">[Programmers] 22. 비밀 지도 (javascript)</title><link href="http://localhost:4000/programmers/secret-map/" rel="alternate" type="text/html" title="[Programmers] 22. 비밀 지도 (javascript)" /><published>2023-03-20T00:00:00+09:00</published><updated>2023-03-20T00:00:00+09:00</updated><id>http://localhost:4000/programmers/secret-map</id><content type="html" xml:base="http://localhost:4000/programmers/secret-map/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-21T17:28:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>frontend devleopment</subtitle><author><name>Reyna</name></author><entry><title type="html">[typescript] 제네릭(Generics)</title><link href="http://localhost:4000/typescript/generics/" rel="alternate" type="text/html" title="[typescript] 제네릭(Generics)" /><published>2023-03-21T00:00:00+09:00</published><updated>2023-03-21T00:00:00+09:00</updated><id>http://localhost:4000/typescript/generics</id><content type="html" xml:base="http://localhost:4000/typescript/generics/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/226537175-291666d8-03bd-4e58-9dff-8c33f3ac133b.png" /></p>
+
+<h2 id="제네릭">제네릭</h2>
+
+<p>타입을 <strong>함수의 파라미터</strong>처럼 사용하게 해주는 타입을 말한다.</p>
+
+<h2 id="제네릭-사용방법">제네릭 사용방법</h2>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getInfo</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">info</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">info</span>
+<span class="p">}</span>
+
+<span class="cm">/* 함수를 호출할 때 타입 정의 */</span>
+<span class="nx">getInfo</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">getInfo</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>제네릭은 함수를 호출할 때 타입이 동적으로 결정된다.</p>
+
+<h3 id="-any를-사용하면-되지-않을까">🤔 any를 사용하면 되지 않을까?</h3>
+
+<p>제네릭을 사용하지 않더라도 any 타입을 사용하면 여러 타입을 받을 수 있다. 하지만 any는 타입 검사를 하지 않고, 제네릭은 입력값과 출력값의 타입이 적절한지 검사한다는 차이점이 있다. 제네릭을 사용하게 되면 함수를 호출할 때 넘긴 타입으로 타입스크립트가 타입을 추정하여 검사할 수 있게 된다.</p>
+
+<h2 id="인터페이스에-제네릭-선언하기">인터페이스에 제네릭 선언하기</h2>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Dropdown</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="nx">T</span>
+  <span class="na">selected</span><span class="p">:</span> <span class="nx">boolean</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">obj</span><span class="p">:</span> <span class="nx">Dropdown</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="na">selected</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="제네릭에-타입-제한하기-1">제네릭에 타입 제한하기 1</h2>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">logText</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">text</span><span class="p">:</span> <span class="nx">T</span><span class="p">[]):</span> <span class="nx">T</span><span class="p">[]</span> <span class="p">{</span>
+  <span class="c1">//제네릭의 타입이 배열이라 length 프로퍼티를 사용할 수 있다.</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">text</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>만약 타입을 제한하지 않는다면 에러가 발생한다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">logText</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">text</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="c1">//error: Property 'length' does not exist on type 'T'.</span>
+  <span class="k">return</span> <span class="nx">text</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="제네릭에-타입-제한하기-2---정의된-타입-이용하기">제네릭에 타입 제한하기 2 - 정의된 타입 이용하기</h2>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">LengthType</span> <span class="p">{</span>
+  <span class="nl">length</span><span class="p">:</span> <span class="kr">number</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">logTextLength</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="nx">LengthType</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">text</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+  <span class="nx">text</span><span class="p">.</span><span class="nx">length</span>
+  <span class="k">return</span> <span class="nx">text</span>
+<span class="p">}</span>
+
+<span class="nx">logTextLength</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// 문자열은 length 프로퍼티를 가짐</span>
+<span class="nx">logTextLength</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">// error: 숫자는 length 프로퍼티 없음</span>
+<span class="nx">logTextLength</span><span class="p">({</span> <span class="na">length</span><span class="p">:</span> <span class="mi">10</span> <span class="p">})</span>
+<span class="nx">logTextLength</span><span class="p">({</span> <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span> <span class="p">})</span> <span class="c1">//error: length 프로퍼티가 정의되어 있지 않으므로 에러 발생</span>
+</code></pre></div></div>
+
+<h2 id="제네릭에-타입-제한하기-3---keyof">제네릭에 타입 제한하기 3 - keyof</h2>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Item</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">price</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="nx">stock</span><span class="p">:</span> <span class="kr">number</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">getItemOption</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="kr">keyof</span> <span class="nx">Item</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">itemOption</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">itemOption</span>
+<span class="p">}</span>
+<span class="c1">//아이템의 key 중에 한가지가 들어갈 수 있다.</span>
+<span class="nx">getItemOption</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">getItemOption</span><span class="p">(</span><span class="dl">"</span><span class="s2">10</span><span class="dl">"</span><span class="p">)</span> <span class="c1">//error:Argument of type '"10"' is not assignable to parameter of type 'keyof Item'.</span>
+</code></pre></div></div>
+
+<p class="notice--danger">💡 참고 <br />
+<a href="https://joshua1988.github.io/ts/guide/generics.html#%EC%A0%9C%EB%84%A4%EB%A6%AD-generics-%EC%9D%98-%EC%82%AC%EC%A0%84%EC%A0%81-%EC%A0%95%EC%9D%98">타입스크립트 핸드북</a> <br />
+<a href="https://kyounghwan01.github.io/blog/TS/fundamentals/generic/">타입스크립트 제네릭</a></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="generics" /><summary type="html"><![CDATA[generics]]></summary></entry><entry><title type="html">[Programmers] 22. 비밀 지도 (javascript)</title><link href="http://localhost:4000/programmers/secret-map/" rel="alternate" type="text/html" title="[Programmers] 22. 비밀 지도 (javascript)" /><published>2023-03-20T00:00:00+09:00</published><updated>2023-03-20T00:00:00+09:00</updated><id>http://localhost:4000/programmers/secret-map</id><content type="html" xml:base="http://localhost:4000/programmers/secret-map/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
 
 <p>네오는 평소 프로도가 비상금을 숨겨놓는 장소를 알려줄 비밀지도를 손에 넣었다. 그런데 이 비밀지도는 숫자로 암호화되어 있어 위치를 확인하기 위해서는 암호를 해독해야 한다. 다행히 지도 암호를 해독할 방법을 적어놓은 메모도 함께 발견했다.</p>
 
@@ -717,93 +805,4 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[삼총사]]></summary></entry><entry><title type="html">[Deep Dive] 11. 스코프</title><link href="http://localhost:4000/javascript/scope/" rel="alternate" type="text/html" title="[Deep Dive] 11. 스코프" /><published>2023-03-10T00:00:00+09:00</published><updated>2023-03-10T00:00:00+09:00</updated><id>http://localhost:4000/javascript/scope</id><content type="html" xml:base="http://localhost:4000/javascript/scope/"><![CDATA[<h1 id="스코프">스코프</h1>
-
-<p>스코프는 변수나 함수가 유효한 범위를 말한다.</p>
-
-<p>만약 같은 이름의 변수가 두 개인 경우, 그 변수를 참조할 때 둘 중 어느 변수를 참조할 지 결정해야 한다. 이때 자바스크립트 엔진은 스코프를 통해 어떤 변수를 참조할 지 결정한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span>
-
-<span class="kd">function</span> <span class="nx">getName</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">an</span><span class="dl">"</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">local</span><span class="dl">"</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="c1">// local an</span>
-<span class="p">}</span>
-
-<span class="nx">getName</span><span class="p">()</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">global</span><span class="dl">"</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="c1">//global jack</span>
-</code></pre></div></div>
-
-<p>변수는 선언된 위치에 따라 스코프가 결정되는데, 전역에서 선언된 name은 모든 곳에서 참조가 가능하지만, 함수 안에서 선언된 name은 함수 안에서만 참조할 수 있고 외부에서는 참조할 수 없다.</p>
-
-<p><br /></p>
-
-<h1 id="스코프의-종류">스코프의 종류</h1>
-
-<p>스코프는 크게 전역 스코프와 지역 스코프로 나뉜다.</p>
-
-<p>전역 스코프는 어디에서든 참조할 수 있지만, 지역 스코프는 함수 자신과 하위 함수에서만 참조가 가능하다.</p>
-
-<p>전역 스코프에서 선언된 변수를 전역 변수, 지역 내부에서 선언된 변수를 지역 변수라고 한다.</p>
-
-<p><br /></p>
-
-<h1 id="함수-레벨-스코프와-블록-레벨-스코프">함수 레벨 스코프와 블록 레벨 스코프</h1>
-
-<p>함수를 포함하여 if문, for문 등 모든 코드 블록이 지역 스코프를 만들 수 있는 특성을 블록 레벨 스코프라고 한다. 반면 함수 코드 블록만 지역 스코프로 인정하는 것을 함수 레벨 스코프라고 한다.</p>
-
-<p>자바스크립트에서 var로 선언된 변수는 함수 레벨 스코프를 가진다. 따라서 함수 외에 다른 블록 내부에서 선언된 변수는 전역 스코프를 가지게 된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="c1">// 10</span>
-</code></pre></div></div>
-
-<p>함수 레벨 스코프는 예상하지 못한 부분에서 값을 바꿔버리는 문제를 일으키게 된다.</p>
-
-<p>ES6에서 도입된 let, const로 선언된 변수는 블록 레벨 스코프를 가진다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="c1">// 1</span>
-</code></pre></div></div>
-
-<p>코드 블록 내부에서 let으로 선언한 변수 a는 지역 스코프를 가지게 되어 외부에서 참조할 수 없게 된다.</p>
-
-<p><br /></p>
-
-<h1 id="스코프-체인">스코프 체인</h1>
-
-<p>스코프 체인은 스코프가 계층적으로 연결된 것을 말한다.</p>
-
-<p>변수를 참조할 때 자바스크립트 엔진이 변수를 참조하는 코드의 스코프에서 시작해서 그 스코프 내에 찾는 변수가 없으면 상위 스코프로 이동하여 찾고, 또 없으면 다시 상위 스코프로 이동하여 찾는다. 이렇게 연결된 구조를 체인이라고 부른다.</p>
-
-<p>단 이 체인은 상위로만 이동이 가능하고, 하위로는 이동이 불가능하다.
-따라서 상위 스코프에서 선언된 변수는 하위 스코프에서 참조가 가능하지만, 하위 스코프에서 선언된 변수는 상위 스코프에서 참조할 수 없다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="c1">//1</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>상위 스코프에서 선언된 a를 하위 스코프에서 참조할 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="c1">// Uncaught ReferenceError: a is not defined</span>
-</code></pre></div></div>
-
-<p>하위 스코프(블록문 안)에서 선언된 a를 상위 스코프(블록문 밖)에서 참조할 수 없다.</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="scope" /><summary type="html"><![CDATA[scope]]></summary></entry></feed>
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[삼총사]]></summary></entry></feed>
