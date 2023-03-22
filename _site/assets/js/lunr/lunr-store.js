@@ -354,9 +354,9 @@ var store = [{
         "teaser": null
       },{
         "title": "project setting",
-        "excerpt":"초기 환경 설정 CRA &amp; typescript 설치 npx create-react-app &lt;프로젝트 이름&gt; --templage typescript styled-components 설치 npm i styled-components //type definition npm i -D @types/styled-components styled-reset 설치 및 적용 styled-reset 설치 npm i styled-reset styled-reset 적용 import { createGlobalStyle } from \"styled-components\"; import reset from \"styled-reset\"; const GlobalStyles = createGlobalStyle`${reset}`; function...","categories": ["note"],
+        "excerpt":"초기 환경 설정 CRA &amp; typescript 설치 npx create-react-app &lt;프로젝트 이름&gt; --templage typescript styled-components 설치 npm i styled-components //type definition npm i -D @types/styled-components styled-reset 설치 및 적용 styled-reset 설치 npm i styled-reset styled-reset 적용 import { createGlobalStyle } from \"styled-components\" import reset from \"styled-reset\" const GlobalStyles = createGlobalStyle`${reset}` function...","categories": ["notes"],
         "tags": ["react","typesciprt","redux"],
-        "url": "/note/setting/",
+        "url": "/notes/setting/",
         "teaser": null
       },{
         "title": "[Programmers] 13. 정수 제곱근 판별 (javascript)",

@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Reyna">
 <meta property="og:title" content="project setting">
-<meta property="og:url" content="http://localhost:4000/note/setting/">
+<meta property="og:url" content="http://localhost:4000/notes/setting/">
 
 
   <meta property="og:description" content="project setting">
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/note/setting/">
+<link rel="canonical" href="http://localhost:4000/notes/setting/">
 
 
 
@@ -163,7 +163,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/#note" itemprop="item"><span itemprop="name">Note</span></a>
+          <a href="/categories/#notes" itemprop="item"><span itemprop="name">Notes</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -314,13 +314,13 @@
       </ul>
       <span class="nav__sub-title">React</span>
       <ul>
-                               
+                             
         <li>
           <a href="/categories/react" class=""
             >React (1)</a
           >
         </li>
-             
+               
       </ul>
       <ul>
                                     
@@ -406,7 +406,7 @@
                          
         <li>
           <a href="/categories/notes" class=""
-            >Notes (6)</a
+            >Notes (7)</a
           >
         </li>
                    
@@ -465,7 +465,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#note" class="page__taxonomy-item p-category" rel="tag">note</a>
+      <a href="/categories/#notes" class="page__taxonomy-item p-category" rel="tag">notes</a>
     
     </span>
   </p>
@@ -528,20 +528,20 @@
 
 <h3 id="styled-reset-적용">styled-reset 적용</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createGlobalStyle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createGlobalStyle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span>
 
-<span class="k">import</span> <span class="nx">reset</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-reset</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">reset</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-reset</span><span class="dl">"</span>
 
-<span class="kd">const</span> <span class="nx">GlobalStyles</span> <span class="o">=</span> <span class="nx">createGlobalStyle</span><span class="s2">`</span><span class="p">${</span><span class="nx">reset</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">GlobalStyles</span> <span class="o">=</span> <span class="nx">createGlobalStyle</span><span class="s2">`</span><span class="p">${</span><span class="nx">reset</span><span class="p">}</span><span class="s2">`</span>
 
 <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
     <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nx">GlobalStyles</span> <span class="o">/&gt;</span>
     <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
+</span>  <span class="p">)</span>
 <span class="p">}</span>
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span>
 </code></pre></div></div>
 
 <p class="notice--primary"><a href="https://defineall.tistory.com/919">styled-reset 이란? / 사용법</a></p>
