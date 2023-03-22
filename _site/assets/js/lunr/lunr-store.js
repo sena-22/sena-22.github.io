@@ -515,6 +515,18 @@ var store = [{
         "url": "/programmers/secret-map/",
         "teaser": null
       },{
+        "title": "[Discord Clone] 리액트 사이드바 만들기",
+        "excerpt":"  ","categories": ["lecture"],
+        "tags": ["udemy","clone","sidebar","html","css"],
+        "url": "/lecture/discord-clone-1/",
+        "teaser": null
+      },{
+        "title": "리액트에 Sass 설치하기",
+        "excerpt":"Sass 설치하기   npm i node-sass   npm node-sass     확장자 변경하기   확장자를 css가 아니라 scss로 바꿔준다.      마찬가지로 import할 때도 css에서 scss로 변경한다.     ","categories": ["notes"],
+        "tags": ["Sass"],
+        "url": "/notes/sass/",
+        "teaser": null
+      },{
         "title": "[typescript] 제네릭(Generics)",
         "excerpt":"제네릭 타입을 함수의 파라미터처럼 사용하게 해주는 타입을 말한다. 제네릭 사용방법 function getInfo&lt;T&gt;(info: T): T { return info } /* 함수를 호출할 때 타입 정의 */ getInfo&lt;string&gt;(\"jack\") getInfo&lt;number&gt;(10) 제네릭은 함수를 호출할 때 타입이 동적으로 결정된다. 🤔 any를 사용하면 되지 않을까? 제네릭을 사용하지 않더라도 any 타입을 사용하면 여러 타입을 받을 수 있다....","categories": ["typescript"],
         "tags": ["typescript","generics"],

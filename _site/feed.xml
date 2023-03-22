@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-21T17:28:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>frontend devleopment</subtitle><author><name>Reyna</name></author><entry><title type="html">[typescript] 제네릭(Generics)</title><link href="http://localhost:4000/typescript/generics/" rel="alternate" type="text/html" title="[typescript] 제네릭(Generics)" /><published>2023-03-21T00:00:00+09:00</published><updated>2023-03-21T00:00:00+09:00</updated><id>http://localhost:4000/typescript/generics</id><content type="html" xml:base="http://localhost:4000/typescript/generics/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/226537175-291666d8-03bd-4e58-9dff-8c33f3ac133b.png" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-21T20:52:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>frontend devleopment</subtitle><author><name>Reyna</name></author><entry><title type="html">[typescript] 제네릭(Generics)</title><link href="http://localhost:4000/typescript/generics/" rel="alternate" type="text/html" title="[typescript] 제네릭(Generics)" /><published>2023-03-21T00:00:00+09:00</published><updated>2023-03-21T00:00:00+09:00</updated><id>http://localhost:4000/typescript/generics</id><content type="html" xml:base="http://localhost:4000/typescript/generics/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/226537175-291666d8-03bd-4e58-9dff-8c33f3ac133b.png" /></p>
 
 <h2 id="제네릭">제네릭</h2>
 
@@ -86,7 +86,21 @@
 
 <p class="notice--danger">💡 참고 <br />
 <a href="https://joshua1988.github.io/ts/guide/generics.html#%EC%A0%9C%EB%84%A4%EB%A6%AD-generics-%EC%9D%98-%EC%82%AC%EC%A0%84%EC%A0%81-%EC%A0%95%EC%9D%98">타입스크립트 핸드북</a> <br />
-<a href="https://kyounghwan01.github.io/blog/TS/fundamentals/generic/">타입스크립트 제네릭</a></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="generics" /><summary type="html"><![CDATA[generics]]></summary></entry><entry><title type="html">[Programmers] 22. 비밀 지도 (javascript)</title><link href="http://localhost:4000/programmers/secret-map/" rel="alternate" type="text/html" title="[Programmers] 22. 비밀 지도 (javascript)" /><published>2023-03-20T00:00:00+09:00</published><updated>2023-03-20T00:00:00+09:00</updated><id>http://localhost:4000/programmers/secret-map</id><content type="html" xml:base="http://localhost:4000/programmers/secret-map/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
+<a href="https://kyounghwan01.github.io/blog/TS/fundamentals/generic/">타입스크립트 제네릭</a></p>]]></content><author><name>Reyna</name></author><category term="typescript" /><category term="typescript" /><category term="generics" /><summary type="html"><![CDATA[generics]]></summary></entry><entry><title type="html">리액트에 Sass 설치하기</title><link href="http://localhost:4000/notes/sass/" rel="alternate" type="text/html" title="리액트에 Sass 설치하기" /><published>2023-03-21T00:00:00+09:00</published><updated>2023-03-21T00:00:00+09:00</updated><id>http://localhost:4000/notes/sass</id><content type="html" xml:base="http://localhost:4000/notes/sass/"><![CDATA[<h2 id="sass-설치하기">Sass 설치하기</h2>
+
+<p><code class="language-plaintext highlighter-rouge">npm i node-sass</code></p>
+
+<p class="notice--primary"><a href="https://www.npmjs.com/package/node-sass">npm node-sass</a> <br /></p>
+
+<h2 id="확장자-변경하기">확장자 변경하기</h2>
+
+<p>확장자를 <code class="language-plaintext highlighter-rouge">css</code>가 아니라 <code class="language-plaintext highlighter-rouge">scss</code>로 바꿔준다.</p>
+
+<p><img width="158" alt="스크린샷 2023-03-21 오후 8 15 21" src="https://user-images.githubusercontent.com/110877564/226590357-f91ec34c-5c84-4e76-a88f-437fff7f6d32.png" /></p>
+
+<p>마찬가지로 import할 때도 <code class="language-plaintext highlighter-rouge">css</code>에서 <code class="language-plaintext highlighter-rouge">scss</code>로 변경한다.</p>
+
+<p><img width="205" alt="스크린샷 2023-03-21 오후 8 22 37" src="https://user-images.githubusercontent.com/110877564/226592312-562bd57f-9762-4e56-8733-c68fcc3d57d5.png" /></p>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="Sass" /><summary type="html"><![CDATA[Sass]]></summary></entry><entry><title type="html">[Discord Clone] 리액트 사이드바 만들기</title><link href="http://localhost:4000/lecture/discord-clone-1/" rel="alternate" type="text/html" title="[Discord Clone] 리액트 사이드바 만들기" /><published>2023-03-21T00:00:00+09:00</published><updated>2023-03-21T00:00:00+09:00</updated><id>http://localhost:4000/lecture/discord-clone-1</id><content type="html" xml:base="http://localhost:4000/lecture/discord-clone-1/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/226597954-5de7a38a-1e6b-4374-9e92-f3321e015744.png" /></p>]]></content><author><name>Reyna</name></author><category term="lecture" /><category term="udemy" /><category term="clone" /><category term="sidebar" /><category term="html" /><category term="css" /><summary type="html"><![CDATA[사이드바 컴포넌트 만들기]]></summary></entry><entry><title type="html">[Programmers] 22. 비밀 지도 (javascript)</title><link href="http://localhost:4000/programmers/secret-map/" rel="alternate" type="text/html" title="[Programmers] 22. 비밀 지도 (javascript)" /><published>2023-03-20T00:00:00+09:00</published><updated>2023-03-20T00:00:00+09:00</updated><id>http://localhost:4000/programmers/secret-map</id><content type="html" xml:base="http://localhost:4000/programmers/secret-map/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
 
 <p>네오는 평소 프로도가 비상금을 숨겨놓는 장소를 알려줄 비밀지도를 손에 넣었다. 그런데 이 비밀지도는 숫자로 암호화되어 있어 위치를 확인하기 위해서는 암호를 해독해야 한다. 다행히 지도 암호를 해독할 방법을 적어놓은 메모도 함께 발견했다.</p>
 
@@ -697,112 +711,4 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[예산]]></summary></entry><entry><title type="html">[Programmers] 18. 삼진법 뒤집기 (javascript)</title><link href="http://localhost:4000/programmers/reverse-ternary/" rel="alternate" type="text/html" title="[Programmers] 18. 삼진법 뒤집기 (javascript)" /><published>2023-03-15T00:00:00+09:00</published><updated>2023-03-15T00:00:00+09:00</updated><id>http://localhost:4000/programmers/reverse-ternary</id><content type="html" xml:base="http://localhost:4000/programmers/reverse-ternary/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>n은 1 이상 100,000,000 이하인 자연수입니다.</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>n</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>45</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>229</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<ul>
-  <li>toString()에 매개변수를 넣을 경우 매개변수에 넣은 진수로 변환이 가능하다</li>
-  <li>parseInt()의 두 번째 매개변수는 string의 진수를 나타낸다.</li>
-</ul>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">solution</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">parseInt</span><span class="p">([...</span><span class="nx">n</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">3</span><span class="p">)].</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/toString">Object.prototype.toString()</a></p>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[삼진법 뒤집기]]></summary></entry><entry><title type="html">[Programmers] 17. 삼총사 (javascript)</title><link href="http://localhost:4000/programmers/three-musketeers/" rel="alternate" type="text/html" title="[Programmers] 17. 삼총사 (javascript)" /><published>2023-03-14T00:00:00+09:00</published><updated>2023-03-14T00:00:00+09:00</updated><id>http://localhost:4000/programmers/three-musketeers</id><content type="html" xml:base="http://localhost:4000/programmers/three-musketeers/"><![CDATA[<h2 id="-문제">🤔 문제</h2>
-
-<p>한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 -2, 3, 0, 2, -5일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 0이므로 세 학생은 삼총사입니다. 또한, 두 번째, 네 번째, 다섯 번째 학생의 정수 번호를 더해도 0이므로 세 학생도 삼총사입니다. 따라서 이 경우 한국중학교에서는 두 가지 방법으로 삼총사를 만들 수 있습니다.</p>
-
-<p>한국중학교 학생들의 번호를 나타내는 정수 배열 number가 매개변수로 주어질 때, 학생들 중 삼총사를 만들 수 있는 방법의 수를 return 하도록 solution 함수를 완성하세요.</p>
-
-<h2 id="제한사항">제한사항</h2>
-
-<ul>
-  <li>3 ≤ number의 길이 ≤ 13</li>
-  <li>-1,000 ≤ number의 각 원소 ≤ 1,000</li>
-  <li>서로 다른 학생의 정수 번호가 같을 수 있습니다.</li>
-</ul>
-
-<h2 id="입출력-예시">입출력 예시</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>number</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[-2, 3, 0, 2, -5]</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>[-3, -2, -1, 0, 1, 2, 3]</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>[-1, 1, -1, 1]</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="의사코드">의사코드</h2>
-
-<ul>
-  <li>3중 for문을 돌려서 학생을 한 명씩 선택한 후 세 명의 번호의 합이 0이 되면 answer를 1 더해준다.</li>
-  <li>배열의 끝에서 3명을 고를 경우 안쪽 for문 외에는 배열 끝까지 돌 필요가 없으므로 외부 for문은 각각 길이에서 두 명, 한 명씩 뺀 숫자만큼만 반복문을 돌린다.</li>
-</ul>
-
-<h2 id="제출한-답">제출한 답</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">n</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">n</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">number</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">number</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">n</span> <span class="o">+</span> <span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">number</span><span class="p">[</span><span class="nx">n</span> <span class="o">+</span> <span class="nx">j</span><span class="p">]</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">answer</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[삼총사]]></summary></entry></feed>
+<p class="notice--danger">💡 알고리즘 스터디 Recursive에서 공부한 내용 정리</p>]]></content><author><name>Reyna</name></author><category term="programmers" /><category term="study" /><category term="recursive" /><category term="javascript" /><category term="Lv.1" /><summary type="html"><![CDATA[예산]]></summary></entry></feed>
