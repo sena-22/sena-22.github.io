@@ -1,5 +1,5 @@
 ---
-title: "[Programmers] 27. 크기가 작은 부분 문자열
+title: "[Programmers] 28. 크기가 작은 부분 문자열
   (javascript)"
 excerpt: "크기가 작은 부분 문자열"
 

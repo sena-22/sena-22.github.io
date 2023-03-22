@@ -1,5 +1,5 @@
 ---
-title: "[Programmers] 24. 숫자 문자열과 영단어
+title: "[Programmers] 25. 숫자 문자열과 영단어
   (javascript)"
 excerpt: "숫자 문자열과 영단어"
 

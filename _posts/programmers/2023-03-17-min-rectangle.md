@@ -1,5 +1,5 @@
 ---
-title: "[Programmers] 21. 최소직사각형
+title: "[Programmers] 22. 최소직사각형
   (javascript)"
 excerpt: "최소직사각형"
 

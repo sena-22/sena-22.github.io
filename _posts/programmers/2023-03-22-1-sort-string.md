@@ -1,5 +1,5 @@
 ---
-title: "[Programmers] 23. 문자열 내 마음대로 정렬하기
+title: "[Programmers] 24. 문자열 내 마음대로 정렬하기
   (javascript)"
 excerpt: "문자열 내 마음대로 정렬하기"
 

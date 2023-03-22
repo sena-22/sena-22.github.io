@@ -1,5 +1,5 @@
 ---
-title: "[Programmers] 22. 비밀 지도
+title: "[Programmers] 23. 비밀 지도
   (javascript)"
 excerpt: "비밀 지도"
 
