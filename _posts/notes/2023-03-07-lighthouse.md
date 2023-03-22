@@ -3,7 +3,7 @@ title: "Lighthouse로 성능 검사하기"
 excerpt: "Lighthouse"
 
 categories:
-  - note
+  - notes
 tags:
   - [Lighthouse]
 

@@ -396,9 +396,9 @@ var store = [{
         "teaser": null
       },{
         "title": "Lighthouse로 성능 검사하기",
-        "excerpt":"Lighthouse Lighthouse는 사이트를 검사해서 성능 측정 결과와 개선책을 제공해주는 도구이다. 크롬 개발자 도구에서 바로 사용할 수 있다. 옵션을 선택 후 Analyze page load를 누르면 분석을 시작한다. Lighthouse 분석 항목 Mode (택 1) 1. Navigation 초기 페이지를 불러올 때 발생하는 성능을 분석한다. 2. Timespan 사용자가 지정한 시간 동안 발생한 성능을 분석한다....","categories": ["note"],
+        "excerpt":"Lighthouse Lighthouse는 사이트를 검사해서 성능 측정 결과와 개선책을 제공해주는 도구이다. 크롬 개발자 도구에서 바로 사용할 수 있다. 옵션을 선택 후 Analyze page load를 누르면 분석을 시작한다. Lighthouse 분석 항목 Mode (택 1) 1. Navigation 초기 페이지를 불러올 때 발생하는 성능을 분석한다. 2. Timespan 사용자가 지정한 시간 동안 발생한 성능을 분석한다....","categories": ["notes"],
         "tags": ["Lighthouse"],
-        "url": "/note/lighthouse/",
+        "url": "/notes/lighthouse/",
         "teaser": null
       },{
         "title": "[Programmers] 14. 행렬의 덧셈 (javascript)",
@@ -570,8 +570,8 @@ var store = [{
         "teaser": null
       },{
         "title": "개발할 때 유용한 vscode extension",
-        "excerpt":"TODO Highlight TODO Highlight를 설치하고 다음과 같이 TODO:를 입력하면 하이라이트가 자동으로 만들어진다. 이때 기본적으로 Todo:,TODO : 처럼 소문자로 입력하거나 콜론을 띄어 쓰면 인식되지 않는다. 만약 다른 단어나 스타일을 적용하고 싶으면 설정을 바꿔준다. //settings.json \"todohighlight.defaultStyle\": { //원하는 디폴트 설정 }, \"todohighlight.keywords\": [ \"DEBUG:\", //디폴트로 설정할 키워드들 ... { \"text\": \"REVIEW:\", //키워드별로...","categories": ["note"],
+        "excerpt":"TODO Highlight TODO Highlight를 설치하고 다음과 같이 TODO:를 입력하면 하이라이트가 자동으로 만들어진다. 이때 기본적으로 Todo:,TODO : 처럼 소문자로 입력하거나 콜론을 띄어 쓰면 인식되지 않는다. 만약 다른 단어나 스타일을 적용하고 싶으면 설정을 바꿔준다. //settings.json \"todohighlight.defaultStyle\": { //원하는 디폴트 설정 }, \"todohighlight.keywords\": [ \"DEBUG:\", //디폴트로 설정할 키워드들 ... { \"text\": \"REVIEW:\", //키워드별로...","categories": ["notes"],
         "tags": ["vscode extension","TODO Highlight"],
-        "url": "/note/vsc-extension/",
+        "url": "/notes/vsc-extension/",
         "teaser": null
       }]

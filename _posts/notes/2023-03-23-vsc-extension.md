@@ -3,7 +3,7 @@ title: "개발할 때 유용한 vscode extension"
 excerpt: "vscode extension"
 
 categories:
-  - note
+  - notes
 tags:
   - [vscode extension, TODO Highlight]
 
