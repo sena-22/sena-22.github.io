@@ -503,13 +503,13 @@ var store = [{
         "url": "/javascript/2-new-Object/",
         "teaser": null
       },{
-        "title": "[Programmers] 21. 최소직사각형 (javascript)",
+        "title": "[Programmers] 22. 최소직사각형 (javascript)",
         "excerpt":"🤔 문제 명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다. 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서, 작아서 들고 다니기 편한 지갑을 만들어야 합니다. 이러한 요건을 만족하는 지갑을 만들기 위해 디자인팀은 모든 명함의 가로 길이와 세로 길이를 조사했습니다. 아래 표는 4가지 명함의 가로 길이와 세로 길이를 나타냅니다. 명함 번호...","categories": ["programmers"],
         "tags": ["study","recursive","javascript","Lv.1"],
         "url": "/programmers/min-rectangle/",
         "teaser": null
       },{
-        "title": "[Programmers] 22. 비밀 지도 (javascript)",
+        "title": "[Programmers] 23. 비밀 지도 (javascript)",
         "excerpt":"🤔 문제 네오는 평소 프로도가 비상금을 숨겨놓는 장소를 알려줄 비밀지도를 손에 넣었다. 그런데 이 비밀지도는 숫자로 암호화되어 있어 위치를 확인하기 위해서는 암호를 해독해야 한다. 다행히 지도 암호를 해독할 방법을 적어놓은 메모도 함께 발견했다. 지도는 한 변의 길이가 n인 정사각형 배열 형태로, 각 칸은 “공백”(“ “) 또는 “벽”(“#”) 두 종류로 이루어져...","categories": ["programmers"],
         "tags": ["study","recursive","javascript","Lv.1"],
         "url": "/programmers/secret-map/",
@@ -531,5 +531,47 @@ var store = [{
         "excerpt":"제네릭 타입을 함수의 파라미터처럼 사용하게 해주는 타입을 말한다. 제네릭 사용방법 function getInfo&lt;T&gt;(info: T): T { return info } /* 함수를 호출할 때 타입 정의 */ getInfo&lt;string&gt;(\"jack\") getInfo&lt;number&gt;(10) 제네릭은 함수를 호출할 때 타입이 동적으로 결정된다. 🤔 any를 사용하면 되지 않을까? 제네릭을 사용하지 않더라도 any 타입을 사용하면 여러 타입을 받을 수 있다....","categories": ["typescript"],
         "tags": ["typescript","generics"],
         "url": "/typescript/generics/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 24. 문자열 내 마음대로 정렬하기 (javascript)",
+        "excerpt":"🤔 문제 문자열로 구성된 리스트 strings와, 정수 n이 주어졌을 때, 각 문자열의 인덱스 n번째 글자를 기준으로 오름차순 정렬하려 합니다. 예를 들어 strings가 [“sun”, “bed”, “car”]이고 n이 1이면 각 단어의 인덱스 1의 문자 “u”, “e”, “a”로 strings를 정렬합니다. 제한 조건 strings는 길이 1 이상, 50이하인 배열입니다. strings의 원소는 소문자 알파벳으로 이루어져...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/1-sort-string/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 25. 숫자 문자열과 영단어 (javascript)",
+        "excerpt":"🤔 문제 네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다. 다음은 숫자의 일부 자릿수를 영단어로 바꾸는 예시입니다. 1478 → “one4seveneight” 234567 → “23four5six7” 10203 → “1zerotwozero3” 이렇게 숫자의 일부 자릿수가 영단어로 바뀌어졌거나, 혹은 바뀌지 않고 그대로인 문자열...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/2-string-number-words/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 26. k번째 수 (javascript)",
+        "excerpt":"🤔 문제 배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다. 예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3이라면 array의 2번째부터 5번째까지 자르면 [5, 2, 6, 3]입니다. 1에서 나온 배열을 정렬하면 [2, 3, 5,...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/3-kth/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 27. 두 개 뽑아서 더하기 (javascript)",
+        "excerpt":"🤔 문제 정수 배열 numbers가 주어집니다. numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해서 만들 수 있는 모든 수를 배열에 오름차순으로 담아 return 하도록 solution 함수를 완성해주세요. 제한 조건 numbers의 길이는 2 이상 100 이하입니다. numbers의 모든 수는 0 이상 100 이하입니다. 입출력 예시 numbers result [2,1,3,4,1] [2,3,4,5,6,7]...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/4-two-sum/",
+        "teaser": null
+      },{
+        "title": "[Programmers] 28. 크기가 작은 부분 문자열 (javascript)",
+        "excerpt":"🤔 문제 숫자로 이루어진 문자열 t와 p가 주어질 때, t에서 p와 길이가 같은 부분문자열 중에서, 이 부분문자열이 나타내는 수가 p가 나타내는 수보다 작거나 같은 것이 나오는 횟수를 return하는 함수 solution을 완성하세요. 예를 들어, t=”3141592”이고 p=”271” 인 경우, t의 길이가 3인 부분 문자열은 314, 141, 415, 159, 592입니다. 이 문자열이 나타내는...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/5-small-part-string/",
+        "teaser": null
+      },{
+        "title": "Color Picker",
+        "excerpt":"개발할 때 유용한 구글 확장 기능들   브라우저의 색상 값을 얻을 수 있는 color picker         구글 웹 스토어로 들어간다.   color picker 검색   Live Color Picker 추가   color picker를 선택하고 원하는 색상을 더블클릭하면 색상값이 복사된다  ","categories": [],
+        "tags": [],
+        "url": "/color-picker/",
+        "teaser": null
+      },{
+        "title": "개발할 때 유용한 vscode extension",
+        "excerpt":"TODO Highlight TODO Highlight를 설치하고 다음과 같이 TODO:를 입력하면 하이라이트가 자동으로 만들어진다. 이때 기본적으로 Todo:,TODO : 처럼 소문자로 입력하거나 콜론을 띄어 쓰면 인식되지 않는다. 만약 다른 단어나 스타일을 적용하고 싶으면 설정을 바꿔준다. //settings.json \"todohighlight.defaultStyle\": { //원하는 디폴트 설정 }, \"todohighlight.keywords\": [ \"DEBUG:\", //디폴트로 설정할 키워드들 ... { \"text\": \"REVIEW:\", //키워드별로...","categories": ["note"],
+        "tags": ["vscode extension","TODO Highlight"],
+        "url": "/note/vsc-extension/",
         "teaser": null
       }]
