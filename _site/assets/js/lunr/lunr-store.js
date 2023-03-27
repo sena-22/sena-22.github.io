@@ -515,8 +515,8 @@ var store = [{
         "url": "/programmers/secret-map/",
         "teaser": null
       },{
-        "title": "[Discord Clone] 리액트 사이드바 만들기",
-        "excerpt":"  ","categories": ["lecture"],
+        "title": "[React Discord Clone] 1. 사이드바 컴포넌트 만들기 ",
+        "excerpt":"   컴포넌트 구조   사이드바 컴포넌트의 대략적인 구조는 다음과 같다.       ","categories": ["lecture"],
         "tags": ["udemy","clone","sidebar","html","css"],
         "url": "/lecture/discord-clone-1/",
         "teaser": null
@@ -569,9 +569,21 @@ var store = [{
         "url": "/color-picker/",
         "teaser": null
       },{
+        "title": "Material Ui",
+        "excerpt":"material-ui를 이용하여 아이콘 사용하기   설치하기   npm install @mui/material @emotion/react @emotion/styled npm install @mui/icons-material   참고   아이콘 검색      여기에서 원하는 아이템을 검색           import문 복사           원하는 곳에서 사용       ","categories": [],
+        "tags": [],
+        "url": "/material-ui/",
+        "teaser": null
+      },{
         "title": "개발할 때 유용한 vscode extension",
         "excerpt":"TODO Highlight TODO Highlight를 설치하고 다음과 같이 TODO:를 입력하면 하이라이트가 자동으로 만들어진다. 이때 기본적으로 Todo:,TODO : 처럼 소문자로 입력하거나 콜론을 띄어 쓰면 인식되지 않는다. 만약 다른 단어나 스타일을 적용하고 싶으면 설정을 바꿔준다. //settings.json \"todohighlight.defaultStyle\": { //원하는 디폴트 설정 }, \"todohighlight.keywords\": [ \"DEBUG:\", //디폴트로 설정할 키워드들 ... { \"text\": \"REVIEW:\", //키워드별로...","categories": ["notes"],
         "tags": ["vscode extension","TODO Highlight"],
         "url": "/notes/vsc-extension/",
+        "teaser": null
+      },{
+        "title": "[Deep Dive] 14. 함수 객체의 프로퍼티",
+        "excerpt":"일급 객체 함수는 일급 객체이다. 그래서 객체처럼 사용할 수 있다. 객체처럼 사용할 수 있다는 건 값처럼 사용할 수 있다는 뜻이고, 값처럼 사용한다는 의미는 변수에 할당하거나, 객체에 저장하거나, 매개변수로 사용할 수도 있다는 뜻이다. //함수를 변수에 할당할 수 있다. const sum = (a, b) =&gt; { return a + b } console.log(typeof...","categories": ["javascript"],
+        "tags": ["javascript","function"],
+        "url": "/javascript/first-class-object/",
         "teaser": null
       }]
