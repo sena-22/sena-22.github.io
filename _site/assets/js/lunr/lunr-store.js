@@ -563,6 +563,12 @@ var store = [{
         "url": "/programmers/5-small-part-string/",
         "teaser": null
       },{
+        "title": "[Programmers] 29. 콜라 문제 (javascript)",
+        "excerpt":"🤔 문제 오래전 유행했던 콜라 문제가 있습니다. 콜라 문제의 지문은 다음과 같습니다. 정답은 아무에게도 말하지 마세요. 콜라 빈 병 2개를 가져다주면 콜라 1병을 주는 마트가 있다. 빈 병 20개를 가져다주면 몇 병을 받을 수 있는가? 단, 보유 중인 빈 병이 2개 미만이면, 콜라를 받을 수 없다. 문제를 풀던 상빈이는 콜라...","categories": ["programmers"],
+        "tags": ["study","recursive","javascript","Lv.1"],
+        "url": "/programmers/coke/",
+        "teaser": null
+      },{
         "title": "Color Picker",
         "excerpt":"개발할 때 유용한 구글 확장 기능들   브라우저의 색상 값을 얻을 수 있는 color picker         구글 웹 스토어로 들어간다.   color picker 검색   Live Color Picker 추가   color picker를 선택하고 원하는 색상을 더블클릭하면 색상값이 복사된다  ","categories": [],
         "tags": [],
@@ -585,5 +591,23 @@ var store = [{
         "excerpt":"일급 객체 함수는 일급 객체이다. 그래서 객체처럼 사용할 수 있다. 객체처럼 사용할 수 있다는 건 값처럼 사용할 수 있다는 뜻이고, 값처럼 사용한다는 의미는 변수에 할당하거나, 객체에 저장하거나, 매개변수로 사용할 수도 있다는 뜻이다. //함수를 변수에 할당할 수 있다. const sum = (a, b) =&gt; { return a + b } console.log(typeof...","categories": ["javascript"],
         "tags": ["javascript","function"],
         "url": "/javascript/first-class-object/",
+        "teaser": null
+      },{
+        "title": "Font",
+        "excerpt":"구글 폰트 눈누  ","categories": [],
+        "tags": [],
+        "url": "/font/",
+        "teaser": null
+      },{
+        "title": "자바스크립트 기초 1 ",
+        "excerpt":"서론 웹 사이트를 만들기 위해서는 HTML, CSS, Javascript가 필요하다. 움직이는 인형을 만든다고 가정하자. HTML은 뼈대를 만드는 도구이다. HTML을 이용하여 인형의 각 부위를 만들고 연결할 수 있다. CSS는 만들어진 뼈대에 피부를 씌우고, 색을 칠하고, 옷을 입히는 역할을 한다. 여기에 Javascript를 사용하면 인형을 움직이게 만들 수 있다. 웹 사이트를 만들 때도 마찬가지로...","categories": ["lecture"],
+        "tags": ["udemy","javascript","variable"],
+        "url": "/lecture/javascript_1/",
+        "teaser": null
+      },{
+        "title": "자바스크립트 기초 2 ",
+        "excerpt":"   함수   함수가 왜 필요할까?   함수 표현식과 화살표 함수   콜백함수   객체   배열   반복문   배열 내장 함수  ","categories": ["lecture"],
+        "tags": ["udemy","javascript"],
+        "url": "/lecture/javascript_2/",
         "teaser": null
       }]

@@ -283,7 +283,7 @@
   <ul class="nav__items" id="category_tag_menu">
     <!--전체 글 수-->
     <li>
-      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(98)</style> 
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(102)</style> 
     </li>
     <li>
       <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
@@ -369,7 +369,7 @@
              
         <li>
           <a href="/categories/programmers" class=""
-            >Programmers (28)</a
+            >Programmers (29)</a
           >
         </li>
                                
@@ -387,7 +387,7 @@
         <ul>
                                    
         <li>
-          <a href="/categories/lecture" class="">Lecture (1)</a>
+          <a href="/categories/lecture" class="">Lecture (3)</a>
         </li>
          
       </ul>
@@ -591,12 +591,12 @@
 <h3 id="해시-함수-생성">해시 함수 생성</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">hashStringToInt</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">tableSize</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">hash</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">hash</span> <span class="o">=</span> <span class="mi">17</span>
 
   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">hash</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13</span> <span class="o">*</span> <span class="nx">hash</span> <span class="o">*</span> <span class="nx">s</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="o">%</span> <span class="nx">tableSize</span><span class="p">;</span>
+    <span class="nx">hash</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13</span> <span class="o">*</span> <span class="nx">hash</span> <span class="o">*</span> <span class="nx">s</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="o">%</span> <span class="nx">tableSize</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">hash</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">hash</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -606,35 +606,36 @@
 </ul>
 
 <blockquote>
-  <p><strong>charCodeAt() 메서드는 주어진 인덱스에 대한 UTF-16 코드를 나타내는 0부터 65535 사이의 정수를 반환합니다.</strong> &gt; https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt</p>
+  <p><strong>charCodeAt() 메서드는 주어진 인덱스에 대한 UTF-16 코드를 나타내는 0부터 65535 사이의 정수를 반환합니다.</strong> &gt;
+<br /> &gt; <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt">String.prototype.charCodeAt()</a></p>
 </blockquote>
 
 <h3 id="해시-테이블-생성">해시 테이블 생성</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">HashTable</span> <span class="p">{</span>
-  <span class="nx">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">71</span><span class="p">);</span>
+  <span class="nx">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">71</span><span class="p">)</span>
 
   <span class="c1">//key, value를 받아 테이블에 넣어주는 메서드</span>
   <span class="nx">setItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">//해시 함수가 반환하는 해시 값이 인덱스가 된다.</span>
-    <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nx">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nx">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
     <span class="c1">//해당 인덱스에 할당</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
-  <span class="p">};</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span>
+  <span class="p">}</span>
 
   <span class="c1">//key를 받아 해당하는 값을 불러오는 메서드</span>
   <span class="nx">getItem</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nx">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">];</span>
-  <span class="p">};</span>
+    <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nx">hashStringToInt</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myTable</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HashTable</span><span class="p">();</span>
-<span class="nx">myTable</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">k</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">myTable</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myTable</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HashTable</span><span class="p">()</span>
+<span class="nx">myTable</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">k</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">myTable</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">)</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myTable</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">));</span> <span class="c1">//k</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myTable</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">))</span> <span class="c1">//k</span>
 </code></pre></div></div>
 
 <p><img src="https://velog.velcdn.com/images/sena-22/post/6a67d78e-e642-42c0-bab7-c5e19fbb55ac/image.png" alt="" /></p>
@@ -681,30 +682,30 @@
 <h2 id="map을-사용하여-해시맵-구현">Map을 사용하여 해시맵 구현</h2>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//생성</span>
-<span class="kd">const</span> <span class="nx">hashMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">hashMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">()</span>
 
 <span class="c1">//요소 취득</span>
-<span class="nx">hashMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span> <span class="mi">700</span><span class="p">);</span>
-<span class="nx">hashMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span> <span class="mi">700</span><span class="p">)</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hashMap</span><span class="p">);</span> <span class="c1">//Map(2) {'1' =&gt; 700, '2' =&gt; Array(3)}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hashMap</span><span class="p">)</span> <span class="c1">//Map(2) {'1' =&gt; 700, '2' =&gt; Array(3)}</span>
 
 <span class="c1">//값 얻기</span>
-<span class="nx">hashMap</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">)</span>
 
 <span class="c1">//요소 존재 여부 확인</span>
-<span class="nx">hashMap</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//boolean</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">)</span> <span class="c1">//boolean</span>
 
 <span class="c1">//요소 탐색</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">hashMap</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> = </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">value</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> = </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">value</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">//요소 삭제</span>
-<span class="nx">hashMap</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//boolean</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">)</span> <span class="c1">//boolean</span>
 
 <span class="c1">//요소 일괄 삭제</span>
-<span class="nx">hashMap</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span> <span class="c1">//undefined 반환</span>
+<span class="nx">hashMap</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span> <span class="c1">//undefined 반환</span>
 </code></pre></div></div>
 
 <p><img src="https://velog.velcdn.com/images/sena-22/post/c1b5488f-1ac5-4e17-8d6c-e617fd96ae4f/image.jpeg" alt="" /></p>
@@ -774,6 +775,121 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/lecture/javascript_2/" rel="permalink">자바스크립트 기초 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수, 콜백함수, 객체, 배열, 반복문, 배열 내장 함수
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_1/" rel="permalink">자바스크립트 기초 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">변수와 상수, 자료형과 형 변환, 연산자, 조건문
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/font/" rel="permalink">Font
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">구글 폰트
+눈누
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/javascript/first-class-object/" rel="permalink">[Deep Dive] 14. 함수 객체의 프로퍼티
 </a>
       
@@ -800,120 +916,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">일급객체, 함수 객체의 프로퍼티
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/notes/vsc-extension/" rel="permalink">개발할 때 유용한 vscode extension
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">vscode extension
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/material-ui/" rel="permalink">Material Ui
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">material-ui를 이용하여 아이콘 사용하기
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/color-picker/" rel="permalink">Color Picker
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">개발할 때 유용한 구글 확장 기능들
 </p>
   </article>
 </div>
