@@ -606,7 +606,7 @@ var store = [{
         "teaser": null
       },{
         "title": "자바스크립트 기초 2 ",
-        "excerpt":"   함수   함수가 왜 필요할까?   함수 표현식과 화살표 함수   콜백함수   객체   배열   반복문   배열 내장 함수  ","categories": ["lecture"],
+        "excerpt":"1. 함수 함수가 왜 필요할까? 함수는 같은 동작을 하는 유사한 코드의 중복을 줄이기 위해 사용한다. 먼저 함수를 사용하지 않고 직사각형의 넓이를 구하는 식을 만들어보자. let width1 = 10 let height1 = 10 let area1 = width1 * height1 console.log(area1) //100 마찬가지로 길이가 다른 직사각형을 만드는 식도 만들어보자. let width2 =...","categories": ["lecture"],
         "tags": ["udemy","javascript"],
         "url": "/lecture/javascript_2/",
         "teaser": null
