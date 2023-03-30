@@ -11,10 +11,10 @@ toc: true
 toc_sticky: true
 
 date: 2023-03-28
-last_modified_at: 2023-03-28
+last_modified_at: 2023-03-30
 ---
 
-![표지](https://user-images.githubusercontent.com/110877564/228106760-9b80b1e4-dff6-4fbf-9a89-5010548ce3c2.png)
+![표지2](https://user-images.githubusercontent.com/110877564/228703063-12aade7b-a367-48ce-a104-6528c35e6b02.png)
 
 <br/>
 
@@ -42,7 +42,7 @@ let area2 = width2 * height2
 console.log(area2) //400
 ```
 
-area1과 area2를 구하는 공식은 숫자만 달라졌을 뿐 작동 방식은 동일하다. 만약 같은 방식으로 직사각형을 10개, 100개를 만들어야 한다면 중복되는 코드가 계속 늘어날 것이다.
+area1과 area2를 구하는 공식은 숫자만 달라졌을 뿐 작동 방식은 동일하다. 만약 같은 방식으로 직사각형을 10개, 100개를 만들어야 한다면 중복되는 코드가 계속 늘어날 것이다😔
 
 이런 상황에서 함수를 사용하면 코드를 간단하게 만들 수 있다.
 
@@ -160,6 +160,8 @@ console.log(helloA()) //Hello A!!
 console.log(helloB()) //Hello B!!
 ```
 
+<br/>
+
 # 3. 콜백함수
 
 ## 콜백함수
@@ -193,3 +195,7 @@ checkMood("sad", sing, cry)
 ```
 
 콜백 함수를 이용하면 위의 코드와 같이 호출할 때 사용할 함수를 선택해서 전달할 수 있으므로 유용하게 사용할 수 있다.
+
+참고 <br/>
+[한입 크기로 잘라 먹는 리액트](https://www.udemy.com/course/winterlood-react-basic/) <br/>
+{: .notice--primary}

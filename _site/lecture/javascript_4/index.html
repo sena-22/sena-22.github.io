@@ -1,0 +1,954 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바스크립트 응용 1  - Reyna</title>
+<meta name="description" content="Truthy &amp; Falsy, 삼항 연산자, 단락회로 평가, 조건문 업그레이드">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="자바스크립트 응용 1">
+<meta property="og:url" content="http://localhost:4000/lecture/javascript_4/">
+
+
+  <meta property="og:description" content="Truthy &amp; Falsy, 삼항 연산자, 단락회로 평가, 조건문 업그레이드">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-30T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-30T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/lecture/javascript_4/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+           
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#lecture" itemprop="item"><span itemprop="name">Lecture</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">자바스크립트 응용 1 </li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(105)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                           
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (16)</a
+          >
+        </li>
+                 
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (6)</a
+          >
+        </li>
+                     
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                             
+        <li>
+          <a href="/categories/react" class=""
+            >React (1)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                                   
+      </ul>
+      <ul>
+                   
+        <li>
+          <a href="/categories/css" class="">CSS (5)</a>
+        </li>
+                         
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                           
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (6)</a>
+        </li>
+                       
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                                 
+      </ul>
+      <ul>
+             
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (29)</a
+          >
+        </li>
+                               
+      </ul>
+         <ul>
+                                 
+        <li>
+          <a href="/categories/baekjoon" class=""
+            >Baekjoon (5)</a
+          >
+        </li>
+           
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+        <ul>
+                                   
+        <li>
+          <a href="/categories/lecture" class="">Lecture (6)</a>
+        </li>
+         
+      </ul>
+      <ul>
+      <ul>
+               
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                             
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (7)</a
+          >
+        </li>
+                   
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="자바스크립트 응용 1"
+    /> <meta
+      itemprop="description"
+      content="Truthy &amp; Falsy, 삼항 연산자, 단락회로 평가, 조건문 업그레이드"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-03-30T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-03-30T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>자바스크립트 응용 1</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-03-30T00:00:00+09:00"
+            >2023.03.30</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-03-30"
+            >2023.03.30</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#lecture" class="page__taxonomy-item p-category" rel="tag">lecture</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a><span class="sep">, </span>
+    
+      <a href="/tags/#udemy" class="page__taxonomy-item p-category" rel="tag">udemy</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#1-truthy--falsy">1. Truthy &amp; Falsy</a><ul><li><a href="#어디에-사용하면-좋을까">어디에 사용하면 좋을까?</a></li></ul></li><li><a href="#2-삼항-연산자">2. 삼항 연산자</a><ul><li><a href="#truthy와-falsy를-삼항연산자와-함께-사용하기">truthy와 falsy를 삼항연산자와 함께 사용하기</a></li><li><a href="#삼항-연산자를-중첩해서-사용하는-방법">삼항 연산자를 중첩해서 사용하는 방법</a></li></ul></li><li><a href="#3-단락회로-평가">3. 단락회로 평가</a><ul><li><a href="#의-경우">||의 경우</a></li><li><a href="#의-경우-1">&amp;&amp;의 경우</a></li><li><a href="#단락-회로-평가-이용하기">단락 회로 평가 이용하기</a></li></ul></li><li><a href="#4-조건문-업그레이드">4. 조건문 업그레이드✨</a></li></ul>
+
+          </nav>
+        </aside>
+         <p><img src="https://user-images.githubusercontent.com/110877564/228704872-4eb88205-3c9e-40b5-accf-e788aec9ebf4.png" alt="응용1" /></p>
+
+<p><br /></p>
+
+<h1 id="1-truthy--falsy">1. Truthy &amp; Falsy</h1>
+
+<ul>
+  <li>자바스크립트는 자기만의 기준으로 값을 true나 false로 분류한다.</li>
+  <li>if문이나 for문 같은 제어문, 삼항 조건 연산자의 조건식은 불리언 값으로 표현되어야 한다. 이때 불리언 타입이 아닌 값을 Truthy나 Falsy 값으로 구분하여, Truthy 값은 true로, Falsy 값은 false로 암묵적으로 타입을 바꿔버린다.</li>
+</ul>
+
+<p class="notice--danger"><strong>Truthy 값</strong> <br />
+[], {}, 비어있지 않은 문자열, 숫자(Infinity 포함) 등</p>
+
+<p class="notice--danger"><strong>Falsy 값</strong> <br />
+false, undefined, null, 0, -0, NaN, ‘’</p>
+
+<h2 id="어디에-사용하면-좋을까">어디에 사용하면 좋을까?</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="c1">//에러가 난다</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">person</span>
+
+<span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">getName</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="c1">//error!</span>
+</code></pre></div></div>
+
+<p>위의 코드에서 person은 <code class="language-plaintext highlighter-rouge">undefined</code>로 초기화되어 있다. 따라서 <code class="language-plaintext highlighter-rouge">undefined.name</code>을 리턴할 수 없어 에러가 발생한다. 이를 해결하기 위해 person이 <code class="language-plaintext highlighter-rouge">undefined</code>일 때의 예외 처리를 추가해줄 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">person</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">객체가 아닙니다</span><span class="dl">"</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">person</span><span class="p">.</span><span class="nx">name</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>하지만 person이 <code class="language-plaintext highlighter-rouge">null</code>이라면? 조건을 추가해야 한다. 만약 모든 함수에서 이런 식으로 일일이 예외 처리를 해줘야 한다면 번거로울 것이다. 이럴 때 <code class="language-plaintext highlighter-rouge">falsy</code>를 이용하면 좋다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//!false =&gt; true =&gt; if문 실행</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">객체가 아닙니다</span><span class="dl">"</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">person</span><span class="p">.</span><span class="nx">name</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="2-삼항-연산자">2. 삼항 연산자</h1>
+
+<p>삼항 연산자를 사용하면 간단한 조건문을 짧게 줄일 수 있다!</p>
+
+<p>일반적인 조건문은 이렇게 작성한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">양수</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">음수</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이것을 삼항 연산자로 바꾸려면 다음과 같이 작성하면 된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">조건 ? true일 때 수행할 식: false일 때 수행할 식</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">양수</span><span class="dl">"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">음수</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>삼항 연산자의 결과를 변수에 담을 수도 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">빈 배열</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">안 빈 배열</span><span class="dl">"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="c1">//빈 배열</span>
+</code></pre></div></div>
+
+<h2 id="truthy와-falsy를-삼항연산자와-함께-사용하기">truthy와 falsy를 삼항연산자와 함께 사용하기</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">//빈 배열은 truthy한 값</span>
+
+<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="c1">//true</span>
+</code></pre></div></div>
+
+<h2 id="삼항-연산자를-중첩해서-사용하는-방법">삼항 연산자를 중첩해서 사용하는 방법</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//90점 이상 : A+</span>
+<span class="c1">//50점 이상 : B+</span>
+<span class="c1">//둘 다 아니면 F</span>
+
+<span class="kd">let</span> <span class="nx">score</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">score</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">A+</span><span class="dl">"</span> <span class="p">:</span> <span class="nx">score</span> <span class="o">&gt;=</span> <span class="mi">50</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">B+</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">F</span><span class="dl">"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="c1">//A+</span>
+</code></pre></div></div>
+
+<p>삼항 연산자를 중첩해서 사용할 경우 코드는 짧지만 가독성에 문제가 생길 수 있기 때문에 if문으로 작성하는 것이 더 좋을 수도 있다.</p>
+
+<p><br /></p>
+
+<h1 id="3-단락회로-평가">3. 단락회로 평가</h1>
+
+<p>논리 연산자에서 왼쪽에서 조건을 충족하면 뒤의 값은 안 건드리고 평가를 멈추는 것을 <strong>단락 평가</strong>라고 한다.</p>
+
+<h2 id="의-경우">||의 경우</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">true</span> <span class="o">||</span> <span class="kc">true</span> <span class="c1">//true //왼쪽이 true면 바로 true</span>
+<span class="kc">false</span> <span class="o">||</span> <span class="kc">true</span> <span class="c1">//true //왼쪽이 false면 뒤에도 확인</span>
+<span class="kc">true</span> <span class="o">||</span> <span class="kc">false</span> <span class="c1">//true</span>
+<span class="kc">false</span> <span class="o">||</span> <span class="kc">false</span> <span class="c1">//false</span>
+</code></pre></div></div>
+
+<h2 id="의-경우-1">&amp;&amp;의 경우</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span> <span class="c1">//true //왼쪽이 true이면 뒤에 확인</span>
+<span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span> <span class="c1">//false //왼쪽이 false이면 바로 false</span>
+<span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span> <span class="c1">//false</span>
+<span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span> <span class="c1">//false</span>
+</code></pre></div></div>
+
+<h2 id="단락-회로-평가-이용하기">단락 회로 평가 이용하기</h2>
+
+<p>위에서 만들었던 <code class="language-plaintext highlighter-rouge">getName()</code> 함수를 단락 평가를 이용해 더 간단하게 바꿀 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">person</span> <span class="o">&amp;&amp;</span> <span class="nx">person</span><span class="p">.</span><span class="nx">name</span>
+  <span class="k">return</span> <span class="nx">name</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">객체가 아닙니다</span><span class="dl">"</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">person</span>
+<span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">getName</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="c1">//객체가 아닙니다</span>
+</code></pre></div></div>
+
+<p>person이 <code class="language-plaintext highlighter-rouge">undefined</code>인 경우, 뒤를 보지 않고 바로 person의 값인 <code class="language-plaintext highlighter-rouge">undefiend</code>를 리턴한다. 이 값을 <code class="language-plaintext highlighter-rouge">name</code>에 넣고, <code class="language-plaintext highlighter-rouge">|| 연산자</code>를 사용하면 <code class="language-plaintext highlighter-rouge">name</code>이 <code class="language-plaintext highlighter-rouge">undefined(falsy)</code>이므로, 뒤의 값을 리턴하게 된다.</p>
+
+<p><br /></p>
+
+<h1 id="4-조건문-업그레이드">4. 조건문 업그레이드✨</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//1. includes 활용하기</span>
+<span class="kd">function</span> <span class="nx">isKoreanFood</span><span class="p">(</span><span class="nx">food</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">([</span><span class="dl">"</span><span class="s2">불고기</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">떡볶이</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">비빔밥</span><span class="dl">"</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="nx">food</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">food1</span> <span class="o">=</span> <span class="nx">isKoreanFood</span><span class="p">(</span><span class="dl">"</span><span class="s2">불고기</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">food2</span> <span class="o">=</span> <span class="nx">isKoreanFood</span><span class="p">(</span><span class="dl">"</span><span class="s2">파스타</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">food1</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">food2</span><span class="p">)</span>
+
+<span class="c1">//2. 객체의 괄호 표기법을 활용하기</span>
+<span class="kd">const</span> <span class="nx">meal</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">한식</span><span class="p">:</span> <span class="dl">"</span><span class="s2">불고기</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">중식</span><span class="p">:</span> <span class="dl">"</span><span class="s2">멘보샤</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">일식</span><span class="p">:</span> <span class="dl">"</span><span class="s2">파스타</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">getMeal</span> <span class="o">=</span> <span class="p">(</span><span class="nx">mealType</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">//mealType 키를 가진 값을 가져옴 =&gt; true가 되어 바로 리턴</span>
+  <span class="c1">//만약 없으면 false가 되어 뒤의 문 실행</span>
+  <span class="k">return</span> <span class="nx">meal</span><span class="p">[</span><span class="nx">mealType</span><span class="p">]</span> <span class="o">||</span> <span class="dl">"</span><span class="s2">굶기</span><span class="dl">"</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getMeal</span><span class="p">(</span><span class="dl">"</span><span class="s2">한식</span><span class="dl">"</span><span class="p">))</span> <span class="c1">//불고기</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getMeal</span><span class="p">(</span><span class="dl">"</span><span class="s2">중식</span><span class="dl">"</span><span class="p">))</span> <span class="c1">//멘보샤</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getMeal</span><span class="p">())</span> <span class="c1">//굶기</span>
+</code></pre></div></div>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/lecture/javascript_3/" class="pagination--pager" title="자바스크립트 기초 3
+">Previous</a>
+    
+    
+      <a href="/lecture/javascript_5/" class="pagination--pager" title="자바스크립트 응용 2
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_5/" rel="permalink">자바스크립트 응용 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">비구조화 할당, spread 연산자
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_3/" rel="permalink">자바스크립트 기초 3
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">객체, 배열, 반복문, 배열 내장 함수
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_2/" rel="permalink">자바스크립트 기초 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_1/" rel="permalink">자바스크립트 기초 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">변수와 상수, 자료형과 형 변환, 연산자, 조건문
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'sena-22/sena-22.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -610,4 +610,22 @@ var store = [{
         "tags": ["udemy","javascript"],
         "url": "/lecture/javascript_2/",
         "teaser": null
+      },{
+        "title": "자바스크립트 기초 3 ",
+        "excerpt":"1. 객체 객체는 원시형과 달리 여러가지 데이터를 넣을 수 있는 자료형이다. 객체를 만드는 방법 객체를 만드는 방법에는 크게 두 가지가 있다. let personA = new Object() // Object 생성자를 이용하는 방법 let personB = {} // 객체 리터럴을 이용하는 방법 let personC = { key: \"value\", //프로퍼티(속성) key2: \"value2\", }...","categories": ["lecture"],
+        "tags": ["udemy","javascript"],
+        "url": "/lecture/javascript_3/",
+        "teaser": null
+      },{
+        "title": "자바스크립트 응용 1 ",
+        "excerpt":"1. Truthy &amp; Falsy 자바스크립트는 자기만의 기준으로 값을 true나 false로 분류한다. if문이나 for문 같은 제어문, 삼항 조건 연산자의 조건식은 불리언 값으로 표현되어야 한다. 이때 불리언 타입이 아닌 값을 Truthy나 Falsy 값으로 구분하여, Truthy 값은 true로, Falsy 값은 false로 암묵적으로 타입을 바꿔버린다. Truthy 값 [], {}, 비어있지 않은 문자열, 숫자(Infinity 포함)...","categories": ["lecture"],
+        "tags": ["udemy","javascript"],
+        "url": "/lecture/javascript_4/",
+        "teaser": null
+      },{
+        "title": "자바스크립트 응용 2 ",
+        "excerpt":"1. 비구조화 할당(구조분해할당) 배열의 비구조화 할당 배열의 요소를 하나씩 꺼내서 변수를 선언하는 방법은 이렇다. let arr = [\"one\", \"two\", \"three\"] let one = arr[0] let two = arr[1] let three = arr[2] 이때 비구조화 할당을 사용하면 위의 할당 과정을 한 줄로 줄일 수 있다! let [one, two, three] = arr...","categories": ["lecture"],
+        "tags": ["udemy","javascript"],
+        "url": "/lecture/javascript_5/",
+        "teaser": null
       }]

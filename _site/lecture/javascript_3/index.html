@@ -1,0 +1,1269 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바스크립트 기초 3  - Reyna</title>
+<meta name="description" content="객체, 배열, 반복문, 배열 내장 함수">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="자바스크립트 기초 3">
+<meta property="og:url" content="http://localhost:4000/lecture/javascript_3/">
+
+
+  <meta property="og:description" content="객체, 배열, 반복문, 배열 내장 함수">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-29T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-30T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/lecture/javascript_3/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+           
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#lecture" itemprop="item"><span itemprop="name">Lecture</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">자바스크립트 기초 3 </li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(105)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                           
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (16)</a
+          >
+        </li>
+                 
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (6)</a
+          >
+        </li>
+                     
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                             
+        <li>
+          <a href="/categories/react" class=""
+            >React (1)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                                   
+      </ul>
+      <ul>
+                   
+        <li>
+          <a href="/categories/css" class="">CSS (5)</a>
+        </li>
+                         
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                           
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (6)</a>
+        </li>
+                       
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                                 
+      </ul>
+      <ul>
+             
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (29)</a
+          >
+        </li>
+                               
+      </ul>
+         <ul>
+                                 
+        <li>
+          <a href="/categories/baekjoon" class=""
+            >Baekjoon (5)</a
+          >
+        </li>
+           
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+        <ul>
+                                   
+        <li>
+          <a href="/categories/lecture" class="">Lecture (6)</a>
+        </li>
+         
+      </ul>
+      <ul>
+      <ul>
+               
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                             
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (7)</a
+          >
+        </li>
+                   
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="자바스크립트 기초 3"
+    /> <meta
+      itemprop="description"
+      content="객체, 배열, 반복문, 배열 내장 함수"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-03-29T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-03-30T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>자바스크립트 기초 3</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-03-29T00:00:00+09:00"
+            >2023.03.29</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-03-30"
+            >2023.03.30</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#lecture" class="page__taxonomy-item p-category" rel="tag">lecture</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a><span class="sep">, </span>
+    
+      <a href="/tags/#udemy" class="page__taxonomy-item p-category" rel="tag">udemy</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#1-객체">1. 객체</a><ul><li><a href="#객체를-만드는-방법">객체를 만드는 방법</a></li><li><a href="#객체의-프로퍼티를-꺼내는-방법">객체의 프로퍼티를 꺼내는 방법</a></li><li><a href="#객체에-프로퍼티를-추가--수정--삭제하는-방법">객체에 프로퍼티를 추가 / 수정 / 삭제하는 방법</a></li><li><a href="#객체의-프로퍼티-값으로-함수를-할당하기">객체의 프로퍼티 값으로 함수를 할당하기</a></li><li><a href="#객체에-프로퍼티가-존재하는지-아닌지를-알-수-있는-방법">객체에 프로퍼티가 존재하는지 아닌지를 알 수 있는 방법</a></li></ul></li><li><a href="#2-배열">2. 배열</a><ul><li><a href="#배열-만들기">배열 만들기</a></li><li><a href="#배열에-값을-할당하는-방법">배열에 값을 할당하는 방법</a></li><li><a href="#배열의-특정-요소에-접근하는-방법">배열의 특정 요소에 접근하는 방법</a></li><li><a href="#배열에-요소를-추가하는-방법">배열에 요소를 추가하는 방법</a></li><li><a href="#배열의-길이를-확인하는-방법">배열의 길이를 확인하는 방법</a></li></ul></li><li><a href="#3-반복문">3. 반복문</a><ul><li><a href="#for-문">for 문</a><ul><li><a href="#for문으로-배열을-순회하는-방법">for문으로 배열을 순회하는 방법</a></li><li><a href="#for문으로-객체를-순회하는-방법">for문으로 객체를 순회하는 방법</a></li></ul></li></ul></li><li><a href="#4-배열-내장-함수">4. 배열 내장 함수</a><ul><li><a href="#foreach">forEach()</a></li><li><a href="#map">map()</a></li><li><a href="#includes">includes()</a></li><li><a href="#indexof">indexOf()</a></li><li><a href="#findindex">findIndex()</a></li><li><a href="#find">find()</a></li><li><a href="#filter">filter()</a></li><li><a href="#slice">slice()</a></li><li><a href="#concat">concat()</a></li><li><a href="#sort">sort()</a></li><li><a href="#join">join()</a></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <p><img src="https://user-images.githubusercontent.com/110877564/228702927-3b0e9d12-8ed3-4f64-85f4-2a87c4726aa8.png" alt="표지3" /></p>
+
+<p><br /></p>
+
+<h1 id="1-객체">1. 객체</h1>
+
+<p>객체는 원시형과 달리 여러가지 데이터를 넣을 수 있는 자료형이다.</p>
+
+<h2 id="객체를-만드는-방법">객체를 만드는 방법</h2>
+
+<p>객체를 만드는 방법에는 크게 두 가지가 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">personA</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">()</span> <span class="c1">// Object 생성자를 이용하는 방법</span>
+<span class="kd">let</span> <span class="nx">personB</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">// 객체 리터럴을 이용하는 방법</span>
+
+<span class="kd">let</span> <span class="nx">personC</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">,</span> <span class="c1">//프로퍼티(속성)</span>
+  <span class="na">key2</span><span class="p">:</span> <span class="dl">"</span><span class="s2">value2</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">personC</span><span class="p">)</span> <span class="c1">//{key: 'value', key2: 'value2'}</span>
+</code></pre></div></div>
+
+<p>프로퍼티 키는 반드시 문자열이어야 한다. 반면 프로퍼티 값에는 어떤 자료형이 와도 무방하다.</p>
+
+<h2 id="객체의-프로퍼티를-꺼내는-방법">객체의 프로퍼티를 꺼내는 방법</h2>
+
+<p>객체의 프로퍼티에 접근하는 방법에는 점 표기법과 대괄호 표기법이 있다.</p>
+
+<p><mark style="background-color: #ffdce0">점 표기법</mark>은 <code class="language-plaintext highlighter-rouge">객체이름.프로퍼티 키</code>로 사용하며 해당하는 프로퍼티 값을 얻을 수 있다.
+<mark style="background-color: #ffdce0">대괄호 표기법</mark>은 <code class="language-plaintext highlighter-rouge">객체이름["프로퍼티 키"]</code>로 표기하며, 프로퍼티 키를 문자열 형태로 넣어주어야 한다. 만약 문자열로 넣지 않으면 프로퍼티 키를 변수로 인식하게 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="c1">//jack(점 표기법)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">[</span><span class="dl">"</span><span class="s2">age</span><span class="dl">"</span><span class="p">])</span> <span class="c1">//20(대괄호 표기법)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">key</span><span class="p">)</span> <span class="c1">//없는 프로퍼티에 접근하면 undefined가 출력된다.</span>
+</code></pre></div></div>
+
+<p>대괄호 표기법은 프로퍼티 키가 동적으로 변하여 변수에 넣는 경우 유용하게 사용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">getPropertyValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">person</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">))</span> <span class="c1">//jack</span>
+</code></pre></div></div>
+
+<h2 id="객체에-프로퍼티를-추가--수정--삭제하는-방법">객체에 프로퍼티를 추가 / 수정 / 삭제하는 방법</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="cm">/* 프로퍼티 추가 */</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span> <span class="c1">//프로퍼티 추가(점 표기법)</span>
+<span class="nx">person</span><span class="p">[</span><span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">male</span><span class="dl">"</span> <span class="c1">//프로퍼티 추가(대괄호 표기법)</span>
+
+<span class="cm">/* 프로퍼티 수정 */</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">jack2</span><span class="dl">"</span> <span class="c1">//추가와 똑같은 방식을 사용하면 된다.</span>
+<span class="nx">person</span><span class="p">[</span><span class="dl">"</span><span class="s2">age</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">28</span>
+
+<span class="cm">/* 프로퍼티 삭제 */</span>
+<span class="k">delete</span> <span class="nx">person</span><span class="p">.</span><span class="nx">age</span>
+<span class="c1">//delete person['age'] //대괄호 표기법을 사용해도 괜찮다.</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">gender</span> <span class="o">=</span> <span class="kc">null</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="c1">//{name: "jack2", location: "korea", gender: null}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">delete</code>를 사용하는 방법은 객체와 프로퍼티 간의 연결을 끊을 뿐 메모리에서 삭제되는 것은 아니다. 따라서 <code class="language-plaintext highlighter-rouge">null</code>을 할당하는 방법이 더 좋다.</p>
+
+<p>🧐 프로퍼티를 추가하고 수정할 때, 원본 객체를 <code class="language-plaintext highlighter-rouge">const</code>로 선언해도 에러가 나지 않는다. 객체 자체를 수정하는 것이 아니기 때문이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+<span class="p">}</span> <span class="c1">// Assignment to constant variable.</span>
+</code></pre></div></div>
+
+<p>⬆ 위의 경우처럼 객체 자체를 수정하려고 하면 에러가 발생한다.</p>
+
+<h2 id="객체의-프로퍼티-값으로-함수를-할당하기">객체의 프로퍼티 값으로 함수를 할당하기</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span> <span class="c1">//함수가 아닌 프로퍼티를 멤버라고 한다.</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="na">say</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello, My name is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span> <span class="c1">//여기서 this는 자기 자신(person)객체를 말한다</span>
+  <span class="p">},</span> <span class="c1">//함수인 프로퍼티를 메서드라고 한다.</span>
+<span class="p">}</span>
+
+<span class="nx">person</span><span class="p">.</span><span class="nx">say</span><span class="p">()</span> <span class="c1">//Hello, My name is jack</span>
+</code></pre></div></div>
+
+<h2 id="객체에-프로퍼티가-존재하는지-아닌지를-알-수-있는-방법">객체에 프로퍼티가 존재하는지 아닌지를 알 수 있는 방법</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="na">say</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hello, My name is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`name: </span><span class="p">${</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span> <span class="k">in</span> <span class="nx">person</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span> <span class="c1">//name: true  //person에 name이라는 키를 가진 프로퍼티가 있는지?</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`gender: </span><span class="p">${</span><span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span> <span class="k">in</span> <span class="nx">person</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span> <span class="c1">//gender: false</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="2-배열">2. 배열</h1>
+
+<p>배열은 순서가 있는 자료들을 담을 때 유용하게 사용할 수 있는 자료형이다.</p>
+
+<h2 id="배열-만들기">배열 만들기</h2>
+
+<p>배열도 객체와 마찬가지로 생성자를 이용하는 방법과 리터럴을 사용하는 두 가지 방법이 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//1. 생성자를 이용하는 방법</span>
+<span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">()</span>
+<span class="c1">//2. 배열 리터럴([])을 사용하는 방법</span>
+<span class="kd">const</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2</span><span class="p">)</span> <span class="c1">//[]</span>
+</code></pre></div></div>
+
+<h2 id="배열에-값을-할당하는-방법">배열에 값을 할당하는 방법</h2>
+
+<p>배열은 쉼표를 사용하여 값들을 넣어주면 된다. 이때 아무 타입이나 넣을 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="c1">//[1, 2, 3, 4]</span>
+</code></pre></div></div>
+
+<h2 id="배열의-특정-요소에-접근하는-방법">배열의 특정 요소에 접근하는 방법</h2>
+
+<p>배열은 키 대신 배열의 순서(인덱스)를 이용하여 접근할 수 있다. 인덱스는 0부터 시작한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">//1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">//2</span>
+</code></pre></div></div>
+
+<h2 id="배열에-요소를-추가하는-방법">배열에 요소를 추가하는 방법</h2>
+
+<p>배열에 요소를 추가하는 방법은 여러가지가 있는데 그 중에 <code class="language-plaintext highlighter-rouge">push()</code>는 배열의 가장 마지막에 요소를 추가해주는 메서드이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="c1">//[1, 2, 3, 4, 5, 6]</span>
+</code></pre></div></div>
+
+<h2 id="배열의-길이를-확인하는-방법">배열의 길이를 확인하는 방법</h2>
+
+<p>배열의 길이는 <code class="language-plaintext highlighter-rouge">length</code> 프로퍼티를 이용하여 확인 가능하다</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="c1">//6</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="3-반복문">3. 반복문</h1>
+
+<ul>
+  <li>반복문은 어떤 코드를 반복해서 사용할 때 <strong>중복되는 코드를 줄이기 위해</strong> 사용할 수 있다.</li>
+</ul>
+
+<h2 id="for-문">for 문</h2>
+
+<ul>
+  <li>for문은 중괄호 안에 초기식, 조건식, 증감문을 넣어 반복할 횟수를 정하고, 중괄호 안에 반복해서 수행할 명령을 입력하면 된다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="nx">초기식</span><span class="p">;</span> <span class="nx">조건식</span><span class="p">;</span> <span class="nx">증감문</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//반복 수행할 명령</span>
+<span class="p">}</span>
+
+<span class="c1">//example</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">)</span> <span class="c1">//jack(100번 반복)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="for문으로-배열을-순회하는-방법">for문으로 배열을 순회하는 방법</h3>
+
+<p>반복문은 배열을 순회할 때 효과적으로 사용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//인덱스 순서대로 순회하는 방법</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]])</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="for문으로-객체를-순회하는-방법">for문으로 객체를 순회하는 방법</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Object.keys()</code>를 사용하면 객체의 키를 배열로 반환받을 수 있다. 이 배열을 순회하면 키를 순회할 수 있다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="na">tall</span><span class="p">:</span> <span class="mi">170</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">personKeys</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="c1">//프로퍼티 키를 배열로 반환해준다.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">personKeys</span><span class="p">)</span> <span class="c1">//  ["name", "age", "tall"]</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">personKeys</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([</span><span class="nx">personKeys</span><span class="p">[</span><span class="nx">i</span><span class="p">]])</span> <span class="c1">//["name"] / ["age"] /["tall"]</span>
+
+  <span class="c1">//i번째의 키</span>
+  <span class="kd">const</span> <span class="nx">curKey</span> <span class="o">=</span> <span class="nx">personKeys</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+  <span class="c1">//i번째의 값</span>
+  <span class="kd">const</span> <span class="nx">curValue</span> <span class="o">=</span> <span class="nx">person</span><span class="p">[</span><span class="nx">curKey</span><span class="p">]</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">curKey</span><span class="p">}</span><span class="s2"> : </span><span class="p">${</span><span class="nx">curValue</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span> <span class="c1">//name : jack / age : 20  / tall : 170</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>만약 프로퍼티 값만 순회하고 싶다면 <code class="language-plaintext highlighter-rouge">Object.values()</code>를 사용하면 된다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">personValues</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="c1">//프로퍼티 값을 배열로 반환해준다.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">personValues</span><span class="p">)</span> <span class="c1">// ["jack", 20, 170]</span>
+</code></pre></div></div>
+
+<p>이렇게 반환받은 배열을 <code class="language-plaintext highlighter-rouge">for문</code>을 이용하여 순회하면 된다.</p>
+
+<p><br /></p>
+
+<h1 id="4-배열-내장-함수">4. 배열 내장 함수</h1>
+
+<ul>
+  <li>배열 내장 함수는 배열이 자체적으로 가지고 있는 함수를 말하는데, 이것들을 잘 활용하면 여러 기능을 사용할 수 있다.</li>
+</ul>
+
+<h2 id="foreach">forEach()</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">))</span> <span class="c1">//1 / 2 / 3 / 4</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">//파라미터로 전달받은 배열의 요소를 여기서 조작할 수 있다.</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">forEach()</code>는 배열의 요소를 하나씩 내부의 콜백함수에 파라미터로 전달한다. 전달된 파라미터에 원하는 작업을 해주면 된다.</p>
+
+<h2 id="map">map()</h2>
+
+<p>배열의 요소를 하나씩 조작한 결과를 배열로 리턴 받고 싶을 때에는 <code class="language-plaintext highlighter-rouge">map()</code>을 사용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="kd">const</span> <span class="nx">newArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">el</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1">//배열의 요소를 하나씩 꺼내어 2를 곱한 값을 배열에 넣고 리턴</span>
+<span class="p">})</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newArr</span><span class="p">)</span> <span class="c1">//[2, 4, 6, 8]</span>
+</code></pre></div></div>
+
+<p>만약 리턴 문을 사용하지 않은 경우 중괄호가 아니라 소괄호를 사용한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="kd">const</span> <span class="nx">newArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">el</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newArr</span><span class="p">)</span> <span class="c1">//[2, 4, 6, 8]</span>
+</code></pre></div></div>
+
+<h2 id="includes">includes()</h2>
+
+<p>배열 안에 특정 값이 있는지 없는지 확인하려면 <code class="language-plaintext highlighter-rouge">includes</code>를 사용하면 된다. <code class="language-plaintext highlighter-rouge">includes</code>는 타입까지 비교한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="kd">let</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="kd">let</span> <span class="nx">number2</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">3</span><span class="dl">"</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">number</span><span class="p">))</span> <span class="c1">//true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">number2</span><span class="p">))</span> <span class="c1">//false 타입이 다르기 때문에 틀리다!</span>
+</code></pre></div></div>
+
+<h2 id="indexof">indexOf()</h2>
+
+<p>배열에서 찾는 값이 몇 번째 인덱스에 있는지 확인하고 싶을 때는 <code class="language-plaintext highlighter-rouge">indexOf()</code>를 사용한다. 만약 찾는 값이 없으면 <code class="language-plaintext highlighter-rouge">-1</code>을 리턴한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="kd">let</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="kd">let</span> <span class="nx">number2</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">3</span><span class="dl">"</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">number</span><span class="p">))</span> <span class="c1">//2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">number2</span><span class="p">))</span> <span class="c1">//-1</span>
+</code></pre></div></div>
+
+<p>🤔 배열에 찾는 값이 여러 개 있을 때에는 어떤 인덱스가 리턴될까?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="kd">let</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">number</span><span class="p">))</span> <span class="c1">//1</span>
+</code></pre></div></div>
+
+<p>⬆️ 찾는 값이 여러 개인 경우 첫 번째로 나오는 값의 인덱스가 리턴된다.</p>
+
+<h2 id="findindex">findIndex()</h2>
+
+<p>객체 배열에서 원하는 속성을 가진 프로퍼티를 찾고 싶을 땐 <code class="language-plaintext highlighter-rouge">findIndex()</code>를 사용한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">el</span><span class="p">.</span><span class="nx">color</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">))</span> <span class="c1">//2</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">findIndex()</code>는 콜백함수에 요소를 하나씩 전달해서 <code class="language-plaintext highlighter-rouge">true</code>를 반환하는 첫 번째 요소를 리턴한다.</p>
+
+<p>위에서 <code class="language-plaintext highlighter-rouge">el</code>에는 객체가 하나씩 콜백함수의 파라미터로 전달된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arr</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">el:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">el</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p align="center">
+<img width="283" alt="스크린샷 2023-03-30 오전 9 19 52" src="https://user-images.githubusercontent.com/110877564/228696605-a19adbb3-b8b5-4ebe-bfd4-95d617277796.png" />
+</p>
+
+<h2 id="find">find()</h2>
+
+<p>배열의 인덱스가 아니라 요소에 직접 접근하고 싶을 때에는 <code class="language-plaintext highlighter-rouge">find()</code>를 사용한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">el</span><span class="p">.</span><span class="nx">color</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="c1">//{color: "blue"}</span>
+</code></pre></div></div>
+
+<h2 id="filter">filter()</h2>
+
+<p><code class="language-plaintext highlighter-rouge">filter()</code>는 전달한 콜백함수가 true를 반환하는 모든 요소를 배열로 반환한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="na">num</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">num</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">num</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">num</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">num</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="c1">// 위 배열에서 color가 blue인 요소들만 가지고 오고 싶을 때에는 어떻게 해야할까?</span>
+
+<span class="kd">let</span> <span class="nx">blueColor</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">el</span><span class="p">.</span><span class="nx">color</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">blueColor</span><span class="p">)</span> <span class="c1">//⬇</span>
+</code></pre></div></div>
+
+<p align="center">
+<img width="283" alt="스크린샷 2023-03-30 오전 9 28 19" src="https://user-images.githubusercontent.com/110877564/228697429-dd85c51a-ae81-408b-84b2-0c23e92161d2.png" />
+</p>
+
+<h2 id="slice">slice()</h2>
+
+<p>배열을 인덱스를 기준으로 자르고 싶을 때에는 <code class="language-plaintext highlighter-rouge">slice()</code>를 사용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1">//그대로 자르기 - 배열을 그대로 복사하고 싶을 때 사용하면 좋다!</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">())</span> <span class="c1">//[1, 2, 3, 4, 5]</span>
+
+<span class="c1">//시작 지점만 정하기</span>
+<span class="c1">//1번째 인덱스에서 마지막 인덱스까지 모두 자른다</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1">//[2, 3, 4, 5]</span>
+
+<span class="cm">/*
+  시작 지점과 마지막 지점 모두 설정
+  두 번째 인자로 전달한 값-1까지 자른다
+  이 경우 arr[0]부터 arr[1]까지 자른 것!
+*/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1">//[1, 2]</span>
+</code></pre></div></div>
+
+<h2 id="concat">concat()</h2>
+
+<p>배열을 붙이고 싶을 때에는 <code class="language-plaintext highlighter-rouge">concat()</code>을 사용한다. 첫 번째 배열의 뒤에 두 번째 배열을 붙인 후 하나의 배열로 돌려준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">))</span> <span class="c1">// [1, 2, 3, 4, 5]</span>
+</code></pre></div></div>
+
+<h2 id="sort">sort()</h2>
+
+<p>배열을 정렬할 때에는 <code class="language-plaintext highlighter-rouge">sort()</code>를 사용한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">chars</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">나</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">다</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">가</span><span class="dl">"</span><span class="p">]</span>
+
+<span class="nx">chars</span><span class="p">.</span><span class="nx">sort</span><span class="p">()</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chars</span><span class="p">)</span> <span class="c1">// ["가", "나", "다"]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">sort()</code>의 경우 새로운 배열을 반환하는 것이 아니라 원본 배열을 바꿔서 반환한다.</p>
+
+<p>다음으로 숫자도 정렬해보자.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+
+<span class="nx">nums</span><span class="p">.</span><span class="nx">sort</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span> <span class="c1">//[0, 1, 2, 20, 3, 7]</span>
+</code></pre></div></div>
+
+<p>숫자의 경우 기대하는 것과 다르게 반환된다. <code class="language-plaintext highlighter-rouge">sort()</code>가 문자열을 기준으로 정렬하기 때문에, 사전 순으로 0,1,2,3..이런 식으로 정렬되기 때문이다.</p>
+
+<p>숫자를 기준으로 정렬하고 싶을 때에는 다음과 같이 정렬한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">nums</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span> <span class="c1">//(6) [0, 1, 2, 3, 7, 20]</span>
+</code></pre></div></div>
+
+<p>위의 정렬이 어떻게 동작하는지 자세히 살펴보자.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">compare</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//크다</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="c1">//a가 뒤로 간다</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//작다</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">//a가 앞으로 간다</span>
+  <span class="p">}</span>
+  <span class="c1">//같다</span>
+  <span class="k">return</span> <span class="mi">0</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nums</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">compare</span><span class="p">))</span> <span class="c1">// [0, 1, 2, 3, 7, 20]</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">sort((a, b) =&gt; a - b)</code> 안은 <code class="language-plaintext highlighter-rouge">compare()</code> 처럼 동작한다.
+만약 내림차순으로 정렬하고 싶을 때에는 <code class="language-plaintext highlighter-rouge">sort((a,b)=&gt;b-a)</code>로 작성해주면 된다.</p>
+
+<h2 id="join">join()</h2>
+
+<p>배열 안의 요소들을 하나의 문자열로 만들고 싶을 때에는 <code class="language-plaintext highlighter-rouge">join()</code>을 사용한다.
+이때 <code class="language-plaintext highlighter-rouge">join()</code> 안에 넣는 값이 구분자가 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">h</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">e</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">l</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">l</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">o</span><span class="dl">"</span><span class="p">]</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">())</span> <span class="c1">// h,e,l,l,o(디폴트)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">))</span> <span class="c1">// hello</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">))</span> <span class="c1">// h e l l o</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">"</span><span class="s2">🥳</span><span class="dl">"</span><span class="p">))</span> <span class="c1">// h🥳e🥳l🥳l🥳o</span>
+</code></pre></div></div>
+
+<p>이외에도 많은 배열 내장 함수가 있다.
+전부 공부하기보다 필요할 때 찾아가면서 하면 좋을 것 같다.</p>
+
+<p class="notice--primary">참고 <br />
+<a href="https://www.udemy.com/course/winterlood-react-basic/">한입 크기로 잘라 먹는 리액트</a> <br />
+<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array">Array-Javascript MDN</a> <br />
+<a href="https://ko.javascript.info/array-methods">배열과 메서드</a></p>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/lecture/javascript_2/" class="pagination--pager" title="자바스크립트 기초 2
+">Previous</a>
+    
+    
+      <a href="/lecture/javascript_4/" class="pagination--pager" title="자바스크립트 응용 1
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_5/" rel="permalink">자바스크립트 응용 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">비구조화 할당, spread 연산자
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_4/" rel="permalink">자바스크립트 응용 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Truthy &amp; Falsy, 삼항 연산자, 단락회로 평가, 조건문 업그레이드
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_2/" rel="permalink">자바스크립트 기초 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_1/" rel="permalink">자바스크립트 기초 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">변수와 상수, 자료형과 형 변환, 연산자, 조건문
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'sena-22/sena-22.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
