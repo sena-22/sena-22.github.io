@@ -1,5 +1,5 @@
 ---
-title: "자바스크립트 응용 2 "
+title: "[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 2 "
 excerpt: "비구조화 할당, spread 연산자"
 
 categories:
@@ -46,7 +46,7 @@ let [one, two, three] = ["one", "two", "three"]
 console.log(one, two, three) //one two three
 ```
 
-🤔 배열의 인덱스를 넘어가는 수를 할당받으려고 하면 undefined가 나온다.
+🤔 배열의 인덱스를 넘어가는 수를 할당받으려고 하면 `undefined`가 나온다.
 
 ```javascript
 let [one, two, three, four] = ["one", "two", "three"]
@@ -185,3 +185,7 @@ console.log(allCookies) //["촉촉한쿠키", "안촉촉한쿠키", "함정쿠�
 ```
 
 두 배열을 그냥 합치기만 하는 `concat()` 메서드와 달리 중간에 다른 값을 넣어줄 수도 있다.
+
+참고 <br/>
+[한입 크기로 잘라 먹는 리액트](https://www.udemy.com/course/winterlood-react-basic/) <br/>
+{: .notice--primary}

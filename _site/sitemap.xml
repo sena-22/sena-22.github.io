@@ -421,6 +421,10 @@
 <lastmod>2023-03-30T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/lecture/javascript_6/</loc>
+<lastmod>2023-03-31T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/algorithm</loc>
 </url>
 <url>
@@ -533,5 +537,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page21/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page22/</loc>
 </url>
 </urlset>

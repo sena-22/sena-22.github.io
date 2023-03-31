@@ -1,5 +1,5 @@
 ---
-title: "자바스크립트 기초 2 "
+title: "[한입 크기로 잘라 먹는 리액트] 자바스크립트 기초 2 "
 excerpt: "함수"
 
 categories:

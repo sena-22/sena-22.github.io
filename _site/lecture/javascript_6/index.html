@@ -1,0 +1,1033 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 3  - Reyna</title>
+<meta name="description" content="동기 &amp; 비동기, Promise &amp; 콜백 지옥, async &amp; await, API 호출하기">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 3">
+<meta property="og:url" content="http://localhost:4000/lecture/javascript_6/">
+
+
+  <meta property="og:description" content="동기 &amp; 비동기, Promise &amp; 콜백 지옥, async &amp; await, API 호출하기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-31T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-31T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/lecture/javascript_6/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+           
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#lecture" itemprop="item"><span itemprop="name">Lecture</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 3 </li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(106)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                           
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (16)</a
+          >
+        </li>
+                 
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (6)</a
+          >
+        </li>
+                     
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                             
+        <li>
+          <a href="/categories/react" class=""
+            >React (1)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                                   
+      </ul>
+      <ul>
+                   
+        <li>
+          <a href="/categories/css" class="">CSS (5)</a>
+        </li>
+                         
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                           
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (6)</a>
+        </li>
+                       
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                                 
+      </ul>
+      <ul>
+             
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (29)</a
+          >
+        </li>
+                               
+      </ul>
+         <ul>
+                                 
+        <li>
+          <a href="/categories/baekjoon" class=""
+            >Baekjoon (5)</a
+          >
+        </li>
+           
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+        <ul>
+                                   
+        <li>
+          <a href="/categories/lecture" class="">Lecture (7)</a>
+        </li>
+         
+      </ul>
+      <ul>
+      <ul>
+               
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                             
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (7)</a
+          >
+        </li>
+                   
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 3"
+    /> <meta
+      itemprop="description"
+      content="동기 &amp; 비동기, Promise &amp; 콜백 지옥, async &amp; await, API 호출하기"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-03-31T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-03-31T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 3</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-03-31T00:00:00+09:00"
+            >2023.03.31</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-03-31"
+            >2023.03.31</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#lecture" class="page__taxonomy-item p-category" rel="tag">lecture</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javascript</a><span class="sep">, </span>
+    
+      <a href="/tags/#udemy" class="page__taxonomy-item p-category" rel="tag">udemy</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#1-동기--비동기">1. 동기 &amp; 비동기</a></li><li><a href="#2-promise--콜백-지옥">2. Promise &amp; 콜백 지옥</a><ul><li><a href="#then">then()</a></li><li><a href="#catch">catch()</a></li></ul></li><li><a href="#3-async--await">3. async &amp; await</a><ul><li><a href="#async">async</a></li><li><a href="#await">await</a></li></ul></li><li><a href="#4-api-호출하기">4. API 호출하기</a></li></ul>
+
+          </nav>
+        </aside>
+         <p><img src="https://user-images.githubusercontent.com/110877564/228953631-192e638f-06d5-4490-9a24-82c419602d2f.png" alt="응용3" /></p>
+
+<p><br /></p>
+
+<h1 id="1-동기--비동기">1. 동기 &amp; 비동기</h1>
+
+<p><mark>동기적 방식</mark>은 앞의 작업이 끝나기를 기다렸다가, 뒤의 작업을 이어서 하는 방식을 말한다. 그리고 작업이 스레드에서 수행되고 있을 때, 다른 작업을 동시에 할 수 없는 방식을 블로킹 방식이라고 한다.</p>
+
+<p><img width="1042" alt="스크린샷 2023-03-31 오전 5 15 44" src="https://user-images.githubusercontent.com/110877564/228954069-e52c3aff-ab55-4b3b-8ff2-b2e4812b2325.png" /></p>
+
+<p>동기적 방식의 단점은 앞의 작업이 오래 걸릴 때, 그 다음 작업은 시작도 못하기 때문에 하염없이 기다려야 한다는 것이다. 만약 카페에 갔는데 앞의 사람이 주문하고 음료를 제조해서 받을 때까지 다음 사람은 주문조차 불가능한 상황을 생각해보면 쉽게 이해가 갈 것이다.</p>
+
+<p><img width="1042" alt="스크린샷 2023-03-31 오전 5 23 37" src="https://user-images.githubusercontent.com/110877564/228955695-463a17a9-6d81-4679-ba8f-cbb8cd1149f1.png" /></p>
+
+<p>이런 문제를 해결하기 위해 자바스크립트는 <mark>비동기</mark>로 동작한다.</p>
+
+<p><img width="1042" alt="스크린샷 2023-03-31 오전 5 26 04" src="https://user-images.githubusercontent.com/110877564/228956202-8ea7e7b5-0067-4d4a-a368-6a8ebbced681.png" /></p>
+
+<p>비동기는 여러 개의 작업을 동시에 실행시켜, 먼저 끝나는 순서대로 종료하는 방식이다.</p>
+
+<p>비동기 작업은 작업 속도를 증가시키지만, 순서를 보장하지 않기 때문에 만약 앞의 일이 끝난 결과를 알아야 실행할 수 있는 일이 있다면 문제가 생길 수 있다. 이런 문제를 해결하기 위해 콜백 함수를 이용할 수 있다. 앞의 작업의 콜백 함수로 다음 작업을 넣으면, 필요한 부분을 동기적으로 처리할 수 있다.</p>
+
+<p><img width="788" alt="스크린샷 2023-03-31 오후 12 34 29" src="https://user-images.githubusercontent.com/110877564/229016405-8fee6c6a-9d32-4023-b91b-6442262ef986.png" /></p>
+
+<p>위에서 <code class="language-plaintext highlighter-rouge">taskA()</code> 함수가 끝나는 걸 기다리지 않고 다음 콘솔이 출력된다. 비동기적으로 작동하고 있다는 것을 알 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">taskA</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">ab</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+    <span class="nx">ab</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+  <span class="p">},</span> <span class="mi">3000</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">taskB</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">ab</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="nx">ab</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">//1초만 기다려서 먼저 출력</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">taskC</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">ab</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="nx">ab</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">taskA</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">A TASK RESULT:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">코드 끝</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nx">taskB</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">B TASK RESULT:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nx">taskC</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">C TASK RESULT:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p><img width="371" alt="스크린샷 2023-03-31 오후 12 54 24" src="https://user-images.githubusercontent.com/110877564/229018764-731854a6-1d65-4a06-8d1b-4bc993581918.png" /></p>
+
+<p>위의 코드는 setTimeout()이라는 함수 때문에 작업 시간이 각각 다르고, 비동기로 처리되어 먼저 끝나는 작업부터 출력된다. 만약 앞의 작업의 결과가 뒤에 작업할 때 필요한 경우, 다음과 같이 처리한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">taskA</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="nx">a_res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">A TASK RESULT:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">a_res</span><span class="p">)</span>
+  <span class="nx">taskB</span><span class="p">(</span><span class="nx">a_res</span><span class="p">,</span> <span class="p">(</span><span class="nx">b_res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">B TASK RESULT:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">b_res</span><span class="p">)</span>
+    <span class="nx">taskC</span><span class="p">(</span><span class="nx">b_res</span><span class="p">,</span> <span class="p">(</span><span class="nx">c_res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">C TASK RESULT:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">c_res</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p><img width="260" alt="스크린샷 2023-03-31 오후 1 48 18" src="https://user-images.githubusercontent.com/110877564/229025346-3d03c880-4fbd-4e26-8a99-6a6ce8e25116.png" /></p>
+
+<p>콜백 함수의 단점은 이런 작업이 많으면 많을수록 코드의 가독성이 어려워지고, 더 심각한 것은 유지보수가 힘들다는 점일 것이다.</p>
+
+<p><img width="958" alt="스크린샷 2023-03-31 오후 1 42 15" src="https://user-images.githubusercontent.com/110877564/229025554-b6f04756-fb90-4b0c-a9c1-1e8bea6b6f6f.png" /></p>
+
+<p>위와 같이 콜백이 계속 깊어지는 것을 콜백 지옥, 또는 콜백 헬이라고 부른다.</p>
+
+<p>이런 현상을 해결하기 위한 도구가 <code class="language-plaintext highlighter-rouge">Promise</code>이다.</p>
+
+<p><br /></p>
+
+<h1 id="2-promise--콜백-지옥">2. Promise &amp; 콜백 지옥</h1>
+
+<p>프로미스는 비동기 작업을 쉽게 할 수 있게 해주는 기능이다.
+new 키워드를 사용하여 만들 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// 구현할 내용</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>이 프로미스를 콘솔에 찍어보면 <code class="language-plaintext highlighter-rouge">Promise {&lt;pending&gt;}</code>이라고 나온다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>console.log(promise) //Promise {&lt;pending&gt;}
+</code></pre></div></div>
+
+<p>여기서 <code class="language-plaintext highlighter-rouge">pending</code>은 promise의 상태를 나타낸다. 상태는 총 3가지가 있다.
+<code class="language-plaintext highlighter-rouge">pending</code>는 대기 상태를 나타내거나 혹은 시작도 못하면 이렇게 나온다.
+<code class="language-plaintext highlighter-rouge">fulfilled</code>는 작업이 성공했을 때, <code class="language-plaintext highlighter-rouge">rejected</code>는 서버가 응답하지 않거나 시간이 초과하는 등 작업이 실패했을 때 나타나게 된다.</p>
+
+<p><img width="949" alt="스크린샷 2023-03-31 오후 1 56 10" src="https://user-images.githubusercontent.com/110877564/229036631-bb2709f3-f793-4053-878e-59e1aba63643.png" /></p>
+
+<p>프로미스는 비동기 처리를 진행할 콜백 함수(executor함수라고도 한다!)를 전달받는데, 이 콜백 함수는 또 <code class="language-plaintext highlighter-rouge">resolve</code>와 <code class="language-plaintext highlighter-rouge">reject</code>라는 함수를 인수로 전달받는다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="cm">/* 비동기 처리 성공 */</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">결과</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="cm">/* 비동기 처리 실패 */</span>
+    <span class="nx">reject</span><span class="p">(</span><span class="dl">'</span><span class="s1">실패 이유</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>이때 비동기 처리가 성공하면 <code class="language-plaintext highlighter-rouge">resolve 함수</code>를 호출해서 프로미스를 <code class="language-plaintext highlighter-rouge">fulfilled</code> 상태로 변경하고, 실패하면 <code class="language-plaintext highlighter-rouge">reject 함수</code>를 호출하고 프로미스를 <code class="language-plaintext highlighter-rouge">rejected</code> 상태로 변경한다.</p>
+
+<p>이렇게 프로미스의 상태가 한번 변화하고 나면, 이 결과를 후속 메서드인 then이나 catch를 이용하여 무언가를 할 수 있다.</p>
+
+<h2 id="then">then()</h2>
+
+<p>then은 두 개의 콜백 함수를 인수로 전달받는다. 하나는 프로미스가 성공했을 때 호출되고, 다른 하나는 프로미스가 실패했을 때 호출된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//fullfilled</span>
+<span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">fulfilled</span><span class="dl">"</span><span class="p">)).</span><span class="nx">then</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span> <span class="c1">//fulfilled</span>
+  <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1">//rejected</span>
+<span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">_</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">rejected</span><span class="dl">"</span><span class="p">))).</span><span class="nx">then</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span>
+  <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="c1">//Error: rejected</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">then()</code> 메서드는 언제나 프로미스를 반환한다. 따라서 다시 <code class="language-plaintext highlighter-rouge">then()</code>을 이어 쓸 수 있다.(이렇게 이어서 쓰는 것을 체이닝이라고 한다.)</p>
+
+<h2 id="catch">catch()</h2>
+
+<p><code class="language-plaintext highlighter-rouge">catch</code>는 하나의 콜백 함수를 인수로 받으며, 이 콜백 함수는 프로미스가 <code class="language-plaintext highlighter-rouge">rejected</code>상태일 때만 호출된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">_</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">rejected</span><span class="dl">"</span><span class="p">))).</span><span class="k">catch</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="c1">//Error: rejected</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>에러 처리를 사용할 때에는 <code class="language-plaintext highlighter-rouge">then()</code>의 두 번째 콜백 함수로 전달하기보다 catch를 사용하는 것이 가독성이 더 좋다.</p>
+
+<p><br /></p>
+
+<h1 id="3-async--await">3. async &amp; await</h1>
+
+<h2 id="async">async</h2>
+
+<p><code class="language-plaintext highlighter-rouge">async</code>는 asynchronous(비동기)라는 뜻 그대로 비동기를 위한 키워드이다.</p>
+
+<p>함수 앞에 <code class="language-plaintext highlighter-rouge">async</code>를 붙이면 그 함수는 <code class="language-plaintext highlighter-rouge">async 함수</code>가 되며, 프로미스를 반환한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">helloAsync</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello async!!</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">result:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">helloAsync</span><span class="p">())</span> <span class="c1">//result: Promise {&lt;pending&gt;}</span>
+</code></pre></div></div>
+
+<p>참고로 화살표 함수에서는 이렇게 쓴다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">helloAsync</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello arrow async!!</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">async 함수</code>는 프로미스를 반환하기 때문에 <code class="language-plaintext highlighter-rouge">then()</code>과 같은 후속 메서드를 사용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">helloAsync</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">n</span>
+<span class="nx">helloAsync</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">))</span> <span class="c1">//hello</span>
+</code></pre></div></div>
+
+<h2 id="await">await</h2>
+
+<p><code class="language-plaintext highlighter-rouge">await</code> 키워드는 프로미스가 처리될 때까지 기다렸다가, <code class="language-plaintext highlighter-rouge">resolve</code>한 처리 결과를 반환한다. 이걸 이용하면 처리 순서를 제어할 수 있다.</p>
+
+<p>✔️ await을 사용할 때 주의할 점은, 반드시 <code class="language-plaintext highlighter-rouge">async 함수</code> 안에서 사용해야 한다는 것이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">helloAsync</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">a_res</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">n</span><span class="p">),</span> <span class="mi">3000</span><span class="p">)</span>
+  <span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">b_res</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">a_res</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2000</span><span class="p">)</span>
+  <span class="p">)</span> <span class="c1">//앞의 프로미스가 끝나면 실행된다.</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">A_RESULT:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">a_res</span><span class="p">)</span> <span class="c1">//A_RESULT: 1</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">B_RESULT:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">b_res</span><span class="p">)</span> <span class="c1">//B_RESULT: 1</span>
+<span class="p">}</span>
+<span class="nx">helloAsync</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="4-api-호출하기">4. API 호출하기</h1>
+
+<p>api는 아직도 정확하게 이해하고 있지 못하다는 생각이 드는데, 일단은 메뉴판 정도로 생각하고 있다.
+api를 보고 이 메뉴를 주문하려면 어떻게 주문해야 한다! 는 걸 알고 있는 상태에서 api 호출, 즉 실제 주문을 하는 것이다.</p>
+
+<p>api의 특징 중 하나는, 호출을 했을 때, 언제 메뉴가 나올지 모른다는 것이다. 왜냐하면 보통 클라이언트와 서버는 다른 환경을 가지고 있기 때문이다.</p>
+
+<p>만약 배달 음식을 시켰는데 우리가 동기적으로 행동한다면 정확히 언제 도착할지 모르는 음식이 도착할 때까지 문앞에서 기다려야 할 것이다(..) 컴퓨터에서도 마찬가지이기 때문에 프로미스를 활용해야 한다.</p>
+
+<p><a href="https://jsonplaceholder.typicode.com/">json placeholder</a>는 api 호출을 통해 더미 데이터를 보내주는 서비스이다.</p>
+
+<p><img width="989" alt="스크린샷 2023-03-31 오후 5 10 57" src="https://user-images.githubusercontent.com/110877564/229063688-5e33a938-80d4-44f7-8d54-1e7ecb4e7024.png" /></p>
+
+<p>이 주소로 데이터를 요청하면,</p>
+
+<p><img width="989" alt="스크린샷 2023-03-31 오후 5 10 45" src="https://user-images.githubusercontent.com/110877564/229063691-7713f90a-9237-4f56-87e9-4c637a9f0a4b.png" /></p>
+
+<p>이런 결과를 보내준다는 뜻이다.</p>
+
+<p>이 서비스를 활용하여 api를 호출해보자.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//feth는 api호출을 할 수 있게 해주는 js 내장 함수이다. 프로미스를 반환한다.</span>
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://jsonplaceholder.typicode.com/posts</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>이렇게 바로 res를 리턴하면 이런 결과가 나온다.</p>
+
+<p><img width="399" alt="스크린샷 2023-03-31 오후 5 13 14" src="https://user-images.githubusercontent.com/110877564/229064211-4d8647e7-cf00-4635-aa1d-1ca857455731.png" /></p>
+
+<p>바로 리턴한 res는 보낸 사람이나 받는 사람의 이런 저런 정보가 담긴 편지봉투라고 생각하면 된다. 안의 내용을 보려면 포장을 뜯어야 한다. <code class="language-plaintext highlighter-rouge">json placeholder</code>가 보내주는 데이터는 <code class="language-plaintext highlighter-rouge">json 형식</code>이므로, 다음과 같이 내용물을 꺼내면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">getData</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">rawResponse</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://jsonplaceholder.typicode.com/posts</span><span class="dl">"</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">jsonResponse</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">rawResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jsonResponse</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">getData</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img width="399" alt="스크린샷 2023-03-31 오후 5 17 20" src="https://user-images.githubusercontent.com/110877564/229065167-8a30070e-fcae-4fa5-ab17-cce0a41d3b7c.png" /></p>
+
+<p>이제 원하는 데이터가 나왔으므로 이 데이터를 이용해서 원하는 작업을 하면 된다.</p>
+
+<p class="notice--primary">참고 <br />
+<a href="https://www.udemy.com/course/winterlood-react-basic/">한입 크기로 잘라 먹는 리액트</a> <br /></p>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/lecture/javascript_5/" class="pagination--pager" title="[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 2
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_5/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">비구조화 할당, spread 연산자
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_4/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Truthy &amp; Falsy, 삼항 연산자, 단락회로 평가, 조건문 업그레이드
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_3/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 자바스크립트 기초 3
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">객체, 배열, 반복문, 배열 내장 함수
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/javascript_2/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 자바스크립트 기초 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'sena-22/sena-22.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

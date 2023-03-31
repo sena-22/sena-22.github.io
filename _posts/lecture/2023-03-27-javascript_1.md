@@ -1,5 +1,5 @@
 ---
-title: "자바스크립트 기초 1 "
+title: "[한입 크기로 잘라 먹는 리액트] 자바스크립트 기초 1 "
 excerpt: "변수와 상수, 자료형과 형 변환, 연산자, 조건문"
 
 categories:
@@ -16,7 +16,11 @@ last_modified_at: 2023-03-30
 
 ![표지1](https://user-images.githubusercontent.com/110877564/228703132-250c9144-f077-49a6-860f-0d41263428e5.png)
 
-# 서론
+이전에 [<Mark style='color:orange'>한입 크기로 잘라 먹는 리액트(React.js)</Mark>](https://www.udemy.com/course/winterlood-react-basic/?couponCode=1B3AC13BE3B6AE66BCE1)라는 강의를 수강하면서 개념 부분보다는 실제 리액트 프로젝트 만들기에만 집중했던 기억이 있다. 최근 들어 기초 개념을 정리해야 할 필요성을 느끼고 있는데 `udemy 기술 블로그 챌린지`를 하길래 바로 신청했다! 챌린지를 통해 5주간 강의를 들으면서 자바스크립트 개념 복습 + 전에 만든 감성 일기장 업그레이드를 진행하면서 블로그에 정리할 예정이다.
+
+<br/>
+
+# 🍪 HTML/ CSS / Javascript
 
 웹 사이트를 만들기 위해서는 HTML, CSS, Javascript가 필요하다.
 
@@ -25,8 +29,6 @@ CSS는 만들어진 뼈대에 피부를 씌우고, 색을 칠하고, 옷을 입�
 
 웹 사이트를 만들 때도 마찬가지로 HTML이 각 요소를 배치하고 내용을 기술하면 CSS가 스타일링을 맡아서 요소에 색을 입히거나 크기를 조절한다. 이 요소들을 선택하고 클릭했을 때 동적으로 움직이게 만드는 도구가 <mark style='background-color: #ffdce0'>Javascript</Mark>이다.
 ([<Mark style='color:orange'>이 링크</Mark>](https://html-css-js.com/)에서 HTML/CSS/Javascript에 대해 더 자세히 알아볼 수 있다.)
-
-본 포스팅에서는 [<Mark style='color:orange'>한입 크기로 잘라 먹는 리액트(React.js)</Mark>](https://www.udemy.com/course/winterlood-react-basic/?couponCode=1B3AC13BE3B6AE66BCE1) 강의와 [<Mark style='color:orange'>모던 JavaScript 튜토리얼</Mark>](https://ko.javascript.info/)을 기반으로 자바스크립트의 기초적인 개념들을 간단하게 살펴보려고 한다.
 
 <br/>
 

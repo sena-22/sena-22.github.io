@@ -1,5 +1,5 @@
 ---
-title: "자바스크립트 응용 1 "
+title: "[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 1 "
 excerpt: "Truthy & Falsy, 삼항 연산자, 단락회로 평가, 조건문 업그레이드"
 
 categories:
@@ -201,3 +201,7 @@ console.log(getMeal("한식")) //불고기
 console.log(getMeal("중식")) //멘보샤
 console.log(getMeal()) //굶기
 ```
+
+참고 <br/>
+[한입 크기로 잘라 먹는 리액트](https://www.udemy.com/course/winterlood-react-basic/) <br/>
+{: .notice--primary}
