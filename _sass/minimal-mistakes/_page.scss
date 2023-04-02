@@ -110,7 +110,7 @@ body {
   p,
   li,
   dl {
-    font-size: 0.8em;
+    font-size: 0.95em;
   }
 
   /* paragraph indents */
@@ -299,21 +299,25 @@ body {
 .page__meta {
   margin-top: 2em;
   color: $muted-text-color;
-  font-family: $poor-story, $sans-serif;
-  font-size: $type-size-5;
+  font-family: $ONE-Mobile-POP, $sans-serif;
+  font-size: $type-size-6;
 
   p {
     margin: 0;
   }
 
   a {
-    color: inherit;
+    color: $base03;
+  }
+
+  time {
+    color: $base03;
   }
 }
 
 .page__meta-title {
   margin-bottom: 10px;
-  font-size: $type-size-5;
+  font-size: $type-size-6;
   text-transform: uppercase;
 }
 
@@ -336,6 +340,7 @@ body {
     margin-right: 10px;
     font-size: $type-size-6;
   }
+  font-family: $ONE-Mobile-POP;
 }
 
 .page__taxonomy-item {
@@ -345,10 +350,11 @@ body {
   padding: 1px 5px;
   text-decoration: none;
   border-radius: $border-radius;
-  font-family: $poor-story;
-  font-size: $type-size-5;
+  font-family: $ONE-Mobile-POP;
+  font-size: $type-size-6;
   background: rgba(27, 31, 35, 0.05);
-  color: #476582;
+  color: $base03;
+  font-weight: 100;
 
   &:hover {
     text-decoration: none;

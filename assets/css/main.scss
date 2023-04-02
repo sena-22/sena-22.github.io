@@ -9,34 +9,50 @@ search: false
 @import "minimal-mistakes"; // main partials
 
 // font-family: 'Poor Story',cursive;
-@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Poor+Story&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Poor+Story&display=swap");
 
 @font-face {
-  font-family: 'Donoun-Medium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Donoun-Medium.woff2') format('woff2');
+  font-family: "Donoun-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Donoun-Medium.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+//ONE-Mobile-POP
+@font-face {
+  font-family: "ONE-Mobile-POP";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 // Iropke Batang
-@import url('//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
+@import url("//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css");
 
 // Nanum Gothic Coding
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
-
 @font-face {
-  font-family: 'GangwonEdu_OTFBoldA';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'NanumBarunpen';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
+  font-family: "NanumBarunpen";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
-
+@font-face {
+  font-family: "ONE-Mobile-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

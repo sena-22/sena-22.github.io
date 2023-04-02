@@ -12,7 +12,7 @@
   max-width: 100%;
   padding-left: 1em;
   padding-right: 1em;
-  font-family: $sans-serif;
+  font-family: $ONE-Mobile-POP;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.3s;
@@ -170,11 +170,7 @@
 
 .greedy-nav {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   min-height: $nav-height;
   background: $background-color;
@@ -184,7 +180,6 @@
     margin: 0 1rem;
     color: $masthead-link-color;
     text-decoration: none;
-    -webkit-transition: none;
     transition: none;
 
     &:hover {
@@ -202,12 +197,10 @@
   }
 
   img {
-    -webkit-transition: none;
     transition: none;
   }
 
   &__toggle {
-    -ms-flex-item-align: center;
     align-self: center;
     height: $nav-toggle-height;
     border: 0;
@@ -217,20 +210,12 @@
   }
 
   .visible-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
     justify-content: flex-end;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
     flex: 1;
     overflow: hidden;
 
     li {
-      -webkit-box-flex: 0;
-      -ms-flex: none;
       flex: none;
     }
 
@@ -245,15 +230,11 @@
         height: 4px;
         background: $primary-color;
         width: 100%;
-        -webkit-transition: $global-transition;
         transition: $global-transition;
-        -webkit-transform: scaleX(0) translate3d(0, 0, 0);
         transform: scaleX(0) translate3d(0, 0, 0); // hide
       }
 
       &:hover:before {
-        -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
         transform: scaleX(1); // reveal
       }
     }
@@ -268,8 +249,6 @@
     border: 1px solid $border-color;
     border-radius: $border-radius;
     background: $background-color;
-    -webkit-box-shadow: 0 2px 4px 0 rgba(#000, 0.16),
-      0 2px 10px 0 rgba(#000, 0.12);
     box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
 
     &.hidden {
@@ -327,7 +306,6 @@
 .no-js {
   .greedy-nav {
     .visible-links {
-      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       overflow: visible;
     }
@@ -357,7 +335,6 @@
       border: 1px solid $light-gray;
       border-radius: $border-radius;
       z-index: 20;
-      -webkit-transition: 0.2s ease-out;
       transition: 0.2s ease-out;
       cursor: pointer;
 
@@ -406,14 +383,10 @@
 
     /* on hover show expand*/
     label:hover:after {
-      -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
       transform: rotate(90deg);
     }
 
     input:checked + label:hover:after {
-      -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
       transform: rotate(0);
     }
 
@@ -458,24 +431,18 @@
     opacity: 0%;
     overflow: hidden;
     z-index: 10;
-    -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
-    -webkit-transform: translate(0, 10%);
-    -ms-transform: translate(0, 10%);
     transform: translate(0, 10%);
   }
 }
 
 @include breakpoint(max-width $large - 1px) {
   .nav__list input:checked ~ .nav__items {
-    -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
     max-height: 9999px; /* exaggerate max-height to accommodate tall lists*/
     overflow: visible;
     opacity: 1;
     margin-top: 1em;
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
     transform: translate(0, 0);
   }
 }
@@ -483,9 +450,9 @@
 .nav__title {
   margin: 0;
   padding: 0.5rem 0.75rem;
-  font-family: $NanumBarunpen, $sans-serif-narrow;
+  font-family: $ONE-Mobile-POP, $sans-serif-narrow;
   font-size: $type-size-6;
-  font-weight: bold;
+  // font-weight: bold;
 }
 
 .nav__sub-title {
@@ -509,13 +476,12 @@
   background-color: $background-color;
   border: 1px solid $border-color;
   border-radius: $border-radius;
-  -webkit-box-shadow: $box-shadow;
   box-shadow: $box-shadow;
 
   .nav__title {
     font-size: $type-size-5;
     background: rgba(27, 31, 35, 0.05);
-    color: #476582;
+    color: $dark-gray;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }

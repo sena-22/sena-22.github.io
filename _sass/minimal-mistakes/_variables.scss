@@ -18,12 +18,14 @@ $sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
-$poor-story : 'Poor Story' !default;
-$Iropke-Batang : 'Iropke Batang' !default;
-$Donoun-Medium: 'Donoun Medium' !default;
-$nanum-gothic-coding:'Nanum Gothic Coding' !default;
-$GangwonEdu-OTFBoldA :'GangwonEdu_OTFBoldA' !default;
-$NanumBarunpen : 'NanumBarunpen' !default;
+$poor-story: "Poor Story" !default;
+$Iropke-Batang: "Iropke Batang" !default;
+$Donoun-Medium: "Donoun Medium" !default;
+$nanum-gothic-coding: "Nanum Gothic Coding" !default;
+$GangwonEdu-OTFBoldA: "GangwonEdu_OTFBoldA" !default;
+$NanumBarunpen: "NanumBarunpen" !default;
+$ONE-Mobile-POP: "ONE-Mobile-POP" !default;
+$ONE-Mobile-Regular: "ONE-Mobile-Regular" !default;
 
 /* sans serif typefaces */
 $sans-serif-narrow: $sans-serif !default;
@@ -36,9 +38,9 @@ $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
-$global-font-family: $Donoun-Medium,$sans-serif !default;
-$header-font-family: $Donoun-Medium,$sans-serif !default;
-$caption-font-family: $Donoun-Medium,$serif !default;
+$global-font-family: $Donoun-Medium, $sans-serif !default;
+$header-font-family: $Donoun-Medium, $sans-serif !default;
+$caption-font-family: $Donoun-Medium, $serif !default;
 
 /* type scale */
 $type-size-1: 2.441em !default; // ~39.056px
