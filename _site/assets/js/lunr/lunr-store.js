@@ -634,4 +634,22 @@ var store = [{
         "tags": ["udemy","javascript"],
         "url": "/lecture/javascript_6/",
         "teaser": null
+      },{
+        "title": "[Mini Project] wanted challenge  1. 회원가입 구현하기",
+        "excerpt":"2023년 원티드 프리온보딩 프론트엔드 인턴십 챌린지 사전과제를 진행한 내용을 기록해보았다. 과제는 CRA를 이용하여 로그인과 회원가입, TODO LIST를 구현하는 것이었다. 회원가입 //Signup.js &lt;div&gt; &lt;form onSubmit={isUser ? SigninHandler : SignupHandler}&gt; &lt;input data-testid=\"email-input\" placeholder=\"email\" name=\"email\" /&gt; &lt;input data-testid=\"password-input\" placeholder=\"password\" name=\"password\" /&gt; {isUser ? ( &lt;button data-testid=\"signin-button\" type=\"submit\"&gt; 로그인 &lt;/button&gt; ) : ( &lt;button...","categories": ["mini project"],
+        "tags": ["project","wanted challenge","react"],
+        "url": "/mini%20project/sign-up/",
+        "teaser": null
+      },{
+        "title": "[Mini Project] 감성 일기장에 타입스크립트 적용하기 1. typescript 설치하기",
+        "excerpt":"한입 크기로 잘라 먹는 리액트(React.js)를 수강하면서 만들었던 감성 일기장을 타입스크립트로 마이그레이션 해보려고 한다. 강의에서 만들었던 감성 일기장은 여기에 배포해두었다. 타입스크립트 설치하기 create-react-app을 이용하여 새로 프로젝트를 생성하면서 타입스크립트를 설치할 땐 이렇게 한다. npx create-react-app my-app --template typescript --template는 CRA에서 제공하는 기본 템플릿 대신 다른 템플릿을 사용할 수 있도록 해주는 옵션이다. 여기서는...","categories": ["mini project"],
+        "tags": ["project","wanted challenge","react","typescript"],
+        "url": "/mini%20project/emotion-diary-1/",
+        "teaser": null
+      },{
+        "title": "Todolist",
+        "excerpt":"   //NOTE:로그인 후 페이지 이동 직후 create 명령이 작동하지 않음. get요청도 마찬가지   export const get_todos = async () =&gt; { const access_token = getTokenToLocalStorage(‘access_token’) //추가 const get_todos_res = await axios.get(${BASE_URL}/todos, { headers: { Authorization: Bearer ${access_token} } }) return get_todos_res.data }   전역에서 선언해서 사용하던 access_token을 함수 내에서 사용하니까 잘 받아온다.  ","categories": [],
+        "tags": [],
+        "url": "/todolist/",
+        "teaser": null
       }]

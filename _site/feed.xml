@@ -1,4 +1,229 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-03T09:00:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>frontend devleopment</subtitle><author><name>Reyna</name></author><entry><title type="html">[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 3</title><link href="http://localhost:4000/lecture/javascript_6/" rel="alternate" type="text/html" title="[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 3" /><published>2023-03-31T00:00:00+09:00</published><updated>2023-03-31T00:00:00+09:00</updated><id>http://localhost:4000/lecture/javascript_6</id><content type="html" xml:base="http://localhost:4000/lecture/javascript_6/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/228953631-192e638f-06d5-4490-9a24-82c419602d2f.png" alt="응용3" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-08T23:50:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Reyna</title><subtitle>frontend devleopment</subtitle><author><name>Reyna</name></author><entry><title type="html">Todolist</title><link href="http://localhost:4000/todolist/" rel="alternate" type="text/html" title="Todolist" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T00:00:00+09:00</updated><id>http://localhost:4000/todolist</id><content type="html" xml:base="http://localhost:4000/todolist/"><![CDATA[<p><img width="537" alt="스크린샷 2023-04-08 오후 4 23 23" src="https://user-images.githubusercontent.com/110877564/230709076-387ec67d-ee69-45ac-b832-487ef0a964e5.png" /></p>
+
+<p>//NOTE:로그인 후 페이지 이동 직후 create 명령이 작동하지 않음. get요청도 마찬가지</p>
+
+<p>export const get_todos = async () =&gt; {
+const access_token = getTokenToLocalStorage(‘access_token’) //추가
+const get_todos_res = await axios.get(<code class="language-plaintext highlighter-rouge">${BASE_URL}/todos</code>, {
+headers: {
+Authorization: <code class="language-plaintext highlighter-rouge">Bearer ${access_token}</code>
+}
+})
+return get_todos_res.data
+}</p>
+
+<p>전역에서 선언해서 사용하던 access_token을 함수 내에서 사용하니까 잘 받아온다.</p>]]></content><author><name>Reyna</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[Mini Project] 감성 일기장에 타입스크립트 적용하기 1. typescript 설치하기</title><link href="http://localhost:4000/mini%20project/emotion-diary-1/" rel="alternate" type="text/html" title="[Mini Project] 감성 일기장에 타입스크립트 적용하기 1. typescript 설치하기" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/emotion-diary-1</id><content type="html" xml:base="http://localhost:4000/mini%20project/emotion-diary-1/"><![CDATA[<p><a href="https://www.udemy.com/course/winterlood-react-basic/?couponCode=1B3AC13BE3B6AE66BCE1"><mark style="background-color: #ffdce0">한입 크기로 잘라 먹는 리액트(React.js)</mark></a>를 수강하면서 만들었던 감성 일기장을 타입스크립트로 마이그레이션 해보려고 한다.</p>
+
+<p class="notice--primary">강의에서 만들었던 감성 일기장은 <a href="https://reyna-emotion-diary.firebaseapp.com/">여기</a>에 배포해두었다.</p>
+
+<p><br /></p>
+
+<h1 id="타입스크립트-설치하기">타입스크립트 설치하기</h1>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">create-react-app</code>을 이용하여 새로 프로젝트를 생성하면서 타입스크립트를 설치할 땐 이렇게 한다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="nx">my</span><span class="o">-</span><span class="nx">app</span> <span class="o">--</span><span class="nx">template</span> <span class="nx">typescript</span>
+</code></pre></div></div>
+
+<p class="notice--primary"><code class="language-plaintext highlighter-rouge">--template</code>는 CRA에서 제공하는 기본 템플릿 대신 다른 템플릿을 사용할 수 있도록 해주는 옵션이다. 여기서는 typesciprt 템플릿을 사용한다고 지정하는 것이다.</p>
+
+<ul>
+  <li>이번에는 이미 만들어진 프로젝트에 타입스크립트를 설치하는 것이므로, 다음 패키지들을 설치했다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="o">--</span><span class="nx">save</span> <span class="nx">typescript</span> <span class="p">@</span><span class="nd">types</span><span class="sr">/node @types/</span><span class="nx">react</span> <span class="p">@</span><span class="nd">types</span><span class="sr">/react-dom @types/</span><span class="nx">jest</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">@types</code>가 붙은 패키지들은 타입스크립트에서 사용할 수 있도록 <strong>타입 정의 파일</strong>을 제공해주는 패키지이다.</p>
+
+<p><br /></p>
+
+<h1 id="tsconfigjson-설정하기">tsconfig.json 설정하기</h1>
+
+<p>타입스크립트를 설치한 후에는 <code class="language-plaintext highlighter-rouge">tsconfig.json</code>파일을 설정해주어야 한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">tsconfig.json</code> 파일은 프로젝트를 컴파일하는 루트 파일과 컴파일러 옵션을 지정할 수 있다.</p>
+
+<p class="notice--primary"><a href="https://www.typescriptlang.org/tsconfig">여기</a>에서 종류를 확인할 수 있다.</p>
+
+<h2 id="1-compileoptions">1. compileOptions</h2>
+
+<p>타입스크립트 컴파일러가 사용해야 하는 옵션을 지정할 수 있는 속성이다.
+<code class="language-plaintext highlighter-rouge">target</code>, <code class="language-plaintext highlighter-rouge">module</code>, <code class="language-plaintext highlighter-rouge">lib</code>, <code class="language-plaintext highlighter-rouge">esModuleInterop</code>, <code class="language-plaintext highlighter-rouge">outDir</code> 등의 옵션을 지정할 수 있다.</p>
+
+<ul>
+  <li>target :
+어떤 버전의 자바스크립트로 바꿔줄지 정하는 부분이다.</li>
+  <li>module :
+자바스크립트의 파일들이 <code class="language-plaintext highlighter-rouge">import</code> 문법을 사용할 때, 어떤 문법을 쓸지 정하는 곳이다.
+<code class="language-plaintext highlighter-rouge">commonjs</code>는 <code class="language-plaintext highlighter-rouge">require</code> 문법, <code class="language-plaintext highlighter-rouge">es2015</code>,<code class="language-plaintext highlighter-rouge">esnext</code>는 <code class="language-plaintext highlighter-rouge">import</code> 문법을 사용한다.</li>
+  <li>allowJs :
+js 파일을 ts에서 <code class="language-plaintext highlighter-rouge">import</code> 해서 쓸 수 있는지 정한다.</li>
+  <li>jsx :
+tsx 파일을 jsx로 어떻게 컴파일할 것인지 정한다.</li>
+  <li>strict :
+strict 모드를 사용할지 정한다.</li>
+</ul>
+
+<h2 id="2-include">2. include</h2>
+
+<p>타입스크립트 컴파일러가 컴파일해야 하는 파일의 경로를 지정한다.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"src/**/*"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="3-exclude">3. exclude</h2>
+
+<p><code class="language-plaintext highlighter-rouge">include</code>와 반대로 컴파일을 건너뛸 파일 경로를 지정한다.</p>
+
+<h2 id="4-files">4. files</h2>
+
+<p>include와 exclude 대신에, 명시적으로 포함할 파일의 배열을 지정할 수 있다. 여기에 설정된 파일이 없으면 오류가 발생한다.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="s2">"core.ts"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"sys.ts"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"types.ts"</span><span class="p">,</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>이외에도 설정할 수 있는 속성이 너무 많은데 일단 몇 가지만 사용하고 필요할 때 추가하기로 했다.</p>
+
+<p>여기까지 설정한 후에 일단 파일을 전부 <code class="language-plaintext highlighter-rouge">ts</code>로 바꿨더니 에러가 끝도 없이 발생했다.. 다시 되돌리고 <code class="language-plaintext highlighter-rouge">App</code>과 <code class="language-plaintext highlighter-rouge">index</code>만 <code class="language-plaintext highlighter-rouge">ts</code>로 바꾸고 다시 리액트 앱을 실행했다.</p>
+
+<p><br /></p>
+
+<h1 id="module-not-found-에러">Module not found 에러</h1>
+
+<p>실행한 뒤 발생한 에러 중에 모듈을 찾을 수 없다는 에러가 발생했다.</p>
+
+<p><img width="883" alt="스크린샷 2023-04-08 오후 11 36 29" src="https://user-images.githubusercontent.com/110877564/230727053-4a0d6d0c-0447-443b-a9ef-bd212e1718cd.png" /></p>
+
+<p>에러 내용이 모두 <code class="language-plaintext highlighter-rouge">DiaryEditor</code> 컴포넌트에서 발생했는데, 파일을 모두 <code class="language-plaintext highlighter-rouge">.js</code>로 불러오고 있었다. 에러를 해결하려면 확장자를 <code class="language-plaintext highlighter-rouge">.jsx</code>로 변경하거나, 타입스크립트로 바꿔줘야 한다.</p>
+
+<p class="notice--primary"><code class="language-plaintext highlighter-rouge">.js</code>, <code class="language-plaintext highlighter-rouge">.jsx</code>의 차이? <br />
+.js 파일은 일반적인 자바스크립트 파일이고, .jsx 파일은 리액트에서 사용되는 자바스크립트의 확장 문법이다.</p>
+
+<p>확장자를 변경해서 컴포넌트에서 발견하는 에러는 해결됐다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 에러 */</span>
+<span class="k">import</span> <span class="nx">MyHeader</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./MyHeader.js</span><span class="dl">"</span>
+<span class="cm">/* 에러 해결 1 */</span>
+<span class="k">import</span> <span class="nx">MyHeader</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./MyHeader</span><span class="dl">"</span>
+<span class="cm">/* 에러 해결 2 */</span>
+<span class="k">import</span> <span class="nx">MyHeader</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./MyHeader.jsx</span><span class="dl">"</span>
+</code></pre></div></div>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="wanted challenge" /><category term="react" /><category term="typescript" /><summary type="html"><![CDATA[wanted challenge]]></summary></entry><entry><title type="html">[Mini Project] wanted challenge 1. 회원가입 구현하기</title><link href="http://localhost:4000/mini%20project/sign-up/" rel="alternate" type="text/html" title="[Mini Project] wanted challenge 1. 회원가입 구현하기" /><published>2023-04-07T00:00:00+09:00</published><updated>2023-04-07T00:00:00+09:00</updated><id>http://localhost:4000/mini%20project/sign-up</id><content type="html" xml:base="http://localhost:4000/mini%20project/sign-up/"><![CDATA[<p>2023년 원티드 프리온보딩 프론트엔드 인턴십 챌린지 사전과제를 진행한 내용을 기록해보았다. 과제는 CRA를 이용하여 로그인과 회원가입, TODO LIST를 구현하는 것이었다.</p>
+
+<h2 id="회원가입">회원가입</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Signup.js</span>
+<span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">isUser</span> <span class="p">?</span> <span class="nx">SigninHandler</span> <span class="p">:</span> <span class="nx">SignupHandler</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">data</span><span class="o">-</span><span class="nx">testid</span><span class="o">=</span><span class="dl">"</span><span class="s2">email-input</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">email</span><span class="dl">"</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">email</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">input</span>
+      <span class="nx">data</span><span class="o">-</span><span class="nx">testid</span><span class="o">=</span><span class="dl">"</span><span class="s2">password-input</span><span class="dl">"</span>
+      <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">password</span><span class="dl">"</span>
+      <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">password</span><span class="dl">"</span>
+    <span class="o">/&gt;</span>
+    <span class="p">{</span><span class="nx">isUser</span> <span class="p">?</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">data</span><span class="o">-</span><span class="nx">testid</span><span class="o">=</span><span class="dl">"</span><span class="s2">signin-button</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="nx">로그인</span>
+      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="p">)</span> <span class="p">:</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">data</span><span class="o">-</span><span class="nx">testid</span><span class="o">=</span><span class="dl">"</span><span class="s2">signup-button</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="nx">회원가입</span>
+      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="p">)}</span>
+  <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>회원가입을 구현하기 위해 signup 페이지에 최소한의 입력창을 구현했다. 유저인지 아닌지 판별해서 나중에 로그인 화면에서도 사용하려고 삼항연산자를 사용했다.(<code class="language-plaintext highlighter-rouge">data-testid</code>는 과제 조건이라 추가했다.)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Signup.js</span>
+<span class="kd">const</span> <span class="nx">SignupHandler</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+  <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">)</span>
+
+  <span class="kd">const</span> <span class="nx">signupResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">signup</span><span class="p">({</span>
+    <span class="na">email</span><span class="p">:</span> <span class="nx">formData</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">password</span><span class="p">:</span> <span class="nx">formData</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">password</span><span class="dl">"</span><span class="p">),</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이메일과 비밀번호를 입력하고 버튼을 클릭하면 (enter키를 눌러도 된다) <code class="language-plaintext highlighter-rouge">SignupHandler()</code> 함수가 실행된다.
+FormData 생성자를 이용해서 입력받은 값을 인자로 넣어주면 간단하게 입력값을 <code class="language-plaintext highlighter-rouge">formData</code>라는 변수에 저장할 수 있다. 저장된 데이터는 <code class="language-plaintext highlighter-rouge">get</code> 메서드로 꺼낼 수 있는데, 꺼낸 값들을 <code class="language-plaintext highlighter-rouge">signup</code>이라는 함수에 인자로 넣어준다.</p>
+
+<p class="notice--primary"><a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData MDN</a><br /></p>
+
+<p>과제의 요구사항에 맞춰 api 요청을 보냈는데 에러가 발생했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//signup.js</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">signup</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">signupRes</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span>
+    <span class="s2">`</span><span class="p">${</span><span class="nx">BASE_URL</span><span class="p">}</span><span class="s2">/auth/signup`</span><span class="p">,</span>
+    <span class="p">{</span><span class="na">email</span><span class="p">:</span> <span class="nx">args</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span> <span class="na">password</span><span class="p">:</span> <span class="nx">args</span><span class="p">.</span><span class="nx">password</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">}}</span>
+  <span class="p">)</span>
+  <span class="k">return</span> <span class="nx">signupRes</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img width="570" alt="스크린샷 2023-04-07 오후 3 47 22" src="https://user-images.githubusercontent.com/110877564/230557156-c6098a19-a6eb-4758-b443-5f070f123caf.png" /></p>
+
+<p>에러를 찾으려고 요청 부분을 한참 수정했는데, 결론적으로는 에러 메시지에서 답을 찾았다. 과제 조건 중에 유효성 검사가 있는데 api 부분 먼저 끝내려다 문제가 발생한 것이었다. 에러 메시지를 잘 읽자..😔</p>
+
+<p><br /></p>
+
+<h2 id="유효성-검사하기">유효성 검사하기</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Signup.js</span>
+<span class="kd">const</span> <span class="nx">emailRegExp</span> <span class="o">=</span> <span class="sr">/@/</span>
+<span class="kd">const</span> <span class="nx">passwordRegExp</span> <span class="o">=</span> <span class="sr">/.</span><span class="se">{8,}</span><span class="sr">/</span>
+</code></pre></div></div>
+
+<ul>
+  <li>이메일 : @ 포함</li>
+  <li>비밀번호 : 8자 이상</li>
+</ul>
+
+<p>정규식을 만들어보는 건 처음이라 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions">여기</a>랑 <a href="https://regex101.com/">여기</a>를 참고해서 조건을 만들었다. 정규식을 만드는 방법은 두 가지인데 그중에 리터럴(<code class="language-plaintext highlighter-rouge">//</code>)을 사용하는 방법을 사용했다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Signup.js</span>
+<span class="kd">const</span> <span class="nx">emailValidationCheck</span> <span class="o">=</span> <span class="p">(</span><span class="nx">email</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">emailRegExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">passwordValidationCheck</span> <span class="o">=</span> <span class="p">(</span><span class="nx">password</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">passwordRegExp</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">password</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>정규식의 메서드인 <code class="language-plaintext highlighter-rouge">test()</code>를 사용해서 검사를 할 수 있다. 인자로 넣은 문자열과 일치하는 부분을 비교해서 <code class="language-plaintext highlighter-rouge">boolean</code>을 반환한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Signup.js</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">emailValidationCheck</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">passwordValidationCheck</span><span class="p">(</span><span class="nx">password</span><span class="p">))</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">signupResult</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">signup</span><span class="p">({</span>
+    <span class="nx">email</span><span class="p">,</span>
+    <span class="nx">password</span><span class="p">,</span>
+  <span class="p">})</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">signupResult</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>아까 만든 <code class="language-plaintext highlighter-rouge">SignupHandler()</code> 함수에 조건을 추가했다. 이제 응답이 제대로 온다!</p>
+
+<p><img width="722" alt="스크린샷 2023-04-07 오후 4 56 32" src="https://user-images.githubusercontent.com/110877564/230567921-161cefab-8091-47b1-ba3b-8e195183931f.png" /></p>
+
+<p>같은 이메일로 한 번 더 요청하면 같은 이메일이라 에러가 발생한다.</p>
+
+<p><img width="722" alt="스크린샷 2023-04-07 오후 4 56 43" src="https://user-images.githubusercontent.com/110877564/230568446-0ef66d08-bd4b-4b75-8872-c46c9c8cc777.png" /></p>]]></content><author><name>Reyna</name></author><category term="mini project" /><category term="project" /><category term="wanted challenge" /><category term="react" /><summary type="html"><![CDATA[wanted challenge]]></summary></entry><entry><title type="html">[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 3</title><link href="http://localhost:4000/lecture/javascript_6/" rel="alternate" type="text/html" title="[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 3" /><published>2023-03-31T00:00:00+09:00</published><updated>2023-03-31T00:00:00+09:00</updated><id>http://localhost:4000/lecture/javascript_6</id><content type="html" xml:base="http://localhost:4000/lecture/javascript_6/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/228953631-192e638f-06d5-4490-9a24-82c419602d2f.png" alt="응용3" /></p>
 
 <p><br /></p>
 
@@ -252,167 +477,7 @@ api를 보고 이 메뉴를 주문하려면 어떻게 주문해야 한다! 는 �
 <p>이제 원하는 데이터가 나왔으므로 이 데이터를 이용해서 원하는 작업을 하면 된다.</p>
 
 <p class="notice--primary">참고 <br />
-<a href="https://www.udemy.com/course/winterlood-react-basic/">한입 크기로 잘라 먹는 리액트</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="lecture" /><category term="udemy" /><category term="javascript" /><summary type="html"><![CDATA[동기 & 비동기, Promise & 콜백 지옥, async & await, API 호출하기]]></summary></entry><entry><title type="html">[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 2</title><link href="http://localhost:4000/lecture/javascript_5/" rel="alternate" type="text/html" title="[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 2" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T00:00:00+09:00</updated><id>http://localhost:4000/lecture/javascript_5</id><content type="html" xml:base="http://localhost:4000/lecture/javascript_5/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/228815715-a321bcdb-2004-4991-aeaf-0ab93f920925.png" alt="응용2" /></p>
-
-<p><br /></p>
-
-<h1 id="1-비구조화-할당구조분해할당">1. 비구조화 할당(구조분해할당)</h1>
-
-<h2 id="배열의-비구조화-할당">배열의 비구조화 할당</h2>
-
-<p>배열의 요소를 하나씩 꺼내서 변수를 선언하는 방법은 이렇다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">]</span>
-
-<span class="kd">let</span> <span class="nx">one</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="kd">let</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="kd">let</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-</code></pre></div></div>
-
-<p>이때 비구조화 할당을 사용하면 위의 할당 과정을 한 줄로 줄일 수 있다!</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">)</span> <span class="c1">//one two three</span>
-</code></pre></div></div>
-
-<p>arr이라는 변수를 아예 사용하지 않을 수도 있다. 이를 <mark>배열의 선언 분리 비구조화 할당</mark>이라고 한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">]</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">)</span> <span class="c1">//one two three</span>
-</code></pre></div></div>
-
-<p>🤔 배열의 인덱스를 넘어가는 수를 할당받으려고 하면 <code class="language-plaintext highlighter-rouge">undefined</code>가 나온다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">four</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">]</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">four</span><span class="p">)</span> <span class="c1">//one two three undefined</span>
-</code></pre></div></div>
-
-<p>만약 <code class="language-plaintext highlighter-rouge">undefined</code>가 나오면 안 되는 상황인 경우, 기본값을 지정해두면 된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">four</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">four</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">]</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">four</span><span class="p">)</span> <span class="c1">//one two three four</span>
-</code></pre></div></div>
-
-<h3 id="비구조화-할당을-swap에-활용하는-방법">비구조화 할당을 swap에 활용하는 방법</h3>
-
-<p>원래 swap을 위해서는 임시 변수(temp)를 만들어서 변경해주었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="nx">temp</span> <span class="o">=</span> <span class="nx">a</span>
-<span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span>
-<span class="nx">b</span> <span class="o">=</span> <span class="nx">temp</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="c1">//20 10</span>
-</code></pre></div></div>
-
-<p>비구조화 할당을 사용하면 훨씬 편하게 swap이 가능하다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">;[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="p">]</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="c1">//20 10</span>
-</code></pre></div></div>
-
-<h2 id="객체의-비구조화-할당">객체의 비구조화 할당</h2>
-
-<p>객체도 배열과 마찬가지로 비구조화 할당을 사용할 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span><span class="na">one</span><span class="p">:</span> <span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="na">two</span><span class="p">:</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="na">three</span><span class="p">:</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">,</span> <span class="na">named</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">}</span>
-
-<span class="c1">//비구조화 할당을 사용하지 않는 경우</span>
-<span class="kd">let</span> <span class="nx">one</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">one</span>
-<span class="kd">let</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">two</span>
-<span class="kd">let</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">three</span>
-
-<span class="c1">//비구조화 할당 사용하기</span>
-<span class="kd">let</span> <span class="p">{</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">named</span><span class="p">}</span> <span class="o">=</span> <span class="nx">object</span> <span class="c1">//키 값을 기준으로 할당한다.</span>
-<span class="c1">//프로퍼티 키가 named에 해당하는 프로퍼티 값을 named라는 변수에 저장한다.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">named</span><span class="p">)</span> <span class="c1">//one two three jack</span>
-</code></pre></div></div>
-
-<p>이렇게 사용할 경우 변수명이 키 값으로 고정되어버리는 문제가 생긴다. 다른 변수명을 사용하고 싶을 땐 다음과 같이 할당한다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">{</span><span class="na">named</span><span class="p">:</span> <span class="nx">myName</span><span class="p">}</span> <span class="o">=</span> <span class="nx">object</span> <span class="c1">//키가 named인 프로퍼티의 값(jack)을 myName에 할당한다</span>
-<span class="c1">// console.log(named); //named is not defined</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myName</span><span class="p">)</span> <span class="c1">//jack</span>
-</code></pre></div></div>
-
-<p>객체도 배열과 마찬가지로 기본 값을 할당할 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">{</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">}</span> <span class="o">=</span> <span class="nx">object</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span> <span class="c1">//20</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="2-spread-연산자">2. spread 연산자</h1>
-
-<p>스프레드 연산자는 뜻 그대로 펼치는 연산자이다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">chocochipCookie</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">chocochip</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">strawberryCookie</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">strawberry</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">blueberryCookie</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blueberry</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>위의 코드에서 <code class="language-plaintext highlighter-rouge">base</code>와 <code class="language-plaintext highlighter-rouge">madeIn</code>을 중복해서 사용하고 있다. 이럴 때 스프레드 연산자를 사용하면 좋다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">chocochipCookie</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span><span class="nx">cookie</span><span class="p">,</span>
-  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">chocochip</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">strawberryCookie</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span><span class="nx">cookie</span><span class="p">,</span>
-  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">strawberry</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">blueberryCookie</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span><span class="nx">cookie</span><span class="p">,</span>
-  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blueberry</span><span class="dl">"</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chocochipCookie</span><span class="p">)</span> <span class="c1">// {base: "cookie", madeIn: "korea", toping: "chocochip"}</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">...</code>을 사용하면 쿠키 객체의 모든 값을 펼쳐서 넣어준다.</p>
-
-<p>스프레드 연산자를 배열에 사용할 수도 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">noTopingCookies</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">촉촉한쿠키</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">안촉촉한쿠키</span><span class="dl">"</span><span class="p">]</span>
-<span class="kd">const</span> <span class="nx">topingCookies</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">딸기쿠키</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">바나나쿠키</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">초코칩쿠키</span><span class="dl">"</span><span class="p">]</span>
-
-<span class="kd">const</span> <span class="nx">allCookies</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">noTopingCookies</span><span class="p">,</span> <span class="dl">"</span><span class="s2">함정쿠키💣</span><span class="dl">"</span><span class="p">,</span> <span class="p">...</span><span class="nx">topingCookies</span><span class="p">]</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">allCookies</span><span class="p">)</span> <span class="c1">//["촉촉한쿠키", "안촉촉한쿠키", "함정쿠키💣", "딸기쿠키", "바나나쿠키", "초코칩쿠키"]</span>
-</code></pre></div></div>
-
-<p>두 배열을 그냥 합치기만 하는 <code class="language-plaintext highlighter-rouge">concat()</code> 메서드와 달리 중간에 다른 값을 넣어줄 수도 있다.</p>
-
-<p class="notice--primary">참고 <br />
-<a href="https://www.udemy.com/course/winterlood-react-basic/">한입 크기로 잘라 먹는 리액트</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="lecture" /><category term="udemy" /><category term="javascript" /><summary type="html"><![CDATA[비구조화 할당, spread 연산자]]></summary></entry><entry><title type="html">[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 1</title><link href="http://localhost:4000/lecture/javascript_4/" rel="alternate" type="text/html" title="[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 1" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T00:00:00+09:00</updated><id>http://localhost:4000/lecture/javascript_4</id><content type="html" xml:base="http://localhost:4000/lecture/javascript_4/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/228704872-4eb88205-3c9e-40b5-accf-e788aec9ebf4.png" alt="응용1" /></p>
+<a href="https://www.udemy.com/course/winterlood-react-basic/">한입 크기로 잘라 먹는 리액트</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="lecture" /><category term="udemy" /><category term="javascript" /><summary type="html"><![CDATA[동기 & 비동기, Promise & 콜백 지옥, async & await, API 호출하기]]></summary></entry><entry><title type="html">[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 1</title><link href="http://localhost:4000/lecture/javascript_4/" rel="alternate" type="text/html" title="[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 1" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T00:00:00+09:00</updated><id>http://localhost:4000/lecture/javascript_4</id><content type="html" xml:base="http://localhost:4000/lecture/javascript_4/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/228704872-4eb88205-3c9e-40b5-accf-e788aec9ebf4.png" alt="응용1" /></p>
 
 <p><br /></p>
 
@@ -589,7 +654,167 @@ false, undefined, null, 0, -0, NaN, ‘’</p>
 </code></pre></div></div>
 
 <p class="notice--primary">참고 <br />
-<a href="https://www.udemy.com/course/winterlood-react-basic/">한입 크기로 잘라 먹는 리액트</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="lecture" /><category term="udemy" /><category term="javascript" /><summary type="html"><![CDATA[Truthy & Falsy, 삼항 연산자, 단락회로 평가, 조건문 업그레이드]]></summary></entry><entry><title type="html">[한입 크기로 잘라 먹는 리액트] 자바스크립트 기초 3</title><link href="http://localhost:4000/lecture/javascript_3/" rel="alternate" type="text/html" title="[한입 크기로 잘라 먹는 리액트] 자바스크립트 기초 3" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-30T00:00:00+09:00</updated><id>http://localhost:4000/lecture/javascript_3</id><content type="html" xml:base="http://localhost:4000/lecture/javascript_3/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/228702927-3b0e9d12-8ed3-4f64-85f4-2a87c4726aa8.png" alt="표지3" /></p>
+<a href="https://www.udemy.com/course/winterlood-react-basic/">한입 크기로 잘라 먹는 리액트</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="lecture" /><category term="udemy" /><category term="javascript" /><summary type="html"><![CDATA[Truthy & Falsy, 삼항 연산자, 단락회로 평가, 조건문 업그레이드]]></summary></entry><entry><title type="html">[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 2</title><link href="http://localhost:4000/lecture/javascript_5/" rel="alternate" type="text/html" title="[한입 크기로 잘라 먹는 리액트] 자바스크립트 응용 2" /><published>2023-03-30T00:00:00+09:00</published><updated>2023-03-30T00:00:00+09:00</updated><id>http://localhost:4000/lecture/javascript_5</id><content type="html" xml:base="http://localhost:4000/lecture/javascript_5/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/228815715-a321bcdb-2004-4991-aeaf-0ab93f920925.png" alt="응용2" /></p>
+
+<p><br /></p>
+
+<h1 id="1-비구조화-할당구조분해할당">1. 비구조화 할당(구조분해할당)</h1>
+
+<h2 id="배열의-비구조화-할당">배열의 비구조화 할당</h2>
+
+<p>배열의 요소를 하나씩 꺼내서 변수를 선언하는 방법은 이렇다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">]</span>
+
+<span class="kd">let</span> <span class="nx">one</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="kd">let</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="kd">let</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>이때 비구조화 할당을 사용하면 위의 할당 과정을 한 줄로 줄일 수 있다!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">)</span> <span class="c1">//one two three</span>
+</code></pre></div></div>
+
+<p>arr이라는 변수를 아예 사용하지 않을 수도 있다. 이를 <mark>배열의 선언 분리 비구조화 할당</mark>이라고 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">)</span> <span class="c1">//one two three</span>
+</code></pre></div></div>
+
+<p>🤔 배열의 인덱스를 넘어가는 수를 할당받으려고 하면 <code class="language-plaintext highlighter-rouge">undefined</code>가 나온다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">four</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">four</span><span class="p">)</span> <span class="c1">//one two three undefined</span>
+</code></pre></div></div>
+
+<p>만약 <code class="language-plaintext highlighter-rouge">undefined</code>가 나오면 안 되는 상황인 경우, 기본값을 지정해두면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">four</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">four</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">four</span><span class="p">)</span> <span class="c1">//one two three four</span>
+</code></pre></div></div>
+
+<h3 id="비구조화-할당을-swap에-활용하는-방법">비구조화 할당을 swap에 활용하는 방법</h3>
+
+<p>원래 swap을 위해서는 임시 변수(temp)를 만들어서 변경해주었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nx">temp</span> <span class="o">=</span> <span class="nx">a</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="nx">b</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="nx">temp</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="c1">//20 10</span>
+</code></pre></div></div>
+
+<p>비구조화 할당을 사용하면 훨씬 편하게 swap이 가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">;[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="c1">//20 10</span>
+</code></pre></div></div>
+
+<h2 id="객체의-비구조화-할당">객체의 비구조화 할당</h2>
+
+<p>객체도 배열과 마찬가지로 비구조화 할당을 사용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span><span class="na">one</span><span class="p">:</span> <span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">,</span> <span class="na">two</span><span class="p">:</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">,</span> <span class="na">three</span><span class="p">:</span> <span class="dl">"</span><span class="s2">three</span><span class="dl">"</span><span class="p">,</span> <span class="na">named</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">}</span>
+
+<span class="c1">//비구조화 할당을 사용하지 않는 경우</span>
+<span class="kd">let</span> <span class="nx">one</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">one</span>
+<span class="kd">let</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">two</span>
+<span class="kd">let</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">three</span>
+
+<span class="c1">//비구조화 할당 사용하기</span>
+<span class="kd">let</span> <span class="p">{</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">named</span><span class="p">}</span> <span class="o">=</span> <span class="nx">object</span> <span class="c1">//키 값을 기준으로 할당한다.</span>
+<span class="c1">//프로퍼티 키가 named에 해당하는 프로퍼티 값을 named라는 변수에 저장한다.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">,</span> <span class="nx">named</span><span class="p">)</span> <span class="c1">//one two three jack</span>
+</code></pre></div></div>
+
+<p>이렇게 사용할 경우 변수명이 키 값으로 고정되어버리는 문제가 생긴다. 다른 변수명을 사용하고 싶을 땐 다음과 같이 할당한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">{</span><span class="na">named</span><span class="p">:</span> <span class="nx">myName</span><span class="p">}</span> <span class="o">=</span> <span class="nx">object</span> <span class="c1">//키가 named인 프로퍼티의 값(jack)을 myName에 할당한다</span>
+<span class="c1">// console.log(named); //named is not defined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myName</span><span class="p">)</span> <span class="c1">//jack</span>
+</code></pre></div></div>
+
+<p>객체도 배열과 마찬가지로 기본 값을 할당할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">{</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">}</span> <span class="o">=</span> <span class="nx">object</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span> <span class="c1">//20</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="2-spread-연산자">2. spread 연산자</h1>
+
+<p>스프레드 연산자는 뜻 그대로 펼치는 연산자이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">chocochipCookie</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">chocochip</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">strawberryCookie</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">strawberry</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">blueberryCookie</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blueberry</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위의 코드에서 <code class="language-plaintext highlighter-rouge">base</code>와 <code class="language-plaintext highlighter-rouge">madeIn</code>을 중복해서 사용하고 있다. 이럴 때 스프레드 연산자를 사용하면 좋다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">base</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cookie</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">madeIn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">korea</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">chocochipCookie</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">...</span><span class="nx">cookie</span><span class="p">,</span>
+  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">chocochip</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">strawberryCookie</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">...</span><span class="nx">cookie</span><span class="p">,</span>
+  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">strawberry</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">blueberryCookie</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">...</span><span class="nx">cookie</span><span class="p">,</span>
+  <span class="na">toping</span><span class="p">:</span> <span class="dl">"</span><span class="s2">blueberry</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chocochipCookie</span><span class="p">)</span> <span class="c1">// {base: "cookie", madeIn: "korea", toping: "chocochip"}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">...</code>을 사용하면 쿠키 객체의 모든 값을 펼쳐서 넣어준다.</p>
+
+<p>스프레드 연산자를 배열에 사용할 수도 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">noTopingCookies</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">촉촉한쿠키</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">안촉촉한쿠키</span><span class="dl">"</span><span class="p">]</span>
+<span class="kd">const</span> <span class="nx">topingCookies</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">딸기쿠키</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">바나나쿠키</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">초코칩쿠키</span><span class="dl">"</span><span class="p">]</span>
+
+<span class="kd">const</span> <span class="nx">allCookies</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">noTopingCookies</span><span class="p">,</span> <span class="dl">"</span><span class="s2">함정쿠키💣</span><span class="dl">"</span><span class="p">,</span> <span class="p">...</span><span class="nx">topingCookies</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">allCookies</span><span class="p">)</span> <span class="c1">//["촉촉한쿠키", "안촉촉한쿠키", "함정쿠키💣", "딸기쿠키", "바나나쿠키", "초코칩쿠키"]</span>
+</code></pre></div></div>
+
+<p>두 배열을 그냥 합치기만 하는 <code class="language-plaintext highlighter-rouge">concat()</code> 메서드와 달리 중간에 다른 값을 넣어줄 수도 있다.</p>
+
+<p class="notice--primary">참고 <br />
+<a href="https://www.udemy.com/course/winterlood-react-basic/">한입 크기로 잘라 먹는 리액트</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="lecture" /><category term="udemy" /><category term="javascript" /><summary type="html"><![CDATA[비구조화 할당, spread 연산자]]></summary></entry><entry><title type="html">[한입 크기로 잘라 먹는 리액트] 자바스크립트 기초 3</title><link href="http://localhost:4000/lecture/javascript_3/" rel="alternate" type="text/html" title="[한입 크기로 잘라 먹는 리액트] 자바스크립트 기초 3" /><published>2023-03-29T00:00:00+09:00</published><updated>2023-03-30T00:00:00+09:00</updated><id>http://localhost:4000/lecture/javascript_3</id><content type="html" xml:base="http://localhost:4000/lecture/javascript_3/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/110877564/228702927-3b0e9d12-8ed3-4f64-85f4-2a87c4726aa8.png" alt="표지3" /></p>
 
 <p><br /></p>
 
@@ -1734,334 +1959,4 @@ CSS는 만들어진 뼈대에 피부를 씌우고, 색을 칠하고, 옷을 입�
 
 <p class="notice--primary">참고 <br />
 <a href="https://www.udemy.com/course/winterlood-react-basic/">한입 크기로 잘라 먹는 리액트</a> <br /></p>]]></content><author><name>Reyna</name></author><category term="lecture" /><category term="udemy" /><category term="javascript" /><category term="variable" /><summary type="html"><![CDATA[변수와 상수, 자료형과 형 변환, 연산자, 조건문]]></summary></entry><entry><title type="html">Font</title><link href="http://localhost:4000/font/" rel="alternate" type="text/html" title="Font" /><published>2023-03-25T00:00:00+09:00</published><updated>2023-03-25T00:00:00+09:00</updated><id>http://localhost:4000/font</id><content type="html" xml:base="http://localhost:4000/font/"><![CDATA[<p><a href="https://fonts.google.com/">구글 폰트</a>
-<a href="https://noonnu.cc/">눈누</a></p>]]></content><author><name>Reyna</name></author><summary type="html"><![CDATA[구글 폰트 눈누]]></summary></entry><entry><title type="html">[Deep Dive] 14. 함수 객체의 프로퍼티</title><link href="http://localhost:4000/javascript/first-class-object/" rel="alternate" type="text/html" title="[Deep Dive] 14. 함수 객체의 프로퍼티" /><published>2023-03-24T00:00:00+09:00</published><updated>2023-03-24T00:00:00+09:00</updated><id>http://localhost:4000/javascript/first-class-object</id><content type="html" xml:base="http://localhost:4000/javascript/first-class-object/"><![CDATA[<h1 id="일급-객체">일급 객체</h1>
-
-<p>함수는 일급 객체이다. 그래서 객체처럼 사용할 수 있다.</p>
-
-<p>객체처럼 사용할 수 있다는 건 값처럼 사용할 수 있다는 뜻이고, 값처럼 사용한다는 의미는 변수에 할당하거나, 객체에 저장하거나, 매개변수로 사용할 수도 있다는 뜻이다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//함수를 변수에 할당할 수 있다.</span>
-<span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">sum</span><span class="p">)</span> <span class="c1">//function</span>
-
-<span class="c1">//함수를 객체에 저장할 수 있다</span>
-<span class="kd">const</span> <span class="nx">save</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">sum</span> <span class="p">}</span>
-
-<span class="c1">//함수의 매개변수에 전달하거나 반환값으로 사용할 수 있다.</span>
-<span class="kd">function</span> <span class="nx">doubleSum</span><span class="p">(</span><span class="nx">save</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">1</span>
-
-  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">num</span> <span class="o">=</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nx">num</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">getSum</span> <span class="o">=</span> <span class="nx">doubleSum</span><span class="p">(</span><span class="nx">save</span><span class="p">.</span><span class="nx">sum</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">result:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">getSum</span><span class="p">())</span> <span class="c1">//result: 2</span>
-</code></pre></div></div>
-
-<h2 id="함수-객체-vs-일반-객체">함수 객체 vs 일반 객체</h2>
-
-<h3 id="함수-객체와-일반-객체의-공통점">함수 객체와 일반 객체의 공통점</h3>
-
-<ul>
-  <li>함수의 매개변수에 전달할 수 있다.</li>
-  <li>함수의 반환 값으로 사용할 수 있다.</li>
-</ul>
-
-<h3 id="함수-객체와-일반-객체의-차이점">함수 객체와 일반 객체의 차이점</h3>
-
-<ul>
-  <li>일반 객체는 호출이 불가능하지만 <strong>함수 객체는 호출할 수 있다</strong></li>
-  <li>일반 객체에는 없는 <mark style="background-color: #ffdce0">함수 고유의 프로퍼티</mark>를 가진다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="함수-객체의-프로퍼티">함수 객체의 프로퍼티</h1>
-
-<p>적당한 함수를 정의하고 console.dir()로 호출해보면 다음과 같이 나온다. console.dir()는 객체의 속성을 확인할 수 있다. (<a href="https://developer.mozilla.org/ko/docs/Web/API/console/dir">참고</a>)</p>
-
-<p><img width="500" alt="스크린샷 2023-03-24 오전 10 52 57" src="https://user-images.githubusercontent.com/110877564/227404536-330bdb1a-0ce1-461a-8331-5be07a8dd89d.png" /></p>
-
-<p><code class="language-plaintext highlighter-rouge">arguments</code>,<code class="language-plaintext highlighter-rouge">caller</code> 등이 함수 객체의 프로퍼티가 되는데, 여기서 <code class="language-plaintext highlighter-rouge">arguments</code>, <code class="language-plaintext highlighter-rouge">length</code> <code class="language-plaintext highlighter-rouge">name</code> 프로퍼티에 대해 정리해보려고 한다.</p>
-
-<h2 id="arguments-프로퍼티">arguments 프로퍼티</h2>
-
-<p><code class="language-plaintext highlighter-rouge">arguments</code> 프로퍼티의 값은 <code class="language-plaintext highlighter-rouge">arguments 객체</code>이다. <code class="language-plaintext highlighter-rouge">arguments 객체</code>는 호출할 때 전달된 인수들의 정보를 담고 있다.</p>
-
-<p><img width="503" alt="스크린샷 2023-03-24 오전 11 02 34" src="https://user-images.githubusercontent.com/110877564/227405665-fa5ea9e6-0fd0-4b84-81ce-5b8f15debd74.png" /></p>
-
-<p>콘솔에서 <code class="language-plaintext highlighter-rouge">arguments</code>를 보면 호출할 때 넣은 인수가 프로퍼티 값으로 들어가 있다. 프로퍼티 키는 들어간 인수의 순서를 나타낸다.</p>
-
-<p>이때 특이한 점은 함수를 선언할 때 설정된 매개변수의 수와 상관없이 <mark style="background-color: #ffdce0">호출할 때 넣은 인수가 모두 저장</mark>된다는 점이다.</p>
-
-<p>사용되는 매개변수보다 인수가 모자라면 리턴 값이 제대로 나오지 않고, 매개변수보다 인수가 많으면 남는 인수는 무시되지만 그것과는 별개로 <code class="language-plaintext highlighter-rouge">arguments</code> 객체에 모두 저장되어 있다.</p>
-
-<h3 id="-어디에-사용할까">🧐 어디에 사용할까?</h3>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">arguments</code> 프로퍼티는 <mark style="background-color: #ffdce0">매개변수 개수를 모를 때</mark> 사용할 수 있다.</li>
-</ul>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sum</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span>
-
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">result</span> <span class="o">+=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">result</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">())</span> <span class="c1">//0</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">//6</span>
-</code></pre></div></div>
-
-<p>그런데 <code class="language-plaintext highlighter-rouge">arguments</code>는 배열이 아니기 때문에 배열 메서드를 바로 사용하기는 어렵고 다른 메서드를 사용해서 배열로 반환한 다음 배열 메서드를 사용해야 한다는 단점이 있다.</p>
-
-<p>이때 ES6에서 나온 <code class="language-plaintext highlighter-rouge">rest 파라미터</code>를 사용하면 이런 단점을 해결할 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//arguments를 사용하여 배열을 만드는 경우</span>
-<span class="kd">function</span> <span class="nx">sum</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">//메서드를 한 번 더 사용해야 한다</span>
-  <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// [1,2,3]</span>
-
-<span class="c1">//rest 파라미터를 사용하여 배열을 만드는 경우</span>
-<span class="kd">function</span> <span class="nx">sum</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// [1,2,3]</span>
-</code></pre></div></div>
-
-<h2 id="length-프로퍼티">length 프로퍼티</h2>
-
-<p>함수 객체의 <code class="language-plaintext highlighter-rouge">length</code> 프로퍼티는 함수를 정의할 때 선언한 매개변수의 개수를 나타낸다. 이때 주의할 점은 인수의 개수와 다를 수 있다는 점이다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">인수의 개수는 arguments 객체의 length로 알 수 있고, 매개변수의 개수는 함수 객체의 length로 알 수 있다.</code></p>
-
-<p><img width="375" alt="스크린샷 2023-03-24 오전 11 49 10" src="https://user-images.githubusercontent.com/110877564/227411715-5f7130ca-f51c-4f78-9340-316715d137de.png" /></p>
-
-<h2 id="name-프로퍼티">name 프로퍼티</h2>
-
-<p>name 프로퍼티는 함수의 이름을 나타낸다.</p>
-
-<p>여기서 주의할 점은 함수 이름과 함수 객체를 가리키는 식별자가 다르다는 것이다. 함수를 호출할 때는 함수 이름이 아니라 함수 객체를 가리키는 식별자로 호출한다.</p>
-
-<p>함수를 선언할 때 함수 표현식을 사용하면 함수 이름을 생략해도 된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
-<span class="p">}</span>
-
-<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 3</span>
-</code></pre></div></div>
-
-<p>위에서 sum은 함수 이름이 아니고, sum 함수는 익명함수이다.
-그런데 name 프로퍼티를 콘솔에 출력해보면 함수 이름이 sum이라고 나온다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="c1">//sum</span>
-</code></pre></div></div>
-
-<p>이렇게 나오는 이유는 name 프로퍼티가 함수 객체를 가리키는 변수 이름을 값으로 가지기 때문이다. ES5까지는 빈 문자열을 값으로 가지고 있었지만, ES6부터는 위와 같이 동작한다.</p>
-
-<h3 id="만약-함수-표현식에-이름을-붙이면-어떻게-될까">만약 함수 표현식에 이름을 붙이면 어떻게 될까?</h3>
-
-<p>함수 표현식에 이름을 붙여보자.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">func</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>이렇게 함수 이름을 붙여 정의한 함수 표현식을 <strong>기명 함수 표현식</strong> 이라고 한다.
-이렇게 정의해도 함수를 호출하는 건 동일하다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">func</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
-<span class="p">}</span>
-
-<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">//3</span>
-<span class="nx">func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">//func is not defined (함수 이름은 외부에서 호출 불가능)</span>
-</code></pre></div></div>
-
-<p>다만 이 경우에는 함수 이름과 함수 객체를 가리키는 식별자가 다르기 때문에 <code class="language-plaintext highlighter-rouge">func</code>는 다른 동작을 할 수 있다.</p>
-
-<ol>
-  <li>이름을 사용해서 함수 표현식 내부에서 자기 자신을 참조할 수 있다.</li>
-  <li>함수 표현식 외부에선 이름을 사용할 수 없다.</li>
-</ol>
-
-<p>일반적으로 중첩 호출을 사용할 때는 다음처럼 작성하기 쉽다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">//3</span>
-<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">//2</span>
-</code></pre></div></div>
-
-<p>그런데 만약 함수를 다른 변수에 할당하고, 기존 변수 sum에 null을 할당한다면, 중첩함수를 더 이상 호출할 수 없게 된다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">let</span> <span class="nx">getSum</span> <span class="o">=</span> <span class="nx">sum</span>
-<span class="nx">sum</span> <span class="o">=</span> <span class="kc">null</span>
-
-<span class="nx">getSum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">//3</span>
-<span class="nx">getSum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">//sum is not a function (중첩 함수는 호출이 불가능하다)</span>
-</code></pre></div></div>
-
-<p>이럴 때 함수에 이름을 붙여주면 이런 에러를 방지할 수 있다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">func</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">func</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">let</span> <span class="nx">getSum</span> <span class="o">=</span> <span class="nx">sum</span>
-<span class="nx">sum</span> <span class="o">=</span> <span class="kc">null</span>
-
-<span class="nx">getSum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">//3</span>
-<span class="nx">getSum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 2 (중첩 함수를 호출할 수 있다!)</span>
-</code></pre></div></div>
-
-<p class="notice--danger">deep dive 18장 참고</p>]]></content><author><name>Reyna</name></author><category term="javascript" /><category term="javascript" /><category term="function" /><summary type="html"><![CDATA[일급객체, 함수 객체의 프로퍼티]]></summary></entry><entry><title type="html">개발할 때 유용한 vscode extension</title><link href="http://localhost:4000/notes/vsc-extension/" rel="alternate" type="text/html" title="개발할 때 유용한 vscode extension" /><published>2023-03-23T00:00:00+09:00</published><updated>2023-03-23T00:00:00+09:00</updated><id>http://localhost:4000/notes/vsc-extension</id><content type="html" xml:base="http://localhost:4000/notes/vsc-extension/"><![CDATA[<h1 id="todo-highlight">TODO Highlight</h1>
-
-<p align="center">
-<img width="459" alt="스크린샷 2023-03-23 오전 6 37 27" src="https://user-images.githubusercontent.com/110877564/227044317-05a798e3-1e39-4305-ae4e-06efa89d1114.png" />
-</p>
-
-<p><code class="language-plaintext highlighter-rouge">TODO Highlight</code>를 설치하고 다음과 같이 <code class="language-plaintext highlighter-rouge">TODO:</code>를 입력하면 하이라이트가 자동으로 만들어진다.</p>
-
-<p align="center">
-<img width="566" alt="스크린샷 2023-03-23 오전 6 38 28" src="https://user-images.githubusercontent.com/110877564/227044446-6a36745e-ca1c-46b2-81b2-ae15de34cb8b.png" />
-</p>
-
-<ul>
-  <li>이때 기본적으로 <code class="language-plaintext highlighter-rouge">Todo:</code>,<code class="language-plaintext highlighter-rouge">TODO :</code> 처럼 소문자로 입력하거나 콜론을 띄어 쓰면 인식되지 않는다. 만약 다른 단어나 스타일을 적용하고 싶으면 설정을 바꿔준다.</li>
-</ul>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//settings.json</span><span class="w">
- </span><span class="nl">"todohighlight.defaultStyle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">//원하는</span><span class="w"> </span><span class="err">디폴트</span><span class="w"> </span><span class="err">설정</span><span class="w">
-  </span><span class="p">}</span><span class="err">,</span><span class="w">
-</span><span class="nl">"todohighlight.keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"DEBUG:"</span><span class="p">,</span><span class="w"> </span><span class="err">//디폴트로</span><span class="w"> </span><span class="err">설정할</span><span class="w"> </span><span class="err">키워드들</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REVIEW:"</span><span class="p">,</span><span class="w"> </span><span class="err">//키워드별로</span><span class="w"> </span><span class="err">설정을</span><span class="w"> </span><span class="err">바꿔주고</span><span class="w"> </span><span class="err">싶을</span><span class="w"> </span><span class="err">때</span><span class="w">
-      </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aliceblue"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"border"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1px solid ##bb88ed"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"borderRadius"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2px"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"backgroundColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#bb88ed"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"isWholeLine"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div></div>
-
-<p>원하는 설정으로 바꾼 후 사용하면 된다.</p>
-
-<p align="center">
-<img width="572" alt="스크린샷 2023-03-23 오전 7 11 30" src="https://user-images.githubusercontent.com/110877564/227050099-6d12c502-2f7a-4427-a8eb-62fe549df782.png" />
-</p>
-
-<h1 id="es7-reactreduxreact-native-snippets">ES7+ React/Redux/React-Native snippets</h1>
-
-<p>스니펫을 사용하면 React/Redux/React-Native를 사용할 때 템플릿 자동 완성 기능을 사용할 수 있다.</p>
-
-<h2 id="설치">설치</h2>
-
-<p><a href="https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets">ES7+ React/Redux/React-Native snippets</a></p>
-
-<h2 id="imr-리액트-import">imr (리액트 import)</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
-</code></pre></div></div>
-
-<h2 id="rafce-리액트-함수형-컴포넌트">rafce (리액트 함수형 컴포넌트)</h2>
-
-<p align="center">
-<img width="481" alt="스크린샷 2023-03-22 오후 10 58 29" src="https://user-images.githubusercontent.com/110877564/227055477-95c4f921-2fc0-46bd-9ea1-dae830a59098.png" />
-</p>
-<p>컴포넌트 이름은 파일 이름으로 만들어진다. 다음은 <code class="language-plaintext highlighter-rouge">Sidebar.js</code> 파일에서 <code class="language-plaintext highlighter-rouge">rafce</code>를 입력한 결과이다.</p>
-
-<p align="center">
-<img width="481" alt="스크린샷 2023-03-22 오후 10 58 42" src="https://user-images.githubusercontent.com/110877564/227055466-8476d563-5753-4339-8755-04a230d4b6b1.png" />
-</p>
-
-<p>다른 스니펫 목록은 <a href="https://github.com/ults-io/vscode-react-javascript-snippets/blob/HEAD/docs/Snippets.md">여기</a>에서 확인 가능하다.</p>
-
-<h1 id="auto-rename-tag-auto-close-tag">Auto Rename Tag, Auto Close Tag</h1>
-
-<p>태그 수정할 때 닫힘 태그도 자동으로 수정 / 태그 생성 시 닫힘 태그도 자동으로 만들어주는 익스텐션이다.</p>
-
-<h1 id="material-icon-theme">Material Icon Theme</h1>
-
-<p>폴더나 파일들을 보기 쉽게 만들어주는 아이콘 테마이다. 종류가 여러가지 있어서 마음에 드는 테마를 사용하면 된다.</p>
-
-<p align="center">
-<img width="163" alt="스크린샷 2023-03-23 오전 7 55 03" src="https://user-images.githubusercontent.com/110877564/227056646-91c88773-7210-43dd-afbf-c36520f0babe.png" />
-</p>]]></content><author><name>Reyna</name></author><category term="notes" /><category term="vscode extension" /><category term="TODO Highlight" /><summary type="html"><![CDATA[vscode extension]]></summary></entry><entry><title type="html">Material Ui</title><link href="http://localhost:4000/material-ui/" rel="alternate" type="text/html" title="Material Ui" /><published>2023-03-23T00:00:00+09:00</published><updated>2023-03-23T00:00:00+09:00</updated><id>http://localhost:4000/material-ui</id><content type="html" xml:base="http://localhost:4000/material-ui/"><![CDATA[<p>material-ui를 이용하여 아이콘 사용하기</p>
-
-<h1 id="설치하기">설치하기</h1>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="p">@</span><span class="nd">mui</span><span class="sr">/material @emotion/</span><span class="nx">react</span> <span class="p">@</span><span class="nd">emotion</span><span class="sr">/style</span><span class="err">d
-</span><span class="nx">npm</span> <span class="nx">install</span> <span class="p">@</span><span class="nd">mui</span><span class="sr">/icons-materia</span><span class="err">l
-</span></code></pre></div></div>
-
-<p><a href="https://mui.com/material-ui/getting-started/installation/">참고</a></p>
-
-<h1 id="아이콘-검색">아이콘 검색</h1>
-
-<ol>
-  <li><a href="https://mui.com/material-ui/material-icons/">여기</a>에서 원하는 아이템을 검색</li>
-</ol>
-
-<p align="center">
-<img width="849" alt="스크린샷 2023-03-23 오후 12 17 59" src="https://user-images.githubusercontent.com/110877564/227093737-bce8cc77-636d-4f02-8ff2-834856cca77e.png" />
-</p>
-
-<ol>
-  <li>import문 복사</li>
-</ol>
-
-<p align="center">
-<img width="594" alt="스크린샷 2023-03-23 오후 12 18 42" src="https://user-images.githubusercontent.com/110877564/227093726-a5e0676c-78d1-40bf-ab97-9f315b5dd7e5.png" />
-</p>
-
-<ol>
-  <li>원하는 곳에서 사용</li>
-</ol>
-
-<p align="center">
-<img width="310" alt="스크린샷 2023-03-23 오후 12 21 00" src="https://user-images.githubusercontent.com/110877564/227093723-db90083e-56d3-4974-abad-940bdbf660c4.png" />
-</p>]]></content><author><name>Reyna</name></author><summary type="html"><![CDATA[material-ui를 이용하여 아이콘 사용하기]]></summary></entry></feed>
+<a href="https://noonnu.cc/">눈누</a></p>]]></content><author><name>Reyna</name></author><summary type="html"><![CDATA[구글 폰트 눈누]]></summary></entry></feed>
