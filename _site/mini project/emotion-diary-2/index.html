@@ -1,0 +1,943 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Mini Project] 감성 일기장 업그레이드 2. App.js(context API) typing - Reyna</title>
+<meta name="description" content="wanted challenge">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[Mini Project] 감성 일기장 업그레이드 2. App.js(context API) typing">
+<meta property="og:url" content="http://localhost:4000/mini%20project/emotion-diary-2/">
+
+
+  <meta property="og:description" content="wanted challenge">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-09T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-04-09T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/mini%20project/emotion-diary-2/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+           
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#mini-project" itemprop="item"><span itemprop="name">Mini project</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Mini Project] 감성 일기장 업그레이드 2. App.js(context API) typing</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(116)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                           
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (16)</a
+          >
+        </li>
+                 
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (6)</a
+          >
+        </li>
+                     
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                             
+        <li>
+          <a href="/categories/react" class=""
+            >React (1)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                                   
+      </ul>
+      <ul>
+                   
+        <li>
+          <a href="/categories/css" class="">CSS (6)</a>
+        </li>
+                         
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                           
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (11)</a>
+        </li>
+                       
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                                 
+      </ul>
+      <ul>
+             
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (29)</a
+          >
+        </li>
+                               
+      </ul>
+         <ul>
+                                 
+        <li>
+          <a href="/categories/baekjoon" class=""
+            >Baekjoon (5)</a
+          >
+        </li>
+           
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+        <ul>
+                                   
+        <li>
+          <a href="/categories/lecture" class="">Lecture (10)</a>
+        </li>
+         
+      </ul>
+      <ul>
+      <ul>
+               
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                             
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (7)</a
+          >
+        </li>
+                   
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[Mini Project] 감성 일기장 업그레이드 2. App.js(context API) typing"
+    /> <meta
+      itemprop="description"
+      content="wanted challenge"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-04-09T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-04-09T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[Mini Project] 감성 일기장 업그레이드 2. App.js(context API) typing</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-04-09T00:00:00+09:00"
+            >2023.04.09</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-04-09"
+            >2023.04.09</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#mini-project" class="page__taxonomy-item p-category" rel="tag">mini project</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#project" class="page__taxonomy-item p-category" rel="tag">project</a><span class="sep">, </span>
+    
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
+    
+      <a href="/tags/#typescript" class="page__taxonomy-item p-category" rel="tag">typescript</a><span class="sep">, </span>
+    
+      <a href="/tags/#wanted-challenge" class="page__taxonomy-item p-category" rel="tag">wanted challenge</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#return">return</a></li><li><a href="#typing">typing</a></li><li><a href="#createcontext">createContext</a></li><li><a href="#contextprovider">Context.Provider</a></li><li><a href="#usereducer">useReducer</a></li><li><a href="#reducer">reducer</a></li><li><a href="#dispatch">dispatch</a></li></ul>
+
+          </nav>
+        </aside>
+         <p><img src="https://user-images.githubusercontent.com/110877564/230750510-b1638c6d-45a8-4c42-9567-548e6ec473c5.png" alt="표지" /></p>
+
+<p>이번 포스팅에서는 <code class="language-plaintext highlighter-rouge">App.js</code>를 <code class="language-plaintext highlighter-rouge">App.tsx</code>로 바꾸고, 발생하는 오류를 기준으로 타입을 만들어주었다.</p>
+
+<p>감성 일기장의 <code class="language-plaintext highlighter-rouge">App()</code>은 크게 두 가지 기능을 가지고 있다. 첫번째는 <code class="language-plaintext highlighter-rouge">라우팅</code>이고, 두번째는 데이터를 전역에서 관리하기 위한 <code class="language-plaintext highlighter-rouge">context</code> 설정이다. <code class="language-plaintext highlighter-rouge">라우팅</code> 부분은 따로 변경할 점은 없었고, 주로 <code class="language-plaintext highlighter-rouge">context provider</code>와 관련한 함수들에서 에러가 발생했다.타입을 설정하다보니 <code class="language-plaintext highlighter-rouge">context API</code>도 잘 기억이 안 나서 같이 복습했다.</p>
+
+<h3 id="return">return</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// App.tsx</span>
+<span class="o">&lt;</span><span class="nx">DiaryStateContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">DiaryDispatchContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=&gt;</span>
+    <span class="o">&lt;</span><span class="nx">BrowserRouter</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Routes</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Home</span> <span class="o">/&gt;</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="sr">/Route</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/new</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">New</span> <span class="o">/&gt;</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="sr">/Route</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/edit/:id</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Edit</span> <span class="o">/&gt;</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="sr">/Route</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/diary/:id</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Diary</span> <span class="o">/&gt;</span><span class="p">}</span><span class="o">&gt;&lt;</span><span class="sr">/Route</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/Routes</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/BrowserRouter</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/DiaryDispatchContext.Provider</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/DiaryStateContext.Provider</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>리턴 부분은 이렇게 Provider들이 전체를 감싸면서 상태를 전역에서 관리할 수 있도록 제공하고, 안쪽에서 라우팅이 되고 있다.</p>
+
+<h3 id="typing">typing</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">DiaryItem</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">?:</span> <span class="kr">number</span>
+  <span class="nx">date</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">content</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">emotion</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">text</span><span class="p">?:</span> <span class="kr">string</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">DiaryItem</code>은 각 다이어리에 들어가야 하는 정보들의 타입을 지정해주었다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Action</span> <span class="o">=</span>
+  <span class="o">|</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">INIT</span><span class="dl">"</span><span class="p">;</span> <span class="nl">data</span><span class="p">:</span> <span class="nx">DiaryItem</span><span class="p">[]}</span>
+  <span class="o">|</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CREATE</span><span class="dl">"</span><span class="p">;</span> <span class="nl">data</span><span class="p">:</span> <span class="nx">DiaryItem</span><span class="p">}</span>
+  <span class="o">|</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">REMOVE</span><span class="dl">"</span><span class="p">;</span> <span class="nl">targetId</span><span class="p">:</span> <span class="kr">number</span><span class="p">}</span>
+  <span class="o">|</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">EDIT</span><span class="dl">"</span><span class="p">;</span> <span class="nl">data</span><span class="p">:</span> <span class="nx">DiaryItem</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Action</code>은 타입에 따라 들어가는 데이터를 유니온 타입으로 지정했다. 유니온 타입은 <code class="language-plaintext highlighter-rouge">OR</code> 연산자라고 생각하면 된다. (<a href="https://joshua1988.github.io/ts/guide/operator.html#union-type">유니온 타입</a>)
+<code class="language-plaintext highlighter-rouge">DiaryItem[]</code>은 <code class="language-plaintext highlighter-rouge">DiaryItem</code>이 배열 형태로 저장됨을 뜻한다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">TodoState</span> <span class="o">=</span> <span class="nx">DiaryItem</span><span class="p">[]</span>
+
+<span class="kd">type</span> <span class="nx">TodoDispatch</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">onCreate</span><span class="p">:</span> <span class="p">(</span><span class="na">data</span><span class="p">:</span> <span class="nx">DiaryItem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+  <span class="na">onRemove</span><span class="p">:</span> <span class="p">(</span><span class="na">targetId</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+  <span class="na">onEdit</span><span class="p">:</span> <span class="p">(</span><span class="na">data</span><span class="p">:</span> <span class="nx">DiaryItem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">TodoState</code>는 <code class="language-plaintext highlighter-rouge">DiaryItem[]</code>을 그냥 사용해도 무방하지만, 가독성이 더 좋을 것 같아 나눠서 작성했다.</p>
+
+<h3 id="createcontext">createContext</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">DiaryStateContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="o">&lt;</span><span class="nx">TodoState</span><span class="o">&gt;</span><span class="p">([])</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">DiaryDispatchContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="o">&lt;</span><span class="nx">TodoDispatch</span><span class="o">&gt;</span><span class="p">({</span>
+  <span class="na">onCreate</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{},</span>
+  <span class="na">onRemove</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{},</span>
+  <span class="na">onEdit</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{},</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">createContext</code>는 <code class="language-plaintext highlighter-rouge">Context</code>객체를 만든다. 인자로 초기값을 넣어주는데, Provider에서 value prop을 설정하지 않았을 때 사용된다.</p>
+
+<h3 id="contextprovider">Context.Provider</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">DiaryStateContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Provider로 감싼 하위 컴포넌트들에게 상태 변화를 알려주는 역할을 한다. 여기서 제공하는 것은 value prop에 설정해 둔 값이다.</p>
+
+<h3 id="usereducer">useReducer</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useReducer</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span> <span class="p">[])</span>
+</code></pre></div></div>
+
+<p>위에서 value로 설정한 데이터는 <code class="language-plaintext highlighter-rouge">useReducer</code>를 이용해서 설정한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">useReducer</code>는 <code class="language-plaintext highlighter-rouge">reducer</code>를 받아서, <code class="language-plaintext highlighter-rouge">state</code>(여기서는 <code class="language-plaintext highlighter-rouge">data</code>)와 <code class="language-plaintext highlighter-rouge">dispatch</code>를 반환하는 함수이다.
+이때 <code class="language-plaintext highlighter-rouge">reducer</code>는 <code class="language-plaintext highlighter-rouge">(state, action) =&gt; newState</code> 형태로 받는다.</p>
+
+<h3 id="reducer">reducer</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">reducer</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Reducer</span><span class="o">&lt;</span><span class="nx">DiaryItem</span><span class="p">[],</span> <span class="nx">Action</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="na">newState</span><span class="p">:</span> <span class="nx">DiaryItem</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="kd">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">INIT</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">action</span><span class="p">.</span><span class="nx">data</span>
+    <span class="p">}</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">CREATE</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nx">newState</span> <span class="o">=</span> <span class="p">[</span><span class="nx">action</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span> <span class="p">...</span><span class="nx">state</span><span class="p">]</span>
+      <span class="k">break</span>
+    <span class="p">}</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">REMOVE</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nx">newState</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="na">it</span><span class="p">:</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="kr">number</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">it</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">action</span><span class="p">.</span><span class="nx">targetId</span><span class="p">)</span>
+      <span class="k">break</span>
+    <span class="p">}</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">EDIT</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nx">newState</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">it</span><span class="p">)</span> <span class="o">=&gt;</span>
+        <span class="nx">it</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span> <span class="p">?</span> <span class="p">{...</span><span class="nx">action</span><span class="p">.</span><span class="nx">data</span><span class="p">}</span> <span class="p">:</span> <span class="nx">it</span>
+      <span class="p">)</span>
+      <span class="k">break</span>
+    <span class="p">}</span>
+    <span class="nl">default</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span>
+  <span class="p">}</span>
+  <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">diary</span><span class="dl">"</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">newState</span><span class="p">))</span> <span class="c1">//서버에  요청</span>
+  <span class="k">return</span> <span class="nx">newState</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">React.Reducer&lt;DiaryItem[], Action&gt;</code>는 <code class="language-plaintext highlighter-rouge">reducer</code> 함수가 <code class="language-plaintext highlighter-rouge">DiaryItem[]</code> 타입의 상태(state)와 <code class="language-plaintext highlighter-rouge">Action</code> 타입의 액션(action)을 받아서 새로운 상태를 반환함을 나타낸다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">reducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">:</span> <span class="nx">DiaryItem</span><span class="p">[],</span> <span class="nx">action</span><span class="p">:</span> <span class="nx">Action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p>이 형태로 적어도 되기는 한다. 하지만 <code class="language-plaintext highlighter-rouge">React.Reducer</code>를 사용하는 것이 <code class="language-plaintext highlighter-rouge">typescript</code>가 반환값을 더 잘 추론할 수 있고, <code class="language-plaintext highlighter-rouge">state</code>와 <code class="language-plaintext highlighter-rouge">action</code>의 관계를 명확하게 구분할 수 있다고 한다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//index.d.ts</span>
+<span class="kd">type</span> <span class="nx">Reducer</span><span class="o">&lt;</span><span class="nx">S</span><span class="p">,</span> <span class="nx">A</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">prevState</span><span class="p">:</span> <span class="nx">S</span><span class="p">,</span> <span class="nx">action</span><span class="p">:</span> <span class="nx">A</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">S</span>
+</code></pre></div></div>
+
+<p>위의 코드가 <code class="language-plaintext highlighter-rouge">React.Reducer</code>는 타입스크립트에서 제공하는 인터페이스이다.</p>
+
+<h3 id="dispatch">dispatch</h3>
+
+<p>아까 <a href="#const-data-dispatch">useReducer를 이용하여 만든 dispatch</a>는 reducer에게 action을 보내는 용도로 사용된다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">onCreate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">newDiaryItem</span><span class="p">:</span> <span class="nx">DiaryItem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">dispatch</span><span class="p">({</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CREATE</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="nx">newDiaryItem</span><span class="p">,</span>
+  <span class="p">})</span>
+  <span class="nx">dataId</span><span class="p">.</span><span class="nx">current</span><span class="o">++</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">dispatch()</code>를 호출하면서 action 객체에 type과 data를 객체로 만들어 보내면, <code class="language-plaintext highlighter-rouge">reduce()</code>에서 <code class="language-plaintext highlighter-rouge">action.type</code>, <code class="language-plaintext highlighter-rouge">action.data</code> 이런 식으로 사용할 수 있다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//reducer()</span>
+  <span class="p">...</span>
+ <span class="k">case</span> <span class="dl">"</span><span class="s2">CREATE</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nx">newState</span> <span class="o">=</span> <span class="p">[</span><span class="nx">action</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span> <span class="p">...</span><span class="nx">state</span><span class="p">]</span>
+      <span class="k">break</span>
+    <span class="p">}</span>
+  <span class="p">...</span>
+</code></pre></div></div>
+
+<p>이제 <code class="language-plaintext highlighter-rouge">App.tsx</code> 에서 발생한 에러를 모두 없앴다. 상태관리 로직을 다른 파일로 분리해도 좋을 것 같아서 타입스크립트 적용이 끝나면 해보고 싶다.</p>
+
+<p>다음 포스팅부터는 다이어리에 관련된 컴포넌트들을 하위 수준부터 바꿔보려고 한다.</p>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/lecture/node-js/" class="pagination--pager" title="[한입 크기로 잘라 먹는 리액트] Node.js 기초 알아보기
+">Previous</a>
+    
+    
+      <a href="/mini%20project/emotion-diary-3/" class="pagination--pager" title="[Mini Project] 감성 일기장 업그레이드 3. Header, Button 컴포넌트에 타입스크립트 적용하기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/simple-diary/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">react
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/tailwind/" rel="permalink">Tailwind CSS 알아보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">tailwind css
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mini%20project/emotion-diary-4/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 4. Diary Page 타입스크립트 적용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">wanted challenge
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/react/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">react
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'sena-22/sena-22.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

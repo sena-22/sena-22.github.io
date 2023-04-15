@@ -1,0 +1,1086 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ - Reyna</title>
+<meta name="description" content="react">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ">
+<meta property="og:url" content="http://localhost:4000/lecture/react/">
+
+
+  <meta property="og:description" content="react">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-10T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-04-10T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/lecture/react/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+           
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#lecture" itemprop="item"><span itemprop="name">Lecture</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(116)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                           
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (16)</a
+          >
+        </li>
+                 
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (6)</a
+          >
+        </li>
+                     
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                             
+        <li>
+          <a href="/categories/react" class=""
+            >React (1)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                                   
+      </ul>
+      <ul>
+                   
+        <li>
+          <a href="/categories/css" class="">CSS (6)</a>
+        </li>
+                         
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                           
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (11)</a>
+        </li>
+                       
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                                 
+      </ul>
+      <ul>
+             
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (29)</a
+          >
+        </li>
+                               
+      </ul>
+         <ul>
+                                 
+        <li>
+          <a href="/categories/baekjoon" class=""
+            >Baekjoon (5)</a
+          >
+        </li>
+           
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+        <ul>
+                                   
+        <li>
+          <a href="/categories/lecture" class="">Lecture (10)</a>
+        </li>
+         
+      </ul>
+      <ul>
+      <ul>
+               
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                             
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (7)</a
+          >
+        </li>
+                   
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ"
+    /> <meta
+      itemprop="description"
+      content="react"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-04-10T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-04-10T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-04-10T00:00:00+09:00"
+            >2023.04.10</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-04-10"
+            >2023.04.10</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#lecture" class="page__taxonomy-item p-category" rel="tag">lecture</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
+    
+      <a href="/tags/#udemy" class="page__taxonomy-item p-category" rel="tag">udemy</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#왜-리액트를-사용할까">왜 리액트를 사용할까?</a><ul><li><a href="#컴포넌트-기반-구조">컴포넌트 기반 구조</a><ul><li><a href="#shotgun-surgery">shotgun surgery</a></li></ul></li><li><a href="#선언형-프로그래밍">선언형 프로그래밍</a></li><li><a href="#virtual-dom">virtual DOM</a></li></ul></li><li><a href="#create-react-app을-이용하여-리액트-앱을-설치하기">create-react-app을 이용하여 리액트 앱을 설치하기</a><ul><li><a href="#create-react-app">create-react-app</a></li><li><a href="#npx">npx</a></li></ul></li><li><a href="#jsx">JSX</a><ul><li><a href="#jsxjavascript-xml">JSX(JavaScript XML)</a></li><li><a href="#jsx-문법">JSX 문법</a></li></ul></li><li><a href="#state">State</a></li><li><a href="#props">Props</a><ul><li><a href="#default-props">default props</a></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <h1 id="왜-리액트를-사용할까">왜 리액트를 사용할까?</h1>
+
+<p><code class="language-plaintext highlighter-rouge">html</code>, <code class="language-plaintext highlighter-rouge">css</code>, <code class="language-plaintext highlighter-rouge">javascript</code>만 이용해도 웹사이트를 만들 수 있다. 그렇다면 리액트를 사용했을 때의 장점이 뭐가 있을까?</p>
+
+<h2 id="컴포넌트-기반-구조">컴포넌트 기반 구조</h2>
+
+<p>리액트는 컴포넌트 기반의 UI 라이브러리이다.
+컴포넌트 기반이라는 것은 화면을 각각 컴포넌트 단위로 나누어서 개별적으로 관리할 수 있다는 것을 의미한다.</p>
+
+<p>여기서 컴포넌트는 UI를 구성하는 최소 단위이다. 예를 들어 웹 사이트의 헤더, 푸터, 내비게이션 바 등을 컴포넌트라고 할 수 있다. 이 요소들을 각각 따로 관리하면 화면을 바꾸거나 다르게 조합하고 싶을 때 필요한 요소만 사용이 가능하고, 재사용하기도 쉽다. 만약 내용이 거의 동일한 페이지가 있다면, 다른 요소는 재사용하고 바뀌는 일부분만 교체해주면 될 것이다. 또 여러 곳에서 재사용하는 컴포넌트를 바꾼다면, 그 컴포넌트만 바꾸면 되므로 일일이 수정해야 하는 <code class="language-plaintext highlighter-rouge">shotgun surgery</code> 문제가 발생하지 않는다.</p>
+
+<h3 id="shotgun-surgery">shotgun surgery</h3>
+
+<p>한 개의 문제가 수많은 파일을 동시에 해결해야 하는 현상을 말한다.</p>
+
+<p>전에 진행했던 프로젝트 중에 실제로 이런 문제와 마주친 적이 있었다. 날짜 라이브러리를 변경해야 하는 상황이었는데, 필요한 곳마다 직접 라이브러리를 불러오다보니 라이브러리가 사용된 모든 코드를 변경해야 하는 문제가 발생했다. 그후에 라이브러리를 불러와서 날짜 형식을 지정하는 코드를 한 파일로 분리해서 만들고, 그 파일을 불러온 곳에서는 사용만 할 수 있도록 바꿔서 똑같은 문제가 일어나지 않도록 다시 코드를 수정해야 했다.</p>
+
+<p>컴포넌트도 마찬가지로 같은 기능을 가졌다면 분리해서 문제가 생겨도 그 하나의 컴포넌트만 수정하도록 만드는 것이 중요하다.</p>
+
+<h2 id="선언형-프로그래밍">선언형 프로그래밍</h2>
+
+<p>선언형 프로그래밍은 코드가 어떻게 실행되는지 구체적인 방법을 명시하지 않고, 이 코드가 어떤 역할을 하는지 나타내는 프로그래밍 방식이다.</p>
+
+<p>선언형 프로그래밍와 대비되는 개념으로 명령형 프로그래밍이 있는데, 명령형 프로그래밍은 프로그램의 구체적인 실행 방법을 명시하는 방법이다.</p>
+
+<p>예를 들어, 집을 청소한다고 할 때 선언형 방식은 ‘집을 깨끗하게 유지한다’는 목표를 선언하고, 명령형 방식은 ‘바닥을 쓸고, 창문을 닦아라’ 하는 식으로 구체적인 방법을 명령하는 방식이다.</p>
+
+<p>선언형 프로그래밍 방식을 사용하면 구체적인 실행 방법보다 문제 해결에 더 중점을 두기 때문에 코드가 더 직관적이고, 가독성도 좋다.</p>
+
+<p>다음은 JSX를 이용하여 Greeting이라는 컴포넌트를 만든 코드이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Greeting</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>만약 이 코드를 자바스크립트로 구현해야 한다면 이렇게 될 것이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Greeting</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">h1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">h1</span><span class="dl">"</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">`Hello, </span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">!`</span><span class="p">)</span>
+  <span class="nx">h1</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">h1</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>리액트를 사용하면 DOM을 직접 어떻게 조작하는지 일일이 정해주지 않아도 내부적으로 처리해주기 때문에 UI를 정의하는 것에 집중할 수 있다.</p>
+
+<h2 id="virtual-dom">virtual DOM</h2>
+
+<p>리액트는 가상 돔을 사용한다. 가상 돔은 원본의 복사본이라고 생각하면 된다.</p>
+
+<p>예를 들어 가구 배치를 바꾼다고 하자. 가구들을 여러 개 옮길 때 하나씩 옮기다보면 매번 가구를 옮기고, 또 다음 가구를 옮기면서 이미 옮긴 가구를 다시 옮겨야 할 수도 있다. 하지만 만약 가구들을 모형으로 만들어 모형을 이용해 어떻게 배치할 지 정한 후 한번에 옮기면, 여러 번 옮길 필요 없이 정확히 바뀐 부분만 이동해주면 된다. 리액트도 이런 식으로 동작하여 연산 비용을 줄이고 필요한 UI만 업데이트할 수 있다.</p>
+
+<h1 id="create-react-app을-이용하여-리액트-앱을-설치하기">create-react-app을 이용하여 리액트 앱을 설치하기</h1>
+
+<h2 id="create-react-app">create-react-app</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="o">&lt;</span><span class="nx">프로젝트</span> <span class="nx">이름</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>위의 명령어를 이용해 리액트 앱을 설치하면, 자동으로 package.json, node_modules 등 필요한 파일과 패키지가 설치되어 있을 것이다.</p>
+
+<p>설치 후에 터미널에 <code class="language-plaintext highlighter-rouge">npm start</code>를 입력하면, 자동으로 3000번 포트가 열리면서 웹페이지가 열린다.
+(localhost:3000은 내 컴퓨터의 주소를 의미한다.)</p>
+
+<p>리액트 로고가 보이면 성공적으로 설치가 된 것이다.</p>
+
+<h2 id="npx">npx</h2>
+
+<p><code class="language-plaintext highlighter-rouge">create-react-app</code>은 보통 npm보다는 npx 명령어를 이용하여 설치한다.
+npx를 사용하면 컴퓨터에 패키지를 설치하지 않고 일시적으로 이용할 수 있는데, 이렇게 하는 이유는 <code class="language-plaintext highlighter-rouge">create-react-app</code>이 자주 업데이트 되기 때문이다. 만약 컴퓨터에 설치하고 사용하면, 버전이 업데이트 되었을 때 수동으로 업데이트를 해줘야 할 것이다. 그러므로 프로젝트를 생성할 때 한 번만 사용하기 위해 npx로 설치하는 것이 편리하다.</p>
+
+<p>npx도 버전 확인을 통해 설치 여부를 확인할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="o">-</span> <span class="nx">v</span>
+</code></pre></div></div>
+
+<p>만약 제대로 설치되어 있지 않다면 <code class="language-plaintext highlighter-rouge">npm install -g npx</code> 명령어를 터미널에 입력하여 설치해주면 된다.</p>
+
+<h1 id="jsx">JSX</h1>
+
+<h2 id="jsxjavascript-xml">JSX(JavaScript XML)</h2>
+
+<p>JSX는 자바스크립트 XML을 추가한 확장 문법이다. 확장한다는 의미는 JSX가 공식적인 자바스크립트 문법은 아니라는 의미이다. 리액트에서는 JSX 문법을 사용한 코드를 컴파일 단계에서 Babel과 같은 도구를 이용하여 자바스크립트로 변환하여 실행한다.</p>
+
+<p>XML은 eXtensible Markup Language의 약자로, HTML과 같은 마크업 언어의 한 종류이다. HTML과 다른 점은 태그 이름이 미리 정의되어 있지 않아 사용자가 직접 태그 이름을 지정할 수 있다.</p>
+
+<p class="notice--primary">그런데 JSX에서 &lt;h2&gt;나 <img /> 태그들을 정의하지 않고 사용할 수 있는 것은 React에 HTML과 비슷한 구조를 가지는 JSX 태그들이 미리 정의되어 있기 때문이다.</p>
+
+<h2 id="jsx-문법">JSX 문법</h2>
+
+<p>JSX는 다음과 같은 특징을 가진다.</p>
+
+<ol>
+  <li>JSX 태그는 반드시 닫는 태그를 가져야 한다.</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// &lt;div&gt;Hello World //error</span>
+<span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">img</span> <span class="o">/&gt;</span> <span class="c1">//이렇게 적을 수도 있다.</span>
+</code></pre></div></div>
+
+<ol>
+  <li>반드시 최상위 태그가 필요하다.</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="c1">// 최상위 태그</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Header</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Footer</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>만약 다른 태그를 모두 감싸는 최상위 태그가 없으면 에러가 발생한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="c1">//error</span>
+      <span class="o">&lt;</span><span class="nx">Header</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Footer</span> <span class="o">/&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>최상위 태그로 <code class="language-plaintext highlighter-rouge">div</code> 등을 사용하고 싶지 않으면 <code class="language-plaintext highlighter-rouge">fragment</code> 태그를 사용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span> <span class="c1">//React를 import 해야 한다.</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">React</span><span class="p">.</span><span class="nx">Fragment</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Header</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Footer</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/React.Fragment</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;&gt;</code> 형태로 사용해도 된다. 이 경우에는 JSX 컴파일러(바벨 같은..)가 <code class="language-plaintext highlighter-rouge">fragment</code>를 자동으로 인식해서 <code class="language-plaintext highlighter-rouge">import</code> 하지 않아도 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Header</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Footer</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">css</code>에서 <code class="language-plaintext highlighter-rouge">class</code> 대신 <code class="language-plaintext highlighter-rouge">className</code>을 사용해야 한다.</li>
+</ol>
+
+<p>리액트에서 class 속성을 사용하면 자바스크립트의 클래스와 혼동될 수 있기 떄문에 <code class="language-plaintext highlighter-rouge">className</code> 속성을 사용해야 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Header.js</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./Header.css</span><span class="dl">"</span>
+
+<span class="kd">const</span> <span class="nx">Header</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">header</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">header</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">React</span><span class="o">!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/header</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Header.css</span>
+<span class="p">.</span><span class="nx">header</span> <span class="p">{</span>
+  <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="nx">aliceblue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>JSX에서 자바스크립트의 값을 사용하는 방법</li>
+</ol>
+
+<p>JSX내에서 자바스크립트의 값을 사용하려면, 중괄호로 값을 감싸면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>중괄호 안에 함수를 넣을 수도 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">John</span><span class="dl">"</span>
+  <span class="kd">const</span> <span class="nx">func</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">func</span><span class="p">()}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>또한 삼항연산자도 사용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">isLoggedIn</span> <span class="p">?</span> <span class="o">&lt;</span><span class="nx">AdminPanel</span> <span class="o">/&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="nx">LoginForm</span> <span class="o">/&gt;</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>위의 코드처럼 삼항연산자를 이용하여 로그인이 되어 있는지, 아닌지에 따라 다른 컴포넌트를 렌더링할 수 있다.</p>
+
+<h1 id="state">State</h1>
+
+<p>State는 계속 변화하는 데이터를 가리킨다. 예를 들어 흔히 사용되는 다크 모드의 경우 다크 모드인 상태와, 다크 모드가 아닌 상태로 나눌 수 있으며, 버튼을 통해 상태를 변경할 수 있다.</p>
+
+<p>간단한 예제로, 버튼을 클릭할 때마다 숫자가 1씩 증가하거나 감소하는 컴포넌트를 만들어보자</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+
+<span class="kd">const</span> <span class="nx">Counter</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">//[상태값, 상태 변화 함수] = usesState(초기값)</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+  <span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">onDecrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onDecrease</span><span class="p">}</span><span class="o">&gt;-&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span>
+</code></pre></div></div>
+
+<p>리액트에서 상태를 변화시키려면 <code class="language-plaintext highlighter-rouge">useState</code>를 사용하면 된다. <code class="language-plaintext highlighter-rouge">useState</code>는 상태의 초기값을 인자로 받아, 배열을 반환한다. 배열의 첫 번째 요소는 <code class="language-plaintext highlighter-rouge">현재 상태 값</code>이고, 두 번째 요소는 <code class="language-plaintext highlighter-rouge">상태를 업데이트하는 함수</code>이다. <code class="language-plaintext highlighter-rouge">useState</code>를 사용하려면 먼저 불러와서 선언해야 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+
+<span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>다음으로는 함수를 만들어서 버튼을 클릭했을 때 함수가 실행되도록 지정해준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span> <span class="c1">//버튼 클릭 시 실행</span>
+<span class="p">...</span>
+<span class="k">return</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>그리고 함수가 실행되었을 때 상태가 변경되도록 <code class="language-plaintext highlighter-rouge">setCount</code>를 지정해주면 <code class="language-plaintext highlighter-rouge">setCount</code>에 인자로 넣어준 값으로 <code class="language-plaintext highlighter-rouge">count</code>를 변경해준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>이때 <code class="language-plaintext highlighter-rouge">state</code>가 바뀌면 컴포넌트가 리렌더링된다. 화면을 다시 그리면서 변한 상태(여기서는 1을 더한 값)를 반영해서 숫자가 점점 올라갈 수 있는 것이다.</p>
+
+<h1 id="props">Props</h1>
+
+<p>props는 리액트에서 컴포넌트간 데이터를 전달할 때 사용하는 객체이다.</p>
+
+<p>props를 사용하기 위해서는 (1) 데이터를 내려주는 과정, (2) 데이터를 받아오는 과정 두 가지 과정이 필요하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Parent 컴포넌트</span>
+<span class="kd">function</span> <span class="nx">Parent</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="cm">/* props로 내려주는 과정 */</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="nx">Child</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="nx">age</span><span class="o">=</span><span class="p">{</span><span class="mi">30</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Child 컴포넌트</span>
+<span class="kd">function</span> <span class="nx">Child</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="c1">//{ name: "jack", age: 30 }</span>
+  <span class="c1">//인자로 받아오는 과정</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Name</span><span class="p">:</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Age</span><span class="p">:</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">age</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="default-props">default props</h2>
+
+<p>props로 내려주는 과정에서 값을 내려주지 않을 경우 디폴트로 값을 설정하기 위해서는 이렇게 하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//props로 아무것도 내려주지 않을 떄</span>
+<span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">}</span>
+
+<span class="nx">MyComponent</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hello, World!</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/mini%20project/emotion-diary-3/" class="pagination--pager" title="[Mini Project] 감성 일기장 업그레이드 3. Header, Button 컴포넌트에 타입스크립트 적용하기
+">Previous</a>
+    
+    
+      <a href="/mini%20project/emotion-diary-4/" class="pagination--pager" title="[Mini Project] 감성 일기장 업그레이드 4. Diary Page 타입스크립트 적용하기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/simple-diary/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">react
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/tailwind/" rel="permalink">Tailwind CSS 알아보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">tailwind css
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mini%20project/emotion-diary-4/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 4. Diary Page 타입스크립트 적용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">wanted challenge
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mini%20project/emotion-diary-3/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 3. Header, Button 컴포넌트에 타입스크립트 적용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">wanted challenge
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'sena-22/sena-22.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

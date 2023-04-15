@@ -641,7 +641,7 @@ var store = [{
         "url": "/mini%20project/sign-up/",
         "teaser": null
       },{
-        "title": "[Mini Project] 감성 일기장에 타입스크립트 적용하기 1. typescript 설치하기",
+        "title": "[Mini Project] 감성 일기장에 업그레이드 1. typescript 설치하기",
         "excerpt":"한입 크기로 잘라 먹는 리액트(React.js)를 수강하면서 만들었던 감성 일기장을 타입스크립트로 마이그레이션 해보려고 한다. 강의에서 만들었던 감성 일기장은 여기에 배포해두었다. 타입스크립트 설치하기 create-react-app을 이용하여 새로 프로젝트를 생성하면서 타입스크립트를 설치할 땐 이렇게 한다. npx create-react-app my-app --template typescript --template는 CRA에서 제공하는 기본 템플릿 대신 다른 템플릿을 사용할 수 있도록 해주는 옵션이다. 여기서는...","categories": ["mini project"],
         "tags": ["project","wanted challenge","react","typescript"],
         "url": "/mini%20project/emotion-diary-1/",
@@ -651,5 +651,47 @@ var store = [{
         "excerpt":"   //NOTE:로그인 후 페이지 이동 직후 create 명령이 작동하지 않음. get요청도 마찬가지   export const get_todos = async () =&gt; { const access_token = getTokenToLocalStorage(‘access_token’) //추가 const get_todos_res = await axios.get(${BASE_URL}/todos, { headers: { Authorization: Bearer ${access_token} } }) return get_todos_res.data }   전역에서 선언해서 사용하던 access_token을 함수 내에서 사용하니까 잘 받아온다.  ","categories": [],
         "tags": [],
         "url": "/todolist/",
+        "teaser": null
+      },{
+        "title": "[한입 크기로 잘라 먹는 리액트] Node.js 기초 알아보기 ",
+        "excerpt":"한입 크기로 잘라 먹는 리액트(React.js)의 section 4를 복습하면서 node.js의 개념과 사용방법을 간단하게 정리해보려고 한다. 1. Node.js란? Node.js의 공식 홈페이지를 보면 이렇게 쓰여 있다. 이렇게만 보면 무슨 말인지 알기가 어려우니 하나씩 살펴보자. Chrome 크롬은 브라우저의 종류 중에 하나이다. 다른 브라우저로는 사파리나 파이어폭스 등이 있다. 브라우저는 HTML 문서를 기반으로 동작한다.기존의 웹페이지에서 자바스크립트는...","categories": ["lecture"],
+        "tags": ["udemy","node.js"],
+        "url": "/lecture/node-js/",
+        "teaser": null
+      },{
+        "title": "[Mini Project] 감성 일기장 업그레이드 2. App.js(context API) typing",
+        "excerpt":"이번 포스팅에서는 App.js를 App.tsx로 바꾸고, 발생하는 오류를 기준으로 타입을 만들어주었다. 감성 일기장의 App()은 크게 두 가지 기능을 가지고 있다. 첫번째는 라우팅이고, 두번째는 데이터를 전역에서 관리하기 위한 context 설정이다. 라우팅 부분은 따로 변경할 점은 없었고, 주로 context provider와 관련한 함수들에서 에러가 발생했다.타입을 설정하다보니 context API도 잘 기억이 안 나서 같이 복습했다....","categories": ["mini project"],
+        "tags": ["project","wanted challenge","react","typescript"],
+        "url": "/mini%20project/emotion-diary-2/",
+        "teaser": null
+      },{
+        "title": "[Mini Project] 감성 일기장 업그레이드 3. Header, Button 컴포넌트에 타입스크립트 적용하기",
+        "excerpt":"여러 페이지에서 공통으로 쓰이는 컴포넌트인 헤더와 버튼 컴포넌트를 먼저 ts로 바꿔주려고 한다. Button 컴포넌트 const MyButton = {type = \"default\", text, onClick}: MyButtonProps) =&gt; { //이상한 타입이면 강제로 디폴트 타입으로 변경 const btnType = [\"positive\", \"negative\"].includes(type) ? type : \"default\" return ( &lt;button className={[\"MyButton\", `MyButton_${btnType}`].join(\" \")} onClick={onClick} &gt; {text} &lt;/button&gt;...","categories": ["mini project"],
+        "tags": ["project","wanted challenge","react","typescript"],
+        "url": "/mini%20project/emotion-diary-3/",
+        "teaser": null
+      },{
+        "title": "[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ",
+        "excerpt":"왜 리액트를 사용할까? html, css, javascript만 이용해도 웹사이트를 만들 수 있다. 그렇다면 리액트를 사용했을 때의 장점이 뭐가 있을까? 컴포넌트 기반 구조 리액트는 컴포넌트 기반의 UI 라이브러리이다. 컴포넌트 기반이라는 것은 화면을 각각 컴포넌트 단위로 나누어서 개별적으로 관리할 수 있다는 것을 의미한다. 여기서 컴포넌트는 UI를 구성하는 최소 단위이다. 예를 들어 웹 사이트의...","categories": ["lecture"],
+        "tags": ["udemy","react"],
+        "url": "/lecture/react/",
+        "teaser": null
+      },{
+        "title": "[Mini Project] 감성 일기장 업그레이드 4. Diary Page 타입스크립트 적용하기",
+        "excerpt":"감성 일기장은 총 네 종류의 페이지로 이루어져 있다. 위 그림은 강의에서 처음 프로젝트를 구성할 때 나오는 것으로, 컴포넌트 구조를 나타낸다. 여기서 일기를 생성하는 페이지와 수정하는 페이지는 거의 동일한 구조를 가지고 있고, DiaryEditor 컴포넌트를 공유한다. 그리고 홈 페이지는 하위에 DiaryList 그리고 DiaryList 컴포넌트는 DiaryItem으로 구성되어 있다. 그래서 DiaryItem부터 순차적으로 타입을 바꿔주려고...","categories": ["mini project"],
+        "tags": ["project","wanted challenge","react","typescript"],
+        "url": "/mini%20project/emotion-diary-4/",
+        "teaser": null
+      },{
+        "title": "Tailwind CSS 알아보기 ",
+        "excerpt":"Tailwind CSS Tailwind CSS는 유틸리티 최우선(utility first)을 모토로 만든 CSS 프레임워크이다. Tailwind는 이미 정의되어 있는 클래스를 제공하기 때문에 css를 빠르게 적용하여 시간을 단축할 수 있고, 디자인에 일관성이 있고 유지보수하기 쉽다는 장점을 가진다. 설치 Tailwind CSS는 PostCSS의 플러그인 형태로 동작한다. 따라서 함께 설치해주어야 한다. 그리고 벤더 접두사 문제를 해결해주는 autoprefixer도 PostCSS의...","categories": ["css"],
+        "tags": ["css","tailwind","postcss","autofixer"],
+        "url": "/css/tailwind/",
+        "teaser": null
+      },{
+        "title": "[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1",
+        "excerpt":"섹션 6에서는 간단한 일기장을 만들어보았다. 일기장은 총 세 영역으로 나누어진다. 첫 번째가 일기를 작성할 수 있는 에디터 영역, 두 번째는 일기의 메타 정보를 보여주는 영역, 마지막이 일기를 보여주는 리스트 영역이다. Diary Editor 컴포넌트 여러가지 상태를 한번에 관리하기 다이어리 에디터는 작성자, 일기 본문, 감정 점수 세 개의 입력값을 필요로 한다. 각각...","categories": ["lecture"],
+        "tags": ["udemy","react"],
+        "url": "/lecture/simple-diary/",
         "teaser": null
       }]

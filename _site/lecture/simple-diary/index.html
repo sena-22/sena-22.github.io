@@ -1,0 +1,998 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1 - Reyna</title>
+<meta name="description" content="react">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1">
+<meta property="og:url" content="http://localhost:4000/lecture/simple-diary/">
+
+
+  <meta property="og:description" content="react">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-14T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-04-14T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/lecture/simple-diary/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+           
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#lecture" itemprop="item"><span itemprop="name">Lecture</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1</li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(116)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                           
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (16)</a
+          >
+        </li>
+                 
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (6)</a
+          >
+        </li>
+                     
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                             
+        <li>
+          <a href="/categories/react" class=""
+            >React (1)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                                   
+      </ul>
+      <ul>
+                   
+        <li>
+          <a href="/categories/css" class="">CSS (6)</a>
+        </li>
+                         
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                           
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (11)</a>
+        </li>
+                       
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                                 
+      </ul>
+      <ul>
+             
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (29)</a
+          >
+        </li>
+                               
+      </ul>
+         <ul>
+                                 
+        <li>
+          <a href="/categories/baekjoon" class=""
+            >Baekjoon (5)</a
+          >
+        </li>
+           
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+        <ul>
+                                   
+        <li>
+          <a href="/categories/lecture" class="">Lecture (10)</a>
+        </li>
+         
+      </ul>
+      <ul>
+      <ul>
+               
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                             
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (7)</a
+          >
+        </li>
+                   
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1"
+    /> <meta
+      itemprop="description"
+      content="react"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-04-14T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-04-14T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-04-14T00:00:00+09:00"
+            >2023.04.14</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-04-14"
+            >2023.04.14</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#lecture" class="page__taxonomy-item p-category" rel="tag">lecture</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#react" class="page__taxonomy-item p-category" rel="tag">react</a><span class="sep">, </span>
+    
+      <a href="/tags/#udemy" class="page__taxonomy-item p-category" rel="tag">udemy</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#diary-editor-컴포넌트">Diary Editor 컴포넌트</a><ul><li><a href="#여러가지-상태를-한번에-관리하기">여러가지 상태를 한번에 관리하기</a></li><li><a href="#useref를-이용하여-원하는-요소에-포커싱-하기">useRef를 이용하여 원하는 요소에 포커싱 하기</a></li></ul></li><li><a href="#diary-list--diary-item-컴포넌트">Diary List &amp; Diary Item 컴포넌트</a><ul><li><a href="#배열을-이용하여-리스트-렌더링하기">배열을 이용하여 리스트 렌더링하기</a></li><li><a href="#state-끌어올리기">state 끌어올리기</a></li></ul></li><li><a href="#리액트의-라이프-사이클-제어하기">리액트의 라이프 사이클 제어하기</a></li><li><a href="#리액트에서-api-호출해서-일기의-초기값-만들어주기">리액트에서 API 호출해서 일기의 초기값 만들어주기</a></li></ul>
+
+          </nav>
+        </aside>
+         <p>섹션 6에서는 간단한 일기장을 만들어보았다.</p>
+
+<p><img width="1520" alt="스크린샷 2023-04-14 오후 7 48 00" src="https://user-images.githubusercontent.com/110877564/232024604-e33e6bae-0ede-4d64-92be-23dca9f8a2c6.png" /></p>
+
+<p>일기장은 총 세 영역으로 나누어진다. 첫 번째가 일기를 작성할 수 있는 에디터 영역, 두 번째는 일기의 메타 정보를 보여주는 영역, 마지막이 일기를 보여주는 리스트 영역이다.</p>
+
+<h1 id="diary-editor-컴포넌트">Diary Editor 컴포넌트</h1>
+
+<p><img width="556" alt="스크린샷 2023-04-14 오후 7 56 15" src="https://user-images.githubusercontent.com/110877564/232026257-c937b3c4-5d34-4168-8008-ab8fd6a96b7a.png" /></p>
+
+<h2 id="여러가지-상태를-한번에-관리하기">여러가지 상태를 한번에 관리하기</h2>
+
+<p>다이어리 에디터는 작성자, 일기 본문, 감정 점수 세 개의 입력값을 필요로 한다. 각각 <code class="language-plaintext highlighter-rouge">input</code>, <code class="language-plaintext highlighter-rouge">textarea</code>, <code class="language-plaintext highlighter-rouge">select &amp; option</code> 태그를 이용하는데, 이 입력값은 하나의 상태로 관리할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span>
+  <span class="na">author</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="na">content</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="na">emotion</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="kd">const</span> <span class="nx">handleChangeState</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setState</span><span class="p">({</span>
+    <span class="p">...</span><span class="nx">state</span><span class="p">,</span> <span class="c1">//spread 연산자</span>
+    <span class="p">[</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">]:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">//해당 값만 바꿔준다</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+ <span class="k">return</span><span class="p">(</span>
+  <span class="p">...</span>
+  <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">author</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">state</span><span class="p">.</span><span class="nx">author</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChangeState</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>  <span class="c1">//textare와 select 태그도 같은 방식으로 만들어준다.</span>
+  <span class="p">...</span>
+ <span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="useref를-이용하여-원하는-요소에-포커싱-하기">useRef를 이용하여 원하는 요소에 포커싱 하기</h2>
+
+<p>일기 저장 버튼을 눌렀을 때, 저자 혹은 일기의 내용이 원하는 값 이상으로 입력되지 않았을 때 <code class="language-plaintext highlighter-rouge">useRef()</code>를 이용하여 포커싱을 할 수 있다. <code class="language-plaintext highlighter-rouge">useRef()</code>는 DOM 요소를 조작할 수 있는 리액트 훅으로 ref는 레퍼런스, 즉 참조를 의미한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">authorInput</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">useRef</code>를 호출한 뒤에 그 반환값을 상수에 담아주었다. 이 상수에는 <code class="language-plaintext highlighter-rouge">React.MutableRefObject</code>가 담기게 되는데, <code class="language-plaintext highlighter-rouge">MutableRefObject</code>는 DOM 요소를 저장하고 관리할 수 있는 기능을 가지고 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">input</span>
+  <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">authorInput</span><span class="p">}</span>
+  <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">author</span><span class="dl">"</span>
+  <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">state</span><span class="p">.</span><span class="nx">author</span><span class="p">}</span>
+  <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChangeState</span><span class="p">}</span>
+<span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">input</code>에 <code class="language-plaintext highlighter-rouge">ref</code> 속성을 통해 <code class="language-plaintext highlighter-rouge">authorInput</code>를 할당해준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">author</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">authorInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span>
+    <span class="k">return</span>
+  <span class="p">}</span>
+  <span class="c1">//조건을 만족했을 경우 제출</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">authorInput</code>가 는 현재 가리키고 있는 <code class="language-plaintext highlighter-rouge">input</code> 요소를 <code class="language-plaintext highlighter-rouge">current</code> 속성을 통해 조작할 수 있다. (<code class="language-plaintext highlighter-rouge">current</code> 속성은 <code class="language-plaintext highlighter-rouge">MutableRefObject</code>의 속성 중 하나로, 현재 참조하고 있는 DOM 요소를 가리키는 역할을 한다.)</p>
+
+<h1 id="diary-list--diary-item-컴포넌트">Diary List &amp; Diary Item 컴포넌트</h1>
+
+<p><img width="1086" alt="스크린샷 2023-04-14 오후 8 41 07" src="https://user-images.githubusercontent.com/110877564/232034365-93ab6816-3ab6-4500-97f8-6026e10a3487.png" /></p>
+
+<h2 id="배열을-이용하여-리스트-렌더링하기">배열을 이용하여 리스트 렌더링하기</h2>
+
+<p>다이어리 리스트에서 각각의 일기는 내용만 다르고 구조는 똑같이 생겼다. 만약 일기를 모두 HTML 요소로 나열한다면 중복되는 코드가 계속 늘어날 것이다. 하지만 다이어리 아이템이라는 컴포넌트를 하나 만들어서 반복문을 돌려주면 하나의 컴포넌트로 수많은 일기들을 나타낼 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">diaryList</span> <span class="o">=</span> <span class="cm">/* 일기 데이터 */</span>
+</code></pre></div></div>
+
+<p>먼저 다이어리 리스트를 불러온다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="nx">diaryList</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">diary</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">DiaryItem</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">diary</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="p">{...</span><span class="nx">diary</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">))}</span>
+<span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">map()</code> 함수를 이용하여 일기 정보를 하나씩 전달하고, 그 정보를 이용하여 만들어진 <code class="language-plaintext highlighter-rouge">&lt;DiaryItem&gt;</code>가 일기 리스트의 개수만큼 반복되며 반환된다. 그러면 각각의 다이어리가 담긴 배열이 완성되어 렌더링되는 것이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">DiaryItem</span> <span class="o">=</span> <span class="p">({</span><span class="nx">author</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">created_date</span><span class="p">,</span> <span class="nx">emotion</span><span class="p">,</span> <span class="nx">id</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;DiaryList&gt;</code>에서 내려준 <code class="language-plaintext highlighter-rouge">...diary</code>는 이렇게 props로 받아와서 사용하면 된다.</p>
+
+<h2 id="state-끌어올리기">state 끌어올리기</h2>
+
+<p><img width="1174" alt="스크린샷 2023-04-14 오후 9 04 31" src="https://user-images.githubusercontent.com/110877564/232038763-85afaebe-1098-4410-8b04-b21d0fd97909.png" /></p>
+
+<p>리액트에서 데이터는 위에서 아래로 흐른다. 위의 그림처럼 상위 컴포넌트인 App에서 데이터를 관리하고, 다이어리 에디터나 리스트는 그 데이터를 내려받아서 사용한다.
+그런데 이 데이터를 바꾸는 일은 하위 컴포넌트에서 발생한다. 여기서는 다이어리 에디터에서 일기를 추가하고 있는데, 이는 이벤트가 밑에서 위로 올라감을 의미한다. 이때 setData 처럼 상위 컴포넌트에서 상태를 변경하는 함수 자체를 하위 컴포넌트로 전달하고, 이 함수를 하위 컴포넌트에서 실행하여 상태가 변하는 것을 상태 끌어올리기라고 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.js</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">setData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([])</span>
+
+<span class="kd">const</span> <span class="nx">onCreate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">author</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">emotion</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">newItem</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">author</span><span class="p">,</span>
+    <span class="nx">content</span><span class="p">,</span>
+    <span class="nx">emotion</span><span class="p">,</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="nx">setDate</span><span class="p">(</span><span class="nx">newItem</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이런 식으로 상위 컴포넌트인 App.js에 데이터를 두고, 상태를 변경할 수 있는 함수인 <code class="language-plaintext highlighter-rouge">onCreate()</code>를 하위 컴포넌트에 props로 내려준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.js</span>
+<span class="o">&lt;</span><span class="nx">DiaryEditor</span> <span class="nx">onCreate</span><span class="o">=</span><span class="p">{</span><span class="nx">onCreate</span><span class="p">}</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;DiaryEditor&gt;</code>에서는 함수를 내려받아서 사용하면, 상위 컴포넌트의 상태를 바꿀 수 있게 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//DiaryEditor.js</span>
+
+<span class="kd">const</span> <span class="nx">DiaryEditor</span> <span class="o">=</span> <span class="p">({</span><span class="nx">onCreate</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">//글자수 조건 만족 시 onCreate 함수 실행</span>
+    <span class="nx">onCreate</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">author</span><span class="p">,</span> <span class="nx">state</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span> <span class="nx">state</span><span class="p">.</span><span class="nx">emotion</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 data에 일기가 추가되면, 다시 그 데이터를 받아 다이어리 리스트에 반영이 되게 된다.</p>
+
+<h1 id="리액트의-라이프-사이클-제어하기">리액트의 라이프 사이클 제어하기</h1>
+
+<p><img width="1274" alt="스크린샷 2023-04-14 오후 9 35 10" src="https://user-images.githubusercontent.com/110877564/232044918-77eb82cb-bbef-48cc-94ea-738aa235d4b7.png" /></p>
+
+<p>리액트는 탄생, 변화, 죽음이라는 세 개의 생애 주기를 가진다. 함수형 컴포넌트에서 생애 주기를 제어하기 위해서는 <code class="language-plaintext highlighter-rouge">useEffect()</code> 훅을 사용하면 된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">useEffect()</code>는 두 개의 인자를 받는다.</p>
+
+<p>첫 번째는 실행하게 될 callback 함수이며, 두 번째는 의존성 배열이라는 것이다. 의존성 배열은 콜백 함수가 실행되는 조건을 제어할 수 있다. 즉 이 배열에 넣어둔 값이 변화하면 콜백 함수가 다시 실행된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mount!</span><span class="dl">"</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">//언마운트 시점에 실행</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Unmount!</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="p">[])</span> <span class="c1">// 빈 배열을 넣으면 컴포넌트가 마운트 될 때 한 번만 실행</span>
+
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">count가 5를 넘었습니다 따라서 1로 초기화합니다</span><span class="dl">"</span><span class="p">)</span>
+    <span class="nx">setCount</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">count</span><span class="p">])</span> <span class="c1">//count 값이 변할 때마다 실행</span>
+</code></pre></div></div>
+
+<h1 id="리액트에서-api-호출해서-일기의-초기값-만들어주기">리액트에서 API 호출해서 일기의 초기값 만들어주기</h1>
+
+<p><code class="language-plaintext highlighter-rouge">jsonplaceholder</code>는 더미 데이터를 api 호출로 얻을 수 있는 서비스이다.</p>
+
+<p class="notice--primary"><a href="https://jsonplaceholder.typicode.com/">jsonplaceholder</a></p>
+
+<p>fetch라는 내장 함수를 이용하면 인자로 전달한 url로 요청을 보낼 수 있다. 응답으로 받은 결과를 <code class="language-plaintext highlighter-rouge">res</code>에 담는 함수를 만들어준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getData</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://jsonplaceholder.typicode.com/comments</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">useEffect()</code>를 이용하면 <code class="language-plaintext highlighter-rouge">&lt;App&gt;</code>이 마운트 될 때 <code class="language-plaintext highlighter-rouge">getData()</code>를 호출해서 요청을 보낼 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">getData</span><span class="p">()</span>
+<span class="p">},</span> <span class="p">[])</span>
+</code></pre></div></div>
+
+<p>이 결과를 일기 데이터의 기초 데이터로 사용하기 위해 필요한 정보로 가공해준다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">initData</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">it</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">author</span><span class="p">:</span> <span class="nx">it</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
+    <span class="na">content</span><span class="p">:</span> <span class="nx">it</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+    <span class="na">emotion</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">//1~5 랜덤 난수 생성</span>
+    <span class="na">created_date</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span>
+    <span class="na">id</span><span class="p">:</span> <span class="nx">dataId</span><span class="p">.</span><span class="nx">current</span><span class="o">++</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>가공한 정보를 setData를 이용하여 data에 담아주면 App 컴포넌트가 마운트될 때 초기값으로 불러온 데이터가 들어가게 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setData</span><span class="p">(</span><span class="nx">initData</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>이 코드들을 합쳐주면 다음과 같다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//App.js</span>
+<span class="kd">const</span> <span class="nx">getData</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://jsonplaceholder.typicode.com/comments</span><span class="dl">"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+  <span class="p">)</span>
+
+  <span class="kd">const</span> <span class="nx">initData</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">it</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">author</span><span class="p">:</span> <span class="nx">it</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
+      <span class="na">content</span><span class="p">:</span> <span class="nx">it</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+      <span class="na">emotion</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">//1~5 랜덤 난수 생성</span>
+      <span class="na">created_date</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">(),</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">dataId</span><span class="p">.</span><span class="nx">current</span><span class="o">++</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+
+  <span class="nx">setData</span><span class="p">(</span><span class="nx">initData</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/css/tailwind/" class="pagination--pager" title="Tailwind CSS 알아보기
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/tailwind/" rel="permalink">Tailwind CSS 알아보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">tailwind css
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mini%20project/emotion-diary-4/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 4. Diary Page 타입스크립트 적용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">wanted challenge
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/react/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">react
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mini%20project/emotion-diary-3/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 3. Header, Button 컴포넌트에 타입스크립트 적용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">wanted challenge
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'sena-22/sena-22.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

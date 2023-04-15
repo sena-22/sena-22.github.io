@@ -1,0 +1,1008 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[한입 크기로 잘라 먹는 리액트] Node.js 기초 알아보기  - Reyna</title>
+<meta name="description" content="Node.js">
+
+
+  <meta name="author" content="Reyna">
+  
+  <meta property="article:author" content="Reyna">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Reyna">
+<meta property="og:title" content="[한입 크기로 잘라 먹는 리액트] Node.js 기초 알아보기">
+<meta property="og:url" content="http://localhost:4000/lecture/node-js/">
+
+
+  <meta property="og:description" content="Node.js">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-09T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-04-09T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/lecture/node-js/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Reyna",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Reyna Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Reyna
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://sena-22.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+           
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#lecture" itemprop="item"><span itemprop="name">Lecture</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[한입 크기로 잘라 먹는 리액트] Node.js 기초 알아보기 </li>
+      
+    
+  </ol>
+</nav>
+  
+
+<div id="main" role="main">
+  
+<div class="sticky sidebar">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Reyna</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality"></span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+   
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc"></label>
+  <ul class="nav__items" id="category_tag_menu">
+    <!--전체 글 수-->
+    <li>
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(116)</style> 
+    </li>
+    <li>
+      <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
+      <span class="nav__sub-title">JS/TS</span>
+      <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+      <ul>
+        <!--javascript 카테고리 글들을 모아둔 페이지인 /categories/javascript 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시-->
+                           
+        <li>
+          <a href="/categories/javascript" class=""
+            >Javascript (16)</a
+          >
+        </li>
+                 
+      </ul>
+      <ul>
+                       
+        <li>
+          <a href="/categories/typescript" class=""
+            >Typescript (6)</a
+          >
+        </li>
+                     
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">React</span>
+      <ul>
+                             
+        <li>
+          <a href="/categories/react" class=""
+            >React (1)</a
+          >
+        </li>
+               
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <span class="nav__sub-title">HTML & CSS </span>
+      <ul>
+         
+        <li>
+          <a href="/categories/html" class="">HTML (3)</a>
+        </li>
+                                   
+      </ul>
+      <ul>
+                   
+        <li>
+          <a href="/categories/css" class="">CSS (6)</a>
+        </li>
+                         
+      </ul> 
+      <span class="nav__sub-title">Project</span>
+      <ul>
+                 
+        <li>
+          <a href="/categories/main-project" class="">Main Project (8)</a>
+        </li>
+                           
+      </ul>
+      <ul>
+                     
+        <li>
+          <a href="/categories/mini-project" class="">Mini Project (11)</a>
+        </li>
+                       
+      </ul>
+      <span class="nav__sub-title">Algorithm</span>
+      <ul>
+           
+        <li>
+          <a href="/categories/algorithm" class=""
+            >Algorithm (5)</a
+          >
+        </li>
+                                 
+      </ul>
+      <ul>
+             
+        <li>
+          <a href="/categories/programmers" class=""
+            >Programmers (29)</a
+          >
+        </li>
+                               
+      </ul>
+         <ul>
+                                 
+        <li>
+          <a href="/categories/baekjoon" class=""
+            >Baekjoon (5)</a
+          >
+        </li>
+           
+      </ul>
+      <span class="nav__sub-title">ETC</span>
+        <ul>
+                                   
+        <li>
+          <a href="/categories/lecture" class="">Lecture (10)</a>
+        </li>
+         
+      </ul>
+      <ul>
+      <ul>
+               
+        <li>
+          <a href="/categories/blog" class="">Blog (3)</a>
+        </li>
+                             
+      </ul>
+      <ul>
+                                    
+      </ul>
+      <ul>
+                         
+        <li>
+          <a href="/categories/notes" class=""
+            >Notes (7)</a
+          >
+        </li>
+                   
+      </ul>
+    </li>
+  </ul>
+</nav>
+ 
+</div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta
+      itemprop="headline"
+      content="[한입 크기로 잘라 먹는 리액트] Node.js 기초 알아보기"
+    /> <meta
+      itemprop="description"
+      content="Node.js"
+    /> <meta
+      itemprop="datePublished"
+      content="2023-04-09T00:00:00+09:00"
+    /> <meta
+      itemprop="dateModified"
+      content="2023-04-09T00:00:00+09:00"
+    />
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <p>[한입 크기로 잘라 먹는 리액트] Node.js 기초 알아보기</p>
+
+        </h1>
+         
+        <p class="page__meta">
+          <strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Date:</strong
+          >
+          <time datetime="2023-04-09T00:00:00+09:00"
+            >2023.04.09</time
+          >&nbsp&nbsp&nbsp<strong
+            ><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong
+          >
+          <time datetime="2023-04-09"
+            >2023.04.09</time
+          >
+        </p>
+          
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#lecture" class="page__taxonomy-item p-category" rel="tag">lecture</a>
+    
+    </span>
+  </p>
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#node-js" class="page__taxonomy-item p-category" rel="tag">node.js</a><span class="sep">, </span>
+    
+      <a href="/tags/#udemy" class="page__taxonomy-item p-category" rel="tag">udemy</a>
+    
+    </span>
+  </p>
+ 
+      </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <aside class="sidebar__right sticky">
+          <nav class="toc">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-file-alt"></i>
+                Index
+              </h4>
+            </header>
+            <ul class="toc__menu"><li><a href="#1-nodejs란">1. Node.js란?</a><ul><li><a href="#chrome">Chrome</a></li><li><a href="#v8-엔진">v8 엔진</a></li><li><a href="#런타임">런타임</a></li></ul></li><li><a href="#2-nodejs-설치하기">2. Node.js 설치하기</a></li><li><a href="#3-nodejs를-이용해서-vscode에서-hello-world-띄우기">3. node.js를 이용해서 vscode에서 Hello World 띄우기</a></li><li><a href="#4-작성한-코드를-내보내고-가져오기">4. 작성한 코드를 내보내고 가져오기</a><ul><li><a href="#commonjs와-es6-모듈">commonJS와 ES6 모듈</a></li></ul></li><li><a href="#5-npm">5. npm</a><ul><li><a href="#npmnode-package-manager">npm(node package manager)</a></li><li><a href="#package">package</a></li><li><a href="#npm-사용해보기">npm 사용해보기</a><ul><li><a href="#npm-init">npm init</a></li><li><a href="#패키지-설치">패키지 설치</a></li><li><a href="#설치한-패키지-적용">설치한 패키지 적용</a></li></ul></li></ul></li></ul>
+
+          </nav>
+        </aside>
+         <p><img src="https://user-images.githubusercontent.com/110877564/230762246-7b371050-4dab-4c76-8f1c-45fa39d8a3d4.png" alt="표지" /></p>
+
+<p><a href="https://www.udemy.com/course/winterlood-react-basic/?couponCode=1B3AC13BE3B6AE66BCE1"><mark style="background-color: #ffdce0">한입 크기로 잘라 먹는 리액트(React.js)</mark></a>의 section 4를 복습하면서 node.js의 개념과 사용방법을 간단하게 정리해보려고 한다.</p>
+
+<p><br /></p>
+
+<h1 id="1-nodejs란">1. Node.js란?</h1>
+
+<p>Node.js의 공식 홈페이지를 보면 이렇게 쓰여 있다.
+<img width="899" alt="스크린샷 2023-04-09 오후 5 25 36" src="https://user-images.githubusercontent.com/110877564/230762424-cb7ded16-6b3a-4028-a92f-ab52a5c2bee4.png" /></p>
+
+<p>이렇게만 보면 무슨 말인지 알기가 어려우니 하나씩 살펴보자.</p>
+
+<h2 id="chrome">Chrome</h2>
+
+<p>크롬은 브라우저의 종류 중에 하나이다. 다른 브라우저로는 사파리나 파이어폭스 등이 있다.</p>
+
+<p><img width="941" alt="스크린샷 2023-04-09 오후 5 23 11" src="https://user-images.githubusercontent.com/110877564/230762548-63dd9db2-651c-4e6f-b305-ae32151301d7.png" /></p>
+
+<p><br />
+브라우저는 HTML 문서를 기반으로 동작한다.기존의 웹페이지에서 자바스크립트는 HTML 문서 안에서 경고창을 띄우거나, 버튼 클릭 등의 간단한 이벤트만 처리할 수 있는 작은 부분을 담당하고 있었다.</p>
+
+<h2 id="v8-엔진">v8 엔진</h2>
+
+<p>v8은 크롬에서 동작하는 자바스크립트 엔진이다. 원래 v8엔진은 브라우저에서만 사용하고 있었지만, 브라우저에서 독립하면서 Node.js가 만들어지는 계기가 되었다.</p>
+
+<h2 id="런타임">런타임</h2>
+
+<p>런타임은 실행 환경을 의미한다.</p>
+
+<p>즉 Node.js는 v8 엔진으로 만들어진, 자바스크립트를 브라우저가 아닌 다른 곳에서도 사용할 수 있도록 만들어진 자바스크립트의 실행 환경을 말한다.</p>
+
+<h1 id="2-nodejs-설치하기">2. Node.js 설치하기</h1>
+
+<p><a href="https://nodejs.org/ko">여기</a>에서 다운로드 가능하다. 두 가지 버전이 있는데 그중 LTS 버전은 Long-Term Support”의 약자로, 장기적인 지원을 제공하는 버전을 의미하고, 현재 버전(current version)은 가장 최신 버전을 의미한다. LTS 버전의 경우 안정적이기 때문에 기업 등에서 많이 사용하고, 최신 기능을 사용하고 싶을 땐 현재 버전을 사용하면 된다.</p>
+
+<p>제대로 설치되었는지 확인하려면 터미널에 <code class="language-plaintext highlighter-rouge">node -v</code>를 입력한다. 버전이 나오면 잘 설치된 것이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">node</span> <span class="o">-</span> <span class="nx">v</span>
+</code></pre></div></div>
+
+<p>node.js를 설치하면 npm(node package manager)도 같이 설치가 되는데, 마찬가지로 터미널에 <code class="language-plaintext highlighter-rouge">npm -v</code>를 입력해서 버전이 출력되면 잘 설치되었음을 확인할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="o">-</span> <span class="nx">v</span>
+</code></pre></div></div>
+
+<p>두 가지 모두 잘 설치되었으면 이제 컴퓨터에서 node.js를 사용할 수 있다.</p>
+
+<h1 id="3-nodejs를-이용해서-vscode에서-hello-world-띄우기">3. node.js를 이용해서 vscode에서 Hello World 띄우기</h1>
+
+<p>이제 실제로 브라우저 밖에서 javascript를 실행해보자. 여기서는 vscode를 사용했는데, 다른 에디터를 사용해도 무방하다.</p>
+
+<ul>
+  <li>먼저 vscode에서 js 파일을 만든다.</li>
+</ul>
+
+<p><img width="154" alt="스크린샷 2023-04-09 오후 6 09 24" src="https://user-images.githubusercontent.com/110877564/230764591-f06e9a33-9436-40a7-ada5-7cb66530f1a9.png" /></p>
+
+<ul>
+  <li>파일을 열고 실행할 javascript를 작성한다.</li>
+</ul>
+
+<p><img width="577" alt="스크린샷 2023-04-09 오후 6 09 43" src="https://user-images.githubusercontent.com/110877564/230764593-a029c9fb-d99d-4d6d-a210-8eaace5bbcf4.png" /></p>
+
+<ul>
+  <li>터미널에서 <code class="language-plaintext highlighter-rouge">node + 파일 이름</code>을 입력한다. 이 명령어는 node에게 지정한 파일을 실행하라는 의미이다. 그러면 안에 작성했던 코드가 실행된다!</li>
+</ul>
+
+<p><img width="436" alt="스크린샷 2023-04-09 오후 6 16 35" src="https://user-images.githubusercontent.com/110877564/230764822-7d576f46-5389-4f6e-bb4e-cdd9ba765ea4.png" /></p>
+
+<h1 id="4-작성한-코드를-내보내고-가져오기">4. 작성한 코드를 내보내고 가져오기</h1>
+
+<p>이번에는 js 파일을 두 개 만들어서, 한 쪽에서 내보낸 코드를 다른 곳에서 사용해보자.</p>
+
+<p><code class="language-plaintext highlighter-rouge">calc.js</code>라는 파일을 만들어서 다음과 같이 입력한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//calc.js</span>
+<span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">moduleName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">calc module</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">add</span><span class="p">,</span>
+  <span class="nx">sub</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1">// module.exports = { add, sub }; //이렇게만 적어도 된다</span>
+</code></pre></div></div>
+
+<p>여기에서 module은 다른 파일에서 사용할 수 있는 코드의 묶음을 말한다. 변수, 함수 등의 모듈을 내보내면, 다른 파일에서 가져다가 사용할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">calc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./calc</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calc</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>require 안에 불러올 파일을 지정해서 변수에 담았다. <code class="language-plaintext highlighter-rouge">./</code>는 현재 폴더를 의미한다.</p>
+
+<p>아까처럼 <code class="language-plaintext highlighter-rouge">node index.js</code>를 입력해보면 잘 가져와진다.</p>
+
+<p><img width="436" alt="스크린샷 2023-04-09 오후 6 31 16" src="https://user-images.githubusercontent.com/110877564/230765510-2e63489e-4ced-480d-9c3c-e20be85955ca.png" /></p>
+
+<p>이 안의 함수를 사용하고 싶을 땐 다음처럼 사용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">calc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./calc</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calc</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1">//3</span>
+</code></pre></div></div>
+
+<p>이렇게 아예 처음부터 빼서 쓸 수도 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span><span class="nx">add</span><span class="p">,</span> <span class="nx">sub</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./calc</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sub</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="commonjs와-es6-모듈">commonJS와 ES6 모듈</h2>
+
+<p>이렇게 <code class="language-plaintext highlighter-rouge">module.exports</code>와 <code class="language-plaintext highlighter-rouge">require()</code> 함수를 사용하여 모듈을 내보내고 가져오는 방법은 <code class="language-plaintext highlighter-rouge">commonJS</code> 모듈 시스템에서 사용되는 방식이다.</p>
+
+<p>모듈 시스템에는 ES6(ES2015)에서 추가된 <code class="language-plaintext highlighter-rouge">ES6 모듈 시스템</code>도 있다.
+ES6 모듈도 commonJS과 마찬가지로 내보내고 가져오는 방식인데, <code class="language-plaintext highlighter-rouge">export()</code>와 <code class="language-plaintext highlighter-rouge">import()</code> 키워드를 사용한다.</p>
+
+<p>위에서 작성한 코드를 ES6 모듈로 바꾸면 다음과 같다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//calc.js</span>
+<span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span>
+
+<span class="k">export</span> <span class="p">{</span><span class="nx">add</span><span class="p">,</span> <span class="nx">sub</span><span class="p">}</span>
+
+<span class="c1">//index.js</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">add</span><span class="p">,</span> <span class="nx">sub</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./calc.js</span><span class="dl">"</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sub</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">// 2</span>
+</code></pre></div></div>
+
+<h1 id="5-npm">5. npm</h1>
+
+<p>위에서 node를 설치할 때 함께 설치된 npm에 대해서도 알아보자.</p>
+
+<h2 id="npmnode-package-manager">npm(node package manager)</h2>
+
+<p>npm은 오픈 소스 라이브러리, 프레임워크, 도구 등을 포함한 수많은 패키지를 설치하고 관리할 수 있게 도와주는 도구이다.</p>
+
+<h2 id="package">package</h2>
+
+<p>패키지는 모듈을 포함하는 파일이나 폴더를 말한다. 다른 사람들이 npm에 올려놓은 복잡한 기능을 수행하는 패키지를 불러와서 사용할 수 있다.</p>
+
+<h2 id="npm-사용해보기">npm 사용해보기</h2>
+
+<h3 id="npm-init">npm init</h3>
+
+<p>에디터에서 폴더를 하나 만들자. 여기를 루트 폴더로 가정하고, 루트 폴더에서 터미널을 연다. 터미널에 <code class="language-plaintext highlighter-rouge">npm init</code>을 입력한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">init</span>
+</code></pre></div></div>
+
+<p>그러면 여러가지 질문을 하는데, 패키지의 이름이나 설명 등을 물어보는 것이라 입력해주면 된다.</p>
+
+<p><img width="528" alt="스크린샷 2023-04-09 오후 7 33 52" src="https://user-images.githubusercontent.com/110877564/230767810-ff5a0a45-6480-45d3-a057-feb6d535b1ad.png" /></p>
+
+<p>확인까지 끝내고 나면 루트 폴더에 <code class="language-plaintext highlighter-rouge">package.json</code>이라는 파일이 하나 생긴다. 이 파일은 패키지의 환경을 설정하는 파일이라고 생각하면 된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">package.json</code>에는 여러 정보가 기입되어 있는데, 그중 <code class="language-plaintext highlighter-rouge">script</code>에는 자주 사용하는 명령어를 지정할 수 있다.</p>
+
+<p>예를 들어 다음처럼 start를 설정하고 터미널에서 <code class="language-plaintext highlighter-rouge">npm start</code>를 입력하면, <code class="language-plaintext highlighter-rouge">node index.js</code>가 실행된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node index.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+</code></pre></div></div>
+
+<h3 id="패키지-설치">패키지 설치</h3>
+
+<p>다른 사람이 만든 패키지를 사용하기 위해서는 <a href="https://www.npmjs.com/">npm</a>를 이용하면 된다. 이 사이트에서 필요한 패키지를 검색하면 된다.</p>
+
+<p><img width="1348" alt="스크린샷 2023-04-09 오후 7 44 31" src="https://user-images.githubusercontent.com/110877564/230768159-c8357b7f-1db8-4bc1-b08a-23f7ed75f1f1.png" />
+“&gt;</p>
+
+<p>예를 들어 이 패키지를 사용하면 색상 코드를 랜덤하게 주는 모듈을 사용할 수 있다. 우측에 나와 있는 <code class="language-plaintext highlighter-rouge">npm i randomcolor</code> 명령어를 복사해서 터미널에 입력해서 설치할 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">i</span> <span class="nx">randomcolor</span>
+</code></pre></div></div>
+
+<p>설치가 완료되면 <code class="language-plaintext highlighter-rouge">package.json</code>에 다음과 같은 코드가 추가되어 있을 것이다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="dl">"</span><span class="s2">dependencies</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">randomcolor</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^0.6.2</span><span class="dl">"</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">"^0.6.2"</code>는 패키지의 버전을 뜻하는데, <code class="language-plaintext highlighter-rouge">^</code>는 <code class="language-plaintext highlighter-rouge">0.6.2</code> 버전 이상으로 설치가 되었다는 의미이다.</p>
+
+<p>그리고 폴더를 살펴보면, node_modules라는 폴더도 만들어져 있을 것이다.</p>
+
+<p><img width="169" alt="스크린샷 2023-04-09 오후 7 51 32" src="https://user-images.githubusercontent.com/110877564/230768405-00943900-5236-4e92-9b1d-cebd071b59fd.png" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">node_modules</code>는 <code class="language-plaintext highlighter-rouge">package.json</code>에 명시되어 있는 패키지들이 실제로 설치되는 폴더이다. 이 안에서 아까 설치한 <code class="language-plaintext highlighter-rouge">randomcolor</code> 패키지의 코드들을 확인할 수 있다. <code class="language-plaintext highlighter-rouge">randomcolor</code>도 패키지이기 때문에 <code class="language-plaintext highlighter-rouge">package.json</code> 폴더를 가지고 있으며, 그 안에 패키지의 정보가 적혀 있다.</p>
+
+<p>마지막으로 package-lock.json 파일도 확인할 수 있는데, 여기에는 정확히 어떤 버전의 패키지가 설치되어 있는지 적혀 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="dl">"</span><span class="s2">node_modules/randomcolor</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.6.2</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">resolved</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://registry.npmjs.org/randomcolor/-/randomcolor-0.6.2.tgz</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">integrity</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sha512-Mn6TbyYpFgwFuQ8KJKqf3bqqY9O1y37/0jgSK/61PUxV4QfIMv0+K2ioq8DfOjkBslcjwSzRfIDEXfzA9aCx7A==</span><span class="dl">"</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="설치한-패키지-적용">설치한 패키지 적용</h3>
+
+<p>패키지의 공식 문서를 보면 보통 어떻게 사용하는지 자세히 나와 있다. 공식 문서를 참고해서 다음과 같이 적고 터미널에서 <code class="language-plaintext highlighter-rouge">npm start</code>를 입력하면 색상 코드가 잘 출력되는 것을 볼 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//index.js</span>
+<span class="kd">const</span> <span class="nx">randomcolor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">randomcolor</span><span class="dl">"</span><span class="p">)</span> <span class="c1">//외부 모듈은 경로를 명시할 필요 없음</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">color1:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">randomcolor</span><span class="p">())</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">color2:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">randomcolor</span><span class="p">())</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">color3:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">randomcolor</span><span class="p">())</span>
+</code></pre></div></div>
+
+<p><img width="436" alt="스크린샷 2023-04-09 오후 8 03 29" src="https://user-images.githubusercontent.com/110877564/230768823-ba04e197-4697-4eac-8a13-15c5a9dd8dd5.png" /></p>
+
+<p>컬러가 무작위로 잘 나오고 있다.</p>
+
+<hr />
+
+ 
+      </section>
+
+      <footer class="page__meta"></footer>
+
+      <!-- <section class="page__share">
+  
+  <h4 class="page__share-title">
+    Link
+  </h4>
+   -->
+<!-- 
+  <a
+    href="https://github.com/sena-22"
+    class="btn btn--twitter"
+    onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+    title="Link Github"
+    ><i class="fab fa-fw fa-twitter" aria-hidden="true"></i
+    ><span>GitHub</span></a
+  > -->
+<!-- </section> -->
+ 
+  <nav class="pagination">
+    
+      <a href="/todolist/" class="pagination--pager" title="Todolist
+">Previous</a>
+    
+    
+      <a href="/mini%20project/emotion-diary-2/" class="pagination--pager" title="[Mini Project] 감성 일기장 업그레이드 2. App.js(context API) typing
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+   
+  <div class="page__related">
+    <h2 class="page__related-title">
+       
+    </h2>
+    <div class="grid__wrapper">
+       
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/simple-diary/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">react
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/tailwind/" rel="permalink">Tailwind CSS 알아보기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">tailwind css
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mini%20project/emotion-diary-4/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 4. Diary Page 타입스크립트 적용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">wanted challenge
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/lecture/react/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">react
+</p>
+  </article>
+</div>
+ 
+    </div>
+  </div>
+   
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/sena-22" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Reyna. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'sena-22/sena-22.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
