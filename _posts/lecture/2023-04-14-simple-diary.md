@@ -296,12 +296,12 @@ const getDiaryAnalysis = () => {
 //App.js
 
 /* 메모이제이션 하고 싶은 함수를 useMemo로 감싸준다. */
-const getDiaryAnalysis = () => {
+const getDiaryAnalysis = useMemo(() => {
   const goodCount = data.filter((it) => it.emotion >= 3).length
   const badCount = data.length - goodCount
   const goodRatio = (goodCount / data.length) * 100
   return {goodCount, badCount, goodRatio}
-}, [data.length] //데이터의 길이가 변할 때만 렌더링
+}, [data.length])
 ```
 
 이때 주의해야하는 점은 useMemo로 감싼 함수는 함수가 아니라 값을 리턴받기 때문에, 사용할 때 함수처럼 사용하면 에러가 발생한다. 따라서 값을 사용하는 것처럼 바꿔주어야 한다.
