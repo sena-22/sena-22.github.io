@@ -283,7 +283,7 @@
   <ul class="nav__items" id="category_tag_menu">
     <!--전체 글 수-->
     <li>
-      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(116)</style> 
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(120)</style> 
     </li>
     <li>
       <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
@@ -304,7 +304,7 @@
                        
         <li>
           <a href="/categories/typescript" class=""
-            >Typescript (6)</a
+            >Typescript (7)</a
           >
         </li>
                      
@@ -351,7 +351,7 @@
       <ul>
                      
         <li>
-          <a href="/categories/mini-project" class="">Mini Project (11)</a>
+          <a href="/categories/mini-project" class="">Mini Project (12)</a>
         </li>
                        
       </ul>
@@ -406,7 +406,7 @@
                          
         <li>
           <a href="/categories/notes" class=""
-            >Notes (7)</a
+            >Notes (8)</a
           >
         </li>
                    
@@ -502,16 +502,20 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#date-type-문제">date type 문제</a></li></ul>
+            <ul class="toc__menu"><li><a href="#date-type-문제">date type 문제</a></li><li><a href="#typests">types.ts</a></li></ul>
 
           </nav>
         </aside>
-         <p>감성 일기장은 총 네 종류의 페이지로 이루어져 있다.</p>
+         <p><img src="https://user-images.githubusercontent.com/110877564/232606809-6ff5b383-906f-41b5-9b4c-947de201d254.png" alt="제목을-입력해주세요_-004 (1)" /></p>
+
+<p>감성 일기장은 총 네 종류의 페이지로 이루어져 있다.</p>
 
 <p><img width="1536" alt="스크린샷 2023-04-13 오후 2 45 52" src="https://user-images.githubusercontent.com/110877564/231697730-38f73a20-57f7-4d5f-9d18-ced9596f7c17.png" /></p>
 
 <p>위 그림은 강의에서 처음 프로젝트를 구성할 때 나오는 것으로, 컴포넌트 구조를 나타낸다.
-여기서 일기를 생성하는 페이지와 수정하는 페이지는 거의 동일한 구조를 가지고 있고, <code class="language-plaintext highlighter-rouge">DiaryEditor</code> 컴포넌트를 공유한다. 그리고 홈 페이지는 하위에 <code class="language-plaintext highlighter-rouge">DiaryList</code> 그리고 <code class="language-plaintext highlighter-rouge">DiaryList</code> 컴포넌트는 <code class="language-plaintext highlighter-rouge">DiaryItem</code>으로 구성되어 있다. 그래서 DiaryItem부터 순차적으로 타입을 바꿔주려고 했는데, 결과적으로 계획대로 되지는 않았다..</p>
+여기서 일기를 생성하는 페이지와 수정하는 페이지는 거의 동일한 구조를 가지고 있고, <code class="language-plaintext highlighter-rouge">DiaryEditor</code> 컴포넌트를 공유한다. 그리고 홈 페이지는 하위에 <code class="language-plaintext highlighter-rouge">DiaryList</code> 그리고 <code class="language-plaintext highlighter-rouge">DiaryList</code> 컴포넌트는 <code class="language-plaintext highlighter-rouge">DiaryItem</code>으로 구성되어 있다.</p>
+
+<p><br /></p>
 
 <h1 id="date-type-문제">date type 문제</h1>
 
@@ -524,7 +528,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">DiaryItem</code>의 타입이다. 처음에는 date가 ‘2023.04.13’ 처럼 <code class="language-plaintext highlighter-rouge">string</code> 형식으로 들어가는 줄 알고 그렇게 만들었더니,
+<p><code class="language-plaintext highlighter-rouge">DiaryItem</code>의 타입은 이렇게 설정해주었다. 처음에는 date가 ‘2023.04.13’ 처럼 <code class="language-plaintext highlighter-rouge">string</code> 형식으로 들어가는 줄 알고 그렇게 만들었더니,
 <code class="language-plaintext highlighter-rouge">DiaryList</code> 쪽에서 문제가 생겼다. 날짜가 들어가는 컴포넌트들이 여러 곳에 있어서 정확하게 어떻게 넣어주어야 하는지 파악하려고 여러 컴포넌트들을 수정해보면서 찾았다.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//DiaryItem.tsx</span>
@@ -532,9 +536,9 @@
 <span class="kd">const</span> <span class="nx">strDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">date</span><span class="p">).</span><span class="nx">toLocaleDateString</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>그런데 DiaryItem에서 이런 변수를 발견했다. ‘1681344000000’처럼 ms 형식으로 들어온 날짜를 ‘2023.4.13’ 처럼 바꿔주는 함수였다. 그러니까 일기 아이템으로 들어온 날짜를 보기 편하게 바꿔서 <code class="language-plaintext highlighter-rouge">&lt;div className="diary_date"&gt;{strDate}&lt;/div&gt;</code>에 넣어주는 역할을 하는 것이다. 그래서 다시 date의 type을 <code class="language-plaintext highlighter-rouge">number</code>로 바꿔주었다.</p>
+<p>그런데 <code class="language-plaintext highlighter-rouge">DiaryItem</code>에서 이런 변수를 발견했다. ‘1681344000000’처럼 ms 형식으로 들어온 날짜를 ‘2023.4.13’ 처럼 바꿔주는 함수였다. 그러니까 일기 아이템으로 들어온 날짜를 보기 편하게 바꿔서 <code class="language-plaintext highlighter-rouge">&lt;div className="diary_date"&gt;{strDate}&lt;/div&gt;</code>에 넣어주는 역할을 하는 것이다. 그래서 다시 date의 type을 <code class="language-plaintext highlighter-rouge">number</code>로 바꿔주었다.</p>
 
-<p>App.tsx에서도 string으로 설정했다가 에러가 발생했는데, 새로운 일기를 쓸 때 DiaryEditor에서 App.tsx에 있는 onCreate 함수를 호출한다.</p>
+<p><code class="language-plaintext highlighter-rouge">App.tsx</code>에서도 string으로 설정했다가 에러가 발생했는데, 새로운 일기를 쓸 때 <code class="language-plaintext highlighter-rouge">DiaryEditor</code>에서 <code class="language-plaintext highlighter-rouge">App.tsx</code>에 있는 <code class="language-plaintext highlighter-rouge">onCreate()</code> 함수를 호출한다.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">newDiaryItem</span><span class="p">:</span> <span class="nx">createDiary</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">date</span><span class="p">:</span> <span class="nx">date</span><span class="p">,</span>
@@ -550,7 +554,7 @@
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">date</span><span class="p">,</span> <span class="nx">setDate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">getStringDate</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()))</span>
 </code></pre></div></div>
 
-<p>초기값은 현재 시간을 getStringDate라는 함수를 이용하고 있다. 그리고 달력에서 날짜를 클릭하면 바뀌는 식이다.</p>
+<p>초기값은 현재 시간을 <code class="language-plaintext highlighter-rouge">getStringDate()</code>라는 함수를 이용하고 있다. 그리고 달력에서 날짜를 클릭하면 바뀌는 식이다.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">input</span>
   <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">input_date</span><span class="dl">"</span>
@@ -560,14 +564,36 @@
 <span class="o">/&gt;</span>
 </code></pre></div></div>
 
-<p>그리고 getStringDate는 날짜를 ‘2023-04-13’ 이런 식으로 바꿔주는 유틸 함수로, 화면에 표시하기 위해 사용되고 있다.</p>
+<p>그리고 <code class="language-plaintext highlighter-rouge">getStringDate()</code>는 날짜를 ‘2023-04-13’ 이런 식으로 바꿔주는 유틸 함수로, 화면에 표시하기 위해 사용되고 있다.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">getStringDate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">date</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">().</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>그리고 onCreate 함수에서 dispatch를 이용하여 일기를 만들어준다. 이때 날짜는 다시 ms로 바꿔서 보내주기 때문에, 저장될 때는 number 형식으로 저장되게 된다.</p>
+<p>그리고 onCreate 함수에서 dispatch를 이용하여 일기를 만들어준다. 이때 날짜는 다시 ms로 바꿔서 보내주기 때문에, 저장될 때는 number 형식으로 저장되게 된다.
+<img width="565" alt="스크린샷 2023-04-17 오후 10 26 28" src="https://user-images.githubusercontent.com/110877564/232498082-cb1b678c-5f23-42f6-ac93-c4ac28697e84.png" />
+결과적으로 로컬 스토리지에는 이렇게 저장되고,
+<img width="607" alt="스크린샷 2023-04-17 오후 10 26 45" src="https://user-images.githubusercontent.com/110877564/232498094-209fe446-1281-4771-b61c-8e6b5b2c8ad5.png" />
+화면 상으로는 이렇게 보인다.</p>
+
+<h1 id="typests">types.ts</h1>
+
+<p>다이어리를 여러 컴포넌트에서 쓰다보니 모든 곳에서 같은 타입을 중복해서 선언하고 있었다. 그래서 타입 파일을 하나 만들어서 import 해서 사용하도록 바꿔주었다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//export</span>
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">DiaryItem</span> <span class="p">{</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="nx">date</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="nx">content</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="nx">emotion</span><span class="p">:</span> <span class="kr">number</span>
+<span class="p">}</span>
+
+<span class="c1">//import</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">DiaryItem</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../types</span><span class="dl">"</span>
+</code></pre></div></div>
+
+<p>date 타입을 지정하다보니 결과적으로 diary와 관련된 모든 컴포넌트를 거의 동시에 바꿔줘서 순차적으로 하지는 못했지만 일기 외에 따로 타입을 지정해줘야 하는 부분이 거의 없어서 모든 파일을 타입스크립트로 바꿀 수 있었다.</p>
  
       </section>
 
@@ -621,45 +647,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/lecture/simple-diary/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">react
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/css/tailwind/" rel="permalink">Tailwind CSS 알아보기
+        <a href="/mini%20project/emotion-diary-5/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 5. Zustand 적용해보기
 </a>
       
     </h2>
@@ -684,83 +672,121 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">tailwind css
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/lecture/react/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          5 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">react
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/mini%20project/emotion-diary-3/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 3. Header, Button 컴포넌트에 타입스크립트 적용하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
     <p class="archive__item-excerpt" itemprop="description">wanted challenge
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/notes/kakao-map/" rel="permalink">[react + typescript] kakao map api 사용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">kakao map api
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/typescript/tsc/" rel="permalink">[typescript] 타입스크립트의 컴파일 과정
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">typescript
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/redux/" rel="permalink">Redux
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Redux
 </p>
   </article>
 </div>

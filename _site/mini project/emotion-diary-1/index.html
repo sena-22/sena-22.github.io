@@ -283,7 +283,7 @@
   <ul class="nav__items" id="category_tag_menu">
     <!--전체 글 수-->
     <li>
-      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(116)</style> 
+      <span style="font-family:'Nanum Gothic Coding'">All Posts</style> <span style="font-family:'Nanum Gothic Coding'">(120)</style> 
     </li>
     <li>
       <!--span 태그로 카테고리들을 크게 분류 ex)javascript-->
@@ -304,7 +304,7 @@
                        
         <li>
           <a href="/categories/typescript" class=""
-            >Typescript (6)</a
+            >Typescript (7)</a
           >
         </li>
                      
@@ -351,7 +351,7 @@
       <ul>
                      
         <li>
-          <a href="/categories/mini-project" class="">Mini Project (11)</a>
+          <a href="/categories/mini-project" class="">Mini Project (12)</a>
         </li>
                        
       </ul>
@@ -406,7 +406,7 @@
                          
         <li>
           <a href="/categories/notes" class=""
-            >Notes (7)</a
+            >Notes (8)</a
           >
         </li>
                    
@@ -502,7 +502,7 @@
                 Index
               </h4>
             </header>
-            <ul class="toc__menu"><li><a href="#타입스크립트-설치하기">타입스크립트 설치하기</a></li><li><a href="#tsconfigjson-설정하기">tsconfig.json 설정하기</a><ul><li><a href="#1-compileoptions">1. compileOptions</a></li><li><a href="#2-include">2. include</a></li><li><a href="#3-exclude">3. exclude</a></li><li><a href="#4-files">4. files</a></li></ul></li><li><a href="#module-not-found-에러">Module not found 에러</a></li></ul>
+            <ul class="toc__menu"><li><a href="#타입스크립트-설치하기">타입스크립트 설치하기</a></li><li><a href="#tsconfigjson-설정하기">tsconfig.json 설정하기</a><ul><li><a href="#1-compileroptions">1. compilerOptions</a></li><li><a href="#2-include">2. include</a></li><li><a href="#3-exclude">3. exclude</a></li><li><a href="#4-files">4. files</a></li></ul></li><li><a href="#module-not-found-에러">Module not found 에러</a></li></ul>
 
           </nav>
         </aside>
@@ -546,24 +546,30 @@
 
 <p class="notice--primary"><a href="https://www.typescriptlang.org/tsconfig">여기</a>에서 종류를 확인할 수 있다.</p>
 
-<h2 id="1-compileoptions">1. compileOptions</h2>
+<h2 id="1-compileroptions">1. compilerOptions</h2>
 
 <p>타입스크립트 컴파일러가 사용해야 하는 옵션을 지정할 수 있는 속성이다.
 <code class="language-plaintext highlighter-rouge">target</code>, <code class="language-plaintext highlighter-rouge">module</code>, <code class="language-plaintext highlighter-rouge">lib</code>, <code class="language-plaintext highlighter-rouge">esModuleInterop</code>, <code class="language-plaintext highlighter-rouge">outDir</code> 등의 옵션을 지정할 수 있다.</p>
 
-<ul>
-  <li>target :
-어떤 버전의 자바스크립트로 바꿔줄지 정하는 부분이다.</li>
-  <li>module :
-자바스크립트의 파일들이 <code class="language-plaintext highlighter-rouge">import</code> 문법을 사용할 때, 어떤 문법을 쓸지 정하는 곳이다.
-<code class="language-plaintext highlighter-rouge">commonjs</code>는 <code class="language-plaintext highlighter-rouge">require</code> 문법, <code class="language-plaintext highlighter-rouge">es2015</code>,<code class="language-plaintext highlighter-rouge">esnext</code>는 <code class="language-plaintext highlighter-rouge">import</code> 문법을 사용한다.</li>
-  <li>allowJs :
-js 파일을 ts에서 <code class="language-plaintext highlighter-rouge">import</code> 해서 쓸 수 있는지 정한다.</li>
-  <li>jsx :
-tsx 파일을 jsx로 어떻게 컴파일할 것인지 정한다.</li>
-  <li>strict :
-strict 모드를 사용할지 정한다.</li>
-</ul>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+ <span class="dl">"</span><span class="s2">compilerOptions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+
+	<span class="dl">"</span><span class="s2">target</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">es5</span><span class="dl">"</span><span class="p">,</span>          <span class="cm">/* 사용할 특정 ECMAScript 버전 설정: 'ES3'(default), 'ES5', 'ES2015', 'ES2016' 등 */</span>
+	<span class="dl">"</span><span class="s2">module</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">commonjs</span><span class="dl">"</span><span class="p">,</span>      <span class="cm">/* 어떤 import 문법을 사용할 지 설정 : 'commonjs', 'amd', 'es2015', 'esnext' */</span>
+	<span class="dl">"</span><span class="s2">allowJs</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>           <span class="cm">/* 자바스크립트 파일 컴파일 허용 여부 */</span>
+	<span class="dl">"</span><span class="s2">checkJs</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>           <span class="cm">/* .js 파일의 오류 검사 여부 */</span>
+	<span class="dl">"</span><span class="s2">jsx</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">preserve</span><span class="dl">"</span><span class="p">,</span>         <span class="cm">/* JSX 코드 생성 설정: 'preserve'(JSX 유지), 'react-native', 혹은 'react'. */</span>
+
+	<span class="dl">"</span><span class="s2">strict</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>            <span class="cm">/* 모든 strict 옵션 활성화 여부 */</span>
+	<span class="dl">"</span><span class="s2">noImplicitAny</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>     <span class="cm">/* 암묵적인 'any' 금지 여부 */</span>
+<span class="p">},</span>
+
+	<span class="dl">"</span><span class="s2">files</span><span class="dl">"</span><span class="p">:</span> <span class="p">[],</span>                <span class="cm">/* 프로그램에 포함할  파일을 지정 */</span>
+
+	<span class="dl">"</span><span class="s2">include</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">src/**/*</span><span class="dl">"</span><span class="p">],</span>    <span class="cm">/* 프로그램에 포함할 파일 이름 혹은 패턴의 배열을 지정 */</span>
+	<span class="dl">"</span><span class="s2">exclude</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">node_modules</span><span class="dl">"</span><span class="p">]</span> <span class="cm">/* 제외할 파일 지정 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="2-include">2. include</h2>
 
@@ -689,45 +695,7 @@ strict 모드를 사용할지 정한다.</li>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/lecture/simple-diary/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">react
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/css/tailwind/" rel="permalink">Tailwind CSS 알아보기
+        <a href="/mini%20project/emotion-diary-5/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 5. Zustand 적용해보기
 </a>
       
     </h2>
@@ -752,44 +720,6 @@ strict 모드를 사용할지 정한다.</li>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">tailwind css
-</p>
-  </article>
-</div>
-  
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/mini%20project/emotion-diary-4/" rel="permalink">[Mini Project] 감성 일기장 업그레이드 4. Diary Page 타입스크립트 적용하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
     <p class="archive__item-excerpt" itemprop="description">wanted challenge
 </p>
   </article>
@@ -803,7 +733,7 @@ strict 모드를 사용할지 정한다.</li>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/lecture/react/" rel="permalink">[한입 크기로 잘라 먹는 리액트] 리액트 입문 - 스샷 추가 후 올려야함 ㅠ
+        <a href="/notes/kakao-map/" rel="permalink">[react + typescript] kakao map api 사용하기
 </a>
       
     </h2>
@@ -821,14 +751,90 @@ strict 모드를 사용할지 정한다.</li>
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          5 minute read
+          less than 1 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">react
+    <p class="archive__item-excerpt" itemprop="description">kakao map api
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/typescript/tsc/" rel="permalink">[typescript] 타입스크립트의 컴파일 과정
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">typescript
+</p>
+  </article>
+</div>
+  
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/redux/" rel="permalink">Redux
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Redux
 </p>
   </article>
 </div>

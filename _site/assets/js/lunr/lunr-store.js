@@ -678,7 +678,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[Mini Project] 감성 일기장 업그레이드 4. Diary Page 타입스크립트 적용하기",
-        "excerpt":"감성 일기장은 총 네 종류의 페이지로 이루어져 있다. 위 그림은 강의에서 처음 프로젝트를 구성할 때 나오는 것으로, 컴포넌트 구조를 나타낸다. 여기서 일기를 생성하는 페이지와 수정하는 페이지는 거의 동일한 구조를 가지고 있고, DiaryEditor 컴포넌트를 공유한다. 그리고 홈 페이지는 하위에 DiaryList 그리고 DiaryList 컴포넌트는 DiaryItem으로 구성되어 있다. 그래서 DiaryItem부터 순차적으로 타입을 바꿔주려고...","categories": ["mini project"],
+        "excerpt":"감성 일기장은 총 네 종류의 페이지로 이루어져 있다. 위 그림은 강의에서 처음 프로젝트를 구성할 때 나오는 것으로, 컴포넌트 구조를 나타낸다. 여기서 일기를 생성하는 페이지와 수정하는 페이지는 거의 동일한 구조를 가지고 있고, DiaryEditor 컴포넌트를 공유한다. 그리고 홈 페이지는 하위에 DiaryList 그리고 DiaryList 컴포넌트는 DiaryItem으로 구성되어 있다. date type 문제 //DiaryItem.tsx interface...","categories": ["mini project"],
         "tags": ["project","wanted challenge","react","typescript"],
         "url": "/mini%20project/emotion-diary-4/",
         "teaser": null
@@ -689,9 +689,33 @@ var store = [{
         "url": "/css/tailwind/",
         "teaser": null
       },{
-        "title": "[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기 1",
+        "title": "[한입 크기로 잘라 먹는 리액트] 간단한 일기장 만들기",
         "excerpt":"섹션 6에서는 간단한 일기장을 만들어보았다. 일기장은 총 세 영역으로 나누어진다. 첫 번째가 일기를 작성할 수 있는 에디터 영역, 두 번째는 일기의 메타 정보를 보여주는 영역, 마지막이 일기를 보여주는 리스트 영역이다. Diary Editor 컴포넌트 여러가지 상태를 한번에 관리하기 다이어리 에디터는 작성자, 일기 본문, 감정 점수 세 개의 입력값을 필요로 한다. 각각...","categories": ["lecture"],
-        "tags": ["udemy","react"],
+        "tags": ["udemy","react","useMemo","useCallback","useReducer"],
         "url": "/lecture/simple-diary/",
+        "teaser": null
+      },{
+        "title": "Redux",
+        "excerpt":"Redux   리덕스는 상태를 관리하기 위해 사용되는 자바스크립트 라이브러리 중에 하나이다.   #  ","categories": [],
+        "tags": [],
+        "url": "/redux/",
+        "teaser": null
+      },{
+        "title": "[typescript] 타입스크립트의 컴파일 과정",
+        "excerpt":"타입스크립트의 컴파일 과정 타입스크립트 코드를 TS AST(추상 문법 트리)로 변환한다. TS AST를 타입 검사기가 확인한다(이때 타입 에러를 발생시킨다) 확인 후 JS 소스로 변환 → 여기까지의 과정을 TSC가 수행한다 JS 코드를 JS AST로 변환 AST를 바이트 코드로 바꾼다 바이트 코드를 런타임이 평가해서 결과를 내보낸다 → 이 과정을 V8 같은 엔진이 수행한다....","categories": ["typescript"],
+        "tags": ["typescript","compile"],
+        "url": "/typescript/tsc/",
+        "teaser": null
+      },{
+        "title": "[react + typescript] kakao map api 사용하기 ",
+        "excerpt":"카카오 맵 띄우기 kakao map api에 나온 과정을 참고했다. index.html에 추가 https://developers.kakao.com/에서 앱을 생성한 뒤 Javascript 키를 발급 받는다. index.html의 &lt;head&gt;안에 다음 코드를 넣어준다. &lt;script type=\"text/javascript\" src=\"//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY를 넣으시면 됩니다.\" &gt;&lt;/script&gt; 지도 영역 만들고 불러오기 function App() { useEffect(() =&gt; { const container = document.getElementById(\"map\") const options = {...","categories": ["notes"],
+        "tags": ["kakao map api","react","typescript"],
+        "url": "/notes/kakao-map/",
+        "teaser": null
+      },{
+        "title": "[Mini Project] 감성 일기장 업그레이드 5. Zustand 적용해보기",
+        "excerpt":"감성 일기장에 Zustand를 적용해보려고 한다. 현재 감성 일기장은 context API를 이용해서 상태를 관리하고 있다. context API는 최상단의 state를 업데이트하면 하위 컴포넌트가 리렌더링되는 단점을 가지고 있고, 이를 방어할 방법이 메모이제이션 뿐이라는 단점을 가지고 있기 때문에 더 복잡한 프로젝트에서는 다른 상태 관리 라이브러리가 필요하다고 해서, 이번 기회에 써보기로 했다. 상태 관리 라이브러리에...","categories": ["mini project"],
+        "tags": ["project","wanted challenge","react","typescript"],
+        "url": "/mini%20project/emotion-diary-5/",
         "teaser": null
       }]
